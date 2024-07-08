@@ -23,12 +23,11 @@ class Helper:
         while not self.stop_event.is_set():
             if self.stop_event.wait(self.wait_seconds):
                 continue
-            with self.lock:
-                try:
-                    self.get_access_token()
-                    logger.info("Token refreshed successfully")
-                except Exception as e:
-                    logger.error(f"Failed to refresh token: {e}")
+            try:
+                self.get_access_token()
+                logger.info("Token refreshed successfully")
+            except Exception as e:
+                logger.error(f"Failed to refresh token: {e}")
 
     def stop(self):
         self.stop_event.set()
