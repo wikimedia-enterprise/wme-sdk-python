@@ -1,37 +1,24 @@
+from typing import Optional
+from datetime import datetime
+from language import Language
+from size import Size
+
+
 class Project:
-    """
-    Project representation.
-    """
-
-    def __init__(self, name=None, description=None, active=None):
-        """
-        Initialize Project instance.
-
-        :param name: The name of the project.
-        :param description: The description of the project.
-        :param active: Indicates if the project is active.
-        """
+    def __init__(self,
+                 name: Optional[str] = None,
+                 identifier: Optional[str] = None,
+                 url: Optional[str] = None,
+                 code: Optional[str] = None,
+                 version: Optional[str] = None,
+                 date_modified: Optional[datetime] = None,
+                 in_language: Optional[Language] = None,
+                 size: Optional[Size] = None):
         self.name = name
-        self.description = description
-        self.active = active
-
-    def to_dict(self):
-        """
-        Convert the Project instance to a dictionary.
-        """
-        return {
-            "name": self.name,
-            "description": self.description,
-            "active": self.active
-        }
-
-    @classmethod
-    def from_dict(cls, data):
-        """
-        Create a Project instance from a dictionary.
-        """
-        return cls(
-            name=data.get("name"),
-            description=data.get("description"),
-            active=data.get("active")
-        )
+        self.identifier = identifier
+        self.url = url
+        self.code = code
+        self.version = version
+        self.date_modified = date_modified
+        self.in_language = in_language
+        self.size = size

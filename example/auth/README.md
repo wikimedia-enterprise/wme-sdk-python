@@ -1,10 +1,10 @@
 # Auth Helper Example
 
-This repository contains an example Go application that demonstrates how to use an authentication helper to manage access and refresh tokens for making authenticated API calls easier. The `main.go` script logs in, checks the validity of tokens, and refreshes the token periodically using a background goroutine.
+This repository contains an example Python application that demonstrates how to use an authentication helper to manage access and refresh tokens for making authenticated API calls easier. The `auth.py` script logs in, checks the validity of tokens, and refreshes the token periodically using a background goroutine.
 
 ## Prerequisites
 
-- Go 1.15+ installed on your machine.
+- Python installed on your machine.
 - Environment variables for your username and password stored in a `.env` file.
 
 ## Setup
@@ -12,8 +12,9 @@ This repository contains an example Go application that demonstrates how to use 
 ### 1. Clone the Repository
 
 ```sh
-git clone https://github.com/wikimedia-enterprise/wme-sdk-go.git
-cd wme-sdk-go
+git clone https://github.com/wikimedia-enterprise/wme-sdk-python.git
+cd wme-sdk-python
+
 ```
 
 ### 2. Environment Variables
@@ -26,17 +27,17 @@ mv sample.env .env
 
 Edit the `.env` file to include your credentials:
 
-```
+```bash
 WME_USERNAME=your_username
 WME_PASSWORD=your_password
 ```
 
 ### 3. Install Dependencies
 
-Install the necessary Go dependencies:
+Install the necessary Python dependencies:
 
 ```sh
-go mod tidy
+pip install -r requirements.txt
 ```
 
 ## Running the Application
@@ -45,99 +46,72 @@ To run the application, use the following command:
 
 ```sh
 cd example/auth
-go run main.go
+python3 auth.py
 ```
 
 This will start the application, log in, and display the access token. It will also start a background goroutine that refreshes the token every 23 hours and 59 seconds, or whenever an API call is made.
 
 ## Project Structure
 
-- `main.go`: The main application file that logs in and handles token refresh.
-- `auth/`: Directory containing the authentication helper code.
-  - `auth.go`: Contains the authentication client and helper methods for managing tokens.
+- `auth.py`: The main application file that logs in and handles token refresh.
+- `modules/auth/auth_client.py`: Directory containing the authentication helper code.
+  - `auth_client.py`: Contains the authentication client and helper methods for managing tokens.
 
-## `auth` Package
+## `AuthClient` Class
 
-The `auth` package provides a client and helper for managing authentication tokens. Below are the key components:
+The `AuthClient` Class provides a client and helper for managing authentication tokens. Below are the key components:
 
 ### Auth Package Components
 
 - `Client`: HTTP client for making authentication requests.
 - `Helper`: Manages the state and validity of tokens.
-- `Tokenstore`: Struct for storing token data.
-- `LoginRequest`, `LoginResponse`, `RefreshTokenRequest`, `RefreshTokenResponse`, `RevokeTokenRequest`: Structs for making API requests and handling responses.
+- `Tokenstore`: storing token data.
+- `LoginRequest`, `LoginResponse`, `RefreshTokenRequest`, `RefreshTokenResponse`, `RevokeTokenRequest`: API requests and handling responses.
 
 ### Helper Methods
 
-- `GetToken() (string, error)`: Manages the token state and returns a valid access token.
-- `loginAndStoreTokens(tokenStoreFile string) (string, error)`: Logs in and stores the tokens.
-- `refreshAndStoreTokens(tokenStoreFile string, tokenStore *Tokenstore) (string, error)`: Refreshes the access token and stores the new tokens.
-- `storeTokens(tokenStoreFile string, tokenStore *Tokenstore) error`: Writes the token data to the tokenstore file in JSON format.
+- `AuthClient()`: Manages the low level token state.
+- `Helper(auth_client)`: Managers access and refreshing of tokens, uses a 2nd thread to renew expiring refresh tokens (every 24 hours).
+- `helper.get_access_token()`: Give you a valid access token.
 
-## Example Usage in `main.go`
+## Example Usage in `auth.py`
 
-```go
-package main
+```python3
+import time
+import logging
+from auth_client import AuthClient
+from helper import Helper
 
-import (
-	"context"
-	"fmt"
-	"log"
-	"sync"
-	"time"
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
-	"github.com/wikimedia-enterprise/wme-sdk-go/pkg/auth"
-)
 
-func main() {
-	client := auth.NewClient()
-	helper, err := auth.NewHelper(client)
-	if err != nil {
-		log.Fatalf("Failed to create helper: %v", err)
-	}
+def main():
+    auth_client = AuthClient()
+    try:
+        helper = Helper(auth_client)
+    except Exception as e:
+        logger.fatal(f"Failed to create helper: {e}")
+        return
 
-	var mu sync.Mutex
-	tokenRefreshChan := make(chan struct{})
+    try:
+        while True:
+            with helper.lock:
+                try:
+                    token = helper.get_access_token()
+                    logger.info(f"Access token: {token}")
 
-	go func() {
-		for {
-			select {
-			case <-tokenRefreshChan:
-				continue
-			case <-time.After(23*time.Hour + 59*time.Second):
-				mu.Lock()
-				_, err := helper.GetToken()
-				if err != nil {
-					log.Printf("Failed to refresh token: %v", err)
-				} else {
-					log.Println("Token refreshed successfully")
-				}
-				mu.Unlock()
-			}
-		}
-	}()
+                    ### Do something with the token here :)
 
-	for {
-		token, err := helper.GetToken()
-		if err != nil {
-			log.Fatalf("Failed to get token: %v", err)
-		}
+                except Exception as e:
+                    logger.fatal(f"Failed to get token: {e}")
+                    return
 
-		fmt.Printf("Access token: %s\n", token)
-		tokenRefreshChan <- struct{}{}
-		time.Sleep(10 * time.Minute)
-	}
-}
+            time.sleep(3600)
+    finally:
+        helper.stop()
+
+if __name__ == "__main__":
+    main()
+
 ```
-
-## Contributing
-
-If you want to contribute to this project, feel free to open issues or submit pull requests.
-
-## License
-
-This project is licensed under the  Apache-2.0 license License. See the LICENSE file for details.
-
----
-
-Feel free to adjust the repository URL, structure, and any other details to better fit your actual project setup.

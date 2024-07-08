@@ -1,23 +1,13 @@
 import time
 import logging
-import threading
-
-from auth_client import AuthClient, Helper
+import json
+import sys
+from auth_client import AuthClient
+from helper import Helper
+from api_client import ApiClient, Request, Filter
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-
-
-def refresh_token_periodically(helper, stop_event):
-    while not stop_event.is_set():
-        if stop_event.wait(23 * 3600 + 59):
-            continue
-        with helper.lock:
-            try:
-                helper.get_access_token()
-                logger.info("Token refreshed successfully")
-            except Exception as e:
-                logger.error(f"Failed to refresh token: {e}")
 
 
 def main():
@@ -28,26 +18,42 @@ def main():
         logger.fatal(f"Failed to create helper: {e}")
         return
 
-    stop_event = threading.Event()
-    refresh_thread = threading.Thread(target=refresh_token_periodically, args=(helper, stop_event))
-    refresh_thread.start()
-
     try:
-        while True:
-            with helper.lock:
-                try:
-                    token = helper.get_access_token()
-                    logger.info(f"Access token: {token}")
-                except Exception as e:
-                    logger.fatal(f"Failed to get token: {e}")
-                    return
+        token = helper.get_access_token()
+        logger.info(f"Access token: {token}")
 
-            stop_event.set()  # Signal the refresh routine to reset the timer
-            time.sleep(60)
-            stop_event.clear()
+        # Use the token to get articles from the API
+        api_client = ApiClient()
+        api_client.set_access_token(token)
+
+        request = Request(
+            fields=["name", "abstract", "url", "version"],
+            filters=[Filter(field="in_language.identifier", value="en")]
+        )
+
+        try:
+            articles = api_client.get_articles("Montreal", request)
+        except Exception as e:
+            logger.fatal(f"Failed to get articles: {e}")
+            return
+
+        for article in articles:
+            try:
+                art_json = json.dumps(article, indent=2)
+                print(art_json)
+            except Exception as e:
+                logger.error(f"Failed to serialize article: {e}")
+
+    except Exception as e:
+        logger.error(f"Failed to get access token: {e}")
     finally:
-        stop_event.set()
-        refresh_thread.join()
+        helper.stop()
+        logger.info("Exiting")
+        time.sleep(1)
+
+
+def usage():
+    print(f"""Usage: {sys.argv[0]}""")
 
 
 if __name__ == "__main__":

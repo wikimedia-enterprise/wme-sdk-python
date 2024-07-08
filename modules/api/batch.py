@@ -1,37 +1,24 @@
+from typing import Optional
+from datetime import datetime
+from project import Project
+from language import Language
+from namespace import Namespace
+from size import Size
+
+
 class Batch:
-    """
-    Batch representation.
-    """
-
-    def __init__(self, id=None, size=None, completed=None):
-        """
-        Initialize Batch instance.
-
-        :param id: The batch identifier.
-        :param size: The size of the batch.
-        :param completed: Indicates if the batch is completed.
-        """
-        self.id = id
+    def __init__(self,
+                 identifier: Optional[str] = None,
+                 version: Optional[str] = None,
+                 date_modified: Optional[datetime] = None,
+                 is_part_of: Optional[Project] = None,
+                 in_language: Optional[Language] = None,
+                 namespace: Optional[Namespace] = None,
+                 size: Optional[Size] = None):
+        self.identifier = identifier
+        self.version = version
+        self.date_modified = date_modified
+        self.is_part_of = is_part_of
+        self.in_language = in_language
+        self.namespace = namespace
         self.size = size
-        self.completed = completed
-
-    def to_dict(self):
-        """
-        Convert the Batch instance to a dictionary.
-        """
-        return {
-            "id": self.id,
-            "size": self.size,
-            "completed": self.completed
-        }
-
-    @classmethod
-    def from_dict(cls, data):
-        """
-        Create a Batch instance from a dictionary.
-        """
-        return cls(
-            id=data.get("id"),
-            size=data.get("size"),
-            completed=data.get("completed")
-        )

@@ -1,33 +1,26 @@
+from typing import List, Optional
+from datetime import datetime
+
+
 class Editor:
-    """
-    Editor representation.
-    """
-
-    def __init__(self, name=None, experience=None):
-        """
-        Initialize Editor instance.
-
-        :param name: The name of the editor.
-        :param experience: The experience level of the editor.
-        """
+    def __init__(self,
+                 identifier: Optional[int] = None,
+                 name: Optional[str] = None,
+                 edit_count: Optional[int] = None,
+                 groups: Optional[List[str]] = None,
+                 is_bot: Optional[bool] = None,
+                 is_anonymous: Optional[bool] = None,
+                 is_admin: Optional[bool] = None,
+                 is_patroller: Optional[bool] = None,
+                 has_advanced_rights: Optional[bool] = None,
+                 date_started: Optional[datetime] = None):
+        self.identifier = identifier
         self.name = name
-        self.experience = experience
-
-    def to_dict(self):
-        """
-        Convert the Editor instance to a dictionary.
-        """
-        return {
-            "name": self.name,
-            "experience": self.experience
-        }
-
-    @classmethod
-    def from_dict(cls, data):
-        """
-        Create an Editor instance from a dictionary.
-        """
-        return cls(
-            name=data.get("name"),
-            experience=data.get("experience")
-        )
+        self.edit_count = edit_count
+        self.groups = groups or []
+        self.is_bot = is_bot
+        self.is_anonymous = is_anonymous
+        self.is_admin = is_admin
+        self.is_patroller = is_patroller
+        self.has_advanced_rights = has_advanced_rights
+        self.date_started = date_started

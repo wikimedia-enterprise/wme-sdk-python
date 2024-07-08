@@ -1,41 +1,23 @@
+from typing import Optional
+from datetime import datetime
+
+# Type of events supported by the system.
+EVENT_TYPE_UPDATE = "update"
+EVENT_TYPE_DELETE = "delete"
+EVENT_TYPE_VISIBILITY_CHANGE = "visibility-change"
+
+
 class Event:
-    """
-    Event representation.
-    """
-
-    def __init__(self, id=None, type=None, description=None, timestamp=None):
-        """
-        Initialize Event instance.
-
-        :param id: The event identifier.
-        :param type: The type of the event.
-        :param description: The description of the event.
-        :param timestamp: The timestamp of the event.
-        """
-        self.id = id
-        self.type = type
-        self.description = description
-        self.timestamp = timestamp
-
-    def to_dict(self):
-        """
-        Convert the Event instance to a dictionary.
-        """
-        return {
-            "id": self.id,
-            "type": self.type,
-            "description": self.description,
-            "timestamp": self.timestamp
-        }
-
-    @classmethod
-    def from_dict(cls, data):
-        """
-        Create an Event instance from a dictionary.
-        """
-        return cls(
-            id=data.get("id"),
-            type=data.get("type"),
-            description=data.get("description"),
-            timestamp=data.get("timestamp")
-        )
+    def __init__(self,
+                 identifier: Optional[str] = None,
+                 event_type: Optional[str] = None,
+                 date_created: Optional[datetime] = None,
+                 date_published: Optional[datetime] = None,
+                 partition: Optional[int] = None,
+                 offset: Optional[int] = None):
+        self.identifier = identifier
+        self.event_type = event_type
+        self.date_created = date_created
+        self.date_published = date_published
+        self.partition = partition
+        self.offset = offset

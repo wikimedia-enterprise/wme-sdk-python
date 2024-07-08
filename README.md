@@ -1,4 +1,4 @@
-# Wikimedia Enterprise SDK: GO
+# Wikimedia Enterprise SDK: Python
 
 Official Wikimedia Enterprise SDK for Go programming language.
 
@@ -9,7 +9,9 @@ See our [api documentation](https://enterprise.wikimedia.com/docs/) and [website
 - installing the SDK:
 
 ```bash
-go get github.com/wikimedia-enterprise/wme-sdk-go
+git clone https://github.com/wikimedia-enterprise/wme-sdk-python.git
+cd wme-sdk-python
+pip install -r requirements.txt
 ```
 
 - expose your credentials (if you don't have credentials already, [sign up](https://dashboard.enterprise.wikimedia.com/signup/)):
@@ -21,33 +23,63 @@ export WME_PASSWORD="...your password...";
 
 - obtain your access token:
 
-```go
-package main
+```python
+import time
+import logging
+import threading
+// find the auth_client module in the sdk, file: modules/auth/auth_client.py
+from auth_client import AuthClient, Helper
 
-import (
-	"context"
-	"log"
-	"os"
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
-	"github.com/wikimedia-enterprise/wme-sdk-go/pkg/auth"
-)
 
-func main() {
-	ctx := context.Background()
-	ath := auth.NewClient()
+def refresh_token_periodically(helper, stop_event):
+    while not stop_event.is_set():
+        if stop_event.wait(23 * 3600 + 59):
+            continue
+        with helper.lock:
+            try:
+                helper.get_access_token()
+                logger.info("Token refreshed successfully")
+            except Exception as e:
+                logger.error(f"Failed to refresh token: {e}")
 
-	lgn, err := ath.Login(ctx, &auth.LoginRequest{
-		Username: os.Getenv("WME_USERNAME"),
-		Password: os.Getenv("WME_PASSWORD"),
-	})
 
-	if err != nil {
-		log.Fatalln(err)
-	}
+def main():
+    auth_client = AuthClient()
+    try:
+        helper = Helper(auth_client)
+    except Exception as e:
+        logger.fatal(f"Failed to create helper: {e}")
+        return
 
-	log.Println(lgn.AccessToken)
-}
+    stop_event = threading.Event()
+    refresh_thread = threading.Thread(target=refresh_token_periodically, args=(helper, stop_event))
+    refresh_thread.start()
+
+    try:
+        while True:
+            with helper.lock:
+                try:
+                    token = helper.get_access_token()
+                    logger.info(f"Access token: {token}")
+                except Exception as e:
+                    logger.fatal(f"Failed to get token: {e}")
+                    return
+
+            stop_event.set()  # Signal the refresh routine to reset the timer
+            time.sleep(60)
+            stop_event.clear()
+    finally:
+        stop_event.set()
+        refresh_thread.join()
+
+
+if __name__ == "__main__":
+    main()
 ```
+
 Auth APIs
 The following are the main authentication APIs provided by the SDK:
 
@@ -63,64 +95,50 @@ Example Usage
 
 - putting it all together and making your first API call (we will be querying the Structured Contents endpoint, which is part of the [On-demand API](https://enterprise.wikimedia.com/docs/on-demand/))
 
-```go
-package main
+```python
+import requests
+from dotenv import load_dotenv
+from wme_sdk import api, auth
 
-import (
-	"context"
-	"log"
-	"os"
+def main():
+    load_dotenv()
+    ath = auth.Client()
 
-	"github.com/wikimedia-enterprise/wme-sdk-go/pkg/api"
-	"github.com/wikimedia-enterprise/wme-sdk-go/pkg/auth"
-)
+    try:
+        lgn = ath.login(username=os.getenv("WME_USERNAME"), password=os.getenv("WME_PASSWORD"))
+    except Exception as err:
+        logging.fatal(err)
+        return
 
-func main() {
-	ctx := context.Background()
-	ath := auth.NewClient()
+    try:
+        acl = api.Client()
+        acl.set_access_token(lgn['access_token'])
 
-	lgn, err := ath.Login(ctx, &auth.LoginRequest{
-		Username: os.Getenv("WME_USERNAME"),
-		Password: os.Getenv("WME_PASSWORD"),
-	})
+        req = {
+            "fields": ["name", "abstract"],
+            "filters": [
+                {
+                    "field": "in_language.identifier",
+                    "value": "en",
+                }
+            ]
+        }
 
-	if err != nil {
-		log.Fatalln(err)
-	}
+        scs = acl.get_structured_contents("Squirrel", req)
+        for sct in scs:
+            logging.info(sct['name'])
+            logging.info(sct['abstract'])
+    except Exception as err:
+        logging.fatal(err)
+    finally:
+        try:
+            ath.revoke_token(refresh_token=lgn['refresh_token'])
+        except Exception as err:
+            logging.error(err)
 
-	defer func() {
-		req := &auth.RevokeTokenRequest{
-			RefreshToken: lgn.RefreshToken,
-		}
+if __name__ == "__main__":
+    main()
 
-		if err := ath.RevokeToken(ctx, req); err != nil {
-			log.Println(err)
-		}
-	}()
-
-	acl := api.NewClient()
-	acl.SetAccessToken(lgn.AccessToken)
-
-	req := &api.Request{
-		Fields: []string{"name", "abstract"},
-		Filters: []*api.Filter{
-			{
-				Field: "in_language.identifier",
-				Value: "en",
-			},
-		},
-	}
-	scs, err := acl.GetStructuredContents(ctx, "Squirrel", req)
-
-	if err != nil {
-		log.Fatalln(err)
-	}
-
-	for _, sct := range scs {
-		log.Println(sct.Name)
-		log.Println(sct.Abstract)
-	}
-}
 
 ```
 
