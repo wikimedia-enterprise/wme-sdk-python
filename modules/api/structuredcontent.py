@@ -1,10 +1,12 @@
 from typing import List, Optional
 from datetime import datetime
+from modules.api.article import Image
 from version import Version
 from entity import Entity
 from project import Project
 from language import Language
-from image import Image
+from namespace import Namespace
+from size import Size
 
 
 class Link:
@@ -66,4 +68,23 @@ class StructuredContent:
         self.in_language = in_language
         self.infobox = infobox or []
         self.article_sections = article_sections or []
-        self.image = image
+        self.image = image       
+
+
+
+class StructuredContentSnapshot:
+    def __init__(self,
+                 identifier: Optional[str] = None,
+                 version: Optional[str] = None,
+                 date_modified: Optional[datetime] = None,
+                 is_part_of: Optional[Project] = None,
+                 in_language: Optional[Language] = None,
+                 namespace: Optional[Namespace] = None,
+                 size: Optional[Size] = None):
+        self.identifier = identifier
+        self.version = version
+        self.date_modified = date_modified
+        self.is_part_of = is_part_of
+        self.in_language = in_language
+        self.namespace = namespace
+        self.size = size
