@@ -68,9 +68,10 @@ class StructuredContent:
         self.in_language = in_language
         self.infobox = infobox or []
         self.article_sections = article_sections or []
-        self.image = image
-        
-        
+        self.image = image       
+
+
+
 class StructuredContentSnapshot:
     def __init__(self,
                  identifier: Optional[str] = None,
@@ -87,5 +88,3 @@ class StructuredContentSnapshot:
         self.in_language = in_language
         self.namespace = namespace
         self.size = size
-       
-        
