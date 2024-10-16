@@ -1,0 +1,38 @@
+[
+    {
+        "identifier": "enwiki_namespace_0",
+        "version": "8a1bd744d81c2093f55bd7a01fb7e856",
+        "date_modified": "2024-10-16T00:39:18.79575095Z",
+        "is_part_of": {
+            "identifier": "enwiki"
+        },
+        "in_language": {
+            "identifier": "en"
+        },
+        "namespace": {
+            "identifier": 0
+        },
+        "size": {
+            "value": 11691.115e0,
+            "unit_text": "MB"
+        }
+    },
+    {
+        "identifier": "enwiki_namespace_0",
+        "version": "d991dfda500a9708ae8d4d9986f19f99",
+        "date_modified": "2024-10-15T10:59:48.162950857Z",
+        "is_part_of": {
+            "identifier": "enwiki"
+        },
+        "in_language": {
+            "identifier": "en"
+        },
+        "namespace": {
+            "identifier": 0
+        },
+        "size": {
+            "value": 11370.225e0,
+            "unit_text": "MB"
+        }
+    }
+]
