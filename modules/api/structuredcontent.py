@@ -1,10 +1,12 @@
 from typing import List, Optional
 from datetime import datetime
+from modules.api.article import Image
 from version import Version
 from entity import Entity
 from project import Project
 from language import Language
-from image import Image
+from namespace import Namespace
+from size import Size
 
 
 class Link:

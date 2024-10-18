@@ -271,5 +271,25 @@ class Client:
         self._get_entity(req, f"structured-contents/{name}", contents)
         return contents
 
+    def get_structured_snapshots(self, req: Request) -> List[dict]:
+        """Get a list of structured content snapshots."""
+        structured_snapshots = []
+        self._get_entity(req, "snapshots/structured-contents/", structured_snapshots)
+        return structured_snapshots
+        
+    def get_structured_snapshot(self, idr: str, req: Request) -> dict:
+        structured_snapshot = {}
+        self._get_entity(req, f"snapshots/structured-contents/{idr}", structured_snapshot)
+        return structured_snapshot
+
+    def head_structured_snapshot(self, idr: str) -> dict:
+        return self._head_entity(f"snapshots/structured-contents/{idr}/download")
+
+    def read_structured_snapshot(self, idr: str, cbk: Callable[[dict], Any]):
+        self._read_entity(f"snapshots/structured-contents/{idr}/download", cbk)
+
+    def download_structured_snapshot(self, idr: str, writer: io.BytesIO):
+        self._download_entity(f"snapshots/structured-contents/{idr}/download", writer)
+
     def stream_articles(self, req: Request, cbk: Callable[[dict], Any]):
         self._subscribe_to_entity("articles", req, cbk)
