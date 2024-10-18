@@ -11,14 +11,36 @@ See our [api documentation](https://enterprise.wikimedia.com/docs/) and [website
 ```bash
 git clone https://github.com/wikimedia-enterprise/wme-sdk-python.git
 cd wme-sdk-python
+
+#edit the `sample.env` file with your credentials and save it as `.env`.  Don't give you WME credentials to anyone!  By the end of this step, you'll have a .env file that looks like, with your username and password:
+#WME_USERNAME=username
+#WME_PASSWORD=password
+#PYTHONPATH=.
+
+
+#setup the virtual environment
+python3 -m venv sdk
+source sdk/bin/activate
+
+#install the dependencies
 pip install -r requirements.txt
+
+# Run the on-demand example
+python3 -m example.ondemand.ondemand
+
+# Run the structured contents example
+python3 -m example.structured-contents.structuredcontents
+
+#exit the virtual environment
+deactivate
 ```
 
-- expose your credentials (if you don't have credentials already, [sign up](https://dashboard.enterprise.wikimedia.com/signup/)):
+- Expose your credentials (if you don't have credentials already, [sign up](https://dashboard.enterprise.wikimedia.com/signup/)) without a `.env` file:
 
 ```bash
 export WME_USERNAME="...your username...";
 export WME_PASSWORD="...your password...";
+export PYTHONPATH=.
 ```
 
 - obtain your access token:
@@ -28,7 +50,7 @@ import time
 import logging
 import threading
 // find the auth_client module in the sdk, file: modules/auth/auth_client.py
-from auth_client import AuthClient, Helper
+from modules.auth.auth_client import AuthClient
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -96,45 +118,64 @@ Example Usage
 - putting it all together and making your first API call (we will be querying the Structured Contents endpoint, which is part of the [On-demand API](https://enterprise.wikimedia.com/docs/on-demand/))
 
 ```python
-import requests
-from dotenv import load_dotenv
-from wme_sdk import api, auth
+import time
+import logging
+import json
+import sys
+
+from modules.auth.helper import Helper
+from modules.auth.auth_client import AuthClient
+from modules.api.api_client import Client, Request, Filter
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 
 def main():
-    load_dotenv()
-    ath = auth.Client()
-
+    auth_client = AuthClient()
     try:
-        lgn = ath.login(username=os.getenv("WME_USERNAME"), password=os.getenv("WME_PASSWORD"))
-    except Exception as err:
-        logging.fatal(err)
+        helper = Helper(auth_client)
+    except Exception as e:
+        logger.fatal(f"Failed to create helper: {e}")
         return
 
     try:
-        acl = api.Client()
-        acl.set_access_token(lgn['access_token'])
+        token = helper.get_access_token()
+        logger.info(f"Access token: {token}")
 
-        req = {
-            "fields": ["name", "abstract"],
-            "filters": [
-                {
-                    "field": "in_language.identifier",
-                    "value": "en",
-                }
-            ]
-        }
+        # Use the token to get articles from the API
+        api_client = Client()
+        api_client.set_access_token(token)
 
-        scs = acl.get_structured_contents("Squirrel", req)
-        for sct in scs:
-            logging.info(sct['name'])
-            logging.info(sct['abstract'])
-    except Exception as err:
-        logging.fatal(err)
-    finally:
+        request = Request(
+            fields=["name", "abstract", "url", "version"],
+            filters=[Filter(field="in_language.identifier", value="en")]
+        )
+
         try:
-            ath.revoke_token(refresh_token=lgn['refresh_token'])
-        except Exception as err:
-            logging.error(err)
+            articles = api_client.get_articles("Montreal", request)
+        except Exception as e:
+            logger.fatal(f"Failed to get articles: {e}")
+            return
+
+        for article in articles:
+            try:
+                art_json = json.dumps(article, indent=2)
+                print(art_json)
+            except Exception as e:
+                logger.error(f"Failed to serialize article: {e}")
+
+    except Exception as e:
+        logger.error(f"Failed to get access token: {e}")
+    finally:
+        helper.stop()
+        logger.info("Exiting")
+        time.sleep(1)
+
+
+def usage():
+    print(f"""Usage: {sys.argv[0]}""")
+
 
 if __name__ == "__main__":
     main()

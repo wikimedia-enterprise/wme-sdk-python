@@ -1,0 +1,688 @@
+[
+  {
+    "name": "Squirrel",
+    "identifier": 4042095,
+    "abstract": "Squirrel steht für: Squirrel (Programmiersprache)\nSQuirreL SQL Client, Datenbank-Software Siehe auch: SquirrelMail, Mail-Software ",
+    "version": {
+      "identifier": 181072077
+    },
+    "url": "https://de.wikipedia.org/wiki/Squirrel",
+    "date_modified": "2018-09-20T12:17:53Z",
+    "main_entity": {
+      "identifier": "Q2315069",
+      "url": "https://www.wikidata.org/entity/Q2315069"
+    },
+    "is_part_of": {
+      "identifier": "dewiki",
+      "url": "https://de.wikipedia.org"
+    },
+    "additional_entities": [
+      {
+        "identifier": "Q2315069",
+        "url": "https://www.wikidata.org/entity/Q2315069",
+        "aspects": ["S", "T"]
+      }
+    ],
+    "in_language": {
+      "identifier": "de"
+    }
+  },
+  {
+    "name": "Squirrel",
+    "identifier": 1601033,
+    "abstract": "Squirrel (с англ. — «белка») — интерпретируемый язык программирования, разработанный специально для использования в качестве скриптового языка в приложениях реального времени, таких как компьютерные игры. Является свободно распространяемым, с открытыми исходными текстами.",
+    "version": {
+      "identifier": 131059810
+    },
+    "url": "https://ru.wikipedia.org/wiki/Squirrel",
+    "date_modified": "2023-06-15T12:06:20Z",
+    "main_entity": {
+      "identifier": "Q1200182",
+      "url": "https://www.wikidata.org/entity/Q1200182"
+    },
+    "is_part_of": {
+      "identifier": "ruwiki",
+      "url": "https://ru.wikipedia.org"
+    },
+    "additional_entities": [
+      {
+        "identifier": "Q1200182",
+        "url": "https://www.wikidata.org/entity/Q1200182",
+        "aspects": ["C.P1195", "C.P154", "C.P306", "C.P373", "C.P400", "S", "T"]
+      }
+    ],
+    "in_language": {
+      "identifier": "ru"
+    },
+    "infobox": [
+      {
+        "name": "Карточка языка программирования\n",
+        "type": "infobox",
+        "has_parts": [
+          {
+            "name": "Squirrel",
+            "type": "section",
+            "has_parts": [
+              {
+                "name": "Класс языка",
+                "type": "field",
+                "value": "мультипарадигменный",
+                "links": [
+                  {
+                    "url": "https://ru.wikipedia.org/wiki/Мультипарадигменный_язык_программирования",
+                    "text": "мультипарадигменный"
+                  }
+                ]
+              },
+              {
+                "name": "Тип исполнения",
+                "type": "field",
+                "value": "интерпретируемый, JIT",
+                "links": [
+                  {
+                    "url": "https://ru.wikipedia.org/wiki/Интерпретатор",
+                    "text": "интерпретируемый"
+                  },
+                  {
+                    "url": "https://ru.wikipedia.org/wiki/JIT",
+                    "text": "JIT"
+                  }
+                ]
+              },
+              {
+                "name": "Появился в",
+                "type": "field",
+                "value": "2003"
+              },
+              {
+                "name": "Автор",
+                "type": "field",
+                "value": "Альберто Демичелис"
+              },
+              {
+                "name": "Выпуск",
+                "type": "field",
+                "value": "3.2 (10 февраля 2022; 17 месяцев назад)",
+                "links": [
+                  {
+                    "url": "https://ru.wikipedia.org/wiki/Стадии_разработки_программного_обеспечения",
+                    "text": "Выпуск"
+                  }
+                ]
+              },
+              {
+                "name": "Испытал влияние",
+                "type": "field",
+                "value": "Lua, Python, Javascript, C++",
+                "links": [
+                  {
+                    "url": "https://ru.wikipedia.org/wiki/Lua",
+                    "text": "Lua"
+                  },
+                  {
+                    "url": "https://ru.wikipedia.org/wiki/Python",
+                    "text": "Python"
+                  },
+                  {
+                    "url": "https://ru.wikipedia.org/wiki/Javascript",
+                    "text": "Javascript"
+                  },
+                  {
+                    "url": "https://ru.wikipedia.org/wiki/C++",
+                    "text": "C++"
+                  }
+                ]
+              },
+              {
+                "name": "Лицензия",
+                "type": "field",
+                "value": "Лицензия zlib/libpng",
+                "links": [
+                  {
+                    "url": "https://ru.wikipedia.org/wiki/Лицензия_на_программное_обеспечение",
+                    "text": "Лицензия"
+                  },
+                  {
+                    "url": "https://ru.wikipedia.org/wiki/Лицензия_zlib",
+                    "text": "Лицензия zlib/libpng"
+                  }
+                ]
+              },
+              {
+                "name": "Сайт",
+                "type": "field",
+                "value": "squirrel-lang.org",
+                "links": [
+                  {
+                    "url": "http://squirrel-lang.org/",
+                    "text": "squirrel-lang.org"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Squirrel",
+    "identifier": 28492,
+    "abstract": " Squirrels are members of the family Sciuridae, a family that includes small or medium-size rodents. The squirrel family includes tree squirrels, ground squirrels, and flying squirrels. Squirrels are indigenous to the Americas, Eurasia, and Africa, and were introduced by humans to Australia. The earliest known fossilized squirrels date from the Eocene epoch, and among other living rodent families, the squirrels are most closely related to the mountain beaver and to the dormice.",
+    "version": {
+      "identifier": 1171934824,
+      "comment": "[[Wikipedia:OABOT|Open access bot]]: pmc, doi updated in citation with #oabot.",
+      "is_minor_edit": true,
+      "has_tag_needs_citation": true,
+      "scores": {
+        "damaging": {
+          "probability": {
+            "false": 0.9932501771640722,
+            "true": 0.006749822835927898
+          }
+        },
+        "goodfaith": {
+          "prediction": true,
+          "probability": {
+            "false": 0.008082552037208646,
+            "true": 0.9919174479627914
+          }
+        }
+      },
+      "editor": {
+        "identifier": 28481209,
+        "name": "OAbot",
+        "edit_count": 342731,
+        "groups": ["bot", "*", "user", "autoconfirmed"],
+        "is_bot": true,
+        "date_started": "2016-06-03T17:03:59Z"
+      },
+      "number_of_characters": 34611,
+      "size": {
+        "value": 34723,
+        "unit_text": "B"
+      }
+    },
+    "url": "https://en.wikipedia.org/wiki/Squirrel",
+    "date_created": "2001-10-09T17:55:09Z",
+    "date_modified": "2023-08-24T01:14:42Z",
+    "main_entity": {
+      "identifier": "Q9482",
+      "url": "https://www.wikidata.org/entity/Q9482"
+    },
+    "is_part_of": {
+      "identifier": "enwiki",
+      "url": "https://en.wikipedia.org"
+    },
+    "additional_entities": [
+      {
+        "identifier": "P4807",
+        "url": "https://www.wikidata.org/entity/P4807",
+        "aspects": ["C.P1630"]
+      },
+      {
+        "identifier": "P6039",
+        "url": "https://www.wikidata.org/entity/P6039",
+        "aspects": ["C.P1630"]
+      },
+      {
+        "identifier": "P842",
+        "url": "https://www.wikidata.org/entity/P842",
+        "aspects": ["C.P1630"]
+      },
+      {
+        "identifier": "P10585",
+        "url": "https://www.wikidata.org/entity/P10585",
+        "aspects": ["C.P1630"]
+      },
+      {
+        "identifier": "P3240",
+        "url": "https://www.wikidata.org/entity/P3240",
+        "aspects": ["C.P1630"]
+      },
+      {
+        "identifier": "P5055",
+        "url": "https://www.wikidata.org/entity/P5055",
+        "aspects": ["C.P1630"]
+      },
+      {
+        "identifier": "P685",
+        "url": "https://www.wikidata.org/entity/P685",
+        "aspects": ["C.P1630"]
+      },
+      {
+        "identifier": "P3031",
+        "url": "https://www.wikidata.org/entity/P3031",
+        "aspects": ["C.P1630"]
+      },
+      {
+        "identifier": "P815",
+        "url": "https://www.wikidata.org/entity/P815",
+        "aspects": ["C.P1630"]
+      },
+      {
+        "identifier": "P846",
+        "url": "https://www.wikidata.org/entity/P846",
+        "aspects": ["C.P1630"]
+      },
+      {
+        "identifier": "P959",
+        "url": "https://www.wikidata.org/entity/P959",
+        "aspects": ["C.P1630"]
+      },
+      {
+        "identifier": "Q9482",
+        "url": "https://www.wikidata.org/entity/Q9482",
+        "aspects": ["C", "D.en", "O", "S", "T"]
+      },
+      {
+        "identifier": "P1895",
+        "url": "https://www.wikidata.org/entity/P1895",
+        "aspects": ["C.P1630"]
+      },
+      {
+        "identifier": "P1992",
+        "url": "https://www.wikidata.org/entity/P1992",
+        "aspects": ["C.P1630"]
+      },
+      {
+        "identifier": "P4024",
+        "url": "https://www.wikidata.org/entity/P4024",
+        "aspects": ["C.P1630"]
+      },
+      {
+        "identifier": "P830",
+        "url": "https://www.wikidata.org/entity/P830",
+        "aspects": ["C.P1630"]
+      },
+      {
+        "identifier": "P3151",
+        "url": "https://www.wikidata.org/entity/P3151",
+        "aspects": ["C.P1630"]
+      },
+      {
+        "identifier": "P3606",
+        "url": "https://www.wikidata.org/entity/P3606",
+        "aspects": ["C.P1630"]
+      }
+    ],
+    "in_language": {
+      "identifier": "en"
+    },
+    "image": {
+      "content_url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Sciuridae.jpg",
+      "width": 600,
+      "height": 600
+    },
+    "infobox": [
+      {
+        "name": "Pp-semi-indef",
+        "type": "infobox",
+        "has_parts": [
+          {
+            "type": "section",
+            "has_parts": [
+              {
+                "type": "field",
+                "value": "Squirrels Temporal range: Late Eocene – Recent PreꞒ Ꞓ O S D C P T J K Pg N",
+                "links": [
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Eocene",
+                    "text": "Eocene"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Precambrian",
+                    "text": "PreꞒ"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Cambrian",
+                    "text": "Ꞓ"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Ordovician",
+                    "text": "O"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Silurian",
+                    "text": "S"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Devonian",
+                    "text": "D"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Carboniferous",
+                    "text": "C"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Permian",
+                    "text": "P"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Triassic",
+                    "text": "T"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Jurassic",
+                    "text": "J"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Cretaceous",
+                    "text": "K"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Paleogene",
+                    "text": "Pg"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Neogene",
+                    "text": "N"
+                  }
+                ]
+              },
+              {
+                "type": "image",
+                "images": [
+                  {
+                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Sciuridae.jpg/250px-Sciuridae.jpg",
+                    "height": 250,
+                    "width": 250
+                  }
+                ]
+              },
+              {
+                "type": "field",
+                "value": "Various members of the family Sciuridae",
+                "links": [
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Prevost's_squirrel",
+                    "text": "Callosciurus prevostii"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Siberian_chipmunk",
+                    "text": "Eutamias sibiricus"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/American_red_squirrel",
+                    "text": "Tamiasciurus hudsonicus"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Fox_squirrel",
+                    "text": "Sciurus niger"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Urocitellus_columbianus",
+                    "text": "Urocitellus columbianus"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Smith's_bush_squirrel",
+                    "text": "Paraxerus cepapi"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Cape_ground_squirrel",
+                    "text": "Geosciurus inauris"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Marmot",
+                    "text": "Marmota"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Black-tailed_prairie_dog",
+                    "text": "Cynomys ludovicianus"
+                  }
+                ]
+              },
+              {
+                "type": "field",
+                "value": "Callosciurus prevostii Eutamias sibiricus Tamiasciurus hudsonicus",
+                "links": [
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Prevost's_squirrel",
+                    "text": "Callosciurus prevostii"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Siberian_chipmunk",
+                    "text": "Eutamias sibiricus"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/American_red_squirrel",
+                    "text": "Tamiasciurus hudsonicus"
+                  }
+                ]
+              },
+              {
+                "type": "field",
+                "value": "Sciurus niger Urocitellus columbianus Paraxerus cepapi",
+                "links": [
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Fox_squirrel",
+                    "text": "Sciurus niger"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Urocitellus_columbianus",
+                    "text": "Urocitellus columbianus"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Smith's_bush_squirrel",
+                    "text": "Paraxerus cepapi"
+                  }
+                ]
+              },
+              {
+                "type": "field",
+                "value": "Geosciurus inauris Marmota sp. Cynomys ludovicianus",
+                "links": [
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Cape_ground_squirrel",
+                    "text": "Geosciurus inauris"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Marmot",
+                    "text": "Marmota"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Black-tailed_prairie_dog",
+                    "text": "Cynomys ludovicianus"
+                  }
+                ]
+              },
+              {
+                "type": "field",
+                "value": "Scientific classification",
+                "images": [
+                  {
+                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr.svg/15px-OOjs_UI_icon_edit-ltr.svg.png",
+                    "alternative_text": "Edit this classification",
+                    "height": 15,
+                    "width": 15
+                  }
+                ],
+                "links": [
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Taxonomy_(biology)",
+                    "text": "Scientific classification"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Template:Taxonomy/Sciuridae",
+                    "text": "Edit this classification",
+                    "images": [
+                      {
+                        "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr.svg/15px-OOjs_UI_icon_edit-ltr.svg.png",
+                        "alternative_text": "Edit this classification",
+                        "height": 15,
+                        "width": 15
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Domain:",
+                "type": "field",
+                "value": "Eukaryota",
+                "links": [
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Eukaryote",
+                    "text": "Eukaryota"
+                  }
+                ]
+              },
+              {
+                "name": "Kingdom:",
+                "type": "field",
+                "value": "Animalia",
+                "links": [
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Animal",
+                    "text": "Animalia"
+                  }
+                ]
+              },
+              {
+                "name": "Phylum:",
+                "type": "field",
+                "value": "Chordata",
+                "links": [
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Chordate",
+                    "text": "Chordata"
+                  }
+                ]
+              },
+              {
+                "name": "Class:",
+                "type": "field",
+                "value": "Mammalia",
+                "links": [
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Mammal",
+                    "text": "Mammalia"
+                  }
+                ]
+              },
+              {
+                "name": "Order:",
+                "type": "field",
+                "value": "Rodentia",
+                "links": [
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Rodent",
+                    "text": "Rodentia"
+                  }
+                ]
+              },
+              {
+                "name": "Suborder:",
+                "type": "field",
+                "value": "Sciuromorpha",
+                "links": [
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Sciuromorpha",
+                    "text": "Sciuromorpha"
+                  }
+                ]
+              },
+              {
+                "name": "Family:",
+                "type": "field",
+                "value": "Sciuridae Fischer de Waldheim, 1817",
+                "links": [
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Squirrel",
+                    "text": "Sciuridae"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Johann_Fischer_von_Waldheim",
+                    "text": "Fischer de Waldheim"
+                  }
+                ]
+              },
+              {
+                "type": "field",
+                "value": "Type genus",
+                "links": [
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Type_genus",
+                    "text": "Type genus"
+                  }
+                ]
+              },
+              {
+                "type": "field",
+                "value": "Sciurus Linnaeus, 1758",
+                "links": [
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Sciurus",
+                    "text": "Sciurus"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Carl_Linnaeus",
+                    "text": "Linnaeus"
+                  }
+                ]
+              },
+              {
+                "type": "field",
+                "value": "Subfamilies and tribes"
+              },
+              {
+                "type": "field",
+                "value": "Subfamily Ratufinae Subfamily Sciurillinae Subfamily Sciurinae Tribe Sciurini Tribe Pteromyini Subfamily Callosciurinae Tribe Callosciurini Tribe Funambulini Subfamily Xerinae Tribe Xerini Tribe Protoxerini Tribe Marmotini",
+                "links": [
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Ratufinae",
+                    "text": "Ratufinae"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Sciurillinae",
+                    "text": "Sciurillinae"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Sciurinae",
+                    "text": "Sciurinae"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Sciurini",
+                    "text": "Sciurini"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Pteromyini",
+                    "text": "Pteromyini"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Callosciurinae",
+                    "text": "Callosciurinae"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Callosciurini",
+                    "text": "Callosciurini"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Funambulini",
+                    "text": "Funambulini"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Xerinae",
+                    "text": "Xerinae"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Xerini",
+                    "text": "Xerini"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Protoxerini",
+                    "text": "Protoxerini"
+                  },
+                  {
+                    "url": "https://en.wikipedia.org/wiki/Marmotini",
+                    "text": "Marmotini"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,5 @@
+{
+  "name": "File",
+  "identifier": 6,
+  "description": "The File namespace is a namespace consisting of administration pages in which all of Wikipedia's media content resides. On Wikipedia, all media filenames begin with the prefix File:, including data files for images, video clips, or audio clips, including document length clips; or MIDI files (a small file of computer music instructions)."
+}

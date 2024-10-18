@@ -1,0 +1,128 @@
+[
+    {
+        "identifier": "simplewiki_namespace_0_chunk_0",
+        "version": "34a24756dec6a198a2f856bb46f1bacb",
+        "date_modified": "2024-08-29T00:03:26.941150359Z",
+        "is_part_of": {
+            "identifier": "simplewiki"
+        },
+        "in_language": {
+            "identifier": "simple"
+        },
+        "namespace": {
+            "identifier": 0
+        },
+        "size": {
+            "value": 322.660273e0,
+            "unit_text": "MB"
+        }
+    },
+    {
+        "identifier": "simplewiki_namespace_0_chunk_1",
+        "version": "d8187cf7fb743c1bb211b1a3d1115318",
+        "date_modified": "2024-08-29T00:04:00.719148488Z",
+        "is_part_of": {
+            "identifier": "simplewiki"
+        },
+        "in_language": {
+            "identifier": "simple"
+        },
+        "namespace": {
+            "identifier": 0
+        },
+        "size": {
+            "value": 326.922908e0,
+            "unit_text": "MB"
+        }
+    },
+    {
+        "identifier": "simplewiki_namespace_0_chunk_2",
+        "version": "7c1e429cad3c73af90e25838d0dba9f8",
+        "date_modified": "2024-08-29T00:04:33.447790915Z",
+        "is_part_of": {
+            "identifier": "simplewiki"
+        },
+        "in_language": {
+            "identifier": "simple"
+        },
+        "namespace": {
+            "identifier": 0
+        },
+        "size": {
+            "value": 317.082705e0,
+            "unit_text": "MB"
+        }
+    },
+    {
+        "identifier": "simplewiki_namespace_0_chunk_3",
+        "version": "4b3a2f570d682d7f79fca64d0d88a6e5",
+        "date_modified": "2024-08-29T00:05:09.208874882Z",
+        "is_part_of": {
+            "identifier": "simplewiki"
+        },
+        "in_language": {
+            "identifier": "simple"
+        },
+        "namespace": {
+            "identifier": 0
+        },
+        "size": {
+            "value": 323.909161e0,
+            "unit_text": "MB"
+        }
+    },
+    {
+        "identifier": "simplewiki_namespace_0_chunk_4",
+        "version": "035e2d83693a2aa56c2249bd706c1cc6",
+        "date_modified": "2024-08-29T00:05:42.919168674Z",
+        "is_part_of": {
+            "identifier": "simplewiki"
+        },
+        "in_language": {
+            "identifier": "simple"
+        },
+        "namespace": {
+            "identifier": 0
+        },
+        "size": {
+            "value": 326.65674e0,
+            "unit_text": "MB"
+        }
+    },
+    {
+        "identifier": "simplewiki_namespace_0_chunk_5",
+        "version": "75508c83cec5da4512c5eb24746861f3",
+        "date_modified": "2024-08-29T00:06:18.522432641Z",
+        "is_part_of": {
+            "identifier": "simplewiki"
+        },
+        "in_language": {
+            "identifier": "simple"
+        },
+        "namespace": {
+            "identifier": 0
+        },
+        "size": {
+            "value": 334.451959e0,
+            "unit_text": "MB"
+        }
+    },
+    {
+        "identifier": "simplewiki_namespace_0_chunk_6",
+        "version": "0575dbd3ba0ca52aaefeee8572939534",
+        "date_modified": "2024-08-29T00:06:40.243457897Z",
+        "is_part_of": {
+            "identifier": "simplewiki"
+        },
+        "in_language": {
+            "identifier": "simple"
+        },
+        "namespace": {
+            "identifier": 0
+        },
+        "size": {
+            "value": 226.75665e0,
+            "unit_text": "MB"
+        }
+    }
+]

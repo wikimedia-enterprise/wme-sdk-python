@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Articles",
+    "identifier": 0,
+    "description": "The main namespace, article namespace, or mainspace is the namespace of Wikipedia that contains the encyclopedia proper—that is, where 'live' Wikipedia articles reside."
+  },
+  {
+    "name": "File",
+    "identifier": 6,
+    "description": "The File namespace is a namespace consisting of administration pages in which all of Wikipedia's media content resides. On Wikipedia, all media filenames begin with the prefix File:, including data files for images, video clips, or audio clips, including document length clips; or MIDI files (a small file of computer music instructions)."
+  },
+  {
+    "name": "Template",
+    "identifier": 10,
+    "description": "The Template namespace on Wikipedia is used to store templates, which contain Wiki markup intended for inclusion on multiple pages, usually via transclusion. Although the Template namespace is used for storing most templates, it is possible to transclude and substitute from other namespaces, and so some template pages are placed in other namespaces, such as the User namespace."
+  },
+  {
+    "name": "Category",
+    "identifier": 14,
+    "description": "Categories are intended to group together pages on similar subjects. They are implemented by a MediaWiki feature that adds any page with a text like [[Category:XYZ]] in its wiki markup to the automated listing that is the category with name XYZ. Categories help readers to find, and navigate around, a subject area, to see pages sorted by title, and to thus find article relationships."
+  }
+]

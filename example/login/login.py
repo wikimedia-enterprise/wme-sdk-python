@@ -1,7 +1,7 @@
 import logging
 from contextlib import contextmanager
 
-from auth_client import AuthClient
+from modules.auth.auth_client import AuthClient
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

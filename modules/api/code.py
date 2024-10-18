@@ -9,3 +9,19 @@ class Code:
         self.identifier = identifier
         self.name = name
         self.description = description
+
+    @staticmethod
+    def from_json(data: dict) -> 'Code':
+        return Code(
+            identifier=data['identifier'],
+            name=data['name'],
+            description=data['description']
+        )
+
+    @staticmethod
+    def to_json(code: 'Code') -> dict:
+        return {
+            'identifier': code.identifier,
+            'name': code.name,
+            'description': code.description
+        }

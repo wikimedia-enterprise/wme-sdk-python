@@ -1,0 +1,37 @@
+[
+  {
+    "identifier": "wiki",
+    "name": "Wikipedia",
+    "description": "The free encyclopedia."
+  },
+  {
+    "identifier": "wikibooks",
+    "name": "Wikibooks",
+    "description": "E-book textbooks and annotated texts."
+  },
+  {
+    "identifier": "wikinews",
+    "name": "Wikinews",
+    "description": "The free news source."
+  },
+  {
+    "identifier": "wikiquote",
+    "name": "Wikiquote",
+    "description": "Quotes across your favorite books, movies, authors, and more."
+  },
+  {
+    "identifier": "wikisource",
+    "name": "Wikisource",
+    "description": "The free digital library."
+  },
+  {
+    "identifier": "wikivoyage",
+    "name": "Wikivoyage",
+    "description": "The ultimate worldwide travel guide."
+  },
+  {
+    "identifier": "wiktionary",
+    "name": "Wiktionary",
+    "description": "A dictionary for over 170 languages."
+  }
+]

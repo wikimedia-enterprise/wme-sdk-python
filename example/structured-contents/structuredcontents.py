@@ -1,7 +1,8 @@
 import logging
 import contextlib
-from auth_client import AuthClient
-from api_client import ApiClient, Request, Filter
+
+from modules.auth.auth_client import AuthClient
+from modules.api.api_client import Client, Request, Filter
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -30,7 +31,7 @@ def main():
     access_token = login_response["access_token"]
 
     with revoke_token_on_exit(auth_client, refresh_token):
-        api_client = ApiClient()
+        api_client = Client()
         api_client.set_access_token(access_token)
 
         request = Request(

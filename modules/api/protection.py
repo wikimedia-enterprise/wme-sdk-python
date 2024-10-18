@@ -9,3 +9,19 @@ class Protection:
         self.protection_type = protection_type
         self.level = level
         self.expiry = expiry
+
+    @staticmethod
+    def from_json(data: dict) -> 'Protection':
+        return Protection(
+            protection_type=data['type'],
+            level=data['level'],
+            expiry=data['expiry']
+        )
+
+    @staticmethod
+    def to_json(protection: 'Protection') -> dict:
+        return {
+            'type': protection.protection_type,
+            'level': protection.level,
+            'expiry': protection.expiry
+        }

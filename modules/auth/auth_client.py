@@ -22,7 +22,9 @@ class AuthClient:
     def _post(self, url, data):
         response = requests.post(f"{self.base_url}{url}", json=data)
         response.raise_for_status()
-        return response.json()
+        if len(response.text) > 0:
+            return response.json()
+        return {}
 
     def login(self):
         data = {"username": self.username, "password": self.password}
