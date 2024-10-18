@@ -21,3 +21,25 @@ class Event:
         self.date_published = date_published
         self.partition = partition
         self.offset = offset
+
+    @staticmethod
+    def from_json(data: dict) -> 'Event':
+        return Event(
+            identifier=data['identifier'],
+            event_type=data['eventType'],
+            date_created=datetime.fromisoformat(data['dateCreated']),
+            date_published=datetime.fromisoformat(data['datePublished']),
+            partition=data['partition'],
+            offset=data['offset']
+        )
+
+    @staticmethod
+    def to_json(event: 'Event') -> dict:
+        return {
+            'identifier': event.identifier,
+            'eventType': event.event_type,
+            'dateCreated': event.date_created.isoformat(),
+            'datePublished': event.date_published.isoformat(),
+            'partition': event.partition,
+            'offset': event.offset
+        }

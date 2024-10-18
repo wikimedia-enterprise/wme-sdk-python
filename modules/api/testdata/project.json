@@ -1,0 +1,9 @@
+{
+  "name": "Wikipedia",
+  "identifier": "enwiki",
+  "url": "https://en.wikipedia.org",
+  "code": "wiki",
+  "in_language": {
+    "identifier": "en"
+  }
+}

@@ -2,8 +2,8 @@ import json
 import logging
 import contextlib
 
-from auth_client import AuthClient
-from api_client import ApiClient, Request, Filter
+from modules.auth.auth_client import AuthClient
+from modules.api.api_client import Client, Request, Filter
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -32,14 +32,19 @@ def main():
     access_token = login_response["access_token"]
 
     with revoke_token_on_exit(auth_client, refresh_token):
-        api_client = ApiClient()
+        api_client = Client()
         api_client.set_access_token(access_token)
 
+        filters = [
+            Filter(field="in_language.identifier", value="en"),
+            Filter(field="is_part_of.identifier", value="enwiki")]
+
         request = Request(
-            fields=["name", "abstract", "url", "version"],
-            filters=[Filter(field="in_language.identifier", value="en")]
+            fields=["name", "abstract", "url", "version", "article_body.html"],
+            filters=filters
         )
 
+        articles = []
         try:
             articles = api_client.get_articles("Montreal", request)
         except Exception as e:

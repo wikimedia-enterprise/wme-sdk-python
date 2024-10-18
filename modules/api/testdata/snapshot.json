@@ -1,0 +1,18 @@
+{
+  "identifier": "simplewiki_namespace_0",
+  "version": "9223fd61d678b7a9b34dac2970e74dab",
+  "date_modified": "2023-09-04T03:22:17.581702997Z",
+  "is_part_of": {
+    "identifier": "simplewiki"
+  },
+  "in_language": {
+    "identifier": "simple"
+  },
+  "namespace": {
+    "identifier": 0
+  },
+  "size": {
+    "value": 1791.854,
+    "unit_text": "MB"
+  }
+}

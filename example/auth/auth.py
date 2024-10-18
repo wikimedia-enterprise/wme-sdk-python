@@ -2,9 +2,10 @@ import time
 import logging
 import json
 import sys
-from auth_client import AuthClient
-from helper import Helper
-from api_client import ApiClient, Request, Filter
+
+from modules.auth.helper import Helper
+from modules.auth.auth_client import AuthClient
+from modules.api.api_client import Client, Request, Filter
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -23,7 +24,7 @@ def main():
         logger.info(f"Access token: {token}")
 
         # Use the token to get articles from the API
-        api_client = ApiClient()
+        api_client = Client()
         api_client.set_access_token(token)
 
         request = Request(

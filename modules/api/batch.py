@@ -22,3 +22,27 @@ class Batch:
         self.in_language = in_language
         self.namespace = namespace
         self.size = size
+
+    @staticmethod
+    def from_json(data: dict) -> 'Batch':
+        return Batch(
+            identifier=data['identifier'],
+            version=data['version'],
+            date_modified=datetime.fromisoformat(data['dateModified']),
+            is_part_of=Project.from_json(data['isPartOf']),
+            in_language=Language.from_json(data['inLanguage']),
+            namespace=Namespace.from_json(data['namespace']),
+            size=Size.from_json(data['size'])
+        )
+
+    @staticmethod
+    def to_json(batch: 'Batch') -> dict:
+        return {
+            'identifier': batch.identifier,
+            'version': batch.version,
+            'dateModified': batch.date_modified.isoformat(),
+            'isPartOf': Project.to_json(batch.is_part_of),
+            'inLanguage': Language.to_json(batch.in_language),
+            'namespace': Namespace.to_json(batch.namespace),
+            'size': Size.to_json(batch.size)
+        }

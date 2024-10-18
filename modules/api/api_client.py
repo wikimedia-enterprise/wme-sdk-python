@@ -11,9 +11,16 @@ DATE_FORMAT = "%Y-%m-%d"
 
 
 class Filter:
-    def __init__(self, field: str, value: Any):
+    def __init__(self, field: str, value: str):
         self.field = field
         self.value = value
+
+    def to_dict(self):
+        return {
+            'field': self.field,
+            'value': self.value
+        }
+
 
 
 class Request:
@@ -33,6 +40,21 @@ class Request:
         self.offsets = offsets or {}
         self.since_per_partition = since_per_partition or {}
 
+    def to_json(self):
+        # Build the dictionary without any empty or None values
+        result = {
+            'since': self.since.isoformat() if self.since else None,
+            'fields': self.fields if self.fields else None,
+            'filters': [f.to_dict() for f in self.filters] if self.filters else None,
+            'limit': self.limit,
+            'parts': self.parts if self.parts else None,
+            'offsets': self.offsets if self.offsets else None,
+            'since_per_partition': {k: v.isoformat() for k, v in self.since_per_partition.items()} if self.since_per_partition else None
+        }
+
+        # Remove keys with None or empty values
+        return {k: v for k, v in result.items() if v not in [None, [], {}, '']}
+
 
 class Client:
     def __init__(self, **kwargs):
@@ -47,7 +69,7 @@ class Client:
         self.scanner_buffer_size = kwargs.get('scanner_buffer_size', 20971520)
 
     def _new_request(self, url: str, method: str, path: str, req: Optional[Request]) -> requests.Request:
-        data = json.dumps(req.__dict__) if req else ''
+        data = json.dumps(req.to_json()) if req else ''
         headers = {
             'User-Agent': self.user_agent,
             'Content-Type': 'application/json',
@@ -59,12 +81,27 @@ class Client:
         prepared = self.http_client.prepare_request(req)
         response = self.http_client.send(prepared)
         response.raise_for_status()
+
+        try:
+            # Attempt to parse the JSON response
+            response.json()
+        except ValueError:
+            print("Failed to revoke token: Invalid or empty JSON response")
+            raise
+
         return response
 
     def _get_entity(self, req: Optional[Request], path: str, val: Any):
         request = self._new_request(self.base_url, 'POST', path, req)
         response = self._do(request)
-        val.update(response.json())
+        json_response = response.json()
+
+        if isinstance(val, list) and isinstance(json_response, list):
+            val.extend(json_response)  # If both are lists
+        elif isinstance(val, dict) and isinstance(json_response, dict):
+            val.update(json_response)  # If both are dicts
+        else:
+            raise TypeError("Incompatible types for val and json_response")
 
     def _read_loop(self, rdr: io.BytesIO, cbk: Callable[[dict], Any]):
         scanner = io.TextIOWrapper(rdr, buffer_size=self.scanner_buffer_size)
@@ -204,6 +241,25 @@ class Client:
 
     def download_snapshot(self, idr: str, writer: io.BytesIO):
         self._download_entity(f"snapshots/{idr}/download", writer)
+
+    def get_chunks(self, sid: str, req: Request) -> List[dict]:
+        chunks = []
+        self._get_entity(req, f"snapshots/{sid}/chunks", chunks)
+        return chunks
+
+    def get_chunk(self, sid: str, idr: str, req: Request) -> dict:
+        chunk = {}
+        self._get_entity(req, f"snapshots/{sid}/chunks/{idr}", chunk)
+        return chunk
+
+    def head_chunk(self, sid: str, idr: str) -> dict:
+        return self._head_entity(f"snapshots/{sid}/chunks/{idr}/download")
+
+    def read_chunk(self, sid: str, idr: str, cbk: Callable[[dict], Any]):
+        self._read_entity(f"snapshots/{sid}/chunks/{idr}/download", cbk)
+
+    def download_chunk(self, sid: str, idr: str, writer: io.BytesIO):
+        self._download_entity(f"snapshots/{sid}/chunks/{idr}/download", writer)
 
     def get_articles(self, name: str, req: Request) -> List[dict]:
         articles = []

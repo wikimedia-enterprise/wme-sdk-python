@@ -9,3 +9,9 @@ class Entity:
         self.identifier = identifier
         self.url = url
         self.aspects = aspects or []
+
+    @staticmethod
+    def from_json(data: dict) -> 'Entity':
+        return Entity(
+            # Initialize Entity fields from data
+        )

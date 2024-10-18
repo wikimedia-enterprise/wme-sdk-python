@@ -36,3 +36,36 @@ class Version:
         self.editor = editor
         self.number_of_characters = number_of_characters
         self.size = size
+
+    @staticmethod
+    def from_json(data: dict) -> 'Version':
+        return Version(
+            # Initialize Version fields from data
+            data['identifier'],
+            data['comment'],
+            data['tags'],
+            data['is_minor_edit'],
+            data['is_flagged_stable'],
+            data['is_breaking_news'],
+            data['has_tag_needs_citation'],
+            Scores.from_json(data['scores']),
+            Editor.from_json(data['editor']),
+            data['number_of_characters'],
+            Size.from_json(data['size'])
+        )
+
+    @staticmethod
+    def to_json(version: 'Version') -> dict:
+        return {
+            'identifier': version.identifier,
+            'comment': version.comment,
+            'tags': version.tags,
+            'is_minor_edit': version.is_minor_edit,
+            'is_flagged_stable': version.is_flagged_stable,
+            'is_breaking_news': version.is_breaking_news,
+            'has_tag_needs_citation': version.has_tag_needs_citation,
+            'scores': Scores.to_json(version.scores),
+            'editor': Editor.to_json(version.editor),
+            'number_of_characters': version.number_of_characters,
+            'size': Size.to_json(version.size)
+        }

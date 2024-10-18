@@ -16,6 +16,14 @@ class Link:
         self.text = text
         self.images = images or []
 
+    @staticmethod
+    def from_json(data: dict) -> 'Link':
+        return Link(
+            url=data['url'],
+            text=data['text'],
+            images=[Image.from_json(image) for image in data['images']]
+        )
+
 
 class Part:
     def __init__(self,
@@ -34,6 +42,17 @@ class Part:
         self.links = links or []
         self.has_parts = has_parts or []
 
+    @staticmethod
+    def from_json(data: dict) -> 'Part':
+        return Part(
+            name=data['name'],
+            part_type=data['type'],
+            value=data['value'],
+            values=data['values'],
+            images=[Image.from_json(image) for image in data['images']],
+            links=[Link.from_json(link) for link in data['links']],
+            has_parts=[Part.from_json(part) for part in data['hasParts']]
+        )
 
 class StructuredContent:
     def __init__(self,
@@ -67,3 +86,43 @@ class StructuredContent:
         self.infobox = infobox or []
         self.article_sections = article_sections or []
         self.image = image
+
+    @staticmethod
+    def from_json(data: dict) -> 'StructuredContent':
+        return StructuredContent(
+            name=data['name'],
+            identifier=data['identifier'],
+            abstract=data['abstract'],
+            description=data['description'],
+            version=Version.from_json(data['version']),
+            url=data['url'],
+            date_created=datetime.fromisoformat(data['dateCreated']),
+            date_modified=datetime.fromisoformat(data['dateModified']),
+            main_entity=Entity.from_json(data['mainEntity']),
+            additional_entities=[Entity.from_json(entity) for entity in data['additionalEntities']],
+            is_part_of=Project.from_json(data['isPartOf']),
+            in_language=Language.from_json(data['inLanguage']),
+            infobox=[Part.from_json(part) for part in data['infobox']],
+            article_sections=[Part.from_json(section) for section in data['articleSections']],
+            image=Image.from_json(data['image'])
+        )
+
+    @staticmethod
+    def to_json(structured_content: 'StructuredContent') -> dict:
+        return {
+            'name': structured_content.name,
+            'identifier': structured_content.identifier,
+            'abstract': structured_content.abstract,
+            'description': structured_content.description,
+            'version': Version.to_json(structured_content.version),
+            'url': structured_content.url,
+            'dateCreated': structured_content.date_created.isoformat(),
+            'dateModified': structured_content.date_modified.isoformat(),
+            'mainEntity': Entity.to_json(structured_content.main_entity),
+            'additionalEntities': [Entity.to_json(entity) for entity in structured_content.additional_entities],
+            'isPartOf': Project.to_json(structured_content.is_part_of),
+            'inLanguage': Language.to_json(structured_content.in_language),
+            'infobox': [Part.to_json(part) for part in structured_content.infobox],
+            'articleSections': [Part.to_json(section) for section in structured_content.article_sections],
+            'image': Image.to_json(structured_content.image)
+        }
