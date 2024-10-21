@@ -1,0 +1,2694 @@
+{
+    "name": "1996 United States presidential election",
+    "identifier": 32077,
+    "abstract": "The 1996 United States presidential election was the 53rd quadrennial presidential election, held on Tuesday, November 5, 1996. Incumbent Democratic President Bill Clinton and his running mate incumbent Democratic Vice President Al Gore were re-elected to a second and final term defeating the Republican ticket of former Senate Majority Leader Bob Dole and former Secretary of Housing and Urban Development Jack Kemp and the Reform ticket of businessman Ross Perot and economist Pat Choate. Clinton and Vice President Al Gore were re-nominated without incident by the Democratic Party. Numerous candidates entered the 1996 Republican primaries, with Dole considered the early front-runner. Dole clinched the nomination after defeating challenges by publisher Steve Forbes and paleoconservative leader Pat Buchanan. Dole's running mate was Jack Kemp, a former congressman and football player who had served as the housing secretary under President George H. W. Bush. Ross Perot, who had won 18.9% of the popular vote as an independent candidate in the 1992 election, ran as the candidate of the Reform Party. Perot received less media attention in 1996 and was excluded from the presidential debates. Clinton's chances of winning were initially considered slim in the middle of his term, as his party had lost both the House of Representatives and the Senate in 1994 for the first time in decades. He was able to regain ground as the economy began to recover from the early 1990s recession with a relatively stable world stage. Clinton tied Dole to Newt Gingrich, the unpopular Republican speaker of the House, and warned that Republicans would increase the deficit and slash spending on popular programs like Social Security and Medicare. Dole promised an across-the-board 15% reduction in federal income taxes and labeled Clinton as a member of the \"spoiled\" Baby Boomer generation. Dole's age was a persistent issue in the election, and gaffes by Dole exacerbated the issue for his campaign. On election day, Clinton defeated Dole by a wide margin, winning 379 electors to Dole's 159 and taking 49.2% of the national popular vote to Dole's 40.7%. As in 1992, Perot's strong candidacy held both major party candidates below 50% nationwide. Notably, Clinton's strength with many southern and rural whites makes him the last Democrat as of 2020 to carry the states of Kentucky, Louisiana, West Virginia, Arkansas, Missouri, and Tennessee in a presidential election. He was also the last Democrat to win Arizona until 2020. This was the first presidential election since 1944 in which an incumbent Democratic president won a second full term in office. It is the most recent election in which the Democratic presidential nominee never served as a senator. This is also the only election between 1980 and 2004 in which the Bushes did not appear on the Republican ticket.",
+    "version": {
+        "identifier": 1252310101,
+        "comment": "Reverted 1 edit by [[Special:Contributions/200.68.184.164|200.68.184.164]] ([[User talk:200.68.184.164|talk]]) to last revision by Fiziker",
+        "tags": [
+            "mw-undo",
+            "twinkle"
+        ],
+        "is_minor_edit": true,
+        "scores": {
+            "revertrisk": {
+                "prediction": true,
+                "probability": {
+                    "false": 0.4536481499671936,
+                    "true": 0.5463518500328064
+                }
+            }
+        },
+        "editor": {
+            "identifier": 38706409,
+            "name": "Zinderboff",
+            "edit_count": 2867,
+            "groups": [
+                "extendedconfirmed",
+                "ipblock-exempt",
+                "*",
+                "user",
+                "autoconfirmed"
+            ],
+            "date_started": "2020-03-05T21:32:37Z"
+        },
+        "number_of_characters": 109647,
+        "size": {
+            "value": 110509,
+            "unit_text": "B"
+        },
+        "maintenance_tags": {
+            "citation_needed_count": 1
+        }
+    },
+    "url": "https://en.wikipedia.org/wiki/1996_United_States_presidential_election",
+    "date_created": "2001-10-12T20:38:58Z",
+    "date_modified": "2024-10-20T19:51:38Z",
+    "main_entity": {
+        "identifier": "Q659166",
+        "url": "https://www.wikidata.org/entity/Q659166"
+    },
+    "is_part_of": {
+        "identifier": "enwiki",
+        "url": "https://en.wikipedia.org"
+    },
+    "additional_entities": [
+        {
+            "identifier": "Q659166",
+            "url": "https://www.wikidata.org/entity/Q659166",
+            "aspects": [
+                "C",
+                "D.en",
+                "O",
+                "S",
+                "T"
+            ]
+        }
+    ],
+    "in_language": {
+        "identifier": "en"
+    },
+    "image": {
+        "content_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/ElectoralCollege1996.svg",
+        "width": 1020,
+        "height": 593
+    },
+    "license": [
+        {
+            "name": "Creative Commons Attribution-ShareAlike License 4.0",
+            "identifier": "CC-BY-SA-4.0",
+            "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+    ],
+    "description": "53rd quadrennial U.S. presidential election",
+    "infobox": [
+        {
+            "name": "Infobox election",
+            "type": "infobox",
+            "has_parts": [
+                {
+                    "name": "1996 United States presidential election",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "image",
+                            "values": [
+                                ""
+                            ],
+                            "images": [
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/50px-Flag_of_the_United_States.svg.png",
+                                    "height": 50,
+                                    "width": 50
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "November 5, 1996",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "field",
+                            "value": "November 5, 1996",
+                            "values": [
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "538 members of the Electoral College 270 electoral votes needed to win",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "name": "Turnout",
+                            "type": "field",
+                            "value": "51.7% 6.4 pp",
+                            "values": [
+                                ""
+                            ],
+                            "images": [
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Decrease2.svg/11px-Decrease2.svg.png",
+                                    "alternative_text": "Decrease",
+                                    "height": 11,
+                                    "width": 11
+                                }
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1996_United_States_presidential_election#cite_note-1"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Percentage_point",
+                                    "text": "pp"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Nominee Bill Clinton Bob Dole Ross Perot Party Democratic Republican Reform Home state Arkansas Kansas Texas Running mate Al Gore Jack Kemp Pat Choate Electoral vote 379 159 0 States carried 31 + DC 19 0 Popular vote 47,401,185 39,197,469 8,085,294 Percentage 49.2% 40.7% 8.4%",
+                            "values": [
+                                ""
+                            ],
+                            "images": [
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Bill_Clinton.jpg/115px-Bill_Clinton.jpg",
+                                    "height": 115,
+                                    "width": 115
+                                },
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Ks_1996_dole_%28cropped%29.jpg/112px-Ks_1996_dole_%28cropped%29.jpg",
+                                    "height": 112,
+                                    "width": 112
+                                },
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/RossPerotColor.jpg/112px-RossPerotColor.jpg",
+                                    "height": 112,
+                                    "width": 112
+                                }
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bill_Clinton",
+                                    "text": "Bill Clinton"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bob_Dole",
+                                    "text": "Bob Dole"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Ross_Perot",
+                                    "text": "Ross Perot"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                                    "text": "Democratic"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Republican_Party_(United_States)",
+                                    "text": "Republican"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Reform_Party_of_the_United_States_of_America",
+                                    "text": "Reform"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Arkansas",
+                                    "text": "Arkansas"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Kansas",
+                                    "text": "Kansas"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Texas",
+                                    "text": "Texas"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Al_Gore",
+                                    "text": "Al Gore"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Jack_Kemp",
+                                    "text": "Jack Kemp"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Pat_Choate",
+                                    "text": "Pat Choate"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Washington,_D.C.",
+                                    "text": "DC"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "image",
+                            "values": [
+                                ""
+                            ],
+                            "images": [
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Bill_Clinton.jpg/115px-Bill_Clinton.jpg",
+                                    "height": 115,
+                                    "width": 115
+                                },
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Ks_1996_dole_%28cropped%29.jpg/112px-Ks_1996_dole_%28cropped%29.jpg",
+                                    "height": 112,
+                                    "width": 112
+                                },
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/RossPerotColor.jpg/112px-RossPerotColor.jpg",
+                                    "height": 112,
+                                    "width": 112
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Nominee Bill Clinton Bob Dole Ross Perot",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bill_Clinton",
+                                    "text": "Bill Clinton"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bob_Dole",
+                                    "text": "Bob Dole"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Ross_Perot",
+                                    "text": "Ross Perot"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Party Democratic Republican Reform",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                                    "text": "Democratic"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Republican_Party_(United_States)",
+                                    "text": "Republican"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Reform_Party_of_the_United_States_of_America",
+                                    "text": "Reform"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Home state Arkansas Kansas Texas",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Arkansas",
+                                    "text": "Arkansas"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Kansas",
+                                    "text": "Kansas"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Texas",
+                                    "text": "Texas"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Running mate Al Gore Jack Kemp Pat Choate",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Al_Gore",
+                                    "text": "Al Gore"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Jack_Kemp",
+                                    "text": "Jack Kemp"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Pat_Choate",
+                                    "text": "Pat Choate"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Electoral vote 379 159 0",
+                            "values": [
+                                ""
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "States carried 31 + DC 19 0",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Washington,_D.C.",
+                                    "text": "DC"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Popular vote 47,401,185 39,197,469 8,085,294",
+                            "values": [
+                                ""
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Percentage 49.2% 40.7% 8.4%",
+                            "values": [
+                                ""
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Presidential election results map. Blue denotes states won by Clinton/Gore and red denotes those won by Dole/Kemp. Numbers indicate electoral votes cast by each state and the District of Columbia.",
+                            "values": [
+                                ""
+                            ],
+                            "images": [
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/ElectoralCollege1996.svg/348px-ElectoralCollege1996.svg.png",
+                                    "height": 348,
+                                    "width": 348
+                                }
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Electoral_votes",
+                                    "text": "electoral votes"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "President before election Bill Clinton Democratic Elected President Bill Clinton Democratic",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bill_Clinton",
+                                    "text": "Bill Clinton"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                                    "text": "Democratic"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bill_Clinton",
+                                    "text": "Bill Clinton"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                                    "text": "Democratic"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "President before election Bill Clinton Democratic",
+                            "type": "field",
+                            "value": "Elected President Bill Clinton Democratic",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bill_Clinton",
+                                    "text": "Bill Clinton"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                                    "text": "Democratic"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bill_Clinton",
+                                    "text": "Bill Clinton"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                                    "text": "Democratic"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "sections": [
+        {
+            "name": "Abstract",
+            "type": "section",
+            "has_parts": [
+                {
+                    "type": "paragraph",
+                    "value": "The 1996 United States presidential election was the 53rd quadrennial presidential election, held on Tuesday, November 5, 1996. Incumbent Democratic President Bill Clinton and his running mate incumbent Democratic Vice President Al Gore were re-elected to a second and final term defeating the Republican ticket of former Senate Majority Leader Bob Dole and former Secretary of Housing and Urban Development Jack Kemp and the Reform ticket of businessman Ross Perot and economist Pat Choate.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/United_States_presidential_election",
+                            "text": "presidential election"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                            "text": "Democratic"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Bill_Clinton",
+                            "text": "Bill Clinton"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                            "text": "Democratic"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Al_Gore",
+                            "text": "Al Gore"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Bob_Dole",
+                            "text": "Bob Dole"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Jack_Kemp",
+                            "text": "Jack Kemp"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Ross_Perot",
+                            "text": "Ross Perot"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Pat_Choate",
+                            "text": "Pat Choate"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Clinton and Vice President Al Gore were re-nominated without incident by the Democratic Party. Numerous candidates entered the 1996 Republican primaries, with Dole considered the early front-runner. Dole clinched the nomination after defeating challenges by publisher Steve Forbes and paleoconservative leader Pat Buchanan. Dole's running mate was Jack Kemp, a former congressman and football player who had served as the housing secretary under President George H. W. Bush. Ross Perot, who had won 18.9% of the popular vote as an independent candidate in the 1992 election, ran as the candidate of the Reform Party. Perot received less media attention in 1996 and was excluded from the presidential debates.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Vice_President_of_the_United_States",
+                            "text": "Vice President"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Al_Gore",
+                            "text": "Al Gore"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Republican_Party_presidential_primaries,_1996",
+                            "text": "1996 Republican primaries"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Steve_Forbes",
+                            "text": "Steve Forbes"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Paleoconservatism",
+                            "text": "paleoconservative"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Pat_Buchanan",
+                            "text": "Pat Buchanan"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Jack_Kemp",
+                            "text": "Jack Kemp"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/United_States_Secretary_of_Housing_and_Urban_Development",
+                            "text": "housing secretary"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/George_H._W._Bush",
+                            "text": "George H. W. Bush"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Ross_Perot",
+                            "text": "Ross Perot"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Independent_politician",
+                            "text": "independent"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1992_United_States_presidential_election",
+                            "text": "1992 election"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Reform_Party_of_the_United_States_of_America",
+                            "text": "Reform Party"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1996_United_States_presidential_debates",
+                            "text": "presidential debates"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Clinton's chances of winning were initially considered slim in the middle of his term, as his party had lost both the House of Representatives and the Senate in 1994 for the first time in decades. He was able to regain ground as the economy began to recover from the early 1990s recession with a relatively stable world stage. Clinton tied Dole to Newt Gingrich, the unpopular Republican speaker of the House, and warned that Republicans would increase the deficit and slash spending on popular programs like Social Security and Medicare. Dole promised an across-the-board 15% reduction in federal income taxes and labeled Clinton as a member of the \"spoiled\" Baby Boomer generation. Dole's age was a persistent issue in the election, and gaffes by Dole exacerbated the issue for his campaign.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/United_States_House_of_Representatives",
+                            "text": "House of Representatives"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/United_States_Senate",
+                            "text": "Senate"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1994_United_States_elections",
+                            "text": "1994"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Early_1990s_recession_in_the_United_States",
+                            "text": "early 1990s recession"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Newt_Gingrich",
+                            "text": "Newt Gingrich"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/National_debt_of_the_United_States",
+                            "text": "deficit"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Social_Security_(United_States)",
+                            "text": "Social Security"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Medicare_(United_States)",
+                            "text": "Medicare"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Income_tax_in_the_United_States",
+                            "text": "federal income taxes"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Baby_Boomer",
+                            "text": "Baby Boomer"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "On election day, Clinton defeated Dole by a wide margin, winning 379 electors to Dole's 159 and taking 49.2% of the national popular vote to Dole's 40.7%. As in 1992, Perot's strong candidacy held both major party candidates below 50% nationwide. Notably, Clinton's strength with many southern and rural whites makes him the last Democrat as of 2020 to carry the states of Kentucky, Louisiana, West Virginia, Arkansas, Missouri, and Tennessee in a presidential election. He was also the last Democrat to win Arizona until 2020. This was the first presidential election since 1944 in which an incumbent Democratic president won a second full term in office. It is the most recent election in which the Democratic presidential nominee never served as a senator. This is also the only election between 1980 and 2004 in which the Bushes did not appear on the Republican ticket.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Kentucky",
+                            "text": "Kentucky"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Louisiana",
+                            "text": "Louisiana"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/West_Virginia",
+                            "text": "West Virginia"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Arkansas",
+                            "text": "Arkansas"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Missouri",
+                            "text": "Missouri"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Tennessee",
+                            "text": "Tennessee"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Arizona",
+                            "text": "Arizona"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2020_United_States_presidential_election",
+                            "text": "2020"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1944_United_States_presidential_election",
+                            "text": "1944"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1980_United_States_presidential_election",
+                            "text": "1980"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2004_United_States_presidential_election",
+                            "text": "2004"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Bush_family",
+                            "text": "the Bushes"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Background",
+            "type": "section",
+            "has_parts": [
+                {
+                    "type": "paragraph",
+                    "value": "In 1995, the Republican Party was riding high on the significant gains made in the 1994 mid-term elections. In those races, the Republicans, led by whip Newt Gingrich, captured the majority of seats in the House for the first time in forty years and the majority of seats in the Senate for the first time in eight years. Gingrich became speaker of the House, while Bob Dole was elevated to Senate Majority leader.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Republican_Party_(United_States)",
+                            "text": "Republican Party"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Republican_Revolution",
+                            "text": "significant gains"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1994_United_States_elections",
+                            "text": "1994 mid-term elections"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Party_leaders_of_the_United_States_House_of_Representatives#Whips",
+                            "text": "whip"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Newt_Gingrich",
+                            "text": "Newt Gingrich"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/United_States_House_of_Representatives",
+                            "text": "House"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/United_States_Senate",
+                            "text": "Senate"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Speaker_of_the_United_States_House_of_Representatives",
+                            "text": "speaker of the House"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Bob_Dole",
+                            "text": "Bob Dole"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Party_leaders_of_the_United_States_Senate",
+                            "text": "Senate Majority leader"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "The Republicans of the 104th Congress pursued an ambitious agenda, highlighted by their Contract with America, but were often forced to compromise with Clinton, who wielded veto power. A budget impasse between Congress and the Clinton Administration eventually resulted in a government shutdown. Clinton, meanwhile, was praised for signing the GOP's welfare reform, and other notable bills, but was forced to abandon his own health care plan.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/104th_United_States_Congress",
+                            "text": "104th Congress"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Contract_with_America",
+                            "text": "Contract with America"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Veto_power_in_the_United_States",
+                            "text": "veto power"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Presidency_of_Bill_Clinton",
+                            "text": "Clinton Administration"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1995–1996_United_States_federal_government_shutdowns",
+                            "text": "a government shutdown"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Personal_Responsibility_and_Work_Opportunity_Act",
+                            "text": "welfare reform"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Clinton_health_care_plan_of_1993",
+                            "text": "health care plan"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Democratic Party nomination",
+            "type": "section",
+            "has_parts": [
+                {
+                    "type": "paragraph",
+                    "value": "Democratic Candidates"
+                },
+                {
+                    "type": "list",
+                    "has_parts": [
+                        {
+                            "type": "list_item",
+                            "value": "Bill Clinton, President of the United States",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bill_Clinton",
+                                    "text": "Bill Clinton"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/President_of_the_United_States",
+                                    "text": "President of the United States"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list_item",
+                            "value": "Lyndon LaRouche, Activist from Virginia",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Lyndon_LaRouche",
+                                    "text": "Lyndon LaRouche"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Virginia",
+                                    "text": "Virginia"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list_item",
+                            "value": "Jimmy Griffin, Former Mayor of Buffalo from New York",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/James_D._Griffin",
+                                    "text": "Jimmy Griffin"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/List_of_mayors_of_Buffalo,_New_York",
+                                    "text": "Mayor of Buffalo"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/New_York_(state)",
+                                    "text": "New York"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Candidates gallery",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "With the advantage of incumbency, Bill Clinton 's path to renomination by the Democratic Party was uneventful. At the 1996 Democratic National Convention, Clinton and incumbent Vice President Al Gore were renominated with token opposition. Formerly incarcerated fringe candidate Lyndon LaRouche won a few Arkansas delegates who were barred from the convention. Jimmy Griffin, former Mayor of Buffalo, New York, mounted a brief campaign but withdrew after a poor showing in the New Hampshire primary. Former Pennsylvania governor Bob Casey contemplated a challenge to Clinton, but health problems forced Casey to abandon a bid.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bill_Clinton",
+                                    "text": "Bill Clinton"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                                    "text": "Democratic Party"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1996_Democratic_National_Convention",
+                                    "text": "1996 Democratic National Convention"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Vice_President_of_the_United_States",
+                                    "text": "Vice President"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Al_Gore",
+                                    "text": "Al Gore"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Lyndon_LaRouche",
+                                    "text": "Lyndon LaRouche"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/James_D._Griffin",
+                                    "text": "Jimmy Griffin"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/List_of_mayors_of_Buffalo,_New_York",
+                                    "text": "Mayor of Buffalo, New York"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Pennsylvania",
+                                    "text": "Pennsylvania"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Robert_P._Casey",
+                                    "text": "Bob Casey"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Clinton easily won primaries nationwide, with margins consistently higher than 80%."
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Popular primaries vote:"
+                        },
+                        {
+                            "type": "list",
+                            "has_parts": [
+                                {
+                                    "type": "list_item",
+                                    "value": "Bill Clinton (inc.) – 9,730,184 (88.5%)",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Bill_Clinton",
+                                            "text": "Bill Clinton"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Lyndon LaRouche – 597,081 (5.4%)",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Lyndon_LaRouche",
+                                            "text": "Lyndon LaRouche"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Unpledged – 423,265 (3.8%)"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Convention tally:"
+                        },
+                        {
+                            "type": "list",
+                            "has_parts": [
+                                {
+                                    "type": "list_item",
+                                    "value": "Bill Clinton (inc.) – 4,277"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Not voting – 12"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Republican Party nomination",
+            "type": "section",
+            "has_parts": [
+                {
+                    "type": "paragraph",
+                    "value": "Republican Candidates"
+                },
+                {
+                    "type": "list",
+                    "has_parts": [
+                        {
+                            "type": "list_item",
+                            "value": "Bob Dole, U.S. Senator from Kansas and Republican nominee for Vice President of the United States in 1976",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bob_Dole",
+                                    "text": "Bob Dole"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Kansas",
+                                    "text": "Kansas"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Vice_President_of_the_United_States",
+                                    "text": "Vice President of the United States"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1976_United_States_presidential_election",
+                                    "text": "1976"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list_item",
+                            "value": "Pat Buchanan, conservative columnist from Virginia",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Pat_Buchanan",
+                                    "text": "Pat Buchanan"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Virginia",
+                                    "text": "Virginia"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list_item",
+                            "value": "Steve Forbes, newspaper and magazine publisher from New York",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Steve_Forbes",
+                                    "text": "Steve Forbes"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/New_York_(state)",
+                                    "text": "New York"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list_item",
+                            "value": "Lamar Alexander, former governor of Tennessee",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Lamar_Alexander",
+                                    "text": "Lamar Alexander"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Tennessee",
+                                    "text": "Tennessee"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list_item",
+                            "value": "Phil Gramm, U.S. Senator from Texas",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Phil_Gramm",
+                                    "text": "Phil Gramm"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Texas",
+                                    "text": "Texas"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list_item",
+                            "value": "Alan Keyes, former U.S. ECOSOC Ambassador from Maryland",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Alan_Keyes",
+                                    "text": "Alan Keyes"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/United_Nations_Economic_and_Social_Council",
+                                    "text": "ECOSOC"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Maryland",
+                                    "text": "Maryland"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list_item",
+                            "value": "Richard Lugar, U.S. Senator from Indiana",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Richard_Lugar",
+                                    "text": "Richard Lugar"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Indiana",
+                                    "text": "Indiana"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list_item",
+                            "value": "Bob Dornan, U.S. Representative from California",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bob_Dornan",
+                                    "text": "Bob Dornan"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/California",
+                                    "text": "California"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list_item",
+                            "value": "Arlen Specter, U.S. Senator from Pennsylvania",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Arlen_Specter",
+                                    "text": "Arlen Specter"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Pennsylvania",
+                                    "text": "Pennsylvania"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list_item",
+                            "value": "Pete Wilson, Governor of California",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Pete_Wilson",
+                                    "text": "Pete Wilson"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/California",
+                                    "text": "California"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list_item",
+                            "value": "Morry Taylor, CEO from Michigan",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Morry_Taylor",
+                                    "text": "Morry Taylor"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Michigan",
+                                    "text": "Michigan"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Candidates gallery",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "A number of Republican candidates entered the field to challenge the incumbent Democratic president, Bill Clinton.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bill_Clinton",
+                                    "text": "Bill Clinton"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "The fragmented field of candidates debated issues such as a flat tax and other tax cut proposals, and a return to supply-side economic policies popularized by Ronald Reagan. More attention was drawn to the race by the budget stalemate in 1995 between Congress and the president, which caused temporary shutdowns and slowdowns in many areas of federal government service.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Flat_tax",
+                                    "text": "flat tax"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Supply-side_economics",
+                                    "text": "supply-side economic"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Ronald_Reagan",
+                                    "text": "Ronald Reagan"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Former Secretary of Labor Lynn Martin of Illinois, who served in the United States House of Representatives from Illinois 's 16th District and was the 1990 Republican U.S. Senate nominee losing to incumbent Paul Simon conducted a bid for most of 1995, but withdrew before the Iowa caucuses as polls showed her languishing far behind. She participated in a number of primary presidential debates before withdrawing. Martin's predecessor in Congress, John Anderson had made first a Republican then independent presidential bid in 1980. Also, Simon who defeated Martin for the U.S. Senate had run for president as a Democrat in 1988.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Lynn_Morley_Martin",
+                                    "text": "Lynn Martin"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/United_States_House_of_Representatives",
+                                    "text": "United States House of Representatives"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Illinois",
+                                    "text": "Illinois"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Paul_Simon_(politician)",
+                                    "text": "Paul Simon"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Iowa",
+                                    "text": "Iowa"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/United_States_presidential_election_debates",
+                                    "text": "presidential debates"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/John_B._Anderson",
+                                    "text": "John Anderson"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Former U.S. Army General Colin Powell was widely courted as a potential Republican nominee. However, on November 8, 1995, Powell announced that he would not seek the nomination. Former Secretary of Defense and future Vice President of the United States Dick Cheney was touted by many as a possible candidate for the presidency, but he declared his intentions not to run in early 1995. Former and future Defense Secretary Donald Rumsfeld formed a presidential campaign exploratory committee, but declined to formally enter the race. Former Secretary of State James A. Baker III and former Secretary of Education William Bennett both flirted with bids, both even set up exploratory committees, for a number of months but both finally declared within days of each other they would not run either.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/United_States_Army",
+                                    "text": "U.S. Army"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Colin_Powell",
+                                    "text": "Colin Powell"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/United_States_Secretary_of_Defense",
+                                    "text": "Secretary of Defense"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Vice_President_of_the_United_States",
+                                    "text": "Vice President of the United States"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Dick_Cheney",
+                                    "text": "Dick Cheney"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/United_States_Secretary_of_Defense",
+                                    "text": "Defense Secretary"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Donald_Rumsfeld",
+                                    "text": "Donald Rumsfeld"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/United_States_Secretary_of_State",
+                                    "text": "Secretary of State"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/James_A._Baker_III",
+                                    "text": "James A. Baker III"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Secretary_of_Education",
+                                    "text": "Secretary of Education"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/William_Bennett",
+                                    "text": "William Bennett"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Primaries and convention",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "Ahead of the 1996 primary contest, Republican Leader of the United States Senate and former vice-presidential candidate Bob Dole was seen as the most likely winner. However, Steve Forbes finished first in Delaware and Arizona while paleoconservative firebrand Pat Buchanan managed early victories in Alaska and Louisiana, in addition to a strong second place in the Iowa caucuses and a surprising victory in the small but key New Hampshire primary. Buchanan's New Hampshire win alarmed the Republican \"establishment\" sufficiently as to provoke prominent Republicans to quickly coalesce around Dole, and Dole won every primary starting with North and South Dakota. Dole resigned his Senate seat on June 11 and the Republican National Convention formally nominated Dole on August 15, 1996, for president.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Republican_Leader_of_the_United_States_Senate",
+                                    "text": "Republican Leader of the United States Senate"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bob_Dole",
+                                    "text": "Bob Dole"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Steve_Forbes",
+                                    "text": "Steve Forbes"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Delaware",
+                                    "text": "Delaware"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Arizona",
+                                    "text": "Arizona"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Paleoconservatism",
+                                    "text": "paleoconservative"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Pat_Buchanan",
+                                    "text": "Pat Buchanan"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Alaska",
+                                    "text": "Alaska"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Louisiana",
+                                    "text": "Louisiana"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Iowa_caucuses",
+                                    "text": "Iowa caucuses"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/New_Hampshire_primary",
+                                    "text": "New Hampshire primary"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/North_Dakota",
+                                    "text": "North"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/South_Dakota",
+                                    "text": "South Dakota"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1996_Republican_National_Convention",
+                                    "text": "Republican National Convention"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Popular primaries vote:"
+                        },
+                        {
+                            "type": "list",
+                            "has_parts": [
+                                {
+                                    "type": "list_item",
+                                    "value": "Bob Dole – 8,427,601 (59.2%)",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Bob_Dole",
+                                            "text": "Bob Dole"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Pat Buchanan – 3,021,935 (21.2%)",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Pat_Buchanan",
+                                            "text": "Pat Buchanan"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Steve Forbes – 1,425,998 (10.0%)",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Steve_Forbes",
+                                            "text": "Steve Forbes"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Lamar Alexander – 495,590 (3.5%)",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Lamar_Alexander",
+                                            "text": "Lamar Alexander"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Alan Keyes – 449,536 (3.2%)",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Alan_Keyes",
+                                            "text": "Alan Keyes"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Richard Lugar – 127,111 (0.9%)",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Richard_Lugar",
+                                            "text": "Richard Lugar"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Unpledged – 123,765 (0.9%)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Phil Gramm – 71,457 (0.5%)",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Phil_Gramm",
+                                            "text": "Phil Gramm"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Bob Dornan – 42,141 (0.3%)",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Bob_Dornan",
+                                            "text": "Bob Dornan"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Morry Taylor – 21,180 (0.1%)",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Morry_Taylor",
+                                            "text": "Morry Taylor"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Convention tally:"
+                        },
+                        {
+                            "type": "list",
+                            "has_parts": [
+                                {
+                                    "type": "list_item",
+                                    "value": "Bob Dole – 1928",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Bob_Dole",
+                                            "text": "Bob Dole –"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Pat Buchanan – 43",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Pat_Buchanan",
+                                            "text": "Pat Buchanan –"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Phil Gramm – 2",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Phil_Gramm",
+                                            "text": "Phil Gramm –"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Alan Keyes – 1",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Alan_Keyes",
+                                            "text": "Alan Keyes –"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Robert Bork – 1",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Robert_Bork",
+                                            "text": "Robert Bork –"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Not voting – 15"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Former Representative and Housing Secretary Jack Kemp was nominated by acclamation for vice president, the following day. This was the only Republican ticket between 1980 and 2004 that did not include a member of the Bush family.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Jack_Kemp",
+                                    "text": "Jack Kemp"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bush_family",
+                                    "text": "Bush family"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Reform Party nomination",
+            "type": "section",
+            "has_parts": [
+                {
+                    "name": "Candidates gallery",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "The United States Reform Party had great difficulty in finding a candidate willing to run in the general election. Lowell Weicker, Tim Penny, David Boren and Richard Lamm were among those who toyed with the notion of seeking its presidential nomination, though all but Lamm decided against it; Lamm had himself come close to withdrawing his name from consideration. Lamm designated Ed Zschau as his vice presidential candidate.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Reform_Party_of_the_United_States_of_America",
+                                    "text": "United States Reform Party"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Lowell_P._Weicker_Jr.",
+                                    "text": "Lowell Weicker"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Tim_Penny",
+                                    "text": "Tim Penny"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/David_L._Boren",
+                                    "text": "David Boren"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Richard_Lamm",
+                                    "text": "Richard Lamm"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Ed_Zschau",
+                                    "text": "Ed Zschau"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Ultimately, the Reform Party nominated its founder Ross Perot from Texas in its first election as an official political party. Although Perot easily won the nomination, his victory at the party's national convention led to a schism as supporters of Lamm accused him of rigging the vote to prevent them from casting their ballots. This faction walked out of the national convention and eventually formed their own group, the American Reform Party, and attempted to convince Lamm to run as an Independent in the general election; Lamm declined, pointing out a promise he made before running that he would respect the Party's final decision.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Ross_Perot",
+                                    "text": "Ross Perot"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Texas",
+                                    "text": "Texas"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/American_Reform_Party",
+                                    "text": "American Reform Party"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Economist Pat Choate was nominated for Vice President.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Pat_Choate",
+                                    "text": "Pat Choate"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Vice_President_of_the_United_States",
+                                    "text": "Vice President"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Minor parties and independents",
+            "type": "section",
+            "has_parts": [
+                {
+                    "type": "paragraph",
+                    "value": "Parties in this section obtained ballot access in enough states to theoretically obtain the minimum number of electoral votes needed to win the election. Individuals included in this section completed one or more of the following actions: received, or formally announced their candidacy for, the presidential nomination of a third party; formally announced intention to run as an independent candidate and obtained enough ballot access to win the election; filed as a third party or non-affiliated candidate with the FEC (for other than exploratory purposes). Within each party, candidates are listed alphabetically by surname.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Third_party_(United_States)",
+                            "text": "third party"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Independent_politician",
+                            "text": "independent"
+                        }
+                    ]
+                },
+                {
+                    "name": "Libertarian Party nomination",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "Libertarian candidates"
+                        },
+                        {
+                            "type": "list",
+                            "has_parts": [
+                                {
+                                    "type": "list_item",
+                                    "value": "Harry Browne – writer and investment analyst from Tennessee",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Harry_Browne",
+                                            "text": "Harry Browne"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Tennessee",
+                                            "text": "Tennessee"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Rick Tompkins – former candidate for Senator from Arizona",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Arizona",
+                                            "text": "Arizona"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Irwin Schiff – writer and prominent figure in the tax protester movement from Nevada",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Irwin_Schiff",
+                                            "text": "Irwin Schiff"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Nevada",
+                                            "text": "Nevada"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Douglas J. Ohmen – political activist from California",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/California",
+                                            "text": "California"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Jeffrey Diket – political activist from Louisiana",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Louisiana",
+                                            "text": "Louisiana"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "The Libertarian Party nominated free-market writer and investment analyst, Harry Browne from Tennessee, and selected Jo Jorgensen from South Carolina as his running-mate. Browne and Jorgensen drew 485,798 votes (0.5% of the popular vote).",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Libertarian_Party_(United_States)",
+                                    "text": "Libertarian Party"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Harry_Browne",
+                                    "text": "Harry Browne"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Jo_Jorgensen",
+                                    "text": "Jo Jorgensen"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/South_Carolina",
+                                    "text": "South Carolina"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Green Party nomination",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "The Green Party of the United States drafted Ralph Nader of Connecticut as a candidate for President of the United States on the Green Party ticket. He was not formally nominated by the Green Party USA, which was, at the time, the largest national Green group; instead, he was nominated independently by various state Green parties (in some areas, he appeared on the ballot as an independent). Nader vowed to spend only $5,000 in his election campaign (to avoid having to file a financial statement with the FEC). Winona LaDuke, a Native American activist and economist from Wisconsin, was named as his running-mate. In Iowa and Vermont, Anne Goeke was listed as Nader's running mate; in New Jersey it was Madelyn Hoffman and in New York it was Muriel Tillinghast.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Green_Party_of_the_United_States",
+                                    "text": "Green Party of the United States"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Draft_(politics)",
+                                    "text": "drafted"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Ralph_Nader",
+                                    "text": "Ralph Nader"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Connecticut",
+                                    "text": "Connecticut"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/President_of_the_United_States",
+                                    "text": "President of the United States"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Greens/Green_Party_USA",
+                                    "text": "Green Party USA"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Winona_LaDuke",
+                                    "text": "Winona LaDuke"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Wisconsin",
+                                    "text": "Wisconsin"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Iowa",
+                                    "text": "Iowa"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Vermont",
+                                    "text": "Vermont"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Muriel_Tillinghast",
+                                    "text": "Muriel Tillinghast"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Nader and his running mates drew 685,128 votes (0.71% of the popular vote)."
+                        }
+                    ]
+                },
+                {
+                    "name": "Natural Law Party nomination",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "The Natural Law Party for a second time nominated scientist and researcher John Hagelin for president and Mike Tompkins for vice president. The party platform included preventive health care, sustainable agriculture and renewable energy technologies. During his campaigns, Hagelin favored abortion rights without public financing, campaign finance law reform, improved gun control, a flat tax, the eradication of PACs, a ban on soft money contributions, and school vouchers, and was a believer in \" yogic flying.\"",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Natural_Law_Party_(United_States)",
+                                    "text": "Natural Law Party"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/John_Hagelin",
+                                    "text": "John Hagelin"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Mike_Tompkins",
+                                    "text": "Mike Tompkins"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Political_action_committees",
+                                    "text": "PACs"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Soft_money",
+                                    "text": "soft money"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/School_vouchers",
+                                    "text": "school vouchers"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Yogic_flying",
+                                    "text": "yogic flying"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Hagelin and Tompkins drew 113,671 votes (0.1% of the popular vote)."
+                        }
+                    ]
+                },
+                {
+                    "name": "U.S. Taxpayers' Party nomination",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "The U.S. Taxpayers Party had run its first presidential ticket in 1992, headed by Howard Phillips, who had failed to find any prominent conservative willing to take the mantle. In 1996 the situation ultimately proved the same, though Pat Buchanan for a time was widely speculated to be planning on bolting to the Taxpayers' Party should the expected Republican nominee, Senator Bob Dole, name a pro-choice running-mate. When Jack Kemp, who opposed abortion, was tapped for the position Buchanan agreed to endorse the Republican ticket. Phillips again led the Taxpayers ticket, with Herbert Titus nominated for the vice presidency.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/U.S._Taxpayers_Party",
+                                    "text": "U.S. Taxpayers Party"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Howard_Phillips_(activist)",
+                                    "text": "Howard Phillips"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Pat_Buchanan",
+                                    "text": "Pat Buchanan"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bob_Dole",
+                                    "text": "Bob Dole"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Jack_Kemp",
+                                    "text": "Jack Kemp"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Anti-abortion",
+                                    "text": "opposed abortion"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Herbert_Titus",
+                                    "text": "Herbert Titus"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Phillips and Titus drew 182,820 votes (0.2% of the popular vote)."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "General election",
+            "type": "section",
+            "has_parts": [
+                {
+                    "name": "Campaign",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "Without meaningful primary opposition, Clinton was able to focus on the general election early, while Dole was forced to move to the right and spend his campaign reserves fighting off challengers. Political adviser Dick Morris urged Clinton to raise huge sums of campaign funds via soft money for an unprecedented early TV blitz of swing states promoting Clinton's agenda and record. As a result, Clinton could run a campaign through the summer defining his opponent as an aged conservative far from the mainstream before Dole was in a position to respond. Compared to the 50-year-old Clinton, then 73-year-old Dole appeared especially old and frail, as illustrated by an embarrassing fall off a stage during a campaign event in Chico, California. Dole further enhanced this contrast on September 18 when he made a reference to a no-hitter thrown the day before by Hideo Nomo of the \" Brooklyn Dodgers \", a team that had left Brooklyn for Los Angeles 38 years earlier. A few days later Dole would make a joke about the remark by saying, \"And I'd like to congratulate the St. Louis Cardinals on winning the N.L. Central. Notice I said the St. Louis Cardinals, not the St. Louis Browns.\" (The Browns had left St. Louis after the 1954 season to become the Baltimore Orioles.)",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bill_Clinton",
+                                    "text": "Clinton"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bob_Dole",
+                                    "text": "Dole"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Dick_Morris",
+                                    "text": "Dick Morris"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Campaign_finance_in_the_United_States#\"Soft\"_money/Independent_expenditure",
+                                    "text": "soft money"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Chico,_California",
+                                    "text": "Chico, California"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Hideo_Nomo",
+                                    "text": "Hideo Nomo"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Los_Angeles_Dodgers",
+                                    "text": "Brooklyn Dodgers"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/St._Louis_Cardinals",
+                                    "text": "St. Louis Cardinals"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/National_League_Central",
+                                    "text": "N.L. Central"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/St._Louis_Browns",
+                                    "text": "St. Louis Browns"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Baltimore_Orioles",
+                                    "text": "Baltimore Orioles"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Dole chose to focus on Clinton as being \"part of the spoiled baby boomer generation\" and said, \"My generation won, and we may need to be called to service one last time.\" Although his message won appeal with older voters, surveys found that his age was widely held as a liability and his frequent allusions to WWII and the Great Depression in speeches and campaign ads \"unappealing\" to younger voters. To prove that he was still healthy and active, Dole released all of his medical records to the public and published photographs of himself running on a treadmill. After the falling incident in California, he joked that he \"was trying to do that new Democratic dance, the macarena.\"",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Great_Depression",
+                                    "text": "Great Depression"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Treadmill",
+                                    "text": "treadmill"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Macarena_(song)#1996_Democratic_National_Convention",
+                                    "text": "that new Democratic dance, the macarena"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "The Clinton campaign avoided mentioning Dole's age directly, choosing to confront it in more subtle ways such as the slogan \"Building Bridges to the Future\" in contrast to the Republican candidate's frequent remarks that he was a \"bridge to the past\", before the social upheavals of the 1960s. Clinton, without actually calling Dole old, questioned the age of his ideas."
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "With respect to the issues, Dole promised a 15% across-the-board reduction in income tax rates and made former congressman and supply side advocate Jack Kemp his running mate. Bill Clinton framed the narrative against Dole early, painting him as a mere clone of unpopular House speaker Newt Gingrich, warning America that Bob Dole would work in concert with the Republican Congress to slash popular social programs, like Medicare and Social Security, dubbed by Clinton as \"Dole-Gingrich\". Bob Dole's tax-cut plan found itself under attack from the White House, who said it would \"blow a hole in the deficit,\" which had been cut nearly in half during his opponent's term.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Income_tax",
+                                    "text": "income tax"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Supply-side_economics",
+                                    "text": "supply side"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Jack_Kemp",
+                                    "text": "Jack Kemp"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bill_Clinton",
+                                    "text": "Bill Clinton"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Newt_Gingrich",
+                                    "text": "Newt Gingrich"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "The televised debates featured only Dole and Clinton, locking out Perot and the other minor candidates from the discussion. Perot, who had been allowed to participate in the 1992 debates, would eventually take his case to court, seeking damages from not being in the debate, as well as citing unfair coverage from the major media outlets.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Ross_Perot",
+                                    "text": "Perot"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1992_United_States_presidential_debates",
+                                    "text": "1992 debates"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "In a first for either major party in a presidential election, both the Clinton and Dole campaigns had official websites. Dole invited viewers to visit his \"homepage\" at the end of the first debate."
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Throughout the campaign, Clinton maintained leads in the polls over Dole and Perot, generally by large margins. In October, Republican National Committee \"operatives urg their party's Congressional candidates to cut loose from Bob Dole and press voters to maintain a Republican majority\" and spent $4 million on advertising in targeted districts.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Historical_polling_for_United_States_presidential_elections#1996_United_States_presidential_election",
+                                    "text": "maintained leads in the polls"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Republican_National_Committee",
+                                    "text": "Republican National Committee"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Presidential debates",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "Three debates, organized by the Commission on Presidential Debates, took place — two between the presidential candidates and one between the vice presidential candidates:",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Commission_on_Presidential_Debates",
+                                    "text": "Commission on Presidential Debates"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Campaign donations controversy",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "In late September 1995, questions arose regarding the Democratic National Committee 's fund-raising practices. In February the following year, China's alleged role in the campaign finance controversy first gained public attention after The Washington Post published a story stating that a U.S. Department of Justice investigation had discovered evidence that agents of China sought to direct contributions from foreign sources to the DNC before the 1996 presidential campaign. The paper wrote that intelligence information had showed the Chinese Embassy in Washington, D.C. was used for coordinating contributions to the DNC in violation of U.S. law forbidding non-American citizens from giving monetary donations to U.S. politicians and political parties. Seventeen people were eventually convicted for fraud or for funneling Asian funds into the U.S. elections.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Democratic_National_Committee",
+                                    "text": "Democratic National Committee"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/The_Washington_Post",
+                                    "text": "The Washington Post"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/United_States_Department_of_Justice",
+                                    "text": "U.S. Department of Justice"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "One of the more notable events learned involved Vice President Al Gore and a fund-raising event held at Hsi Lai Temple in Hacienda Heights, California. The Temple event was organized by DNC fund-raisers John Huang and Maria Hsia. It is illegal under U.S. law for religious organizations to donate money to politicians or political groups due to their tax-exempt status. The U.S. Justice Department alleged Hsia facilitated $100,000 (~$ 179,387 in 2023) in illegal contributions to the 1996 Clinton-Gore re-election campaign through her efforts at the Temple. Hsia was eventually convicted by a jury in March 2000. The DNC eventually returned the money donated by the Temple's monks and nuns. Twelve nuns and employees of the Temple refused to answer questions by pleading the Fifth Amendment when they were subpoenaed to testify before Congress in 1997.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Al_Gore",
+                                    "text": "Al Gore"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Hsi_Lai_Temple",
+                                    "text": "Hsi Lai Temple"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Hacienda_Heights,_California",
+                                    "text": "Hacienda Heights, California"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/John_Huang",
+                                    "text": "John Huang"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Maria_Hsia",
+                                    "text": "Maria Hsia"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Fifth_Amendment_to_the_United_States_Constitution",
+                                    "text": "Fifth Amendment"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Subpoena",
+                                    "text": "subpoenaed"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Results",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "On election day, President Clinton won a decisive victory over Dole, becoming the first Democrat to win two consecutive presidential elections since Franklin D. Roosevelt in 1936, 1940, and 1944. In the popular vote, he out-polled Dole by over 8.2 million votes. The Electoral College map did not change much from the previous election, with the Democratic incumbent winning 379 votes to the Republican ticket's 159. In the West, Dole managed to narrowly win Colorado and Montana (both had voted for Clinton four years earlier), while Clinton became the first Democrat to win Arizona since Harry Truman in 1948. In the South, Clinton won Florida, a state he had failed to win in 1992, but lost Georgia, a state that he had carried. The election helped to cement Democratic presidential control in California, Vermont, Maine, Illinois, New Jersey and Connecticut; all went on to vote Democratic in every subsequent presidential election after having voted Republican in the five prior to 1992. 1996 marked the first time that Vermont voted for a Democrat in two successive elections. Pennsylvania and Michigan both voted Democratic, and would remain in the Democratic presidential fold until 2016.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Franklin_D._Roosevelt",
+                                    "text": "Franklin D. Roosevelt"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1936_United_States_presidential_election",
+                                    "text": "1936"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1940_United_States_presidential_election",
+                                    "text": "1940"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1944_United_States_presidential_election",
+                                    "text": "1944"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1992_United_States_presidential_election",
+                                    "text": "previous election"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1948_United_States_presidential_election",
+                                    "text": "1948"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2016_United_States_presidential_election",
+                                    "text": "2016"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Although Clinton's margin of victory in the popular vote was slightly greater than that of George H.W. Bush eight years prior, he won fewer states, in part due to his relatively poor performance in areas of low population density – a precursor of the trend where future Democratic contenders for the presidency perform very well in populous metropolitan areas but vastly underperform in rural counties.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/George_H._W._Bush",
+                                    "text": "George H.W. Bush"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election",
+                                    "text": "eight years prior"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Reform Party nominee Ross Perot won approximately 8% of the popular vote. His vote total was less than half of his performance in 1992. The 1996 national exit poll showed that just as in 1992, Perot drew supporters from Clinton and Dole equally. In polls directed at Perot voters as to who would be a second choice, Clinton consistently held substantial leads. Perot's best showing was in states that tended to strongly favor either Clinton (such as Maine) or Dole (particularly Montana, though the margin of victory there was much closer). Perot once again received his lowest amount of support in the South.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Ross_Perot",
+                                    "text": "Ross Perot"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Although Clinton is a native of Arkansas and his running mate hailed from Tennessee, the Democratic ticket carried just four of the eleven states of the former Confederacy (and of those four only Florida and Georgia have voted Democratic in any election since). As such, Clinton's 1992 run was tied for the weakest performance in the region by a nationally successful Democratic presidential candidate up until that point. Clinton's performance both followed and preceded a substantial decline in support for the Democratic Party in the South; in the 2000 and 2004 elections, the Democrats would fail to carry even one of the former Confederate states, contributing to their defeat both times. This completed the Republican takeover of the American South, a region in which Democrats had held a near monopoly from 1880 to 1948. In 2008, the Democrats were able to win three former Confederate states (Virginia, North Carolina, and Florida), however this was still a worse performance than either of Clinton's. Since 1984, no winning presidential candidate has surpassed Bill Clinton's 8.5 percent popular vote margin, or his 220 electoral vote margin since 1988. Additionally, since 1964, no other Democratic presidential candidate has surpassed Clinton's electoral vote margin and, except Lyndon B. Johnson in that election, no Democratic presidential candidate has surpassed Clinton's 8.5 percentage popular vote margin since 1940.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Confederate_States_of_America",
+                                    "text": "former Confederacy"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election",
+                                    "text": "2000"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2004_United_States_presidential_election",
+                                    "text": "2004 elections"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1880_United_States_presidential_election",
+                                    "text": "1880"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2008_United_States_presidential_election",
+                                    "text": "2008"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Virginia",
+                                    "text": "Virginia"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_North_Carolina",
+                                    "text": "North Carolina"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Florida",
+                                    "text": "Florida"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1984_United_States_presidential_election",
+                                    "text": "1984"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election",
+                                    "text": "1988"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1964_United_States_presidential_election",
+                                    "text": "1964"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Lyndon_B._Johnson",
+                                    "text": "Lyndon B. Johnson"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "The election also marked the first time in U.S. history that the winner was elected without winning the male vote, the third time in U.S. history that a candidate won two terms as president without winning a majority either time (after Grover Cleveland and Woodrow Wilson, both Democrats). Clinton also remains the last presidential candidate of either party to win at least one county in every state. Clinton maintained a consistent polling edge over Dole, and he won re-election with a substantial margin in the popular vote and the Electoral College. Clinton became the first Democrat since Franklin D. Roosevelt to win two consecutive presidential elections. Dole won 40.7% of the popular vote and 159 electoral votes, while Perot won 8.4% of the popular vote. Despite Dole's defeat, the Republican Party was able to maintain majorities in both the House of Representatives and the Senate. Voter turnout was registered at 51.7%, the lowest for a presidential election since 1924.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Grover_Cleveland",
+                                    "text": "Grover Cleveland"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Woodrow_Wilson",
+                                    "text": "Woodrow Wilson"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Electoral_College_(United_States)",
+                                    "text": "Electoral College"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Franklin_D._Roosevelt",
+                                    "text": "Franklin D. Roosevelt"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/United_States_House_of_Representatives_elections,_1996",
+                                    "text": "House of Representatives"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/United_States_Senate_elections,_1996",
+                                    "text": "Senate"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1924_United_States_presidential_election",
+                                    "text": "1924"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "As of 2020, this remains the last time that the states of Kentucky, Louisiana, West Virginia, Arkansas, Missouri, and Tennessee were carried by a Democratic presidential nominee. It was also the first time most Arizona voters chose a Democratic candidate since 1948, which they would not do again until 2020. Five states switched party predominance in 1996 with their presidential voting: Montana, Colorado, and Georgia were flipped by Senator Dole, while Florida and Arizona were flipped by President Clinton. This is also the most recent time a third-party candidate finished with over 5% of the vote nationwide. This is the last time a Democratic president was re-elected with a higher share of the electoral or popular vote, while also being the last time when an incumbent Democratic candidate would flip any states (Arizona, and Florida in this instance) which they failed to win in their previous election bid.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2020_United_States_presidential_election",
+                                    "text": "2020"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Kentucky",
+                                    "text": "Kentucky"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Louisiana",
+                                    "text": "Louisiana"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/West_Virginia",
+                                    "text": "West Virginia"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Arkansas",
+                                    "text": "Arkansas"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Missouri",
+                                    "text": "Missouri"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Tennessee",
+                                    "text": "Tennessee"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1948_United_States_presidential_election",
+                                    "text": "1948"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Montana",
+                                    "text": "Montana"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Colorado",
+                                    "text": "Colorado"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Georgia_(U.S._state)",
+                                    "text": "Georgia"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Florida",
+                                    "text": "Florida"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Arizona",
+                                    "text": "Arizona"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Official Source (Popular Vote): 1996 Official Presidential General Election Results",
+                            "links": [
+                                {
+                                    "url": "https://web.archive.org/web/20100127215534/http://www.fec.gov/96fed/geresult.htm",
+                                    "text": "1996 Official Presidential General Election Results"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Source (popular and electoral vote): Federal Elections Commission Electoral and Popular Vote Summary unofficial Secondary Source (Popular Vote):",
+                            "links": [
+                                {
+                                    "url": "http://www.fec.gov/pubrec/fe1996/elecpop.htm",
+                                    "text": "Federal Elections Commission Electoral and Popular Vote Summary"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Voting age population: 196,498,000"
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Percent of voting age population casting a vote for President: 49.00%"
+                        }
+                    ]
+                },
+                {
+                    "name": "Results by state",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "Source:"
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Maine and Nebraska each allow for their electoral votes to be split between candidates. In both states, two electoral votes are awarded to the winner of the statewide race and one electoral vote is awarded to the winner of each congressional district."
+                        },
+                        {
+                            "name": "States that flipped from Democratic to Republican",
+                            "type": "section",
+                            "has_parts": [
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Colorado",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Colorado",
+                                                    "text": "Colorado"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Georgia",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Georgia_(US_state)",
+                                                    "text": "Georgia"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Montana",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Montana",
+                                                    "text": "Montana"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "States that flipped from Republican to Democratic",
+                            "type": "section",
+                            "has_parts": [
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Arizona",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Arizona",
+                                                    "text": "Arizona"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Florida",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Florida",
+                                                    "text": "Florida"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Close states",
+                            "type": "section",
+                            "has_parts": [
+                                {
+                                    "type": "paragraph",
+                                    "value": "State where the margin of victory was under 1% (8 electoral votes):"
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Kentucky, 0.96% (13,331 votes)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "States where the margin of victory was under 5% (109 electoral votes):"
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Nevada, 1.02% (4,730 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Georgia, 1.17% (26,994 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Colorado, 1.37% (20,696 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Virginia, 1.96% (47,290 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Arizona, 2.22% (31,215 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Tennessee, 2.41% (45,616 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Montana, 2.88% (11,730 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "South Dakota, 3.46% (11,210 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "North Carolina, 4.69% (118,089 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Texas, 4.93% (276,484 votes)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "States where the margin of victory was between 5% and 10% (143 electoral votes):"
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Mississippi, 5.13% (45,816 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Indiana, 5.58% (119,269 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Florida, 5.70% (302,334 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "South Carolina, 6.04% (69,407 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Missouri, 6.30% (135,919 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Ohio, 6.36% (288,339 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "North Dakota, 6.81% (18,145 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Alabama, 6.96% (106,879 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "New Mexico, 7.32% (40,744 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Oklahoma, 7.81% (94,210 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Oregon, 8.09% (111,489 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Pennsylvania, 9.20% (414,650 votes) (tipping point state)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "New Hampshire, 9.95% (49,682 votes)"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Statistics",
+                            "type": "section",
+                            "has_parts": [
+                                {
+                                    "type": "paragraph",
+                                    "value": "Counties with Highest Percent of Vote (Democratic)"
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Starr County, Texas 86.94%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Starr_County,_Texas",
+                                                    "text": "Starr County, Texas"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Bronx County, New York 85.80%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/The_Bronx",
+                                                    "text": "Bronx County, New York"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Macon County, Alabama 85.55%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Macon_County,_Alabama",
+                                                    "text": "Macon County, Alabama"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Washington, D.C. 85.19%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Washington,_D.C.",
+                                                    "text": "Washington, D.C."
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Duval County, Texas 84.94%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Duval_County,_Texas",
+                                                    "text": "Duval County, Texas"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "Counties with Highest Percent of Vote (Republican)"
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Ochiltree County, Texas 79.20%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Ochiltree_County,_Texas",
+                                                    "text": "Ochiltree County, Texas"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Russell County, Kansas 78.98%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Russell_County,_Kansas",
+                                                    "text": "Russell County, Kansas"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Glasscock County, Texas 78.93%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Glasscock_County,_Texas",
+                                                    "text": "Glasscock County, Texas"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Hayes County, Nebraska 77.02%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Hayes_County,_Nebraska",
+                                                    "text": "Hayes County, Nebraska"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Sioux County, Iowa 77.00%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Sioux_County,_Iowa",
+                                                    "text": "Sioux County, Iowa"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "Counties with Highest Percent of Vote (Other)"
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Mineral County, Montana 23.72%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Mineral_County,_Montana",
+                                                    "text": "Mineral County, Montana"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Grant County, North Dakota 21.55%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Grant_County,_North_Dakota",
+                                                    "text": "Grant County, North Dakota"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Shoshone County, Idaho 21.55%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Shoshone_County,_Idaho",
+                                                    "text": "Shoshone County, Idaho"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Sanders County, Montana 21.24%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Sanders_County,_Montana",
+                                                    "text": "Sanders County, Montana"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Billings County, North Dakota 21.10%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Billings_County,_North_Dakota",
+                                                    "text": "Billings County, North Dakota"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Voter demographics",
+            "type": "section",
+            "has_parts": [
+                {
+                    "type": "paragraph",
+                    "value": "Source: Voter News Service exit poll, reported in The New York Times, November 10, 1996, 28.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/The_New_York_Times",
+                            "text": "The New York Times"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Polling controversy",
+            "type": "section",
+            "has_parts": [
+                {
+                    "type": "paragraph",
+                    "value": "The polling in the election was criticized by Everett Carll Ladd, who argued that \"polls had overestimated Clinton's lead during the campaign and had thereby dampened interest in the election.\" Others such as Warren J. Mitofsky rebutted Ladd's view; in an analysis in Public Opinion Quarterly, Mitofsky wrote that \"1996 was not the best but was far from the worst year for the polls\", with accuracy surpassing the polling in 1948 and in 1980. Because Clinton won the election by a comfortable margin, there was no major reaction towards the impreciseness of the polls.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Everett_Carll_Ladd",
+                            "text": "Everett Carll Ladd"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Warren_J._Mitofsky",
+                            "text": "Warren J. Mitofsky"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Public_Opinion_Quarterly",
+                            "text": "Public Opinion Quarterly"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1948_United_States_presidential_election",
+                            "text": "1948"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1980_United_States_presidential_election",
+                            "text": "1980"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

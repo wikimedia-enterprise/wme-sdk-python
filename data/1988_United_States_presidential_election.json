@@ -1,0 +1,2112 @@
+{
+    "name": "1988 United States presidential election",
+    "identifier": 39531,
+    "abstract": "The 1988 United States presidential election was the 51st quadrennial presidential election held on Tuesday, November 8, 1988. In what was the third consecutive landslide election for the Republican Party, their ticket of incumbent Vice President George H. W. Bush and Indiana senator Dan Quayle defeated the Democratic ticket of Massachusetts Governor Michael Dukakis and Texas senator Lloyd Bentsen. It remains the most recent election in which a candidate won over 400 electoral votes, and consequently the last landslide election of a U.S. president. Conversely, it began an ongoing streak of presidential elections that were decided by a single-digit popular vote margin. It was the first time since 1948, the first time for the Republicans since 1928, and the most recent presidential election to date in which a party won more than two consecutive presidential terms. Additionally, it was the last time that the Republicans won the popular vote three times – or even twice – in a row. President Ronald Reagan was ineligible to seek a third term because of the 22nd Amendment. Instead, Bush entered the Republican primaries as the front-runner, defeating Kansas Senator Bob Dole and televangelist Pat Robertson. He selected Indiana Senator Dan Quayle as his running mate. Dukakis won the Democratic primaries after Democratic leaders Gary Hart and Ted Kennedy withdrew or declined to run. He selected Texas Senator Lloyd Bentsen as his running mate. It was the first election since 1968 to lack an incumbent president on the ballot. Bush ran an aggressive campaign that concentrated mainly on the strong economy, reduction in crime, and continuance with Reagan's policies. He attacked Dukakis as an elitist \"Massachusetts liberal\", to which Dukakis ineffectively responded. Despite Dukakis initially leading in the polls, Bush pulled ahead after the Republican National Convention and extended his lead after two strong debate performances. Bush won a decisive victory over Dukakis, winning the Electoral College and the popular vote by sizable margins. Bush became the first sitting vice president to be elected president since Martin Van Buren in 1836, and the first vice president to be elected president since Richard Nixon in 1968. This remains the last time that a Republican has carried California, Connecticut, Delaware, Illinois, Maine, Maryland, New Jersey, and Vermont. Arkansas, Kentucky, Louisiana, Missouri, Nevada, New Hampshire, Ohio, and Tennessee would not vote Republican again until 2000, while New Mexico would not vote Republican again until 2004. Pennsylvania and Michigan would not vote Republican again until 2016. This remains the latest presidential election in which the Democrats did not win at least 200 electoral votes, partly due to their lock on certain states in presidential races from 1988 onward. As of 2020, this is the last presidential election in which the Republican nominee won the female vote, as well as the last presidential election in which Michigan, Pennsylvania, and Wisconsin did not vote for the same candidate.",
+    "version": {
+        "identifier": 1252343643,
+        "comment": "split.",
+        "tags": [
+            "wikieditor"
+        ],
+        "scores": {
+            "revertrisk": {
+                "probability": {
+                    "false": 0.5330316722393036,
+                    "true": 0.4669683277606964
+                }
+            }
+        },
+        "editor": {
+            "identifier": 44374359,
+            "name": "JohnAdams1800",
+            "edit_count": 9879,
+            "groups": [
+                "extendedconfirmed",
+                "*",
+                "user",
+                "autoconfirmed"
+            ],
+            "date_started": "2022-08-21T00:31:03Z"
+        },
+        "number_of_characters": 110138,
+        "size": {
+            "value": 110673,
+            "unit_text": "B"
+        },
+        "maintenance_tags": {
+            "citation_needed_count": 4,
+            "clarification_needed_count": 1
+        }
+    },
+    "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election",
+    "date_created": "2002-02-24T15:02:20Z",
+    "date_modified": "2024-10-20T22:44:35Z",
+    "main_entity": {
+        "identifier": "Q643015",
+        "url": "https://www.wikidata.org/entity/Q643015"
+    },
+    "is_part_of": {
+        "identifier": "enwiki",
+        "url": "https://en.wikipedia.org"
+    },
+    "additional_entities": [
+        {
+            "identifier": "Q643015",
+            "url": "https://www.wikidata.org/entity/Q643015",
+            "aspects": [
+                "C",
+                "D.en",
+                "O",
+                "S",
+                "T"
+            ]
+        },
+        {
+            "identifier": "Q8879859",
+            "url": "https://www.wikidata.org/entity/Q8879859",
+            "aspects": [
+                "S"
+            ]
+        }
+    ],
+    "in_language": {
+        "identifier": "en"
+    },
+    "image": {
+        "content_url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/ElectoralCollege1988.svg",
+        "width": 1020,
+        "height": 593
+    },
+    "license": [
+        {
+            "name": "Creative Commons Attribution-ShareAlike License 4.0",
+            "identifier": "CC-BY-SA-4.0",
+            "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+    ],
+    "description": "51st quadrennial U.S. presidential election",
+    "infobox": [
+        {
+            "name": "Infobox election",
+            "type": "infobox",
+            "has_parts": [
+                {
+                    "name": "1988 United States presidential election",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "image",
+                            "values": [
+                                ""
+                            ],
+                            "images": [
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Flag_of_the_United_States_%28Pantone%29.svg/50px-Flag_of_the_United_States_%28Pantone%29.svg.png",
+                                    "height": 50,
+                                    "width": 50
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "November 8, 1988",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "field",
+                            "value": "November 8, 1988",
+                            "values": [
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "538 members of the Electoral College 270 electoral votes needed to win",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "name": "Turnout",
+                            "type": "field",
+                            "value": "52.8% 2.4 pp",
+                            "values": [
+                                ""
+                            ],
+                            "images": [
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Decrease2.svg/11px-Decrease2.svg.png",
+                                    "alternative_text": "Decrease",
+                                    "height": 11,
+                                    "width": 11
+                                }
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election#cite_note-1"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Percentage_point",
+                                    "text": "pp"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Nominee George H. W. Bush Michael Dukakis Party Republican Democratic Home state Texas Massachusetts Running mate Dan Quayle Lloyd Bentsen Electoral vote 426 111 States carried 40 10 + DC Popular vote 48,886,597 41,809,476 Percentage 53.4% 45.6%",
+                            "values": [
+                                ""
+                            ],
+                            "images": [
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/VP_George_Bush_crop.jpg/150px-VP_George_Bush_crop.jpg",
+                                    "height": 150,
+                                    "width": 150
+                                },
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Dukakis_campaign_portrait_3x4.jpg/150px-Dukakis_campaign_portrait_3x4.jpg",
+                                    "height": 150,
+                                    "width": 150
+                                }
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/George_H._W._Bush",
+                                    "text": "George H. W. Bush"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Michael_Dukakis",
+                                    "text": "Michael Dukakis"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Republican_Party_(United_States)",
+                                    "text": "Republican"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                                    "text": "Democratic"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Texas",
+                                    "text": "Texas"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Massachusetts",
+                                    "text": "Massachusetts"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Dan_Quayle",
+                                    "text": "Dan Quayle"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Lloyd_Bentsen",
+                                    "text": "Lloyd Bentsen"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election#cite_note-2"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Washington,_D.C.",
+                                    "text": "DC"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "image",
+                            "values": [
+                                ""
+                            ],
+                            "images": [
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/VP_George_Bush_crop.jpg/150px-VP_George_Bush_crop.jpg",
+                                    "height": 150,
+                                    "width": 150
+                                },
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Dukakis_campaign_portrait_3x4.jpg/150px-Dukakis_campaign_portrait_3x4.jpg",
+                                    "height": 150,
+                                    "width": 150
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Nominee George H. W. Bush Michael Dukakis",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/George_H._W._Bush",
+                                    "text": "George H. W. Bush"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Michael_Dukakis",
+                                    "text": "Michael Dukakis"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Party Republican Democratic",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Republican_Party_(United_States)",
+                                    "text": "Republican"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                                    "text": "Democratic"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Home state Texas Massachusetts",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Texas",
+                                    "text": "Texas"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Massachusetts",
+                                    "text": "Massachusetts"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Running mate Dan Quayle Lloyd Bentsen",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Dan_Quayle",
+                                    "text": "Dan Quayle"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Lloyd_Bentsen",
+                                    "text": "Lloyd Bentsen"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Electoral vote 426 111",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election#cite_note-2"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "States carried 40 10 + DC",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Washington,_D.C.",
+                                    "text": "DC"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Popular vote 48,886,597 41,809,476",
+                            "values": [
+                                ""
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Percentage 53.4% 45.6%",
+                            "values": [
+                                ""
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Presidential election results map. Red denotes states won by Bush/Quayle and blue denotes those won by Dukakis/Bentsen. Light blue is the electoral vote for Bentsen/Dukakis by a West Virginia faithless elector. Numbers indicate electoral votes cast by each state and the District of Columbia.",
+                            "values": [
+                                ""
+                            ],
+                            "images": [
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/ElectoralCollege1988.svg/348px-ElectoralCollege1988.svg.png",
+                                    "height": 348,
+                                    "width": 348
+                                }
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Faithless_elector",
+                                    "text": "faithless elector"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Electoral_votes",
+                                    "text": "electoral votes"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "President before election Ronald Reagan Republican Elected President George H. W. Bush Republican",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Ronald_Reagan",
+                                    "text": "Ronald Reagan"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Republican_Party_(United_States)",
+                                    "text": "Republican"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/George_H._W._Bush",
+                                    "text": "George H. W. Bush"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Republican_Party_(United_States)",
+                                    "text": "Republican"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "President before election Ronald Reagan Republican",
+                            "type": "field",
+                            "value": "Elected President George H. W. Bush Republican",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Ronald_Reagan",
+                                    "text": "Ronald Reagan"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Republican_Party_(United_States)",
+                                    "text": "Republican"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/George_H._W._Bush",
+                                    "text": "George H. W. Bush"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Republican_Party_(United_States)",
+                                    "text": "Republican"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "sections": [
+        {
+            "name": "Abstract",
+            "type": "section",
+            "has_parts": [
+                {
+                    "type": "paragraph",
+                    "value": "The 1988 United States presidential election was the 51st quadrennial presidential election held on Tuesday, November 8, 1988. In what was the third consecutive landslide election for the Republican Party, their ticket of incumbent Vice President George H. W. Bush and Indiana senator Dan Quayle defeated the Democratic ticket of Massachusetts Governor Michael Dukakis and Texas senator Lloyd Bentsen.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/United_States_presidential_election",
+                            "text": "presidential election"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Landslide_victory",
+                            "text": "landslide election"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Republican_Party_(United_States)",
+                            "text": "Republican Party"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Vice_President_of_the_United_States",
+                            "text": "Vice President"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/George_H._W._Bush",
+                            "text": "George H. W. Bush"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Dan_Quayle",
+                            "text": "Dan Quayle"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                            "text": "Democratic"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Massachusetts",
+                            "text": "Massachusetts"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Michael_Dukakis",
+                            "text": "Michael Dukakis"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Lloyd_Bentsen",
+                            "text": "Lloyd Bentsen"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "It remains the most recent election in which a candidate won over 400 electoral votes, and consequently the last landslide election of a U.S. president. Conversely, it began an ongoing streak of presidential elections that were decided by a single-digit popular vote margin. It was the first time since 1948, the first time for the Republicans since 1928, and the most recent presidential election to date in which a party won more than two consecutive presidential terms. Additionally, it was the last time that the Republicans won the popular vote three times – or even twice – in a row.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1948_United_States_presidential_election",
+                            "text": "1948"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1928_United_States_presidential_election",
+                            "text": "1928"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "President Ronald Reagan was ineligible to seek a third term because of the 22nd Amendment. Instead, Bush entered the Republican primaries as the front-runner, defeating Kansas Senator Bob Dole and televangelist Pat Robertson. He selected Indiana Senator Dan Quayle as his running mate. Dukakis won the Democratic primaries after Democratic leaders Gary Hart and Ted Kennedy withdrew or declined to run. He selected Texas Senator Lloyd Bentsen as his running mate. It was the first election since 1968 to lack an incumbent president on the ballot.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Ronald_Reagan",
+                            "text": "Ronald Reagan"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/22nd_Amendment",
+                            "text": "22nd Amendment"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1988_Republican_Party_presidential_primaries",
+                            "text": "the Republican primaries"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Kansas",
+                            "text": "Kansas"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Bob_Dole",
+                            "text": "Bob Dole"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Pat_Robertson",
+                            "text": "Pat Robertson"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Indiana",
+                            "text": "Indiana"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Dan_Quayle",
+                            "text": "Dan Quayle"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1988_Democratic_Party_presidential_primaries",
+                            "text": "the Democratic primaries"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Gary_Hart",
+                            "text": "Gary Hart"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Ted_Kennedy",
+                            "text": "Ted Kennedy"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Texas",
+                            "text": "Texas"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Lloyd_Bentsen",
+                            "text": "Lloyd Bentsen"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1968_United_States_presidential_election",
+                            "text": "1968"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Bush ran an aggressive campaign that concentrated mainly on the strong economy, reduction in crime, and continuance with Reagan's policies. He attacked Dukakis as an elitist \" Massachusetts liberal \", to which Dukakis ineffectively responded. Despite Dukakis initially leading in the polls, Bush pulled ahead after the Republican National Convention and extended his lead after two strong debate performances. Bush won a decisive victory over Dukakis, winning the Electoral College and the popular vote by sizable margins.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Massachusetts_liberal",
+                            "text": "Massachusetts liberal"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/United_States_Electoral_College",
+                            "text": "Electoral College"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Bush became the first sitting vice president to be elected president since Martin Van Buren in 1836, and the first vice president to be elected president since Richard Nixon (as former vice president) in 1968. This remains the last time that a Republican has carried California, Connecticut, Delaware, Illinois, Maine, Maryland, New Jersey, and Vermont. Arkansas, Kentucky, Louisiana, Missouri, Nevada, New Hampshire, Ohio, and Tennessee would not vote Republican again until 2000, while New Mexico would not vote Republican again until 2004. Pennsylvania and Michigan would not vote Republican again until 2016.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Martin_Van_Buren",
+                            "text": "Martin Van Buren"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1836_United_States_presidential_election",
+                            "text": "1836"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Richard_Nixon",
+                            "text": "Richard Nixon"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1968_United_States_presidential_election",
+                            "text": "1968"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election_in_California",
+                            "text": "California"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election_in_Connecticut",
+                            "text": "Connecticut"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election_in_Delaware",
+                            "text": "Delaware"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election_in_Illinois",
+                            "text": "Illinois"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election_in_Maine",
+                            "text": "Maine"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election_in_Maryland",
+                            "text": "Maryland"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election_in_New_Jersey",
+                            "text": "New Jersey"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election_in_Vermont",
+                            "text": "Vermont"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election_in_Arkansas",
+                            "text": "Arkansas"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election_in_Kentucky",
+                            "text": "Kentucky"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election_in_Louisiana",
+                            "text": "Louisiana"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election_in_Missouri",
+                            "text": "Missouri"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election_in_Nevada",
+                            "text": "Nevada"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election_in_New_Hampshire",
+                            "text": "New Hampshire"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election_in_Ohio",
+                            "text": "Ohio"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election_in_Tennessee",
+                            "text": "Tennessee"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election",
+                            "text": "2000"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election_in_New_Mexico",
+                            "text": "New Mexico"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2004_United_States_presidential_election_in_New_Mexico",
+                            "text": "2004"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election_in_Pennsylvania",
+                            "text": "Pennsylvania"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election_in_Michigan",
+                            "text": "Michigan"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2016_United_States_presidential_election",
+                            "text": "2016"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "This remains the latest presidential election in which the Democrats did not win at least 200 electoral votes, partly due to their lock on certain states in presidential races from 1988 onward. As of 2020, this is the last presidential election in which the Republican nominee won the female vote, as well as the last presidential election in which Michigan, Pennsylvania, and Wisconsin did not vote for the same candidate.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Blue_wall_(U.S._politics)",
+                            "text": "due to their lock"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Republican Party nomination",
+            "type": "section",
+            "has_parts": [
+                {
+                    "name": "Republican candidates",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "list",
+                            "has_parts": [
+                                {
+                                    "type": "list_item",
+                                    "value": "George H. W. Bush, Vice President",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/George_H._W._Bush",
+                                            "text": "George H. W. Bush"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Bob Dole, U.S. senator from Kansas",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Bob_Dole",
+                                            "text": "Bob Dole"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Pat Robertson, televangelist from Virginia",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Pat_Robertson",
+                                            "text": "Pat Robertson"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Jack Kemp, U.S. representative from New York",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Jack_Kemp",
+                                            "text": "Jack Kemp"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Pete du Pont, former governor of Delaware",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Pete_du_Pont",
+                                            "text": "Pete du Pont"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Governor_of_Delaware",
+                                            "text": "governor of Delaware"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Alexander Haig, former secretary of state, from Pennsylvania",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Alexander_Haig",
+                                            "text": "Alexander Haig"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Ben Fernandez, former Special Ambassador to Paraguay, from California",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Ben_Fernandez",
+                                            "text": "Ben Fernandez"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Paul Laxalt, former United States Senator from Nevada",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Paul_Laxalt",
+                                            "text": "Paul Laxalt"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Donald Rumsfeld, former Secretary of Defense from Illinois",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Donald_Rumsfeld",
+                                            "text": "Donald Rumsfeld"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Harold Stassen, former Governor of Minnesota",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Harold_Stassen",
+                                            "text": "Harold Stassen"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Governor_of_Minnesota",
+                                            "text": "Governor of Minnesota"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "While Bush had long been seen as Reagan's natural successor, there was still a degree of opposition within the party to his candidacy. Historical precedent was not seen to favor Bush's chances, as no incumbent vice president had been elected as president since Martin Van Buren some 152 years prior. Dole attracted support among those who were concerned that Bush, whose electoral experience outside of his campaigns with Reagan was limited to running unsuccessfully for the Senate and twice successfully for the House of Representatives in the 1960s, had not done enough to establish himself as a candidate in his own right. Others who wished to further continue the shift towards social conservatism that had begun during Reagan's presidency supported Robertson.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Martin_Van_Buren",
+                                    "text": "Martin Van Buren"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Bush unexpectedly came in third in the Iowa caucus, which he had won in 1980, behind Dole and Robertson. Dole was also leading in the polls of the New Hampshire primary, and the Bush camp responded by running television commercials portraying Dole as a tax raiser, while Governor John H. Sununu campaigned for Bush. Dole did nothing to counter these ads and Bush won, thereby gaining crucial momentum, which he called \"Big Mo\". Once the multiple-state primaries such as Super Tuesday began, Bush's organizational strength and fundraising lead were impossible for the other candidates to match, and the nomination was his.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Iowa_caucus",
+                                    "text": "Iowa caucus"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/New_Hampshire_primary",
+                                    "text": "New Hampshire primary"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/John_H._Sununu",
+                                    "text": "John H. Sununu"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "The Republican Party convention was held in New Orleans, Louisiana. Bush was nominated unanimously and selected U.S. Senator Dan Quayle from Indiana as his running mate. In his acceptance speech, Bush made the pledge \" Read my lips: No new taxes,\" which contributed to his loss in the 1992 election.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/New_Orleans,_Louisiana",
+                                    "text": "New Orleans, Louisiana"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Dan_Quayle",
+                                    "text": "Dan Quayle"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Indiana",
+                                    "text": "Indiana"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Read_my_lips:_No_new_taxes",
+                                    "text": "Read my lips: No new taxes"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1992_United_States_presidential_election",
+                                    "text": "1992 election"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Democratic Party nomination",
+            "type": "section",
+            "has_parts": [
+                {
+                    "type": "paragraph",
+                    "value": "In the 1984 presidential election the Democrats had nominated Walter Mondale, a traditional New Deal -type liberal, who advocated for those constituencies that Franklin Roosevelt forged into a majority coalition, as their candidate. When Mondale was defeated in a landslide, party leaders became eager to find a new approach to get away from the 1980 and 1984 debacles. After Bush's image was affected by his involvement on the Iran-Contra scandal much more than Reagan's, and after the Democrats won back control of the U.S. Senate in the 1986 congressional elections following an economic downturn, the party's leaders felt optimistic about having a closer race with the GOP in 1988, although probabilities of winning the presidency were still marginal given the climate of prosperity.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1984_United_States_presidential_election",
+                            "text": "1984 presidential election"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Walter_Mondale",
+                            "text": "Walter Mondale"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/New_Deal",
+                            "text": "New Deal"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Iran–Contra_affair",
+                            "text": "Iran-Contra"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/United_States_Senate",
+                            "text": "U.S. Senate"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "One goal of the party was to find a new, fresh candidate who could move beyond the traditional New Deal-Great Society ideas of the past and offer a new image of the Democrats to the public. To this end party leaders tried to recruit New York Governor Mario Cuomo to be a candidate. Cuomo had impressed many Democrats with his keynote speech at the 1984 Democratic Convention, and they believed he would be a strong candidate. After Cuomo chose not to run, the Democratic frontrunner for most of 1987 was former Colorado Senator Gary Hart. He had made a strong showing in the 1984 presidential primaries and, after Mondale's defeat, had positioned himself as the moderate centrist many Democrats felt their party would need to win.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Governor_of_New_York",
+                            "text": "New York Governor"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Mario_Cuomo",
+                            "text": "Mario Cuomo"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Gary_Hart",
+                            "text": "Gary Hart"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Democratic_Party_presidential_primaries,_1984",
+                            "text": "1984 presidential primaries"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "But questions and rumors about extramarital affairs and past debts dogged Hart's campaign. Hart had told New York Times reporters who questioned him about these rumors that, if they followed him around, they would \"be bored\". In a separate investigation, the Miami Herald had received an anonymous tip from a friend of Donna Rice that Rice was involved with Hart. After his affair emerged, the Herald reporters found Hart's quote in a pre-print of The New York Times magazine. After the Herald' s findings were publicized, many other media outlets picked up the story and Hart's ratings in the polls plummeted. On May 8, 1987, a week after the Rice story broke, Hart dropped out of the race. His campaign chair, Representative Patricia Schroeder, tested the waters for about four months after Hart's withdrawal, but decided in September 1987 that she would not run. In December 1987, Hart surprised many pundits by resuming his campaign, but the allegations of adultery had delivered a fatal blow to his candidacy, and he did poorly in the primaries before dropping out again.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/The_New_York_Times",
+                            "text": "New York Times"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Miami_Herald",
+                            "text": "Miami Herald"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Donna_Rice",
+                            "text": "Donna Rice"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/The_New_York_Times",
+                            "text": "The New York Times"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Patricia_Schroeder",
+                            "text": "Patricia Schroeder"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Pundit_(expert)",
+                            "text": "pundits"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Adultery",
+                            "text": "adultery"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Senator Ted Kennedy of Massachusetts had been considered a potential candidate, but he ruled himself out of the race in the fall of 1985. Two other politicians mentioned as possible candidates, both from Arkansas, did not join the race: Senator Dale Bumpers and Governor and future President Bill Clinton.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Ted_Kennedy",
+                            "text": "Ted Kennedy"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Dale_Bumpers",
+                            "text": "Dale Bumpers"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Governor_of_Arkansas",
+                            "text": "Governor"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Bill_Clinton",
+                            "text": "Bill Clinton"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Joe Biden 's campaign also ended in controversy after he was accused of plagiarizing a speech by Neil Kinnock, then-leader of the British Labour Party. The Dukakis campaign secretly released a video in which Biden was filmed repeating a Kinnock stump speech with only minor modifications. Biden later called his failure to attribute the quotes an oversight, and in related proceedings the Delaware Supreme Court 's Board on Professional Responsibility cleared him of a separate plagiarism charge, leveled for plagiarizing an article during his law school. This ultimately led him to drop out of the race. Dukakis later revealed that his campaign had leaked the tape, and two members of his staff resigned. (Biden later ran twice more for the Democratic nomination, unsuccessfully in 2008 and successfully in 2020. He was elected the 47th vice president in 2008, serving two terms under President Barack Obama. In 2021, he became the 46th president, over 33 years after his first campaign for the office ended.)",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Joe_Biden",
+                            "text": "Joe Biden"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Plagiarism",
+                            "text": "plagiarizing"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Neil_Kinnock",
+                            "text": "Neil Kinnock"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Labour_Party_(UK)",
+                            "text": "Labour Party"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Delaware_Supreme_Court",
+                            "text": "Delaware Supreme Court"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Joe_Biden_2008_presidential_campaign",
+                            "text": "2008"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Joe_Biden_2020_presidential_campaign",
+                            "text": "2020"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2008_United_States_presidential_election",
+                            "text": "2008"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Barack_Obama",
+                            "text": "Barack Obama"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Inauguration_of_Joe_Biden",
+                            "text": "2021"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Al Gore, a senator from Tennessee, also chose to run for the nomination. Turning 40 in 1988, he would have been the youngest man to contest the presidency on a major party ticket since William Jennings Bryan in 1896, and the youngest president ever if elected, younger than John F. Kennedy at election age and Theodore Roosevelt at age of assumption of office. He eventually became the 45th Vice President of the United States under Bill Clinton, then the Democratic presidential nominee in 2000, losing to George W. Bush, George H.W.'s son.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Al_Gore",
+                            "text": "Al Gore"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Tennessee",
+                            "text": "Tennessee"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/John_F._Kennedy",
+                            "text": "John F. Kennedy"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Theodore_Roosevelt",
+                            "text": "Theodore Roosevelt"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Bill_Clinton",
+                            "text": "Bill Clinton"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election",
+                            "text": "2000"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/George_W._Bush",
+                            "text": "George W. Bush"
+                        }
+                    ]
+                },
+                {
+                    "name": "Primaries",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "After Hart withdrew from the race, no clear frontrunner emerged before the primaries and caucuses began. The Iowa caucus was won by Dick Gephardt, who had been sagging heavily in the polls until, three weeks before the vote, he began campaigning as a populist and his numbers surged. Illinois Senator Paul M. Simon finished a surprising second, and Massachusetts Governor Michael Dukakis finished third. In the New Hampshire primary, Dukakis came in first, Gephardt fell to second, and Simon came in third. In an effort to weaken Gephardt's candidacy, both Dukakis and Gore ran negative television ads against Gephardt. The ads convinced the United Auto Workers, which had endorsed Gephardt, to withdraw their endorsement; this crippled Gephardt, as he relied heavily on the support of labor unions.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Iowa_caucus",
+                                    "text": "Iowa caucus"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Dick_Gephardt",
+                                    "text": "Dick Gephardt"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Populism",
+                                    "text": "populist"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Illinois",
+                                    "text": "Illinois"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/United_States_Senate",
+                                    "text": "Senator"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Paul_M._Simon",
+                                    "text": "Paul M. Simon"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Massachusetts",
+                                    "text": "Massachusetts"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Michael_Dukakis",
+                                    "text": "Michael Dukakis"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/New_Hampshire_presidential_primary",
+                                    "text": "New Hampshire primary"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/United_Auto_Workers",
+                                    "text": "United Auto Workers"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "In the Super Tuesday races, Dukakis won six primaries, to Gore's five, Jesse Jackson five and Gephardt one, with Gore and Jackson splitting the Southern states. The next week, Simon won Illinois with Jackson finishing second. Jackson captured 6.9 million votes and won 11 contests: seven primaries (Alabama, the District of Columbia, Georgia, Louisiana, Mississippi, Puerto Rico and Virginia) and four caucuses (Delaware, Michigan, South Carolina and Vermont). He also scored March victories in Alaska 's caucuses and Texas's local conventions, despite losing the Texas primary. Briefly, after he won 55% of the vote in the Michigan Democratic caucus, he had more pledged delegates than all the other candidates.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Super_Tuesday",
+                                    "text": "Super Tuesday"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Jesse_Jackson",
+                                    "text": "Jesse Jackson"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Alabama",
+                                    "text": "Alabama"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/District_of_Columbia",
+                                    "text": "District of Columbia"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Georgia_(U.S._state)",
+                                    "text": "Georgia"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Louisiana",
+                                    "text": "Louisiana"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Mississippi",
+                                    "text": "Mississippi"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Puerto_Rico",
+                                    "text": "Puerto Rico"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Virginia",
+                                    "text": "Virginia"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Delaware",
+                                    "text": "Delaware"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Michigan",
+                                    "text": "Michigan"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/South_Carolina",
+                                    "text": "South Carolina"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Vermont",
+                                    "text": "Vermont"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Alaska",
+                                    "text": "Alaska"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Jackson's campaign suffered a significant setback less than two weeks later when he was defeated in the Wisconsin primary by Dukakis. Dukakis's win in New York and then in Pennsylvania effectively ended Jackson's hopes for the nomination.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Wisconsin",
+                                    "text": "Wisconsin"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Pennsylvania",
+                                    "text": "Pennsylvania"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Democratic Convention",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "The Democratic Party Convention was held in Atlanta, Georgia from July 18–21. Arkansas Governor Bill Clinton placed Dukakis's name in nomination, and delivered his speech, scheduled to be 15 minutes long, but lasting so long that some delegates began booing to get him to finish; he received great cheering when he said, \"In closing...\".",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1988_Democratic_National_Convention",
+                                    "text": "Democratic Party Convention"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Atlanta",
+                                    "text": "Atlanta"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bill_Clinton",
+                                    "text": "Bill Clinton"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Texas State Treasurer Ann Richards, who was elected the state governor two years later, gave a speech attacking George Bush, including the line \"Poor George, he can't help it, he was born with a silver foot in his mouth.\"",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Texas_State_Treasurer",
+                                    "text": "Texas State Treasurer"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Ann_Richards",
+                                    "text": "Ann Richards"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Governor_of_Texas",
+                                    "text": "state governor"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "With only Jackson remaining as an active candidate to oppose Dukakis, the tally for president was:"
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Jackson's supporters said that since their candidate had finished in second place, he was entitled to the vice presidential nomination. Dukakis disagreed, and instead selected Senator Lloyd Bentsen from Texas. Bentsen's selection led many in the media to dub the ticket the \"Boston-Austin\" axis, and to compare it to the pairing of John F. Kennedy and Lyndon B. Johnson in the 1960 presidential campaign. Like Dukakis and Bentsen, Kennedy and Johnson were from Massachusetts and Texas respectively.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Lloyd_Bentsen",
+                                    "text": "Lloyd Bentsen"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/John_F._Kennedy",
+                                    "text": "John F. Kennedy"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Lyndon_B._Johnson",
+                                    "text": "Lyndon B. Johnson"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Other nominations",
+            "type": "section",
+            "has_parts": [
+                {
+                    "name": "Libertarian Party",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "Ron Paul and Andre Marrou formed the ticket for the Libertarian Party. Their campaign called for the adoption of a global policy on military nonintervention, advocated an end to the federal government's involvement with education, and criticized Reagan's \"bailout\" of the Soviet Union. Paul was a former member of the U.S. House of Representatives, first elected as a Republican from Texas in an April 1976 special election. He was known as an opponent of the war on drugs.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Ron_Paul",
+                                    "text": "Ron Paul"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Andre_Marrou",
+                                    "text": "Andre Marrou"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/United_States_Libertarian_Party",
+                                    "text": "Libertarian Party"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Ron_Paul_presidential_campaign,_1988",
+                                    "text": "Their campaign"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Nonintervention",
+                                    "text": "nonintervention"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Soviet_Union",
+                                    "text": "Soviet Union"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/U.S._House_of_Representatives",
+                                    "text": "U.S. House of Representatives"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Republican_(U.S.)",
+                                    "text": "Republican"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/War_on_drugs",
+                                    "text": "war on drugs"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "New Alliance Party",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "Lenora Fulani ran for the New Alliance Party, and focused on issues concerning unemployment, healthcare, and homelessness. The party had full ballot access, meaning Fulani and her running mate, Joyce Dattner, were the first pair of women to receive ballot access in all 50 states. Fulani was the first African American to do so.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Lenora_Fulani",
+                                    "text": "Lenora Fulani"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/New_Alliance_Party",
+                                    "text": "New Alliance Party"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Ballot_access",
+                                    "text": "ballot access"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Socialist Party",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "Willa Kenoyer and Ron Ehrenreich ran for the Socialist Party, advocating a decentralist government approach with policies determined by the needs of the workers.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Willa_Kenoyer",
+                                    "text": "Willa Kenoyer"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Ron_Ehrenreich",
+                                    "text": "Ron Ehrenreich"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Socialist_Party_USA",
+                                    "text": "Socialist Party"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Populist Party",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "David E. Duke stood for the Populist Party. A former leader of the Louisiana Ku Klux Klan, he advocated a mixture of White nationalist and separatist policies with more traditionally conservative positions, such as opposition to most immigration from Latin America and to affirmative action.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/David_Duke",
+                                    "text": "David E. Duke"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Populist_Party_(United_States,_1984)",
+                                    "text": "Populist Party"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Ku_Klux_Klan",
+                                    "text": "Ku Klux Klan"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/White_Nationalism",
+                                    "text": "White nationalist"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/White_separatism",
+                                    "text": "separatist"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Affirmative_action",
+                                    "text": "affirmative action"
+                                },
+                                {
+                                    "url": "https://books.google.com/books?id=6Yx1-sBC1VcC&q=populist+party+1984&pg=PA562"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "General election",
+            "type": "section",
+            "has_parts": [
+                {
+                    "name": "Campaign",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "During the election, the Bush campaign sought to portray Dukakis as an unreasonable \" Massachusetts liberal.\" Dukakis was attacked for such positions as opposing mandatory recitation of the Pledge of Allegiance in schools, and being a \"card-carrying member of the ACLU \" (a statement Dukakis made early in the primary campaign to appeal to liberal voters). Dukakis responded by saying that he was a \"proud liberal\" and that the phrase should not be a bad word in America.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Massachusetts_liberal",
+                                    "text": "Massachusetts liberal"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Pledge_of_Allegiance",
+                                    "text": "Pledge of Allegiance"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/American_Civil_Liberties_Union",
+                                    "text": "ACLU"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Bush pledged to continue Reagan's policies, but also vowed a \"kinder and gentler nation\" in an attempt to win over more moderate voters. The duties delegated to him during Reagan's second term (mostly because of the President's advanced age, Reagan turning 78 just after he left office) gave him an unusually high level of experience for a vice president.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/George_H._W._Bush",
+                                    "text": "Bush"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "A graduate of Yale University, Bush derided Dukakis for having \"foreign-policy views born in Harvard Yard 's boutique.\" New York Times columnist Maureen Dowd asked, \"Wasn't this a case of the pot calling the kettle elite?\" Bush said that, unlike Harvard, Yale's reputation was \"so diffuse, there isn't a symbol, I don't think, in the Yale situation, any symbolism in it... Harvard boutique to me has the connotation of liberalism and elitism,\" and said he intended Harvard to represent \"a philosophical enclave\", not a statement about class. Columnist Russell Baker wrote, \"Voters inclined to loathe and fear elite Ivy League schools rarely make fine distinctions between Yale and Harvard. All they know is that both are full of rich, fancy, stuck-up and possibly dangerous intellectuals who never sit down to supper in their undershirt no matter how hot the weather gets.\"",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Yale_University",
+                                    "text": "Yale University"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Harvard_Yard",
+                                    "text": "Harvard Yard"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Maureen_Dowd",
+                                    "text": "Maureen Dowd"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/The_pot_calling_the_kettle_black",
+                                    "text": "the pot calling the kettle"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Russell_Baker",
+                                    "text": "Russell Baker"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Dukakis was badly damaged by the Republicans' campaign commercials, including \"Boston Harbor\", which attacked his failure to clean up environmental pollution in the harbor, and especially by two commercials that were accused of being racially charged, \" Revolving Door \" and \"Weekend Passes\" (also known as \"Willie Horton\"), that portrayed him as soft on crime. Dukakis was a strong supporter of Massachusetts's prison furlough program, which had begun before he was governor. As governor, Dukakis vetoed a 1976 plan to bar inmates convicted of first-degree murder from the furlough program. In 1986, the program had resulted in the release of convicted murderer Willie Horton, an African American man who committed a rape and assault in Maryland while out on furlough.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Boston_Harbor#Pollution_and_cleanup_efforts",
+                                    "text": "environmental pollution in the harbor"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Revolving_Door_(advertisement)",
+                                    "text": "Revolving Door"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Willie_Horton#Horton_in_the_1988_presidential_campaign",
+                                    "text": "\"Weekend Passes\" (also known as \"Willie Horton\")"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Furlough",
+                                    "text": "furlough"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "A number of false rumors about Dukakis were reported in the media, including Idaho Republican Senator Steve Symms 's claim that Dukakis's wife Kitty had burned an American flag to protest the Vietnam War, as well as the claim that Dukakis himself had been treated for mental illness.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Steve_Symms",
+                                    "text": "Steve Symms"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Kitty_Dukakis",
+                                    "text": "Kitty"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Vietnam_War",
+                                    "text": "Vietnam War"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "\"Dukakis in the tank\"",
+                            "type": "section",
+                            "has_parts": [
+                                {
+                                    "type": "paragraph",
+                                    "value": "Dukakis attempted to quell criticism that he was ignorant on military matters by staging a photo op in which he rode in an M1 Abrams tank outside a General Dynamics plant in Sterling Heights, Michigan. The move ended up being regarded as a major public relations blunder, with many mocking Dukakis's appearance as he waved to the crowd from the tank. The Bush campaign used the footage in an attack ad, accompanied by a rolling text listing Dukakis's vetoes of military-related bills. The incident remains a commonly cited example of backfired public relations.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Michael_Dukakis_tank_photograph",
+                                            "text": "photo op"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/M1_Abrams",
+                                            "text": "M1 Abrams"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/General_Dynamics",
+                                            "text": "General Dynamics"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Sterling_Heights,_Michigan",
+                                            "text": "Sterling Heights, Michigan"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Dan Quayle",
+                            "type": "section",
+                            "has_parts": [
+                                {
+                                    "type": "paragraph",
+                                    "value": "One reason for Bush's choice of Senator Dan Quayle as his running mate was to appeal to younger Americans identified with the \" Reagan Revolution.\" Quayle's looks were praised by Senator John McCain: \"I can't believe a guy that handsome wouldn't have some impact.\" But Quayle was not a seasoned politician, and made a number of embarrassing statements. The Dukakis team attacked Quayle's credentials, saying he was \"dangerously inexperienced to be first-in-line to the presidency.\"",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Dan_Quayle",
+                                            "text": "Dan Quayle"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Reagan_Revolution",
+                                            "text": "Reagan Revolution"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/John_McCain",
+                                            "text": "John McCain"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "During the vice presidential debate, Quayle attempted to dispel such allegations by comparing his experience with that of pre-1960 John F. Kennedy, who had also been a young politician when running for the presidency (Kennedy had served 13 years in Congress to Quayle's 12). Quayle said, \"I have as much experience in the Congress as Jack Kennedy did when he sought the presidency.\" \"Senator, I served with Jack Kennedy. I knew Jack Kennedy,\" Dukakis's running mate, Lloyd Bentsen, responded. \"Jack Kennedy was a friend of mine. Senator, you're no Jack Kennedy.\"",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/John_F._Kennedy",
+                                            "text": "John F. Kennedy"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Senator,_you're_no_Jack_Kennedy",
+                                            "text": "Senator, you're no Jack Kennedy"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "Quayle responded, \"That was really uncalled for, Senator,\" to which Bentsen said, \"You are the one that was making the comparison, Senator, and I'm one who knew him well. And frankly I think you are so far apart in the objectives you choose for your country that I did not think the comparison was well-taken.\""
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "Democrats replayed Quayle's reaction to Bentsen's comment in subsequent ads as an announcer intoned, \"Quayle: just a heartbeat away.\" Despite much press about the Kennedy comments, this did not reduce Bush's lead in the polls. Quayle had sought to use the debate to criticize Dukakis as too liberal rather than go point for point with the more seasoned Bentsen. Bentsen's attempts to defend Dukakis received little recognition, with greater attention on the Kennedy comparison."
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Jennifer Fitzgerald and Donna Brazile firing",
+                            "type": "section",
+                            "has_parts": [
+                                {
+                                    "type": "paragraph",
+                                    "value": "During the course of the campaign, Dukakis fired his deputy field director Donna Brazile after she spread false rumors that Bush had had an affair with his assistant Jennifer Fitzgerald. Bush and Fitzgerald's relationship was briefly rehashed in the 1992 campaign.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Donna_Brazile",
+                                            "text": "Donna Brazile"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Presidential debates",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "There were two presidential debates and one vice-presidential debate."
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Voters were split as to who won the first presidential debate. Bush improved in the second debate. Before the second debate, Dukakis had been suffering from the flu and spent much of the day in bed. His performance was generally seen as poor and played to his reputation of being intellectually cold. Reporter Bernard Shaw opened the debate by asking Dukakis whether he would support the death penalty if Kitty Dukakis were raped and murdered; Dukakis said \"no\" and discussed the statistical ineffectiveness of capital punishment. Some commentators thought the question itself was unfair, in that it injected an overly emotional element into the discussion of a policy issue, but many observers felt Dukakis's answer lacked the normal emotions one would expect of a person talking about a loved one's rape and murder. Tom Brokaw of NBC reported on his October 14 newscast, \"The consensus tonight is that Vice President George Bush won last night's debate and made it all the harder for Governor Michael Dukakis to catch and pass him in the 25 days remaining. In all of the Friday morning quarterbacking, there was common agreement that Dukakis failed to seize the debate and make it his night.\"",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bernard_Shaw_(journalist)",
+                                    "text": "Bernard Shaw"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Tom_Brokaw",
+                                    "text": "Tom Brokaw"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Results",
+            "type": "section",
+            "has_parts": [
+                {
+                    "type": "paragraph",
+                    "value": "In the November 8 election, Bush won a majority of the popular vote and the Electoral College. Neither his popular vote percentage (53.4%), his total electoral votes (426), nor his number of states won (40) have been surpassed in any subsequent presidential election."
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Like Reagan in 1980 and 1984, Bush performed very strongly among suburban voters, in areas such as the collar counties of Chicago (winning over 60% in DuPage and Lake counties), Philadelphia (sweeping the Main Line counties), Baltimore, Los Angeles (winning over 60% in the Republican bastions of Orange and San Diego counties) and New York. As of 2020, Bush is the last Republican to win the heavily suburban states of California, Connecticut, Delaware, Illinois, Maryland, and New Jersey. He is also the last Republican candidate to win rural Vermont, which was historically Republican but by this time shifting away from the party, as well as the last Republican candidate to win Maine in its entirety, though Donald Trump won one electoral vote from the state in both 2016 and 2020. Bush lost New York state by just over 4%. Bush is the first Republican to win the presidency without Iowa. In contrast to the suburbs, a solidly Republican constituency, Bush received a significantly lower level of support than Reagan in rural regions. Farm states had fared poorly during the Reagan administration, and Dukakis was the beneficiary. This is the last election where Michigan and Pennsylvania voted Republican until 2016, New Mexico until 2004, and Arkansas, Kentucky, Louisiana, Missouri, Nevada, New Hampshire, Ohio, and Tennessee until 2000. This is the last election where no state was decided by a margin under 1%.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Collar_counties",
+                            "text": "collar counties of Chicago"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/DuPage_County,_Illinois",
+                            "text": "DuPage"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Lake_County,_Illinois",
+                            "text": "Lake"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Philadelphia_Main_Line",
+                            "text": "Main Line"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Orange_County,_California",
+                            "text": "Orange"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/San_Diego_County,_California",
+                            "text": "San Diego"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/California",
+                            "text": "California"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Connecticut",
+                            "text": "Connecticut"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Delaware",
+                            "text": "Delaware"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Illinois",
+                            "text": "Illinois"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Maryland",
+                            "text": "Maryland"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/New_Jersey",
+                            "text": "New Jersey"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Vermont",
+                            "text": "Vermont"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Maine",
+                            "text": "Maine"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Donald_Trump",
+                            "text": "Donald Trump"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/New_York_(state)",
+                            "text": "New York"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Farm_crisis",
+                            "text": "Farm states had fared poorly"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Michigan",
+                            "text": "Michigan"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Pennsylvania",
+                            "text": "Pennsylvania"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "In Illinois, Bush lost a number of downstate counties that previously went for Reagan, and he lost Iowa by a wide margin, even losing in traditionally Republican areas. Bush also performed weaker in Missouri's northern counties, narrowly winning that state. In three typically solid Republican states, Kansas, South Dakota, and Montana, the vote was much closer than usual. The rural state of West Virginia, though not an agricultural economy, narrowly flipped back into the Democratic column. As of 2024, this is the only election since 1916 where Blaine County, Montana did not vote for the winning candidate.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Blaine_County,_Montana",
+                            "text": "Blaine County, Montana"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Bush performed strongest in the South and West. Despite Bentsen's presence on the Democratic ticket, Bush won Texas by 12 points. He lost the states of the Pacific Northwest but narrowly held California in the Republican column for the sixth straight time. As of 2024, this was the last election in which the Republican candidate won the support of a majority or plurality of women voters.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Pacific_Northwest",
+                            "text": "Pacific Northwest"
+                        }
+                    ]
+                },
+                {
+                    "name": "Electoral results",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "Source (popular vote):,"
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Source (electoral vote): West Virginia faithless elector Margarette Leach voted for Bentsen as president and Dukakis as vice president in order to make a statement against the U.S. Electoral College. Fulani's running mate varied from state to state. Among the six vice presidential candidates were Joyce Dattner, Harold Moore, and Wynonia Burke.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/West_Virginia",
+                                    "text": "West Virginia"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Faithless_elector",
+                                    "text": "faithless elector"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Margarette_Leach",
+                                    "text": "Margarette Leach"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/U.S._Electoral_College",
+                                    "text": "U.S. Electoral College"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Results by state",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "Maine allowed its electoral votes to be split between candidates. Two electoral votes were awarded to the winner of the statewide race and one electoral vote to the winner of each congressional district. Bush won all four votes. This was the last election in which Nebraska awarded its electors in a winner-take-all format before switching to the congressional district method."
+                        },
+                        {
+                            "name": "States that flipped from Republican to Democratic",
+                            "type": "section",
+                            "has_parts": [
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Hawaii",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Hawaii",
+                                                    "text": "Hawaii"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Iowa",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Iowa",
+                                                    "text": "Iowa"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Massachusetts",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Massachusetts",
+                                                    "text": "Massachusetts"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "New York",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/New_York_(state)",
+                                                    "text": "New York"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Oregon",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Oregon",
+                                                    "text": "Oregon"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Rhode Island",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Rhode_Island",
+                                                    "text": "Rhode Island"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Washington",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Washington_(state)",
+                                                    "text": "Washington"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "West Virginia",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/West_Virginia",
+                                                    "text": "West Virginia"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Wisconsin",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Wisconsin",
+                                                    "text": "Wisconsin"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Close states",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "States with margin of victory less than 5% (195 electoral votes)"
+                        },
+                        {
+                            "type": "list",
+                            "has_parts": [
+                                {
+                                    "type": "list_item",
+                                    "value": "Washington, 1.59% (29,681 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Illinois, 2.09% (94,999 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Pennsylvania, 2.31% (105,143 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Maryland, 2.91% (49,863 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Vermont, 3.52% (8,556 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "California, 3.57% (352,684 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Wisconsin, 3.61% (79,295 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Missouri, 3.98% (83,334 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "New York, 4.10% (266,011 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Oregon, 4.67% (56,080 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "West Virginia, 4.74% (30,951 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "New Mexico, 4.96% (25,844 votes)"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "States with margin of victory between 5% and 10% (70 electoral votes):"
+                        },
+                        {
+                            "type": "list",
+                            "has_parts": [
+                                {
+                                    "type": "list_item",
+                                    "value": "Connecticut, 5.11% (73,657 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Montana, 5.87% (21,476 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "South Dakota, 6.34% (19,855 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Minnesota, 7.01% (147,134 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Colorado, 7.78% (106,724 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Massachusetts, 7.85% (206,762 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Michigan, 7.90% (289,703 votes) (tipping point state)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Hawaii, 9.52% (33,739 votes)"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Statistics",
+                            "type": "section",
+                            "has_parts": [
+                                {
+                                    "type": "paragraph",
+                                    "value": "Counties with Highest Percent of Vote (Republican)"
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Jackson County, Kentucky 85.16%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Jackson_County,_Kentucky",
+                                                    "text": "Jackson County, Kentucky"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Madison County, Idaho 84.87%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Madison_County,_Idaho",
+                                                    "text": "Madison County, Idaho"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Ochiltree County, Texas 83.25%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Ochiltree_County,_Texas",
+                                                    "text": "Ochiltree County, Texas"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Blaine County, Nebraska 82.24%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Blaine_County,_Nebraska",
+                                                    "text": "Blaine County, Nebraska"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Thomas County, Nebraska 82.19%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Thomas_County,_Nebraska",
+                                                    "text": "Thomas County, Nebraska"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "Counties with Highest Percent of Vote (Democratic)"
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Starr County, Texas 84.74%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Starr_County,_Texas",
+                                                    "text": "Starr County, Texas"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Zavala County, Texas 84.02%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Zavala_County,_Texas",
+                                                    "text": "Zavala County, Texas"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Washington D.C. 82.65%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Washington,_D.C.",
+                                                    "text": "Washington D.C."
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Duval County, Texas 81.95%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Duval_County,_Texas",
+                                                    "text": "Duval County, Texas"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Brooks County, Texas 81.94%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Brooks_County,_Texas",
+                                                    "text": "Brooks County, Texas"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Voter demographics",
+            "type": "section",
+            "has_parts": [
+                {
+                    "type": "paragraph",
+                    "value": "Source: CBS News and The New York Times exit poll from the Roper Center for Public Opinion Research (11,645 surveyed)",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/CBS_News",
+                            "text": "CBS News"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/The_New_York_Times",
+                            "text": "The New York Times"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Roper_Center_for_Public_Opinion_Research",
+                            "text": "Roper Center for Public Opinion Research"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

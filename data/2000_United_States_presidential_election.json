@@ -1,0 +1,2926 @@
+{
+    "name": "2000 United States presidential election",
+    "identifier": 32009,
+    "abstract": "The 2000 United States presidential election was the 54th quadrennial presidential election, held on Tuesday, November 7, 2000. The Republican nominee, Governor George W. Bush of Texas, the eldest son of George H. W. Bush, narrowly defeated incumbent Democratic Vice President Al Gore. It was the fourth of five U.S. presidential elections, and the first since 1888, in which the winning candidate lost the popular vote, and is considered one of the closest U.S. presidential elections, with long-standing controversy about the result. Gore conceded the election on December 13. Incumbent Democratic President Bill Clinton was ineligible to seek a third term because of term limits established by the 22nd Amendment. Incumbent Vice President Gore easily secured the Democratic nomination, defeating former New Jersey Senator Bill Bradley in the primaries. He selected Connecticut Senator Joe Lieberman as his running mate. Bush was seen as the early favorite for the Republican nomination, and after a contentious primary battle with Arizona Senator John McCain and others, he secured the nomination by Super Tuesday. He selected former Secretary of Defense Dick Cheney as his running mate. Both major-party candidates focused primarily on domestic issues, such as the budget, tax relief, and reforms for federal social insurance programs, although foreign policy was not ignored. Due to President Bill Clinton's sex scandal with Monica Lewinsky and subsequent impeachment, Gore avoided campaigning with Clinton. Republicans denounced Clinton's indiscretions, while Gore criticized Bush's lack of experience. On election night, it was unclear who had won, with the electoral votes of the state of Florida still undecided. The returns showed that Bush won Florida by such a close margin that state law required a recount. A month-long series of legal battles led to the highly controversial 5–4 Supreme Court decision Bush v. Gore, which ended the recount. Bush won Florida by 537 votes, a margin of 0.009%. The Florida recount and subsequent litigation resulted in major post-election controversy, and with speculative analysis suggesting that limited county-based recounts would likely have confirmed a Bush victory, whereas a statewide recount would likely have given the state to Gore. Ultimately, Bush won 271 electoral votes, one vote more than the 270-to-win majority, despite Gore receiving 543,895 more votes. Bush flipped 11 states that had voted Democratic in 1996: Arkansas, Arizona, Florida, Kentucky, Louisiana, Missouri, Nevada, New Hampshire, Ohio, Tennessee, and West Virginia. As of 2020, this is the most recent presidential election in which the Republican candidate won New Hampshire and the only presidential election since New Mexico's statehood in 1912 that Nevada and New Mexico voted for different candidates. Bush went on to preside over the first Republican trifecta in almost 50 years. This was the last time until 2024 in which an incumbent vice president ran for president. This is one of only four U.S. presidential elections in which the winner did not carry any of the three Rust Belt states of Michigan, Pennsylvania, and Wisconsin; the others were 1884, 1916, and 2004.",
+    "version": {
+        "identifier": 1252340782,
+        "comment": "redundant",
+        "tags": [
+            "mw-manual-revert",
+            "wikieditor"
+        ],
+        "scores": {
+            "revertrisk": {
+                "prediction": true,
+                "probability": {
+                    "false": 0.06265401840209961,
+                    "true": 0.9373459815979004
+                }
+            }
+        },
+        "editor": {
+            "name": "2607:FEA8:22DE:1F20:24B6:BDBA:3C0E:3C67",
+            "groups": [
+                "*"
+            ],
+            "is_anonymous": true,
+            "date_started": "0001-01-01T00:00:00Z"
+        },
+        "number_of_characters": 153902,
+        "size": {
+            "value": 155150,
+            "unit_text": "B"
+        },
+        "maintenance_tags": {
+            "citation_needed_count": 1
+        }
+    },
+    "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election",
+    "date_created": "2001-11-04T02:16:38Z",
+    "date_modified": "2024-10-20T22:30:08Z",
+    "main_entity": {
+        "identifier": "Q327959",
+        "url": "https://www.wikidata.org/entity/Q327959"
+    },
+    "is_part_of": {
+        "identifier": "enwiki",
+        "url": "https://en.wikipedia.org"
+    },
+    "additional_entities": [
+        {
+            "identifier": "Q327959",
+            "url": "https://www.wikidata.org/entity/Q327959",
+            "aspects": [
+                "C",
+                "D.en",
+                "O",
+                "S",
+                "T"
+            ]
+        },
+        {
+            "identifier": "Q9656890",
+            "url": "https://www.wikidata.org/entity/Q9656890",
+            "aspects": [
+                "S"
+            ]
+        }
+    ],
+    "in_language": {
+        "identifier": "en"
+    },
+    "image": {
+        "content_url": "https://upload.wikimedia.org/wikipedia/commons/1/19/ElectoralCollege2000.svg",
+        "width": 1020,
+        "height": 593
+    },
+    "license": [
+        {
+            "name": "Creative Commons Attribution-ShareAlike License 4.0",
+            "identifier": "CC-BY-SA-4.0",
+            "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+    ],
+    "description": "54th quadrennial U.S. presidential election",
+    "infobox": [
+        {
+            "name": "Infobox election",
+            "type": "infobox",
+            "has_parts": [
+                {
+                    "name": "2000 United States presidential election",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "image",
+                            "values": [
+                                ""
+                            ],
+                            "images": [
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Flag_of_the_United_States_%28Pantone%29.svg/50px-Flag_of_the_United_States_%28Pantone%29.svg.png",
+                                    "height": 50,
+                                    "width": 50
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "November 7, 2000",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "field",
+                            "value": "November 7, 2000",
+                            "values": [
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "538 members of the Electoral College 270 electoral votes needed to win",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "name": "Turnout",
+                            "type": "field",
+                            "value": "54.2% 2.5 pp",
+                            "values": [
+                                ""
+                            ],
+                            "images": [
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Increase2.svg/11px-Increase2.svg.png",
+                                    "alternative_text": "Increase",
+                                    "height": 11,
+                                    "width": 11
+                                }
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election#cite_note-2"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Percentage_point",
+                                    "text": "pp"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Nominee George W. Bush Al Gore Party Republican Democratic Home state Texas Tennessee Running mate Dick Cheney Joe Lieberman Electoral vote 271 266 States carried 30 20 + DC Popular vote 50,456,002 50,999,897 Percentage 47.9% 48.4%",
+                            "values": [
+                                ""
+                            ],
+                            "images": [
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/GeorgeWBush_%281%29.jpg/150px-GeorgeWBush_%281%29.jpg",
+                                    "height": 150,
+                                    "width": 150
+                                },
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Al_Gore%2C_Vice_President_of_the_United_States%2C_official_portrait_1994.jpg/160px-Al_Gore%2C_Vice_President_of_the_United_States%2C_official_portrait_1994.jpg",
+                                    "height": 160,
+                                    "width": 160
+                                }
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/George_W._Bush",
+                                    "text": "George W. Bush"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Al_Gore",
+                                    "text": "Al Gore"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Republican_Party_(United_States)",
+                                    "text": "Republican"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                                    "text": "Democratic"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Texas",
+                                    "text": "Texas"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Tennessee",
+                                    "text": "Tennessee"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Dick_Cheney",
+                                    "text": "Dick Cheney"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Joe_Lieberman",
+                                    "text": "Joe Lieberman"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election#cite_note-Discrepancy_Between_Pledged_Elector_Tally_and_Electoral_Vote_for_Gore/Lieberman-3"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Washington,_D.C.",
+                                    "text": "DC"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "image",
+                            "values": [
+                                ""
+                            ],
+                            "images": [
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/GeorgeWBush_%281%29.jpg/150px-GeorgeWBush_%281%29.jpg",
+                                    "height": 150,
+                                    "width": 150
+                                },
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Al_Gore%2C_Vice_President_of_the_United_States%2C_official_portrait_1994.jpg/160px-Al_Gore%2C_Vice_President_of_the_United_States%2C_official_portrait_1994.jpg",
+                                    "height": 160,
+                                    "width": 160
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Nominee George W. Bush Al Gore",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/George_W._Bush",
+                                    "text": "George W. Bush"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Al_Gore",
+                                    "text": "Al Gore"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Party Republican Democratic",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Republican_Party_(United_States)",
+                                    "text": "Republican"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                                    "text": "Democratic"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Home state Texas Tennessee",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Texas",
+                                    "text": "Texas"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Tennessee",
+                                    "text": "Tennessee"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Running mate Dick Cheney Joe Lieberman",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Dick_Cheney",
+                                    "text": "Dick Cheney"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Joe_Lieberman",
+                                    "text": "Joe Lieberman"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Electoral vote 271 266",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election#cite_note-Discrepancy_Between_Pledged_Elector_Tally_and_Electoral_Vote_for_Gore/Lieberman-3"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "States carried 30 20 + DC",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Washington,_D.C.",
+                                    "text": "DC"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Popular vote 50,456,002 50,999,897",
+                            "values": [
+                                ""
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Percentage 47.9% 48.4%",
+                            "values": [
+                                ""
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Presidential election results map. Red denotes states won by Bush/Cheney and blue denotes those won by Gore/Lieberman. One of D.C.'s three electors abstained from casting a vote for president or vice president. Numbers indicate electoral votes cast by each state and the District of Columbia.",
+                            "values": [
+                                ""
+                            ],
+                            "images": [
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/ElectoralCollege2000.svg/348px-ElectoralCollege2000.svg.png",
+                                    "height": 348,
+                                    "width": 348
+                                }
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Faithless_elector",
+                                    "text": "abstained"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Electoral_votes",
+                                    "text": "electoral votes"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "President before election Bill Clinton Democratic Elected President George W. Bush Republican",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bill_Clinton",
+                                    "text": "Bill Clinton"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                                    "text": "Democratic"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/George_W._Bush",
+                                    "text": "George W. Bush"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Republican_Party_(United_States)",
+                                    "text": "Republican"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "President before election Bill Clinton Democratic",
+                            "type": "field",
+                            "value": "Elected President George W. Bush Republican",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bill_Clinton",
+                                    "text": "Bill Clinton"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                                    "text": "Democratic"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/George_W._Bush",
+                                    "text": "George W. Bush"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Republican_Party_(United_States)",
+                                    "text": "Republican"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "sections": [
+        {
+            "name": "Abstract",
+            "type": "section",
+            "has_parts": [
+                {
+                    "type": "paragraph",
+                    "value": "The 2000 United States presidential election was the 54th quadrennial presidential election, held on Tuesday, November 7, 2000. The Republican nominee, Governor George W. Bush of Texas, the eldest son of George H. W. Bush, narrowly defeated incumbent Democratic Vice President Al Gore. It was the fourth of five U.S. presidential elections, and the first since 1888, in which the winning candidate lost the popular vote, and is considered one of the closest U.S. presidential elections, with long-standing controversy about the result. Gore conceded the election on December 13.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/United_States_presidential_election",
+                            "text": "presidential election"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Republican_Party_(United_States)",
+                            "text": "Republican"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Governor_of_Texas",
+                            "text": "Governor"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/George_W._Bush",
+                            "text": "George W. Bush"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Texas",
+                            "text": "Texas"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/George_H._W._Bush",
+                            "text": "George H. W. Bush"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                            "text": "Democratic"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Vice_President_of_the_United_States",
+                            "text": "Vice President"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Al_Gore",
+                            "text": "Al Gore"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1888_United_States_presidential_election",
+                            "text": "1888"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/List_of_United_States_presidential_elections_in_which_the_winner_lost_the_popular_vote",
+                            "text": "winning candidate lost the popular vote"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Incumbent Democratic President Bill Clinton was ineligible to seek a third term because of term limits established by the 22nd Amendment. Incumbent Vice President Gore easily secured the Democratic nomination, defeating former New Jersey Senator Bill Bradley in the primaries. He selected Connecticut Senator Joe Lieberman as his running mate. Bush was seen as the early favorite for the Republican nomination, and after a contentious primary battle with Arizona Senator John McCain and others, he secured the nomination by Super Tuesday. He selected former Secretary of Defense Dick Cheney as his running mate.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/President_of_the_United_States",
+                            "text": "President"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Bill_Clinton",
+                            "text": "Bill Clinton"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Twenty-second_Amendment_to_the_United_States_Constitution",
+                            "text": "22nd Amendment"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2000_Democratic_Party_presidential_primaries",
+                            "text": "Democratic nomination"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/New_Jersey",
+                            "text": "New Jersey"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Bill_Bradley",
+                            "text": "Bill Bradley"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2000_Democratic_primaries",
+                            "text": "primaries"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Connecticut",
+                            "text": "Connecticut"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Joe_Lieberman",
+                            "text": "Joe Lieberman"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Running_mate",
+                            "text": "running mate"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2000_Republican_Party_presidential_primaries",
+                            "text": "Republican nomination"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Arizona",
+                            "text": "Arizona"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/John_McCain",
+                            "text": "John McCain"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Super_Tuesday",
+                            "text": "Super Tuesday"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/United_States_Secretary_of_Defense",
+                            "text": "Secretary of Defense"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Dick_Cheney",
+                            "text": "Dick Cheney"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Running_mate",
+                            "text": "running mate"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Both major-party candidates focused primarily on domestic issues, such as the budget, tax relief, and reforms for federal social insurance programs, although foreign policy was not ignored. Due to President Bill Clinton 's sex scandal with Monica Lewinsky and subsequent impeachment, Gore avoided campaigning with Clinton. Republicans denounced Clinton's indiscretions, while Gore criticized Bush's lack of experience.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Social_insurance",
+                            "text": "social insurance"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Bill_Clinton",
+                            "text": "Bill Clinton"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Clinton–Lewinsky_scandal",
+                            "text": "sex scandal"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Monica_Lewinsky",
+                            "text": "Monica Lewinsky"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Impeachment_of_Bill_Clinton",
+                            "text": "impeachment"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "On election night, it was unclear who had won, with the electoral votes of the state of Florida still undecided. The returns showed that Bush won Florida by such a close margin that state law required a recount. A month-long series of legal battles led to the highly controversial 5–4 Supreme Court decision Bush v. Gore, which ended the recount. Bush won Florida by 537 votes, a margin of 0.009%. The Florida recount and subsequent litigation resulted in major post-election controversy, and with speculative analysis suggesting that limited county-based recounts would likely have confirmed a Bush victory, whereas a statewide recount would likely have given the state to Gore. Ultimately, Bush won 271 electoral votes, one vote more than the 270-to-win majority, despite Gore receiving 543,895 more votes (a margin of 0.52% of all votes cast). Bush flipped 11 states that had voted Democratic in 1996: Arkansas, Arizona, Florida, Kentucky, Louisiana, Missouri, Nevada, New Hampshire, Ohio, Tennessee, and West Virginia. As of 2020, this is the most recent presidential election in which the Republican candidate won New Hampshire and the only presidential election since New Mexico's statehood in 1912 that Nevada and New Mexico voted for different candidates. Bush went on to preside over the first Republican trifecta in almost 50 years. This was the last time until 2024 in which an incumbent vice president ran for president. This is one of only four U.S. presidential elections in which the winner did not carry any of the three Rust Belt states of Michigan, Pennsylvania, and Wisconsin; the others were 1884, 1916, and 2004.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/United_States_Electoral_College",
+                            "text": "electoral votes"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Florida",
+                            "text": "Florida"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election_recount_in_Florida",
+                            "text": "recount"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/United_States_Supreme_Court",
+                            "text": "Supreme Court"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Bush_v._Gore",
+                            "text": "Bush v. Gore"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1996_United_States_presidential_election",
+                            "text": "1996"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2020_United_States_presidential_election",
+                            "text": "2020"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/New_Hampshire",
+                            "text": "New Hampshire"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/New_Mexico",
+                            "text": "New Mexico's"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Government_trifecta",
+                            "text": "trifecta"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2024_United_States_presidential_election",
+                            "text": "2024"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Rust_Belt",
+                            "text": "Rust Belt"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1884_United_States_presidential_election",
+                            "text": "1884"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1916_United_States_presidential_election",
+                            "text": "1916"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2004_United_States_presidential_election",
+                            "text": "2004"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Background",
+            "type": "section",
+            "has_parts": [
+                {
+                    "type": "paragraph",
+                    "value": "President Bill Clinton, a Democrat and former Governor of Arkansas, was ineligible to seek reelection to a third term due to the Twenty-second Amendment; in accordance with Section 1 of the Twentieth Amendment, his term expired at noon Eastern Standard Time on January 20, 2001.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Bill_Clinton",
+                            "text": "Bill Clinton"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                            "text": "Democrat"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/List_of_governors_of_Arkansas",
+                            "text": "Governor of Arkansas"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Twenty-second_Amendment_to_the_United_States_Constitution",
+                            "text": "Twenty-second Amendment"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Twentieth_Amendment_to_the_United_States_Constitution",
+                            "text": "Twentieth Amendment"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Eastern_Time_Zone",
+                            "text": "Eastern Standard Time"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Republican Party nomination",
+            "type": "section",
+            "has_parts": [
+                {
+                    "name": "Primaries",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "Bush became the early front-runner, acquiring unprecedented funding and a broad base of leadership support based on his governorship of Texas, the Bush family's name recognition, and connections in American politics. Former cabinet member George Shultz played an important early role in securing establishment Republican support for Bush. In April 1998, he invited Bush to discuss policy issues with experts including Michael Boskin, John Taylor, and Condoleezza Rice, who later became his Secretary of State. The group, which was \"looking for a candidate for 2000 with good political instincts, someone they could work with\", was impressed, and Shultz encouraged him to enter the race.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/George_Shultz",
+                                    "text": "George Shultz"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Michael_Boskin",
+                                    "text": "Michael Boskin"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/John_B._Taylor",
+                                    "text": "John Taylor"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Condoleezza_Rice",
+                                    "text": "Condoleezza Rice"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Secretary_of_state_(U.S._state_government)",
+                                    "text": "Secretary of State"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Several aspirants withdrew before the Iowa caucuses because they did not secure funding and endorsements sufficient to remain competitive with Bush. These included Elizabeth Dole, Dan Quayle, Lamar Alexander, and Bob Smith. Pat Buchanan dropped out to run for the Reform Party nomination. That left Bush, John McCain, Alan Keyes, Steve Forbes, Gary Bauer, and Orrin Hatch as the only candidates still in the race.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2000_Iowa_Republican_presidential_caucuses",
+                                    "text": "Iowa caucuses"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Elizabeth_Dole",
+                                    "text": "Elizabeth Dole"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Dan_Quayle",
+                                    "text": "Dan Quayle"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Lamar_Alexander",
+                                    "text": "Lamar Alexander"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bob_Smith_(New_Hampshire_politician)",
+                                    "text": "Bob Smith"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Pat_Buchanan",
+                                    "text": "Pat Buchanan"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/John_McCain",
+                                    "text": "John McCain"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Alan_Keyes",
+                                    "text": "Alan Keyes"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Steve_Forbes",
+                                    "text": "Steve Forbes"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Gary_Bauer",
+                                    "text": "Gary Bauer"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Orrin_Hatch",
+                                    "text": "Orrin Hatch"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "On January 24, Bush won the Iowa caucuses with 41% of the vote. Forbes came in second with 30% of the vote. Keyes received 14%, Bauer 9%, McCain 5%, and Hatch 1%. Two days later, Hatch dropped out and endorsed Bush. The national media portrayed Bush as the establishment candidate."
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "With the support of many moderate Republicans and independents, McCain portrayed himself as a crusading insurgent who focused on campaign reform.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Electoral_reform",
+                                    "text": "campaign reform"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "On February 1, McCain, who had skipped the caucuses in order to divert resources toward New Hampshire and South Carolina, won a surprising 49–30% victory over Bush in the New Hampshire primary. Bauer subsequently dropped out, followed by Forbes, who had won no primaries after spending $32 million of his own money on his campaign. This left three candidates. In the South Carolina primary, Bush soundly defeated McCain. Some McCain supporters accused the Bush campaign of mudslinging and negative campaigning, citing push polls that implied that McCain's adopted Bangladeshi-born daughter was an African-American child he fathered out of wedlock. McCain's loss in South Carolina damaged his campaign, but he won both Michigan and his home state of Arizona on February 22.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2000_New_Hampshire_Republican_presidential_primary",
+                                    "text": "New Hampshire primary"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election_in_South_Carolina",
+                                    "text": "South Carolina primary"
+                                },
+                                {
+                                    "url": "https://en.wiktionary.org/wiki/mudslinging",
+                                    "text": "mudslinging"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Negative_campaigning",
+                                    "text": "negative campaigning"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Push_poll",
+                                    "text": "push polls"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "The primary campaigns impacted the South Carolina State House, where a controversy about the Confederate flag flying over the capitol dome prompted the state legislature to move the flag to a less prominent position at a Civil War memorial on the capitol grounds. Most GOP candidates said the issue should be left to South Carolina voters, but McCain later recanted and said the flag should be removed.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/South_Carolina_State_House",
+                                    "text": "South Carolina State House"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Flags_of_the_Confederate_States_of_America",
+                                    "text": "Civil War memorial on the capitol grounds"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "McCain criticized Bush for speaking at and accepting the endorsement of Bob Jones University despite its policy banning interracial dating, actions for which Bush subsequently apologized. On February 28, McCain also referred to Jerry Falwell and televangelist Pat Robertson as \"agents of intolerance,\" a term from which he distanced himself during his 2008 bid. He lost Virginia to Bush on February 29. On Super Tuesday, March 7, Bush won New York, Ohio, Georgia, Missouri, California, Maryland, and Maine. McCain won Rhode Island, Vermont, Connecticut, and Massachusetts but dropped out of the race. McCain became the Republican presidential nominee 8 years later, but lost the general election to Barack Obama. Bush took the majority of the remaining contests and won the Republican nomination on March 14, winning his home state of Texas and his brother Jeb's home state of Florida, among others. At the Republican National Convention in Philadelphia, Bush accepted the nomination.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bob_Jones_University",
+                                    "text": "Bob Jones University"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Interracial_dating",
+                                    "text": "interracial dating"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Jerry_Falwell_Sr.",
+                                    "text": "Jerry Falwell"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Pat_Robertson",
+                                    "text": "Pat Robertson"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/John_McCain_2008_presidential_campaign",
+                                    "text": "2008 bid"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Super_Tuesday",
+                                    "text": "Super Tuesday"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2008_United_States_presidential_election",
+                                    "text": "8 years later"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Barack_Obama",
+                                    "text": "Barack Obama"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Jeb_Bush",
+                                    "text": "Jeb's"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2000_Republican_National_Convention",
+                                    "text": "Republican National Convention"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Bush asked former Secretary of Defense Dick Cheney to head up a team to help select a running mate for him, but ultimately chose Cheney himself as the vice presidential nominee. While the U.S. Constitution does not specifically disallow a president and a vice president from the same state, it prohibits electors from casting both of their votes for persons from their own state. Accordingly, Cheney—who had been a resident of Texas for nearly 10 years—changed his voting registration back to Wyoming. Had Cheney not done this, either he or Bush would have forfeited his electoral votes from Texas.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/United_States_Secretary_of_Defense",
+                                    "text": "Secretary of Defense"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Dick_Cheney",
+                                    "text": "Dick Cheney"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Texas",
+                                    "text": "Texas"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "has_parts": [
+                                {
+                                    "type": "list_item",
+                                    "value": "Governor George W. Bush – 1,526"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Senator John McCain – 275"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Ambassador Alan Keyes – 23"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Businessman Steve Forbes – 10"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Gary Bauer – 2"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "None of the names shown – 2"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Uncommitted – 1"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Democratic Party nomination",
+            "type": "section",
+            "has_parts": [
+                {
+                    "name": "Primary",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "Vice President Al Gore was a consistent front-runner for the nomination. Other prominent Democrats mentioned as possible contenders included Bob Kerrey, Missouri Representative Dick Gephardt, Minnesota Senator Paul Wellstone, and actor and director Warren Beatty. Of these, only Wellstone formed an exploratory committee.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Al_Gore",
+                                    "text": "Al Gore"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bob_Kerrey",
+                                    "text": "Bob Kerrey"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Missouri",
+                                    "text": "Missouri"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Dick_Gephardt",
+                                    "text": "Dick Gephardt"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Minnesota",
+                                    "text": "Minnesota"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Paul_Wellstone",
+                                    "text": "Paul Wellstone"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Warren_Beatty",
+                                    "text": "Warren Beatty"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Exploratory_committee",
+                                    "text": "exploratory committee"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Running an insurgency campaign, U.S. Senator Bill Bradley positioned himself as the alternative to Gore, who was a founding member of the centrist Democratic Leadership Council. While former basketball star Michael Jordan campaigned for him in the early primary states, Bradley announced his intention to campaign \"in a different way\" by conducting a positive campaign of \"big ideas.\" His campaign's focus was a plan to spend the record-breaking budget surplus on a variety of social welfare programs to help the poor and the middle class, along with campaign finance reform and gun control.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/United_States_Senate",
+                                    "text": "U.S. Senator"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bill_Bradley",
+                                    "text": "Bill Bradley"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Democratic_Leadership_Council",
+                                    "text": "Democratic Leadership Council"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Michael_Jordan",
+                                    "text": "Michael Jordan"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Gun_control",
+                                    "text": "gun control"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Gore easily defeated Bradley in the primaries, largely because of support from the Democratic Party establishment and Bradley's poor showing in the Iowa caucus, where Gore successfully painted Bradley as aloof and indifferent to the plight of farmers. The closest Bradley came to a victory was his 50–46 loss to Gore in the New Hampshire primary. On March 14, Gore clinched the Democratic nomination."
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "None of Bradley's delegates were allowed to vote for him, so Gore won the nomination unanimously at the Democratic National Convention. Connecticut Senator Joe Lieberman was nominated for vice president by voice vote. Lieberman became the first Jewish American ever to be chosen for this position by a major party. Gore chose Lieberman over five other finalists: Senators Evan Bayh, John Edwards, and John Kerry, House Minority Leader Dick Gephardt, and New Hampshire Governor Jeanne Shaheen.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2000_Democratic_National_Convention",
+                                    "text": "Democratic National Convention"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Connecticut",
+                                    "text": "Connecticut"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Joe_Lieberman",
+                                    "text": "Joe Lieberman"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/American_Jews",
+                                    "text": "Jewish American"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Evan_Bayh",
+                                    "text": "Evan Bayh"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/John_Edwards",
+                                    "text": "John Edwards"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/John_Kerry",
+                                    "text": "John Kerry"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Party_leaders_of_the_United_States_House_of_Representatives",
+                                    "text": "House Minority Leader"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Dick_Gephardt",
+                                    "text": "Dick Gephardt"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Governor_of_New_Hampshire",
+                                    "text": "New Hampshire Governor"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Jeanne_Shaheen",
+                                    "text": "Jeanne Shaheen"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Delegate totals:"
+                        },
+                        {
+                            "type": "list",
+                            "has_parts": [
+                                {
+                                    "type": "list_item",
+                                    "value": "Vice President Albert Gore Jr. – 4,328"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Abstentions – 9",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Abstention",
+                                            "text": "Abstentions"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Other nominations",
+            "type": "section",
+            "has_parts": [
+                {
+                    "name": "Reform Party nomination",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "The nomination went to Pat Buchanan and running mate Ezola Foster from California over the objections of party founder Ross Perot and despite a rump convention nomination of John Hagelin by the Perot faction. In the end, the Federal Election Commission sided with Buchanan, and that ticket appeared on 49 of 51 possible ballots.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Ezola_Foster",
+                                    "text": "Ezola Foster"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/California",
+                                    "text": "California"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Ross_Perot",
+                                    "text": "Ross Perot"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/John_Hagelin",
+                                    "text": "John Hagelin"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Federal_Election_Commission",
+                                    "text": "Federal Election Commission"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Association of State Green Parties nomination",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "list",
+                            "has_parts": [
+                                {
+                                    "type": "list_item",
+                                    "value": "Green Party candidates: Ralph Nader from Connecticut – 295 Jello Biafra from California – 10 Stephen Gaskin from Tennessee – 11 Joel Kovel from New York – 3 Abstain – 1",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Green_Party_(United_States)",
+                                            "text": "Green Party"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Ralph_Nader",
+                                            "text": "Ralph Nader"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Connecticut",
+                                            "text": "Connecticut"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Jello_Biafra",
+                                            "text": "Jello Biafra"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/California",
+                                            "text": "California"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Stephen_Gaskin",
+                                            "text": "Stephen Gaskin"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Tennessee",
+                                            "text": "Tennessee"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Joel_Kovel",
+                                            "text": "Joel Kovel"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Ralph Nader from Connecticut – 295",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Ralph_Nader",
+                                            "text": "Ralph Nader"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Connecticut",
+                                            "text": "Connecticut"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Jello Biafra from California – 10",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Jello_Biafra",
+                                            "text": "Jello Biafra"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/California",
+                                            "text": "California"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Stephen Gaskin from Tennessee – 11",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Stephen_Gaskin",
+                                            "text": "Stephen Gaskin"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Tennessee",
+                                            "text": "Tennessee"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Joel Kovel from New York – 3",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Joel_Kovel",
+                                            "text": "Joel Kovel"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Abstain – 1"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "The Greens/Green Party USA, a then-recognized national party organization, later endorsed Nader for president and he appeared on the ballots of 43 states and Washington, D.C.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Greens/Green_Party_USA",
+                                    "text": "Greens/Green Party USA"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Washington,_D.C.",
+                                    "text": "Washington, D.C."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Libertarian Party nomination",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "list",
+                            "has_parts": [
+                                {
+                                    "type": "list_item",
+                                    "value": "Libertarian Party candidates delegate totals: Harry Browne from Tennessee – 493 Don Gorman from New Hampshire – 166 Jacob Hornberger from Virginia – 120 Barry Hess from Arizona – 53 None of the Above – 23 other write-ins – 15 David Hollist from California – 8",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Libertarian_Party_(United_States)",
+                                            "text": "Libertarian Party"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Harry_Browne",
+                                            "text": "Harry Browne"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Tennessee",
+                                            "text": "Tennessee"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Don_Gorman",
+                                            "text": "Don Gorman"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/New_Hampshire",
+                                            "text": "New Hampshire"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Jacob_Hornberger",
+                                            "text": "Jacob Hornberger"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Virginia",
+                                            "text": "Virginia"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Barry_Hess",
+                                            "text": "Barry Hess"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Arizona",
+                                            "text": "Arizona"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/California",
+                                            "text": "California"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Harry Browne from Tennessee – 493",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Harry_Browne",
+                                            "text": "Harry Browne"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Tennessee",
+                                            "text": "Tennessee"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Don Gorman from New Hampshire – 166",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Don_Gorman",
+                                            "text": "Don Gorman"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/New_Hampshire",
+                                            "text": "New Hampshire"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Jacob Hornberger from Virginia – 120",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Jacob_Hornberger",
+                                            "text": "Jacob Hornberger"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Virginia",
+                                            "text": "Virginia"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Barry Hess from Arizona – 53",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Barry_Hess",
+                                            "text": "Barry Hess"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Arizona",
+                                            "text": "Arizona"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "None of the Above – 23"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "other write-ins – 15"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "David Hollist from California – 8",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/California",
+                                            "text": "California"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "The Libertarian Party 's National Nominating Convention nominated Harry Browne from Tennessee and Art Olivier from California for president and vice president. Browne was nominated on the first ballot and Olivier received the vice presidential nomination on the second ballot. Browne appeared on every state ballot except Arizona's, due to a dispute between the Libertarian Party of Arizona (which instead nominated L. Neil Smith) and the national Libertarian Party.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Libertarian_Party_(United_States)",
+                                    "text": "Libertarian Party"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2000_Libertarian_National_Convention",
+                                    "text": "National Nominating Convention"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Harry_Browne",
+                                    "text": "Harry Browne"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Art_Olivier",
+                                    "text": "Art Olivier"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Libertarian_Party_of_Arizona",
+                                    "text": "Libertarian Party of Arizona"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/L._Neil_Smith",
+                                    "text": "L. Neil Smith"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Libertarian_Party_(United_States)",
+                                    "text": "Libertarian Party"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Constitution Party nomination",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "list",
+                            "has_parts": [
+                                {
+                                    "type": "list_item",
+                                    "value": "Constitution Party candidates: Howard Phillips Herb Titus Mathew Zupan Bob Smith U.S. Senator from New Hampshire (1990–2003) Member of the U.S. House of Representatives from NH-01 (1985–1990) Withdrew: August 17, 1999",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Constitution_Party_(United_States)",
+                                            "text": "Constitution Party"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Howard_Phillips_(activist)",
+                                            "text": "Howard Phillips"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Herb_Titus",
+                                            "text": "Herb Titus"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Bob_Smith_(New_Hampshire_politician)",
+                                            "text": "Bob Smith"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Howard Phillips",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Howard_Phillips_(activist)",
+                                            "text": "Howard Phillips"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Herb Titus",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Herb_Titus",
+                                            "text": "Herb Titus"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Mathew Zupan"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Bob Smith U.S. Senator from New Hampshire (1990–2003) Member of the U.S. House of Representatives from NH-01 (1985–1990) Withdrew: August 17, 1999",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Bob_Smith_(New_Hampshire_politician)",
+                                            "text": "Bob Smith"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "The Constitution Party nominated Howard Phillips from Virginia for a third time and Curtis Frazier from Missouri. It was on the ballot in 41 states.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Howard_Phillips_(activist)",
+                                    "text": "Howard Phillips"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Virginia",
+                                    "text": "Virginia"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Missouri",
+                                    "text": "Missouri"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Natural Law Party nomination",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "list",
+                            "has_parts": [
+                                {
+                                    "type": "list_item",
+                                    "value": "John Hagelin from Iowa and Nat Goldhaber from California",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/John_Hagelin",
+                                            "text": "John Hagelin"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Nat_Goldhaber",
+                                            "text": "Nat Goldhaber"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "The Natural Law Party held its national convention in Arlington County, Virginia, on August 31–September 2, unanimously nominating a ticket of Hagelin/Goldhaber without a roll-call vote. The party was on 38 of the 51 ballots nationally.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/United_States_Natural_Law_Party",
+                                    "text": "Natural Law Party"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Arlington_County,_Virginia",
+                                    "text": "Arlington County, Virginia"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Independents",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "list",
+                            "has_parts": [
+                                {
+                                    "type": "list_item",
+                                    "value": "Bob Smith U.S. Senator from New Hampshire (1990–2003) Member of the U.S. House of Representatives from NH-01 (1985–1990) Withdrew: October 28, 1999",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Bob_Smith_(New_Hampshire_politician)",
+                                            "text": "Bob Smith"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "General election campaign",
+            "type": "section",
+            "has_parts": [
+                {
+                    "type": "paragraph",
+                    "value": "Although the campaign focused mainly on domestic issues, such as the projected budget surplus, proposed reforms of Social Security and Medicare, health care, and competing plans for tax relief, foreign policy was often an issue.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Social_Security_(United_States)",
+                            "text": "Social Security"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Medicare_(United_States)",
+                            "text": "Medicare"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Bush criticized the Clinton administration 's policies in Somalia, where 18 Americans died in 1993 intervening among warring factions, and in the Balkans, where United States troops performed a variety of functions. \"I don't think our troops ought to be used for what's called nation-building \", Bush said in the second presidential debate. Bush also pledged to bridge partisan gaps, claiming the atmosphere in Washington stood in the way of progress on necessary reforms. Gore, meanwhile, questioned Bush's fitness for the job, pointing to gaffes Bush made in interviews and speeches and suggesting he lacked the necessary experience to be president.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Presidency_of_Bill_Clinton",
+                            "text": "Clinton administration"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Somalia",
+                            "text": "Somalia"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Nation-building",
+                            "text": "nation-building"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/American_presidential_debate",
+                            "text": "presidential debate"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Bill Clinton 's impeachment and the sex scandal that led up to it cast a shadow on the campaign. Republicans strongly denounced the Clinton scandals, and Bush made a promise to restore \"honor and dignity\" to the White House a centerpiece of his campaign. Gore studiously avoided the Clinton scandals, as did Lieberman, even though Lieberman had been the first Democratic senator to denounce Clinton's misbehavior. Some observers theorized that Gore chose Lieberman in an attempt to separate himself from Clinton's past misdeeds and help blunt the GOP's attempts to link him to his boss. Others pointed to the passionate kiss Gore gave his wife during the Democratic Convention as a signal that despite the allegations against Clinton, Gore himself was a faithful husband. Gore avoided appearing with Clinton, who was shunted to low-visibility appearances in areas where he was popular. Experts have argued that this could have cost Gore votes from some of Clinton's core supporters.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Bill_Clinton",
+                            "text": "Bill Clinton"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Impeachment_of_Bill_Clinton",
+                            "text": "impeachment"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Lewinsky_scandal",
+                            "text": "sex scandal"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2000_Democratic_National_Convention",
+                            "text": "Democratic Convention"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Ralph Nader was the most successful of the third-party candidates. His campaign was marked by a traveling tour of large \"super-rallies\" held in sports arenas like Madison Square Garden, with retired talk show host Phil Donahue as master of ceremonies. After initially ignoring Nader, the Gore campaign made a pitch to potential Nader supporters in the campaign's final weeks, downplaying his differences with Nader on the issues and arguing that Gore's ideas were more similar to Nader's than Bush's were and that Gore had a better chance of winning than Nader. On the other side, the Republican Leadership Council ran pro-Nader ads in a few states in an effort to split the liberal vote. Nader said his campaign's objective was to pass the 5-percent threshold so his Green Party would be eligible for matching funds in future races.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Ralph_Nader",
+                            "text": "Ralph Nader"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Madison_Square_Garden",
+                            "text": "Madison Square Garden"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Talk_show_host",
+                            "text": "talk show host"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Phil_Donahue",
+                            "text": "Phil Donahue"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Republican_Leadership_Council",
+                            "text": "Republican Leadership Council"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Vice-presidential candidates Cheney and Lieberman campaigned aggressively. Both camps made numerous campaign stops nationwide, often just missing each other, such as when Cheney, Hadassah Lieberman, and Tipper Gore attended Chicago's Taste of Polonia over Labor Day Weekend.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Dick_Cheney",
+                            "text": "Cheney"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Joe_Lieberman",
+                            "text": "Lieberman"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Hadassah_Lieberman",
+                            "text": "Hadassah Lieberman"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Tipper_Gore",
+                            "text": "Tipper Gore"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Taste_of_Polonia",
+                            "text": "Taste of Polonia"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Labor_Day_Weekend",
+                            "text": "Labor Day Weekend"
+                        }
+                    ]
+                },
+                {
+                    "name": "Presidential debates",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "After the 1996 presidential election, the Commission on Presidential Debates set new candidate selection criteria. The new criteria required third-party candidates to poll at least 15% of the vote in national polls in order to take part in the CPD-sponsored presidential debates. Nader was blocked from attending a closed-circuit screening of the first debate despite having a ticket, and barred from attending an interview near the site of the third debate (Washington University in St. Louis) despite having a \"perimeter pass\". Nader later sued the CPD for its role in the former incident. A settlement was reached that included an apology to him.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1996_United_States_presidential_election",
+                                    "text": "1996 presidential election"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Commission_on_Presidential_Debates",
+                                    "text": "Commission on Presidential Debates"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Nationwide_opinion_polling_for_the_United_States_presidential_election,_2000",
+                                    "text": "national polls"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Washington_University_in_St._Louis",
+                                    "text": "Washington University in St. Louis"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Notable expressions and phrases",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "list",
+                            "has_parts": [
+                                {
+                                    "type": "list_item",
+                                    "value": "Lockbox /Rainy Day fund: Gore's description of what he would do with the federal budget surplus, which was repeated many times in the first debate.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Bank_vault",
+                                            "text": "Lockbox"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Fuzzy math: a term used by Bush to dismiss the figures used by Gore. Others later turned the term against Bush.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Fuzzy_math_(politics)",
+                                            "text": "Fuzzy math"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Al Gore invented the Internet: an interpretation of Gore's having said he \"took the initiative in creating the Internet,\" meaning that he was on the committee that funded the research leading to the Internet's formation.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Al_Gore_invented_the_Internet",
+                                            "text": "Al Gore invented the Internet"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "\" Strategery \": a phrase uttered by Saturday Night Live ' s Bush character (portrayed by Will Ferrell), which Bush staffers jokingly picked up to describe their operations.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Strategery",
+                                            "text": "Strategery"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Saturday_Night_Live",
+                                            "text": "Saturday Night Live"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Will_Ferrell",
+                                            "text": "Will Ferrell"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Results",
+            "type": "section",
+            "has_parts": [
+                {
+                    "name": "Ballot access",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "Although the Libertarian Party had ballot access in all fifty United States plus D.C., Browne's name only appeared on the ballot in forty-nine United States plus D.C. The Libertarian Party of Arizona opted to place L. Neil Smith on the ballot in Browne's place. When adding Smith's 5,775 Arizona votes to Browne's 384,431 votes nationwide, that brings the total presidential votes cast for the Libertarian Party in 2000 to 390,206.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Libertarian_Party_of_Arizona",
+                                    "text": "Libertarian Party of Arizona"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/L._Neil_Smith",
+                                    "text": "L. Neil Smith"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Florida recount",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "With the exceptions of Florida and Gore's home state of Tennessee, Bush carried the Southern states by comfortable margins, including Clinton's home state of Arkansas and also won Ohio, Indiana, most of the rural Midwestern farming states, most of the Rocky Mountain states, and Alaska. Gore balanced Bush by sweeping the Northeastern United States (with the exception of New Hampshire, which Bush won narrowly), the Pacific Coast states, Hawaii, New Mexico, and most of the Upper Midwest.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election_in_Florida",
+                                    "text": "Florida"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election_in_Tennessee",
+                                    "text": "Tennessee"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bill_Clinton",
+                                    "text": "Clinton's"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election_in_Arkansas",
+                                    "text": "Arkansas"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election_in_Ohio",
+                                    "text": "Ohio"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election_in_Indiana",
+                                    "text": "Indiana"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Midwestern_United_States",
+                                    "text": "Midwestern"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election_in_Alaska",
+                                    "text": "Alaska"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Northeastern_United_States",
+                                    "text": "Northeastern United States"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election_in_New_Hampshire",
+                                    "text": "New Hampshire"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election_in_Hawaii",
+                                    "text": "Hawaii"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election_in_New_Mexico",
+                                    "text": "New Mexico"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Upper_Midwest",
+                                    "text": "Upper Midwest"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "As the night wore on, the returns in a handful of small-to-medium-sized states, including Hawaii, Iowa, Oregon and New Mexico (Gore by 355 votes) were extremely close, but the election came down to Florida. As the final national results were tallied the following morning, Bush had clearly won 246 electoral votes and Gore 250, with 270 needed to win. Two smaller states—Wisconsin (11 electoral votes) and Oregon (7)—were still too close to call, but Florida's 25 electoral votes would be decisive regardless of their results. The election's outcome was not known for more than a month after voting ended because of the time required to count and recount Florida's ballots.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election_in_Hawaii",
+                                    "text": "Hawaii"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election_in_Iowa",
+                                    "text": "Iowa"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election_in_Oregon",
+                                    "text": "Oregon"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Between 7:50 p.m. and 8:00 p.m. EST on November 7, just before the polls closed in the largely Republican Florida panhandle, which is in the Central time zone, all major television news networks (CNN, NBC, FOX, CBS, and ABC) declared that Gore had won Florida. They based this prediction substantially on exit polls. But in the vote, Bush began to take a wide lead early in Florida, and by 10 p.m. EST, the networks had retracted their predictions and placed Florida back in the \"undecided\" column. At approximately 2:30 a.m. on November 8, with 85% of the vote counted in Florida and Bush leading Gore by more than 100,000 votes, the networks declared that Bush had carried Florida and therefore been elected president. But most of the remaining votes to be counted in Florida were in three heavily Democratic counties— Broward, Miami-Dade, and Palm Beach —and as their votes were reported Gore began to gain on Bush. By 4:30 a.m., after all votes were counted, Gore had narrowed Bush's margin to under 2,000 votes, and the networks retracted their declarations that Bush had won Florida and the presidency. Gore, who had privately conceded the election to Bush, withdrew his concession. The final result in Florida was slim enough to require a mandatory recount (by machine) under state law; Bush's lead dwindled to just over 300 votes when it was completed the day after the election. On November 8, Florida Division of Elections staff prepared a press release for Florida Secretary of State Katherine Harris that said overseas ballots must be \"postmarked or signed and dated\" by Election Day. It was never released. A count of the overseas ballots later boosted Bush's margin to 930 votes. (According to a report by The New York Times, 680 of the accepted overseas ballots were received after the legal deadline, lacked required postmarks or a witness signature or address, or were unsigned or undated, cast after election day, from unregistered voters or voters not requesting ballots, or double-counted.)",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/CNN",
+                                    "text": "CNN"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/NBC",
+                                    "text": "NBC"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Fox_News",
+                                    "text": "FOX"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/CBS",
+                                    "text": "CBS"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/ABC_News_(United_States)",
+                                    "text": "ABC"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Exit_poll",
+                                    "text": "exit polls"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Broward_County,_Florida",
+                                    "text": "Broward"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Miami-Dade_County",
+                                    "text": "Miami-Dade"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Palm_Beach_County",
+                                    "text": "Palm Beach"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Concession_(politics)",
+                                    "text": "concession"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Florida_Secretary_of_State",
+                                    "text": "Florida Secretary of State"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Katherine_Harris",
+                                    "text": "Katherine Harris"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Most of the post-electoral controversy revolved around Gore's request for hand recounts in four counties (Broward, Miami-Dade, Palm Beach, and Volusia), as provided under Florida state law. Harris, who also co-chaired Bush's Florida campaign, announced she would reject any revised totals from those counties if they were not turned in by 5 p.m. on November 14, the statutory deadline for amended returns. The Florida Supreme Court extended the deadline to November 26, a decision later vacated by the U.S. Supreme Court. Miami-Dade eventually halted its recount and resubmitted its original total to the state canvassing board, while Palm Beach County failed to meet the extended deadline, turning in its completed recount results at 7 p.m., which Harris rejected. On November 26, the state canvassing board certified Bush as the winner of Florida's electors by 537 votes. Gore formally contested the certified results. A state court decision overruling Gore was reversed by the Florida Supreme Court, which ordered a recount of over 70,000 ballots previously rejected as undervotes by machine counters. The U.S. Supreme Court halted that order the next day, with Justice Scalia issuing a concurring opinion that \"the counting of votes that are of questionable legality does in my view threaten irreparable harm to petitioner\" (Bush).",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Volusia_County,_Florida",
+                                    "text": "Volusia"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Florida_Supreme_Court",
+                                    "text": "Florida Supreme Court"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Vacated",
+                                    "text": "vacated"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/U.S._Supreme_Court",
+                                    "text": "U.S. Supreme Court"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Justice_Scalia",
+                                    "text": "Justice Scalia"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "On December 12, the Supreme Court in Bush v. Gore issued a 5–4 per curiam decision that the Florida Supreme Court's ruling requiring a statewide recount of ballots was unconstitutional on equal protection grounds, and in a 5–4 vote reversed and remanded the case to the Florida Supreme Court for modification before the optional \"safe harbor\" deadline, which the Supreme Court decided the Florida court had said the state intended to meet. With only two hours remaining until the December 12 deadline, the Supreme Court's order effectively ended the recount, and the previously certified total held.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bush_v._Gore",
+                                    "text": "Bush v. Gore"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Per_curiam_decision",
+                                    "text": "per curiam decision"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Even if the Supreme Court had decided differently in Bush v. Gore, the Florida Legislature had been meeting in Special Session since December 8 with the purpose of selecting of a slate of electors on December 12 should the dispute still be ongoing. Had the recount gone forward, it would have awarded those electors to Bush, based on the state-certified vote, and Gore's likely last recourse would have been to contest the electors in the United States Congress. The electors would then have been rejected only if both houses agreed to do so."
+                        }
+                    ]
+                },
+                {
+                    "name": "National results",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "Though Gore came in second in the electoral vote, he received 543,895 more popular votes than Bush, making him the first person since Grover Cleveland in 1888 to win the popular vote but lose in the Electoral College. Gore failed to win the popular vote in his home state, Tennessee, which both he and his father had represented in the Senate, making him the first major-party presidential candidate to have lost his home state since George McGovern lost South Dakota in 1972. Furthermore, Gore lost West Virginia, a state that had voted Republican only once in the previous six presidential elections. This was the first time since 1948 that Democrats won the popular vote in three consecutive elections.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Grover_Cleveland",
+                                    "text": "Grover Cleveland"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1888_United_States_presidential_election",
+                                    "text": "1888"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Tennessee",
+                                    "text": "Tennessee"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/George_McGovern",
+                                    "text": "George McGovern"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/South_Dakota",
+                                    "text": "South Dakota"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1972_United_States_presidential_election",
+                                    "text": "1972"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/West_Virginia",
+                                    "text": "West Virginia"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Before the election, the possibility that different candidates would win the popular vote and the Electoral College had been noted, but usually with the expectation of Gore winning the Electoral College and Bush the popular vote. The idea that Bush could win the Electoral College and Gore the popular vote was not considered likely."
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "This was the first time since 1928 when a non-incumbent Republican candidate won West Virginia. The Electoral College results were the closest since 1876, making this election the second-closest Electoral College result in history and the third-closest popular vote victory. Gore's 266 electoral votes are the highest for a losing nominee. The 537-vote margin in Florida is the closest for a tipping point state in history. Bush was the first winning Republican since William McKinley to win with under 300 electoral votes. He was also the first son of a former president to be elected president himself since John Quincy Adams in 1824.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/United_States_Electoral_College",
+                                    "text": "Electoral College"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1876_United_States_presidential_election",
+                                    "text": "1876"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/William_McKinley",
+                                    "text": "William McKinley"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/John_Quincy_Adams",
+                                    "text": "John Quincy Adams"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Bush was the first Republican in American history to win the presidency without carrying Vermont, Illinois, or New Mexico, as well as the second Republican to win the presidency without carrying California after James A. Garfield in 1880, and Pennsylvania, Maine, and Michigan after Richard Nixon in 1968, as well as the first winning Republican not to receive any electoral votes from California as Garfield received one electoral vote in 1880. Bush was the first Republican to win without New Jersey, Delaware, or Connecticut since 1888. As of 2020, Bush is the last Republican nominee to win New Hampshire. No state in the Northeast has voted Republican since except for Pennsylvania in 2016. This marked the first time since Iowa entered the union in 1846 in which the state voted for a Democratic presidential candidate in four elections in a row and the last time until 2020 that Iowa did not vote for the overall winner. This election was the first time since 1976 that New Jersey, Connecticut, Vermont, Maine, Illinois, New Mexico, Michigan, and California voted for the losing candidate, as well as the first since 1980 that Maryland did so, the first since 1948 that Delaware did so, and the first since 1968 that Pennsylvania did so.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/James_A._Garfield",
+                                    "text": "James A. Garfield"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1880_United_States_presidential_election",
+                                    "text": "1880"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Richard_Nixon",
+                                    "text": "Richard Nixon"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1968_United_States_presidential_election",
+                                    "text": "1968"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "There were only two counties in the nation that had voted Republican in 1996 and flipped to the Democratic column in 2000: Charles County, Maryland, and Orange County, Florida, both rapidly diversifying counties. The 2000 election was also the last time a Republican won a number of populous urban counties that have since turned into Democratic strongholds. These include Mecklenburg County, North Carolina (Charlotte); Marion County, Indiana (Indianapolis), Fairfax County, Virginia (DC suburbs), Chatham County, Georgia (Savannah), Whatcom County, Washington (Bellingham), and Travis County, Texas (Austin). Conversely, as of 2020, Gore is the last Democrat to have won any counties at all in Oklahoma.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/United_States_Presidential_Election,_1996",
+                                    "text": "1996"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Charles_County,_Maryland",
+                                    "text": "Charles County, Maryland"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Orange_County,_Florida",
+                                    "text": "Orange County, Florida"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Mecklenburg_County,_North_Carolina",
+                                    "text": "Mecklenburg County, North Carolina"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Marion_County,_Indiana",
+                                    "text": "Marion County, Indiana"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Fairfax_County,_Virginia",
+                                    "text": "Fairfax County, Virginia"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Chatham_County,_Georgia",
+                                    "text": "Chatham County, Georgia"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Whatcom_County,_Washington",
+                                    "text": "Whatcom County, Washington"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Travis_County,_Texas",
+                                    "text": "Travis County, Texas"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Results by state",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "Maine and Nebraska each allow for their electoral votes to be split between candidates. In both states, two electoral votes are awarded to the winner of the statewide race and one electoral vote is awarded to the winner of each congressional district. The votes for each candidate are only singly counted in the column totals."
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "* The Libertarian Party of Arizona had ballot access but opted to supplant Browne with L. Neil Smith. In Arizona, Smith received 5,775 votes, or 0.38% of the Arizona vote. Adding Smith's 5,775 votes to Browne's 384,431 votes nationwide, the total votes cast for president for the Libertarian Party in 2000 was 390,206, or 0.37% of the national vote.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Libertarian_Party_of_Arizona",
+                                    "text": "Libertarian Party of Arizona"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/L._Neil_Smith",
+                                    "text": "L. Neil Smith"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "States that flipped from Democratic to Republican",
+                            "type": "section",
+                            "has_parts": [
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Arizona",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Arizona",
+                                                    "text": "Arizona"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Arkansas",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Arkansas",
+                                                    "text": "Arkansas"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Florida",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Florida",
+                                                    "text": "Florida"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Kentucky",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Kentucky",
+                                                    "text": "Kentucky"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Louisiana",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Louisiana",
+                                                    "text": "Louisiana"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Missouri",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Missouri",
+                                                    "text": "Missouri"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Nevada",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Nevada",
+                                                    "text": "Nevada"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "New Hampshire",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/New_Hampshire",
+                                                    "text": "New Hampshire"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Ohio",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Ohio",
+                                                    "text": "Ohio"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Tennessee",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Tennessee",
+                                                    "text": "Tennessee"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "West Virginia",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/West_Virginia",
+                                                    "text": "West Virginia"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Close states",
+                            "type": "section",
+                            "has_parts": [
+                                {
+                                    "type": "paragraph",
+                                    "value": "States where the margin of victory was less than 1% (55 electoral votes):"
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Florida, 0.009% (537 votes) (tipping point state)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "New Mexico, 0.061% (366 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Wisconsin, 0.22% (5,708 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Iowa, 0.31% (4,144 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Oregon, 0.44% (6,765 votes)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "States where the margin of victory was more than 1% but less than 5% (84 electoral votes):"
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "New Hampshire, 1.27% (7,211 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Maine's 2nd Congressional District, 1.87% (5,660 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Minnesota, 2.41% (58,607 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Missouri, 3.34% (78,786 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Ohio, 3.51% (165,019 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Nevada, 3.54% (21,597 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Tennessee, 3.87% (80,229 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Pennsylvania, 4.17% (204,840 votes)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "States where the margin of victory was more than 5% but less than 10% (84 electoral votes):"
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Maine, 5.12% (33,335 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Michigan, 5.14% (217,279 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Arkansas, 5.45% (50,172 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Washington, 5.57% (138,788 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Arizona, 6.28% (96,311 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "West Virginia, 6.33% (40,978 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Louisiana, 7.67% (135,527 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Maine's 1st Congressional District, 7.93% (27,675 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Virginia, 8.03% (220,200 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Colorado, 8.36% (145,518 votes)"
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Vermont, 9.93% (29,247 votes)"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Statistics",
+                            "type": "section",
+                            "has_parts": [
+                                {
+                                    "type": "paragraph",
+                                    "value": "Counties with Highest Percent of Vote (Republican)"
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Glasscock County, Texas 92.47%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Glasscock_County,_Texas",
+                                                    "text": "Glasscock County, Texas"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Ochiltree County, Texas 90.72%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Ochiltree_County,_Texas",
+                                                    "text": "Ochiltree County, Texas"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Hansford County, Texas 89.75%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Hansford_County,_Texas",
+                                                    "text": "Hansford County, Texas"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Harding County, South Dakota 88.92%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Harding_County,_South_Dakota",
+                                                    "text": "Harding County, South Dakota"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Carter County, Montana 88.84%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Carter_County,_Montana",
+                                                    "text": "Carter County, Montana"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "Counties with Highest Percent of Vote (Democratic)"
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Macon County, Alabama 86.80%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Macon_County,_Alabama",
+                                                    "text": "Macon County, Alabama"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Bronx County, New York 86.28%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/The_Bronx",
+                                                    "text": "Bronx County, New York"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Shannon County, South Dakota 85.36%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Oglala_Lakota_County,_South_Dakota",
+                                                    "text": "Shannon County, South Dakota"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Washington, D.C. 85.16%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Washington,_D.C.",
+                                                    "text": "Washington, D.C."
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "City of Baltimore, Maryland 82.52%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Baltimore",
+                                                    "text": "City of Baltimore, Maryland"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "Counties with Highest Percent of Vote (Other)"
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "San Miguel County, Colorado 17.20%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/San_Miguel_County,_Colorado",
+                                                    "text": "San Miguel County, Colorado"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Missoula County, Montana 15.03%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Missoula_County,_Montana",
+                                                    "text": "Missoula County, Montana"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Grand County, Utah 14.94%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Grand_County,_Utah",
+                                                    "text": "Grand County, Utah"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Mendocino County, California 14.68%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Mendocino_County,_California",
+                                                    "text": "Mendocino County, California"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Hampshire County, Massachusetts 14.59%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Hampshire_County,_Massachusetts",
+                                                    "text": "Hampshire County, Massachusetts"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Voter demographics",
+            "type": "section",
+            "has_parts": [
+                {
+                    "type": "paragraph",
+                    "value": "Source: Voter News Service exit poll from the Roper Center for Public Opinion Research (13,225 surveyed)",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Voter_News_Service",
+                            "text": "Voter News Service"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Roper_Center_for_Public_Opinion_Research",
+                            "text": "Roper Center for Public Opinion Research"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Aftermath",
+            "type": "section",
+            "has_parts": [
+                {
+                    "type": "paragraph",
+                    "value": "After Florida was decided and Gore conceded, Texas Governor George W. Bush became the president-elect and began forming his transition committee. In a speech on December 13, in the Texas House of Representatives chamber, Bush stated he was reaching across party lines to bridge a divided America, saying, \"the President of the United States is the President of every single American, of every race, and every background.\"",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Governor_of_Texas",
+                            "text": "Texas Governor"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/George_W._Bush",
+                            "text": "George W. Bush"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/President-elect_of_the_United_States",
+                            "text": "president-elect"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/United_States_presidential_transition",
+                            "text": "transition"
+                        }
+                    ]
+                },
+                {
+                    "name": "Post-recount",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "On January 6, 2001, a joint session of Congress met to certify the electoral vote. Twenty members of the House of Representatives, most of them members of the all-Democratic Congressional Black Caucus, rose one by one to file objections to the electoral votes of Florida. But pursuant to the Electoral Count Act, any such objection had to be sponsored by both a representative and a senator. No senator co-sponsored these objections, deferring to the Supreme Court's ruling. Therefore, Gore, who presided in his capacity as President of the Senate, ruled each of these objections out of order. Subsequently, the joint session of Congress on January 7, 2001, certified the electoral votes from all 50 states and the District of Columbia.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Joint_session_of_the_United_States_Congress",
+                                    "text": "joint session of Congress"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Electoral_College_(United_States)",
+                                    "text": "electoral vote"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/United_States_House_of_Representatives",
+                                    "text": "House of Representatives"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Congressional_Black_Caucus",
+                                    "text": "Congressional Black Caucus"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Electoral_Count_Act",
+                                    "text": "Electoral Count Act"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/United_States_Senate",
+                                    "text": "senator"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Vice_President_of_the_United_States",
+                                    "text": "President of the Senate"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Bush took the oath of office on January 20, 2001. He served for the next eight years. Gore has not, as of 2024, considered another presidential run, endorsing Howard Dean 's candidacy during the 2004 Democratic primary and remaining neutral in the Democratic primaries of 2008, 2016 and 2020.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Howard_Dean",
+                                    "text": "Howard Dean"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "The first independent recount of undervotes was conducted by the Miami Herald and USA Today. The commission found that under most scenarios for completion of the initiated recounts, Bush would have won the election, but Gore would have won using the most generous standards for undervotes."
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Ultimately, a media consortium—comprising The New York Times, The Washington Post, The Wall Street Journal, Tribune Co. (parent of the Los Angeles Times), Associated Press, CNN, The Palm Beach Post and the St. Petersburg Times —hired NORC at the University of Chicago to examine 175,010 ballots collected from the entire state, not just the disputed counties that were recounted; these ballots contained undervotes (ballots with no machine-detected choice made for president) and overvotes (ballots with more than one choice marked). Their goal was to determine the reliability and accuracy of the systems used for the voting process. Based on the NORC review, the media group concluded that if the disputes over all the ballots in question had been resolved by applying statewide any of five standards that would have met Florida's legal standard for recounts, the electoral result would have been reversed and Gore would have won by 60 to 171 votes. (Any analysis of NORC data requires, for each punch ballot, at least two of the three ballot reviewers' codes to agree or instead, for all three to agree.) For all undervotes and overvotes statewide, these five standards are:",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/National_Opinion_Research_Center",
+                                    "text": "NORC"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/University_of_Chicago",
+                                    "text": "University of Chicago"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "has_parts": [
+                                {
+                                    "type": "list_item",
+                                    "value": "Prevailing standard – accepts at least one detached corner of a chad and all affirmative marks on optical scan ballots."
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "County-by-county standard – applies each county's own standards independently."
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Two-corner standard – accepts at least two detached corners of a chad and all affirmative marks on optical scan ballots."
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Most restrictive standard – accepts only so-called perfect ballots that machines somehow missed and did not count, or ballots with unambiguous expressions of voter intent."
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Most inclusive standard – applies uniform criteria of \"dimple or better\" on punch marks and all affirmative marks on optical scan ballots."
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Such a statewide review including all uncounted votes was a tangible possibility, as Leon County Circuit Court Judge Terry Lewis, whom the Florida Supreme Court had assigned to oversee the statewide recount, had scheduled a hearing for December 13 (mooted by the U.S. Supreme Court's final ruling on the 12th) to consider the question of including overvotes as well as undervotes. Subsequent statements by Lewis and internal court documents support the likelihood of including overvotes in the recount. Florida State University professor of public policy Lance deHaven-Smith observed that, even considering only undervotes, \"under any of the five most reasonable interpretations of the Florida Supreme Court ruling, Gore does, in fact, more than make up the deficit\". Fairness and Accuracy in Reporting 's analysis of the NORC study and media coverage of it supports these interpretations and criticizes the coverage of the study by media outlets such as The New York Times and the other media consortium members.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Terry_Lewis_(Florida_judge)",
+                                    "text": "Terry Lewis"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Florida_State_University",
+                                    "text": "Florida State University"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Fairness_and_Accuracy_in_Reporting",
+                                    "text": "Fairness and Accuracy in Reporting"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/The_New_York_Times",
+                                    "text": "The New York Times"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Further, according to sociologists Christopher Uggen and Jeff Manza, the 2000 election might have gone to Gore if the disenfranchised population of Florida had voted. Florida law disenfranchises convicted felons, requiring individual applications to regain suffrage. In a 2002 American Sociological Review article, Uggen and Manza found that the released felon vote could have altered the outcome of seven senatorial races between 1978 and 2000, and the 2000 presidential election. Matt Ford noted their study concluded, \"if the state's 827,000 disenfranchised felons had voted at the same rate as other Floridians, Democratic candidate Al Gore would have won Florida—and the presidency—by more than 80,000 votes.\" The effect of Florida's law is such that in 2014, purportedly \"ore than one in ten Floridians—and nearly one in four African-American Floridians—are shut out of the polls because of felony convictions.\"",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Christopher_Uggen",
+                                    "text": "Christopher Uggen"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Voting machines",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "Because the 2000 presidential election was so close in Florida, the federal government and state governments pushed for election reform to be prepared by the 2004 presidential election. Many of Florida's 2000 election night problems stemmed from usability and ballot design factors with voting systems, including the potentially confusing \" butterfly ballot.\" Many voters had difficulties with the paper-based punch card voting machines and were either unable to understand the voting process or unable to perform it. This resulted in an unusual number of overvotes (voting for more candidates than is allowed) and undervotes (voting for fewer than the minimum candidates, including none at all). Many undervotes were caused by voter error, unmaintained punch card voting booths, or errors having to do merely with the characteristics of punch card ballots (resulting in hanging, dimpled, or pregnant chads).",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Election_reform",
+                                    "text": "election reform"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2004_United_States_presidential_election",
+                                    "text": "2004 presidential election"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Usability",
+                                    "text": "usability"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Butterfly_ballot",
+                                    "text": "butterfly ballot"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Voting_machine#Punch_card",
+                                    "text": "punch card"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Overvote",
+                                    "text": "overvotes"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Undervote",
+                                    "text": "undervotes"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Chad_(paper)",
+                                    "text": "chads"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Post-election analyses of Florida voting data found higher rates of ballot spoilage in Florida counties with larger numbers of African Americans, especially in Duval County, with its \"caterpillar ballot\", in which the presidential section stretched across multiple pages."
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "A proposed solution to these problems was the installation of modern electronic voting machines. The 2000 presidential election spurred the debate about election and voting reform but did not end it.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Electronic_voting",
+                                    "text": "electronic voting"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "In the aftermath of the election, the Help America Vote Act (HAVA) was passed to help states upgrade their election technology in the hopes of preventing similar problems in future elections. But the electronic voting systems that many states purchased to comply with HAVA actually caused problems in the 2004 presidential election.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Help_America_Vote_Act",
+                                    "text": "Help America Vote Act"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Exit polling and declaration of vote winners",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "The Voter News Service 's reputation was damaged by its treatment of Florida's presidential vote in 2000. Breaking its own guidelines, VNS called the state as a win for Gore 12 minutes before polls closed in the Florida Panhandle. Although most of the state is in the Eastern Time Zone, counties in the Panhandle, in the Central Time Zone, had not yet closed their polls. Discrepancies between the results of exit polls and the actual vote count caused the VNS to change its call twice, first from Gore to Bush and then to \"too close to call.\" Due in part to this (and other polling inaccuracies) the VNS was disbanded in 2003.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Voter_News_Service",
+                                    "text": "Voter News Service"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Florida_Panhandle",
+                                    "text": "Florida Panhandle"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Eastern_Time_Zone",
+                                    "text": "Eastern Time Zone"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Central_Time_Zone",
+                                    "text": "Central Time Zone"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "According to Bush adviser Karl Rove, exit polls early in the afternoon on election day showed Gore winning by three percentage points, but when the networks called the state for Gore, Bush led by about 75,000 votes in raw tallies from the Florida Secretary of State.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Karl_Rove",
+                                    "text": "Karl Rove"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Florida_Secretary_of_State",
+                                    "text": "Florida Secretary of State"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Charges of media bias were leveled against the networks by Republicans, who claimed that the networks called states more quickly for Al Gore than for George W. Bush. Congress held hearings on this matter, at which the networks claimed to have no intentional bias in their election night reporting. A study of the calls made on election night 2000 indicated that states carried by Gore were called more quickly than states won by Bush; however, notable states carried by Bush, such as New Hampshire and Florida, were very close, and close states won by Gore, such as Iowa, Oregon, New Mexico and Wisconsin, were called late as well."
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "The early call of Florida for Gore has been alleged to have cost Bush several close states, including Iowa, New Mexico, Oregon, and Wisconsin. In each of these states, Gore won by less than 10,000 votes, and the polls closed after the networks called Florida for Gore. Because the Florida call was widely seen as an indicator that Gore had won the election, researcher John Lott said it was possible that the call depressed Republican turnout in these states during the final hours of voting, giving Gore the slim margin by which he carried each of them. Lott's survey assumed that the turnout in the Panhandle counties, which was 65%, would have equaled the statewide average of 68% if the state had not been called for Gore while the polls were still open. But the relatively smaller turnout percentage in the Panhandle has been attributed to the surge in the black vote elsewhere in Florida to 16% of the total, from 10% of the total in 1996. Research by Henry Brady and David Collier strongly disputed Lott's findings. Brady and Collier sharply criticized Lott's methodology and claimed that when all relevant factors are accounted for, Bush was likely cost only between 28 and 56 votes."
+                        }
+                    ]
+                },
+                {
+                    "name": "Ralph Nader spoiler controversy",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "Many Gore supporters claimed that third-party candidate Nader acted as a spoiler in the election, under the presumption that Nader voters would have voted for Gore had Nader not been in the race. Nader received 2.74% of the popular vote nationwide, including 97,000 votes in Florida (by comparison, there were 111,251 overvotes) and 22,000 in New Hampshire, where Bush beat Gore by 7,000 votes. Winning either state would have made Gore president. Dan Perkins agreed and said that the margin in Florida was small enough that Democrats could blame any number of third-party candidates for the defeat, including Workers World Party candidate Monica Moorehead, who received 1,500 votes.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Spoiler_effect",
+                                    "text": "spoiler"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Overvotes",
+                                    "text": "overvotes"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Tom_Tomorrow",
+                                    "text": "Dan Perkins"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Workers_World_Party",
+                                    "text": "Workers World Party"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Monica_Moorehead",
+                                    "text": "Monica Moorehead"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Nader's reputation was hurt by this perception, which may have hindered his goals as an activist. For example, Mother Jones wrote about the so-called \"rank-and-file liberals\" who saw Nader negatively after the election and pointed out that Public Citizen, the organization Nader founded in 1971, suffered a drop in contributions. Mother Jones also cited a Public Citizen letter sent out to people interested in Nader's relation with the organization at that time, with the disclaimer: \"Although Ralph Nader was our founder, he has not held an official position in the organization since 1980 and does not serve on the board. Public Citizen—and the other groups that Mr. Nader founded—act independently.\"",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Mother_Jones_(magazine)",
+                                    "text": "Mother Jones"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Public_Citizen",
+                                    "text": "Public Citizen"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Press influence on race",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "In their 2007 book The Nightly News Nightmare: Network Television's Coverage of US Presidential Elections, 1988–2004, professors Stephen J. Farnsworth and S. Robert Lichter said that most media outlets influenced the outcome of the election through the use of horse race journalism. Some liberal supporters of Al Gore argued that the media had a bias against Gore and in favor of Bush. Peter Hart and Jim Naureckas, two commentators for Fairness and Accuracy in Reporting (FAIR), called the media \"serial exaggerators\" and took the view that several media outlets were constantly exaggerating criticism of Gore: they further argued that the media falsely claimed Gore lied when he claimed he spoke in an overcrowded science class in Sarasota, Florida, and that the media gave Bush a pass on certain issues, such as Bush allegedly exaggerating how much money he signed into the annual Texas state budget to help the uninsured during his second debate with Gore in October 2000. In the April 2000 issue of Washington Monthly, columnist Robert Parry wrote that media outlets exaggerated Gore's supposed claim that he \"discovered\" the Love Canal neighborhood in Niagara Falls, New York during a campaign speech in Concord, New Hampshire on November 30, 1999, when he had only claimed he \"found\" it after it was already evacuated in 1978 because of chemical contamination. Rolling Stone columnist Eric Boehlert also alleged media outlets exaggerated criticism of Gore as early as July 22, 1999, when Gore, known for being an environmentalist, had a friend release 500 million gallons of water into a drought-stricken river to help keep his boat afloat for a photo shoot; Boehlert claimed that media outlets exaggerated the actual number of gallons that were released, as they claimed it was 4 billion.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Horse_race_journalism",
+                                    "text": "horse race journalism"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Fairness_and_Accuracy_in_Reporting",
+                                    "text": "Fairness and Accuracy in Reporting"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Washington_Monthly",
+                                    "text": "Washington Monthly"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Robert_Parry_(journalist)",
+                                    "text": "Robert Parry"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Love_Canal",
+                                    "text": "Love Canal"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Niagara_Falls,_New_York",
+                                    "text": "Niagara Falls, New York"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Rolling_Stone",
+                                    "text": "Rolling Stone"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Eric_Boehlert",
+                                    "text": "Eric Boehlert"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Effects on future elections and Supreme Court",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "A number of subsequent articles have characterized the election in 2000, and the Supreme Court's decision in Bush v. Gore, as damaging the reputation of the Supreme Court, increasing the view of judges as partisan, and decreasing Americans' trust in the integrity of elections. The number of lawsuits brought over election issues more than doubled following the 2000 election cycle, an increase Richard L. Hasen of UC Irvine School of Law attributes to the \"Florida fiasco\"."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

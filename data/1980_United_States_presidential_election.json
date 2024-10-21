@@ -1,0 +1,2881 @@
+{
+    "name": "1980 United States presidential election",
+    "identifier": 40570,
+    "abstract": "The 1980 United States presidential election was the 49th quadrennial presidential election, held on November 4, 1980. The Republican nominee, former California governor Ronald Reagan, defeated incumbent Democratic President Jimmy Carter in a landslide victory. This was the first election since 1932 in which an elected incumbent president was defeated, as well as the first election since 1888 that saw the defeat of an incumbent Democratic president. Carter's unpopularity and poor relations with Democratic leaders encouraged an unsuccessful intra-party challenge from Massachusetts Senator Ted Kennedy. Meanwhile, the Republican primaries were contested between former California Governor Ronald Reagan, former Central Intelligence Agency director George H. W. Bush, Illinois Representative John B. Anderson, and several other candidates. All of Reagan's opponents had dropped out by the end of the primaries, and the Republicans nominated a ticket consisting of Reagan and Bush. Anderson entered the general election as an independent candidate with Patrick Lucey, former Wisconsin governor, as his running mate. Reagan campaigned for increased defense spending, supply-side economic policies, and a balanced budget. His campaign was aided by Democratic dissatisfaction with Carter, the Iran hostage crisis, and a worsening economy marred by stagflation. Carter attacked Reagan as a dangerous right-wing extremist, and warned that Reagan would cut Medicare and Social Security. The Carter campaign was aided early on by the rally 'round the flag effect from the hostage crisis, but as the crisis lasted to election day, it became a detriment. Reagan won the election in a landslide, with 489 Electoral College votes to Carter's 49 and 50.7% of the popular vote to Carter's 41.0%. Anderson won 6.6% of the popular vote and no electoral votes. Due to the rise of conservatism following Reagan's victory, historians have considered the election a political realignment that began with Barry Goldwater's presidential campaign in 1964. This is the most recent election in which an incumbent Democratic president was not reelected. Additionally, it is the only time that a Republican nominee defeated a Democratic incumbent in both the popular and the electoral vote. This election began an ongoing pattern in which Rust Belt states Michigan, Pennsylvania, and Wisconsin voted for the same presidential candidate, with the sole exception of 1988.",
+    "version": {
+        "identifier": 1252308696,
+        "comment": "Add",
+        "tags": [
+            "visualeditor-wikitext"
+        ],
+        "scores": {
+            "revertrisk": {
+                "prediction": true,
+                "probability": {
+                    "false": 0.41662347316741943,
+                    "true": 0.5833765268325806
+                }
+            }
+        },
+        "editor": {
+            "identifier": 38706409,
+            "name": "Zinderboff",
+            "edit_count": 2863,
+            "groups": [
+                "extendedconfirmed",
+                "ipblock-exempt",
+                "*",
+                "user",
+                "autoconfirmed"
+            ],
+            "date_started": "2020-03-05T21:32:37Z"
+        },
+        "number_of_characters": 170556,
+        "size": {
+            "value": 170788,
+            "unit_text": "B"
+        },
+        "maintenance_tags": {
+            "citation_needed_count": 3
+        }
+    },
+    "url": "https://en.wikipedia.org/wiki/1980_United_States_presidential_election",
+    "date_created": "2002-02-25T15:51:15Z",
+    "date_modified": "2024-10-20T19:43:48Z",
+    "main_entity": {
+        "identifier": "Q699716",
+        "url": "https://www.wikidata.org/entity/Q699716"
+    },
+    "is_part_of": {
+        "identifier": "enwiki",
+        "url": "https://en.wikipedia.org"
+    },
+    "additional_entities": [
+        {
+            "identifier": "Q699716",
+            "url": "https://www.wikidata.org/entity/Q699716",
+            "aspects": [
+                "C",
+                "D.en",
+                "O",
+                "S",
+                "T"
+            ]
+        }
+    ],
+    "in_language": {
+        "identifier": "en"
+    },
+    "image": {
+        "content_url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/ElectoralCollege1980.svg",
+        "width": 1020,
+        "height": 593
+    },
+    "license": [
+        {
+            "name": "Creative Commons Attribution-ShareAlike License 4.0",
+            "identifier": "CC-BY-SA-4.0",
+            "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+    ],
+    "description": "49th quadrennial U.S. presidential election",
+    "infobox": [
+        {
+            "name": "Infobox election",
+            "type": "infobox",
+            "has_parts": [
+                {
+                    "name": "1980 United States presidential election",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "image",
+                            "values": [
+                                ""
+                            ],
+                            "images": [
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/50px-Flag_of_the_United_States.svg.png",
+                                    "height": 50,
+                                    "width": 50
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "November 4, 1980",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "field",
+                            "value": "November 4, 1980",
+                            "values": [
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "538 members of the Electoral College 270 electoral votes needed to win",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "name": "Turnout",
+                            "type": "field",
+                            "value": "54.2% 0.6 pp",
+                            "values": [
+                                ""
+                            ],
+                            "images": [
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Decrease2.svg/11px-Decrease2.svg.png",
+                                    "alternative_text": "Decrease",
+                                    "height": 11,
+                                    "width": 11
+                                }
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1980_United_States_presidential_election#cite_note-1"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Percentage_point",
+                                    "text": "pp"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Nominee Ronald Reagan Jimmy Carter John B. Anderson Party Republican Democratic Independent Home state California Georgia Illinois Running mate George H. W. Bush Walter Mondale Patrick Lucey Electoral vote 489 49 0 States carried 44 6 + DC 0 Popular vote 43,903,230 35,481,115 5,719,850 Percentage 50.7% 41.0% 6.6%",
+                            "values": [
+                                ""
+                            ],
+                            "images": [
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Official_Portrait_of_President_Reagan_1981-cropped.jpg/114px-Official_Portrait_of_President_Reagan_1981-cropped.jpg",
+                                    "height": 114,
+                                    "width": 114
+                                },
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Carter_cropped.jpg/116px-Carter_cropped.jpg",
+                                    "height": 116,
+                                    "width": 116
+                                },
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/John_B._Anderson_in_New_Jersey_%28cropped%29.jpg/116px-John_B._Anderson_in_New_Jersey_%28cropped%29.jpg",
+                                    "height": 116,
+                                    "width": 116
+                                }
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Ronald_Reagan",
+                                    "text": "Ronald Reagan"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Jimmy_Carter",
+                                    "text": "Jimmy Carter"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/John_B._Anderson",
+                                    "text": "John B. Anderson"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Republican_Party_(United_States)",
+                                    "text": "Republican"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                                    "text": "Democratic"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Independent_(United_States)",
+                                    "text": "Independent"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1980_United_States_presidential_election#cite_note-2"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/California",
+                                    "text": "California"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Georgia_(U.S._state)",
+                                    "text": "Georgia"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Illinois",
+                                    "text": "Illinois"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/George_H._W._Bush",
+                                    "text": "George H. W. Bush"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Walter_Mondale",
+                                    "text": "Walter Mondale"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Patrick_Lucey",
+                                    "text": "Patrick Lucey"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Washington_D.C.",
+                                    "text": "DC"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "image",
+                            "values": [
+                                ""
+                            ],
+                            "images": [
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Official_Portrait_of_President_Reagan_1981-cropped.jpg/114px-Official_Portrait_of_President_Reagan_1981-cropped.jpg",
+                                    "height": 114,
+                                    "width": 114
+                                },
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Carter_cropped.jpg/116px-Carter_cropped.jpg",
+                                    "height": 116,
+                                    "width": 116
+                                },
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/John_B._Anderson_in_New_Jersey_%28cropped%29.jpg/116px-John_B._Anderson_in_New_Jersey_%28cropped%29.jpg",
+                                    "height": 116,
+                                    "width": 116
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Nominee Ronald Reagan Jimmy Carter John B. Anderson",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Ronald_Reagan",
+                                    "text": "Ronald Reagan"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Jimmy_Carter",
+                                    "text": "Jimmy Carter"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/John_B._Anderson",
+                                    "text": "John B. Anderson"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Party Republican Democratic Independent",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Republican_Party_(United_States)",
+                                    "text": "Republican"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                                    "text": "Democratic"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Independent_(United_States)",
+                                    "text": "Independent"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1980_United_States_presidential_election#cite_note-2"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Home state California Georgia Illinois",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/California",
+                                    "text": "California"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Georgia_(U.S._state)",
+                                    "text": "Georgia"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Illinois",
+                                    "text": "Illinois"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Running mate George H. W. Bush Walter Mondale Patrick Lucey",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/George_H._W._Bush",
+                                    "text": "George H. W. Bush"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Walter_Mondale",
+                                    "text": "Walter Mondale"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Patrick_Lucey",
+                                    "text": "Patrick Lucey"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Electoral vote 489 49 0",
+                            "values": [
+                                ""
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "States carried 44 6 + DC 0",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Washington_D.C.",
+                                    "text": "DC"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Popular vote 43,903,230 35,481,115 5,719,850",
+                            "values": [
+                                ""
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Percentage 50.7% 41.0% 6.6%",
+                            "values": [
+                                ""
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Presidential election results map. Red denotes states won by Reagan/Bush and blue denotes those won by Carter/Mondale. Numbers indicate electoral votes cast by each state.",
+                            "values": [
+                                ""
+                            ],
+                            "images": [
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/ElectoralCollege1980.svg/348px-ElectoralCollege1980.svg.png",
+                                    "height": 348,
+                                    "width": 348
+                                }
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Electoral_College_(United_States)",
+                                    "text": "electoral votes"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "President before election Jimmy Carter Democratic Elected President Ronald Reagan Republican",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Jimmy_Carter",
+                                    "text": "Jimmy Carter"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                                    "text": "Democratic"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Ronald_Reagan",
+                                    "text": "Ronald Reagan"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Republican_Party_(United_States)",
+                                    "text": "Republican"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "President before election Jimmy Carter Democratic",
+                            "type": "field",
+                            "value": "Elected President Ronald Reagan Republican",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Jimmy_Carter",
+                                    "text": "Jimmy Carter"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                                    "text": "Democratic"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Ronald_Reagan",
+                                    "text": "Ronald Reagan"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Republican_Party_(United_States)",
+                                    "text": "Republican"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "external media",
+            "type": "infobox",
+            "has_parts": [
+                {
+                    "name": "External videos",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "field",
+                            "value": "Reagan-Carter presidential debate, October 28, 1980 on YouTube",
+                            "values": [
+                                ""
+                            ],
+                            "images": [
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Nuvola_apps_kaboodle.svg/16px-Nuvola_apps_kaboodle.svg.png",
+                                    "alternative_text": "video icon",
+                                    "height": 16,
+                                    "width": 16
+                                }
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://www.youtube.com/watch?v=_8YxFc_1b_0",
+                                    "text": "Reagan-Carter presidential debate, October 28, 1980"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/YouTube_video_(identifier)",
+                                    "text": "YouTube"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "sections": [
+        {
+            "name": "Abstract",
+            "type": "section",
+            "has_parts": [
+                {
+                    "type": "paragraph",
+                    "value": "The 1980 United States presidential election was the 49th quadrennial presidential election, held on November 4, 1980. The Republican nominee, former California governor Ronald Reagan, defeated incumbent Democratic President Jimmy Carter in a landslide victory. This was the first election since 1932 in which an elected incumbent president was defeated, as well as the first election since 1888 that saw the defeat of an incumbent Democratic president.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/United_States_presidential_election",
+                            "text": "quadrennial presidential election"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Republican_Party_(United_States)",
+                            "text": "Republican"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Governor_of_California",
+                            "text": "California governor"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Ronald_Reagan",
+                            "text": "Ronald Reagan"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                            "text": "Democratic"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/President_of_the_United_States",
+                            "text": "President"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Jimmy_Carter",
+                            "text": "Jimmy Carter"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Landslide_victory",
+                            "text": "landslide victory"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1932_United_States_presidential_election",
+                            "text": "1932"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1888_United_States_presidential_election",
+                            "text": "1888"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Carter's unpopularity and poor relations with Democratic leaders encouraged an unsuccessful intra-party challenge from Massachusetts Senator Ted Kennedy. Meanwhile, the Republican primaries were contested between former California Governor Ronald Reagan, former Central Intelligence Agency director George H. W. Bush, Illinois Representative John B. Anderson, and several other candidates. All of Reagan's opponents had dropped out by the end of the primaries, and the Republicans nominated a ticket consisting of Reagan and Bush. Anderson entered the general election as an independent candidate with Patrick Lucey, former Wisconsin governor, as his running mate.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1980_Democratic_Party_presidential_primaries",
+                            "text": "intra-party"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Ted_Kennedy",
+                            "text": "Ted Kennedy"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1980_Republican_Party_presidential_primaries",
+                            "text": "the Republican primaries"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/George_H._W._Bush",
+                            "text": "George H. W. Bush"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/John_B._Anderson",
+                            "text": "John B. Anderson"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Independent_(politician)",
+                            "text": "an independent"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Patrick_Lucey",
+                            "text": "Patrick Lucey"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Reagan campaigned for increased defense spending, supply-side economic policies, and a balanced budget. His campaign was aided by Democratic dissatisfaction with Carter, the Iran hostage crisis, and a worsening economy marred by stagflation. Carter attacked Reagan as a dangerous right-wing extremist, and warned that Reagan would cut Medicare and Social Security. The Carter campaign was aided early on by the rally 'round the flag effect from the hostage crisis, but as the crisis lasted to election day, it became a detriment.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Supply-side_economic",
+                            "text": "supply-side economic"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Iran_hostage_crisis",
+                            "text": "Iran hostage crisis"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Stagflation",
+                            "text": "stagflation"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Medicare_(United_States)",
+                            "text": "Medicare"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Social_Security_(United_States)",
+                            "text": "Social Security"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Rally_'round_the_flag_effect",
+                            "text": "rally 'round the flag effect"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Reagan won the election in a landslide, with 489 Electoral College votes to Carter's 49 and 50.7% of the popular vote to Carter's 41.0%. Anderson won 6.6% of the popular vote and no electoral votes. Due to the rise of conservatism following Reagan's victory, historians have considered the election a political realignment that began with Barry Goldwater 's presidential campaign in 1964. This is the most recent election in which an incumbent Democratic president was not reelected. Additionally, it is the only time that a Republican nominee defeated a Democratic incumbent in both the popular and the electoral vote. This election began an ongoing pattern in which Rust Belt states Michigan, Pennsylvania, and Wisconsin voted for the same presidential candidate, with the sole exception of 1988.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Electoral_college",
+                            "text": "Electoral College"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Conservatism_in_the_United_States",
+                            "text": "conservatism"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Political_realignment",
+                            "text": "political realignment"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Barry_Goldwater",
+                            "text": "Barry Goldwater"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1964_United_States_presidential_election",
+                            "text": "in 1964"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Rust_Belt",
+                            "text": "Rust Belt"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election",
+                            "text": "1988"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Background",
+            "type": "section",
+            "has_parts": [
+                {
+                    "type": "paragraph",
+                    "value": "Throughout the 1970s, the United States underwent a wrenching period of low economic growth, high inflation and interest rates, and intermittent energy crises. By October 1978, Iran —a major oil supplier to the United States at the time—was experiencing a major uprising that severely damaged its oil infrastructure and greatly weakened its capability to produce oil. In January 1979, shortly after Iran's leader Shah Mohammad Reza Pahlavi fled the country, Iranian opposition figure Ayatollah Ruhollah Khomeini ended his 14-year exile in France and returned to Iran to establish an Islamic Republic, largely hostile to American interests and influence in the country. In the spring and summer of 1979, inflation was on the rise and various parts of the United States were experiencing energy shortages.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Stagflation",
+                            "text": "low economic growth, high inflation and interest rates"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1970s_energy_crisis",
+                            "text": "intermittent energy crises"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Pahlavi_Iran",
+                            "text": "Iran"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Iranian_revolution",
+                            "text": "major uprising"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Shah",
+                            "text": "Shah"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Mohammad_Reza_Pahlavi",
+                            "text": "Mohammad Reza Pahlavi"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Ayatollah",
+                            "text": "Ayatollah"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Ruhollah_Khomeini",
+                            "text": "Ruhollah Khomeini"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Iran",
+                            "text": "Islamic Republic"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Carter was widely blamed for the return of the long gas lines in the summer of 1979 that were last seen just after the 1973 Yom Kippur War. He planned on delivering his fifth major speech on energy, but he felt that the American people were no longer listening. Carter left for the presidential retreat of Camp David. \"For more than a week, a veil of secrecy enveloped the proceedings. Dozens of prominent Democratic Party leaders— members of Congress, governors, labor leaders, academics and clergy—were summoned to the mountaintop retreat to confer with the beleaguered president.\" His pollster, Pat Caddell, told him that the American people simply faced a crisis of confidence because of the assassinations of John F. Kennedy, Robert F. Kennedy and Martin Luther King Jr.; the Vietnam War; and Watergate. On July 15, 1979, Carter gave a nationally televised address in which he identified what he believed to be a \"crisis of confidence\" among the American people. This came to be known as his \" Malaise speech \", although Carter never used the word in the speech.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Yom_Kippur_War",
+                            "text": "Yom Kippur War"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Camp_David",
+                            "text": "Camp David"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Member_of_Congress",
+                            "text": "members of Congress"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Pat_Caddell",
+                            "text": "Pat Caddell"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/John_F._Kennedy_assassination",
+                            "text": "John F. Kennedy"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Assassination_of_Robert_F._Kennedy",
+                            "text": "Robert F. Kennedy"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Assassination_of_Martin_Luther_King_Jr.",
+                            "text": "Martin Luther King Jr."
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Vietnam_War",
+                            "text": "Vietnam War"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Watergate_scandal",
+                            "text": "Watergate"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Malaise_speech",
+                            "text": "Malaise speech"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Many expected Senator Ted Kennedy to successfully challenge Carter in the upcoming Democratic primary. Kennedy's official announcement was scheduled for early November. A television interview with Roger Mudd of CBS a few days before the announcement went badly, however. Kennedy gave an \"incoherent and repetitive\" answer to the question of why he was running, and the polls, which showed him leading Carter by 58–25 in August now had him ahead 49–39. Kennedy was also politically scarred by the 1969 Chappaquiddick incident; the controversy had been a major reason for Kennedy's decision to not run for president in 1972 and 1976.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Roger_Mudd#Ted_Kennedy_interview",
+                            "text": "interview with Roger Mudd"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Chappaquiddick_incident",
+                            "text": "Chappaquiddick incident"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Meanwhile, Carter was given an opportunity for political redemption when the Khomeini regime again gained public attention and allowed the taking of 52 American hostages by a group of Islamist students and militants at the U.S. embassy in Tehran on November 4, 1979. Carter's calm approach towards the handling of this crisis resulted in his approval ratings jump in the 60-percent range in some polls, due to a \"rally round the flag\" effect.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Iran_hostage_crisis",
+                            "text": "52 American hostages"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Islamism",
+                            "text": "Islamist"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Tehran",
+                            "text": "Tehran"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "By the beginning of the election campaign, the prolonged Iran hostage crisis had sharpened public perceptions of a national crisis. On April 25, 1980, Carter's ability to use the hostage crisis to regain public acceptance eroded when his high risk attempt to rescue the hostages ended in disaster when eight servicemen were killed. The unsuccessful rescue attempt drew further skepticism towards his leadership skills.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Iran_hostage_crisis",
+                            "text": "Iran hostage crisis"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Operation_Eagle_Claw",
+                            "text": "attempt to rescue the hostages"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Following the failed rescue attempt, Carter took overwhelming blame for the Iran hostage crisis, in which the followers of the Ayatollah Khomeini burned American flags and chanted anti-American slogans, paraded the captured American hostages in public, and burned Carter in effigy. Carter's critics saw him as an inept leader who had failed to solve the worsening economic problems at home. His supporters defended the president as a decent, well-intentioned man being unfairly criticized for problems that had been escalating for years.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Flag_of_the_United_States",
+                            "text": "American flags"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Effigy",
+                            "text": "effigy"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "When the Soviet Union invaded Afghanistan in late 1979, Carter seized international leadership in rallying opposition. He cut off American grain sales, which hurt Soviet consumers and annoyed American farmers. In terms of prestige, the Soviets were deeply hurt by the large-scale boycott of their 1980 Summer Olympics. Furthermore, Carter began secret support of the opposition forces in Afghanistan that successfully tied down the Soviet army for a decade. The effect was to end détente and reopen the Cold War.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Soviet–Afghan_War",
+                            "text": "the Soviet Union invaded Afghanistan in late 1979"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1980_Summer_Olympics_boycott",
+                            "text": "1980 Summer Olympics"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Nominations",
+            "type": "section",
+            "has_parts": [
+                {
+                    "name": "Republican Party",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "name": "Other major candidates",
+                            "type": "section",
+                            "has_parts": [
+                                {
+                                    "type": "paragraph",
+                                    "value": "The following candidates were frequently interviewed by major broadcast networks and cable news channels, were listed in publicly published national polls, or had held a public office. Reagan received 7,709,793 votes in the primaries."
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "Former governor Ronald Reagan of California was the odds-on favorite to win his party's nomination for president after nearly beating incumbent President Gerald Ford just four years earlier. Reagan dominated the primaries early, driving from the field Senate Minority Leader Howard Baker from Tennessee, former governor John Connally of Texas, Senator Robert Dole from Kansas, Representative Phil Crane from Illinois, and Representative John Anderson from Illinois, who dropped out of the race to run as an Independent. George H. W. Bush from Texas posed the strongest challenge to Reagan with his victories in the Pennsylvania and Michigan primaries, but it was not enough to turn the tide. Reagan won the nomination on the first round at the 1980 Republican National Convention in Detroit, Michigan, in July, then chose Bush (his top rival) as his running mate. Reagan, Bush, and Dole would all go on to be the nominees in the next four elections. (Reagan in 1984, Bush in 1988 and 1992, and Dole in 1996).",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Ronald_Reagan",
+                                            "text": "Ronald Reagan"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/California",
+                                            "text": "California"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Republican_Party_(United_States)_presidential_primaries,_1976#Republican_National_Convention",
+                                            "text": "nearly beating"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Gerald_Ford",
+                                            "text": "Gerald Ford"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Howard_Baker",
+                                            "text": "Howard Baker"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/John_Connally",
+                                            "text": "John Connally"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Robert_Dole",
+                                            "text": "Robert Dole"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Phil_Crane",
+                                            "text": "Phil Crane"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/John_B._Anderson",
+                                            "text": "John Anderson"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/George_H._W._Bush",
+                                            "text": "George H. W. Bush"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/1980_Republican_National_Convention",
+                                            "text": "1980 Republican National Convention"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Detroit",
+                                            "text": "Detroit, Michigan"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/1984_United_States_presidential_election",
+                                            "text": "1984"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election",
+                                            "text": "1988"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/1992_United_States_presidential_election",
+                                            "text": "1992"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/1996_United_States_presidential_election",
+                                            "text": "1996"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Democratic Party",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "name": "Other major candidates",
+                            "type": "section",
+                            "has_parts": [
+                                {
+                                    "type": "paragraph",
+                                    "value": "The following candidates were frequently interviewed by major broadcast networks, were listed in published national polls, or had held public office. Carter received 10,043,016 votes in the primaries."
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "The three major Democratic candidates in early 1980 were incumbent President Jimmy Carter, Senator Ted Kennedy of Massachusetts, and Governor Jerry Brown of California. Brown withdrew on April 2. Carter and Kennedy faced off in 34 primaries. Not counting the 1968 election in which Lyndon Johnson withdrew his candidacy, this was the most tumultuous primary race that an elected incumbent president had encountered since President Taft, during the highly contentious election of 1912.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Jimmy_Carter",
+                                            "text": "Jimmy Carter"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Ted_Kennedy",
+                                            "text": "Ted Kennedy"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Jerry_Brown",
+                                            "text": "Jerry Brown"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/1968_United_States_presidential_election",
+                                            "text": "1968 election"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Lyndon_Johnson",
+                                            "text": "Lyndon Johnson"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Partisan_primary",
+                                            "text": "primary race"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/William_Howard_Taft",
+                                            "text": "President Taft"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/1912_United_States_presidential_election",
+                                            "text": "election of 1912"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "During the summer of 1980, there was a short-lived \"Draft Muskie\" movement; Secretary of State Edmund Muskie was seen as a favorable alternative to a deadlocked convention. One poll showed that Muskie would be a more popular alternative to Carter than Kennedy, implying that the attraction was not so much to Kennedy as to the fact that he was not Carter. Muskie was polling even with Ronald Reagan at the time, while Carter was seven points behind. Although the underground \"Draft Muskie\" campaign failed, it became a political legend.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Edmund_Muskie",
+                                            "text": "Edmund Muskie"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "After defeating Kennedy in 24 of 34 primaries, Carter entered the party's convention in New York in August with 60 percent of the delegates pledged to him on the first ballot. Still, Kennedy refused to drop out. At the convention, after a futile last-ditch attempt by Kennedy to alter the rules to free delegates from their first-ballot pledges, Carter was renominated with 2,129 votes to 1,146 for Kennedy. Vice President Walter Mondale was also renominated. In his acceptance speech, Carter warned that Reagan's conservatism posed a threat to world peace and progressive social welfare programs from the New Deal to the Great Society.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/1980_Democratic_National_Convention",
+                                            "text": "convention"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Walter_Mondale",
+                                            "text": "Walter Mondale"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/New_Deal",
+                                            "text": "New Deal"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Great_Society",
+                                            "text": "Great Society"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Other candidates",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "John B. Anderson was defeated in the Republican primaries, but entered the general election as an independent candidate. He campaigned as a liberal Republican alternative to Reagan's conservatism. Anderson's campaign appealed primarily to frustrated anti-Carter voters from Republican and Democratic backgrounds. Anderson's running mate was Patrick Lucey, a Democratic former Governor of Wisconsin and then ambassador to Mexico, appointed by President Carter.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/John_B._Anderson",
+                                    "text": "John B. Anderson"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Patrick_Lucey",
+                                    "text": "Patrick Lucey"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Governor_of_Wisconsin",
+                                    "text": "Governor of Wisconsin"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "The Libertarian Party nominated Ed Clark for president and David Koch for vice president. They were on the ballot in all 50 states as well as Washington, D.C. The Libertarian Party platform was the only political party in 1980 to contain a plank advocating for the equal rights of homosexual men and women as well as the only party platform to advocate explicitly for \"amnesty\" for all illegal non-citizens.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Libertarian_Party_(United_States)",
+                                    "text": "Libertarian Party"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Ed_Clark",
+                                    "text": "Ed Clark"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/David_Koch",
+                                    "text": "David Koch"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/LGBT_rights_in_the_United_States",
+                                    "text": "equal rights of homosexual men and women"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "The Citizens Party ran biologist Barry Commoner for president and Comanche Native American activist LaDonna Harris for vice president. The Commoner–Harris ticket was on the ballot in twenty-nine states and in the District of Columbia.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Citizens_Party_(United_States)",
+                                    "text": "Citizens Party"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Biologist",
+                                    "text": "biologist"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Barry_Commoner",
+                                    "text": "Barry Commoner"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Comanche",
+                                    "text": "Comanche"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Native_Americans_in_the_United_States",
+                                    "text": "Native American"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/LaDonna_Harris",
+                                    "text": "LaDonna Harris"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/District_of_Columbia",
+                                    "text": "District of Columbia"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "General election",
+            "type": "section",
+            "has_parts": [
+                {
+                    "name": "Campaign",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "Reagan gained in former Democratic strongholds such as the South and white ethnics dubbed \" Reagan Democrats \", and exuded upbeat optimism. David Frum says Carter ran an attack-based campaign based on \"despair and pessimism\" which \"cost him the election.\" Carter emphasized his record as a peacemaker, and said Reagan's election would threaten civil rights and social programs that stretched back to the New Deal. Reagan's platform also emphasized the importance of peace, as well as a prepared self-defense.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Reagan_Democrat",
+                                    "text": "Reagan Democrats"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/David_Frum",
+                                    "text": "David Frum"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Civil_rights",
+                                    "text": "civil rights"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/New_Deal",
+                                    "text": "New Deal"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Immediately after the conclusion of the primaries, a Gallup poll held that Reagan was ahead, with 58% of voters upset by Carter's handling of the presidency. One analysis of the election has suggested that \"Both Carter and Reagan were perceived negatively by a majority of the electorate.\" While the three leading candidates (Reagan, Anderson and Carter) were religious Christians, Carter had the most support of evangelical Christians according to a Gallup poll. However, in the end, Jerry Falwell 's Moral Majority lobbying group is credited with giving Reagan two-thirds of the white evangelical vote. According to Carter: \"that autumn a group headed by Jerry Falwell purchased $10 million in commercials on southern radio and TV to brand me as a traitor to the South and no longer a Christian.\"",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Gallup_poll",
+                                    "text": "Gallup poll"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Jerry_Falwell",
+                                    "text": "Jerry Falwell"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Moral_Majority",
+                                    "text": "Moral Majority"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "The election of 1980 was a key turning point in American politics. It signaled the new electoral power of the suburbs and the Sun Belt. Reagan's success as a conservative would initiate a realigning of the parties, as Rockefeller-style Republicans and conservative Democrats would either leave politics or change party affiliations through the 1980s and 1990s to leave the parties much more ideologically polarized. While during Barry Goldwater 's 1964 campaign, many voters saw his warnings about a too-powerful government as hyperbolic and only 30% of the electorate agreed that government was too powerful, by 1980 a majority of Americans believed that government held too much power.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Suburb",
+                                    "text": "suburbs"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Sun_Belt",
+                                    "text": "Sun Belt"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Conservatism_in_the_United_States",
+                                    "text": "conservative"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Rockefeller_Republican",
+                                    "text": "Rockefeller-style Republicans"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Reagan_Democrat",
+                                    "text": "conservative Democrats"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Barry_Goldwater",
+                                    "text": "Barry Goldwater"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1964_United_States_presidential_election",
+                                    "text": "1964 campaign"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Promises",
+                            "type": "section",
+                            "has_parts": [
+                                {
+                                    "type": "paragraph",
+                                    "value": "Reagan promised a restoration of the nation's military strength, at the same time 60% of Americans polled felt defense spending was too low. Reagan also promised an end to \"trust me government\" and to restore economic health by implementing a supply-side economic policy. Reagan promised a balanced budget within three years (which he said would be \"the beginning of the end of inflation\"), accompanied by a 30% reduction in tax rates over those same years. With respect to the economy, Reagan famously said, \"A recession is when your neighbor loses his job. A depression is when you lose yours. And recovery is when Jimmy Carter loses his.\" Reagan also criticized the \" windfall profit tax \" that Carter and Congress enacted that year in regards to domestic oil production and promised to attempt to repeal it as president. The tax was not a tax on profits, but on the difference between the price control -mandated price and the market price.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Supply-side_economics",
+                                            "text": "supply-side economic"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Balanced_budget",
+                                            "text": "balanced budget"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Windfall_profit_tax",
+                                            "text": "windfall profit tax"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Price_controls",
+                                            "text": "price control"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "On the issue of women's rights there was much division, with many feminists frustrated with Carter, the only major-party candidate who supported the Equal Rights Amendment. After a bitter Convention fight between Republican feminists and antifeminists the Republican Party dropped their forty-year endorsement of the ERA. Reagan, however, announced his dedication to women's rights and his intention to, if elected, appoint women to his cabinet and the first female justice to the Supreme Court. He also pledged to work with all 50 state governors to combat discrimination against women and to equalize federal laws as an alternative to the ERA. Reagan was convinced to give an endorsement of women's rights in his nomination acceptance speech.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Women's_rights_in_the_United_States",
+                                            "text": "women's rights"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Equal_Rights_Amendment",
+                                            "text": "Equal Rights Amendment"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/United_States_Supreme_Court",
+                                            "text": "Supreme Court"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "Carter was criticized by his own aides for not having a \"grand plan\" for the recovery of the economy, nor did he ever make any campaign promises; he often criticized Reagan's economic recovery plan, but did not create one of his own in response."
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Events",
+                            "type": "section",
+                            "has_parts": [
+                                {
+                                    "type": "paragraph",
+                                    "value": "In August, after the Republican National Convention, Ronald Reagan gave a campaign speech at the annual Neshoba County Fair on the outskirts of Philadelphia, Mississippi, where three civil rights workers were murdered in 1964. He was the first presidential candidate ever to campaign at the fair. Reagan famously announced, \"Programs like education and others should be turned back to the states and local communities with the tax sources to fund them. I believe in states' rights. I believe in people doing as much as they can at the community level and the private level.\" Reagan also stated, \"I believe we have distorted the balance of our government today by giving powers that were never intended to be given in the Constitution to that federal establishment.\" He went on to promise to \"restore to states and local governments the power that properly belongs to them.\" President Carter criticized Reagan for injecting \"hate and racism\" by the \"rebirth of code words like 'states' rights' \".",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/1980_Republican_National_Convention",
+                                            "text": "Republican National Convention"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Neshoba_County,_Mississippi",
+                                            "text": "Neshoba County"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Philadelphia,_Mississippi",
+                                            "text": "Philadelphia, Mississippi"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Murders_of_Chaney,_Goodman,_and_Schwerner",
+                                            "text": "murdered in 1964"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/States'_rights",
+                                            "text": "states' rights"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/United_States_Constitution",
+                                            "text": "Constitution"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/States'_rights#States'_rights_as_code_word",
+                                            "text": "code words like 'states' rights'"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "Two days later, Reagan appeared at the Urban League convention in New York, where he said, \"I am committed to the protection and enforcement of the civil rights of black Americans. This commitment is interwoven into every phase of the plans I will propose.\" He then said that he would develop \" enterprise zones \" to help with urban renewal.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Urban_League",
+                                            "text": "Urban League"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Urban_Enterprise_Zone",
+                                            "text": "enterprise zones"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "The media's main criticism of Reagan centered on his gaffes. When Carter kicked off his general election campaign in Tuscumbia, Reagan—referring to the Southern U.S. as a whole—claimed that Carter had begun his campaign in the birthplace of the Ku Klux Klan. In doing so, Reagan seemed to insinuate that the KKK represented the South, which caused many Southern governors to denounce Reagan's remarks. Additionally, Reagan was widely ridiculed by Democrats for saying that trees caused pollution; he later said that he meant only certain types of pollution and his remarks had been misquoted.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Tuscumbia,_Alabama",
+                                            "text": "Tuscumbia"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Ku_Klux_Klan",
+                                            "text": "Ku Klux Klan"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "Meanwhile, Carter was burdened by a continued weak economy and the Iran hostage crisis. Inflation, high interest rates, and unemployment continued through the course of the campaign, and the ongoing hostage crisis in Iran became, according to David Frum in How We Got Here: The '70s, a symbol of American impotence during the Carter years. John Anderson's independent candidacy, aimed at eliciting support from liberals, was also seen as hurting Carter more than Reagan, especially in reliably Democratic states such as Massachusetts and New York.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Iran_hostage_crisis",
+                                            "text": "Iran hostage crisis"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/David_Frum",
+                                            "text": "David Frum"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Presidential debates",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "The League of Women Voters, which had sponsored the 1976 Ford/Carter debate series, announced that it would do so again for the next cycle in the spring of 1979. Carter steadfastly refused to participate in a debate if Anderson was included, and Reagan refused to debate without him. A League-sponsored debate was held on September 21, 1980, in the Baltimore Convention Center. Of Carter's refusal to debate, Reagan said: \"He knows that he couldn't win a debate even if it were held in the Rose Garden before an audience of Administration officials with the questions being asked by Jody Powell \". Anderson, who many thought would handily dispatch Reagan, managed only a narrow win, according to many in the media at that time, with Reagan putting up a much stronger performance than expected. Despite the narrow win in the debate, Anderson, who had been as high as 20% in some polls, and at the time of the debate was over 10%, dropped to about 5% soon after. Anderson failed to substantively engage Reagan enough on their social issue differences and on Reagan's advocation of supply-side economics. Instead, Anderson started off by criticizing Carter: \"Governor Reagan is not responsible for what has happened over the last four years, nor am I. The man who should be here tonight to respond to those charges chose not to attend,\" to which Reagan added: \"It's a shame now that there are only two of us here debating, because the two that are here are in more agreement than disagreement.\" In one moment in the debate, Reagan commented on a rumor that Anderson had invited Senator Ted Kennedy to be his running mate by asking the candidate directly, \"John, would you really prefer Teddy Kennedy to me?\"",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/League_of_Women_Voters",
+                                    "text": "League of Women Voters"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Baltimore_Convention_Center",
+                                    "text": "Baltimore Convention Center"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/White_House_Rose_Garden",
+                                    "text": "Rose Garden"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Jody_Powell",
+                                    "text": "Jody Powell"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Ted_Kennedy",
+                                    "text": "Ted Kennedy"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "As September turned into October, the situation remained essentially the same. Reagan insisted Anderson be allowed to participate in a three-way debate, while Carter remained steadfastly opposed to this. As the standoff continued, the second debate was canceled, as was the vice presidential debate."
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "With two weeks to go to the election, the Reagan campaign decided at that point that the best thing to do was to accede to all of President Carter's demands. The final debate, featuring only Carter and Reagan, was rescheduled for October 28 in Cleveland, Ohio. The showdown ranked among the highest ratings of any television program in the previous decade. Debate topics included the Iranian hostage crisis and nuclear arms. Carter's campaign sought to portray Reagan as a reckless \"war hawk\", as well as a \"dangerous right-wing radical\". But it was President Carter's reference to his consultation with 12-year-old daughter Amy concerning nuclear weapons policy that became the focus of post-debate analysis and fodder for late-night television jokes. President Carter said he had asked Amy what the most important issue in that election was and she said, \"the control of nuclear arms.\" A famous political cartoon, published the day after Reagan's landslide victory, showed Amy Carter sitting in Jimmy's lap with her shoulders shrugged asking \"the economy? the hostage crisis?\"",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Cleveland",
+                                    "text": "Cleveland"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Ohio",
+                                    "text": "Ohio"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Television",
+                                    "text": "television"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Amy_Carter",
+                                    "text": "Amy"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Joke",
+                                    "text": "jokes"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Nuclear_arms",
+                                    "text": "nuclear arms"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "When President Carter criticized Reagan's record, which included voting against Medicare and Social Security benefits, former Governor Reagan audibly sighed and replied: \" There you go again \".",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Medicare_(United_States)",
+                                    "text": "Medicare"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Social_Security_(United_States)",
+                                    "text": "Social Security"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/There_you_go_again",
+                                    "text": "There you go again"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "In his closing remarks, Reagan asked viewers: \"Are you better off now than you were four years ago? Is it easier for you to go and buy things in the stores than it was four years ago? Is there more or less unemployment in the country than there was four years ago? Is America as respected throughout the world as it was? Do you feel that our security is as safe, that we're as strong as we were four years ago? And if you answer all of those questions 'yes', why then, I think your choice is very obvious as to whom you will vote for. If you don't agree, if you don't think that this course that we've been on for the last four years is what you would like to see us follow for the next four, then I could suggest another choice that you have\"."
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "After trailing Carter by eight points among registered voters (and by three points among likely voters) right before their debate, Reagan moved into a three-point lead among likely voters immediately afterward."
+                        }
+                    ]
+                },
+                {
+                    "name": "Endorsements",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "In September 1980, former Watergate scandal prosecutor Leon Jaworski accepted a position as honorary chairman of Democrats for Reagan. Five months earlier, Jaworski had harshly criticized Reagan as an \"extremist\"; he said after accepting the chairmanship, \"I would rather have a competent extremist than an incompetent moderate.\"",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Watergate_scandal",
+                                    "text": "Watergate scandal"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Leon_Jaworski",
+                                    "text": "Leon Jaworski"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Reagan_Democrat",
+                                    "text": "Democrats for Reagan"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Former Democratic Senator Eugene McCarthy of Minnesota (who in 1968 had challenged Lyndon B. Johnson from the left, causing the then-President to all but abdicate) endorsed Reagan.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Eugene_McCarthy",
+                                    "text": "Eugene McCarthy"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1968_United_States_presidential_election",
+                                    "text": "1968"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Lyndon_B._Johnson",
+                                    "text": "Lyndon B. Johnson"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Three days before the election, the National Rifle Association of America endorsed a presidential candidate for the first time in its history, backing Reagan. Reagan had received the California Rifle and Pistol Association's Outstanding Public Service Award. Carter had appointed Abner J. Mikva, a fervent proponent of gun control, to a federal judgeship and had supported the Alaska Lands Bill, closing 40,000,000 acres (160,000 km) to hunting.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/National_Rifle_Association_of_America",
+                                    "text": "National Rifle Association of America"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Abner_J._Mikva",
+                                    "text": "Abner J. Mikva"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Gun_control",
+                                    "text": "gun control"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "General election endorsements",
+                            "type": "section",
+                            "has_parts": [
+                                {
+                                    "type": "paragraph",
+                                    "value": "Anderson had received endorsements from:"
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Former Representative (Arizona's 2nd congressional district) and Interior Secretary Stewart Udall (D-AZ)",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/United_States_House_of_Representatives",
+                                                    "text": "Representative"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Arizona's_2nd_congressional_district",
+                                                    "text": "Arizona's 2nd congressional district"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/United_States_Secretary_of_the_Interior",
+                                                    "text": "Interior Secretary"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Stewart_Udall",
+                                                    "text": "Stewart Udall"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Middlesex County Sheriff John J. Buckley (D-MA)",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Middlesex_County_Sheriff's_Office",
+                                                    "text": "Middlesex County Sheriff"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/John_J._Buckley_(sheriff)",
+                                                    "text": "John J. Buckley"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Former Massachusetts State Representative Francis W. Hatch Jr. (R-MA)",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Massachusetts_House_of_Representatives",
+                                                    "text": "Massachusetts State Representative"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Francis_W._Hatch_Jr.",
+                                                    "text": "Francis W. Hatch Jr."
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Former Massachusetts Republican Party chairman Josiah Spaulding (R-MA)",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Massachusetts_Republican_Party",
+                                                    "text": "Massachusetts Republican Party"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Josiah_Spaulding",
+                                                    "text": "Josiah Spaulding"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Band The Cars",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/The_Cars",
+                                                    "text": "The Cars"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Actor Stockard Channing",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Stockard_Channing",
+                                                    "text": "Stockard Channing"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Band Cheap Trick",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Cheap_Trick",
+                                                    "text": "Cheap Trick"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Screenwriter Norman Lear",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Norman_Lear",
+                                                    "text": "Norman Lear"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Actress Dina Merrill",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Dina_Merrill",
+                                                    "text": "Dina Merrill"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Actor Paul Newman",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Paul_Newman",
+                                                    "text": "Paul Newman"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Actor Cliff Robertson",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Cliff_Robertson",
+                                                    "text": "Cliff Robertson"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Band Tom Petty and the Heartbreakers",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Tom_Petty_and_the_Heartbreakers",
+                                                    "text": "Tom Petty and the Heartbreakers"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Actress Joanne Woodward",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Joanne_Woodward",
+                                                    "text": "Joanne Woodward"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "The Hutchinson News in Hutchinson, Kansas",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/The_Hutchinson_News",
+                                                    "text": "The Hutchinson News"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Hutchinson,_Kansas",
+                                                    "text": "Hutchinson, Kansas"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "The Burlington Free Press in Burlington, VT",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/The_Burlington_Free_Press",
+                                                    "text": "The Burlington Free Press"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Burlington,_VT",
+                                                    "text": "Burlington, VT"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "Carter had received endorsements from:"
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "The Des Moines Register in Des Moines, Iowa",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/The_Des_Moines_Register",
+                                                    "text": "The Des Moines Register"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Des_Moines,_Iowa",
+                                                    "text": "Des Moines, Iowa"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "The Penn State Daily Collegian in State College, Pennsylvania",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Penn_State_University",
+                                                    "text": "Penn State"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/State_College,_Pennsylvania",
+                                                    "text": "State College, Pennsylvania"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "Commoner had received endorsements from:"
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Montgomery County precinct committeeman and Consumer Party Auditor General candidate Darcy Richardson (D-PA)",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Montgomery_County,_Pennsylvania",
+                                                    "text": "Montgomery County"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Pennsylvania_Auditor_General",
+                                                    "text": "Auditor General"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "DeBerry had received endorsements from:"
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "American People's Historical Society director Bernie Sanders of Vermont",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Bernie_Sanders",
+                                                    "text": "Bernie Sanders"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Vermont",
+                                                    "text": "Vermont"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "Reagan had received endorsements from:"
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Arizona Senator Dennis DeConcini (D-AZ)",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/List_of_United_States_senators_from_Arizona",
+                                                    "text": "Arizona Senator"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Dennis_DeConcini",
+                                                    "text": "Dennis DeConcini"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Virginia Senator Harry Byrd Jr. (D-VA)",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/List_of_United_States_senators_from_Virginia",
+                                                    "text": "Virginia Senator"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Harry_Byrd_Jr.",
+                                                    "text": "Harry Byrd Jr."
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "New York Senator Jacob Javits (R-NY)",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/List_of_United_States_senators_from_New_York",
+                                                    "text": "New York Senator"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Jacob_Javits",
+                                                    "text": "Jacob Javits"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Maryland Senator Charles Mathias (R-MD)",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/List_of_United_States_senators_from_Maryland",
+                                                    "text": "Maryland Senator"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Charles_Mathias",
+                                                    "text": "Charles Mathias"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Former Massachusetts Senator Edward Brooke (R-MA)",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/List_of_United_States_senators_from_Massachusetts",
+                                                    "text": "Massachusetts Senator"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Edward_Brooke",
+                                                    "text": "Edward Brooke"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Former Minnesota Senator Eugene McCarthy (D-MN)",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/List_of_United_States_senators_from_Minnesota",
+                                                    "text": "Minnesota Senator"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Eugene_McCarthy",
+                                                    "text": "Eugene McCarthy"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Representative (California's 12th congressional district) Pete McCloskey (R-CA)",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/United_States_House_of_Representatives",
+                                                    "text": "Representative"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/California's_12th_congressional_district",
+                                                    "text": "California's 12th congressional district"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Pete_McCloskey",
+                                                    "text": "Pete McCloskey"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Former Representative (California's 26th congressional district) James Roosevelt (D-CA; son of Franklin Delano Roosevelt)",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/United_States_House_of_Representatives",
+                                                    "text": "Representative"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/California's_26th_congressional_district",
+                                                    "text": "California's 26th congressional district"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/James_Roosevelt",
+                                                    "text": "James Roosevelt"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Franklin_Delano_Roosevelt",
+                                                    "text": "Franklin Delano Roosevelt"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Former Georgia Governor Lester Maddox (D-GA)",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Governor_of_Georgia",
+                                                    "text": "Georgia Governor"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Lester_Maddox",
+                                                    "text": "Lester Maddox"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Former Alabama Governor John Malcolm Patterson (D-AL)",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Governor_of_Alabama",
+                                                    "text": "Alabama Governor"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/John_Malcolm_Patterson",
+                                                    "text": "John Malcolm Patterson"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Former Texas Governor Preston Smith (D-TX)",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Governor_of_Texas",
+                                                    "text": "Texas Governor"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Preston_Smith_(governor)",
+                                                    "text": "Preston Smith"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Former Mississippi Governor John Bell Williams (D-MS)",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Governor_of_Mississippi",
+                                                    "text": "Mississippi Governor"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/John_Bell_Williams",
+                                                    "text": "John Bell Williams"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Fort Lauderdale City Advisory Board member Jim Naugle (D-FL)",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Fort_Lauderdale,_Florida",
+                                                    "text": "Fort Lauderdale"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Jim_Naugle",
+                                                    "text": "Jim Naugle"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Former New York State Senator Jeremiah B. Bloom (D-NY)",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/New_York_State_Senate",
+                                                    "text": "New York State Senator"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Jeremiah_B._Bloom",
+                                                    "text": "Jeremiah B. Bloom"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Former UCLA men's basketball head coach John Wooden",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/UCLA_Bruins_men's_basketball",
+                                                    "text": "UCLA men's basketball head coach"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/John_Wooden",
+                                                    "text": "John Wooden"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Retired United States Navy Admiral Elmo Zumwalt (D-VA)",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/United_States_Navy",
+                                                    "text": "United States Navy"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Admiral_(United_States)",
+                                                    "text": "Admiral"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Elmo_Zumwalt",
+                                                    "text": "Elmo Zumwalt"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "The Arizona Republic in Phoenix, Arizona",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/The_Arizona_Republic",
+                                                    "text": "The Arizona Republic"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Phoenix,_Arizona",
+                                                    "text": "Phoenix, Arizona"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "The Desert Sun in Palm Springs, California",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/The_Desert_Sun",
+                                                    "text": "The Desert Sun"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Palm_Springs,_California",
+                                                    "text": "Palm Springs, California"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "The Omaha World-Herald in Omaha, Nebraska",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Omaha_World-Herald",
+                                                    "text": "Omaha World-Herald"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Omaha,_Nebraska",
+                                                    "text": "Omaha, Nebraska"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "The Quad-City Times in Davenport, Iowa",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Quad-City_Times",
+                                                    "text": "Quad-City Times"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Davenport,_Iowa",
+                                                    "text": "Davenport, Iowa"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "The Record in Stockton, California",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/The_Record_(Stockton,_California)",
+                                                    "text": "The Record"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Stockton,_California",
+                                                    "text": "Stockton, California"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "The Repository in Canton, Ohio",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/The_Repository",
+                                                    "text": "The Repository"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Canton,_Ohio",
+                                                    "text": "Canton, Ohio"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "The Plain Dealer in Cleveland, Ohio",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/The_Plain_Dealer",
+                                                    "text": "The Plain Dealer"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Cleveland,_Ohio",
+                                                    "text": "Cleveland, Ohio"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "The Blade in Toledo, Ohio",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/The_Blade_(Toledo,_Ohio)",
+                                                    "text": "The Blade"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Toledo,_Ohio",
+                                                    "text": "Toledo, Ohio"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Houston Chronicle in Houston, Texas",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Houston_Chronicle",
+                                                    "text": "Houston Chronicle"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Houston,_Texas",
+                                                    "text": "Houston, Texas"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Richmond Times-Dispatch in Richmond, Virginia",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Richmond_Times-Dispatch",
+                                                    "text": "Richmond Times-Dispatch"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Richmond,_Virginia",
+                                                    "text": "Richmond, Virginia"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Results",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "The election was held on November 4, 1980. Ronald Reagan and running mate George H. W. Bush defeated the Carter-Mondale ticket by almost 10 percentage points in the popular vote. The electoral college vote was a landslide, with 489 votes (representing 44 states) for Reagan and 49 for Carter (representing six states and Washington, D.C.). Republicans also gained control of the Senate for the first time since 1954.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/George_H._W._Bush",
+                                    "text": "George H. W. Bush"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Republican_Party_(United_States)",
+                                    "text": "Republicans"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "NBC News projected Reagan as the winner at 8:15 pm EST (5:15 PST), before voting was finished in the West, based on exit polls; it was the first time a broadcast network used exit polling to project a winner, and it took the other broadcast networks by surprise. Carter conceded defeat at 9:50 pm EST. Some of Carter's advisors urged him to wait until 11:00 pm EST to allow poll results from the West Coast to come in, but Carter decided to concede earlier in order to avoid the impression that he was sulking. Speaker of the House Tip O'Neill angrily accused Carter of weakening the party's performance in the Senate elections by doing this.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/NBC_News",
+                                    "text": "NBC News"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Exit_polls",
+                                    "text": "exit polls"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Speaker_of_the_United_States_House_of_Representatives",
+                                    "text": "Speaker of the House"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Tip_O'Neill",
+                                    "text": "Tip O'Neill"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1980_United_States_Senate_elections",
+                                    "text": "Senate elections"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "John Anderson won 6.6% of the popular vote but no states. He had the most support in New England, fueled by liberal and moderate Republicans who felt Reagan was too far to the right, and with voters who normally leaned Democratic but were dissatisfied with the Carter administration's policies. His best showing was in Massachusetts, where he won 15% of the vote. This is the first time Massachusetts voted for a Republican nominee since Dwight Eisenhower.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/New_England",
+                                    "text": "New England"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Massachusetts",
+                                    "text": "Massachusetts"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Anderson performed worst in the South, receiving under 2% of the vote in South Carolina, Louisiana, Alabama, and Mississippi. He said he was accused of spoiling the election by receiving votes that might have otherwise been cast for Carter, but 37% of Anderson voters polled preferred Reagan as their second choice. Libertarian Party nominee Ed Clark received 921,299 popular votes (1.06%).",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Southern_United_States",
+                                    "text": "South"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Spoiler_effect",
+                                    "text": "spoiling the election"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Libertarian_Party_(United_States)",
+                                    "text": "Libertarian Party"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Ed_Clark",
+                                    "text": "Ed Clark"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Carter's loss was the worst performance by an incumbent president since Herbert Hoover lost to Franklin Roosevelt by a margin of 18% in 1932, and his 49 Electoral College votes were the fewest won by an incumbent since William Howard Taft won eight in 1912. Carter was the first incumbent Democrat to serve only one full term since James Buchanan. This was the third and most recent presidential election in which the incumbent Democrat lost reelection, after 1840 and 1888. This was the first time since 1840 that an incumbent Democrat lost the popular vote. Reagan had the most lopsided Electoral College victory for a first-time president-elect, with the exception of George Washington's unanimous victory in 1788.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1932_United_States_presidential_election",
+                                    "text": "1932"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/William_Howard_Taft",
+                                    "text": "William Howard Taft"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1912_United_States_presidential_election",
+                                    "text": "1912"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/James_Buchanan",
+                                    "text": "James Buchanan"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "This election was the last time a Republican won the presidency without winning Georgia. It was the first time Massachusetts voted for a Republican candidate since 1956. 1980 is one of only two occurrences of pairs of consecutive elections seeing the incumbent presidents defeated, the other happening in 1892. This is the first time since 1892 that a party was voted out after a single four-year term, and the first for Democrats since 1888. This did not occur again for either party until 2020.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1892_United_States_presidential_election",
+                                    "text": "1892"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Reagan won 53% of the vote in reliably Democratic South Boston, one example of the so-called Reagan Democrat. Although he won an even larger Electoral College majority in 1984, the 1980 election nonetheless stands as the last time some now very strongly Democratic counties gave a Republican a majority or plurality. Notable examples are Jefferson County in Washington State, Lane County, Oregon, Marin and Santa Cruz Counties in California, McKinley County, New Mexico, and Rock Island County, Illinois. Survey research and post-election polling indicated that the landslide result had been more a repudiation of Carter than an embrace of Reagan. But the public was aware that Reagan would move the nation in a more conservative direction, and was apparently willing to give it a chance to avoid four more years of Carter.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/South_Boston",
+                                    "text": "South Boston"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Reagan_Democrat",
+                                    "text": "Reagan Democrat"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Jefferson_County,_Washington",
+                                    "text": "Jefferson County"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Lane_County,_Oregon",
+                                    "text": "Lane County, Oregon"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Marin_County,_California",
+                                    "text": "Marin"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Santa_Cruz_County,_California",
+                                    "text": "Santa Cruz Counties"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/McKinley_County,_New_Mexico",
+                                    "text": "McKinley County, New Mexico"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Rock_Island_County,_Illinois",
+                                    "text": "Rock Island County, Illinois"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "At age 69, Reagan was the oldest non-incumbent to win a presidential election. Thirty-six years later, in 2016, this record was surpassed by Donald Trump at age 70 and, four years later, by Joe Biden at 77.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2016_United_States_presidential_election",
+                                    "text": "2016"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Donald_Trump",
+                                    "text": "Donald Trump"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2020_United_States_presidential_election",
+                                    "text": "four years later"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Joe_Biden",
+                                    "text": "Joe Biden"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Results",
+            "type": "section",
+            "has_parts": [
+                {
+                    "type": "paragraph",
+                    "value": "Source (popular vote):"
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Source (electoral vote):"
+                },
+                {
+                    "name": "Results by state",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "Source:"
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Maine allowed its electoral votes to be split between candidates. Two electoral votes were awarded to the winner of the statewide race and one electoral vote to the winner of each congressional district. Reagan won all four votes."
+                        },
+                        {
+                            "name": "States that flipped from Democratic to Republican",
+                            "type": "section",
+                            "has_parts": [
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Alabama",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Alabama",
+                                                    "text": "Alabama"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Arkansas",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Arkansas",
+                                                    "text": "Arkansas"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Delaware",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Delaware",
+                                                    "text": "Delaware"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Florida",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Florida",
+                                                    "text": "Florida"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Kentucky",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Kentucky",
+                                                    "text": "Kentucky"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Louisiana",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Louisiana",
+                                                    "text": "Louisiana"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Massachusetts",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Massachusetts",
+                                                    "text": "Massachusetts"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Mississippi",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Mississippi",
+                                                    "text": "Mississippi"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Missouri",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Missouri",
+                                                    "text": "Missouri"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "New York",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/New_York_(state)",
+                                                    "text": "New York"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "North Carolina",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/North_Carolina",
+                                                    "text": "North Carolina"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Ohio",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Ohio",
+                                                    "text": "Ohio"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Pennsylvania",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Pennsylvania",
+                                                    "text": "Pennsylvania"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "South Carolina",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/South_Carolina",
+                                                    "text": "South Carolina"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Tennessee",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Tennessee",
+                                                    "text": "Tennessee"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Texas",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Texas",
+                                                    "text": "Texas"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Wisconsin",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Wisconsin",
+                                                    "text": "Wisconsin"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Close states",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "Margin of victory less than 1% (30 electoral votes):"
+                        },
+                        {
+                            "type": "list",
+                            "has_parts": [
+                                {
+                                    "type": "list_item",
+                                    "value": "Massachusetts, 0.15% (3,829 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Tennessee, 0.29% (4,710 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Arkansas, 0.61% (5,123 votes)"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Margin of victory less than 5% (135 electoral votes):"
+                        },
+                        {
+                            "type": "list",
+                            "has_parts": [
+                                {
+                                    "type": "list_item",
+                                    "value": "Alabama, 1.30% (17,462 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Mississippi, 1.32% (11,808 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Kentucky, 1.46% (18,857 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "South Carolina, 1.53% (13,647 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Hawaii, 1.90% (5,767 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "North Carolina, 2.12% (39,383 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Delaware, 2.33% (5,498 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "New York, 2.67% (165,459 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Maryland, 2.96% (45,555 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Maine's 1st Congressional District, 3.15% (8,661 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Maine, 3.36% (17,548 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Maine's 2nd Congressional District, 3.73% (8,887 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Minnesota, 3.94% (80,933 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "West Virginia, 4.51% (33,256 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Wisconsin, 4.72% (107,261 votes)"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Margin of victory more than 5%, but less than 10% (113 electoral votes):"
+                        },
+                        {
+                            "type": "list",
+                            "has_parts": [
+                                {
+                                    "type": "list_item",
+                                    "value": "Louisiana, 5.45% (84,400 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Vermont, 5.96% (12,707 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Michigan, 6.49% (253,693 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Missouri, 6.81% (142,999 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Pennsylvania, 7.11% (324,332 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Illinois, 7.93% (376,636 votes) (tipping-point state)",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Tipping-point_state",
+                                            "text": "tipping-point state"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Connecticut, 9.64% (135,478 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Oregon, 9.66% (114,154 votes)"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Statistics",
+                            "type": "section",
+                            "has_parts": [
+                                {
+                                    "type": "paragraph",
+                                    "value": "Counties with highest percentage of the vote (Republican)"
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Banner County, Nebraska 90.41%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Banner_County,_Nebraska",
+                                                    "text": "Banner County, Nebraska"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Madison County, Idaho 88.41%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Madison_County,_Idaho",
+                                                    "text": "Madison County, Idaho"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "McIntosh County, North Dakota 86.01%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/McIntosh_County,_North_Dakota",
+                                                    "text": "McIntosh County, North Dakota"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "McPherson County, South Dakota 85.60%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/McPherson_County,_South_Dakota",
+                                                    "text": "McPherson County, South Dakota"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Franklin County, Idaho 85.31%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Franklin_County,_Idaho",
+                                                    "text": "Franklin County, Idaho"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "Counties with highest percentage of the vote (Democratic)"
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Macon County, Alabama 80.10%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Macon_County,_Alabama",
+                                                    "text": "Macon County, Alabama"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Hancock County, Georgia 78.50%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Hancock_County,_Georgia",
+                                                    "text": "Hancock County, Georgia"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Duval County, Texas 77.91%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Duval_County,_Texas",
+                                                    "text": "Duval County, Texas"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Jefferson County, Mississippi 77.84%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Jefferson_County,_Mississippi",
+                                                    "text": "Jefferson County, Mississippi"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Greene County, Alabama 77.09%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Greene_County,_Alabama",
+                                                    "text": "Greene County, Alabama"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "Counties with highest percentage of the vote (Other)"
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Pitkin County, Colorado 27.76%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Pitkin_County,_Colorado",
+                                                    "text": "Pitkin County, Colorado"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Nantucket, Massachusetts 21.63%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Nantucket",
+                                                    "text": "Nantucket, Massachusetts"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Winnebago County, Illinois 21.50%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Winnebago_County,_Illinois",
+                                                    "text": "Winnebago County, Illinois"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Dukes County, Massachusetts 20.88%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Dukes_County,_Massachusetts",
+                                                    "text": "Dukes County, Massachusetts"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Story County, Iowa 19.41%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Story_County,_Iowa",
+                                                    "text": "Story County, Iowa"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Voter demographics",
+            "type": "section",
+            "has_parts": [
+                {
+                    "type": "paragraph",
+                    "value": "Source: CBS News and The New York Times exit poll from the Roper Center for Public Opinion Research (15,201 surveyed)",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/CBS_News",
+                            "text": "CBS News"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/The_New_York_Times",
+                            "text": "The New York Times"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Roper_Center_for_Public_Opinion_Research",
+                            "text": "Roper Center for Public Opinion Research"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

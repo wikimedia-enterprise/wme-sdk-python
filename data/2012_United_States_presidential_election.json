@@ -1,0 +1,2491 @@
+{
+    "name": "2012 United States presidential election",
+    "identifier": 20102947,
+    "abstract": "The 2012 United States presidential election was the 57th quadrennial presidential election, held on Tuesday, November 6, 2012. Incumbent Democratic President Barack Obama and his running mate, incumbent Vice President Joe Biden, were elected to a second term. They defeated the Republican ticket of former Governor of Massachusetts Mitt Romney and U.S. Representative Paul Ryan of Wisconsin. As the incumbent President, Obama secured the Democratic nomination without serious opposition. The Republicans experienced a competitive primary. Romney was consistently competitive in the polls and won the support of many party leaders, but he faced challenges from a number of more conservative contenders. Romney secured his party's nomination in May, defeating former senator Rick Santorum, former Speaker of the House Newt Gingrich, and Texas congressman Ron Paul, among other candidates. The campaigns focused heavily on domestic issues, and debate centered largely around sound responses to the Great Recession. Other issues included long-term federal budget issues, the future of social insurance programs, and the Affordable Care Act, Obama's marquee legislative program. Foreign policy was also discussed, including the end of the Iraq War in 2011, military spending, the Iranian nuclear program, and appropriate counteractions to terrorism. Romney attacked Obama's domestic policies as ineffective and financially insolvent while Obama's campaign sought to characterize Romney as a plutocratic businessman who was out of touch with the average American. The campaign was marked by a sharp rise in fundraising, including from nominally independent Super PACs. Obama defeated Romney, winning a majority of both the Electoral College and the popular vote. Obama won 332 electoral votes and 51.1% of the popular vote compared to Romney's 206 electoral votes and 47.2%. The results of the electoral vote were certified by Congress on January 4, 2013. Obama was the first president since Ronald Reagan in 1984 to win a majority of the national popular vote more than once, and the first Democrat to do so since Franklin D. Roosevelt in 1944. Obama also became only the sixth Democratic president in history to win a second term, and the third sitting president in a row to win a second term. Obama did not hold onto Indiana, North Carolina, or Nebraska's 2nd congressional district, but crucially won all 18 \"blue wall\" states and defeated Romney in other swing states the Republicans had won in 2000 and 2004, most notably Colorado, Florida, Nevada, Ohio, and Virginia. Ultimately, of the nine swing states identified by The Washington Post in the 2012 election, Obama won eight, losing only North Carolina. This is the most recent presidential election in which the Democratic candidate won the states of Iowa, Ohio, and Florida, along with Maine's 2nd congressional district, the most recent presidential election in which the incumbent president won reelection, and the most recent in which neither major party's ticket included a woman. This was the most recent election in which a presidential candidate received above 70% of the vote in any state, with Hawaii for Obama and Utah for Romney, as well as the most recent election in which Donald Trump was not the Republican nominee. All four major candidates for president and vice president went on to hold significant public office after this election. Obama served his second term as president, while Biden also served his second term as vice president and initially retired from politics but was later elected president in 2020, defeating Obama's successor, then-incumbent Donald Trump. This is the most recent election in which two major party nominees would go on to become president. Romney moved to Utah in 2014 and was elected to the Senate there in 2018, succeeding Orrin Hatch. Ryan served three more terms in the House and eventually became Speaker from 2015 until his retirement from politics in 2019.",
+    "version": {
+        "identifier": 1252293887,
+        "comment": "Incorrect usage",
+        "tags": [
+            "mw-undo",
+            "mobile edit",
+            "mobile web edit",
+            "advanced mobile edit",
+            "wikieditor"
+        ],
+        "scores": {
+            "revertrisk": {
+                "prediction": true,
+                "probability": {
+                    "false": 0.4272921085357666,
+                    "true": 0.5727078914642334
+                }
+            }
+        },
+        "editor": {
+            "identifier": 47023628,
+            "name": "Augmented Seventh",
+            "edit_count": 10022,
+            "groups": [
+                "extendedconfirmed",
+                "*",
+                "user",
+                "autoconfirmed"
+            ],
+            "date_started": "2023-12-08T17:40:22Z"
+        },
+        "number_of_characters": 181017,
+        "size": {
+            "value": 181784,
+            "unit_text": "B"
+        },
+        "maintenance_tags": {}
+    },
+    "url": "https://en.wikipedia.org/wiki/2012_United_States_presidential_election",
+    "date_created": "2008-11-07T01:18:35Z",
+    "date_modified": "2024-10-20T18:17:25Z",
+    "main_entity": {
+        "identifier": "Q4226",
+        "url": "https://www.wikidata.org/entity/Q4226"
+    },
+    "is_part_of": {
+        "identifier": "enwiki",
+        "url": "https://en.wikipedia.org"
+    },
+    "additional_entities": [
+        {
+            "identifier": "Q4226",
+            "url": "https://www.wikidata.org/entity/Q4226",
+            "aspects": [
+                "C",
+                "D.en",
+                "O",
+                "S",
+                "T"
+            ]
+        },
+        {
+            "identifier": "Q8784885",
+            "url": "https://www.wikidata.org/entity/Q8784885",
+            "aspects": [
+                "S"
+            ]
+        }
+    ],
+    "in_language": {
+        "identifier": "en"
+    },
+    "image": {
+        "content_url": "https://upload.wikimedia.org/wikipedia/commons/4/44/ElectoralCollege2012.svg",
+        "width": 1020,
+        "height": 593
+    },
+    "license": [
+        {
+            "name": "Creative Commons Attribution-ShareAlike License 4.0",
+            "identifier": "CC-BY-SA-4.0",
+            "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+    ],
+    "description": "57th quadrennial U.S. presidential election",
+    "infobox": [
+        {
+            "name": "Infobox election",
+            "type": "infobox",
+            "has_parts": [
+                {
+                    "name": "2012 United States presidential election",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "image",
+                            "values": [
+                                ""
+                            ],
+                            "images": [
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/50px-Flag_of_the_United_States.svg.png",
+                                    "height": 50,
+                                    "width": 50
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "November 6, 2012",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "field",
+                            "value": "November 6, 2012",
+                            "values": [
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "538 members of the Electoral College 270 electoral votes needed to win",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "field",
+                            "value": "Opinion polls",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Nationwide_opinion_polling_for_the_2012_United_States_presidential_election",
+                                    "text": "Opinion polls"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Turnout",
+                            "type": "field",
+                            "value": "58.6% 3.0 pp",
+                            "values": [
+                                ""
+                            ],
+                            "images": [
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Decrease2.svg/11px-Decrease2.svg.png",
+                                    "alternative_text": "Decrease",
+                                    "height": 11,
+                                    "width": 11
+                                }
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2012_United_States_presidential_election#cite_note-1"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Percentage_point",
+                                    "text": "pp"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Nominee Barack Obama Mitt Romney Party Democratic Republican Home state Illinois Massachusetts Running mate Joe Biden Paul Ryan Electoral vote 332 206 States carried 26 + DC 24 Popular vote 65,915,795 60,933,504 Percentage 51.1% 47.2%",
+                            "values": [
+                                ""
+                            ],
+                            "images": [
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/President_Barack_Obama%2C_2012_portrait_crop.jpg/154px-President_Barack_Obama%2C_2012_portrait_crop.jpg",
+                                    "height": 154,
+                                    "width": 154
+                                },
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Mitt_Romney_by_Gage_Skidmore_6_cropped.jpg/149px-Mitt_Romney_by_Gage_Skidmore_6_cropped.jpg",
+                                    "height": 149,
+                                    "width": 149
+                                }
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Barack_Obama",
+                                    "text": "Barack Obama"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Mitt_Romney",
+                                    "text": "Mitt Romney"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                                    "text": "Democratic"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Republican_Party_(United_States)",
+                                    "text": "Republican"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Illinois",
+                                    "text": "Illinois"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Massachusetts",
+                                    "text": "Massachusetts"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Joe_Biden",
+                                    "text": "Joe Biden"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Paul_Ryan",
+                                    "text": "Paul Ryan"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Washington,_D.C.",
+                                    "text": "DC"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2012_United_States_presidential_election#cite_note-FEC_2013-2"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2012_United_States_presidential_election#cite_note-FEC_2013-2"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "image",
+                            "values": [
+                                ""
+                            ],
+                            "images": [
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/President_Barack_Obama%2C_2012_portrait_crop.jpg/154px-President_Barack_Obama%2C_2012_portrait_crop.jpg",
+                                    "height": 154,
+                                    "width": 154
+                                },
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Mitt_Romney_by_Gage_Skidmore_6_cropped.jpg/149px-Mitt_Romney_by_Gage_Skidmore_6_cropped.jpg",
+                                    "height": 149,
+                                    "width": 149
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Nominee Barack Obama Mitt Romney",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Barack_Obama",
+                                    "text": "Barack Obama"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Mitt_Romney",
+                                    "text": "Mitt Romney"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Party Democratic Republican",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                                    "text": "Democratic"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Republican_Party_(United_States)",
+                                    "text": "Republican"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Home state Illinois Massachusetts",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Illinois",
+                                    "text": "Illinois"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Massachusetts",
+                                    "text": "Massachusetts"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Running mate Joe Biden Paul Ryan",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Joe_Biden",
+                                    "text": "Joe Biden"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Paul_Ryan",
+                                    "text": "Paul Ryan"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Electoral vote 332 206",
+                            "values": [
+                                ""
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "States carried 26 + DC 24",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Washington,_D.C.",
+                                    "text": "DC"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Popular vote 65,915,795 60,933,504",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2012_United_States_presidential_election#cite_note-FEC_2013-2"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/2012_United_States_presidential_election#cite_note-FEC_2013-2"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Percentage 51.1% 47.2%",
+                            "values": [
+                                ""
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "Presidential election results map. Blue denotes states won by Obama/Biden and red denotes those won by Romney/Ryan. Numbers indicate electoral votes cast by each state and the District of Columbia.",
+                            "values": [
+                                ""
+                            ],
+                            "images": [
+                                {
+                                    "content_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/ElectoralCollege2012.svg/348px-ElectoralCollege2012.svg.png",
+                                    "height": 348,
+                                    "width": 348
+                                }
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Electoral_votes",
+                                    "text": "electoral votes"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": "President before election Barack Obama Democratic Elected President Barack Obama Democratic",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Barack_Obama",
+                                    "text": "Barack Obama"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                                    "text": "Democratic"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Barack_Obama",
+                                    "text": "Barack Obama"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                                    "text": "Democratic"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "President before election Barack Obama Democratic",
+                            "type": "field",
+                            "value": "Elected President Barack Obama Democratic",
+                            "values": [
+                                ""
+                            ],
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Barack_Obama",
+                                    "text": "Barack Obama"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                                    "text": "Democratic"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Barack_Obama",
+                                    "text": "Barack Obama"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                                    "text": "Democratic"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "sections": [
+        {
+            "name": "Abstract",
+            "type": "section",
+            "has_parts": [
+                {
+                    "type": "paragraph",
+                    "value": "The 2012 United States presidential election was the 57th quadrennial presidential election, held on Tuesday, November 6, 2012. Incumbent Democratic President Barack Obama and his running mate, incumbent Vice President Joe Biden, were elected to a second term. They defeated the Republican ticket of former Governor of Massachusetts Mitt Romney and U.S. Representative Paul Ryan of Wisconsin.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/United_States_presidential_election",
+                            "text": "presidential election"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Democratic_Party_(United_States)",
+                            "text": "Democratic"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Barack_Obama",
+                            "text": "Barack Obama"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Running_mate",
+                            "text": "running mate"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Joe_Biden",
+                            "text": "Joe Biden"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Republican_Party_(United_States)",
+                            "text": "Republican"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Mitt_Romney",
+                            "text": "Mitt Romney"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Paul_Ryan",
+                            "text": "Paul Ryan"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Wisconsin",
+                            "text": "Wisconsin"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "As the incumbent President, Obama secured the Democratic nomination without serious opposition. The Republicans experienced a competitive primary. Romney was consistently competitive in the polls and won the support of many party leaders, but he faced challenges from a number of more conservative contenders. Romney secured his party's nomination in May, defeating former senator Rick Santorum, former Speaker of the House Newt Gingrich, and Texas congressman Ron Paul, among other candidates.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/President_of_the_United_States",
+                            "text": "President"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2012_Democratic_Party_presidential_primaries",
+                            "text": "Democratic nomination"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2012_Republican_Party_presidential_primaries",
+                            "text": "competitive primary"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Conservatism_in_the_United_States",
+                            "text": "conservative"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Rick_Santorum",
+                            "text": "Rick Santorum"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Newt_Gingrich",
+                            "text": "Newt Gingrich"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Ron_Paul",
+                            "text": "Ron Paul"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "The campaigns focused heavily on domestic issues, and debate centered largely around sound responses to the Great Recession. Other issues included long-term federal budget issues, the future of social insurance programs, and the Affordable Care Act, Obama's marquee legislative program. Foreign policy was also discussed, including the end of the Iraq War in 2011, military spending, the Iranian nuclear program, and appropriate counteractions to terrorism. Romney attacked Obama's domestic policies as ineffective and financially insolvent while Obama's campaign sought to characterize Romney as a plutocratic businessman who was out of touch with the average American. The campaign was marked by a sharp rise in fundraising, including from nominally independent Super PACs.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Great_Recession",
+                            "text": "Great Recession"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/United_States_federal_budget",
+                            "text": "federal budget"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Social_insurance",
+                            "text": "social insurance programs"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Patient_Protection_and_Affordable_Care_Act",
+                            "text": "Affordable Care Act"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Foreign_policy",
+                            "text": "Foreign policy"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Iraq_War",
+                            "text": "Iraq War"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Iran",
+                            "text": "Iranian"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Nuclear_program_of_Iran",
+                            "text": "nuclear program"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Terrorism",
+                            "text": "terrorism"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Plutocracy",
+                            "text": "plutocratic"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Super_PACs",
+                            "text": "Super PACs"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Obama defeated Romney, winning a majority of both the Electoral College and the popular vote. Obama won 332 electoral votes and 51.1% of the popular vote compared to Romney's 206 electoral votes and 47.2%. The results of the electoral vote were certified by Congress on January 4, 2013. Obama was the first president since Ronald Reagan in 1984 to win a majority of the national popular vote more than once, and the first Democrat to do so since Franklin D. Roosevelt in 1944. Obama also became only the sixth Democratic president in history to win a second term (after Andrew Jackson, Grover Cleveland, Woodrow Wilson, Franklin D. Roosevelt, and Bill Clinton), and the third sitting president in a row (after Clinton and George W. Bush) to win a second term.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Electoral_College_(United_States)",
+                            "text": "Electoral College"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/List_of_United_States_presidential_elections_by_popular_vote_margin#Table_of_election_results",
+                            "text": "popular vote"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Ronald_Reagan",
+                            "text": "Ronald Reagan"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1984_United_States_presidential_election",
+                            "text": "1984"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Franklin_D._Roosevelt",
+                            "text": "Franklin D. Roosevelt"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1944_United_States_presidential_election",
+                            "text": "1944"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Andrew_Jackson",
+                            "text": "Andrew Jackson"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Grover_Cleveland",
+                            "text": "Grover Cleveland"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Woodrow_Wilson",
+                            "text": "Woodrow Wilson"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Bill_Clinton",
+                            "text": "Bill Clinton"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/George_W._Bush",
+                            "text": "George W. Bush"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Obama did not hold onto Indiana, North Carolina, or Nebraska's 2nd congressional district, but crucially won all 18 \" blue wall \" states and defeated Romney in other swing states the Republicans had won in 2000 and 2004, most notably Colorado, Florida, Nevada, Ohio, and Virginia. Ultimately, of the nine swing states identified by The Washington Post in the 2012 election, Obama won eight, losing only North Carolina. This is the most recent presidential election in which the Democratic candidate won the states of Iowa, Ohio, and Florida, along with Maine's 2nd congressional district, the most recent presidential election in which the incumbent president won reelection, and the most recent in which neither major party's ticket included a woman. This was the most recent election in which a presidential candidate received above 70% of the vote in any state, with Hawaii for Obama and Utah for Romney, as well as the most recent election in which Donald Trump was not the Republican nominee.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2012_United_States_presidential_election_in_Indiana",
+                            "text": "Indiana"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2012_United_States_presidential_election_in_North_Carolina",
+                            "text": "North Carolina"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Nebraska's_2nd_congressional_district",
+                            "text": "Nebraska's 2nd congressional district"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Blue_wall_(U.S._politics)",
+                            "text": "blue wall"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Swing_states",
+                            "text": "swing states"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election",
+                            "text": "2000"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2004_United_States_presidential_election",
+                            "text": "2004"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2012_United_States_presidential_election_in_Colorado",
+                            "text": "Colorado"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2012_United_States_presidential_election_in_Florida",
+                            "text": "Florida"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2012_United_States_presidential_election_in_Nevada",
+                            "text": "Nevada"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2012_United_States_presidential_election_in_Ohio",
+                            "text": "Ohio"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2012_United_States_presidential_election_in_Virginia",
+                            "text": "Virginia"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/The_Washington_Post",
+                            "text": "The Washington Post"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Iowa",
+                            "text": "Iowa"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Ohio",
+                            "text": "Ohio"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Florida",
+                            "text": "Florida"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Maine's_2nd_congressional_district",
+                            "text": "Maine's 2nd congressional district"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2012_United_States_presidential_election_in_Hawaii",
+                            "text": "Hawaii"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2012_United_States_presidential_election_in_Utah",
+                            "text": "Utah"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Donald_Trump",
+                            "text": "Donald Trump"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "All four major candidates for president and vice president went on to hold significant public office after this election. Obama served his second term as president, while Biden also served his second term as vice president and initially retired from politics but was later elected president in 2020, defeating Obama's successor, then-incumbent Donald Trump. This is the most recent election in which two major party nominees would go on to become president. Romney moved to Utah in 2014 and was elected to the Senate there in 2018, succeeding Orrin Hatch. Ryan served three more terms in the House and eventually became Speaker from 2015 until his retirement from politics in 2019.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2020_United_States_presidential_election",
+                            "text": "2020"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Utah",
+                            "text": "Utah"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2018_United_States_Senate_election_in_Utah",
+                            "text": "2018"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Orrin_Hatch",
+                            "text": "Orrin Hatch"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Speaker_of_the_United_States_House_of_Representatives",
+                            "text": "Speaker"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/October_2015_Speaker_of_the_United_States_House_of_Representatives_election",
+                            "text": "2015"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Background",
+            "type": "section",
+            "has_parts": [
+                {
+                    "name": "State changes to voter registration and electoral rules",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "In 2011, several state legislatures passed new voting laws, especially pertaining to voter identification, with the stated purpose of combating voter fraud; the laws were attacked, however, by the Democratic Party as attempts to suppress voting among its supporters and to improve the Republican Party's presidential prospects. Florida, Georgia, Ohio, Tennessee, and West Virginia 's state legislatures approved measures to shorten early voting periods. Florida and Iowa barred all felons from voting. Kansas, South Carolina, Tennessee, Texas, and Wisconsin state legislatures passed laws requiring voters to have government-issued IDs before they could cast their ballots. This meant, typically, that people without driver's licenses or passports had to gain new forms of ID. Former president Bill Clinton denounced them, saying, \"There has never been in my lifetime, since we got rid of the poll tax and all the Jim Crow burdens on voting, the determined effort to limit the franchise that we see today\". He was referring to Jim Crow laws passed in southern states near the turn of the twentieth century that disenfranchised most blacks from voting and excluded them from the political process for more than six decades. Clinton said the moves would effectively disenfranchise core voter blocs that trend liberal, including college students, black people, and Latinos. The Obama campaign fought against the Ohio law, pushing for a petition and statewide referendum to repeal it in time for the 2012 election.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Voter_fraud",
+                                    "text": "voter fraud"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Florida",
+                                    "text": "Florida"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Georgia_(U.S._state)",
+                                    "text": "Georgia"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Ohio",
+                                    "text": "Ohio"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Tennessee",
+                                    "text": "Tennessee"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/West_Virginia",
+                                    "text": "West Virginia"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Kansas",
+                                    "text": "Kansas"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/South_Carolina",
+                                    "text": "South Carolina"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Tennessee",
+                                    "text": "Tennessee"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Texas",
+                                    "text": "Texas"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Wisconsin",
+                                    "text": "Wisconsin"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Voter_ID_laws_(United_States)",
+                                    "text": "laws requiring voters to have government-issued IDs"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Driver's_license",
+                                    "text": "driver's licenses"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Passport",
+                                    "text": "passports"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Bill_Clinton",
+                                    "text": "Bill Clinton"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Poll_tax_(United_States)",
+                                    "text": "poll tax"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Jim_Crow_laws",
+                                    "text": "Jim Crow burdens"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Jim_Crow_laws",
+                                    "text": "Jim Crow laws"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Disfranchisement_after_Reconstruction_era",
+                                    "text": "disenfranchised"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Black_people",
+                                    "text": "black people"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Hispanic_and_Latino_Americans",
+                                    "text": "Latinos"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Law_of_Ohio",
+                                    "text": "Ohio law"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "In addition, the Pennsylvania legislature proposed a plan to change its representation in the electoral college from the traditional winner-take-all model to a district-by-district model. As the governorship and both houses of its legislature were Republican-controlled, the move was viewed by some as an attempt to reduce Democratic chances. Ultimately they did not do it, leaving their winner take all format intact as of 2020.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Pennsylvania",
+                                    "text": "Pennsylvania"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Nominations",
+            "type": "section",
+            "has_parts": [
+                {
+                    "name": "Democratic Party nomination",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "name": "Primaries",
+                            "type": "section",
+                            "has_parts": [
+                                {
+                                    "type": "paragraph",
+                                    "value": "With an incumbent president running for re-election against token opposition, the race for the Democratic nomination was largely uneventful. The nomination process consisted of primaries and caucuses, held by the 50 states, as well as Guam, Puerto Rico, Washington, D.C., U.S. Virgin Islands, American Samoa, and Democrats Abroad. Additionally, high-ranking party members known as superdelegates each received one vote in the convention. A few of the primary challengers surpassed the president's vote total in individual counties in several of the seven contested primaries, though none made a significant impact in the delegate count. Running unopposed everywhere else, Obama cemented his status as the Democratic presumptive nominee on April 3, 2012, by securing the minimum number of pledged delegates needed to obtain the nomination.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Paper_candidate",
+                                            "text": "token opposition"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/United_States_presidential_primary",
+                                            "text": "primaries and caucuses"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Guam",
+                                            "text": "Guam"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Puerto_Rico",
+                                            "text": "Puerto Rico"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Washington,_D.C.",
+                                            "text": "Washington, D.C."
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/U.S._Virgin_Islands",
+                                            "text": "U.S. Virgin Islands"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/American_Samoa",
+                                            "text": "American Samoa"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Democrats_Abroad",
+                                            "text": "Democrats Abroad"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Superdelegate",
+                                            "text": "superdelegates"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Presumptive_nominee",
+                                            "text": "presumptive nominee"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Republican Party nomination",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "name": "Primaries",
+                            "type": "section",
+                            "has_parts": [
+                                {
+                                    "type": "paragraph",
+                                    "value": "Candidates with considerable name recognition who entered the race for the Republican presidential nomination in the early stages of the primary campaign included U.S. representative and former Libertarian nominee Ron Paul, former Minnesota governor Tim Pawlenty, who co-chaired John McCain's campaign in 2008, former Massachusetts governor Mitt Romney, the runner-up for the nomination in the 2008 cycle, and former Speaker of the House Newt Gingrich.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/United_States_House_of_Representatives",
+                                            "text": "U.S. representative"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Ron_Paul",
+                                            "text": "Ron Paul"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Minnesota",
+                                            "text": "Minnesota"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Tim_Pawlenty",
+                                            "text": "Tim Pawlenty"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/John_McCain_2008_presidential_campaign",
+                                            "text": "John McCain's campaign in 2008"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Massachusetts",
+                                            "text": "Massachusetts"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Mitt_Romney",
+                                            "text": "Mitt Romney"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Speaker_of_the_United_States_House_of_Representatives",
+                                            "text": "Speaker of the House"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Newt_Gingrich",
+                                            "text": "Newt Gingrich"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "The first debate took place on May 5, 2011, in Greenville, South Carolina, with businessman Herman Cain, former New Mexico governor Gary Johnson, Ron Paul, Tim Pawlenty, and former Pennsylvania senator Rick Santorum participating. Another debate took place a month later, with Newt Gingrich, Mitt Romney, former Utah governor Jon Huntsman, and Minnesota congresswoman Michele Bachmann participating, and Gary Johnson excluded. A total of thirteen debates were held before the Iowa caucuses.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Greenville,_South_Carolina",
+                                            "text": "Greenville, South Carolina"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Herman_Cain",
+                                            "text": "Herman Cain"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Gary_Johnson",
+                                            "text": "Gary Johnson"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Ron_Paul",
+                                            "text": "Ron Paul"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Tim_Pawlenty",
+                                            "text": "Tim Pawlenty"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Pennsylvania",
+                                            "text": "Pennsylvania"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Rick_Santorum",
+                                            "text": "Rick Santorum"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Newt_Gingrich",
+                                            "text": "Newt Gingrich"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Mitt_Romney",
+                                            "text": "Mitt Romney"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Jon_Huntsman,_Jr.",
+                                            "text": "Jon Huntsman"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Michele_Bachmann",
+                                            "text": "Michele Bachmann"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/2012_Republican_Party_presidential_debates_and_forums",
+                                            "text": "thirteen debates"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "The first major event of the campaign was the Ames Straw Poll, which took place in Iowa on August 13, 2011. Michele Bachmann won the straw poll (this ultimately proved to be the acme of her campaign). Pawlenty withdrew from the race after a poor showing in the straw poll, as did Thaddeus McCotter, the only candidate among those who qualified for the ballot who was refused entrance into the debate.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Ames_Straw_Poll",
+                                            "text": "Ames Straw Poll"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Thaddeus_McCotter",
+                                            "text": "Thaddeus McCotter"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "It became clear at around this point in the nomination process that while Romney was considered to be the likely nominee by the Republican establishment, a large segment of the conservative primary electorate found him to be too moderate for their political views. As a result, a number of potential \"anti-Romney\" candidates were put forward, including future president Donald Trump, former Alaska governor and 2008 vice-presidential nominee Sarah Palin, New Jersey governor Chris Christie, and Texas governor Rick Perry, the last of whom decided to run in August 2011. Perry did poorly in the debates, however, and Herman Cain and then Newt Gingrich came to the fore in October and November.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Conservatism_in_the_United_States",
+                                            "text": "conservative"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Moderate",
+                                            "text": "moderate"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Donald_Trump",
+                                            "text": "Donald Trump"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Sarah_Palin",
+                                            "text": "Sarah Palin"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Chris_Christie",
+                                            "text": "Chris Christie"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Rick_Perry",
+                                            "text": "Rick Perry"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Herman_Cain",
+                                            "text": "Herman Cain"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Newt_Gingrich",
+                                            "text": "Newt Gingrich"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "Due to a number of scandals, Cain withdrew just before the end of the year, after having ballot placement in several states. Around the same time, Johnson, who had been able to get into only one other debate, withdrew to seek the Libertarian Party nomination.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Libertarian_Party_(United_States)",
+                                            "text": "Libertarian Party"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "For the first time in modern Republican Party history, three different candidates won the first three state contests in January (the Iowa caucuses, the New Hampshire primary, and the South Carolina primary). Although Romney had been expected to win in at least Iowa and New Hampshire, Rick Santorum won the non-binding poll at caucus sites in Iowa by 34 votes, as near as could be determined from the incomplete tally, earning him a declaration as winner by state party leaders, although vote totals were missing from eight precincts. The election of county delegates at the caucuses would eventually lead to Ron Paul earning 22 of the 28 Iowa delegates to the Republican National Convention. Newt Gingrich won South Carolina by a surprisingly large margin, and Romney won only in New Hampshire.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Republican_Party_(United_States)",
+                                            "text": "Republican Party"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Newt_Gingrich",
+                                            "text": "Newt Gingrich"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "A number of candidates dropped out at this point in the nomination process. Bachmann withdrew after finishing sixth in the Iowa caucuses, Huntsman withdrew after coming in third in New Hampshire, and Perry withdrew when polls showed him drawing low numbers in South Carolina."
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "Santorum, who had previously run an essentially one-state campaign in Iowa, was able to organize a national campaign after his surprising victory there. He unexpectedly carried three states in a row on February 7 and overtook Romney in nationwide opinion polls, becoming the only candidate in the race to effectively challenge the notion that Romney was the inevitable nominee. However, Romney won all of the other contests between South Carolina and the Super Tuesday primaries, and regained his first-place status in nationwide opinion polls by the end of February.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Super_Tuesday,_2012",
+                                            "text": "Super Tuesday primaries"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "The Super Tuesday primaries took place on March 6. Romney carried six states, Santorum carried three, and Gingrich won only in his home state of Georgia. Throughout the rest of March, 266 delegates were allocated in 12 events, including the territorial contests and the first local conventions that allocated delegates (Wyoming's county conventions). Santorum won Kansas and three Southern primaries, but he was unable to make any substantial gain on Romney, who became a formidable frontrunner after securing more than half of the delegates allocated in March.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Super_Tuesday,_2012",
+                                            "text": "Super Tuesday primaries"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "On April 10, Santorum suspended his campaign due to a variety of reasons, such as a low delegate count, unfavorable polls in his home state of Pennsylvania, and his daughter's health, leaving Mitt Romney as the undisputed front-runner for the presidential nomination and allowing Gingrich to claim that he was \"the last conservative standing\" in the campaign for the nomination. After disappointing results in the April 24 primaries (finishing second in one state, third in three, and fourth in one), Gingrich dropped out on May 2 in a move that was seen as an effective end to the contest for the nomination. After Gingrich's spokesman announced his upcoming withdrawal, the Republican National Committee declared Romney the party's presumptive nominee. Ron Paul officially remained in the race, but he stopped campaigning on May 14 to focus on state conventions.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Republican_National_Committee",
+                                            "text": "Republican National Committee"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Presumptive_nominee",
+                                            "text": "presumptive nominee"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "On May 29, after winning the Texas primary, Romney had received a sufficient number of delegates to clinch the party's nomination with the inclusion of unpledged delegates. After winning the June 5 primaries in California and several other states, Romney had received more than enough pledged delegates to clinch the nomination without counting unpledged delegates, making the June 26 Utah Primary, the last contest of the cycle, purely symbolic. CNN's final delegate estimate, released on July 27, 2012, put Romney at 1,462 pledged delegates and 62 unpledged delegates, for a total estimate of 1,524 delegates. No other candidate had unpledged delegates. The delegate estimates for the other candidates were Santorum at 261 delegates, Paul at 154, Gingrich at 142, Bachmann at 1, Huntsman at 1, and all others at 0."
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "On August 28, 2012, delegates at the Republican National Convention officially named Romney the party's presidential nominee. Romney formally accepted the delegates' nomination on August 30, 2012.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Republican_National_Convention",
+                                            "text": "Republican National Convention"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Third party and other nominations",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "Four other parties nominated candidates that had ballot access or write-in access to at least 270 electoral votes, the minimum number of votes needed in the 2012 election to win the presidency through a majority of the electoral college.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Write-in",
+                                    "text": "write-in"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Libertarian Party",
+                            "type": "section",
+                            "has_parts": [
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Gary Johnson, former governor of New Mexico. Vice-presidential nominee: Jim Gray, retired state court judge, from California.",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Gary_Johnson",
+                                                    "text": "Gary Johnson"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Jim_Gray_(jurist)",
+                                                    "text": "Jim Gray"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Green Party",
+                            "type": "section",
+                            "has_parts": [
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Jill Stein, medical doctor from Massachusetts. Vice-presidential nominee: Cheri Honkala, social organizer, from Pennsylvania.",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Jill_Stein",
+                                                    "text": "Jill Stein"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Cheri_Honkala",
+                                                    "text": "Cheri Honkala"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Constitution Party",
+                            "type": "section",
+                            "has_parts": [
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Virgil Goode, former representative from Virginia. Vice-presidential nominee: Jim Clymer from Pennsylvania.",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Virgil_Goode",
+                                                    "text": "Virgil Goode"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Justice Party",
+                            "type": "section",
+                            "has_parts": [
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Rocky Anderson, former mayor of Salt Lake City and founding member of the Justice Party, from Utah. Vice-presidential nominee: Luis J. Rodriguez from California.",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Rocky_Anderson",
+                                                    "text": "Rocky Anderson"
+                                                },
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Luis_J._Rodriguez",
+                                                    "text": "Luis J. Rodriguez"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Campaigns",
+            "type": "section",
+            "has_parts": [
+                {
+                    "name": "Ballot access",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "Candidates in bold were on ballots representing 270 electoral votes."
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "All other candidates were on the ballots of fewer than 10 states, 100 electors, and less than 20% of voters nationwide."
+                        }
+                    ]
+                },
+                {
+                    "name": "Financing and advertising",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "The United States presidential election of 2012 broke new records in financing, fundraising, and negative campaigning. Through grassroots campaign contributions, online donations, and Super PACs, Obama and Romney raised a combined total of more than $2 billion. Super PACs constituted nearly one-fourth of the total financing, with most coming from pro-Romney PACs. Obama raised $690 million through online channels, beating his record of $500 million in 2008. Most of the advertising in the 2012 presidential campaign was decidedly negative—80% of Obama's ads and 84% of Romney's ads were negative. The tax-exempt non-profit Americans for Prosperity, a so-called \"outside group\", that is, a political advocacy group that is not a political action committee or super-PAC, ran a television advertising campaign opposing Obama described by The Washington Post as \"early and relentless\". Americans for Prosperity spent $8.4 million in swing states on television advertisements denouncing the American Recovery and Reinvestment Act of 2009 loan guarantee to Solyndra, a manufacturer of solar panels that went bankrupt, an advertising campaign described by The Wall Street Journal in November 2011 as \"perhaps the biggest attack on Mr. Obama so far\".",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Negative_campaigning",
+                                    "text": "negative campaigning"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Grassroots",
+                                    "text": "grassroots"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Super_PACs",
+                                    "text": "Super PACs"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Americans_for_Prosperity",
+                                    "text": "Americans for Prosperity"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Political_action_committee",
+                                    "text": "political action committee"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/The_Washington_Post",
+                                    "text": "The Washington Post"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Swing_state",
+                                    "text": "swing states"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/American_Recovery_and_Reinvestment_Act_of_2009",
+                                    "text": "American Recovery and Reinvestment Act of 2009"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Solyndra",
+                                    "text": "Solyndra"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/The_Wall_Street_Journal",
+                                    "text": "The Wall Street Journal"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Party conventions",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "list",
+                            "has_parts": [
+                                {
+                                    "type": "list_item",
+                                    "value": "April 18–21, 2012: 2012 Constitution Party National Convention held in Nashville, Tennessee; Virgil Goode won the nomination.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Constitution_Party_National_Convention",
+                                            "text": "Constitution Party National Convention"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Nashville,_Tennessee",
+                                            "text": "Nashville, Tennessee"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Virgil_Goode",
+                                            "text": "Virgil Goode"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "May 3–6, 2012: 2012 Libertarian National Convention held in Las Vegas, Nevada; Gary Johnson won the nomination.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/2012_Libertarian_National_Convention",
+                                            "text": "2012 Libertarian National Convention"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Las_Vegas,_Nevada",
+                                            "text": "Las Vegas, Nevada"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Gary_Johnson",
+                                            "text": "Gary Johnson"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "July 13–15, 2012: 2012 Green National Convention held in Baltimore, Maryland; Jill Stein won the nomination.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/2012_Green_National_Convention",
+                                            "text": "2012 Green National Convention"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Baltimore",
+                                            "text": "Baltimore, Maryland"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Jill_Stein",
+                                            "text": "Jill Stein"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "August 27–30, 2012: 2012 Republican National Convention held in Tampa, Florida; Mitt Romney won the nomination.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/2012_Republican_National_Convention",
+                                            "text": "2012 Republican National Convention"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Tampa,_Florida",
+                                            "text": "Tampa, Florida"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Mitt_Romney",
+                                            "text": "Mitt Romney"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "September 3–6, 2012: 2012 Democratic National Convention held in Charlotte, North Carolina; Barack Obama won the nomination.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/2012_Democratic_National_Convention",
+                                            "text": "2012 Democratic National Convention"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Charlotte,_North_Carolina",
+                                            "text": "Charlotte, North Carolina"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Barack_Obama",
+                                            "text": "Barack Obama"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Presidential debates",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "The Commission on Presidential Debates held four debates during the last weeks of the campaign: three presidential and one vice-presidential. The major issues debated were the economy and jobs, the federal budget deficit, taxation and spending, the future of Social Security, Medicare, and Medicaid, healthcare reform, education, social issues, immigration, and foreign policy.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Commission_on_Presidential_Debates",
+                                    "text": "Commission on Presidential Debates"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Social_Security_(United_States)",
+                                    "text": "Social Security"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Medicare_(United_States)",
+                                    "text": "Medicare"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Medicaid",
+                                    "text": "Medicaid"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Patient_Protection_and_Affordable_Care_Act",
+                                    "text": "healthcare reform"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Debate schedule:"
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "An independent presidential debate featuring minor party candidates took place on Tuesday, October 23 at the Hilton Hotel in Chicago, Illinois. The debate was moderated by Larry King and organized by the Free & Equal Elections Foundation. The participants were Gary Johnson (Libertarian), Jill Stein (Green), Virgil Goode (Constitution), and Rocky Anderson (Justice). A second debate between Stein and Johnson took place on Sunday, November 4, and was moderated by Ralph Nader.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Hilton_Hotel",
+                                    "text": "Hilton Hotel"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Chicago",
+                                    "text": "Chicago"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Larry_King",
+                                    "text": "Larry King"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Free_&_Equal_Elections_Foundation",
+                                    "text": "Free & Equal Elections Foundation"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Gary_Johnson",
+                                    "text": "Gary Johnson"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Libertarian_Party_(United_States)",
+                                    "text": "Libertarian"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Jill_Stein",
+                                    "text": "Jill Stein"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Green_Party_of_the_United_States",
+                                    "text": "Green"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Virgil_Goode",
+                                    "text": "Virgil Goode"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Constitution_Party_(United_States)",
+                                    "text": "Constitution"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Rocky_Anderson",
+                                    "text": "Rocky Anderson"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Justice_Party_(United_States)",
+                                    "text": "Justice"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Notable expressions, phrases, and statements",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "list",
+                            "has_parts": [
+                                {
+                                    "type": "list_item",
+                                    "value": "Severely conservative – In a speech he made at the Conservative Political Action Conference in February 2012, Romney claimed that he had been a \"severely conservative Republican governor\". Romney's description of his record as \"severely conservative\" was widely criticized by political commentators as both rhetorically clumsy and factually inaccurate. Later, the phrase \"severely conservative\" was frequently brought up by Democrats to make fun of Romney's willingness to associate himself with the far-right of the Republican Party as well as his apparent lack of sincerity while doing so. Conservative radio host Rush Limbaugh, who played the clip on his radio show, said: \"I have never heard anybody say, 'I'm severely conservative.' \"",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Conservative_Political_Action_Conference",
+                                            "text": "Conservative Political Action Conference"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Conservatism_in_the_United_States",
+                                            "text": "Conservative"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Rush_Limbaugh",
+                                            "text": "Rush Limbaugh"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/The_Rush_Limbaugh_Show",
+                                            "text": "radio show"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "You didn't build that – A portion of a statement that Obama made in a July 2012 campaign speech in Roanoke, Virginia. Obama said that businesses depend on government-provided infrastructure to succeed, but critics of his remarks argued that he was underplaying the work of entrepreneurs and giving the government credit for individuals' success. The Romney campaign immediately used the statement in an effort to contrast Romney's economic policies with Obama's and to appeal to small business owners/employees. A major theme of the 2012 Republican National Convention was \"We Built It\".",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/You_didn't_build_that",
+                                            "text": "You didn't build that"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Roanoke,_Virginia",
+                                            "text": "Roanoke"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Virginia",
+                                            "text": "Virginia"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/2012_Republican_National_Convention",
+                                            "text": "2012 Republican National Convention"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "47 percent – An expression Romney used at a private campaign fundraising event, which was secretly recorded and publicly released. At the private event, Romney said that 47 percent of the people would vote for Barack Obama no matter what Romney said or did because those people \"...are dependent upon government... I'll never convince them they should take personal responsibility and care for their lives.\" Ironically, Romney received almost exactly 47% of the vote.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/47_percent",
+                                            "text": "47 percent"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "The 1980s are now calling to ask for their foreign policy back – A portion of a statement that Obama made in an October 2012 debate. In the debate, Obama was deriding an earlier Romney statement in the campaign that Russia is \"without question, our No. 1 geopolitical foe.\""
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Binders full of women – A phrase that Romney used in the second presidential debate to refer to the long list of female candidates that he considered when choosing his cabinet members as Governor of Massachusetts.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Binders_full_of_women",
+                                            "text": "Binders full of women"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Second_U.S._presidential_debate_of_2012",
+                                            "text": "second presidential debate"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Horses and bayonets – After Romney said in the third presidential debate that the U.S. Navy was smaller than at any time since 1917, Obama replied, \"We have fewer ships than we did in 1916. Well, governor, we also have fewer horses and bayonets, because the nature of our military's changed.\"",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Third_U.S._presidential_debate_of_2012",
+                                            "text": "third presidential debate"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Shovel-ready jobs – a phrase used to describe some stimulus projects promoted by the administration. During the debate on September 23, 2011, Gary Johnson quipped, \"My next-door neighbor's two dogs have created more shovel-ready jobs than this president.\"",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Shovel-ready",
+                                            "text": "Shovel-ready"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Romnesia – A term coined by a blogger in April 2011 and used by Obama late in the campaign to describe Romney's alleged inability to take responsibility for his past statements."
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "$10,000 bet – During a Republican debate, Romney facetiously bet Texas governor Rick Perry $10,000 that he (Perry) was wrong about Romney's position on the individual mandate under the Affordable Healthcare Act. The statement was vilified by Democrats as exemplary of Romney being out of touch with working-class and middle-class Americans.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Public_image_of_Mitt_Romney",
+                                            "text": "$10,000 bet"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Rick_Perry",
+                                            "text": "Rick Perry"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Affordable_Healthcare_for_America_Act",
+                                            "text": "Affordable Healthcare Act"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Romneyshambles – a word used by the British press after Romney criticized British preparations for the 2012 Summer Olympics. The word is a play on omnishambles, and it became a popular hashtag on Twitter. It was subsequently chosen as one of Collins English Dictionary 's words of the year.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/2012_Summer_Olympics",
+                                            "text": "2012 Summer Olympics"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Omnishambles",
+                                            "text": "omnishambles"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Hashtag",
+                                            "text": "hashtag"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Twitter",
+                                            "text": "Twitter"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Collins_English_Dictionary",
+                                            "text": "Collins English Dictionary"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Malarkey – a word used by Joe Biden in his debate with Paul Ryan to mean bullshit. Biden later used the word in his own campaign in 2020.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Bullshit",
+                                            "text": "bullshit"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Joe_Biden_2020_presidential_campaign",
+                                            "text": "his own campaign in 2020"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Electoral College forecasts",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "Elections analysts and political pundits issue probabilistic forecasts of the composition of the Electoral College. These forecasts use a variety of factors to estimate the likelihood of each candidate winning the Electoral College electors for that state. Most election predictors use the following ratings:"
+                        },
+                        {
+                            "type": "list",
+                            "has_parts": [
+                                {
+                                    "type": "list_item",
+                                    "value": "\" tossup \": no advantage"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "\" tilt \" (used by some predictors): advantage that is not quite as strong as \"lean\""
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "\" lean \" or \" leans \": slight advantage"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "\" likely \": significant, but surmountable, advantage"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "\" safe \" or \" solid \": near-certain chance of victory"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Below is a list of states considered by one or more forecast to be competitive; states that are deemed to be \"safe\" or \"solid\" by forecasters RealClearPolitics, Sabato's Crystal Ball, and FiveThirtyEight.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/RealClearPolitics",
+                                    "text": "RealClearPolitics"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Sabato's_Crystal_Ball",
+                                    "text": "Sabato's Crystal Ball"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/FiveThirtyEight",
+                                    "text": "FiveThirtyEight"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Results",
+            "type": "section",
+            "has_parts": [
+                {
+                    "name": "Electoral results",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "On the day of the election, spread betting firm Spreadex were offering an Obama Electoral College Votes spread of 296–300 to Romney's 239–243. In reality Obama's victory over Romney was far greater, winning 332 electoral votes to Romney's 206. Romney lost all but one of nine battleground states, and received 47 percent of the nationwide popular vote to Obama's 51 percent.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Spreadex",
+                                    "text": "Spreadex"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Battleground_state",
+                                    "text": "battleground states"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Of the 3,154 counties/districts/independent cities making returns, Romney won the most popular votes in 2,447 (77.58%) while Obama carried 707 (22.42%)."
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Popular vote totals are from the Federal Election Commission report.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Federal_Election_Commission",
+                                    "text": "Federal Election Commission"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Results by state",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "The table below displays the official vote tallies by each state's Electoral College voting method. The source for the results of all states, except those that amended their official results, is the official Federal Election Commission report. The column labeled \"Margin\" shows Obama's margin of victory over Romney (the margin is negative for every state that Romney won)."
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Maine and Nebraska each allow for their election results votes to be split between candidates. The winner within each congressional district gets one electoral vote for the district. The winner of the statewide vote gets two additional electoral votes. In the 2012 election, all four of Maine's electoral votes were won by Obama and all five of Nebraska's electoral votes were won by Romney."
+                        },
+                        {
+                            "name": "States and EV districts that flipped from Democratic to Republican",
+                            "type": "section",
+                            "has_parts": [
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Indiana",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Indiana",
+                                                    "text": "Indiana"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Nebraska's 2nd congressional district",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Nebraska's_2nd_congressional_district",
+                                                    "text": "Nebraska's 2nd congressional district"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "North Carolina",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/North_Carolina",
+                                                    "text": "North Carolina"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Close states",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "Red denotes states (or congressional districts that contribute an electoral vote) won by Republican Mitt Romney; blue denotes those won by Democrat Barack Obama."
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "State where the margin of victory was under 1% (29 electoral votes):"
+                        },
+                        {
+                            "type": "list",
+                            "has_parts": [
+                                {
+                                    "type": "list_item",
+                                    "value": "Florida, 0.88% (74,309 votes)"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "States where the margin of victory was under 5% (46 electoral votes):"
+                        },
+                        {
+                            "type": "list",
+                            "has_parts": [
+                                {
+                                    "type": "list_item",
+                                    "value": "North Carolina, 2.04% (92,004 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Ohio, 2.98% (166,272 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Virginia, 3.88% (149,298 votes)"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "States/districts where the margin of victory was between 5% and 10% (120 electoral votes):"
+                        },
+                        {
+                            "type": "list",
+                            "has_parts": [
+                                {
+                                    "type": "list_item",
+                                    "value": "Colorado, 5.36% (137,858 votes) (tipping point state)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Pennsylvania, 5.38% (309,840 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "New Hampshire, 5.58% (39,643 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Iowa, 5.81% (91,927 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Nevada, 6.68% (67,806 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Wisconsin, 6.94% (213,019 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Nebraska's 2nd Congressional District, 7.15% (19,087 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Minnesota, 7.69% (225,942 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Georgia, 7.82% (304,861 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Maine's 2nd Congressional District, 8.56% (28,783 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Arizona, 9.06% (208,422 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Missouri, 9.38% (258,644 votes)"
+                                },
+                                {
+                                    "type": "list_item",
+                                    "value": "Michigan, 9.50% (449,313 votes)"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Statistics",
+                            "type": "section",
+                            "has_parts": [
+                                {
+                                    "type": "paragraph",
+                                    "value": "Counties with highest percent of vote (Democratic)"
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "Shannon County, South Dakota 93.39%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Oglala_Lakota_County,_South_Dakota",
+                                                    "text": "Shannon County, South Dakota"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Kalawao County, Hawaii 92.59%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Kalawao_County,_Hawaii",
+                                                    "text": "Kalawao County, Hawaii"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Bronx County, New York 91.45%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/The_Bronx",
+                                                    "text": "Bronx County, New York"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Washington, D.C. 90.91%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Washington,_D.C.",
+                                                    "text": "Washington, D.C."
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Petersburg, Virginia 89.79%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Petersburg,_Virginia",
+                                                    "text": "Petersburg, Virginia"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "paragraph",
+                                    "value": "Counties with highest percent of vote (Republican)"
+                                },
+                                {
+                                    "type": "list",
+                                    "has_parts": [
+                                        {
+                                            "type": "list_item",
+                                            "value": "King County, Texas 95.86%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/King_County,_Texas",
+                                                    "text": "King County, Texas"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Madison County, Idaho 93.29%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Madison_County,_Idaho",
+                                                    "text": "Madison County, Idaho"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Sterling County, Texas 92.91%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Sterling_County,_Texas",
+                                                    "text": "Sterling County, Texas"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Franklin County, Idaho 92.77%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Franklin_County,_Idaho",
+                                                    "text": "Franklin County, Idaho"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "list_item",
+                                            "value": "Roberts County, Texas 92.13%",
+                                            "links": [
+                                                {
+                                                    "url": "https://en.wikipedia.org/wiki/Roberts_County,_Texas",
+                                                    "text": "Roberts County, Texas"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Romney's concession",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "After the networks called Ohio (the state that was arguably the most critical for Romney, as no Republican had ever won the presidency without carrying it) for Obama at around 11:15 pm EST on Election Day, Romney was ready to concede the race, but hesitated when Karl Rove strenuously objected on Fox News to the network's decision to make that call. However, after Colorado and Nevada were called for the President (giving Obama enough electoral votes to win even if Ohio were to leave his column), in tandem with Obama's apparent lead in Florida and Virginia (both were eventually called for Obama), Romney acknowledged that he had lost and conceded at around 1:00 am EST on November 7.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Eastern_Standard_Time_(North_America)",
+                                    "text": "EST"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Karl_Rove",
+                                    "text": "Karl Rove"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Eastern_Standard_Time_(North_America)",
+                                    "text": "EST"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Despite public polling showing Romney behind Obama in the swing states of Nevada, Colorado, Iowa, Wisconsin, Ohio, and New Hampshire, tied with Obama in Virginia, and just barely ahead of Obama in Florida, the Romney campaign said they were genuinely surprised by the loss, having believed that public polling was oversampling Democrats. The Romney campaign had already set up a transition website, and had scheduled and purchased a fireworks display to celebrate in case he won the election."
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "On November 30, 2012, it was revealed that shortly before the election, internal polling done by the Romney campaign had shown Romney ahead in Colorado and New Hampshire, tied in Iowa, and within a few points of Obama in Wisconsin, Pennsylvania, Minnesota, and Ohio. In addition, the Romney campaign had assumed that they would win Florida, North Carolina and Virginia. The polls had made Romney and his campaign team so confident of their victory that Romney did not write a concession speech until Obama's victory was announced.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Concession_(politics)",
+                                    "text": "concession speech"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Reactions",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "Foreign leaders reacted with both positive and mixed messages. Most world leaders congratulated and praised Obama on his re-election victory. However, Venezuela and some other states had tempered reactions. Pakistan commented that Romney's defeat had made Pakistan-United States relations safer. Stock markets fell noticeably after Obama's re-election, with the Dow Jones Industrial Average, NASDAQ, and the S&P 500 each declining over two percent the day after the election.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Pakistan-United_States_relations",
+                                    "text": "Pakistan-United States relations"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Dow_Jones_Industrial_Average",
+                                    "text": "Dow Jones Industrial Average"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/NASDAQ",
+                                    "text": "NASDAQ"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/S&P_500",
+                                    "text": "S&P 500"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "All 50 states had a petition on the White House website We The People calling for their state to secede from the union. These petitions were created by individual people, with some gaining thousands of signatures.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/We_the_People_(petitioning_system)",
+                                    "text": "We The People"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Secession_in_the_United_States",
+                                    "text": "secede from the union"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Voter demographics",
+            "type": "section",
+            "has_parts": [
+                {
+                    "name": "Hispanic vote",
+                    "type": "section",
+                    "has_parts": [
+                        {
+                            "type": "paragraph",
+                            "value": "The United States has a population of 50 million Hispanic and Latino Americans, 27 million of whom are citizens eligible to vote (13% of total eligible voters). Traditionally, only half of eligible Hispanic voters vote (around 7% of voters); of them, 71% voted for Barack Obama (increasing his percentage of the vote by 5%); therefore, the Hispanic vote was an important factor in Obama's re-election, since the vote difference between the two main parties was only 3.9%",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Hispanic_and_Latino_Americans",
+                                    "text": "Hispanic and Latino Americans"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Percentage",
+                                    "text": "percentage"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "value": "Exit polls were conducted by Edison Research of Somerville, New Jersey, for the National Election Pool, a consortium which at the time consisted of ABC News, Associated Press, CBS News, CNN, Fox News, and NBC News.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Somerville,_New_Jersey",
+                                    "text": "Somerville, New Jersey"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/National_Election_Pool",
+                                    "text": "National Election Pool"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Analysis",
+            "type": "section",
+            "has_parts": [
+                {
+                    "type": "paragraph",
+                    "value": "Combined with the re-election victories of his two immediate predecessors, Bill Clinton (1996) and George W. Bush (2004), Obama's victory in the 2012 election marked only the second time in American history that three consecutive presidents were each elected to two full terms after the consecutive two-term presidencies of Thomas Jefferson, James Madison, and James Monroe ending in 1820, which is the only other time any two-term president succeeded another. Eight years later, Obama's successor, Donald Trump, also ran for his own re-election in 2020, but was ultimately defeated by Joe Biden, who served as vice president under Obama. Biden also initially ran for his own re-election in 2024, but he ultimately withdrew from the race and endorsed his own vice president Kamala Harris. This was also the first election since 1928 in which neither of the major candidates had any military experience.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Bill_Clinton",
+                            "text": "Bill Clinton"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1996_United_States_presidential_election",
+                            "text": "1996"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/George_W._Bush",
+                            "text": "George W. Bush"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2004_United_States_presidential_election",
+                            "text": "2004"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Thomas_Jefferson",
+                            "text": "Thomas Jefferson"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/James_Madison",
+                            "text": "James Madison"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/James_Monroe",
+                            "text": "James Monroe"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Donald_Trump",
+                            "text": "Donald Trump"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2020_United_States_presidential_election",
+                            "text": "2020"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Joe_Biden",
+                            "text": "Joe Biden"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2024_United_States_presidential_election",
+                            "text": "2024"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Withdrawal_of_Joe_Biden_from_the_2024_United_States_presidential_election",
+                            "text": "withdrew from the race"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Kamala_Harris",
+                            "text": "Kamala Harris"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1928_United_States_presidential_election",
+                            "text": "1928"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "The election was arguably decided by three counties: Miami-Dade County (Florida); Cuyahoga County (Ohio) and Philadelphia (Pennsylvania). If these three counties had cast zero votes, Obama would have lost all three states and the election.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Miami-Dade_County,_Florida",
+                            "text": "Miami-Dade County"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Cuyahoga_County,_Ohio",
+                            "text": "Cuyahoga County"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Philadelphia",
+                            "text": "Philadelphia"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "The 2012 election marked the first time since Franklin D. Roosevelt 's last two re-elections in 1940 and 1944 that the incumbent Democratic president won a majority of the popular vote in two consecutive elections. Obama was also the first president of either party to secure a majority of the popular vote in two elections since Ronald Reagan in 1980 and 1984. Obama is the third Democratic president to secure at least 51% of the vote twice, after Andrew Jackson and Franklin D. Roosevelt. Romney won the popular vote in 226 congressional districts making this the first time since 1960 that the winner of the election did not win the popular vote in a majority of the congressional districts. This is the last time that the Democrats won a majority of states in a presidential election.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Franklin_D._Roosevelt",
+                            "text": "Franklin D. Roosevelt"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1940_United_States_presidential_election",
+                            "text": "1940"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1944_United_States_presidential_election",
+                            "text": "1944"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Ronald_Reagan",
+                            "text": "Ronald Reagan"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Andrew_Jackson",
+                            "text": "Andrew Jackson"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Romney lost his home state of Massachusetts, becoming the first major party presidential candidate to lose his home state since Democrat Al Gore lost his home state of Tennessee to Republican George W. Bush in the 2000 election. Romney lost his home state by more than 23%, the worst losing margin for a major party candidate since John Frémont in 1856. Even worse than Frémont, Romney failed to win a single county in his home state, something last seen by Theodore Roosevelt in 1912. In addition, since Obama carried Ryan's home state of Wisconsin, the Romney–Ryan ticket was the first major party ticket since the 1972 election to have both of its nominees lose their home states. Romney won the popular vote in every county of three states: Utah, Oklahoma, and West Virginia; Obama did so in four states: Vermont, Massachusetts, Rhode Island, and Hawaii.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Massachusetts",
+                            "text": "Massachusetts"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Al_Gore",
+                            "text": "Al Gore"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Tennessee",
+                            "text": "Tennessee"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election",
+                            "text": "2000 election"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/John_Frémont",
+                            "text": "John Frémont"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1856_United_States_presidential_election",
+                            "text": "1856"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Wisconsin",
+                            "text": "Wisconsin"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1972_United_States_presidential_election",
+                            "text": "1972 election"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/County_(United_States)",
+                            "text": "county"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Romney's loss prompted the Republican National Committee to try to appeal to the American Latino population by concentrating on different approaches to immigration. These were short-lived due to activity and anger from the Republican base and may have contributed to the selection of Donald Trump as their presidential candidate four years later.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Republican_National_Committee",
+                            "text": "Republican National Committee"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Donald_Trump",
+                            "text": "Donald Trump"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Gary Johnson 's popular vote total set a Libertarian Party record, and his popular vote percentage was the second-best showing for a Libertarian in a presidential election, trailing only Ed Clark 's in 1980. Johnson would go on to beat this record in the 2016 presidential election, winning the most votes for the Libertarian ticket in history. At the time, Green Party candidate Jill Stein 's popular vote total made her the most successful female presidential candidate in a general election in United States history. This was later surpassed by Hillary Clinton in the 2016 election.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Gary_Johnson",
+                            "text": "Gary Johnson"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Libertarian_Party_(United_States)",
+                            "text": "Libertarian Party"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Ed_Clark",
+                            "text": "Ed Clark"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1980_United_States_presidential_election",
+                            "text": "1980"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2016_United_States_presidential_election",
+                            "text": "2016"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Green_Party_of_the_United_States",
+                            "text": "Green Party"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Jill_Stein",
+                            "text": "Jill Stein"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/List_of_female_United_States_presidential_and_vice-presidential_candidates",
+                            "text": "most successful female presidential candidate"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Obama's vote total was the fourth most votes received in the history of presidential elections (behind Obama's 2008 victory and both major candidates in 2020) and the most ever for a reelected president. The 2012 election marked the first time since 1988 in which no state was won by a candidate with a plurality of the state's popular vote. Furthermore, it is the only post- World War II presidential election in which no states were won by margins smaller than 30,000 votes. Obama's narrowest victories were in New Hampshire by 39,643 votes, followed by Florida by 74,309 votes. Every other presidential election in modern history has seen states narrowly won by several thousand votes. So far, this is the only presidential election in history where both the Republican and Democratic vice presidential candidates are practicing Roman Catholics. It is also the only presidential election where there are no white Protestants on a major party ticket.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election",
+                            "text": "1988"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Plurality_(voting)",
+                            "text": "plurality"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/World_War_II",
+                            "text": "World War II"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2012_United_States_presidential_election_in_New_Hampshire",
+                            "text": "New Hampshire"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/2012_United_States_presidential_election_in_Florida",
+                            "text": "Florida"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Obama was the fourth of just four presidents in United States history to win re-election with a lower percentage of the electoral vote than in their prior elections, the other three were James Madison in 1812, Woodrow Wilson in 1916 and Franklin Roosevelt in 1940 and 1944. Additionally, Obama was the fifth of only five presidents to win re-election with a smaller percentage of the popular vote than in prior elections, the other four are James Madison in 1812, Andrew Jackson in 1832, Grover Cleveland in 1892, and Franklin Roosevelt in 1940 and 1944.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/James_Madison",
+                            "text": "James Madison"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1812_United_States_presidential_election",
+                            "text": "1812"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Woodrow_Wilson",
+                            "text": "Woodrow Wilson"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1916_United_States_presidential_election",
+                            "text": "1916"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Franklin_Roosevelt",
+                            "text": "Franklin Roosevelt"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1940_United_States_presidential_election",
+                            "text": "1940"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1944_United_States_presidential_election",
+                            "text": "1944"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/James_Madison",
+                            "text": "James Madison"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1812_United_States_presidential_election",
+                            "text": "1812"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Andrew_Jackson",
+                            "text": "Andrew Jackson"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1832_United_States_presidential_election",
+                            "text": "1832"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Grover_Cleveland",
+                            "text": "Grover Cleveland"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1892_United_States_presidential_election",
+                            "text": "1892"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Franklin_Roosevelt",
+                            "text": "Franklin Roosevelt"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1940_United_States_presidential_election",
+                            "text": "1940"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/1944_United_States_presidential_election",
+                            "text": "1944"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
