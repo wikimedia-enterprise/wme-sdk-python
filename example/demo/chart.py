@@ -14,9 +14,9 @@ df['Electoral Vote'] = df['Electoral Vote'].apply(ast.literal_eval)
 # Sort the DataFrame by 'Year'
 df = df.sort_values(by='Year')
 
-# Extract the votes for the winner, second, and third candidates
-df['Winner'] = df['Electoral Vote'].apply(lambda x: x[0])
-df['Second'] = df['Electoral Vote'].apply(lambda x: x[1])
+# Extract the votes for the winner, second, and third candidates (robust handling for missing values)
+df['Winner'] = df['Electoral Vote'].apply(lambda x: x[0] if len(x) > 0 else None)
+df['Second'] = df['Electoral Vote'].apply(lambda x: x[1] if len(x) > 1 else None)
 df['Third'] = df['Electoral Vote'].apply(lambda x: x[2] if len(x) > 2 else None)
 
 
@@ -43,21 +43,21 @@ plt.plot(df['Year'], df['Winner'], marker='o', label='Winner')
 plt.plot(df['Year'], df['Second'], marker='o', label='Second')
 plt.plot(df['Year'], df['Third'], marker='o', label='Third', linestyle='--')
 
-# Set the main X-axis labels (Years) without rotation
-plt.xticks(df['Year'], labels=df['Year'], fontsize=10)
+# Determine if there are more than 20 elections in the dataset
+if len(df['Year']) > 20:
+    # Don't show nominees, rotate years vertically, and reduce font size
+    plt.xticks(df['Year'], labels=df['Year'], fontsize=6, rotation=90)
+else:
+    # Show nominees below the X-axis at a 60-degree angle
+    plt.xticks(df['Year'], labels=df['Year'], fontsize=10)
+
+    for i, nominee in enumerate(df['Formatted_Nominee']):
+        plt.text(df['Year'].iloc[i], min(df['Winner'].dropna()) - 475, nominee, fontsize=8, ha='center', rotation=70)
 
 # Labels and title
-# plt.xlabel('Year')
 plt.ylabel('Electoral Votes')
 plt.title('Electoral Votes Over Time')
 plt.legend()
-
-# Adjust the bottom limit of the Y-axis to create space for the nominee labels
-#plt.ylim(bottom=min(df['Winner']))  # Adjust bottom limit of Y-axis
-
-# Place nominee labels below the X-axis at a 60-degree angle
-for i, nominee in enumerate(df['Formatted_Nominee']):
-    plt.text(df['Year'].iloc[i], min(df['Winner']) - 475, nominee, fontsize=8, ha='center', rotation=45)
 
 # Show plot
 plt.grid(True)

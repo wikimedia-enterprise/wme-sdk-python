@@ -24,3 +24,7 @@ python -m example.demo.parse
 python -m example.demo.chart
 ```
 To close the chart click the close button on the Window, or on the keyboard press Ctrl-C to stop the command in the terminal.
+
+Example if we set it to start on 1792 to 2020, we adjust the year and nominees names, to make it fit nicely
+
+![alt text](image-1.png)

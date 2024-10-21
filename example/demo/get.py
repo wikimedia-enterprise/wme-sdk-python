@@ -11,7 +11,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Start and end year for the election
-START_YEAR = 1980
+START_YEAR = 1980   #1788
 END_YEAR = 2020
 
 # Generate the US election years dynamically (every 4 years)
