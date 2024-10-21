@@ -4,3 +4,4 @@ tokenstore.json
 .pytest_cache
 __pycache__
 /sdk
+data
