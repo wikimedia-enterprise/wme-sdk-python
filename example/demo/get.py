@@ -10,8 +10,12 @@ from modules.api.api_client import Client, Request, Filter
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Define the years for which you want to get articles
-US_ELECTION_YEARS = [1980, 1984, 1988, 1992, 1996, 2000, 2004, 2008, 2012, 2016, 2020]
+# Start and end year for the election
+START_YEAR = 1980
+END_YEAR = 2020
+
+# Generate the US election years dynamically (every 4 years)
+US_ELECTION_YEARS = list(range(START_YEAR, END_YEAR + 1, 4))
 
 # Ensure the 'data' folder exists
 if not os.path.exists('data'):
