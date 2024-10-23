@@ -12,7 +12,7 @@ You must have Python installed.
 Termainal commands:
 ```
 #setup the virtual environment
-python3 -m venv sdk
+python -m venv sdk
 source sdk/bin/activate
 
 #install the dependencies
