@@ -5,3 +5,6 @@ tokenstore.json
 __pycache__
 /sdk
 data
+loc
+geo
+clo
