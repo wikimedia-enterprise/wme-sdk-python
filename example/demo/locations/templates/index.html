@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Search with Wikipedia Infobox</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #map { height: 800px; width: 70%; float: left; }
+
+        #infobox {
+            height: 1600px;
+            width: 28%;
+            float: right;
+            overflow-y: auto;
+            padding: 5px;}
+
+        .infobox img { max-width: 100%; }
+        .infobox p { margin: 5px 0; }
+        .infobox h3 { margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+
+<h2>Search for a Location</h2>
+<input type="text" id="search-box" placeholder="Enter location..." autocomplete="off">
+<ul id="suggestions"></ul>
+
+<div id="map"></div>
+<div id="infobox"></div> <!-- Infobox will appear here -->
+
+<script src="{{ url_for('static', filename='map.js') }}"></script>
+
+</body>
+</html>

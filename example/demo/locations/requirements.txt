@@ -1,0 +1,8 @@
+certifi==2024.8.30
+cffi==1.17.1
+mercurial==6.7.2
+packaging==24.1
+pycairo==1.27.0
+pycparser==2.22
+PyGObject==3.50.0
+requests==2.32.3
