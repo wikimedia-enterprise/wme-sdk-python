@@ -1,45 +1,47 @@
 {
     "name": "1984 United States presidential election",
     "identifier": 40571,
-    "abstract": "The 1984 United States presidential election was the 50th quadrennial presidential election, held on Tuesday, November 6, 1984. Incumbent Republican President Ronald Reagan and his running mate, incumbent Vice President George H. W. Bush, were reelected to a second term in a landslide. They defeated the Democratic ticket of former Vice President Walter Mondale and Congresswoman Geraldine Ferraro. Reagan and Bush faced only token opposition in their bid for re-nomination. Mondale faced a competitive field in his bid, defeating Colorado Senator Gary Hart, activist Jesse Jackson, and several other candidates in the 1984 Democratic primaries. He eventually chose New York Representative Geraldine Ferraro as his running mate, the first woman to be on a major party's presidential ticket. Reagan touted a strong economic recovery from the 1970s stagflation and the 1981–1982 recession, and the widespread perception that his presidency had overseen a revival of national confidence and prestige. At 73, Reagan was the oldest person to be nominated by a major party for president, a record that stood until 2020. The Reagan campaign produced effective television advertising and deftly neutralized concerns regarding Reagan's age. Mondale criticized Reagan's supply-side economic policies and budget deficits. He also called for a nuclear freeze and ratification of the Equal Rights Amendment. Reagan won re-election in a landslide victory, carrying 525 electoral votes, 49 states, and 58.8% of the popular vote. Mondale won 13 electoral votes: 10 from his home state of Minnesota, which he won by a narrow margin of 0.18%, and 3 from the District of Columbia, which has always voted overwhelmingly for the Democratic candidate. This was the second-largest share of the electoral college since 1820, and the most raw electoral votes received by a candidate. This is the last time any candidate won the popular vote by double digits. Since Mondale's death in April 2021, this is the latest election where all of the major party nominees for president or vice president are deceased. As of 2020, this marked the last time the Republican nominee carried the states of Hawaii, Massachusetts, New York, Oregon, Rhode Island and Washington. Meanwhile, West Virginia would not vote Republican again until 2000, Iowa would not vote Republican again until 2004, and Wisconsin has only voted Republican once since, in 2016. As of 2020, this is the only time an incumbent president defeated a former vice president and the only time a major party presidential candidate defeated both the incumbent president and the latter's former vice president. As of 2024, this is the most recent election in which the Republican nominee won the popular vote for the second time in succession, and the last time anyone received more than 500 electoral votes.",
+    "abstract": "The 1984 United States presidential election was the 50th quadrennial presidential election, held on Tuesday, November 6, 1984. Incumbent Republican President Ronald Reagan and his running mate, incumbent Vice President George H. W. Bush, were reelected to a second term in a landslide. They defeated the Democratic ticket of former Vice President Walter Mondale and Congresswoman Geraldine Ferraro. Reagan and Bush faced only token opposition in their bid for re-nomination. Mondale faced a competitive field in his bid, defeating Colorado Senator Gary Hart, activist Jesse Jackson, and several other candidates in the 1984 Democratic primaries. He eventually chose New York Representative Geraldine Ferraro as his running mate, the first woman to be on a major party's presidential ticket. Reagan touted a strong economic recovery from the 1970s stagflation and the 1981–1982 recession, and the widespread perception that his presidency had overseen a revival of national confidence and prestige. At 73, Reagan was the oldest person to be nominated by a major party for president, a record that stood until 2020. The Reagan campaign produced effective television advertising and deftly neutralized concerns regarding Reagan's age. Mondale criticized Reagan's supply-side economic policies and budget deficits. He also called for a nuclear freeze and ratification of the Equal Rights Amendment. Reagan won re-election in a landslide victory, carrying 525 electoral votes, 49 states, and 58.8% of the popular vote. Mondale won 13 electoral votes: 10 from his home state of Minnesota, which he won by a narrow margin of 0.18%, and 3 from the District of Columbia, which has always voted overwhelmingly for the Democratic candidate. This was the second-largest share of the electoral college since 1820, and the most raw electoral votes received by a candidate. This is the last time any candidate won the popular vote by double digits. Since Mondale's death in April 2021, this is the latest election where all of the major party nominees for president or vice president are deceased. As of 2020, this marked the last time the Republican nominee carried the states of Hawaii, Massachusetts, New York, Oregon, Rhode Island and Washington. Meanwhile, West Virginia would not vote Republican again until 2000, Iowa would not vote Republican again until 2004, and Wisconsin has only voted Republican once since, in 2016. As of 2020, this is the only time an incumbent president defeated a former vice president and the only time a major party presidential candidate defeated both the incumbent president and the latter’s former vice president. As of 2024, this is the most recent election in which the Republican nominee won the popular vote for the second time in succession, and the last time anyone received more than 500 electoral votes.",
     "version": {
-        "identifier": 1252309175,
-        "comment": "Add",
+        "identifier": 1253665782,
+        "comment": "/* Republican Party candidates */ repeated below",
         "tags": [
-            "visualeditor-wikitext"
+            "wikieditor"
         ],
         "scores": {
             "revertrisk": {
                 "prediction": true,
                 "probability": {
-                    "false": 0.445091187953949,
-                    "true": 0.554908812046051
+                    "false": 0.4445095658302307,
+                    "true": 0.5554904341697693
                 }
             }
         },
         "editor": {
-            "identifier": 38706409,
-            "name": "Zinderboff",
-            "edit_count": 2864,
+            "identifier": 31642291,
+            "name": "Jon698",
+            "edit_count": 26855,
             "groups": [
+                "autoreviewer",
                 "extendedconfirmed",
-                "ipblock-exempt",
+                "patroller",
                 "*",
                 "user",
                 "autoconfirmed"
             ],
-            "date_started": "2020-03-05T21:32:37Z"
+            "is_patroller": true,
+            "date_started": "2017-08-03T05:04:01Z"
         },
-        "number_of_characters": 123540,
+        "number_of_characters": 123175,
         "size": {
-            "value": 123895,
+            "value": 123532,
             "unit_text": "B"
         },
         "maintenance_tags": {}
     },
     "url": "https://en.wikipedia.org/wiki/1984_United_States_presidential_election",
     "date_created": "2002-02-25T15:51:15Z",
-    "date_modified": "2024-10-20T19:46:28Z",
+    "date_modified": "2024-10-27T06:40:49Z",
     "main_entity": {
         "identifier": "Q699744",
         "url": "https://www.wikidata.org/entity/Q699744"
@@ -528,7 +530,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "value": "Since Mondale's death in April 2021, this is the latest election where all of the major party nominees for president or vice president are deceased. As of 2020, this marked the last time the Republican nominee carried the states of Hawaii, Massachusetts, New York, Oregon, Rhode Island and Washington. Meanwhile, West Virginia would not vote Republican again until 2000, Iowa would not vote Republican again until 2004, and Wisconsin has only voted Republican once since, in 2016. As of 2020, this is the only time an incumbent president defeated a former vice president and the only time a major party presidential candidate defeated both the incumbent president and the latter's former vice president. As of 2024, this is the most recent election in which the Republican nominee won the popular vote for the second time in succession, and the last time anyone received more than 500 electoral votes.",
+                    "value": "Since Mondale's death in April 2021, this is the latest election where all of the major party nominees for president or vice president are deceased. As of 2020, this marked the last time the Republican nominee carried the states of Hawaii, Massachusetts, New York, Oregon, Rhode Island and Washington. Meanwhile, West Virginia would not vote Republican again until 2000, Iowa would not vote Republican again until 2004, and Wisconsin has only voted Republican once since, in 2016. As of 2020, this is the only time an incumbent president defeated a former vice president and the only time a major party presidential candidate defeated both the incumbent president (Carter in 1980 election) and the latter’s former vice president (Mondale in 1984). As of 2024, this is the most recent election in which the Republican nominee won the popular vote for the second time in succession, and the last time anyone received more than 500 electoral votes.",
                     "links": [
                         {
                             "url": "https://en.wikipedia.org/wiki/2020_United_States_presidential_election",
@@ -683,41 +685,6 @@
                     "type": "section",
                     "has_parts": [
                         {
-                            "type": "list",
-                            "has_parts": [
-                                {
-                                    "type": "list_item",
-                                    "value": "Ronald Reagan, President of the United States",
-                                    "links": [
-                                        {
-                                            "url": "https://en.wikipedia.org/wiki/Ronald_Reagan",
-                                            "text": "Ronald Reagan"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "list_item",
-                                    "value": "Ben Fernandez, former Special Ambassador to Paraguay from California",
-                                    "links": [
-                                        {
-                                            "url": "https://en.wikipedia.org/wiki/Ben_Fernandez",
-                                            "text": "Ben Fernandez"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "list_item",
-                                    "value": "Harold Stassen, former Governor of Minnesota",
-                                    "links": [
-                                        {
-                                            "url": "https://en.wikipedia.org/wiki/Harold_Stassen",
-                                            "text": "Harold Stassen"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
                             "name": "Primaries",
                             "type": "section",
                             "has_parts": [
@@ -737,8 +704,16 @@
                                 },
                                 {
                                     "type": "paragraph",
-                                    "value": "Reagan was the first incumbent president since Richard Nixon in 1972 to face no significant opposition for renomination. The popular vote from the Republican primaries was as follows:",
+                                    "value": "Vice President George H. W. Bush and U.S. Senate Majority Leader Howard Baker were considered as possible candidates only if Reagan did not run. Reagan was the first incumbent president since Richard Nixon in 1972 to face no significant opposition for renomination. The popular vote from the Republican primaries was as follows:",
                                     "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/George_H._W._Bush",
+                                            "text": "George H. W. Bush"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Howard_Baker",
+                                            "text": "Howard Baker"
+                                        },
                                         {
                                             "url": "https://en.wikipedia.org/wiki/Richard_Nixon",
                                             "text": "Richard Nixon"
@@ -2775,20 +2750,6 @@
                 },
                 {
                     "type": "paragraph",
-                    "value": "The Republicans gained seats in the concurrent U.S. House of Representatives elections, but the Democrats maintained their control over the chamber. The Democrats gained two seats in the concurrent U.S. Senate elections, but the Republicans maintained control over the chamber.",
-                    "links": [
-                        {
-                            "url": "https://en.wikipedia.org/wiki/1984_United_States_House_of_Representatives_elections",
-                            "text": "elections"
-                        },
-                        {
-                            "url": "https://en.wikipedia.org/wiki/1984_United_States_Senate_elections",
-                            "text": "elections"
-                        }
-                    ]
-                },
-                {
-                    "type": "paragraph",
                     "value": "When Reagan was asked in December 1984 what he wanted for Christmas he joked, \"Well, Minnesota would have been nice\". He lost Minnesota in both this election and in 1980, making it the only state he failed to win in either election.",
                     "links": [
                         {
@@ -2833,7 +2794,7 @@
                     "has_parts": [
                         {
                             "type": "paragraph",
-                            "value": "Reagan's landslide victory resulted in him winning 97.6% of electoral votes, behind only Roosevelt's 98.5% in 1936. However, Reagan's popular vote share was below that of the winners in 1920, 1936, 1964, and 1972. His margin of victory was also lower than the winners of 1904, 1920, 1924, 1936, 1964, and 1972.",
+                            "value": "Reagan's landslide victory resulted in him winning 97.6% of electoral votes, behind only Roosevelt's 98.5% in 1936. However, Reagan's popular vote share was below that of the winners in 1920, 1936, 1964, and 1972. His margin of victory was also lower than the winners of 1904, 1920, 1924, 1936, 1964, and 1972. Reagan's percentage in each state rose from 1980, with his best performances occurring in the South and states with large third-party votes. Mondale improved upon Carter's 1980 results in 28 states, but performed worse in 22 states, 15 of which were in the South. Mondale's national percentage of the popular vote was lower by 0.4% compared to Carter.",
                             "links": [
                                 {
                                     "url": "https://en.wikipedia.org/wiki/1936_United_States_presidential_election",
@@ -2883,7 +2844,25 @@
                         },
                         {
                             "type": "paragraph",
-                            "value": "Mondale's national percentage of the popular vote was lower by 0.4% compared to Carter. Reagan's percentage in each state rose from 1980, with his best performances occurring in the South and states with large third-party votes. Mondale improved upon Carter's 1980 results in 28 states, but performed worse in 22 states, 15 of which were in the South."
+                            "value": "The Republicans gained seats in the concurrent U.S. House of Representatives elections and lost two seats in the concurrent U.S. Senate elections, but overall control of both chambers remained the same. Reagan underperformed Republican senatorial candidates in Alaska, Colorado, Kansas, Maine, Minnesota, New Mexico, Oregon, South Carolina, South Dakota, Virginia, and Wyoming. Jesse Helms and Mitch McConnell were the only Republican senatorial candidates that could have benefited from the coattails effect.",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1984_United_States_House_of_Representatives_elections",
+                                    "text": "elections"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/1984_United_States_Senate_elections",
+                                    "text": "elections"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Jesse_Helms",
+                                    "text": "Jesse Helms"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Mitch_McConnell",
+                                    "text": "Mitch McConnell"
+                                }
+                            ]
                         },
                         {
                             "type": "paragraph",
@@ -2945,7 +2924,7 @@
                         },
                         {
                             "type": "paragraph",
-                            "value": "It was also the last election where the Republican nominee won Wisconsin until 2016, Iowa until 2004, West Virginia until 2000, the last election in which the winning candidate won by a double-digit margin in the percentage of the popular vote, and the last election where the winning candidate won by an eight-digit margin in total popular votes (10 million or more). This is the last time that the tipping point state (in this case, Michigan) was decided by a double-digit margin. Finally, despite his narrow loss in Minnesota, Reagan still won in five out of its eight congressional districts (by contrast, Nixon had only carried one Massachusetts district twelve years earlier) thus making Reagan the only U.S. presidential candidate in history to win the popular vote in a majority of congressional districts in every state. In stark contrast, Mondale became the first major-party U.S. presidential candidate since the start of popular presidential elections not to win a majority of the popular vote in any state (not counting Stephen A. Douglas in 1860, and William H. Taft in 1912, elections which were both complicated by strong third-party performances, plus the Democratic vote being divided between Douglas and John C. Breckinridge in 1860), having only won a plurality of 49.7% of the vote in Minnesota.",
+                            "value": "It was also the last election where the Republican nominee won Wisconsin until 2016, Iowa until 2004, West Virginia until 2000, the last election in which the winning candidate won by a double-digit margin in the percentage of the popular vote, and the last election where the winning candidate won by an eight-digit margin in total popular votes (10 million or more). This is the last time that the tipping point state (in this case, Michigan) was decided by a double-digit margin.",
                             "links": [
                                 {
                                     "url": "https://en.wikipedia.org/wiki/Wisconsin",
@@ -2958,14 +2937,6 @@
                                 {
                                     "url": "https://en.wikipedia.org/wiki/West_Virginia",
                                     "text": "West Virginia"
-                                },
-                                {
-                                    "url": "https://en.wikipedia.org/wiki/William_H._Taft",
-                                    "text": "William H. Taft"
-                                },
-                                {
-                                    "url": "https://en.wikipedia.org/wiki/John_C._Breckinridge",
-                                    "text": "John C. Breckinridge"
                                 }
                             ]
                         }
@@ -3315,7 +3286,17 @@
         },
         {
             "name": "Works cited",
-            "type": "section"
+            "type": "section",
+            "has_parts": [
+                {
+                    "name": "Books",
+                    "type": "section"
+                },
+                {
+                    "name": "Journals",
+                    "type": "section"
+                }
+            ]
         }
     ]
 }

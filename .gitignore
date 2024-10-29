@@ -3,7 +3,7 @@
 tokenstore.json
 .pytest_cache
 __pycache__
-/sdk
+sdk
 data
 loc
 geo

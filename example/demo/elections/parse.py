@@ -65,7 +65,10 @@ with open(output_file_path, mode='w', newline='', encoding='utf-8') as csv_file:
                 year, electoral_vote, running_mate, nominee = extract_json_data(json_data)
 
                 # electoral_vote is a set of integers in a string separated by spaces, parse it into a list of integers
-                electoral_vote = [int(vote) for vote in electoral_vote.split() if vote.isdigit()]
+                if electoral_vote:
+                    electoral_vote = [int(vote) for vote in electoral_vote.split() if vote.isdigit()]
+                else:
+                    electoral_vote = []  # Or handle the None case as needed
 
                 # Write the data to CSV
                 writer.writerow({

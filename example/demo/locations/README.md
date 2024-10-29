@@ -42,7 +42,7 @@ First, clone this repository to your local machine.
 git clone https://github.com/wikimedia-enterprise/wme-sdk-python.git
 cd wme-sdk-python
 # For this demo app:
-cd wme-sdk-python/example/locations
+cd wme-sdk-python/example/demo/locations
 ```
 
 ### 2. Create a Python Virtual Environment:

@@ -3,43 +3,44 @@
     "identifier": 406859,
     "abstract": "The 2008 United States presidential election was the 56th quadrennial presidential election, held on Tuesday, November 4, 2008. The Democratic ticket of Barack Obama, the junior senator from Illinois, and Joe Biden, the senior senator from Delaware, defeated the Republican ticket of John McCain, the senior senator from Arizona, and Sarah Palin, the governor of Alaska. Obama became the first African American to be elected to the presidency, as well as being only the third sitting United States senator elected president, joining Warren G. Harding and John F. Kennedy. Meanwhile, this was only the second successful all-senator ticket along with the 1960 election and is the only election where both major party nominees were sitting senators. This was the first election since 1952 in which neither the incumbent president nor vice president was on the ballot, as well as the first election since 1928 in which neither ran for the nomination. Incumbent Republican President George W. Bush was ineligible to pursue a third term due to the term limits established by the Twenty-second Amendment. McCain secured the Republican nomination by March 2008, defeating former governors Mitt Romney, Mike Huckabee, and other challengers. The Democratic primaries were marked by a sharp contest between Obama and the initial front-runner, former first lady and Senator Hillary Clinton, as well as other challengers who dropped out before most of the primaries were held, including Senators John Edwards and Obama's future running mate, Joe Biden. Clinton's victory in the New Hampshire primary made her the first woman to win a major party's presidential primary. After a long primary season, Obama secured the Democratic nomination in June 2008. Early campaigning focused heavily on the Iraq War and Bush's unpopularity. McCain supported the war, as well as a troop surge that had begun in 2007, while Obama strongly opposed the war. Bush endorsed McCain, but the two did not campaign together, and Bush did not appear in person at the 2008 Republican National Convention. Obama campaigned on the theme that \"Washington must change\", while McCain emphasized his experience. The campaign was strongly affected by the 2007–2008 financial crisis. McCain's decision to suspend his campaign during the height of the financial crisis backfired as voters viewed his response as erratic. Obama won a decisive victory over McCain, winning the Electoral College and the popular vote by a sizable margin, including states that had not voted for the Democratic presidential candidate since 1976 and 1964. Obama received the largest share of the popular vote won by a Democrat since Lyndon B. Johnson in 1964 and was the first Democrat to win an outright majority of the popular vote since Jimmy Carter in 1976. Obama won every state in the Great Lakes region and flipped nine states that had voted Republican in 2004: Colorado, Florida, Indiana, Iowa, Nevada, New Mexico, North Carolina, Ohio, and Virginia, as well as Nebraska's 2nd congressional district. This marked the most recent time a Democrat carried Indiana and North Carolina in a presidential election, as well as the most recent presidential election where any candidate won more than 350 electoral votes.",
     "version": {
-        "identifier": 1251969705,
-        "comment": "[[User:PrimeBOT/24|Task 24]]: elink template removal following [[Wikipedia:Templates_for_discussion/Log/2024_September_20|a TFD]]",
+        "identifier": 1254043043,
+        "comment": "/* Further reading */",
         "tags": [
-            "AWB"
+            "wikieditor"
         ],
-        "is_minor_edit": true,
         "scores": {
             "revertrisk": {
+                "prediction": true,
                 "probability": {
-                    "false": 0.6278291046619415,
-                    "true": 0.37217089533805847
+                    "false": 0.48074978590011597,
+                    "true": 0.519250214099884
                 }
             }
         },
         "editor": {
-            "identifier": 29463730,
-            "name": "PrimeBOT",
-            "edit_count": 2028486,
+            "identifier": 1994682,
+            "name": "KConWiki",
+            "edit_count": 187622,
             "groups": [
-                "bot",
+                "autoreviewer",
+                "extendedconfirmed",
                 "*",
                 "user",
                 "autoconfirmed"
             ],
-            "is_bot": true,
-            "date_started": "2016-10-21T03:40:39Z"
+            "is_patroller": true,
+            "date_started": "2006-08-13T13:24:04Z"
         },
-        "number_of_characters": 230641,
+        "number_of_characters": 230998,
         "size": {
-            "value": 230902,
+            "value": 231259,
             "unit_text": "B"
         },
         "maintenance_tags": {}
     },
     "url": "https://en.wikipedia.org/wiki/2008_United_States_presidential_election",
     "date_created": "2003-12-18T13:29:07Z",
-    "date_modified": "2024-10-19T02:48:13Z",
+    "date_modified": "2024-10-29T04:27:17Z",
     "main_entity": {
         "identifier": "Q45578",
         "url": "https://www.wikidata.org/entity/Q45578"

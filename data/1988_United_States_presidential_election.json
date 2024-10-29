@@ -1,36 +1,34 @@
 {
     "name": "1988 United States presidential election",
     "identifier": 39531,
-    "abstract": "The 1988 United States presidential election was the 51st quadrennial presidential election held on Tuesday, November 8, 1988. In what was the third consecutive landslide election for the Republican Party, their ticket of incumbent Vice President George H. W. Bush and Indiana senator Dan Quayle defeated the Democratic ticket of Massachusetts Governor Michael Dukakis and Texas senator Lloyd Bentsen. It remains the most recent election in which a candidate won over 400 electoral votes, and consequently the last landslide election of a U.S. president. Conversely, it began an ongoing streak of presidential elections that were decided by a single-digit popular vote margin. It was the first time since 1948, the first time for the Republicans since 1928, and the most recent presidential election to date in which a party won more than two consecutive presidential terms. Additionally, it was the last time that the Republicans won the popular vote three times – or even twice – in a row. President Ronald Reagan was ineligible to seek a third term because of the 22nd Amendment. Instead, Bush entered the Republican primaries as the front-runner, defeating Kansas Senator Bob Dole and televangelist Pat Robertson. He selected Indiana Senator Dan Quayle as his running mate. Dukakis won the Democratic primaries after Democratic leaders Gary Hart and Ted Kennedy withdrew or declined to run. He selected Texas Senator Lloyd Bentsen as his running mate. It was the first election since 1968 to lack an incumbent president on the ballot. Bush ran an aggressive campaign that concentrated mainly on the strong economy, reduction in crime, and continuance with Reagan's policies. He attacked Dukakis as an elitist \"Massachusetts liberal\", to which Dukakis ineffectively responded. Despite Dukakis initially leading in the polls, Bush pulled ahead after the Republican National Convention and extended his lead after two strong debate performances. Bush won a decisive victory over Dukakis, winning the Electoral College and the popular vote by sizable margins. Bush became the first sitting vice president to be elected president since Martin Van Buren in 1836, and the first vice president to be elected president since Richard Nixon in 1968. This remains the last time that a Republican has carried California, Connecticut, Delaware, Illinois, Maine, Maryland, New Jersey, and Vermont. Arkansas, Kentucky, Louisiana, Missouri, Nevada, New Hampshire, Ohio, and Tennessee would not vote Republican again until 2000, while New Mexico would not vote Republican again until 2004. Pennsylvania and Michigan would not vote Republican again until 2016. This remains the latest presidential election in which the Democrats did not win at least 200 electoral votes, partly due to their lock on certain states in presidential races from 1988 onward. As of 2020, this is the last presidential election in which the Republican nominee won the female vote, as well as the last presidential election in which Michigan, Pennsylvania, and Wisconsin did not vote for the same candidate.",
+    "abstract": "The 1988 United States presidential election was the 51st quadrennial presidential election held on Tuesday, November 8, 1988. In what was the third consecutive landslide election for the Republican Party, their ticket of incumbent Vice President George H. W. Bush and Indiana senator Dan Quayle defeated the Democratic ticket of Massachusetts Governor Michael Dukakis and Texas senator Lloyd Bentsen. It remains the most recent election in which a candidate won over 400 electoral votes, and consequently the last landslide election of a U.S. president. Conversely, it began an ongoing streak of presidential elections that were decided by a single-digit popular vote margin. It was the first time since 1948, the first time for the Republicans since 1928, and the most recent presidential election to date in which a party won more than two consecutive presidential terms. Additionally, it was the last time that the Republicans won the popular vote three times – or even twice – in a row. President Ronald Reagan was ineligible to seek a third term because of the 22nd Amendment. Instead, Bush entered the Republican primaries as the frontrunner, defeating Kansas Senator Bob Dole and televangelist Pat Robertson. He selected Indiana Senator Dan Quayle as his running mate. Dukakis won the Democratic primaries after Democratic leaders Gary Hart and Ted Kennedy withdrew or declined to run. He selected Texas Senator Lloyd Bentsen as his running mate. It was the first election since 1968 to lack an incumbent president on the ballot. Bush ran an aggressive campaign that concentrated mainly on the strong economy, reduction in crime, and continuance with Reagan's policies. He attacked Dukakis as an elitist \"Massachusetts liberal\", to which Dukakis ineffectively responded. Despite Dukakis initially leading in the polls, Bush pulled ahead after the Republican National Convention and extended his lead after two strong debate performances. Bush won a decisive victory over Dukakis, winning the Electoral College and the popular vote by sizable margins. Bush became the first sitting vice president to be elected president since Martin Van Buren in 1836, and the first vice president to be elected president since Richard Nixon in 1968. This remains the last time that a Republican has carried California, Connecticut, Delaware, Illinois, Maine, Maryland, New Jersey, and Vermont. Arkansas, Kentucky, Louisiana, Missouri, Nevada, New Hampshire, Ohio, and Tennessee would not vote Republican again until 2000, while New Mexico would not vote Republican again until 2004. Pennsylvania and Michigan would not vote Republican again until 2016. This remains the latest presidential election in which the Democrats did not win at least 200 electoral votes, partly due to their lock on certain states in presidential races from 1988 onward. As of 2020, this is the last presidential election in which the Republican nominee won the female vote, as well as the last presidential election in which Michigan, Pennsylvania, and Wisconsin did not vote for the same candidate.",
     "version": {
-        "identifier": 1252343643,
-        "comment": "split.",
+        "identifier": 1253465393,
         "tags": [
-            "wikieditor"
+            "mobile edit",
+            "mobile web edit",
+            "visualeditor"
         ],
         "scores": {
             "revertrisk": {
+                "prediction": true,
                 "probability": {
-                    "false": 0.5330316722393036,
-                    "true": 0.4669683277606964
+                    "false": 0.03332161903381348,
+                    "true": 0.9666783809661865
                 }
             }
         },
         "editor": {
-            "identifier": 44374359,
-            "name": "JohnAdams1800",
-            "edit_count": 9879,
+            "name": "200.68.179.195",
             "groups": [
-                "extendedconfirmed",
-                "*",
-                "user",
-                "autoconfirmed"
+                "*"
             ],
-            "date_started": "2022-08-21T00:31:03Z"
+            "is_anonymous": true,
+            "date_started": "0001-01-01T00:00:00Z"
         },
-        "number_of_characters": 110138,
+        "number_of_characters": 110197,
         "size": {
-            "value": 110673,
+            "value": 110732,
             "unit_text": "B"
         },
         "maintenance_tags": {
@@ -40,7 +38,7 @@
     },
     "url": "https://en.wikipedia.org/wiki/1988_United_States_presidential_election",
     "date_created": "2002-02-24T15:02:20Z",
-    "date_modified": "2024-10-20T22:44:35Z",
+    "date_modified": "2024-10-26T03:43:12Z",
     "main_entity": {
         "identifier": "Q643015",
         "url": "https://www.wikidata.org/entity/Q643015"
@@ -483,7 +481,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "value": "President Ronald Reagan was ineligible to seek a third term because of the 22nd Amendment. Instead, Bush entered the Republican primaries as the front-runner, defeating Kansas Senator Bob Dole and televangelist Pat Robertson. He selected Indiana Senator Dan Quayle as his running mate. Dukakis won the Democratic primaries after Democratic leaders Gary Hart and Ted Kennedy withdrew or declined to run. He selected Texas Senator Lloyd Bentsen as his running mate. It was the first election since 1968 to lack an incumbent president on the ballot.",
+                    "value": "President Ronald Reagan was ineligible to seek a third term because of the 22nd Amendment. Instead, Bush entered the Republican primaries as the frontrunner, defeating Kansas Senator Bob Dole and televangelist Pat Robertson. He selected Indiana Senator Dan Quayle as his running mate. Dukakis won the Democratic primaries after Democratic leaders Gary Hart and Ted Kennedy withdrew or declined to run. He selected Texas Senator Lloyd Bentsen as his running mate. It was the first election since 1968 to lack an incumbent president on the ballot.",
                     "links": [
                         {
                             "url": "https://en.wikipedia.org/wiki/Ronald_Reagan",
@@ -1563,7 +1561,7 @@
                             "has_parts": [
                                 {
                                     "type": "paragraph",
-                                    "value": "During the course of the campaign, Dukakis fired his deputy field director Donna Brazile after she spread false rumors that Bush had had an affair with his assistant Jennifer Fitzgerald. Bush and Fitzgerald's relationship was briefly rehashed in the 1992 campaign.",
+                                    "value": "During the course of the campaign, Dukakis fired his deputy field director Donna Brazile after she spread unsubstantiated rumors that Bush had had an affair with his assistant Jennifer Fitzgerald. Bush and Fitzgerald's relationship was briefly rehashed in the 1992 campaign.",
                                     "links": [
                                         {
                                             "url": "https://en.wikipedia.org/wiki/Donna_Brazile",

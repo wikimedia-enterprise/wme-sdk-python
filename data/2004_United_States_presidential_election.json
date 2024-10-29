@@ -1,9 +1,10 @@
 {
     "name": "2004 United States presidential election",
     "identifier": 1297662,
-    "abstract": "The 2004 United States presidential election was the 55th quadrennial presidential election, held on Tuesday, November 2, 2004. The Republican ticket of incumbent President George W. Bush and his running mate incumbent Vice President Dick Cheney was re-elected to a second term. They narrowly defeated the Democratic ticket of John Kerry, a senator from Massachusetts, and his running mate John Edwards, a senator from North Carolina. Bush and Cheney were renominated by their party with no difficulty. Former Vermont governor Howard Dean emerged as the early front-runner in the 2004 Democratic Party presidential primaries, but Kerry won the first set of primaries in January and clinched his party's nomination in March after a series of primary victories. Kerry chose Edwards, who was the runner-up in the primaries, to be his running mate. Foreign policy was the dominant theme throughout the election campaign, particularly Bush's handling of the war on terror and the 2003 invasion of Iraq. Bush presented himself as a decisive leader and attacked Kerry as a \"flip-flopper\". Kerry criticized Bush's conduct of the Iraq War, despite having voted for it himself. Domestic issues were debated as well, including the economy and jobs, health care, abortion, same-sex marriage and embryonic stem cell research. Bush won by a narrow margin of 35 electoral votes and took 50.7% of the popular vote. Bush swept the South and the Mountain States and took the crucial swing states of Ohio, Iowa, and New Mexico, the last two flipping Republican. Although Kerry flipped New Hampshire, Bush won both more electoral votes and states than in 2000. Ohio was the tipping-point state, and was considered to be the state that allowed Bush to win re-election. Some aspects of the election process were subject to controversy, but not to the degree seen in the 2000 presidential election. Bush won Florida by a five-percent margin, a significant improvement over his razor-thin victory margin in the state four years earlier which led to a legal challenge in Bush v. Gore. As of 2020, this is the most recent presidential election in which the winning candidate won fewer than 300 electoral votes, it is also the most recent in which the Republican candidate won Colorado, New Mexico, Nevada, or Virginia. This is also the most recent presidential election in which the Republican nominee won the popular vote and the only presidential election since 1984 in which the incumbent Republican president won re-election. This is one of only four U.S. presidential elections in which the winner did not carry any of the three Rust Belt states of Michigan, Pennsylvania, and Wisconsin; the others were 1884, 1916, and 2000. At the time, Bush also received the most popular votes in history, a record which would be broken in the 2008 presidential election. Bush also became the only incumbent president to win re-election after previously losing the popular vote.",
+    "abstract": "The 2004 United States presidential election was the 55th quadrennial presidential election, held on Tuesday, November 2, 2004. The Republican ticket of incumbent President George W. Bush and his running mate incumbent Vice President Dick Cheney was re-elected to a second term. They narrowly defeated the Democratic ticket of John Kerry, a senator from Massachusetts, and his running mate John Edwards, a senator from North Carolina. Bush and Cheney were renominated by their party with no difficulty. Former Vermont governor Howard Dean emerged as the early front-runner in the 2004 Democratic Party presidential primaries, but Kerry won the first set of primaries in January and clinched his party's nomination in March after a series of primary victories. Kerry chose Edwards, who was the runner-up in the primaries, to be his running mate. Foreign policy was the dominant theme throughout the election campaign, particularly Bush's handling of the war on terror and the 2003 invasion of Iraq. Bush presented himself as a decisive leader and attacked Kerry as a \"flip-flopper\". Kerry criticized Bush's conduct of the Iraq War, despite having voted for it himself. Domestic issues were debated as well, including the economy and jobs, health care, abortion, same-sex marriage and embryonic stem cell research. Bush won by a narrow margin of 35 electoral votes and took 50.7% of the popular vote. Bush swept the South and the Mountain States and took the crucial swing states of Ohio, Iowa, and New Mexico, the last two flipping Republican. Although Kerry flipped New Hampshire, Bush won both more electoral votes and states than in 2000. Ohio was the tipping-point state, and was considered to be the state that allowed Bush to win reelection. Some aspects of the election process were subject to controversy, but not to the degree seen in the 2000 presidential election. Bush won Florida by a five-percent margin, a significant improvement over his razor-thin victory margin in the state four years earlier which led to a legal challenge in Bush v. Gore. As of 2020, this is the most recent presidential election in which the winning candidate won fewer than 300 electoral votes, it is also the most recent in which the Republican candidate won Colorado, New Mexico, Nevada, or Virginia. This is also the most recent presidential election in which the Republican nominee won the popular vote, the most recent presidential election in which both major-party candidates flipped at least one state, and the only presidential election since 1984 in which the incumbent Republican president won re-election. This is one of only two U.S. presidential elections, held since the Democrats and Republicans became the two major parties in U.S. politics, in which the winner did not carry any of the three Rust Belt states of Michigan, Pennsylvania, and Wisconsin; the other was 2000, when Bush was first elected. At the time, Bush also received the most popular votes in history, a record which would be broken in the 2008 presidential election. Bush also became the only incumbent president to win re-election after previously losing the popular vote.",
     "version": {
-        "identifier": 1252431344,
+        "identifier": 1254037948,
+        "comment": "/* Statistical analysis */",
         "tags": [
             "wikieditor"
         ],
@@ -11,29 +12,33 @@
             "revertrisk": {
                 "prediction": true,
                 "probability": {
-                    "false": 0.026903212070465088,
-                    "true": 0.9730967879295349
+                    "false": 0.4925978183746338,
+                    "true": 0.5074021816253662
                 }
             }
         },
         "editor": {
-            "name": "5.148.22.244",
+            "identifier": 33724701,
+            "name": "Sakhadiver",
+            "edit_count": 1128,
             "groups": [
-                "*"
+                "extendedconfirmed",
+                "*",
+                "user",
+                "autoconfirmed"
             ],
-            "is_anonymous": true,
-            "date_started": "0001-01-01T00:00:00Z"
+            "date_started": "2018-05-09T19:30:53Z"
         },
-        "number_of_characters": 136227,
+        "number_of_characters": 136658,
         "size": {
-            "value": 137088,
+            "value": 137519,
             "unit_text": "B"
         },
         "maintenance_tags": {}
     },
     "url": "https://en.wikipedia.org/wiki/2004_United_States_presidential_election",
     "date_created": "2003-01-05T08:11:14Z",
-    "date_modified": "2024-10-21T09:36:34Z",
+    "date_modified": "2024-10-29T03:37:34Z",
     "main_entity": {
         "identifier": "Q464075",
         "url": "https://www.wikidata.org/entity/Q464075"
@@ -546,7 +551,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "value": "Bush won by a narrow margin of 35 electoral votes and took 50.7% of the popular vote. Bush swept the South and the Mountain States and took the crucial swing states of Ohio, Iowa, and New Mexico, the last two flipping Republican. Although Kerry flipped New Hampshire, Bush won both more electoral votes and states than in 2000. Ohio was the tipping-point state, and was considered to be the state that allowed Bush to win re-election. Some aspects of the election process were subject to controversy, but not to the degree seen in the 2000 presidential election. Bush won Florida by a five-percent margin, a significant improvement over his razor-thin victory margin in the state four years earlier which led to a legal challenge in Bush v. Gore. As of 2020, this is the most recent presidential election in which the winning candidate won fewer than 300 electoral votes, it is also the most recent in which the Republican candidate won Colorado, New Mexico, Nevada, or Virginia. This is also the most recent presidential election in which the Republican nominee won the popular vote and the only presidential election since 1984 in which the incumbent Republican president won re-election.",
+                    "value": "Bush won by a narrow margin of 35 electoral votes and took 50.7% of the popular vote. Bush swept the South and the Mountain States and took the crucial swing states of Ohio, Iowa, and New Mexico, the last two flipping Republican. Although Kerry flipped New Hampshire, Bush won both more electoral votes and states than in 2000. Ohio was the tipping-point state, and was considered to be the state that allowed Bush to win reelection. Some aspects of the election process were subject to controversy, but not to the degree seen in the 2000 presidential election. Bush won Florida by a five-percent margin, a significant improvement over his razor-thin victory margin in the state four years earlier which led to a legal challenge in Bush v. Gore. As of 2020, this is the most recent presidential election in which the winning candidate won fewer than 300 electoral votes, it is also the most recent in which the Republican candidate won Colorado, New Mexico, Nevada, or Virginia. This is also the most recent presidential election in which the Republican nominee won the popular vote, the most recent presidential election in which both major-party candidates flipped at least one state, and the only presidential election since 1984 in which the incumbent Republican president won re-election.",
                     "links": [
                         {
                             "url": "https://en.wikipedia.org/wiki/Electoral_College_(United_States)",
@@ -632,23 +637,23 @@
                 },
                 {
                     "type": "paragraph",
-                    "value": "This is one of only four U.S. presidential elections in which the winner did not carry any of the three Rust Belt states of Michigan, Pennsylvania, and Wisconsin; the others were 1884, 1916, and 2000. At the time, Bush also received the most popular votes in history, a record which would be broken in the 2008 presidential election. Bush also became the only incumbent president to win re-election after previously losing the popular vote.",
+                    "value": "This is one of only two U.S. presidential elections, held since the Democrats and Republicans became the two major parties in U.S. politics, in which the winner did not carry any of the three Rust Belt states of Michigan, Pennsylvania, and Wisconsin; the other was 2000, when Bush was first elected. At the time, Bush also received the most popular votes in history, a record which would be broken in the 2008 presidential election. Bush also became the only incumbent president to win re-election after previously losing the popular vote.",
                     "links": [
                         {
                             "url": "https://en.wikipedia.org/wiki/Rust_Belt",
                             "text": "Rust Belt"
                         },
                         {
-                            "url": "https://en.wikipedia.org/wiki/1884_United_States_presidential_election",
-                            "text": "1884"
+                            "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election_in_Michigan",
+                            "text": "Michigan"
                         },
                         {
-                            "url": "https://en.wikipedia.org/wiki/1916_United_States_presidential_election",
-                            "text": "1916"
+                            "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election_in_Pennsylvania",
+                            "text": "Pennsylvania"
                         },
                         {
-                            "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election",
-                            "text": "2000"
+                            "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election_in_Wisconsin",
+                            "text": "Wisconsin"
                         },
                         {
                             "url": "https://en.wikipedia.org/wiki/2008_United_States_presidential_election",
@@ -2037,7 +2042,7 @@
                     "has_parts": [
                         {
                             "type": "paragraph",
-                            "value": "During the campaign and as the results came in on the night of the election there was much focus on Ohio, Pennsylvania, and Florida. These three swing states were seen as evenly divided, and with each casting 20 electoral votes or more, they had the power to decide the election. As the final results came in, Kerry took Pennsylvania and then Bush took Florida, focusing all attention on Ohio.",
+                            "value": "During the campaign and as the results came in on the night of the election, there was much focus on Ohio, Pennsylvania, and Florida. These three swing states were seen as evenly divided, and with each casting 20 electoral votes or more, they had the power to decide the election. As the final results came in, Kerry took Pennsylvania and then Bush took Florida, focusing all attention on Ohio.",
                             "links": [
                                 {
                                     "url": "https://en.wikipedia.org/wiki/Ohio",
@@ -2053,7 +2058,7 @@
                                 },
                                 {
                                     "url": "https://en.wikipedia.org/wiki/Swing_state",
-                                    "text": "swing"
+                                    "text": "swing states"
                                 }
                             ]
                         },
@@ -2258,15 +2263,41 @@
                         },
                         {
                             "type": "list_item",
-                            "value": "Barone, Michael J. The Almanac of American Politics: 2006 (2005)"
+                            "value": "Barone, Michael J. The Almanac of American Politics: 2006 (2005)",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Michael_Barone_(pundit)",
+                                    "text": "Barone, Michael J."
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/The_Almanac_of_American_Politics",
+                                    "text": "The Almanac of American Politics"
+                                }
+                            ]
                         },
                         {
                             "type": "list_item",
-                            "value": "Daclon, Corrado Maria, US elections and war on terrorism (2004), Analisi Difesa, no. 50"
+                            "value": "Daclon, Corrado Maria, US elections and war on terrorism (2004), Analisi Difesa, no. 50",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Corrado_Maria_Daclon",
+                                    "text": "Daclon, Corrado Maria"
+                                }
+                            ]
                         },
                         {
                             "type": "list_item",
-                            "value": "Evan Thomas, Eleanor Clift, and Staff of Newsweek. Election 2004 (2005)"
+                            "value": "Evan Thomas, Eleanor Clift, and Staff of Newsweek. Election 2004 (2005)",
+                            "links": [
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Evan_Thomas",
+                                    "text": "Evan Thomas"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Eleanor_Clift",
+                                    "text": "Eleanor Clift"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -2279,27 +2310,67 @@
                             "has_parts": [
                                 {
                                     "type": "list_item",
-                                    "value": "Ceaser, James W. and Andrew E. Busch. Red Over Blue: The 2004 Elections and American Politics (2005), narrative history."
+                                    "value": "Ceaser, James W. and Andrew E. Busch. Red Over Blue: The 2004 Elections and American Politics (2005), narrative history.",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/James_W._Ceaser",
+                                            "text": "Ceaser, James W."
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "list_item",
-                                    "value": "Freeman, Steven F. and Joel Bleifuss, Foreword by U.S. Representative John Conyers, Jr. Was the 2004 Presidential Election Stolen? Exit Polls, Election Fraud, and the Official Count (Seven Stories Press, 2006)"
+                                    "value": "Freeman, Steven F. and Joel Bleifuss, Foreword by U.S. Representative John Conyers, Jr. Was the 2004 Presidential Election Stolen? Exit Polls, Election Fraud, and the Official Count (Seven Stories Press, 2006)",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Joel_Bleifuss",
+                                            "text": "Joel Bleifuss"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "list_item",
-                                    "value": "Greene, John C. and Mark J. Rozell, eds. The Values Campaign?: The Christian Right and the 2004 Elections (2006)"
+                                    "value": "Green, John C. and Mark J. Rozell, eds. The Values Campaign?: The Christian Right and the 2004 Elections (2006)",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/John_C._Green",
+                                            "text": "Green, John C."
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Mark_J._Rozell",
+                                            "text": "Mark J. Rozell"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "list_item",
-                                    "value": "Miller, Mark Crispin. Fooled Again: How the Right Stole the 2004 Election (2005) –"
+                                    "value": "Miller, Mark Crispin. Fooled Again: How the Right Stole the 2004 Election (2005) –",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Mark_Crispin_Miller",
+                                            "text": "Miller, Mark Crispin"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "list_item",
-                                    "value": "Sabato, Larry J. Divided States of America: The Slash And Burn Politics of the 2004 Presidential Election (2005)"
+                                    "value": "Sabato, Larry J. Divided States of America: The Slash And Burn Politics of the 2004 Presidential Election (2005)",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Larry_Sabato",
+                                            "text": "Sabato, Larry J."
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "list_item",
-                                    "value": "Stempel III, Guido H. and Thomas K. Hargrove, eds. The 21st-Century Voter: Who Votes, How They Vote, and Why They Vote (2 vol. 2015)"
+                                    "value": "Stempel III, Guido H. and Thomas K. Hargrove, eds. The 21st-Century Voter: Who Votes, How They Vote, and Why They Vote (2 vol. 2015)",
+                                    "links": [
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Guido_Stempel",
+                                            "text": "Stempel III, Guido H."
+                                        }
+                                    ]
                                 }
                             ]
                         }

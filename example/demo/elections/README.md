@@ -9,19 +9,19 @@ You must have Python installed.
 
 ## Setup and Run
 
-Termainal commands:
+Terminal commands, from the project root folder:
 ```
-#setup the virtual environment
+#setup the virtual environment, from the project root folder
 python -m venv sdk
 source sdk/bin/activate
 
 #install the dependencies
-pip install -r requirements.txt
+pip install -r example/demo/elections/requirements.txt
 
 # Run the on-demand example
-python -m example.demo.get
-python -m example.demo.parse
-python -m example.demo.chart
+python -m example.demo.elections.get
+python -m example.demo.elections.parse
+python -m example.demo.elections.chart
 ```
 To close the chart click the close button on the Window, or on the keyboard press Ctrl-C to stop the command in the terminal.
 

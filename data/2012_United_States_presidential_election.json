@@ -3,46 +3,38 @@
     "identifier": 20102947,
     "abstract": "The 2012 United States presidential election was the 57th quadrennial presidential election, held on Tuesday, November 6, 2012. Incumbent Democratic President Barack Obama and his running mate, incumbent Vice President Joe Biden, were elected to a second term. They defeated the Republican ticket of former Governor of Massachusetts Mitt Romney and U.S. Representative Paul Ryan of Wisconsin. As the incumbent President, Obama secured the Democratic nomination without serious opposition. The Republicans experienced a competitive primary. Romney was consistently competitive in the polls and won the support of many party leaders, but he faced challenges from a number of more conservative contenders. Romney secured his party's nomination in May, defeating former senator Rick Santorum, former Speaker of the House Newt Gingrich, and Texas congressman Ron Paul, among other candidates. The campaigns focused heavily on domestic issues, and debate centered largely around sound responses to the Great Recession. Other issues included long-term federal budget issues, the future of social insurance programs, and the Affordable Care Act, Obama's marquee legislative program. Foreign policy was also discussed, including the end of the Iraq War in 2011, military spending, the Iranian nuclear program, and appropriate counteractions to terrorism. Romney attacked Obama's domestic policies as ineffective and financially insolvent while Obama's campaign sought to characterize Romney as a plutocratic businessman who was out of touch with the average American. The campaign was marked by a sharp rise in fundraising, including from nominally independent Super PACs. Obama defeated Romney, winning a majority of both the Electoral College and the popular vote. Obama won 332 electoral votes and 51.1% of the popular vote compared to Romney's 206 electoral votes and 47.2%. The results of the electoral vote were certified by Congress on January 4, 2013. Obama was the first president since Ronald Reagan in 1984 to win a majority of the national popular vote more than once, and the first Democrat to do so since Franklin D. Roosevelt in 1944. Obama also became only the sixth Democratic president in history to win a second term, and the third sitting president in a row to win a second term. Obama did not hold onto Indiana, North Carolina, or Nebraska's 2nd congressional district, but crucially won all 18 \"blue wall\" states and defeated Romney in other swing states the Republicans had won in 2000 and 2004, most notably Colorado, Florida, Nevada, Ohio, and Virginia. Ultimately, of the nine swing states identified by The Washington Post in the 2012 election, Obama won eight, losing only North Carolina. This is the most recent presidential election in which the Democratic candidate won the states of Iowa, Ohio, and Florida, along with Maine's 2nd congressional district, the most recent presidential election in which the incumbent president won reelection, and the most recent in which neither major party's ticket included a woman. This was the most recent election in which a presidential candidate received above 70% of the vote in any state, with Hawaii for Obama and Utah for Romney, as well as the most recent election in which Donald Trump was not the Republican nominee. All four major candidates for president and vice president went on to hold significant public office after this election. Obama served his second term as president, while Biden also served his second term as vice president and initially retired from politics but was later elected president in 2020, defeating Obama's successor, then-incumbent Donald Trump. This is the most recent election in which two major party nominees would go on to become president. Romney moved to Utah in 2014 and was elected to the Senate there in 2018, succeeding Orrin Hatch. Ryan served three more terms in the House and eventually became Speaker from 2015 until his retirement from politics in 2019.",
     "version": {
-        "identifier": 1252293887,
-        "comment": "Incorrect usage",
+        "identifier": 1253460932,
+        "comment": "/* Nominations */",
         "tags": [
-            "mw-undo",
-            "mobile edit",
-            "mobile web edit",
-            "advanced mobile edit",
             "wikieditor"
         ],
         "scores": {
             "revertrisk": {
                 "prediction": true,
                 "probability": {
-                    "false": 0.4272921085357666,
-                    "true": 0.5727078914642334
+                    "false": 0.1193462610244751,
+                    "true": 0.8806537389755249
                 }
             }
         },
         "editor": {
-            "identifier": 47023628,
-            "name": "Augmented Seventh",
-            "edit_count": 10022,
+            "name": "2607:FEA8:22DE:1F20:451E:69CD:2BCC:B2D8",
             "groups": [
-                "extendedconfirmed",
-                "*",
-                "user",
-                "autoconfirmed"
+                "*"
             ],
-            "date_started": "2023-12-08T17:40:22Z"
+            "is_anonymous": true,
+            "date_started": "0001-01-01T00:00:00Z"
         },
-        "number_of_characters": 181017,
+        "number_of_characters": 181018,
         "size": {
-            "value": 181784,
+            "value": 181785,
             "unit_text": "B"
         },
         "maintenance_tags": {}
     },
     "url": "https://en.wikipedia.org/wiki/2012_United_States_presidential_election",
     "date_created": "2008-11-07T01:18:35Z",
-    "date_modified": "2024-10-20T18:17:25Z",
+    "date_modified": "2024-10-26T03:04:29Z",
     "main_entity": {
         "identifier": "Q4226",
         "url": "https://www.wikidata.org/entity/Q4226"

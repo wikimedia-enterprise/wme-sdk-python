@@ -3,36 +3,32 @@
     "identifier": 39529,
     "abstract": "The 1992 United States presidential election was the 52nd quadrennial presidential election, held on Tuesday, November 3, 1992. Democratic governor Bill Clinton of Arkansas defeated incumbent Republican president George H. W. Bush and independent businessman Ross Perot of Texas. The election marked the end of a period of Republican dominance in American presidential politics that began in 1968, and also marked the end of 12 years of Republican rule of the White House, as well as the end of the Greatest Generation's 32-year American rule and the beginning of the baby boomers' 28-year dominance until 2020. It was the last time the incumbent president failed to win a second term until Donald Trump in 2020, as well as the first election since 1932 in which an elected incumbent Republican president was defeated. Bush had alienated many conservatives in his party by breaking his 1988 campaign pledge not to raise taxes, but he fended off a primary challenge from paleoconservative commentator Pat Buchanan without losing a single contest. Bush's popularity following his success in the Gulf War dissuaded high-profile Democratic candidates such as Mario Cuomo from entering the 1992 Democratic primaries. Clinton, a leader of the centrist Democratic Leadership Council, established himself as the front-runner for the Democratic nomination by sweeping the Super Tuesday primaries. He defeated former governor of California Jerry Brown, former Massachusetts senator Paul Tsongas, and other candidates to win the nomination, and chose Tennessee senator Al Gore as his running mate. Billionaire Ross Perot launched an independent campaign, emphasizing his opposition to the North American Free Trade Agreement and his plan to reduce the national debt. The economy had recovered from a recession in the spring of 1991, followed by 19 consecutive months of growth, but perceptions of the economy's slow growth harmed Bush, for he had inherited a substantial economic boom from his predecessor Ronald Reagan. Bush's greatest strength, foreign policy, was regarded as much less important following the dissolution of the Soviet Union and the end of the Cold War, as well as the relatively peaceful climate in the Middle East after the Gulf War. Perot led in several polls taken in June 1992, but severely damaged his candidacy by temporarily dropping out of the race in July. The Bush campaign criticized Clinton's character and emphasized Bush's foreign policy successes, while Clinton focused on the economy. Clinton won a plurality in the popular vote and a majority of the electoral vote, breaking a streak of three consecutive Republican victories. He won states in every region of the country; he swept the Northeast and the West Coast, marking the start of Democratic dominance in both regions in both presidential and statewide elections. Clinton also performed well in the eastern Midwest, the Mountain West, Appalachia, and parts of the South. This election was the first time a Democrat had won the presidency without Texas since its statehood and North Carolina since 1844. This was also the last time to date that the state of Montana voted Democratic in a presidential election, and the last time until 2020 that Georgia did so. This was also the last time Colorado voted Democratic until 2008. Clinton flipped a total of 22 states that had voted Republican in the election of 1988. Clinton would win with the smallest vote share of the national vote since Woodrow Wilson in 1912, when the Republican Party experienced a drastic split. Perot won 18.9% of the popular vote, the highest share of the vote won by a candidate outside of the two major parties since 1912. Although he failed to win any electoral votes, he finished second in two states and found significant support in every state, resulting in no state giving an absolute majority to any candidate except Clinton's home state of Arkansas. As such, this is the final election to date in which the Democratic nominee won less than 50% of the vote in California, Connecticut, Delaware, Hawaii, Illinois, Maryland, Massachusetts, New Jersey, New York, Rhode Island, and Vermont; and in which the Republican nominee won less than 50% in Alabama, Alaska, Idaho, Kansas, and Nebraska. It is also the third and final election since the Civil War in which a Republican or Democratic nominee failed to break 50% in a single state, the first two being 1912 for William Howard Taft and 1984 for Walter Mondale. As of 2024, this is the last time that either a Democratic or Republican candidate received less than 40% of the popular vote.",
     "version": {
-        "identifier": 1252395994,
-        "comment": "/* Political commentary and campaign statements */",
+        "identifier": 1253695710,
+        "comment": "/* Character issues */",
         "tags": [
-            "wikieditor"
+            "mobile edit",
+            "mobile web edit"
         ],
         "scores": {
             "revertrisk": {
+                "prediction": true,
                 "probability": {
-                    "false": 0.6095969378948212,
-                    "true": 0.39040306210517883
+                    "false": 0.06779271364212036,
+                    "true": 0.9322072863578796
                 }
             }
         },
         "editor": {
-            "identifier": 1994682,
-            "name": "KConWiki",
-            "edit_count": 187486,
+            "name": "2600:6C46:6D00:D06:11E7:BE11:E150:ABAB",
             "groups": [
-                "autoreviewer",
-                "extendedconfirmed",
-                "*",
-                "user",
-                "autoconfirmed"
+                "*"
             ],
-            "is_patroller": true,
-            "date_started": "2006-08-13T13:24:04Z"
+            "is_anonymous": true,
+            "date_started": "0001-01-01T00:00:00Z"
         },
-        "number_of_characters": 128780,
+        "number_of_characters": 128879,
         "size": {
-            "value": 129486,
+            "value": 129589,
             "unit_text": "B"
         },
         "maintenance_tags": {
@@ -41,7 +37,7 @@
     },
     "url": "https://en.wikipedia.org/wiki/1992_United_States_presidential_election",
     "date_created": "2002-02-24T15:09:02Z",
-    "date_modified": "2024-10-21T04:38:24Z",
+    "date_modified": "2024-10-27T11:38:56Z",
     "main_entity": {
         "identifier": "Q699776",
         "url": "https://www.wikidata.org/entity/Q699776"
@@ -1887,7 +1883,7 @@
                     "has_parts": [
                         {
                             "type": "paragraph",
-                            "value": "Many character issues were raised during the campaign, including allegations that Clinton had dodged the draft during the Vietnam War, and had used marijuana, which Clinton claimed he had pretended to smoke, but \"didn't inhale.\" Bush also accused Clinton of meeting with communists on a trip to Russia he took as a student. Clinton was often accused of being a philanderer by political opponents.",
+                            "value": "Many character issues were raised during the campaign, including allegations that Clinton had dodged the draft during the Vietnam War, and had used marijuana, which Clinton claimed he had ‘tried’ to smoke, but \"didn't inhale.\" Bush also accused Clinton of meeting with communists on a trip to Russia he took as a student. Clinton was often accused of being a philanderer by political opponents.",
                             "links": [
                                 {
                                     "url": "https://en.wikipedia.org/wiki/Draft_dodging",
@@ -1905,7 +1901,7 @@
                         },
                         {
                             "type": "paragraph",
-                            "value": "Allegations were also made that Bill Clinton had engaged in a long-term extramarital affair with Gennifer Flowers. Clinton denied ever having an affair with Flowers.",
+                            "value": "Allegations were also made that Bill Clinton had engaged in a long-term extramarital affair with Gennifer Flowers. Clinton denied ever having an affair with Flowers. But later was forced under threat of perjury, that he had a brief sexual encounter with her in 1977.",
                             "links": [
                                 {
                                     "url": "https://en.wikipedia.org/wiki/Gennifer_Flowers",

@@ -1,34 +1,43 @@
 {
     "name": "2000 United States presidential election",
     "identifier": 32009,
-    "abstract": "The 2000 United States presidential election was the 54th quadrennial presidential election, held on Tuesday, November 7, 2000. The Republican nominee, Governor George W. Bush of Texas, the eldest son of George H. W. Bush, narrowly defeated incumbent Democratic Vice President Al Gore. It was the fourth of five U.S. presidential elections, and the first since 1888, in which the winning candidate lost the popular vote, and is considered one of the closest U.S. presidential elections, with long-standing controversy about the result. Gore conceded the election on December 13. Incumbent Democratic President Bill Clinton was ineligible to seek a third term because of term limits established by the 22nd Amendment. Incumbent Vice President Gore easily secured the Democratic nomination, defeating former New Jersey Senator Bill Bradley in the primaries. He selected Connecticut Senator Joe Lieberman as his running mate. Bush was seen as the early favorite for the Republican nomination, and after a contentious primary battle with Arizona Senator John McCain and others, he secured the nomination by Super Tuesday. He selected former Secretary of Defense Dick Cheney as his running mate. Both major-party candidates focused primarily on domestic issues, such as the budget, tax relief, and reforms for federal social insurance programs, although foreign policy was not ignored. Due to President Bill Clinton's sex scandal with Monica Lewinsky and subsequent impeachment, Gore avoided campaigning with Clinton. Republicans denounced Clinton's indiscretions, while Gore criticized Bush's lack of experience. On election night, it was unclear who had won, with the electoral votes of the state of Florida still undecided. The returns showed that Bush won Florida by such a close margin that state law required a recount. A month-long series of legal battles led to the highly controversial 5–4 Supreme Court decision Bush v. Gore, which ended the recount. Bush won Florida by 537 votes, a margin of 0.009%. The Florida recount and subsequent litigation resulted in major post-election controversy, and with speculative analysis suggesting that limited county-based recounts would likely have confirmed a Bush victory, whereas a statewide recount would likely have given the state to Gore. Ultimately, Bush won 271 electoral votes, one vote more than the 270-to-win majority, despite Gore receiving 543,895 more votes. Bush flipped 11 states that had voted Democratic in 1996: Arkansas, Arizona, Florida, Kentucky, Louisiana, Missouri, Nevada, New Hampshire, Ohio, Tennessee, and West Virginia. As of 2020, this is the most recent presidential election in which the Republican candidate won New Hampshire and the only presidential election since New Mexico's statehood in 1912 that Nevada and New Mexico voted for different candidates. Bush went on to preside over the first Republican trifecta in almost 50 years. This was the last time until 2024 in which an incumbent vice president ran for president. This is one of only four U.S. presidential elections in which the winner did not carry any of the three Rust Belt states of Michigan, Pennsylvania, and Wisconsin; the others were 1884, 1916, and 2004.",
+    "abstract": "The 2000 United States presidential election was the 54th quadrennial presidential election, held on Tuesday, November 7, 2000. The Republican nominee, Governor George W. Bush of Texas, the eldest son of George H. W. Bush, narrowly defeated incumbent Democratic Vice President Al Gore. It was the fourth of five U.S. presidential elections, and the first since 1888, in which the winning candidate lost the popular vote, and is considered one of the closest U.S. presidential elections, with long-standing controversy about the result. Gore conceded the election on December 13. Incumbent Democratic President Bill Clinton was ineligible to seek a third term because of term limits established by the 22nd Amendment. Incumbent Vice President Gore easily secured the Democratic nomination, defeating former New Jersey Senator Bill Bradley in the primaries. He selected Connecticut Senator Joe Lieberman as his running mate. Bush was seen as the early favorite for the Republican nomination, and after a contentious primary battle with Arizona Senator John McCain and others, he secured the nomination by Super Tuesday. He selected former Secretary of Defense Dick Cheney as his running mate. Both major-party candidates focused primarily on domestic issues, such as the budget, my teeth brudda, and reforms for federal social insurance programs, although foreign policy was not ignored. Due to President Bill Clinton's sex scandal with Monica Lewinsky and subsequent impeachment, Gore avoided campaigning with Clinton. Republicans denounced Clinton's indiscretions, while Gore criticized Bush's lack of experience. On election night, it was unclear who had won, with the electoral votes of the state of Florida still undecided. The returns showed that Bush won Florida by such a close margin that state law required a recount. A month-long series of legal battles led to the highly controversial 5–4 Supreme Court decision Bush v. Gore, which ended the recount. Ultimately, Bush won Florida by 537 votes, a margin of 0.009%. The Florida recount and subsequent litigation resulted in major post-election controversy, with some analysis suggesting that limited county-based recounts would have confirmed a Bush victory, whereas a statewide recount would have given the state to Gore. Post-election analysis has found that Palm Beach County's butterfly ballot misdirected over 2,000 votes from Gore to third-party candidate Pat Buchanan, tipping Florida—and the election—to Bush. Ultimately, Bush won 271 electoral votes, one vote more than the 270 required to win, while Gore won the popular vote by 543,895 votes. Bush flipped 11 states that had voted Democratic in 1996: Arkansas, Arizona, Florida, Kentucky, Louisiana, Missouri, Nevada, New Hampshire, Ohio, Tennessee, and West Virginia. This was the last time until 2024 in which an incumbent vice president ran for president.",
     "version": {
-        "identifier": 1252340782,
-        "comment": "redundant",
+        "identifier": 1254114321,
+        "comment": "Reverted edits by [[Special:Contributions/Sky_slay|Sky_slay]] ([[User talk:Sky_slay|talk]]) ([[WP:HG|HG]]) (3.4.12)",
         "tags": [
-            "mw-manual-revert",
-            "wikieditor"
+            "huggle",
+            "mw-rollback"
         ],
+        "is_minor_edit": true,
         "scores": {
             "revertrisk": {
                 "prediction": true,
                 "probability": {
-                    "false": 0.06265401840209961,
-                    "true": 0.9373459815979004
+                    "false": 0.4134414792060852,
+                    "true": 0.5865585207939148
                 }
             }
         },
         "editor": {
-            "name": "2607:FEA8:22DE:1F20:24B6:BDBA:3C0E:3C67",
+            "identifier": 30292728,
+            "name": "Frost",
+            "edit_count": 42332,
             "groups": [
-                "*"
+                "extendedconfirmed",
+                "extendedmover",
+                "reviewer",
+                "rollbacker",
+                "*",
+                "user",
+                "autoconfirmed"
             ],
-            "is_anonymous": true,
-            "date_started": "0001-01-01T00:00:00Z"
+            "is_patroller": true,
+            "date_started": "2017-02-07T02:18:16Z"
         },
-        "number_of_characters": 153902,
+        "number_of_characters": 153958,
         "size": {
-            "value": 155150,
+            "value": 155210,
             "unit_text": "B"
         },
         "maintenance_tags": {
@@ -37,7 +46,7 @@
     },
     "url": "https://en.wikipedia.org/wiki/2000_United_States_presidential_election",
     "date_created": "2001-11-04T02:16:38Z",
-    "date_modified": "2024-10-20T22:30:08Z",
+    "date_modified": "2024-10-29T13:46:33Z",
     "main_entity": {
         "identifier": "Q327959",
         "url": "https://www.wikidata.org/entity/Q327959"
@@ -544,7 +553,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "value": "Both major-party candidates focused primarily on domestic issues, such as the budget, tax relief, and reforms for federal social insurance programs, although foreign policy was not ignored. Due to President Bill Clinton 's sex scandal with Monica Lewinsky and subsequent impeachment, Gore avoided campaigning with Clinton. Republicans denounced Clinton's indiscretions, while Gore criticized Bush's lack of experience.",
+                    "value": "Both major-party candidates focused primarily on domestic issues, such as the budget, my teeth brudda, and reforms for federal social insurance programs, although foreign policy was not ignored. Due to President Bill Clinton 's sex scandal with Monica Lewinsky and subsequent impeachment, Gore avoided campaigning with Clinton. Republicans denounced Clinton's indiscretions, while Gore criticized Bush's lack of experience.",
                     "links": [
                         {
                             "url": "https://en.wikipedia.org/wiki/Social_insurance",
@@ -570,7 +579,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "value": "On election night, it was unclear who had won, with the electoral votes of the state of Florida still undecided. The returns showed that Bush won Florida by such a close margin that state law required a recount. A month-long series of legal battles led to the highly controversial 5–4 Supreme Court decision Bush v. Gore, which ended the recount. Bush won Florida by 537 votes, a margin of 0.009%. The Florida recount and subsequent litigation resulted in major post-election controversy, and with speculative analysis suggesting that limited county-based recounts would likely have confirmed a Bush victory, whereas a statewide recount would likely have given the state to Gore. Ultimately, Bush won 271 electoral votes, one vote more than the 270-to-win majority, despite Gore receiving 543,895 more votes (a margin of 0.52% of all votes cast). Bush flipped 11 states that had voted Democratic in 1996: Arkansas, Arizona, Florida, Kentucky, Louisiana, Missouri, Nevada, New Hampshire, Ohio, Tennessee, and West Virginia. As of 2020, this is the most recent presidential election in which the Republican candidate won New Hampshire and the only presidential election since New Mexico's statehood in 1912 that Nevada and New Mexico voted for different candidates. Bush went on to preside over the first Republican trifecta in almost 50 years. This was the last time until 2024 in which an incumbent vice president ran for president. This is one of only four U.S. presidential elections in which the winner did not carry any of the three Rust Belt states of Michigan, Pennsylvania, and Wisconsin; the others were 1884, 1916, and 2004.",
+                    "value": "On election night, it was unclear who had won, with the electoral votes of the state of Florida still undecided. The returns showed that Bush won Florida by such a close margin that state law required a recount. A month-long series of legal battles led to the highly controversial 5–4 Supreme Court decision Bush v. Gore, which ended the recount. Ultimately, Bush won Florida by 537 votes, a margin of 0.009%. The Florida recount and subsequent litigation resulted in major post-election controversy, with some analysis suggesting that limited county-based recounts would have confirmed a Bush victory, whereas a statewide recount would have given the state to Gore. Post-election analysis has found that Palm Beach County's butterfly ballot misdirected over 2,000 votes from Gore to third-party candidate Pat Buchanan, tipping Florida—and the election—to Bush.",
                     "links": [
                         {
                             "url": "https://en.wikipedia.org/wiki/United_States_Electoral_College",
@@ -593,44 +602,26 @@
                             "text": "Bush v. Gore"
                         },
                         {
+                            "url": "https://en.wikipedia.org/wiki/Butterfly_ballot",
+                            "text": "butterfly ballot"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Pat_Buchanan",
+                            "text": "Pat Buchanan"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Ultimately, Bush won 271 electoral votes, one vote more than the 270 required to win, while Gore won the popular vote by 543,895 votes (a margin of 0.52% of all votes cast). Bush flipped 11 states that had voted Democratic in 1996: Arkansas, Arizona, Florida, Kentucky, Louisiana, Missouri, Nevada, New Hampshire, Ohio, Tennessee, and West Virginia. This was the last time until 2024 in which an incumbent vice president ran for president.",
+                    "links": [
+                        {
                             "url": "https://en.wikipedia.org/wiki/1996_United_States_presidential_election",
                             "text": "1996"
                         },
                         {
-                            "url": "https://en.wikipedia.org/wiki/2020_United_States_presidential_election",
-                            "text": "2020"
-                        },
-                        {
-                            "url": "https://en.wikipedia.org/wiki/New_Hampshire",
-                            "text": "New Hampshire"
-                        },
-                        {
-                            "url": "https://en.wikipedia.org/wiki/New_Mexico",
-                            "text": "New Mexico's"
-                        },
-                        {
-                            "url": "https://en.wikipedia.org/wiki/Government_trifecta",
-                            "text": "trifecta"
-                        },
-                        {
                             "url": "https://en.wikipedia.org/wiki/2024_United_States_presidential_election",
                             "text": "2024"
-                        },
-                        {
-                            "url": "https://en.wikipedia.org/wiki/Rust_Belt",
-                            "text": "Rust Belt"
-                        },
-                        {
-                            "url": "https://en.wikipedia.org/wiki/1884_United_States_presidential_election",
-                            "text": "1884"
-                        },
-                        {
-                            "url": "https://en.wikipedia.org/wiki/1916_United_States_presidential_election",
-                            "text": "1916"
-                        },
-                        {
-                            "url": "https://en.wikipedia.org/wiki/2004_United_States_presidential_election",
-                            "text": "2004"
                         }
                     ]
                 }

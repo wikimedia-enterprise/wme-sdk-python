@@ -3,44 +3,43 @@
     "identifier": 21377251,
     "abstract": "The 2016 United States presidential election was the 58th quadrennial presidential election, held on Tuesday, November 8, 2016. The Republican ticket of businessman Donald Trump and Indiana governor Mike Pence defeated the Democratic ticket of former secretary of state and First Lady of the United States Hillary Clinton and Virginia junior senator Tim Kaine, in what was considered one of the biggest political upsets in American history. It was the fifth and most recent presidential election in which the winning candidate lost the popular vote. It was also the sixth and most recent presidential election in U.S. history in which both major party candidates were registered in the same home state; the others have been in 1860, 1904, 1920, 1940, and 1944. Incumbent Democratic president Barack Obama was ineligible to pursue a third term due to the term limits established by the Twenty-second Amendment to the U.S. Constitution. Clinton secured the nomination over U.S. senator Bernie Sanders in the Democratic primary and became the first female presidential nominee of a major American political party. Trump emerged as his party's front-runner amidst a wide field of candidates in the Republican primary, defeating, among other candidates, U.S. senators Ted Cruz and Marco Rubio and governors John Kasich and Jeb Bush. Trump's right-wing populist, nationalist campaign, which promised to \"Make America Great Again\" and opposed political correctness, illegal immigration, and many United States free-trade agreements garnered extensive free media coverage due to Trump's inflammatory comments. Clinton emphasized her extensive political experience, denounced Trump and many of his supporters as a \"basket of deplorables\", bigots and extremists, and advocated the expansion of president Barack Obama's policies; racial, LGBT, and women's rights; and inclusive capitalism. The tone of the general election campaign was widely characterized as divisive, negative, and troubling. Trump faced controversy over his views on race and immigration, incidents of violence against protestors at his rallies, and numerous sexual misconduct allegations including the Access Hollywood tape. Clinton's popularity and public image were tarnished by concerns about her ethics and trustworthiness, and a controversy and subsequent FBI investigation regarding her improper use of a private email server while serving as secretary of state, which received more media coverage than any other topic during the campaign. Clinton led in almost every nationwide and swing-state poll, with some predictive models giving Clinton over a 90 percent chance of winning. On Election Day, Trump over-performed his polls, winning several key swing states, while losing the popular vote by 2.87 million votes. Trump received the majority in the Electoral College and won upset victories in the Democratic-leaning Rust Belt states of Michigan, Pennsylvania, and Wisconsin. The pivotal victory in this region, which Trump won by less than 80,000 votes in the three states with the combined 46 electoral votes, was considered the catalyst that won him the Electoral College vote. Trump's surprise victories were perceived to have been assisted by Clinton's lack of campaigning in the region, and the influence of Sanders–Trump voters who refused to back her after Bernie Sanders dropped out. Ultimately, Trump received 304 electoral votes and Clinton 227, as two faithless electors defected from Trump and five from Clinton. Trump was the first president with neither prior public service nor military experience. Trump flipped six states that had voted Democratic in 2012: Florida, Iowa, Michigan, Ohio, Pennsylvania, and Wisconsin, as well as Maine's 2nd congressional district. With ballot access to the entire national electorate, Libertarian nominee Gary Johnson received nearly 4.5 million votes (3.27%), the highest nationwide vote share for a third-party candidate since Ross Perot in 1996, while Green Party nominee Jill Stein received almost 1.45 million votes (1.06%). Independent candidate Evan McMullin received 21.4% of the vote in his home state of Utah, the highest share of the vote for a non-major party candidate in any state since 1992. On January 6, 2017, the United States Intelligence Community concluded that the Russian government had interfered in the 2016 elections in order to \"undermine public faith in the U.S. democratic process, denigrate Secretary Clinton, and harm her electability and potential presidency.\" A Special Counsel investigation of alleged collusion between Russia and the Trump campaign began in May 2017 and ended in March 2019. The investigation concluded that Russian interference to favor Trump's candidacy occurred \"in sweeping and systematic fashion\", but it \"did not establish that members of the Trump campaign conspired or coordinated with the Russian government.\"",
     "version": {
-        "identifier": 1251996337,
-        "comment": "[[User:PrimeBOT/24|Task 24]]: elink template removal following [[Wikipedia:Templates_for_discussion/Log/2024_September_20|a TFD]]",
+        "identifier": 1254122479,
+        "comment": "/* Election Forecasts */",
         "tags": [
-            "AWB"
+            "wikieditor"
         ],
         "is_minor_edit": true,
         "scores": {
             "revertrisk": {
                 "prediction": true,
                 "probability": {
-                    "false": 0.4597358703613281,
-                    "true": 0.5402641296386719
+                    "false": 0.2831839919090271,
+                    "true": 0.7168160080909729
                 }
             }
         },
         "editor": {
-            "identifier": 29463730,
-            "name": "PrimeBOT",
-            "edit_count": 2031088,
+            "identifier": 43667698,
+            "name": "GigachadGigachad",
+            "edit_count": 11577,
             "groups": [
-                "bot",
+                "extendedconfirmed",
                 "*",
                 "user",
                 "autoconfirmed"
             ],
-            "is_bot": true,
-            "date_started": "2016-10-21T03:40:39Z"
+            "date_started": "2022-04-04T14:23:27Z"
         },
-        "number_of_characters": 458742,
+        "number_of_characters": 460835,
         "size": {
-            "value": 459896,
+            "value": 461989,
             "unit_text": "B"
         },
         "maintenance_tags": {}
     },
     "url": "https://en.wikipedia.org/wiki/2016_United_States_presidential_election",
     "date_created": "2009-02-03T09:59:37Z",
-    "date_modified": "2024-10-19T06:38:55Z",
+    "date_modified": "2024-10-29T14:36:41Z",
     "main_entity": {
         "identifier": "Q699872",
         "url": "https://www.wikidata.org/entity/Q699872"
@@ -50,6 +49,13 @@
         "url": "https://en.wikipedia.org"
     },
     "additional_entities": [
+        {
+            "identifier": "Q47566",
+            "url": "https://www.wikidata.org/entity/Q47566",
+            "aspects": [
+                "O"
+            ]
+        },
         {
             "identifier": "Q699872",
             "url": "https://www.wikidata.org/entity/Q699872",
@@ -66,13 +72,6 @@
             "url": "https://www.wikidata.org/entity/Q8879873",
             "aspects": [
                 "S"
-            ]
-        },
-        {
-            "identifier": "Q47566",
-            "url": "https://www.wikidata.org/entity/Q47566",
-            "aspects": [
-                "O"
             ]
         }
     ],
@@ -2649,6 +2648,10 @@
                                 {
                                     "url": "https://en.wikipedia.org/wiki/Roger_Stone",
                                     "text": "Roger Stone"
+                                },
+                                {
+                                    "url": "https://en.wikipedia.org/wiki/Sic",
+                                    "text": "sic"
                                 }
                             ]
                         },
@@ -4191,7 +4194,7 @@
             ]
         },
         {
-            "name": "Predictions",
+            "name": "Election Forecasts",
             "type": "section",
             "has_parts": [
                 {
@@ -4411,6 +4414,57 @@
                         {
                             "url": "https://en.wikipedia.org/wiki/FiscalNote",
                             "text": "WhipBoard"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Elections analysts and political pundits issue probabilistic forecasts of the composition of the Electoral College. These forecasts use a variety of factors to estimate the likelihood of each candidate winning the Electoral College electors for that state. Most election predictors use the following ratings:"
+                },
+                {
+                    "type": "list",
+                    "has_parts": [
+                        {
+                            "type": "list_item",
+                            "value": "\" tossup \": no advantage"
+                        },
+                        {
+                            "type": "list_item",
+                            "value": "\" tilt \" (used by some predictors): advantage that is not quite as strong as \"lean\""
+                        },
+                        {
+                            "type": "list_item",
+                            "value": "\" lean \" or \" leans \": slight advantage"
+                        },
+                        {
+                            "type": "list_item",
+                            "value": "\" likely \": significant, but surmountable, advantage"
+                        },
+                        {
+                            "type": "list_item",
+                            "value": "\" safe \" or \" solid \": near-certain chance of victory"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Below is a list of states considered by one or more forecasts to be competitive; states that are deemed to be \"safe\" or \"solid\" by forecasters Sabato's Crystal Ball, New York Times, Princeton Election Consortium, PredictWise, and FiveThirtyEight.",
+                    "links": [
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Sabato's_Crystal_Ball",
+                            "text": "Sabato's Crystal Ball"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/New_York_Times",
+                            "text": "New York Times"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/Sam_Wang_(neuroscientist)",
+                            "text": "Princeton Election Consortium"
+                        },
+                        {
+                            "url": "https://en.wikipedia.org/wiki/FiveThirtyEight",
+                            "text": "FiveThirtyEight"
                         }
                     ]
                 }

@@ -27,6 +27,7 @@ To run this project, you need to have Python installed on your system along with
 2. Create a Python virtual environment and activate it:
 
     ```bash
+    #In the project root folder run:
     python -m venv clo
     source clo/bin/activate
     ```

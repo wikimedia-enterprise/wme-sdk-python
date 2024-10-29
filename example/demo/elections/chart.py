@@ -22,7 +22,10 @@ df['Third'] = df['Electoral Vote'].apply(lambda x: x[2] if len(x) > 2 else None)
 
 # Function to insert line breaks after every second word, except two-letter words
 def format_nominee_text(nominee):
-    words = nominee.split()
+    words = []
+    if isinstance(nominee, str):
+        words = nominee.split()
+
     formatted = []
     word_count = 0
     for word in words:

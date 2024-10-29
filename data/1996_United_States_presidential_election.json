@@ -1,40 +1,36 @@
 {
     "name": "1996 United States presidential election",
     "identifier": 32077,
-    "abstract": "The 1996 United States presidential election was the 53rd quadrennial presidential election, held on Tuesday, November 5, 1996. Incumbent Democratic President Bill Clinton and his running mate incumbent Democratic Vice President Al Gore were re-elected to a second and final term defeating the Republican ticket of former Senate Majority Leader Bob Dole and former Secretary of Housing and Urban Development Jack Kemp and the Reform ticket of businessman Ross Perot and economist Pat Choate. Clinton and Vice President Al Gore were re-nominated without incident by the Democratic Party. Numerous candidates entered the 1996 Republican primaries, with Dole considered the early front-runner. Dole clinched the nomination after defeating challenges by publisher Steve Forbes and paleoconservative leader Pat Buchanan. Dole's running mate was Jack Kemp, a former congressman and football player who had served as the housing secretary under President George H. W. Bush. Ross Perot, who had won 18.9% of the popular vote as an independent candidate in the 1992 election, ran as the candidate of the Reform Party. Perot received less media attention in 1996 and was excluded from the presidential debates. Clinton's chances of winning were initially considered slim in the middle of his term, as his party had lost both the House of Representatives and the Senate in 1994 for the first time in decades. He was able to regain ground as the economy began to recover from the early 1990s recession with a relatively stable world stage. Clinton tied Dole to Newt Gingrich, the unpopular Republican speaker of the House, and warned that Republicans would increase the deficit and slash spending on popular programs like Social Security and Medicare. Dole promised an across-the-board 15% reduction in federal income taxes and labeled Clinton as a member of the \"spoiled\" Baby Boomer generation. Dole's age was a persistent issue in the election, and gaffes by Dole exacerbated the issue for his campaign. On election day, Clinton defeated Dole by a wide margin, winning 379 electors to Dole's 159 and taking 49.2% of the national popular vote to Dole's 40.7%. As in 1992, Perot's strong candidacy held both major party candidates below 50% nationwide. Notably, Clinton's strength with many southern and rural whites makes him the last Democrat as of 2020 to carry the states of Kentucky, Louisiana, West Virginia, Arkansas, Missouri, and Tennessee in a presidential election. He was also the last Democrat to win Arizona until 2020. This was the first presidential election since 1944 in which an incumbent Democratic president won a second full term in office. It is the most recent election in which the Democratic presidential nominee never served as a senator. This is also the only election between 1980 and 2004 in which the Bushes did not appear on the Republican ticket.",
+    "abstract": "The 1996 United States presidential election was the 53rd quadrennial presidential election, held on Tuesday, November 5, 1996. Incumbent Democratic President Bill Clinton and his running mate incumbent Democratic Vice President Al Gore were re-elected to a second and final term defeating the Republican ticket of former Senate Majority Leader Bob Dole and former Secretary of Housing and Urban Development Jack Kemp and the Reform ticket of businessman Ross Perot and economist Pat Choate. Clinton and Vice President Al Gore were re-nominated without incident by the Democratic Party. Numerous candidates entered the 1996 Republican primaries, with Dole considered the early frontrunner. Dole clinched the nomination after defeating challenges by publisher Steve Forbes and paleoconservative leader Pat Buchanan. Dole's running mate was Jack Kemp, a former congressman and football player who had served as the housing secretary under President George H. W. Bush. Ross Perot, who had won 18.9% of the popular vote as an independent candidate in the 1992 election, ran as the candidate of the Reform Party. Perot received less media attention in 1996 and was excluded from the presidential debates. Clinton's chances of winning were initially considered slim in the middle of his term, as his party had lost both the House of Representatives and the Senate in 1994 for the first time in decades. He was able to regain ground as the economy began to recover from the early 1990s recession with a relatively stable world stage. Clinton tied Dole to Newt Gingrich, the unpopular Republican speaker of the House, and warned that Republicans would increase the deficit and slash spending on popular programs like Social Security and Medicare. Dole promised an across-the-board 15% reduction in federal income taxes and labeled Clinton as a member of the \"spoiled\" Baby Boomer generation. Dole's age was a persistent issue in the election, and gaffes by Dole exacerbated the issue for his campaign. On election day, Clinton defeated Dole by a wide margin, winning 379 electors to Dole's 159 and taking 49.2% of the national popular vote to Dole's 40.7%. As in 1992, Perot's strong candidacy held both major party candidates below 50% nationwide. Notably, Clinton's strength with many southern and rural whites makes him the last Democrat as of 2020 to carry the states of Kentucky, Louisiana, West Virginia, Arkansas, Missouri, and Tennessee in a presidential election. He was also the last Democrat to win Arizona until 2020. This was the first presidential election since 1944 in which an incumbent Democratic president won a second full term in office. It is the most recent election in which the Democratic presidential nominee never served as a senator. This is also the only election between 1980 and 2004 in which a Bush did not appear on the Republican ticket.",
     "version": {
-        "identifier": 1252310101,
-        "comment": "Reverted 1 edit by [[Special:Contributions/200.68.184.164|200.68.184.164]] ([[User talk:200.68.184.164|talk]]) to last revision by Fiziker",
+        "identifier": 1253793571,
+        "comment": "wording.",
         "tags": [
-            "mw-undo",
-            "twinkle"
+            "wikieditor"
         ],
-        "is_minor_edit": true,
         "scores": {
             "revertrisk": {
-                "prediction": true,
                 "probability": {
-                    "false": 0.4536481499671936,
-                    "true": 0.5463518500328064
+                    "false": 0.5383470952510834,
+                    "true": 0.4616529047489166
                 }
             }
         },
         "editor": {
-            "identifier": 38706409,
-            "name": "Zinderboff",
-            "edit_count": 2867,
+            "identifier": 44374359,
+            "name": "JohnAdams1800",
+            "edit_count": 10119,
             "groups": [
                 "extendedconfirmed",
-                "ipblock-exempt",
                 "*",
                 "user",
                 "autoconfirmed"
             ],
-            "date_started": "2020-03-05T21:32:37Z"
+            "date_started": "2022-08-21T00:31:03Z"
         },
-        "number_of_characters": 109647,
+        "number_of_characters": 109765,
         "size": {
-            "value": 110509,
+            "value": 110627,
             "unit_text": "B"
         },
         "maintenance_tags": {
@@ -43,7 +39,7 @@
     },
     "url": "https://en.wikipedia.org/wiki/1996_United_States_presidential_election",
     "date_created": "2001-10-12T20:38:58Z",
-    "date_modified": "2024-10-20T19:51:38Z",
+    "date_modified": "2024-10-27T22:51:51Z",
     "main_entity": {
         "identifier": "Q659166",
         "url": "https://www.wikidata.org/entity/Q659166"
@@ -491,7 +487,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "value": "Clinton and Vice President Al Gore were re-nominated without incident by the Democratic Party. Numerous candidates entered the 1996 Republican primaries, with Dole considered the early front-runner. Dole clinched the nomination after defeating challenges by publisher Steve Forbes and paleoconservative leader Pat Buchanan. Dole's running mate was Jack Kemp, a former congressman and football player who had served as the housing secretary under President George H. W. Bush. Ross Perot, who had won 18.9% of the popular vote as an independent candidate in the 1992 election, ran as the candidate of the Reform Party. Perot received less media attention in 1996 and was excluded from the presidential debates.",
+                    "value": "Clinton and Vice President Al Gore were re-nominated without incident by the Democratic Party. Numerous candidates entered the 1996 Republican primaries, with Dole considered the early frontrunner. Dole clinched the nomination after defeating challenges by publisher Steve Forbes and paleoconservative leader Pat Buchanan. Dole's running mate was Jack Kemp, a former congressman and football player who had served as the housing secretary under President George H. W. Bush. Ross Perot, who had won 18.9% of the popular vote as an independent candidate in the 1992 election, ran as the candidate of the Reform Party. Perot received less media attention in 1996 and was excluded from the presidential debates.",
                     "links": [
                         {
                             "url": "https://en.wikipedia.org/wiki/Vice_President_of_the_United_States",
@@ -599,7 +595,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "value": "On election day, Clinton defeated Dole by a wide margin, winning 379 electors to Dole's 159 and taking 49.2% of the national popular vote to Dole's 40.7%. As in 1992, Perot's strong candidacy held both major party candidates below 50% nationwide. Notably, Clinton's strength with many southern and rural whites makes him the last Democrat as of 2020 to carry the states of Kentucky, Louisiana, West Virginia, Arkansas, Missouri, and Tennessee in a presidential election. He was also the last Democrat to win Arizona until 2020. This was the first presidential election since 1944 in which an incumbent Democratic president won a second full term in office. It is the most recent election in which the Democratic presidential nominee never served as a senator. This is also the only election between 1980 and 2004 in which the Bushes did not appear on the Republican ticket.",
+                    "value": "On election day, Clinton defeated Dole by a wide margin, winning 379 electors to Dole's 159 and taking 49.2% of the national popular vote to Dole's 40.7%. As in 1992, Perot's strong candidacy held both major party candidates below 50% nationwide. Notably, Clinton's strength with many southern and rural whites makes him the last Democrat as of 2020 to carry the states of Kentucky, Louisiana, West Virginia, Arkansas, Missouri, and Tennessee in a presidential election. He was also the last Democrat to win Arizona until 2020.",
                     "links": [
                         {
                             "url": "https://en.wikipedia.org/wiki/Kentucky",
@@ -632,7 +628,13 @@
                         {
                             "url": "https://en.wikipedia.org/wiki/2020_United_States_presidential_election",
                             "text": "2020"
-                        },
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "This was the first presidential election since 1944 in which an incumbent Democratic president won a second full term in office. It is the most recent election in which the Democratic presidential nominee never served as a senator. This is also the only election between 1980 and 2004 in which a Bush did not appear on the Republican ticket.",
+                    "links": [
                         {
                             "url": "https://en.wikipedia.org/wiki/1944_United_States_presidential_election",
                             "text": "1944"
@@ -647,7 +649,7 @@
                         },
                         {
                             "url": "https://en.wikipedia.org/wiki/Bush_family",
-                            "text": "the Bushes"
+                            "text": "Bush"
                         }
                     ]
                 }

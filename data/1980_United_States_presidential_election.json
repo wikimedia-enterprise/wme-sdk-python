@@ -3,36 +3,35 @@
     "identifier": 40570,
     "abstract": "The 1980 United States presidential election was the 49th quadrennial presidential election, held on November 4, 1980. The Republican nominee, former California governor Ronald Reagan, defeated incumbent Democratic President Jimmy Carter in a landslide victory. This was the first election since 1932 in which an elected incumbent president was defeated, as well as the first election since 1888 that saw the defeat of an incumbent Democratic president. Carter's unpopularity and poor relations with Democratic leaders encouraged an unsuccessful intra-party challenge from Massachusetts Senator Ted Kennedy. Meanwhile, the Republican primaries were contested between former California Governor Ronald Reagan, former Central Intelligence Agency director George H. W. Bush, Illinois Representative John B. Anderson, and several other candidates. All of Reagan's opponents had dropped out by the end of the primaries, and the Republicans nominated a ticket consisting of Reagan and Bush. Anderson entered the general election as an independent candidate with Patrick Lucey, former Wisconsin governor, as his running mate. Reagan campaigned for increased defense spending, supply-side economic policies, and a balanced budget. His campaign was aided by Democratic dissatisfaction with Carter, the Iran hostage crisis, and a worsening economy marred by stagflation. Carter attacked Reagan as a dangerous right-wing extremist, and warned that Reagan would cut Medicare and Social Security. The Carter campaign was aided early on by the rally 'round the flag effect from the hostage crisis, but as the crisis lasted to election day, it became a detriment. Reagan won the election in a landslide, with 489 Electoral College votes to Carter's 49 and 50.7% of the popular vote to Carter's 41.0%. Anderson won 6.6% of the popular vote and no electoral votes. Due to the rise of conservatism following Reagan's victory, historians have considered the election a political realignment that began with Barry Goldwater's presidential campaign in 1964. This is the most recent election in which an incumbent Democratic president was not reelected. Additionally, it is the only time that a Republican nominee defeated a Democratic incumbent in both the popular and the electoral vote. This election began an ongoing pattern in which Rust Belt states Michigan, Pennsylvania, and Wisconsin voted for the same presidential candidate, with the sole exception of 1988.",
     "version": {
-        "identifier": 1252308696,
-        "comment": "Add",
+        "identifier": 1253868640,
         "tags": [
-            "visualeditor-wikitext"
+            "visualeditor"
         ],
+        "is_minor_edit": true,
         "scores": {
             "revertrisk": {
                 "prediction": true,
                 "probability": {
-                    "false": 0.41662347316741943,
-                    "true": 0.5833765268325806
+                    "false": 0.22705143690109253,
+                    "true": 0.7729485630989075
                 }
             }
         },
         "editor": {
-            "identifier": 38706409,
-            "name": "Zinderboff",
-            "edit_count": 2863,
+            "identifier": 34434225,
+            "name": "AlsoWukai",
+            "edit_count": 30720,
             "groups": [
                 "extendedconfirmed",
-                "ipblock-exempt",
                 "*",
                 "user",
                 "autoconfirmed"
             ],
-            "date_started": "2020-03-05T21:32:37Z"
+            "date_started": "2018-08-16T22:32:19Z"
         },
-        "number_of_characters": 170556,
+        "number_of_characters": 170820,
         "size": {
-            "value": 170788,
+            "value": 171052,
             "unit_text": "B"
         },
         "maintenance_tags": {
@@ -41,7 +40,7 @@
     },
     "url": "https://en.wikipedia.org/wiki/1980_United_States_presidential_election",
     "date_created": "2002-02-25T15:51:15Z",
-    "date_modified": "2024-10-20T19:43:48Z",
+    "date_modified": "2024-10-28T09:08:41Z",
     "main_entity": {
         "identifier": "Q699716",
         "url": "https://www.wikidata.org/entity/Q699716"
@@ -1260,7 +1259,7 @@
                                 },
                                 {
                                     "type": "paragraph",
-                                    "value": "Meanwhile, Carter was burdened by a continued weak economy and the Iran hostage crisis. Inflation, high interest rates, and unemployment continued through the course of the campaign, and the ongoing hostage crisis in Iran became, according to David Frum in How We Got Here: The '70s, a symbol of American impotence during the Carter years. John Anderson's independent candidacy, aimed at eliciting support from liberals, was also seen as hurting Carter more than Reagan, especially in reliably Democratic states such as Massachusetts and New York.",
+                                    "value": "Meanwhile, Carter was burdened by a continued weak economy and the Iran hostage crisis. Inflation, high interest rates, and unemployment continued through the course of the campaign, and the ongoing hostage crisis in Iran became, according to David Frum in How We Got Here: The '70s, a symbol of American impotence during the Carter years. John Anderson's independent candidacy, aimed at eliciting support from liberals, especially former supporters of Ted Kennedy, was also seen as hurting Carter more than Reagan, especially in reliably Democratic states such as Massachusetts and New York.",
                                     "links": [
                                         {
                                             "url": "https://en.wikipedia.org/wiki/Iran_hostage_crisis",
@@ -1269,6 +1268,10 @@
                                         {
                                             "url": "https://en.wikipedia.org/wiki/David_Frum",
                                             "text": "David Frum"
+                                        },
+                                        {
+                                            "url": "https://en.wikipedia.org/wiki/Ted_Kennedy",
+                                            "text": "Ted Kennedy"
                                         }
                                     ]
                                 }

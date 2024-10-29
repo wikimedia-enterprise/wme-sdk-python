@@ -1,4 +1,5 @@
-matplotlib==3.7.1
+matplotlib==3.9.0
 modules==1.0.0
 Requests==2.32.3
 wordcloud==1.9.3
+python-dotenv==1.0.1
