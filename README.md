@@ -49,7 +49,7 @@ export PYTHONPATH=.
 import time
 import logging
 import threading
-// find the auth_client module in the sdk, file: modules/auth/auth_client.py
+# find the auth_client module in the sdk, file: modules/auth/auth_client.py
 from modules.auth.auth_client import AuthClient
 
 logging.basicConfig(level=logging.INFO)
