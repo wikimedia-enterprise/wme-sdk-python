@@ -16,28 +16,6 @@ This project is designed to download any Wikipedia article from an API, process 
 ### Column Chart - Word Frequency
 ![alt text](image-1.png)
 
-
-## Requirements
-
-To run this project, you need to have Python installed on your system along with the required dependencies specified in the `requirements.txt` file.
-
-## Setup Instructions
-
-1. Clone the repository.
-2. Create a Python virtual environment and activate it:
-
-    ```bash
-    #In the project root folder run:
-    python -m venv clo
-    source clo/bin/activate
-    ```
-
-3. Install the required packages:
-
-    ```bash
-    pip install -r example/demo/word-cloud/requirements.txt
-    ```
-
 ## Usage
 
 ### 1. Download an article

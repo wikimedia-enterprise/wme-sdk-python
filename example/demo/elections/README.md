@@ -7,17 +7,10 @@ Final chart of running the code in this repository:
 
 You must have Python installed.
 
-## Setup and Run
+## Run Get - Parse - Chart Scripts
 
 Terminal commands, from the project root folder:
 ```
-#setup the virtual environment, from the project root folder
-python -m venv sdk
-source sdk/bin/activate
-
-#install the dependencies
-pip install -r example/demo/elections/requirements.txt
-
 # Run the on-demand example
 python -m example.demo.elections.get
 python -m example.demo.elections.parse
