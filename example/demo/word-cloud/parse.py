@@ -5,6 +5,7 @@ from collections import Counter
 import re
 import sys
 
+
 # Function to extract sections and paragraphs
 def extract_sections(json_data):
     extracted_text = []
@@ -27,7 +28,6 @@ def extract_sections(json_data):
 # Function to extract sections and paragraphs
 if __name__ == '__main__':
     # Check if the title is provided in command-line arguments
-
 
     if len(sys.argv) < 2:
         print("Usage: python get.py \"Article Title\"")
