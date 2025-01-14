@@ -1,6 +1,6 @@
 # Wikimedia Enterprise SDK: Python
 
-Official Wikimedia Enterprise SDK for Go programming language.
+Official Wikimedia Enterprise SDK for the Python programming language.
 
 See our [api documentation](https://enterprise.wikimedia.com/docs/) and [website](https://enterprise.wikimedia.com/) for more information about the APIs.
 
@@ -49,7 +49,7 @@ export PYTHONPATH=.
 import time
 import logging
 import threading
-// find the auth_client module in the sdk, file: modules/auth/auth_client.py
+# find the auth_client module in the sdk, file: modules/auth/auth_client.py
 from modules.auth.auth_client import AuthClient
 
 logging.basicConfig(level=logging.INFO)
