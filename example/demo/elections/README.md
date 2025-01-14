@@ -12,9 +12,9 @@ You must have Python installed.
 Terminal commands, from the project root folder:
 ```
 # Run the on-demand example
-python -m example.demo.elections.get
-python -m example.demo.elections.parse
-python -m example.demo.elections.chart
+python -m elections.get
+python -m elections.parse
+python -m elections.chart
 ```
 To close the chart click the close button on the Window, or on the keyboard press Ctrl-C to stop the command in the terminal.
 

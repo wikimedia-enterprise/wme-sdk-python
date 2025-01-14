@@ -17,6 +17,7 @@ This project is a web application that allows users to search for a location by 
 After the dependencies are installed, you can start the web server by running:
 
 ```bash
+cd locations
 python app.py
 ```
 
@@ -24,7 +25,7 @@ python app.py
 Open your browser and go to the following URL:
 
 ```bash
-http://127.0.0.1:5000/
+http://127.0.0.1::8000/
 ```
 
 ## How the Application Works:

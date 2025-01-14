@@ -1,10 +1,11 @@
 import logging
-import requests
 import sys
 import os
 import contextlib
 import json
 
+# Add the parent directory to sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../..")))
 from modules.auth.auth_client import AuthClient
 from modules.api.api_client import Client, Request, Filter
 

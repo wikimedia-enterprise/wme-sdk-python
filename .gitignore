@@ -9,3 +9,7 @@ loc
 geo
 clo
 example/demo/venv
+
+*.egg-info/
+dist/
+build/

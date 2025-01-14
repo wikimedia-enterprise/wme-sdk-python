@@ -1,9 +1,12 @@
 import logging
 import contextlib
+import sys
 import os
 import json
 import requests
 
+# Add the parent directory to sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../..")))
 from modules.auth.auth_client import AuthClient
 from modules.api.api_client import Client, Request, Filter
 
@@ -12,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 # Start and end year for the election
 START_YEAR = 1980   #1788
-END_YEAR = 2020
+END_YEAR = 2024
 
 # Generate the US election years dynamically (every 4 years)
 US_ELECTION_YEARS = list(range(START_YEAR, END_YEAR + 1, 4))

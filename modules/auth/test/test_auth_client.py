@@ -2,9 +2,9 @@ import os
 import json
 import pytest
 
-from unittest.mock import patch, mock_open
+from unittest.mock import patch, mock_open, MagicMock
 from datetime import datetime, timedelta
-from auth_client import AuthClient  # Adjust this import to match your project structure
+from modules.auth.auth_client import AuthClient
 
 
 @pytest.fixture
@@ -19,27 +19,42 @@ def test_init(auth_client):
     assert auth_client.base_url == "https://auth.enterprise.wikimedia.com/v1"
 
 
+@patch.dict(os.environ, {"WME_USERNAME": "test_user", "WME_PASSWORD": "test_pass"})
+def test_init(auth_client):
+    assert auth_client.username == "test_user"
+    assert auth_client.password == "test_pass"
+
+
 @patch('requests.post')
 def test_login(mock_post, auth_client):
-    mock_post.return_value.status_code = 200
-    mock_post.return_value.json.return_value = {
+    # Create a mock response object
+    mock_response = MagicMock()
+    mock_response.text = '{"access_token": "access_token_value", "refresh_token": "refresh_token_value"}'
+    mock_response.json.return_value = {
         "access_token": "access_token_value",
         "refresh_token": "refresh_token_value"
     }
+    mock_post.return_value = mock_response
+
     response = auth_client.login()
+    assert "access_token" in response
+    assert "refresh_token" in response
     assert response["access_token"] == "access_token_value"
     assert response["refresh_token"] == "refresh_token_value"
 
 
 @patch('requests.post')
 def test_refresh_token(mock_post, auth_client):
-    mock_post.return_value.status_code = 200
-    mock_post.return_value.json.return_value = {
+    mock_response = MagicMock()
+    mock_response.text = '{"access_token": "new_access_token"}'
+    mock_response.json.return_value = {
         "access_token": "new_access_token"
     }
-    response = auth_client.refresh_token("refresh_token_value")
-    assert response["access_token"] == "new_access_token"
+    mock_post.return_value = mock_response
 
+    response = auth_client.refresh_token("refresh_token_value")
+    assert "access_token" in response
+    assert response["access_token"] == "new_access_token"
 
 @patch('requests.post')
 def test_revoke_token(mock_post, auth_client):
@@ -65,7 +80,7 @@ def test_get_access_token_valid(mock_open, mock_exists, auth_client):
 
 
 @patch('os.path.exists')
-@patch('auth_client.AuthClient._refresh_and_store_tokens')
+@patch('modules.auth.auth_client.AuthClient._refresh_and_store_tokens')
 @patch('builtins.open', new_callable=mock_open, read_data=json.dumps({
     "access_token": "stored_access_token",
     "access_token_generated_at": (datetime.now() - timedelta(days=2)).isoformat(),
@@ -81,7 +96,7 @@ def test_get_access_token_refresh(mock_open, mock_refresh, mock_exists, auth_cli
 
 
 @patch('os.path.exists')
-@patch('auth_client.AuthClient._login_and_store_tokens')
+@patch('modules.auth.auth_client.AuthClient._login_and_store_tokens')
 def test_get_access_token_login(mock_login, mock_exists, auth_client):
     mock_exists.return_value = False
     mock_login.return_value = "new_access_token"
