@@ -104,7 +104,7 @@ class Client:
             raise TypeError("Incompatible types for val and json_response")
 
     def _read_loop(self, rdr: io.BytesIO, cbk: Callable[[dict], Any]):
-        scanner = io.TextIOWrapper(rdr, buffer_size=self.scanner_buffer_size)
+        scanner = io.TextIOWrapper(rdr)
         for line in scanner:
             article = json.loads(line)
             cbk(article)
@@ -276,7 +276,7 @@ class Client:
         structured_snapshots = []
         self._get_entity(req, "snapshots/structured-contents/", structured_snapshots)
         return structured_snapshots
-        
+
     def get_structured_snapshot(self, idr: str, req: Request) -> dict:
         structured_snapshot = {}
         self._get_entity(req, f"snapshots/structured-contents/{idr}", structured_snapshot)

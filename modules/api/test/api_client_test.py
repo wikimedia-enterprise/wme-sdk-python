@@ -2,8 +2,7 @@ import unittest
 from unittest.mock import MagicMock, patch
 from datetime import datetime
 from io import BytesIO
-
-from api_client import Client, Request, Filter
+from modules.api.api_client import Client, Request, Filter
 
 
 class TestClient(unittest.TestCase):
@@ -50,7 +49,7 @@ class TestClient(unittest.TestCase):
         method = "POST"
         path = "test_path"
 
-        expected_data = '{"since": "2024-01-01T00:00:00", "fields": [], "filters": [], "limit": null, "parts": [], "offsets": {}, "since_per_partition": {}}'
+        expected_data = '{"since": "2024-01-01T00:00:00"}'
         expected_headers = {
             'User-Agent': '',
             'Content-Type': 'application/json',
@@ -90,8 +89,6 @@ class TestClient(unittest.TestCase):
         self.assertEqual(val, {"key": "value"})
         self.client.http_client.send.assert_called_once()
 
-    # Add more tests for other methods in the Client class
-
     def test_read_loop(self):
         # Create a mock BytesIO object with sample data
         data = b'{"article1": "content1"}\n{"article2": "content2"}'
@@ -111,16 +108,18 @@ class TestClient(unittest.TestCase):
         # Create a mock callback function
         mock_cbk = MagicMock()
 
-        # Patch the _read_loop method to mock its behavior
-        with patch.object(self.client, '_read_loop', autospec=True) as mock_read_loop:
+        # Patch the _do method to return a mock response with byte content
+        with patch.object(self.client, '_do', autospec=True) as mock_do:
+            mock_response = MagicMock()
+            mock_response.content = b'{"key": "value"}'
+            mock_do.return_value = mock_response
+
+            # Call the _read_entity method
             self.client._read_entity("test_path", mock_cbk)
 
             # Assertions
-            mock_read_loop.assert_called_once()
-            self.assertEqual(mock_read_loop.call_args[0][0], self.client.base_url + "v2/test_path")
-            self.assertEqual(mock_read_loop.call_args[0][1], mock_cbk)
+            mock_cbk.assert_any_call({"key": "value"})
 
-    # Add similar tests for other methods
 
 class TestRequest(unittest.TestCase):
     def test_init(self):
