@@ -1,8 +1,11 @@
-import logging
 import contextlib
+import logging
+
+from datetime import datetime, timedelta
+
+from modules.api.api_client import Client, Request
 
 from modules.auth.auth_client import AuthClient
-from modules.api.api_client import Client, Request
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -42,12 +45,10 @@ def main():
         api_client = Client()
         api_client.set_access_token(access_token)
 
-        request = Request(
-            fields=["name", "abstract", "event.*"]
-        )
+        request = Request(fields=["name", "abstract", "event.*"])
 
         try:
-            articles = api_client.get_articles(request, article_callback)
+            articles = api_client.stream_articles(request, article_callback)
             print(articles)
         except Exception as e:
             logger.fatal(f"Failed to get articles: {e}")
