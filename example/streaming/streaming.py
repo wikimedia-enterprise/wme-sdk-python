@@ -47,7 +47,7 @@ def main():
         )
 
         try:
-            articles = api_client.get_articles(request, article_callback)
+            articles = api_client.stream_articles(request, article_callback)
             print(articles)
         except Exception as e:
             logger.fatal(f"Failed to get articles: {e}")
