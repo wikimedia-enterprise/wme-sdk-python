@@ -145,14 +145,21 @@ class Client:
                 future.result()
 
     def _subscribe_to_entity(self, path: str, req: Request, cbk: Callable[[dict], Any]):
-        request = self._new_request(self.realtime_url, 'GET', path, req)
-        request.headers.update({
+        data = json.dumps(req.to_json()) if req else ''
+        headers = {
+            'User-Agent': self.user_agent,
+            'Content-Type': 'application/json',
+            'Authorization': f'Bearer {self.access_token}',
             'Cache-Control': 'no-cache',
             'Accept': 'application/x-ndjson',
             'Connection': 'keep-alive'
-        })
-        response = self._do(request)
-        self._read_loop(io.BytesIO(response.content), cbk)
+        }
+        
+        response = self.http_client.get(f"{self.realtime_url}v2/{path}", data=data, headers=headers, stream=True)
+
+        for line in response.iter_lines():
+            article = json.loads(line)
+            cbk(article)
 
     def read_all(self, rdr: io.BytesIO, cbk: Callable[[dict], Any]):
         with tarfile.open(fileobj=rdr, mode='r:gz') as tar:
