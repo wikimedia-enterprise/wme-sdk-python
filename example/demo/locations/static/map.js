@@ -33,8 +33,8 @@ function fetchInfobox(title) {
 
         article = data[0]
         info = null
-        if (article.infobox) {
-            info = article.infobox[0]
+        if (article.infoboxes) {
+            info = article.infoboxes[0]
         }
 
         renderInfobox(article.name, article.url, info);

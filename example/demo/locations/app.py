@@ -84,7 +84,7 @@ async def get_infobox(title: str):
         "Content-Type": "application/json",
     }
     data = {
-        "fields": ["name", "url", "infobox"],
+        "fields": ["name", "url", "infoboxes"],
         "filters": [{"field": "is_part_of.identifier", "value": "enwiki"}],
     }
 
