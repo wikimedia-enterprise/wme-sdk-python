@@ -6,36 +6,37 @@ See our [api documentation](https://enterprise.wikimedia.com/docs/) and [website
 
 ## Getting started
 
-- installing the SDK:
+- Install the SDK:
 
 ```bash
-git clone https://github.com/wikimedia-enterprise/wme-sdk-python.git
-cd wme-sdk-python
+$ git clone https://github.com/wikimedia-enterprise/wme-sdk-python.git
+$ cd wme-sdk-python
 
-#edit the `sample.env` file with your credentials and save it as `.env`.  Don't give you WME credentials to anyone!  By the end of this step, you'll have a .env file that looks like, with your username and password:
-#WME_USERNAME=username
-#WME_PASSWORD=password
-#PYTHONPATH=.
+# Edit the `sample.env` file with your credentials and save it as `.env`. Don't give your WME credentials to anyone!
+# By the end of this step, you'll have a .env file that looks like, with your username and password:
+#   WME_USERNAME=username
+#   WME_PASSWORD=password
+#   PYTHONPATH=.
 
 
-#setup the virtual environment
-python3 -m venv sdk
-source sdk/bin/activate
+# Set up the virtual environment
+$ python3 -m venv sdk
+$ . sdk/bin/activate
 
-#install the dependencies
-pip install -r requirements.txt
+# Install the dependencies
+$ pip install -r requirements.txt
 
 # Run the on-demand example
-python3 -m example.ondemand.ondemand
+$ python3 -m example.ondemand.ondemand
 
 # Run the structured contents example
-python3 -m example.structured-contents.structuredcontents
+$ python3 -m example.structured-contents.structuredcontents
 
-#exit the virtual environment
-deactivate
+# Exit the virtual environment
+$ deactivate
 ```
 
-- Expose your credentials (if you don't have credentials already, [sign up](https://dashboard.enterprise.wikimedia.com/signup/)) without a `.env` file:
+- Expose your credentials (if you don't have credentials yet, [sign up](https://dashboard.enterprise.wikimedia.com/signup/)) without a `.env` file:
 
 ```bash
 export WME_USERNAME="...your username...";
@@ -43,7 +44,7 @@ export WME_PASSWORD="...your password...";
 export PYTHONPATH=.
 ```
 
-- obtain your access token:
+- Obtain your access token:
 
 ```python
 import time
