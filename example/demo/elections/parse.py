@@ -14,13 +14,13 @@ def remove_prefix(value, prefix):
 # Function to extract needed fields from JSON
 def extract_json_data(json_data):
     # Extracting infobox.has_parts.name (4-digit year)
-    infobox = json_data.get('infobox', [])
+    infoboxes = json_data.get('infoboxes', [])
     year = None
     electoral_vote = None
     running_mate = None
     nominee = None
 
-    for section in infobox:
+    for section in infoboxes:
         if 'has_parts' in section:
             for part in section['has_parts']:
                 # Extract year from name
