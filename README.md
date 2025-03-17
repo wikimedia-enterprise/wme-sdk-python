@@ -1,6 +1,6 @@
 # Wikimedia Enterprise SDK: Python
 
-Official Wikimedia Enterprise SDK for the Python programming language.
+Draft Wikimedia Enterprise SDK for the Python programming language. This SDK is supposed to serve as an example Python SDK for Wikimedia Enterprise APIs. The SDK is not fully working yet.
 
 See our [api documentation](https://enterprise.wikimedia.com/docs/) and [website](https://enterprise.wikimedia.com/) for more information about the APIs.
 
