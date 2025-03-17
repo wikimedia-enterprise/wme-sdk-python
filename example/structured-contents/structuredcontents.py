@@ -36,7 +36,7 @@ def main():
 
         request = Request(
             fields=["name", "abstract", "description"],
-            filters=[Filter(field="in_language.identifier", value="en")]
+            filters=[Filter(field="is_part_of.identifier", value="enwiki")]
         )
 
         try:

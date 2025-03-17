@@ -53,6 +53,12 @@ def main():
 
         for article in articles:
             try:
+                if "article_body" in article and "html" in article["article_body"]:
+                    html = article["article_body"]["html"]
+                    trunc_marker = "... (truncated)"
+                    max_len = 200
+                    if len(html) > max_len:
+                      article["article_body"]["html"] = html[:max_len - len(trunc_marker)] + trunc_marker
                 art_json = json.dumps(article, indent=2)
                 print(art_json)
             except Exception as e:
