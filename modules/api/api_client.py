@@ -82,13 +82,6 @@ class Client:
         response = self.http_client.send(prepared)
         response.raise_for_status()
 
-        try:
-            # Attempt to parse the JSON response
-            response.json()
-        except ValueError:
-            print("Failed to revoke token: Invalid or empty JSON response")
-            raise
-
         return response
 
     def _get_entity(self, req: Optional[Request], path: str, val: Any):
