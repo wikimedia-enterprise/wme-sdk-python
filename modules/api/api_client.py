@@ -22,7 +22,6 @@ class Filter:
         }
 
 
-
 class Request:
     def __init__(self,
                  since: Optional[datetime.datetime] = None,
@@ -59,22 +58,22 @@ class Request:
 class Client:
     def __init__(self, **kwargs):
         self.http_client = requests.Session()
-        self.user_agent = kwargs.get('user_agent', "")
+        self.user_agent = kwargs.get('user_agent', "WME Python SDK")
         self.base_url = kwargs.get('base_url', "https://api.enterprise.wikimedia.com/")
         self.realtime_url = kwargs.get('realtime_url', "https://realtime.enterprise.wikimedia.com/")
         self.access_token = kwargs.get('access_token', "")
-        self.download_min_chunk_size = kwargs.get('download_min_chunk_size', 5242880)
-        self.download_chunk_size = kwargs.get('download_chunk_size', 5242880 * 5)
+        self.download_chunk_size = kwargs.get('download_chunk_size', -1)
         self.download_concurrency = kwargs.get('download_concurrency', 10)
         self.scanner_buffer_size = kwargs.get('scanner_buffer_size', 20971520)
 
     def _new_request(self, url: str, method: str, path: str, req: Optional[Request]) -> requests.Request:
         data = json.dumps(req.to_json()) if req else ''
-        headers = {
+        headers = requests.utils.default_headers()
+        headers.update({
             'User-Agent': self.user_agent,
             'Content-Type': 'application/json',
             'Authorization': f'Bearer {self.access_token}'
-        }
+        })
         return requests.Request(method, f"{url}v2/{path}", data=data, headers=headers)
 
     def _do(self, req: requests.Request) -> requests.Response:
@@ -122,8 +121,11 @@ class Client:
     def _download_entity(self, path: str, writer: io.BytesIO):
         headers = self._head_entity(path)
         content_length = headers['Content-Length']
-        chunk_size = min(self.download_chunk_size, content_length)
-        chunks = [(i, min(i + chunk_size, content_length)) for i in range(0, content_length, chunk_size)]
+        if self.download_chunk_size > 0:
+            chunk_size = min(self.download_chunk_size, content_length)
+            chunks = [(i, min(i + chunk_size, content_length)) for i in range(0, content_length, chunk_size)]
+        else:
+            chunks = [(0, content_length)]
 
         def download_chunk(start, end):
             req = self._new_request(self.base_url, 'GET', path, None)
@@ -147,7 +149,7 @@ class Client:
             'Accept': 'application/x-ndjson',
             'Connection': 'keep-alive'
         }
-        
+
         response = self.http_client.get(f"{self.realtime_url}v2/{path}", data=data, headers=headers, stream=True)
 
         for line in response.iter_lines():

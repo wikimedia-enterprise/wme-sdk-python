@@ -14,12 +14,11 @@ class TestClient(unittest.TestCase):
     def test_init(self):
         # Test default values
         client = Client()
-        self.assertEqual(client.user_agent, "")
+        self.assertEqual(client.user_agent, "WME Python SDK")
         self.assertEqual(client.base_url, "https://api.enterprise.wikimedia.com/")
         self.assertEqual(client.realtime_url, "https://realtime.enterprise.wikimedia.com/")
         self.assertEqual(client.access_token, "")
-        self.assertEqual(client.download_min_chunk_size, 5242880)
-        self.assertEqual(client.download_chunk_size, 5242880 * 5)
+        self.assertEqual(client.download_chunk_size, -1)
         self.assertEqual(client.download_concurrency, 10)
         self.assertEqual(client.scanner_buffer_size, 20971520)
 
@@ -29,7 +28,6 @@ class TestClient(unittest.TestCase):
             base_url="https://example.com",
             realtime_url="https://realtime.example.com",
             access_token="my_access_token",
-            download_min_chunk_size=1024,
             download_chunk_size=2048,
             download_concurrency=5,
             scanner_buffer_size=10000,
@@ -38,7 +36,6 @@ class TestClient(unittest.TestCase):
         self.assertEqual(client.base_url, "https://example.com")
         self.assertEqual(client.realtime_url, "https://realtime.example.com")
         self.assertEqual(client.access_token, "my_access_token")
-        self.assertEqual(client.download_min_chunk_size, 1024)
         self.assertEqual(client.download_chunk_size, 2048)
         self.assertEqual(client.download_concurrency, 5)
         self.assertEqual(client.scanner_buffer_size, 10000)
@@ -51,9 +48,12 @@ class TestClient(unittest.TestCase):
 
         expected_data = '{"since": "2024-01-01T00:00:00"}'
         expected_headers = {
-            'User-Agent': '',
+            'User-Agent': 'WME Python SDK',
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer test_access_token'
+            'Authorization': 'Bearer test_access_token',
+            'Accept': '*/*',
+            'Accept-Encoding': 'gzip, deflate',
+            'Connection': 'keep-alive'
         }
 
         request = self.client._new_request(url, method, path, req)
@@ -150,6 +150,7 @@ class TestRequest(unittest.TestCase):
         self.assertEqual(req.offsets, offsets)
         self.assertEqual(req.since_per_partition, since_per_partition)
 
+
 class TestFilter(unittest.TestCase):
     def test_init(self):
         field = "test_field"
@@ -157,6 +158,7 @@ class TestFilter(unittest.TestCase):
         filter = Filter(field, value)
         self.assertEqual(filter.field, field)
         self.assertEqual(filter.value, value)
+
 
 if __name__ == '__main__':
     unittest.main()

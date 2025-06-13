@@ -103,20 +103,23 @@ if __name__ == "__main__":
     main()
 ```
 
-Auth APIs
+## Auth APIs
 The following are the main authentication APIs provided by the SDK:
 
-Login
-RefreshToken
-RevokeToken
-Helper APIs
+- Login
+- RefreshToken
+- RevokeToken
+
+## Helper APIs
+
 These helper APIs provide reference implementations for clients on how token state management can be done and how tokens can be used in concurrent processes using WME APIs:
 
-GetAccessToken
-ClearState
-Example Usage
+- GetAccessToken
+- ClearState
 
-- putting it all together and making your first API call (we will be querying the Structured Contents endpoint, which is part of the [On-demand API](https://enterprise.wikimedia.com/docs/on-demand/))
+### Example Usage
+
+Putting it all together and making your first API call (we will be querying the Structured Contents endpoint, which is part of the [On-demand API](https://enterprise.wikimedia.com/docs/on-demand/))
 
 ```python
 import time
@@ -180,8 +183,11 @@ def usage():
 
 if __name__ == "__main__":
     main()
-
-
 ```
 
-- additional examples, such as connecting to the [streaming API](/example/streaming/), can be found [here](/example/)
+Additional examples, such as connecting to the [streaming API](/example/streaming/), can be found [here](/example/)
+
+
+## Additional parameters
+
+`api_client.Client` can be configured to download snapshots or chunks in multiple requests, see its implementation for more details. Be aware that doing so will likely consume more quota, compared to downloading one entity per request.
