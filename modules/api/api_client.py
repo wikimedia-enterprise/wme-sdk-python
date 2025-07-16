@@ -8,6 +8,7 @@ from typing import Callable, Any, List, Optional, Dict
 
 
 DATE_FORMAT = "%Y-%m-%d"
+HOUR_FORMAT = "%H"
 
 
 class Filter:
@@ -206,24 +207,27 @@ class Client:
         self._get_entity(req, f"namespaces/{idr}", namespace)
         return namespace
 
-    def get_batches(self, date: datetime.datetime, req: Request) -> List[dict]:
+    def _get_batches_prefix(self, time: datetime.datetime):
+        return f"batches/{time.strftime(DATE_FORMAT)}/{time.strftime(HOUR_FORMAT)}"
+
+    def get_batches(self, time: datetime.datetime, req: Request) -> List[dict]:
         batches = []
-        self._get_entity(req, f"batches/{date.strftime(DATE_FORMAT)}", batches)
+        self._get_entity(req, self._get_batches_prefix(time), batches)
         return batches
 
-    def get_batch(self, date: datetime.datetime, idr: str, req: Request) -> dict:
+    def get_batch(self, time: datetime.datetime, idr: str, req: Request) -> dict:
         batch = {}
-        self._get_entity(req, f"batches/{date.strftime(DATE_FORMAT)}/{idr}", batch)
+        self._get_entity(req, f"{self._get_batches_prefix(time)}/{idr}", batch)
         return batch
 
-    def head_batch(self, date: datetime.datetime, idr: str) -> dict:
-        return self._head_entity(f"batches/{date.strftime(DATE_FORMAT)}/{idr}/download")
+    def head_batch(self, time: datetime.datetime, idr: str) -> dict:
+        return self._head_entity(f"{self._get_batches_prefix(time)}/{idr}/download")
 
-    def read_batch(self, date: datetime.datetime, idr: str, cbk: Callable[[dict], Any]):
-        self._read_entity(f"batches/{date.strftime(DATE_FORMAT)}/{idr}/download", cbk)
+    def read_batch(self, time: datetime.datetime, idr: str, cbk: Callable[[dict], Any]):
+        self._read_entity(f"b{self._get_batches_prefix(time)}/{idr}/download", cbk)
 
-    def download_batch(self, date: datetime.datetime, idr: str, writer: io.BytesIO):
-        self._download_entity(f"batches/{date.strftime(DATE_FORMAT)}/{idr}/download", writer)
+    def download_batch(self, time: datetime.datetime, idr: str, writer: io.BytesIO):
+        self._download_entity(f"{self._get_batches_prefix(time)}/{idr}/download", writer)
 
     def get_snapshots(self, req: Request) -> List[dict]:
         snapshots = []
