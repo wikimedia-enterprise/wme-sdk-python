@@ -156,8 +156,66 @@ class Reference:
             'group': reference.group,
             'type': reference.ref_type,
             'metadata': reference.metadata,
-            'text': ReferenceText.to_json(reference.text),
-            'source': ReferenceText.to_json(reference.source)
+            'text': ReferenceText.to_json(reference.text), 
+            'source': ReferenceText.to_json(reference.source) 
+        }
+
+class StructuredTableCell:
+    def __init__(self,
+                 value: Optional[str] = None,
+                 nested_table: Optional['StructuredTable'] = None):
+        self.value = value
+        self.nested_table = nested_table
+
+    @staticmethod
+    def from_json(data: dict) -> 'StructuredTableCell':
+        nested = None
+        if data and data.get("nested_table"):
+            nested = StructuredTable.from_json(data["nested_table"])
+        return StructuredTableCell(
+            value=data.get("value") if data else None,
+            nested_table=nested
+        )
+
+    @staticmethod
+    def to_json(cell: 'StructuredTableCell') -> dict:
+        return {
+            "value": cell.value,
+            "nested_table": StructuredTable.to_json(cell.nested_table) if cell.nested_table else None
+        }
+
+
+class StructuredTable:
+    def __init__(self,
+                 identifier: Optional[str] = None,
+                 headers: Optional[List[List['StructuredTableCell']]] = None,
+                 rows: Optional[List[List['StructuredTableCell']]] = None,
+                 footers: Optional[List[List['StructuredTableCell']]] = None,
+                 confidence_score: Optional[float] = None):
+        self.identifier = identifier
+        self.headers = headers or []
+        self.rows = rows or []
+        self.footers = footers or []
+        self.confidence_score = confidence_score
+
+    @staticmethod
+    def from_json(data: dict) -> 'StructuredTable':
+        return StructuredTable(
+            identifier=data.get("identifier") if data else None,
+            headers=[[StructuredTableCell.from_json(c) for c in row] for row in data.get("headers", [])] if data else [],
+            rows=[[StructuredTableCell.from_json(c) for c in row] for row in data.get("rows", [])] if data else [],
+            footers=[[StructuredTableCell.from_json(c) for c in row] for row in data.get("footers", [])] if data else [],
+            confidence_score=data.get("confidence_score") if data else None
+        )
+
+    @staticmethod
+    def to_json(table: 'StructuredTable') -> dict:
+        return {
+            "identifier": table.identifier,
+            "headers": [[StructuredTableCell.to_json(c) for c in row] for row in table.headers],
+            "rows": [[StructuredTableCell.to_json(c) for c in row] for row in table.rows],
+            "footers": [[StructuredTableCell.to_json(c) for c in row] for row in table.footers],
+            "confidence_score": table.confidence_score
         }
 
 
@@ -178,6 +236,7 @@ class StructuredContent:
                  infoboxes: Optional[List[Part]] = None,
                  article_sections: Optional[List[Part]] = None,
                  image: Optional[Image] = None,
+                 tables: Optional[List['StructuredTable']] = None,
                  references: Optional[List[Reference]] = None):
         self.name = name
         self.identifier = identifier
@@ -195,6 +254,7 @@ class StructuredContent:
         self.article_sections = article_sections or []
         self.image = image
         self.references = references or []
+        self.tables = tables or []
 
     @staticmethod
     def from_json(data: dict) -> 'StructuredContent':
@@ -212,7 +272,8 @@ class StructuredContent:
             is_part_of=Project.from_json(data['isPartOf']),
             in_language=Language.from_json(data['inLanguage']),
             infoboxes=[Part.from_json(part) for part in data['infoboxes']],
-            article_sections=[Part.from_json(section) for section in data['articleSections']],
+            article_sections=[Part.from_json(section) for section in data['articleSections']],     
+            tables=[StructuredTable.from_json(tbl) for tbl in (data.get('tables') or [])] if data else [],
             image=Image.from_json(data['image']),
             references=[Reference.from_json(reference) for reference in data.get('references', [])]
         )
@@ -234,6 +295,7 @@ class StructuredContent:
             'inLanguage': Language.to_json(structured_content.in_language),
             'infoboxes': [Part.to_json(part) for part in structured_content.infoboxes],
             'articleSections': [Part.to_json(section) for section in structured_content.article_sections],
+            'tables': [StructuredTable.to_json(tbl) for tbl in structured_content.tables],
             'image': Image.to_json(structured_content.image),
             'references': [Reference.to_json(reference) for reference in structured_content.references]
         }
