@@ -57,12 +57,32 @@ class Request:
 
 
 class Client:
-    def __init__(self, **kwargs):
+    def __init__(self,
+                 access_token: str,
+                 user_agent: Optional[str] = None,
+                 **kwargs):
+        """
+        Initializes the API Client.
+
+        Args:
+            access_token (str): The API access token for authentication.
+            user_agent (Optional[str], optional): A custom User-Agent string for requests. 
+                                                  If None, a default is used. Defaults to None.
+            **kwargs: Other optional settings like 'base_url', 'realtime_url', etc.
+            
+        Should a user want to use a custom user agent, they could do something like this:
+        custom_ua = "MyDataApp/2.5 (contact@myapp.com)"
+        client2 = WikimediaClient(access_token="TOKEN_ABC", user_agent=custom_ua)
+        """
         self.http_client = requests.Session()
-        self.user_agent = kwargs.get('user_agent', "WME Python SDK")
+        self.access_token = access_token
+        
+        # Use the provided user_agent or fall back to a default.
+        self.user_agent = user_agent or "WME Python SDK"
+        
+        # The rest of the settings can still be pulled from kwargs for flexibility.
         self.base_url = kwargs.get('base_url', "https://api.enterprise.wikimedia.com/")
         self.realtime_url = kwargs.get('realtime_url', "https://realtime.enterprise.wikimedia.com/")
-        self.access_token = kwargs.get('access_token', "")
         self.download_chunk_size = kwargs.get('download_chunk_size', -1)
         self.download_concurrency = kwargs.get('download_concurrency', 10)
         self.scanner_buffer_size = kwargs.get('scanner_buffer_size', 20971520)
