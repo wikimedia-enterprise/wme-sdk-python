@@ -3,8 +3,11 @@ import json
 import requests
 import io
 import datetime
+import time
 from concurrent.futures import ThreadPoolExecutor
 from typing import Callable, Any, List, Optional, Dict
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 
 DATE_FORMAT = "%Y-%m-%d"
@@ -60,6 +63,11 @@ class Client:
     def __init__(self,
                  access_token: str,
                  user_agent: Optional[str] = None,
+                 #Adding parameters for timeouts, retries, and rate limits
+                 timeout: float = 30.0,
+                 max_retries: int = 3,
+                 backoff_factor: float = 0.5,
+                 rate_limit_per_second: Optional[float] = None,
                  **kwargs):
         """
         Initializes the API Client.
@@ -74,11 +82,32 @@ class Client:
         custom_ua = "MyDataApp/2.5 (contact@myapp.com)"
         client2 = WikimediaClient(access_token="TOKEN_ABC", user_agent=custom_ua)
         """
-        self.http_client = requests.Session()
+        
         self.access_token = access_token
         
         # Use the provided user_agent or fall back to a default.
         self.user_agent = user_agent or "WME Python SDK"
+        
+        #Store resilencie configuration
+        self.timeout = timeout
+        self.rate_limit_period = 1.0 / rate_limit_per_second if rate_limit_per_second else 0
+        self.last_request_time = 0
+        
+        #configure HTTP session with retry logic
+        self.http_client = requests.Session()
+        
+        #retry strategy
+        retry_strategy = Retry(
+            total = max_retries,
+            backoff_factor=backoff_factor,
+            status_forcelist=[500, 502, 503, 504], #only re-try on server-side errors
+            allowed_methods=["HEAD", "GET", "POST"]
+        )
+        
+        #Adapter with this strategy and mount it to the session
+        adapter = HTTPAdapter(max_retries=retry_strategy)
+        self.http_client.mount("https://", adapter)
+        self.http_client.mount("http://", adapter)
         
         # The rest of the settings can still be pulled from kwargs for flexibility.
         self.base_url = kwargs.get('base_url', "https://api.enterprise.wikimedia.com/")
@@ -86,7 +115,20 @@ class Client:
         self.download_chunk_size = kwargs.get('download_chunk_size', -1)
         self.download_concurrency = kwargs.get('download_concurrency', 10)
         self.scanner_buffer_size = kwargs.get('scanner_buffer_size', 20971520)
+        
+    #Helper method for rate limiting
+    def _rate_limit_wait(self):
+        if self.rate_limit_period == 0:
+            return
+            
+        elapsed = time.monotonic() - self.last_request_time
+        wait_time = self.rate_limit_period - elapsed
+        if wait_time > 0:
+            time.sleep(wait_time)
+                
+        self.last_request_time = time.monotonic()
 
+        
     def _new_request(self, url: str, method: str, path: str, req: Optional[Request]) -> requests.Request:
         data = json.dumps(req.to_json()) if req else ''
         headers = requests.utils.default_headers()
@@ -98,10 +140,17 @@ class Client:
         return requests.Request(method, f"{url}v2/{path}", data=data, headers=headers)
 
     def _do(self, req: requests.Request) -> requests.Response:
+        self._rate_limit_wait()
+        
         prepared = self.http_client.prepare_request(req)
-        response = self.http_client.send(prepared)
+        
+        #The http_client is now configured with retries, so we add the timeout
+        response = self.http_client.send(
+            prepared,
+            timeout=self.timeout
+        )
+        
         response.raise_for_status()
-
         return response
 
     def _get_entity(self, req: Optional[Request], path: str, val: Any):
