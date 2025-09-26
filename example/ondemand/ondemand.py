@@ -34,10 +34,18 @@ def main():
     with revoke_token_on_exit(auth_client, refresh_token):
         api_client = Client()
         api_client.set_access_token(access_token)
-
+        
+        """
+        The old method of using filters is still valid
         filters = [
             Filter(field="in_language.identifier", value="en"),
             Filter(field="is_part_of.identifier", value="enwiki")]
+        Below, is the new, more intuitive way to declare filters
+        """
+        filters = {
+            "in_language.identifier": "en",
+            "is_part_of.identifier": "enwiki"
+        }
 
         request = Request(
             fields=["name", "abstract", "url", "version", "article_body.html"],

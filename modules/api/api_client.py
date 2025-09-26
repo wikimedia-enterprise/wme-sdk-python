@@ -5,7 +5,7 @@ import io
 import datetime
 import time
 from concurrent.futures import ThreadPoolExecutor
-from typing import Callable, Any, List, Optional, Dict
+from typing import Callable, Any, List, Optional, Dict, Union
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
@@ -30,25 +30,35 @@ class Request:
     def __init__(self,
                  since: Optional[datetime.datetime] = None,
                  fields: Optional[List[str]] = None,
-                 filters: Optional[List[Filter]] = None,
                  limit: Optional[int] = None,
                  parts: Optional[List[int]] = None,
                  offsets: Optional[Dict[int, int]] = None,
-                 since_per_partition: Optional[Dict[int, datetime.datetime]] = None):
+                 since_per_partition: Optional[Dict[int, datetime.datetime]] = None,
+                 filters: Optional[Union[Dict[str, str], List[Filter]]] = None):
         self.since = since
         self.fields = fields or []
-        self.filters = filters or []
         self.limit = limit
         self.parts = parts or []
         self.offsets = offsets or {}
         self.since_per_partition = since_per_partition or {}
-
+        
+        if isinstance(filters, dict):
+            self._filters_list = self._convert_dict_to_filters(filters)
+        elif isinstance(filters, list):
+            self._filters_list = [f.to_dict() for f in filters]
+        else:
+            self._filters_list = []
+        
+    def _convert_dict_to_filters(self, filters_dict: Dict[str, str]) -> List[Dict[str, str]]:
+        """Converts a {'field': 'value'} dict to [{'field':..., 'value':...}]"""
+        return [{"field": key, "value": value} for key, value in filters_dict.items()]
+    
     def to_json(self):
         # Build the dictionary without any empty or None values
         result = {
             'since': self.since.isoformat() if self.since else None,
             'fields': self.fields if self.fields else None,
-            'filters': [f.to_dict() for f in self.filters] if self.filters else None,
+            'filters': self._filters_list if self._filters_list else None,
             'limit': self.limit,
             'parts': self.parts if self.parts else None,
             'offsets': self.offsets if self.offsets else None,
@@ -61,7 +71,6 @@ class Request:
 
 class Client:
     def __init__(self,
-                 access_token: str,
                  user_agent: Optional[str] = None,
                  #Adding parameters for timeouts, retries, and rate limits
                  timeout: float = 30.0,
@@ -73,7 +82,6 @@ class Client:
         Initializes the API Client.
 
         Args:
-            access_token (str): The API access token for authentication.
             user_agent (Optional[str], optional): A custom User-Agent string for requests. 
                                                   If None, a default is used. Defaults to None.
             **kwargs: Other optional settings like 'base_url', 'realtime_url', etc.
@@ -83,7 +91,7 @@ class Client:
         client2 = WikimediaClient(access_token="TOKEN_ABC", user_agent=custom_ua)
         """
         
-        self.access_token = access_token
+        self.access_token = kwargs.get('access_token', "")
         
         # Use the provided user_agent or fall back to a default.
         self.user_agent = user_agent or "WME Python SDK"
