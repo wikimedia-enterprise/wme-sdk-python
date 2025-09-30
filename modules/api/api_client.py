@@ -27,6 +27,14 @@ class Filter:
 
 
 class Request:
+    since: Optional[datetime.datetime]
+    fields: List[str]
+    limit: Optional[int]
+    parts: List[int]
+    offsets: Dict[int, int]
+    since_per_partition: Dict[int, datetime.datetime]
+    _filters_list: List[Dict[str, str]]
+    
     def __init__(self,
                  since: Optional[datetime.datetime] = None,
                  fields: Optional[List[str]] = None,
@@ -34,13 +42,13 @@ class Request:
                  parts: Optional[List[int]] = None,
                  offsets: Optional[Dict[int, int]] = None,
                  since_per_partition: Optional[Dict[int, datetime.datetime]] = None,
-                 filters: Optional[Union[Dict[str, str], List[Filter]]] = None):
+                 filters: Optional[Union[Dict[str, str], List[Any]]] = None):
         self.since = since
-        self.fields = fields or []
+        self.fields = fields if fields is not None else []
         self.limit = limit
-        self.parts = parts or []
-        self.offsets = offsets or {}
-        self.since_per_partition = since_per_partition or {}
+        self.parts = parts if parts is not None else []
+        self.offsets = offsets if offsets is not None else {}
+        self.since_per_partition = since_per_partition if since_per_partition is not None else {}
         
         if isinstance(filters, dict):
             self._filters_list = self._convert_dict_to_filters(filters)

@@ -1,15 +1,17 @@
 import unittest
+import requests
 from unittest.mock import MagicMock, patch
 from datetime import datetime
 from io import BytesIO
+from typing import cast
 from modules.api.api_client import Client, Request, Filter
 
 
 class TestClient(unittest.TestCase):
     def setUp(self):
         self.client = Client()
-        self.client.http_client = MagicMock()
         self.client.access_token = "test_access_token"
+        self.client.http_client = MagicMock(spec=requests.Session)
 
     def test_init(self):
         # Test default values
@@ -64,30 +66,37 @@ class TestClient(unittest.TestCase):
         self.assertEqual(request.headers, expected_headers)
 
     def test_do(self):
-        request = MagicMock()
-        response = MagicMock()
-        self.client.http_client.prepare_request.return_value = request
-        self.client.http_client.send.return_value = response
+        mock_http_client = cast(MagicMock, self.client.http_client)
+        original_request = MagicMock(name="OriginalRequest")
+        prepared_request = MagicMock(name="PreparedRequest")
+        mock_response = MagicMock(name="MockResponse")
+        
+        mock_http_client.prepare_request.return_value = prepared_request
+        mock_http_client.send.return_value = mock_response
 
-        result = self.client._do(request)
+        result = self.client._do(original_request)
 
-        self.assertEqual(result, response)
-        self.client.http_client.prepare_request.assert_called_once_with(request)
-        self.client.http_client.send.assert_called_once_with(request)
+        self.assertEqual(result, mock_response)
+        mock_http_client.prepare_request.assert_called_once_with(original_request)
+        mock_http_client.send.assert_called_once_with(
+            prepared_request,
+            timeout=self.client.timeout
+        )
 
     def test_get_entity(self):
+        mock_http_client = cast(MagicMock, self.client.http_client)
         req = Request()
         path = "test_path"
         val = {}
 
         response = MagicMock()
         response.json.return_value = {"key": "value"}
-        self.client.http_client.send.return_value = response
+        mock_http_client.send.return_value = response
 
         self.client._get_entity(req, path, val)
 
         self.assertEqual(val, {"key": "value"})
-        self.client.http_client.send.assert_called_once()
+        mock_http_client.send.assert_called_once()
 
     def test_read_loop(self):
         # Create a mock BytesIO object with sample data
@@ -127,7 +136,7 @@ class TestRequest(unittest.TestCase):
         req = Request()
         self.assertIsNone(req.since)
         self.assertEqual(req.fields, [])
-        self.assertEqual(req.filters, [])
+        self.assertNotIn('filters', req.to_json())
         self.assertIsNone(req.limit)
         self.assertEqual(req.parts, [])
         self.assertEqual(req.offsets, {})
@@ -141,10 +150,17 @@ class TestRequest(unittest.TestCase):
         parts = [1, 2, 3]
         offsets = {1: 10, 2: 20}
         since_per_partition = {1: datetime(2024, 1, 1), 2: datetime(2024, 1, 2)}
-        req = Request(since, fields, filters, limit, parts, offsets, since_per_partition)
+        req = Request(since, 
+                      fields, 
+                      filters=filters, 
+                      limit=limit, 
+                      parts=parts, 
+                      offsets=offsets, 
+                      since_per_partition=since_per_partition)
         self.assertEqual(req.since, since)
         self.assertEqual(req.fields, fields)
-        self.assertEqual(req.filters, filters)
+        expected_filters_json = [{"field": "field", "value": "value"}]
+        self.assertEqual(req.to_json().get('filters'), expected_filters_json)
         self.assertEqual(req.limit, limit)
         self.assertEqual(req.parts, parts)
         self.assertEqual(req.offsets, offsets)
