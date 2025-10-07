@@ -10,6 +10,7 @@ from license import License
 from visibility import Visibility
 from event import Event
 from project import Project
+from exceptions import DataModelError
 
 
 class Image:
@@ -110,10 +111,6 @@ class Template:
             'name': template.name,
             'url': template.url
         }
-
-class DataModelError(ValueError):
-    """Raised when incoming data cannot be parsed into a data model"""
-    pass
 
 class Article:
     def __init__(self,
