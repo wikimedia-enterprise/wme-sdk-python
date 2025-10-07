@@ -1,5 +1,8 @@
 from typing import Optional
 from datetime import datetime
+from exceptions import DataModelError
+
+HTTP_DATE_FORMAT = "%a, %d %b %Y %H:%M:%S GMT"
 
 
 class Headers:
@@ -17,20 +20,32 @@ class Headers:
 
     @staticmethod
     def from_json(data: dict) -> 'Headers':
-        return Headers(
-            content_length=data['content-length'],
-            etag=data['etag'],
-            last_modified=datetime.fromisoformat(data['last-modified']),
-            content_type=data['content-type'],
-            accept_ranges=data['accept-ranges']
-        )
+        if not isinstance(data, dict):
+            raise DataModelError(f"Expected a dict for Headers data, but got {type(data).__name__}")
+        
+        try:
+            last_modified_str = data.get('last-modified')
+            
+            return Headers(
+                content_length=data.get('content-length'),
+                etag=data.get('etag'),
+                
+                last_modified=datetime.strptime(last_modified_str, HTTP_DATE_FORMAT) if last_modified_str else None,
+                
+                content_type=data.get('content-type'),
+                accept_ranges=data.get('accept-ranges')
+            )
+        except (ValueError, TypeError) as e:
+            raise DataModelError(f"Failed to parse Headers data: {e}") from e
 
     @staticmethod
     def to_json(headers: 'Headers') -> dict:
         return {
             'content-length': headers.content_length,
             'etag': headers.etag,
-            'last-modified': headers.last_modified.isoformat(),
+
+            'last-modified': headers.last_modified.strftime(HTTP_DATE_FORMAT) if headers.last_modified else None,
+            
             'content-type': headers.content_type,
             'accept-ranges': headers.accept_ranges
         }

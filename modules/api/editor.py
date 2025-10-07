@@ -1,5 +1,6 @@
 from typing import List, Optional
 from datetime import datetime
+from exceptions import DataModelError
 
 
 class Editor:
@@ -27,18 +28,27 @@ class Editor:
 
     @staticmethod
     def from_json(data: dict) -> 'Editor':
-        return Editor(
-            identifier=data['identifier'],
-            name=data['name'],
-            edit_count=data['editCount'],
-            groups=data['groups'],
-            is_bot=data['isBot'],
-            is_anonymous=data['isAnonymous'],
-            is_admin=data['isAdmin'],
-            is_patroller=data['isPatroller'],
-            has_advanced_rights=data['hasAdvancedRights'],
-            date_started=datetime.fromisoformat(data['dateStarted'])
-        )
+        if not isinstance(data, dict):
+            raise DataModelError(f"Expected a dict for Editor data, but got {type(data).__name__}")
+        
+        try:
+            date_str = data.get('dateStarted')
+            
+            return Editor(
+                identifier=data.get('identifier'),
+                name=data.get('name'),
+                edit_count=data.get('editCount'),
+                groups=data.get('groups'),
+                is_bot=data.get('isBot'),
+                is_anonymous=data.get('isAnonymous'),
+                is_admin=data.get('isAdmin'),
+                is_patroller=data.get('isPatroller'),
+                has_advanced_rights=data.get('hasAdvancedRights'),
+                date_started=datetime.fromisoformat(date_str) if date_str else None
+            )
+        except (ValueError, TypeError) as e:
+            editor_name = data.get('name', 'N/A')
+            raise DataModelError(f"Failed to parse Editor with name '{editor_name}': {e}") from e
 
     @staticmethod
     def to_json(editor: 'Editor') -> dict:
@@ -52,5 +62,5 @@ class Editor:
             'isAdmin': editor.is_admin,
             'isPatroller': editor.is_patroller,
             'hasAdvancedRights': editor.has_advanced_rights,
-            'dateStarted': editor.date_started.isoformat()
+            'dateStarted': editor.date_started.isoformat() if editor.date_started else None
         }
