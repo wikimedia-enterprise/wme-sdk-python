@@ -1,6 +1,14 @@
+"""
+Unit tests for the `api_client` module.
+
+This file contains test suites for the Client, Request, and Filter classes,
+ensuring their methods and initializers behave as expected. Mocks are used
+to isolate the tests from actual network calls.
+"""
+
 import unittest
-import requests
-from unittest.mock import MagicMock, patch
+import httpx
+from unittest.mock import MagicMock, patch, ANY
 from datetime import datetime
 from io import BytesIO
 from typing import cast
@@ -8,23 +16,22 @@ from modules.api.api_client import Client, Request, Filter
 
 
 class TestClient(unittest.TestCase):
+    """Test suite for the Client class in the api_client module."""
+    
     def setUp(self):
-        self.client = Client()
-        self.client.access_token = "test_access_token"
-        self.client.http_client = MagicMock(spec=requests.Session)
+        """Set up a test client and mock the HTTP client before each test."""
+        self.client = Client(access_token="test_access_token")
+        self.client.http_client = MagicMock(spec=httpx.Client)
 
     def test_init(self):
-        # Test default values
+        """Tests that the Client initializes with correct values."""
         client = Client()
         self.assertEqual(client.user_agent, "WME Python SDK")
         self.assertEqual(client.base_url, "https://api.enterprise.wikimedia.com/")
-        self.assertEqual(client.realtime_url, "https://realtime.enterprise.wikimedia.com/")
-        self.assertEqual(client.access_token, "")
-        self.assertEqual(client.download_chunk_size, -1)
-        self.assertEqual(client.download_concurrency, 10)
-        self.assertEqual(client.scanner_buffer_size, 20971520)
+        self.assertIsInstance(client.http_client, httpx.Client)
+        self.assertEqual(client.http_client.headers['User-Agent'], "WME Python SDK")
+        self.assertEqual(client.http_client.timeout.read, 30.0)
 
-        # Test custom values
         client = Client(
             user_agent="My User Agent",
             base_url="https://example.com",
@@ -36,103 +43,84 @@ class TestClient(unittest.TestCase):
         )
         self.assertEqual(client.user_agent, "My User Agent")
         self.assertEqual(client.base_url, "https://example.com")
-        self.assertEqual(client.realtime_url, "https://realtime.example.com")
-        self.assertEqual(client.access_token, "my_access_token")
+        self.assertEqual(client.http_client.headers['Authorization'], "Bearer my_access_token")
         self.assertEqual(client.download_chunk_size, 2048)
         self.assertEqual(client.download_concurrency, 5)
-        self.assertEqual(client.scanner_buffer_size, 10000)
 
-    def test_new_request(self):
-        req = Request(since=datetime(2024, 1, 1))
-        url = "https://api.example.com"
-        method = "POST"
-        path = "test_path"
-
-        expected_data = '{"since": "2024-01-01T00:00:00"}'
-        expected_headers = {
-            'User-Agent': 'WME Python SDK',
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer test_access_token',
-            'Accept': '*/*',
-            'Accept-Encoding': 'gzip, deflate',
-            'Connection': 'keep-alive'
-        }
-
-        request = self.client._new_request(url, method, path, req)
-
-        self.assertEqual(request.url, f"{url}v2/{path}")
-        self.assertEqual(request.method, method)
-        self.assertEqual(request.data, expected_data)
-        self.assertEqual(request.headers, expected_headers)
-
-    def test_do(self):
+    def test_request(self):
+        """
+        Verifies the internal `_request` method correctly calls the httpx client,
+        invokes `raise_for_status`, and returns the response.
+        """
         mock_http_client = cast(MagicMock, self.client.http_client)
-        original_request = MagicMock(name="OriginalRequest")
-        prepared_request = MagicMock(name="PreparedRequest")
-        mock_response = MagicMock(name="MockResponse")
-        
-        mock_http_client.prepare_request.return_value = prepared_request
-        mock_http_client.send.return_value = mock_response
+        mock_response = MagicMock(spec=httpx.Response)
+        mock_http_client.request.return_value = mock_response
 
-        result = self.client._do(original_request)
+        result = self.client._request("GET", "http://test.com/path", json={"data": 1})
 
-        self.assertEqual(result, mock_response)
-        mock_http_client.prepare_request.assert_called_once_with(original_request)
-        mock_http_client.send.assert_called_once_with(
-            prepared_request,
-            timeout=self.client.timeout
+        mock_http_client.request.assert_called_once_with(
+            "GET", "http://test.com/path", json={"data": 1}
         )
+        
+        mock_response.raise_for_status.assert_called_once()
+        
+        self.assertEqual(result, mock_response)
 
     def test_get_entity(self):
-        mock_http_client = cast(MagicMock, self.client.http_client)
+        """
+        Tests the `_get_entity` method's logic for fetching and updating data.
+        It patches `_request` to isolate the method's own logic.
+        """
         req = Request()
         path = "test_path"
         val = {}
+        
+        with patch.object(self.client, '_request', autospec=True) as mock_request:
+            mock_response = MagicMock()
+            mock_response.json.return_value = {"key": "value"}
+            mock_request.return_value = mock_response
 
-        response = MagicMock()
-        response.json.return_value = {"key": "value"}
-        mock_http_client.send.return_value = response
+            self.client._get_entity(req, path, val)
 
-        self.client._get_entity(req, path, val)
-
-        self.assertEqual(val, {"key": "value"})
-        mock_http_client.send.assert_called_once()
+            expected_url = f"{self.client.base_url}v2/{path}"
+            mock_request.assert_called_once_with('POST', expected_url, json=req.to_json())
+            
+            self.assertEqual(val, {"key": "value"})
 
     def test_read_loop(self):
-        # Create a mock BytesIO object with sample data
+        """
+        Tests the `_read_loop` helper for processing newline-delimited JSON
+        from a byte stream and invoking a callback for each line.
+        """
         data = b'{"article1": "content1"}\n{"article2": "content2"}'
         mock_rdr = BytesIO(data)
-
-        # Create a mock callback function
         mock_cbk = MagicMock()
-
-        # Call the _read_loop method
         self.client._read_loop(mock_rdr, mock_cbk)
-
-        # Assertions
         mock_cbk.assert_any_call({"article1": "content1"})
         mock_cbk.assert_any_call({"article2": "content2"})
 
     def test_read_entity(self):
-        # Create a mock callback function
+        """
+        Tests that `_read_entity` correctly fetches content via `_request` and processes it.
+        """
         mock_cbk = MagicMock()
 
-        # Patch the _do method to return a mock response with byte content
-        with patch.object(self.client, '_do', autospec=True) as mock_do:
+        with patch.object(self.client, '_request', autospec=True) as mock_request:
             mock_response = MagicMock()
             mock_response.content = b'{"key": "value"}'
-            mock_do.return_value = mock_response
+            mock_request.return_value = mock_response
 
-            # Call the _read_entity method
             self.client._read_entity("test_path", mock_cbk)
 
-            # Assertions
-            mock_cbk.assert_any_call({"key": "value"})
+            expected_url = f"{self.client.base_url}v2/test_path"
+            mock_request.assert_called_once_with('GET', expected_url)
+            mock_cbk.assert_called_once_with({"key": "value"})
 
 
 class TestRequest(unittest.TestCase):
+    """Test suite for the Request class."""
     def test_init(self):
-        # Test default values
+        """Tests that the Request object initializes correctly, and that its `to_json` method works as expected."""
         req = Request()
         self.assertIsNone(req.since)
         self.assertEqual(req.fields, [])
@@ -142,7 +130,6 @@ class TestRequest(unittest.TestCase):
         self.assertEqual(req.offsets, {})
         self.assertEqual(req.since_per_partition, {})
 
-        # Test custom values
         since = datetime(2024, 1, 1)
         fields = ["field1", "field2"]
         filters = [Filter("field", "value")]
@@ -168,12 +155,14 @@ class TestRequest(unittest.TestCase):
 
 
 class TestFilter(unittest.TestCase):
+    """Test suite for the Filter class."""
     def test_init(self):
+        """Tests basic instantiation and attribute assignment of the Filter class."""
         field = "test_field"
         value = "test_value"
-        filter = Filter(field, value)
-        self.assertEqual(filter.field, field)
-        self.assertEqual(filter.value, value)
+        filter_obj = Filter(field, value)
+        self.assertEqual(filter_obj.field, field)
+        self.assertEqual(filter_obj.value, value)
 
 
 if __name__ == '__main__':

@@ -10,6 +10,23 @@ class PreviousVersion:
                  number_of_characters: Optional[int] = None):
         self.identifier = identifier
         self.number_of_characters = number_of_characters
+    @staticmethod
+    def from_json(data: dict) -> 'PreviousVersion':
+        """Creates a PreviousVersion instance from a dictionary (JSON object)"""
+        if not isinstance(data, dict):
+            return PreviousVersion()
+        return PreviousVersion(
+            identifier=data.get('identifier'),
+            number_of_characters=data.get('number_of_characters')
+        )
+    @staticmethod
+    def to_json(previous_version: 'PreviousVersion') -> dict:
+        """Converts a PreviousVersion instance to a dictionary for JSON serialization"""
+        return {
+            'identifier': previous_version.identifier,
+            'number_of_characters': previous_version.number_of_characters
+        }
+        
 
 
 class Version:
