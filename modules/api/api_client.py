@@ -11,11 +11,32 @@ import httpx
 import io
 import datetime
 import time
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Callable, Any, List, Optional, Dict, Union
 
 DATE_FORMAT = "%Y-%m-%d"
 HOUR_FORMAT = "%H"
+
+class WikimediaAPIError(Exception):
+    """Base exception class for this client."""
+    pass
+
+class APIRequestError(WikimediaAPIError):
+    """Raised for network-level errors (e.g., connection refused, timeout)."""
+    def __init__(self, message, request):
+        super().__init__(message)
+        self.request = request
+
+class APIStatusError(WikimediaAPIError):
+    """Raised for non-successful HTTP status codes (4xx or 5xx)."""
+    def __init__(self, message, request, response):
+        super().__init__(message)
+        self.request = request
+        self.response = response
+
+class APIDataError(WikimediaAPIError):
+    """Raised for errors during data processing (e.g., invalid JSON, corrupt archive)."""
+    pass
 
 class Filter:
     """Represents a simple key-value filter for an API query."""
@@ -194,45 +215,61 @@ class Client:
         """
         self._rate_limit_wait()
         
-        response = self.http_client.request(method, url, **kwargs)
-        
-        response.raise_for_status()
-        return response
+        try:
+            response = self.http_client.request(method, url, **kwargs)
+            response.raise_for_status()
+            return response
+        except httpx.HTTPStatusError as e:
+            raise APIStatusError(f"HTTP Error: {e.response.status_code} {e.response.reason_phrase} for url {e.request.url}", request=e.request, response=e.response) from e
+        except httpx.RequestError as e:
+            raise APIRequestError(f"Request Error: {e} for url {e.request.url}", request=e.request) from e
 
     def _get_entity(self, req: Optional[Request], path: str, val: Any):
         """Fetches a JSON entity and populates a list or dict."""
         json_payload = req.to_json() if req else None
         response = self._request('POST', f"{self.base_url}v2/{path}", json=json_payload)
-        json_response = response.json()
+        try:
+            json_response = response.json()
+        except json.JSONDecodeError as e:
+            raise APIDataError(f"Failed to decode JSON from response: {e.msg}") from e
 
         if isinstance(val, list) and isinstance(json_response, list):
             val.extend(json_response)
         elif isinstance(val, dict) and isinstance(json_response, dict):
             val.update(json_response)
         else:
-            raise TypeError("Incompatible types for val and json_response")
+            raise APIDataError("Mismatched types between expected container and JSON response.")
 
     def _read_loop(self, rdr: io.BytesIO, cbk: Callable[[dict], Any]):
-        """Reads a stream of newline-delimited JSON and invokes a callback."""
         scanner = io.TextIOWrapper(rdr)
         for line in scanner:
-            article = json.loads(line)
-            cbk(article)
+            if not line.strip():
+                continue
+            try:
+                article = json.loads(line)
+                cbk(article)
+            except json.JSONDecodeError as e:
+                # Note: Here, I log the error but continue processing other lines if possible
+                # Or raise an APIDataError to stop processing completely
+                print(f"Warning: Skipping line due to JSON decode error: {e.msg}")
 
     def _read_entity(self, path: str, cbk: Callable[[dict], Any]):
-        """Fetches a raw entity and processes it as newline-delimited JSON."""
         response = self._request('GET', f"{self.base_url}v2/{path}")
         self._read_loop(io.BytesIO(response.content), cbk)
 
     def _head_entity(self, path: str) -> dict:
-        """Performs a HEAD request to get entity metadata."""
         response = self._request('HEAD', f"{self.base_url}v2/{path}")
+        try:
+            content_length = int(response.headers.get('Content-Length', 0))
+        except (ValueError, TypeError) as e:
+            raise APIDataError(f"Invalid 'Content-Length' header received: {response.headers.get('Content-Length')}") from e
+
         headers = {
             'ETag': response.headers.get('ETag', '').strip('"'),
             'Content-Type': response.headers.get('Content-Type', ''),
             'Accept-Ranges': response.headers.get('Accept-Ranges', ''),
             'Last-Modified': response.headers.get('Last-Modified', ''),
-            'Content-Length': int(response.headers.get('Content-Length', 0))
+            'Content-Length': content_length
         }
         return headers
 
@@ -241,7 +278,10 @@ class Client:
         full_path = f"{self.base_url}v2/{path}"
         headers = self._head_entity(path)
         content_length = headers['Content-Length']
-        
+    
+        if content_length == 0:
+            return
+
         if self.download_chunk_size > 0:
             chunk_size = min(self.download_chunk_size, content_length)
             chunks = [(i, min(i + chunk_size, content_length) - 1) for i in range(0, content_length, chunk_size)]
@@ -253,14 +293,27 @@ class Client:
             res = self._request('GET', full_path, headers=range_header)
             writer.seek(start)
             writer.write(res.content)
-
+    
         with ThreadPoolExecutor(max_workers=self.download_concurrency) as executor:
-            futures = [executor.submit(download_chunk, start, end) for start, end in chunks]
-            for future in futures:
-                future.result()
+            futures = {executor.submit(download_chunk, start, end): (start, end) for start, end in chunks}
+            for future in as_completed(futures):
+                try:
+                    future.result()
+                except (APIRequestError, APIStatusError) as e:
+                    for f in futures:
+                        f.cancel()
+                    raise APIRequestError(
+                        f"A download chunk failed: {e}",
+                        request=e.request
+                ) from e
+                except Exception as e:
+                    for f in futures:
+                        f.cancel()
+                    raise APIDataError(
+                        f"A download chunk failed with an unexpected error: {e}"
+                    ) from e                        
 
     def _subscribe_to_entity(self, path: str, req: Request, cbk: Callable[[dict], Any]):
-        """Subscribes to a real-time stream of newline-delimited JSON events."""
         json_payload = req.to_json() if req else None
         headers = {
             'Cache-Control': 'no-cache',
@@ -268,24 +321,36 @@ class Client:
             'Connection': 'keep-alive'
         }
 
-        with self.http_client.stream(
-            'GET', 
-            f"{self.realtime_url}v2/{path}", 
-            json=json_payload, 
-            headers=headers
-        ) as response:
-            response.raise_for_status()
-            for line in response.iter_lines():
-                if line: # Filter out keep-alive newlines
-                    article = json.loads(line)
-                    cbk(article)
+        try:
+            with self.http_client.stream(
+                'GET',
+                f"{self.realtime_url}v2/{path}",
+                json=json_payload,
+                headers=headers
+            ) as response:
+                response.raise_for_status()
+                for line in response.iter_lines():
+                    if line:
+                        try:
+                            article=json.loads(line)
+                            cbk(article)
+                        except json.JSONDecodeError:
+                            print(f"Warning: Skipping malformed JSON line in stream: {line}")
+        except httpx.HTTPStatusError as e:
+            raise APIStatusError(f"HTTP Error: {e.response.status_code} on stream", request=e.request, response=e.response) from e
+        except httpx.RequestError as e:
+            raise APIRequestError(f"Stream Request Error: {e}", request=e.request) from e
                     
     def read_all(self, rdr: io.BytesIO, cbk: Callable[[dict], Any]):
-        with tarfile.open(fileobj=rdr, mode='r:gz') as tar:
-            for member in tar.getmembers():
-                f = tar.extractfile(member)
-                if f:
-                    self._read_loop(io.BytesIO(f.read()), cbk)
+        try:
+            with tarfile.open(fileobj=rdr, mode='r:gz') as tar:
+                for member in tar.getmembers():
+                    f = tar.extractfile(member)
+                    if f:
+                        with f:
+                            self._read_loop(io.BytesIO(f.read()), cbk)
+        except tarfile.TarError as e:
+            raise APIDataError(f"Failed to read tar archive: {e}") from e
 
     def set_access_token(self, token: str):
         self.access_token = token
