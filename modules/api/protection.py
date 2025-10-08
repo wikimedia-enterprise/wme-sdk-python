@@ -1,4 +1,5 @@
 from typing import Optional
+from exceptions import DataModelError
 
 
 class Protection:
@@ -12,11 +13,18 @@ class Protection:
 
     @staticmethod
     def from_json(data: dict) -> 'Protection':
-        return Protection(
-            protection_type=data['type'],
-            level=data['level'],
-            expiry=data['expiry']
-        )
+        if not isinstance(data, dict):
+            raise DataModelError(f"Expected a dict for Protection data, but got {type(data).__name__}")
+        
+        try:
+            return Protection(
+                protection_type=data['type'],
+                level=data['level'],
+                expiry=data['expiry']
+            )
+        except (KeyError, TypeError) as e:
+            prot_type = data.get('type', 'N/A')
+            raise DataModelError(f"Failed to parse Protection data for type '{prot_type}': {e}") from e
 
     @staticmethod
     def to_json(protection: 'Protection') -> dict:

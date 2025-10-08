@@ -2,6 +2,7 @@ from typing import Optional
 from datetime import datetime
 from language import Language
 from size import Size
+from exceptions import DataModelError
 
 
 class Project:
@@ -25,16 +26,24 @@ class Project:
 
     @staticmethod
     def from_json(data: dict) -> 'Project':
-        return Project(
-            name=data['name'],
-            identifier=data['identifier'],
-            url=data['url'],
-            code=data['code'],
-            version=data['version'],
-            date_modified=datetime.fromisoformat(data['dateModified']),
-            in_language=Language.from_json(data['inLanguage']),
-            size=Size.from_json(data['size'])
-        )
+        if not isinstance(data, dict):
+            raise DataModelError(f"Expected a dict for Project data, but got {type(data).__name__}")
+        
+        try:
+            date_str = data.get('date_modified')
+            return Project(
+                name=data.get('name'),
+                identifier=data.get('identifier'),
+                url=data.get('url'),
+                code=data.get('code'),
+                version=data.get('version'),
+                date_modified=datetime.fromisoformat(date_str) if date_str else None,
+                in_language=Language.from_json(lang_data) if (lang_data := data.get('inLanguage')) else None,
+                size=Size.from_json(s_data) if (s_data := data.get('size')) else None
+            )
+        except (ValueError, TypeError, DataModelError) as e:
+            project_name = data.get('name', 'N/A')
+            raise DataModelError(f"Failed to parse Project data for '{project_name}': {e}") from e
 
     @staticmethod
     def to_json(project: 'Project') -> dict:
@@ -44,7 +53,7 @@ class Project:
             'url': project.url,
             'code': project.code,
             'version': project.version,
-            'dateModified': project.date_modified.isoformat(),
-            'inLanguage': Language.to_json(project.in_language),
-            'size': Size.to_json(project.size)
+            'dateModified': project.date_modified.isoformat() if project.date_modified else None,
+            'inLanguage': Language.to_json(project.in_language) if project.in_language else None,
+            'size': Size.to_json(project.size) if project.size else None
         }
