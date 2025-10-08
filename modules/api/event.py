@@ -29,12 +29,12 @@ class Event:
             raise DataModelError(f"Expected a dict for Event data, but got {type(data).__name__}")
         
         try:
-            event_type_str = data.get('eventType')
+            event_type_str = data.get('event_type')
             if event_type_str and event_type_str not in VALID_EVENT_TYPES:
                 raise ValueError(f"'{event_type_str}' is not a valid event type.")
             
-            created_str = data.get('dateCreated')
-            published_str = data.get('datePublished')
+            created_str = data.get('date_created')
+            published_str = data.get('date_published')
             
             return Event(
                 identifier=data.get('identifier'),
@@ -52,9 +52,9 @@ class Event:
     def to_json(event: 'Event') -> dict:
         return {
             'identifier': event.identifier,
-            'eventType': event.event_type,
-            'dateCreated': event.date_created.isoformat() if event.date_created else None,
-            'datePublished': event.date_published.isoformat() if event.date_published else None,
+            'event_type': event.event_type,
+            'date_created': event.date_created.isoformat() if event.date_created else None,
+            'date_published': event.date_published.isoformat() if event.date_published else None,
             'partition': event.partition,
             'offset': event.offset
         }

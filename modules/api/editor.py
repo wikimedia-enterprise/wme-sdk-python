@@ -32,18 +32,18 @@ class Editor:
             raise DataModelError(f"Expected a dict for Editor data, but got {type(data).__name__}")
         
         try:
-            date_str = data.get('dateStarted')
+            date_str = data.get('date_started')
             
             return Editor(
                 identifier=data.get('identifier'),
                 name=data.get('name'),
                 edit_count=data.get('editCount'),
                 groups=data.get('groups'),
-                is_bot=data.get('isBot'),
-                is_anonymous=data.get('isAnonymous'),
-                is_admin=data.get('isAdmin'),
-                is_patroller=data.get('isPatroller'),
-                has_advanced_rights=data.get('hasAdvancedRights'),
+                is_bot=data.get('is_bot'),
+                is_anonymous=data.get('is_anonymous'),
+                is_admin=data.get('is_admin'),
+                is_patroller=data.get('is_patroller'),
+                has_advanced_rights=data.get('has_advanced_rights'),
                 date_started=datetime.fromisoformat(date_str) if date_str else None
             )
         except (ValueError, TypeError) as e:
@@ -57,10 +57,10 @@ class Editor:
             'name': editor.name,
             'editCount': editor.edit_count,
             'groups': editor.groups,
-            'isBot': editor.is_bot,
-            'isAnonymous': editor.is_anonymous,
-            'isAdmin': editor.is_admin,
-            'isPatroller': editor.is_patroller,
-            'hasAdvancedRights': editor.has_advanced_rights,
-            'dateStarted': editor.date_started.isoformat() if editor.date_started else None
+            'is_bot': editor.is_bot,
+            'is_anonymous': editor.is_anonymous,
+            'is_admin': editor.is_admin,
+            'is_patroller': editor.is_patroller,
+            'has_advanced_rights': editor.has_advanced_rights,
+            'date_started': editor.date_started.isoformat() if editor.date_started else None
         }

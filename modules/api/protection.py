@@ -18,9 +18,9 @@ class Protection:
         
         try:
             return Protection(
-                protection_type=data['type'],
-                level=data['level'],
-                expiry=data['expiry']
+                protection_type=data.get('type'),
+                level=data.get('level'),
+                expiry=data.get('expiry')
             )
         except (KeyError, TypeError) as e:
             prot_type = data.get('type', 'N/A')

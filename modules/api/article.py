@@ -29,10 +29,10 @@ class Image:
     @staticmethod
     def from_json(data: dict) -> 'Image':
         return Image(
-            content_url=data.get('contentUrl'),
+            content_url=data.get('content_url'),
             width=data.get('width'),
             height=data.get('height'),
-            alternative_text=data.get('alternativeText'),
+            alternative_text=data.get('alternative_text'),
             caption=data.get('caption')
            )
 
@@ -42,7 +42,7 @@ class Image:
             'contentUrl': image.content_url,
             'width': image.width,
             'height': image.height,
-            'alternativeText': image.alternative_text,
+            'alternative_text': image.alternative_text,
             'caption': image.caption
             }
 

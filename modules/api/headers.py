@@ -24,16 +24,16 @@ class Headers:
             raise DataModelError(f"Expected a dict for Headers data, but got {type(data).__name__}")
         
         try:
-            last_modified_str = data.get('last-modified')
+            last_modified_str = data.get('last_modified')
             
             return Headers(
-                content_length=data.get('content-length'),
+                content_length=data.get('content_length'),
                 etag=data.get('etag'),
                 
                 last_modified=datetime.strptime(last_modified_str, HTTP_DATE_FORMAT) if last_modified_str else None,
                 
-                content_type=data.get('content-type'),
-                accept_ranges=data.get('accept-ranges')
+                content_type=data.get('content_type'),
+                accept_ranges=data.get('accept_ranges')
             )
         except (ValueError, TypeError) as e:
             raise DataModelError(f"Failed to parse Headers data: {e}") from e
@@ -41,11 +41,11 @@ class Headers:
     @staticmethod
     def to_json(headers: 'Headers') -> dict:
         return {
-            'content-length': headers.content_length,
+            'content_length': headers.content_length,
             'etag': headers.etag,
 
-            'last-modified': headers.last_modified.strftime(HTTP_DATE_FORMAT) if headers.last_modified else None,
+            'last_modified': headers.last_modified.strftime(HTTP_DATE_FORMAT) if headers.last_modified else None,
             
-            'content-type': headers.content_type,
-            'accept-ranges': headers.accept_ranges
+            'content_type': headers.content_type,
+            'accept_ranges': headers.accept_ranges
         }

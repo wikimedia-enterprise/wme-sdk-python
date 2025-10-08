@@ -37,8 +37,8 @@ class Batch:
                 identifier=data.get('identifier'),
                 version=data.get('version'),
                 date_modified=date_obj,
-                is_part_of=Project.from_json(isPartOf) if (isPartOf := data.get('isPartOf')) else None,
-                in_language=Language.from_json(inLanguage) if (inLanguage := data.get('inLanguage')) else None,
+                is_part_of=Project.from_json(is_part_of) if (is_part_of := data.get('is_part_of')) else None,
+                in_language=Language.from_json(in_language) if (in_language := data.get('in_language')) else None,
                 namespace=Namespace.from_json(namespace) if (namespace := data.get('namespace')) else None,
                 size=Size.from_json(size) if (size := data.get('size')) else None
             )
@@ -52,9 +52,9 @@ class Batch:
         return {
             'identifier': batch.identifier,
             'version': batch.version,
-            'dateModified': batch.date_modified.isoformat() if batch.date_modified else None,
-            'isPartOf': Project.to_json(batch.is_part_of) if batch.is_part_of else None,
-            'inLanguage': Language.to_json(batch.in_language) if batch.in_language else None,
+            'date_modified': batch.date_modified.isoformat() if batch.date_modified else None,
+            'is_part_of': Project.to_json(batch.is_part_of) if batch.is_part_of else None,
+            'in_language': Language.to_json(batch.in_language) if batch.in_language else None,
             'namespace': Namespace.to_json(batch.namespace) if batch.namespace else None,
             'size': Size.to_json(batch.size) if batch.size else None
         }

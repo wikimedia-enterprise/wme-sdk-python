@@ -38,7 +38,7 @@ class Project:
                 code=data.get('code'),
                 version=data.get('version'),
                 date_modified=datetime.fromisoformat(date_str) if date_str else None,
-                in_language=Language.from_json(lang_data) if (lang_data := data.get('inLanguage')) else None,
+                in_language=Language.from_json(lang_data) if (lang_data := data.get('in_language')) else None,
                 size=Size.from_json(s_data) if (s_data := data.get('size')) else None
             )
         except (ValueError, TypeError, DataModelError) as e:
@@ -53,7 +53,7 @@ class Project:
             'url': project.url,
             'code': project.code,
             'version': project.version,
-            'dateModified': project.date_modified.isoformat() if project.date_modified else None,
-            'inLanguage': Language.to_json(project.in_language) if project.in_language else None,
+            'date_modified': project.date_modified.isoformat() if project.date_modified else None,
+            'in_language': Language.to_json(project.in_language) if project.in_language else None,
             'size': Size.to_json(project.size) if project.size else None
         }
