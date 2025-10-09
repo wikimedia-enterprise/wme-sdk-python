@@ -54,6 +54,9 @@ class TestClient(unittest.TestCase):
         """
         mock_http_client = cast(MagicMock, self.client.http_client)
         mock_response = MagicMock(spec=httpx.Response)
+    
+        mock_response.status_code = 200
+    
         mock_http_client.request.return_value = mock_response
 
         result = self.client._request("GET", "http://test.com/path", json={"data": 1})
@@ -61,9 +64,9 @@ class TestClient(unittest.TestCase):
         mock_http_client.request.assert_called_once_with(
             "GET", "http://test.com/path", json={"data": 1}
         )
-        
+    
         mock_response.raise_for_status.assert_called_once()
-        
+    
         self.assertEqual(result, mock_response)
 
     def test_get_entity(self):
