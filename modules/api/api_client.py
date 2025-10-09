@@ -11,9 +11,12 @@ import httpx
 import io
 import datetime
 import time
+import logging
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Callable, Any, List, Optional, Dict, Union
-from .exceptions import APIRequestError, APIStatusError, APIDataError
+from .exceptions import APIRequestError, APIStatusError, APIDataError, SDKHealthError
+
+logger = logging.getLogger(__name__)
 
 DATE_FORMAT = "%Y-%m-%d"
 HOUR_FORMAT = "%H"
@@ -197,11 +200,17 @@ class Client:
         
         try:
             response = self.http_client.request(method, url, **kwargs)
+            logger.debug(f"Request successful: {method} {url} -> {response.status_code}")
             response.raise_for_status()
             return response
         except httpx.HTTPStatusError as e:
-            raise APIStatusError(f"HTTP Error: {e.response.status_code} {e.response.reason_phrase} for url {e.request.url}", request=e.request, response=e.response) from e
+            if e.response.status_code == 429:
+                logger.warning("Received 429 Too Many Requests. Client may retry.")
+            else:
+                logger.error(f"HTTP Status Error: {e.response.status_code} for url {e.request.url}")
+            raise APIStatusError(f"HTTP Error: {e.response.status_code} {e.response.reason_phrase}", request=e.request, response=e.response) from e
         except httpx.RequestError as e:
+            logger.error(f"Request Error: {e} for url {e.request.url}")
             raise APIRequestError(f"Request Error: {e} for url {e.request.url}", request=e.request) from e
 
     def _get_entity(self, req: Optional[Request], path: str, val: Any):
@@ -229,9 +238,7 @@ class Client:
                 article = json.loads(line)
                 cbk(article)
             except json.JSONDecodeError as e:
-                # Note: Here, I log the error but continue processing other lines if possible
-                # Or raise an APIDataError to stop processing completely
-                print(f"Warning: Skipping line due to JSON decode error: {e.msg}")
+                logger.warning(f"Skipping line due to JSON decode error: {e.msg}", exc_info=True)
 
     def _read_entity(self, path: str, cbk: Callable[[dict], Any]):
         response = self._request('GET', f"{self.base_url}v2/{path}")
@@ -280,6 +287,7 @@ class Client:
                 try:
                     future.result()
                 except (APIRequestError, APIStatusError) as e:
+                    logger.critical("A download chunk failed, cancelling remaining downloads.")
                     for f in futures:
                         f.cancel()
                     raise APIRequestError(
@@ -287,6 +295,7 @@ class Client:
                         request=e.request
                 ) from e
                 except Exception as e:
+                    logger.critical("A download chunk failed with an unexpected error, cancelling remaining downloads.")
                     for f in futures:
                         f.cancel()
                     raise APIDataError(
@@ -315,7 +324,7 @@ class Client:
                             article=json.loads(line)
                             cbk(article)
                         except json.JSONDecodeError:
-                            print(f"Warning: Skipping malformed JSON line in stream: {line}")
+                            logger.warning(f"Skipping malformed JSON line in stream: {line}")
         except httpx.HTTPStatusError as e:
             raise APIStatusError(f"HTTP Error: {e.response.status_code} on stream", request=e.request, response=e.response) from e
         except httpx.RequestError as e:
@@ -335,7 +344,7 @@ class Client:
     def set_access_token(self, token: str):
         self.access_token = token
         self.http_client.headers['Authorization'] = f'Bearer {token}'
-
+        
     def get_codes(self, req: Request) -> List[dict]:
         codes = []
         self._get_entity(req, "codes", codes)

@@ -165,6 +165,7 @@ class Article:
 
     @staticmethod
     def from_json(data: dict) -> 'Article':
+        
         try:
             return Article(
             name=data.get('name'),

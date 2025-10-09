@@ -22,3 +22,7 @@ class APIDataError(WikimediaAPIError):
 class DataModelError(ValueError):
     """Raised when incoming data cannot be parsed into a data model"""
     pass
+
+class SDKHealthError(Exception):
+    """Raised when the SDK's health check fails"""
+    pass
