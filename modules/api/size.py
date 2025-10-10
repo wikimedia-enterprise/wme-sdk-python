@@ -1,5 +1,5 @@
 from typing import Optional
-
+from exceptions import DataModelError
 
 class Size:
     def __init__(self,
@@ -10,10 +10,16 @@ class Size:
 
     @staticmethod
     def from_json(data: dict) -> 'Size':
-        return Size(
-            value=data['value'],
-            unit_text=data['unit_text']
-        )
+        if not isinstance(data, dict):
+            raise DataModelError(f"Expected a dict for Size data, but got {type(data).__name__}")
+        
+        try:
+            return Size(
+                value=data.get('value'),
+                unit_text=data.get('unit_text') 
+            )
+        except (KeyError, TypeError) as e:
+            raise DataModelError(f"Failed to parse Size data: {e}") from e
 
     @staticmethod
     def to_json(size: 'Size') -> dict:

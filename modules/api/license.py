@@ -1,4 +1,5 @@
 from typing import Optional
+from exceptions import DataModelError
 
 
 class License:
@@ -12,11 +13,18 @@ class License:
 
     @staticmethod
     def from_json(data: dict) -> 'License':
-        return License(
-            name=data['name'],
-            identifier=data['identifier'],
-            url=data['url']
-        )
+        if not isinstance(data, dict):
+            raise DataModelError(f"Expected a dict for License data, but got {type(data).__name__}")
+        
+        try:
+            return License(
+                name=data.get('name'),
+                identifier=data.get('identifier'),
+                url=data.get('url')
+            )
+        except (KeyError, TypeError) as e:
+            license_name = data.get('name', 'N/A')
+            raise DataModelError(f"Failed to parse License data for '{license_name}': {e}") from e
 
     @staticmethod
     def to_json(license: 'License') -> dict:
