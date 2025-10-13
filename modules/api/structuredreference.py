@@ -2,8 +2,9 @@ from typing import Dict, Optional
 from pydantic import BaseModel, Field
 
 from .structuredreferencetext import StructuredReferenceText
-"""Represents a structured source linked to citations, containing metadata and formatted text for verification."""
+
 class StructuredReference(BaseModel):
+    """Represents a structured source linked to citations, containing metadata and formatted text for verification."""
     
     # A unique identifier for the article.
     identifier: Optional[str] = None

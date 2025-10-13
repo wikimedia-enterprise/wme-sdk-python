@@ -37,7 +37,7 @@ class Editor:
             return Editor(
                 identifier=data.get('identifier'),
                 name=data.get('name'),
-                edit_count=data.get('editCount'),
+                edit_count=data.get('edit_count'),
                 groups=data.get('groups'),
                 is_bot=data.get('is_bot'),
                 is_anonymous=data.get('is_anonymous'),
