@@ -16,7 +16,7 @@ class PreviousVersion:
     def from_json(data: dict) -> 'PreviousVersion':
         """Creates a PreviousVersion instance from a dictionary (JSON object)"""
         if not isinstance(data, dict):
-            return DataModelError(f"Expected dict for PreviousVersion, got {type(data).__name__}")
+            raise DataModelError(f"Expected dict for PreviousVersion, got {type(data).__name__}")
         try:
             return PreviousVersion(
                 identifier=data.get('identifier'),
