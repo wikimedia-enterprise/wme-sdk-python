@@ -10,6 +10,7 @@ from license import License
 from visibility import Visibility
 from event import Event
 from project import Project
+from exceptions import DataModelError
 
 
 class Image:
@@ -28,10 +29,10 @@ class Image:
     @staticmethod
     def from_json(data: dict) -> 'Image':
         return Image(
-            content_url=data.get('contentUrl'),
+            content_url=data.get('content_url'),
             width=data.get('width'),
             height=data.get('height'),
-            alternative_text=data.get('alternativeText'),
+            alternative_text=data.get('alternative_text'),
             caption=data.get('caption')
            )
 
@@ -41,7 +42,7 @@ class Image:
             'contentUrl': image.content_url,
             'width': image.width,
             'height': image.height,
-            'alternativeText': image.alternative_text,
+            'alternative_text': image.alternative_text,
             'caption': image.caption
             }
 
@@ -111,7 +112,6 @@ class Template:
             'url': template.url
         }
 
-
 class Article:
     def __init__(self,
                  name: Optional[str] = None,
@@ -165,32 +165,38 @@ class Article:
 
     @staticmethod
     def from_json(data: dict) -> 'Article':
-        return Article(
-            name=data.get('name'),
-            abstract=data.get('abstract'),
-            identifier=data.get('identifier'),
-            date_created=Article.parse_date(data.get('date_created')),
-            date_modified=Article.parse_date(data.get('date_modified')),
-            date_previously_modified=Article.parse_date(data.get('date_previously_modified')),
-            protection=[Protection.from_json(p) for p in data.get('protection', [])],
-            version=Version.from_json(data.get('version')) if data.get('version') else None,
-            previous_version=PreviousVersion.from_json(data.get('previous_version')) if data.get('previous_version') else None,
-            url=data.get('url'),
-            watchers_count=data.get('watchers_count'),
-            namespace=Namespace.from_json(data.get('namespace')) if data.get('namespace') else None,
-            in_language=Language.from_json(data.get('in_language')) if data.get('in_language') else None,
-            main_entity=Entity.from_json(data.get('main_entity')) if data.get('main_entity') else None,
-            additional_entities=[Entity.from_json(e) for e in data.get('additional_entities', [])],
-            categories=[Category.from_json(c) for c in data.get('categories', [])],
-            templates=[Template.from_json(t) for t in data.get('templates', [])],
-            redirects=[Redirect.from_json(r) for r in data.get('redirects', [])],
-            is_part_of=Project.from_json(data.get('is_part_of')) if data.get('is_part_of') else None,
-            article_body=ArticleBody.from_json(data.get('article_body')) if data.get('article_body') else None,
-            license=[License.from_json(l) for l in data.get('license', [])],
-            visibility=Visibility.from_json(data.get('visibility')) if data.get('visibility') else None,
-            event=Event.from_json(data.get('event')) if data.get('event') else None,
-            image=Image.from_json(data.get('image')) if data.get('image') else None,
+        
+        try:
+            return Article(
+                name=data.get('name'),
+                abstract=data.get('abstract'),
+                identifier=data.get('identifier'),
+                date_created=Article.parse_date(data.get('date_created')),
+                date_modified=Article.parse_date(data.get('date_modified')),
+                date_previously_modified=Article.parse_date(data.get('date_previously_modified')),
+                protection=[Protection.from_json(p) for p in data.get('protection', [])],
+                version=Version.from_json(version_data) if (version_data := data.get('version')) else None,
+                previous_version=PreviousVersion.from_json(previous_version) if (previous_version := data.get('previous_version')) else None,
+                url=data.get('url'),
+                watchers_count=data.get('watchers_count'),  
+                namespace=Namespace.from_json(namespace) if (namespace := data.get('namespace')) else None,
+                in_language=Language.from_json(in_language) if (in_language := data.get('in_language')) else None,
+                main_entity=Entity.from_json(main_entity) if (main_entity := data.get('main_entity')) else None,
+                additional_entities=[Entity.from_json(e) for e in data.get('additional_entities', [])],
+                categories=[Category.from_json(c) for c in data.get('categories', [])],
+                templates=[Template.from_json(t) for t in data.get('templates', [])],
+                redirects=[Redirect.from_json(r) for r in data.get('redirects', [])],
+                is_part_of=Project.from_json(is_part_of) if (is_part_of := data.get('is_part_of')) else None,
+                article_body=ArticleBody.from_json(article_body) if (article_body := data.get('article_body')) else None,
+                license=[License.from_json(l) for l in data.get('license', [])],
+                visibility=Visibility.from_json(visibility) if (visibility := data.get('visibility')) else None,
+                event=Event.from_json(event) if (event := data.get('event')) else None,
+                image=Image.from_json(image) if (image := data.get('image')) else None,
         )
+        except (ValueError, TypeError, KeyError) as e:
+            article_id = data.get('identifier', 'N/A')
+            raise DataModelError(f"Failed to parse Article with identifier '{article_id}': {e}") from e
+            
 
     @staticmethod
     def to_json(article: 'Article') -> dict:
@@ -223,6 +229,9 @@ class Article:
 
     @staticmethod
     def parse_date(date_str: Optional[str]) -> Optional[datetime]:
-        if date_str:
+        if not date_str:
+            return None
+        try:
             return datetime.strptime(date_str, '%Y-%m-%dT%H:%M:%SZ')
-        return None
+        except ValueError as e:
+            raise DataModelError(f"Invalid date format for '{date_str}': {e}") from e

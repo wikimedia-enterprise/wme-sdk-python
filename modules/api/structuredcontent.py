@@ -5,6 +5,7 @@ from version import Version
 from entity import Entity
 from project import Project
 from language import Language
+from exceptions import DataModelError
 
 
 class Link:
@@ -18,11 +19,16 @@ class Link:
 
     @staticmethod
     def from_json(data: dict) -> 'Link':
-        return Link(
-            url=data['url'],
-            text=data['text'],
-            images=[Image.from_json(image) for image in data['images']]
-        )
+        if not isinstance(data, dict):
+            raise DataModelError(f"Expected dict for Link, got {type(data).__name__}")
+        try:
+            return Link(
+                url=data['url'],
+                text=data['text'],
+                images=[Image.from_json(image) for image in data['images']]
+            )
+        except (TypeError, DataModelError) as e:
+            raise DataModelError(f"Failed to parse Link data: {e}") from e
 
     @staticmethod
     def to_json(link: 'Link') -> dict:
@@ -43,11 +49,16 @@ class Citation:
 
     @staticmethod
     def from_json(data: dict) -> 'Citation':
-        return Citation(
-            identifier=data.get('identifier', ""),
-            group=data.get('group', ""),
-            text=data.get('text', "")
-        )
+        if not isinstance(data, dict):
+            raise DataModelError(f"Expected dict for Citation, got {type(data).__name__}")
+        try:
+            return Citation(
+                identifier=data.get('identifier'),
+                group=data.get('group'),
+                text=data.get('text')
+            )
+        except (TypeError) as e:
+            raise DataModelError(f"Failed to parse Citation data: {e}") from e
 
     @staticmethod
     def to_json(citation: 'Citation') -> dict:
@@ -78,16 +89,22 @@ class Part:
 
     @staticmethod
     def from_json(data: dict) -> 'Part':
-        return Part(
-            name=data['name'],
-            part_type=data['type'],
-            value=data['value'],
-            values=data['values'],
-            images=[Image.from_json(image) for image in data['images']],
-            links=[Link.from_json(link) for link in data['links']],
-            has_parts=[Part.from_json(part) for part in data['hasParts']],
-            citations=[Citation.from_json(citation) for citation in data['citations']]
-        )
+        if not isinstance(data, dict):
+            raise DataModelError(f"Expected dict for Part, got {type(data).__name__}")
+        try:
+            return Part(
+                name=data.get('name'),
+                part_type=data.get('type'),
+                value=data.get('value'),
+                values=data.get('values'),
+                images=[Image.from_json(image) for image in data.get('images', [])],
+                links=[Link.from_json(link) for link in data.get('links', [])],
+                has_parts=[Part.from_json(part) for part in data.get('has_parts', [])],
+                citations=[Citation.from_json(citation) for citation in data.get('citations', [])]
+            )
+        except (TypeError, DataModelError) as e:
+            part_name = data.get('name', 'N/A')
+            raise DataModelError(f"Failed to parse Part '{part_name}': {e}") from e
 
     @staticmethod
     def to_json(part: 'Part') -> dict:
@@ -98,7 +115,7 @@ class Part:
             'values': part.values,
             'images': [Image.to_json(image) for image in part.images],
             'links': [Link.to_json(link) for link in part.links],
-            'hasParts': [Part.to_json(sub_part) for sub_part in part.has_parts],
+            'has_parts': [Part.to_json(sub_part) for sub_part in part.has_parts],
             'citations': [Citation.to_json(citation) for citation in part.citations]
         }
 
@@ -111,10 +128,15 @@ class ReferenceText:
 
     @staticmethod
     def from_json(data: dict) -> 'ReferenceText':
-        return ReferenceText(
-            value=data.get('value', ""),
-            links=[Link.from_json(link) for link in data.get('links', [])]
-        )
+        if not isinstance(data, dict):
+            raise DataModelError(f"Expected dict for ReferenceText, got {type(data).__name__}")
+        try:
+            return ReferenceText(
+                value=data.get('value'),
+                links=[Link.from_json(link) for link in data.get('links', [])]
+            )
+        except (TypeError, DataModelError) as e:
+            raise DataModelError(f"Failed to parse ReferenceText: {e}") from e
 
     @staticmethod
     def to_json(text: 'ReferenceText') -> dict:
@@ -139,25 +161,31 @@ class Reference:
         self.source = source
 
     @staticmethod
-    def from_json(data: dict) -> 'ReferenceText':
-        return ReferenceText(
-            identifier=data.get('identifier', ""),
-            group=data.get('group', ""),
-            ref_type=data.get('type', ""),
-            metadata=data.get('metadata', {}),
-            text=ReferenceText.from_json(data.get('text')),
-            source=ReferenceText.from_json(data.get('source'))
-        )
+    def from_json(data: dict) -> 'Reference':
+        if not isinstance(data, dict):
+            raise DataModelError(f"Expected dict for Reference, got {type(data).__name__}")
+        try:
+            return Reference(
+                identifier=data.get('identifier'),
+                group=data.get('group'),
+                ref_type=data.get('type'),
+                metadata=data.get('metadata'),
+                text=ReferenceText.from_json(t_data) if (t_data := data.get('text')) else None,
+                source=ReferenceText.from_json(s_data) if (s_data := data.get('source')) else None
+            )
+        except (TypeError, DataModelError) as e:
+            ref_id = data.get('identifier', 'N/A')
+            raise DataModelError(f"Failed to parse Reference '{ref_id}': {e}") from e
 
     @staticmethod
-    def to_json(reference: 'ReferenceText') -> dict:
+    def to_json(reference: 'Reference') -> dict:
         return {
             'identifier': reference.identifier,
             'group': reference.group,
             'type': reference.ref_type,
             'metadata': reference.metadata,
-            'text': ReferenceText.to_json(reference.text), 
-            'source': ReferenceText.to_json(reference.source) 
+            'text': ReferenceText.to_json(reference.text) if reference.text else None,
+            'source': ReferenceText.to_json(reference.source) if reference.source else None
         }
 
 class StructuredTableCell:
@@ -169,13 +197,15 @@ class StructuredTableCell:
 
     @staticmethod
     def from_json(data: dict) -> 'StructuredTableCell':
-        nested = None
-        if data and data.get("nested_table"):
-            nested = StructuredTable.from_json(data["nested_table"])
-        return StructuredTableCell(
-            value=data.get("value") if data else None,
-            nested_table=nested
-        )
+        if not isinstance(data, dict):
+            raise DataModelError(f"Expected dict for StructuredTableCell, got {type(data).__name__}")
+        try:
+            return StructuredTableCell(
+                value=data.get("value"),
+                nested_table=StructuredTable.from_json(nt_data) if (nt_data := data.get("nested_table")) else None
+            )
+        except (TypeError, DataModelError) as e:
+            raise DataModelError(f"Failed to parse StructuredTableCell: {e}") from e
 
     @staticmethod
     def to_json(cell: 'StructuredTableCell') -> dict:
@@ -200,13 +230,19 @@ class StructuredTable:
 
     @staticmethod
     def from_json(data: dict) -> 'StructuredTable':
-        return StructuredTable(
-            identifier=data.get("identifier") if data else None,
-            headers=[[StructuredTableCell.from_json(c) for c in row] for row in data.get("headers", [])] if data else [],
-            rows=[[StructuredTableCell.from_json(c) for c in row] for row in data.get("rows", [])] if data else [],
-            footers=[[StructuredTableCell.from_json(c) for c in row] for row in data.get("footers", [])] if data else [],
-            confidence_score=data.get("confidence_score") if data else None
-        )
+        if not isinstance(data, dict):
+            raise DataModelError(f"Expected dict for StructuredTable, got {type(data).__name__}")
+        try:
+            return StructuredTable(
+                identifier=data.get("identifier"),
+                headers=[[StructuredTableCell.from_json(c) for c in row] for row in data.get("headers", [])],
+                rows=[[StructuredTableCell.from_json(c) for c in row] for row in data.get("rows", [])],
+                footers=[[StructuredTableCell.from_json(c) for c in row] for row in data.get("footers", [])],
+                confidence_score=data.get("confidence_score")
+            )
+        except (TypeError, DataModelError) as e:
+            table_id = data.get('identifier', 'N/A')
+            raise DataModelError(f"Failed to parse StructuredTable '{table_id}': {e}") from e
 
     @staticmethod
     def to_json(table: 'StructuredTable') -> dict:
@@ -258,44 +294,53 @@ class StructuredContent:
 
     @staticmethod
     def from_json(data: dict) -> 'StructuredContent':
-        return StructuredContent(
-            name=data['name'],
-            identifier=data['identifier'],
-            abstract=data['abstract'],
-            description=data['description'],
-            version=Version.from_json(data['version']),
-            url=data['url'],
-            date_created=datetime.fromisoformat(data['dateCreated']),
-            date_modified=datetime.fromisoformat(data['dateModified']),
-            main_entity=Entity.from_json(data['mainEntity']),
-            additional_entities=[Entity.from_json(entity) for entity in data['additionalEntities']],
-            is_part_of=Project.from_json(data['isPartOf']),
-            in_language=Language.from_json(data['inLanguage']),
-            infoboxes=[Part.from_json(part) for part in data['infoboxes']],
-            article_sections=[Part.from_json(section) for section in data['articleSections']],     
-            tables=[StructuredTable.from_json(tbl) for tbl in (data.get('tables') or [])] if data else [],
-            image=Image.from_json(data['image']),
-            references=[Reference.from_json(reference) for reference in data.get('references', [])]
-        )
+        if not isinstance(data, dict):
+            raise DataModelError(f"Expected dict for StructuredContent, got {type(data).__name__}")
+        try:
+            created_str = data.get('date_created')
+            modified_str = data.get('date_modified')
+
+            return StructuredContent(
+                name=data.get('name'),
+                identifier=data.get('identifier'),
+                abstract=data.get('abstract'),
+                description=data.get('description'),
+                version=Version.from_json(v_data) if (v_data := data.get('version')) else None,
+                url=data.get('url'),
+                date_created=datetime.fromisoformat(created_str) if created_str else None,
+                date_modified=datetime.fromisoformat(modified_str) if modified_str else None,
+                main_entity=Entity.from_json(me_data) if (me_data := data.get('main_entity')) else None,
+                additional_entities=[Entity.from_json(e) for e in data.get('additional_entities', [])],
+                is_part_of=Project.from_json(p_data) if (p_data := data.get('is_part_of')) else None,
+                in_language=Language.from_json(l_data) if (l_data := data.get('in_language')) else None,
+                infoboxes=[Part.from_json(p) for p in data.get('infoboxes', [])],
+                article_sections=[Part.from_json(s) for s in data.get('article_sections', [])],
+                tables=[StructuredTable.from_json(t) for t in data.get('tables', [])],
+                image=Image.from_json(i_data) if (i_data := data.get('image')) else None,
+                references=[Reference.from_json(r) for r in data.get('references', [])]
+            )
+        except (ValueError, TypeError, DataModelError) as e:
+            content_id = data.get('identifier', 'N/A')
+            raise DataModelError(f"Failed to parse StructuredContent '{content_id}': {e}") from e
 
     @staticmethod
-    def to_json(structured_content: 'StructuredContent') -> dict:
+    def to_json(sc: 'StructuredContent') -> dict:
         return {
-            'name': structured_content.name,
-            'identifier': structured_content.identifier,
-            'abstract': structured_content.abstract,
-            'description': structured_content.description,
-            'version': Version.to_json(structured_content.version),
-            'url': structured_content.url,
-            'dateCreated': structured_content.date_created.isoformat(),
-            'dateModified': structured_content.date_modified.isoformat(),
-            'mainEntity': Entity.to_json(structured_content.main_entity),
-            'additionalEntities': [Entity.to_json(entity) for entity in structured_content.additional_entities],
-            'isPartOf': Project.to_json(structured_content.is_part_of),
-            'inLanguage': Language.to_json(structured_content.in_language),
-            'infoboxes': [Part.to_json(part) for part in structured_content.infoboxes],
-            'articleSections': [Part.to_json(section) for section in structured_content.article_sections],
-            'tables': [StructuredTable.to_json(tbl) for tbl in structured_content.tables],
-            'image': Image.to_json(structured_content.image),
-            'references': [Reference.to_json(reference) for reference in structured_content.references]
+            'name': sc.name,
+            'identifier': sc.identifier,
+            'abstract': sc.abstract,
+            'description': sc.description,
+            'url': sc.url,
+            'version': Version.to_json(sc.version) if sc.version else None,
+            'date_created': sc.date_created.isoformat() if sc.date_created else None,
+            'date_modified': sc.date_modified.isoformat() if sc.date_modified else None,
+            'mainEntity': Entity.to_json(sc.main_entity) if sc.main_entity else None,
+            'additional_entities': [Entity.to_json(e) for e in sc.additional_entities],
+            'is_part_of': Project.to_json(sc.is_part_of) if sc.is_part_of else None,
+            'inLanguage': Language.to_json(sc.in_language) if sc.in_language else None,
+            'infoboxes': [Part.to_json(p) for p in sc.infoboxes],
+            'article_sections': [Part.to_json(s) for s in sc.article_sections],
+            'tables': [StructuredTable.to_json(t) for t in sc.tables],
+            'image': Image.to_json(sc.image) if sc.image else None,
+            'references': [Reference.to_json(r) for r in sc.references]
         }
