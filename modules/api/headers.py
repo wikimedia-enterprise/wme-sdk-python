@@ -1,11 +1,14 @@
+"""Represents a collection of HTTP headers for a resource and it's parsing methods"""
+
 from typing import Optional
 from datetime import datetime
-from exceptions import DataModelError
+from .exceptions import DataModelError
 
 HTTP_DATE_FORMAT = "%a, %d %b %Y %H:%M:%S GMT"
 
 
 class Headers:
+    """Represents a collection of HTTP headers for a resource."""
     def __init__(self,
                  content_length: Optional[int] = None,
                  etag: Optional[str] = None,
@@ -20,18 +23,19 @@ class Headers:
 
     @staticmethod
     def from_json(data: dict) -> 'Headers':
+        """Constructs a Headers object from a dictionary representation."""
         if not isinstance(data, dict):
             raise DataModelError(f"Expected a dict for Headers data, but got {type(data).__name__}")
-        
+
         try:
             last_modified_str = data.get('last_modified')
-            
+
             return Headers(
                 content_length=data.get('content_length'),
                 etag=data.get('etag'),
-                
+
                 last_modified=datetime.strptime(last_modified_str, HTTP_DATE_FORMAT) if last_modified_str else None,
-                
+
                 content_type=data.get('content_type'),
                 accept_ranges=data.get('accept_ranges')
             )
@@ -40,12 +44,13 @@ class Headers:
 
     @staticmethod
     def to_json(headers: 'Headers') -> dict:
+        """Converts a Headers instance into a dictionary for JSON serialization."""
         return {
             'content_length': headers.content_length,
             'etag': headers.etag,
 
             'last_modified': headers.last_modified.strftime(HTTP_DATE_FORMAT) if headers.last_modified else None,
-            
+
             'content_type': headers.content_type,
             'accept_ranges': headers.accept_ranges
         }

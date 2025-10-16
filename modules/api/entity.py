@@ -1,8 +1,11 @@
+"""Represents a wikidata entity"""
+
 from typing import List, Optional
-from exceptions import DataModelError
+from .exceptions import DataModelError
 
 
 class Entity:
+    """Represents a wikidata entity's metadata"""
     def __init__(self,
                  identifier: Optional[str] = None,
                  url: Optional[str] = None,
@@ -25,7 +28,7 @@ class Entity:
         except (ValueError, TypeError) as e:
             entity_id = data.get('identifier', 'N/A')
             raise DataModelError(f"Failed to parse Entity with identifier '{entity_id}': {e}") from e
-        
+
     @staticmethod
     def to_json(entity: 'Entity') -> dict:
         """Converts an Entity instance to a dictionary for JSON serialization"""

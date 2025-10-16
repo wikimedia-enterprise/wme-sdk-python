@@ -1,13 +1,16 @@
+"""Defines a batch"""
+
 from typing import Optional
 from datetime import datetime
-from project import Project
-from language import Language
-from namespace import Namespace
-from size import Size
-from exceptions import DataModelError
+from .project import Project
+from .language import Language
+from .namespace import Namespace
+from .size import Size
+from .exceptions import DataModelError
 
 
 class Batch:
+    """Represents metadata for a batch."""
     def __init__(self,
                  identifier: Optional[str] = None,
                  version: Optional[str] = None,
@@ -32,7 +35,7 @@ class Batch:
         try:
             date_str = data.get('date_modified')
             date_obj = datetime.fromisoformat(date_str) if date_str else None
-            
+
             return Batch(
                 identifier=data.get('identifier'),
                 version=data.get('version'),
