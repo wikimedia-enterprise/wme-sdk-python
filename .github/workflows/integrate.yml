@@ -24,8 +24,8 @@ jobs:
       - name: Install dependencies
         run: |
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-      
-      - name: Install http2 support
+          
+      - name: Install http2
         run: pip install httpx[http2]
 
       - name: Install testing tools
