@@ -8,12 +8,13 @@ to isolate the tests from actual network calls.
 
 import unittest
 import httpx
+import json
 from unittest.mock import MagicMock, patch
 from datetime import datetime
 from io import BytesIO
 from typing import cast
 from modules.api.api_client import Client, Request, Filter
-from modules.api.exceptions import APIStatusError, APIDataError
+from modules.api.exceptions import APIStatusError, APIDataError, APIRequestError
 
 CLIENT_LOGGER_NAME = 'modules.api.api_client'
 
@@ -143,9 +144,7 @@ class TestClient(unittest.TestCase):
         self.assertEqual(mock_cbk.call_count, 2)
 
     def test_read_entity(self):
-        """
-        Tests that `_read_entity` correctly fetches content via `_request` and processes it.
-        """
+        """Tests that `_read_entity` correctly fetches content via `_request` and processes it."""
         mock_cbk = MagicMock()
 
         with patch.object(self.client, '_request', autospec=True) as mock_request:
@@ -207,9 +206,7 @@ class TestClient(unittest.TestCase):
         self.assertSetEqual(actual_ranges, expected_ranges)
 
     def test_head_entity_raises_on_invalid_content_length(self):
-        """
-        Tests that _head_entity raises APIDataError for a non-integer Content-Length.
-        """
+        """Tests that _head_entity raises APIDataError for a non-integer Content-Length."""
         mock_response = MagicMock(spec=httpx.Response)
         mock_response.headers = {'Content-Length': 'invalid-size'}
     
@@ -230,8 +227,220 @@ class TestClient(unittest.TestCase):
             val = {}
             with self.assertRaisesRegex(APIDataError, "Mismatched types"):
                 self.client._get_entity(Request(), "path", val)
+                
+    def test_request_logs_warning_on_429(self):
+        """Tests that _request logs a specific warning when a 429 status code is received."""
+        mock_http_client = cast(MagicMock, self.client.http_client)
+        mock_req = MagicMock(spec=httpx.Request)
+        mock_req.url = "http://test.com/path"
+        mock_res = MagicMock(spec=httpx.Response)
+        mock_res.status_code = 429
+        mock_res.reason_phrase = "Too Many Requests"
 
+        http_error = httpx.HTTPStatusError(
+            "Too Many Requests", request=mock_req, response=mock_res
+        )
+        mock_res.raise_for_status.side_effect = http_error
+        mock_http_client.request.return_value = mock_res
+        
+        with self.assertLogs(CLIENT_LOGGER_NAME, level='WARNING') as cm:
+            with self.assertRaises(APIStatusError):
+                self.client._request("GET", "http://test.com/path")
+            
+            self.assertIn("Received 429 Too Many Requests. Client may retry.", cm.output[0])
+            
+    def test_request_handles_request_error(self):
+        """Tests that a generic httpx.RequestError is caught, logged, and re-raised as an APIRequestError."""
+        mock_http_client = cast(MagicMock, self.client.http_client)
+        
+        mock_req = MagicMock(spec=httpx.Request)
+        mock_req.url = "http://unreachable.host/path"
 
+        request_error = httpx.RequestError("Connection refused", request=mock_req)
+        mock_http_client.request.side_effect = request_error
+        
+        with self.assertLogs(CLIENT_LOGGER_NAME, level='ERROR') as cm:
+            with self.assertRaises(APIRequestError):
+                self.client._request("GET", "http://unreachable.host/path")
+            self.assertIn("Request Error: Connection refused for url http://unreachable.host/path", cm.output[0])
+            
+    def test_get_entity_extends_list_correctly(self):
+        """Tests that _get_entity correctly extends a list when the API returns a list."""
+        req = Request()
+        path = "items"
+        val = []
+        api_response_data = [{"id": 1, "name": "foo"}, {"id": 2, "name": "bar"}]
+
+        with patch.object(self.client, '_request', autospec=True) as mock_request:
+            mock_response = MagicMock()
+            mock_response.json.return_value = api_response_data
+            mock_request.return_value = mock_response
+
+            self.client._get_entity(req, path, val)
+
+            self.assertEqual(val, api_response_data)
+            
+    def test_get_entity_raises_on_json_decode_error(self):
+        """Tests that _get_entity raises APIDataError if the response is not valid JSON."""
+        with patch.object(self.client, '_request') as mock_request:
+            mock_response = MagicMock()
+            # Configure the mock to raise JSONDecodeError
+            mock_response.json.side_effect = json.JSONDecodeError(
+                "Expecting value", "doc text", 0
+            )
+            mock_request.return_value = mock_response
+            
+            val = {}
+            with self.assertRaisesRegex(APIDataError, "Failed to decode JSON from response: Expecting value"):
+                self.client._get_entity(Request(), "path", val)
+                
+    def test_read_loop_skips_empty_lines(self):
+        """Tests that `_read_loop` correctly skips empty lines or lines with only whitespace."""
+        data = b'{"a": 1}\n\n{"b": 2}\n   \n\t\n{"c": 3}'
+        mock_rdr = BytesIO(data)
+        mock_cbk = MagicMock()
+        
+        self.client._read_loop(mock_rdr, mock_cbk)
+        
+        self.assertEqual(mock_cbk.call_count, 3)
+        mock_cbk.assert_any_call({"a": 1})
+        mock_cbk.assert_any_call({"b": 2})
+        mock_cbk.assert_any_call({"c": 3})
+        
+    def test_head_entity_returns_parsed_headers(self):
+        """Tests that _head_entity correctly parses headers from a successful response."""
+        mock_response = MagicMock(spec=httpx.Response)
+        mock_response.headers = {
+            'Content-Length': '12345',
+            'ETag': '"abc-def-123"',
+            'Content-Type': 'application/json',
+            'Accept-Ranges': 'bytes',
+            'Last-Modified': 'Mon, 15 Jan 2001 08:00:00 GMT'
+        }
+        
+        expected_headers = {
+            'Content-Length': 12345,
+            'ETag': 'abc-def-123',
+            'Content-Type': 'application/json',
+            'Accept-Ranges': 'bytes',
+            'Last-Modified': 'Mon, 15 Jan 2001 08:00:00 GMT'
+        }
+        
+        with patch.object(self.client, '_request', return_value=mock_response) as mock_request_method:
+            result = self.client._head_entity("some/path")
+            
+            expected_url = f"{self.client.base_url}v2/some/path"
+            mock_request_method.assert_called_once_with('HEAD', expected_url)
+
+            self.assertDictEqual(result, expected_headers)
+            
+    def test_download_entity_returns_early_for_zero_content_length(self):
+        """Tests that _download_entity returns immediately for 0-length content."""
+        with patch.object(self.client, '_head_entity') as mock_head, \
+             patch.object(self.client, '_request') as mock_request:
+        
+            mock_head.return_value = {'Content-Length': 0}
+        
+            self.client._download_entity("some/path", BytesIO())
+        
+            mock_head.assert_called_once_with("some/path")
+            mock_request.assert_not_called()
+            
+    def test_download_entity_without_chunking(self):
+        """Tests that _download_entity downloads in a single chunk when chunk size is not positive."""
+        self.client.download_chunk_size = -1
+
+        with patch.object(self.client, '_head_entity') as mock_head, \
+             patch.object(self.client, '_request') as mock_request:
+
+            mock_head.return_value = {'Content-Length': 2500}
+            mock_response = MagicMock(spec=httpx.Response)
+            mock_response.content = b'a' * 2500
+            mock_request.return_value = mock_response
+
+            mock_writer = BytesIO()
+            self.client._download_entity("some/path", mock_writer)
+
+            mock_head.assert_called_once_with("some/path")
+            mock_request.assert_called_once()
+        
+            called_range = mock_request.call_args.kwargs['headers']['Range']
+            self.assertEqual(called_range, 'bytes=0-2499')
+            
+    @patch('modules.api.api_client.logger.critical')
+    def test_download_entity_handles_api_error_during_chunk_download(self, mock_logger_critical):
+        """Tests that API errors during download are caught, logged, and re-raised."""
+        self.client.download_chunk_size = 1000
+    
+        mock_request_obj = MagicMock(spec=httpx.Request)
+        api_error = APIStatusError("Server Error", request=mock_request_obj, response=MagicMock())
+
+        with patch.object(self.client, '_head_entity', return_value={'Content-Length': 3000}), \
+             patch.object(self.client, '_request', side_effect=api_error):
+        
+            with self.assertRaises(APIRequestError):
+                self.client._download_entity("some/path", BytesIO())
+        
+            mock_logger_critical.assert_called_once_with(
+                "A download chunk failed, cancelling remaining downloads."
+            )
+            
+    @patch('modules.api.api_client.logger.critical')
+    def test_download_entity_handles_generic_exception_during_chunk_download(self, mock_logger_critical):
+        """Tests that generic exceptions during download are caught, logged, and re-raised."""
+        self.client.download_chunk_size = 1000
+        generic_error = ValueError("Something went wrong")
+
+        with patch.object(self.client, '_head_entity', return_value={'Content-Length': 3000}), \
+             patch.object(self.client, '_request', side_effect=generic_error):
+        
+            with self.assertRaises(APIDataError):
+                self.client._download_entity("some/path", BytesIO())
+            
+            mock_logger_critical.assert_called_once_with(
+                "A download chunk failed with an unexpected error, cancelling remaining downloads."
+            )
+            
+    def test_subscribe_to_entity_processes_stream_correctly(self):
+        """
+        Tests the happy path for _subscribe_to_entity, ensuring it processes a
+        stream of newline-delimited JSON and calls the callback. Also checks
+        that empty lines are skipped.
+        """
+        mock_http_client = cast(MagicMock, self.client.http_client)
+        mock_response = MagicMock(spec=httpx.Response)
+    
+        stream_content = [
+            b'{"id": 1, "data": "first"}',
+            b'{"id": 2, "data": "second"}',
+            b'',
+            b'{"id": 3, "data": "third"}'
+        ]
+        mock_response.iter_lines.return_value = stream_content
+    
+        mock_stream_context = MagicMock()
+        mock_stream_context.__enter__.return_value = mock_response
+        mock_http_client.stream.return_value = mock_stream_context
+    
+        mock_cbk = MagicMock()
+        req = Request(filters={"project": "enwiki"})
+    
+        self.client._subscribe_to_entity("articles", req, mock_cbk)
+    
+        expected_url = f"{self.client.realtime_url}v2/articles"
+        mock_http_client.stream.assert_called_once()
+        call_args = mock_http_client.stream.call_args
+        self.assertEqual(call_args.args[0], 'GET')
+        self.assertEqual(call_args.args[1], expected_url)
+        self.assertIn('json', call_args.kwargs)
+        self.assertIn('headers', call_args.kwargs)
+    
+        mock_response.raise_for_status.assert_called_once()
+        self.assertEqual(mock_cbk.call_count, 3)
+        mock_cbk.assert_any_call({"id": 1, "data": "first"})
+        mock_cbk.assert_any_call({"id": 2, "data": "second"})
+        mock_cbk.assert_any_call({"id": 3, "data": "third"})
+        
 class TestRequest(unittest.TestCase):
     """Test suite for the Request class."""
     def test_init(self):

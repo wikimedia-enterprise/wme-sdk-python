@@ -14,7 +14,7 @@ import time
 import logging
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Callable, Any, List, Optional, Dict, Union
-from .exceptions import APIRequestError, APIStatusError, APIDataError, SDKHealthError
+from .exceptions import APIRequestError, APIStatusError, APIDataError
 
 logger = logging.getLogger(__name__)
 
