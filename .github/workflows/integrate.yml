@@ -24,9 +24,17 @@ jobs:
       - name: Install dependencies
         run: |
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      
+      - name: Install http2 support
+        run: pip install httpx[http2]
 
-      - name: Install pytest
-        run: pip install pytest
+      - name: Install testing tools
+        run: |
+          pip install pytest
+          pip install coverage
 
-      - name: Run tests
-        run: pytest
+      - name: Run tests with coverage
+        run: coverage run -m pytest
+
+      - name: Check coverage report
+        run: coverage report --fail-under=75

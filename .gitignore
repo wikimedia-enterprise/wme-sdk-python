@@ -13,3 +13,4 @@ example/demo/venv
 *.egg-info/
 dist/
 build/
+.coverage
