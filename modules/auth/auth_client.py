@@ -1,9 +1,9 @@
 import os
 import json
-import requests
-from dotenv import load_dotenv
 from threading import Lock
 from datetime import datetime, timedelta
+from dotenv import load_dotenv
+import requests
 
 # Load environment variables from .env file
 load_dotenv()

@@ -1,13 +1,17 @@
+"""Defines a data model for a snapshot"""
+
 from typing import Optional, List
 from datetime import datetime
-from project import Project
-from language import Language
-from namespace import Namespace
-from size import Size
-from exceptions import DataModelError
+from .project import Project
+from .language import Language
+from .namespace import Namespace
+from .size import Size
+from .exceptions import DataModelError
 
-
+# pylint: disable=too-many-instance-attributes
 class Snapshot:
+    """Represents metadata for a specific snapshot of a bulk data dump."""
+    # pylint: disable=too-many-arguments, too-many-positional-arguments
     def __init__(self,
                  identifier: Optional[str] = None,
                  version: Optional[str] = None,
@@ -28,12 +32,13 @@ class Snapshot:
 
     @staticmethod
     def from_json(data: dict) -> 'Snapshot':
+        """Constructs a Snapshot object from a dictionary representation."""
         if not isinstance(data, dict):
             raise DataModelError(f"Expected a dict for Snapshot data, but got {type(data).__name__}")
-        
+
         try:
             date_str = data.get('date_modified')
-            
+
             return Snapshot(
                 identifier=data.get('identifier'),
                 version=data.get('version'),
@@ -50,6 +55,7 @@ class Snapshot:
 
     @staticmethod
     def to_json(snapshot: 'Snapshot') -> dict:
+        """Converts a Snapshot instance into a dictionary for JSON serialization."""
         return {
             'identifier': snapshot.identifier,
             'version': snapshot.version,

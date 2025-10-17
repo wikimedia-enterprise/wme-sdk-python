@@ -1,3 +1,5 @@
+"""Here we define custom exceptions for error clarity"""
+
 class WikimediaAPIError(Exception):
     """Base exception class for this client."""
 

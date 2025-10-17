@@ -1,8 +1,11 @@
+"""Represents a protection level's data"""
+
 from typing import Optional
-from exceptions import DataModelError
+from .exceptions import DataModelError
 
 
 class Protection:
+    """Represents a protection level applied to a resource, like an article."""
     def __init__(self,
                  protection_type: Optional[str] = None,
                  level: Optional[str] = None,
@@ -13,9 +16,10 @@ class Protection:
 
     @staticmethod
     def from_json(data: dict) -> 'Protection':
+        """Constructs a Protection object from a dictionary representation."""
         if not isinstance(data, dict):
             raise DataModelError(f"Expected a dict for Protection data, but got {type(data).__name__}")
-        
+
         try:
             return Protection(
                 protection_type=data.get('type'),
@@ -28,6 +32,7 @@ class Protection:
 
     @staticmethod
     def to_json(protection: 'Protection') -> dict:
+        """Converts a Protection instance into a dictionary for JSON serialization."""
         return {
             'type': protection.protection_type,
             'level': protection.level,

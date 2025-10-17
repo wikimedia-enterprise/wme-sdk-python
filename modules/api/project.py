@@ -1,11 +1,14 @@
+"""Represents a project"""
+
 from typing import Optional
 from datetime import datetime
-from language import Language
-from size import Size
-from exceptions import DataModelError
+from .language import Language
+from .size import Size
+from .exceptions import DataModelError
 
 
 class Project:
+    """Represents a project and all its metadata"""
     def __init__(self,
                  name: Optional[str] = None,
                  identifier: Optional[str] = None,
@@ -26,9 +29,10 @@ class Project:
 
     @staticmethod
     def from_json(data: dict) -> 'Project':
+        """Constructs a Project object from a dictionary representation."""
         if not isinstance(data, dict):
             raise DataModelError(f"Expected a dict for Project data, but got {type(data).__name__}")
-        
+
         try:
             date_str = data.get('date_modified')
             return Project(
@@ -47,6 +51,7 @@ class Project:
 
     @staticmethod
     def to_json(project: 'Project') -> dict:
+        """Converts a Project instance into a dictionary for JSON serialization."""
         return {
             'name': project.name,
             'identifier': project.identifier,

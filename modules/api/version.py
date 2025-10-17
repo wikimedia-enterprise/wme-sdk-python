@@ -1,17 +1,20 @@
+"""Defines data models for content revisions and their metadata."""
+
 from typing import List, Optional
-from scores import Scores
-from editor import Editor
-from size import Size
-from exceptions import DataModelError
+from .scores import Scores
+from .editor import Editor
+from .size import Size
+from .exceptions import DataModelError
 
 
 class PreviousVersion:
+    """A lightweight reference to the version preceding the current one."""
     def __init__(self,
                  identifier: Optional[int] = None,
                  number_of_characters: Optional[int] = None):
         self.identifier = identifier
         self.number_of_characters = number_of_characters
-        
+
     @staticmethod
     def from_json(data: dict) -> 'PreviousVersion':
         """Creates a PreviousVersion instance from a dictionary (JSON object)"""
@@ -32,10 +35,11 @@ class PreviousVersion:
             'identifier': previous_version.identifier,
             'number_of_characters': previous_version.number_of_characters
         }
-        
+
 
 
 class Version:
+    """Represents a specific revision of a piece of content."""
     def __init__(self,
                  identifier: Optional[int] = None,
                  comment: Optional[str] = None,
@@ -62,9 +66,10 @@ class Version:
 
     @staticmethod
     def from_json(data: dict) -> 'Version':
+        """Constructs a Version object from a dictionary representation."""
         if not isinstance(data, dict):
             raise DataModelError(f"Expected dict for Version, got {type(data).__name__}")
-        
+
         try:
             return Version(
                 identifier=data.get('identifier'),
@@ -85,6 +90,7 @@ class Version:
 
     @staticmethod
     def to_json(version: 'Version') -> dict:
+        """Converts a Version instance into a dictionary for JSON serialization."""
         return {
             'identifier': version.identifier,
             'comment': version.comment,
