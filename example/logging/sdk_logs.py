@@ -41,8 +41,8 @@ def revoke_token_on_exit(auth_client, refresh_token):
         try:
             auth_client.revoke_token(refresh_token)
             logger.info("Token successfully revoked.")
-        except Exception as e:
-            logger.error(f"Failed to revoke token: {e}")
+        except (APIRequestError, APIStatusError, APIRequestError) as e:
+            logger.error("Failed to revoke token: %s", e)
 
 
 def main():
@@ -53,8 +53,8 @@ def main():
     auth_client = AuthClient()
     try:
         login_response = auth_client.login()
-    except Exception as e:
-        logger.fatal(f"Login failed: {e}")
+    except (APIRequestError, APIStatusError, APIRequestError) as e:
+        logger.fatal("Login failed: %s", e)
         return
 
     refresh_token = login_response["refresh_token"]
@@ -74,9 +74,9 @@ def main():
         logger.info("--- 1. Demonstrating DEBUG logs for a successful request ---")
         try:
             project = api_client.get_project("enwiki", Request())
-            logger.info(f"Successfully fetched project: {project.get('name')}")
-        except Exception as e:
-            logger.error(f"This was not supposed to fail! Error: {e}")
+            logger.info("Successfully fetched project: %s", project.get('name'))
+        except (APIRequestError, APIStatusError, APIRequestError) as e:
+            logger.error("This was not supposed to fail! Error: %s", e)
         print("="*60)
 
         # ======================================================================
@@ -89,7 +89,7 @@ def main():
         except APIStatusError:
             logger.info("Caught expected APIStatusError. Check the line above this error for the SDK's ERROR log.")
         print("="*60)
-        
+
         # ======================================================================
         # DEMO 3: NETWORK REQUEST ERROR (triggers ERROR logs)
         # ======================================================================
@@ -110,7 +110,7 @@ def main():
         logger.info("If the SDK received a 429 status code from the API, it would log a WARNING.")
         logger.info("Example: 'WARNING - Received 429 Too Many Requests. Client may retry.'")
         print("="*60)
-        
+
         # ======================================================================
         # DEMO 5: JSON DECODE WARNING in _read_loop
         # ======================================================================
@@ -121,11 +121,11 @@ def main():
         with patch.object(api_client, '_request', return_value=mock_response):
             try:
                 def callback(article):
-                    logger.info(f"  Callback received valid article: {article.get('name')}")
+                    logger.info("Callback received valid article: %s", article.get('name'))
                 api_client.read_batch(datetime.now(), "fake-batch-id", callback)
                 logger.info("Caught expected JSON Decode Warning. Notice the SDK logged it but did not crash.")
-            except Exception as e:
-                 logger.error(f"This was not supposed to crash! Error: {e}")
+            except (APIRequestError, APIStatusError, APIDataError) as e:
+                logger.error("This was not supposed to crash! Error: %s", e)
         print("="*60)
 
         # ======================================================================
@@ -133,15 +133,15 @@ def main():
         # ======================================================================
         print("\n" + "="*60)
         logger.info("--- 6. Demonstrating CRITICAL log for a failed download (Network Error) ---")
-        
+
         mock_success_response = MagicMock()
         mock_success_response.content = b'this is fake chunk data'
-        
+
         network_error_sequence = [
-            mock_success_response, 
+            mock_success_response,
             APIRequestError("Simulated network failure on the second chunk.", request=None)
         ]
-        
+
         api_client.download_chunk_size = 1000
         with patch.object(api_client, '_head_entity', return_value={'Content-Length': 2000}):
             with patch.object(api_client, '_request', side_effect=network_error_sequence):
@@ -151,7 +151,7 @@ def main():
                     logger.info("Caught expected APIRequestError. Check the line above this error for the SDK's CRITICAL log.")
         api_client.download_chunk_size = -1
         print("="*60)
-        
+
         # ======================================================================
         # DEMO 7: DOWNLOAD FAILED (CRITICAL log for unexpected Exception)
         # ======================================================================

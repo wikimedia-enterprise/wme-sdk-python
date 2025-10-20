@@ -2,7 +2,6 @@
 
 import logging
 import threading
-import json
 import httpx
 
 logging.basicConfig(level=logging.INFO)
@@ -33,11 +32,11 @@ class Helper:
             try:
                 self.get_access_token()
                 logger.info("Token refreshed successfully")
-            except (httpx.RequestError, httpx.HTTPStatusError, json.JSONDecodeError, ValueError) as e:
+            except (httpx.RequestError, httpx.HTTPStatusError, ValueError) as e:
                 logger.error("Failed to refresh token: %s", e)
 
     def stop(self):
         """Gracefully stops the background refresh thread and cleans up."""
         self.stop_event.set()
         self.refresh_thread.join()
-        self.auth_client.revoke_token()
+        self.auth_client.clear_state()

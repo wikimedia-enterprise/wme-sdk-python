@@ -1,14 +1,16 @@
+"""Fetches structured content for US presidential election articles."""
+
 import logging
 import contextlib
 import sys
 import os
 import json
-import requests
+from modules.auth.auth_client import AuthClient
+from modules.api.api_client import Client, Request, Filter
+from modules.api.exceptions import APIRequestError, APIStatusError, APIDataError, DataModelError
 
 # Add the parent directory to sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../..")))
-from modules.auth.auth_client import AuthClient
-from modules.api.api_client import Client, Request, Filter
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -26,13 +28,14 @@ if not os.path.exists('data'):
 
 @contextlib.contextmanager
 def revoke_token_on_exit(auth_client, refresh_token):
+    """This function revokes token on script's exit"""
     try:
         yield
     finally:
         try:
             auth_client.revoke_token(refresh_token)
-        except Exception as e:
-            logger.error(f"Failed to revoke token: {e}")
+        except (APIRequestError, APIStatusError) as e:
+            logger.error("Failed to revoke token: %s", e)
 
 
 def save_json_to_file(article_title, data):
@@ -40,7 +43,7 @@ def save_json_to_file(article_title, data):
     filename = f"data/{article_title}.json"
     with open(filename, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
-    logger.info(f"Saved article: {article_title} to {filename}")
+    logger.info("Saved article: %s to %s", article_title, filename)
 
 
 def fetch_and_save_article(api_client, year):
@@ -53,8 +56,8 @@ def fetch_and_save_article(api_client, year):
 
     try:
         structured_contents = api_client.get_structured_contents(article_title, request)
-    except Exception as e:
-        logger.error(f"Failed to get content for {article_title}: {e}")
+    except (APIRequestError, APIStatusError, APIDataError, DataModelError) as e:
+        logger.error("Failed to get content for %s: %s", article_title, e)
         return
 
     if structured_contents:
@@ -62,15 +65,16 @@ def fetch_and_save_article(api_client, year):
         article_data = structured_contents[0]
         save_json_to_file(article_title, article_data)
     else:
-        logger.warning(f"No content found for {article_title}")
+        logger.warning("No content found for %s", article_title)
 
 
 def main():
+    """Main execution function for the article fetching script."""
     auth_client = AuthClient()
     try:
         login_response = auth_client.login()
-    except Exception as e:
-        logger.fatal(f"Login failed: {e}")
+    except (APIRequestError, APIStatusError) as e:
+        logger.fatal("Login failed: %s", e)
         return
 
     refresh_token = login_response["refresh_token"]

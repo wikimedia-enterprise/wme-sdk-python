@@ -1,13 +1,43 @@
+"""Analyzes and visualizes text from a structured content JSON file.
+
+This script loads a JSON file specified by a command-line argument
+(expecting an "Article Title" which maps to a local file, e.g.,
+"data/My_Article_Title.json").
+
+It recursively extracts plain text from all "section" and "paragraph"
+components within the JSON, then performs a word frequency analysis
+to generate and display two visualizations using Matplotlib:
+
+1. A word cloud of the entire text.
+2. A bar chart of the top 10 most frequent words.
+
+The full extracted text is also printed to the console.
+"""
+
 import json
-from wordcloud import WordCloud
-import matplotlib.pyplot as plt
 from collections import Counter
 import re
 import sys
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
 
 
 # Function to extract sections and paragraphs
 def extract_sections(json_data):
+    """Recursively extracts and joins text from sections and paragraphs.
+
+    This function traverses the nested dictionary/list structure of the
+    JSON data. It specifically looks for dictionaries with a "type" of
+    "section". For these, it concatenates the section's "name" with the
+    "value" of any child parts that have a "type" of "paragraph".
+
+    Args:
+        json_data (dict | list): The JSON data (or sub-structure) to parse.
+
+    Returns:
+        str: A single, space-joined string of all extracted text found
+            within the given data structure.
+    """
     extracted_text = []
     if isinstance(json_data, list):
         for item in json_data:

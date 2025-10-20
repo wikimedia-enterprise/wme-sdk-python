@@ -1,13 +1,30 @@
+"""Fetches and saves the structured content for a single Wikipedia article.
+
+It handles authentication with the Wikimedia Enterprise API, fetches the
+structured content for the specified 'enwiki' article, and saves the
+result to a JSON file in the './data' directory. It also ensures
+the authentication token is revoked on exit.
+
+Usage:
+    python get.py "Article Title"
+
+It handles authentication with the Wikimedia Enterprise API, fetches the
+structured content for the specified 'enwiki' article, and saves the
+result to a JSON file in the './data' directory. It also ensures
+the authentication token is revoked on exit.
+"""
+
 import logging
 import sys
 import os
 import contextlib
 import json
+from modules.auth.auth_client import AuthClient
+from modules.api.api_client import Client, Request, Filter
+from modules.api.exceptions import APIStatusError, APIRequestError, APIDataError
 
 # Add the parent directory to sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../..")))
-from modules.auth.auth_client import AuthClient
-from modules.api.api_client import Client, Request, Filter
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -19,13 +36,23 @@ if not os.path.exists('data'):
 
 @contextlib.contextmanager
 def revoke_token_on_exit(auth_client, refresh_token):
+    """Manages the lifecycle of a refresh token, ensuring revocation on exit.
+
+    This context manager yields control to the inner block and guarantees
+    that a token revocation attempt is made upon exiting the block,
+    whether by successful completion or due to an exception.
+
+    Args:
+        auth_client (AuthClient): The authentication client instance.
+        refresh_token (str): The refresh token to be revoked.
+    """
     try:
         yield
     finally:
         try:
             auth_client.revoke_token(refresh_token)
-        except Exception as e:
-            logger.error(f"Failed to revoke token: {e}")
+        except (APIStatusError, APIRequestError) as e:
+            logger.error("Failed to revoke token: %s", e)
 
 
 def save_json_to_file(article_title, data):
@@ -33,7 +60,7 @@ def save_json_to_file(article_title, data):
     filename = f"data/{article_title}.json"
     with open(filename, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
-    logger.info(f"Saved article: {article_title} to {filename}")
+    logger.info("Saved article: %s to %s", article_title, filename)
 
 
 def fetch_and_save_article(api_client, article_title):
@@ -45,8 +72,8 @@ def fetch_and_save_article(api_client, article_title):
 
     try:
         structured_contents = api_client.get_structured_contents(article_title, request)
-    except Exception as e:
-        logger.error(f"Failed to get content for {article_title}: {e}")
+    except (APIStatusError, APIRequestError, APIDataError) as e:
+        logger.error("Failed to get content for %s: %s", article_title, e)
         return
 
     if structured_contents:
@@ -54,10 +81,19 @@ def fetch_and_save_article(api_client, article_title):
         article_data = structured_contents[0]
         save_json_to_file(article_title, article_data)
     else:
-        logger.warning(f"No content found for {article_title}")
+        logger.warning("No content found for %s", article_title)
 
 
 def main():
+    """Main execution function for the article fetching script.
+
+    Orchestrates the entire process:
+    1. Reads the article title from the command-line arguments.
+    2. Authenticates with the AuthClient.
+    3. Sets up a context manager to revoke the token on exit.
+    4. Initializes the API Client with the access token.
+    5. Calls `fetch_and_save_article` to get and save the content.
+    """
     # Check if the title is provided in command-line arguments
     if len(sys.argv) < 2:
         print("Usage: python get.py \"Article Title\"")
@@ -69,8 +105,8 @@ def main():
     auth_client = AuthClient()
     try:
         login_response = auth_client.login()
-    except Exception as e:
-        logger.fatal(f"Login failed: {e}")
+    except (APIStatusError, APIRequestError) as e:
+        logger.fatal("Login failed: %s", e)
         return
 
     refresh_token = login_response["refresh_token"]
