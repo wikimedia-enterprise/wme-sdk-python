@@ -1,3 +1,5 @@
+# pylint: disable=R0801
+
 """Fetches articles matching the query 'Montreal' from the API.
 
 This script demonstrates how to authenticate, build a request with dictionary-based

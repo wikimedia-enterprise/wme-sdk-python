@@ -1,3 +1,5 @@
+# pylint: disable=R0801
+
 """Fetches and saves the structured content for a single Wikipedia article.
 
 It handles authentication with the Wikimedia Enterprise API, fetches the

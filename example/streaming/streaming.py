@@ -1,3 +1,5 @@
+# pylint: disable=R0801
+
 """Demonstrates streaming articles from the API using a callback.
 
 This script authenticates with the Wikimedia Enterprise API, sets up a

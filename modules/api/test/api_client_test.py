@@ -1,4 +1,4 @@
-# pylint: disable=W0212
+# pylint: disable=W0212, too-many-locals, too-many-public-methods
 
 """
 Unit tests for the `api_client` module.

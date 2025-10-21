@@ -1,3 +1,5 @@
+# pylint: disable=R0801
+
 """Fetches structured content for US presidential election articles."""
 
 import logging

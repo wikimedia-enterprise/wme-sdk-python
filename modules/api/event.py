@@ -1,3 +1,5 @@
+# pylint: disable=too-many-arguments, too-many-positional-arguments
+
 """Represents an action or change within the system."""
 
 from typing import Optional, Set
@@ -12,6 +14,7 @@ VALID_EVENT_TYPES: Set[str] = {EVENT_TYPE_UPDATE, EVENT_TYPE_DELETE, EVENT_TYPE_
 
 class Event:
     """Represents the metadata of an action or change within the system."""
+
     def __init__(self,
                  identifier: Optional[str] = None,
                  event_type: Optional[str] = None,

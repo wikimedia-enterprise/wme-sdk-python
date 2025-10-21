@@ -1,3 +1,5 @@
+# pylint: disable=too-many-arguments, too-many-positional-arguments, too-many-instance-attributes
+
 """Defines data models for content revisions and their metadata."""
 
 from typing import List, Optional

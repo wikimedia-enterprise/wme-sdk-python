@@ -1,3 +1,5 @@
+# pylint: disable=R0801
+
 """Demonstrates fetching metadata for structured content snapshots.
 
 This script authenticates with the Wikimedia Enterprise API and performs

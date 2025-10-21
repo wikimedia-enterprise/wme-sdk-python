@@ -1,3 +1,5 @@
+# pylint: disable=too-many-instance-attributes, too-many-arguments, too-many-positional-arguments
+
 """Represents an editor and their data"""
 
 from typing import List, Optional

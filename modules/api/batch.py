@@ -1,3 +1,5 @@
+# pylint: disable=too-many-arguments, too-many-positional-arguments, R0801
+
 """Defines a batch"""
 
 from typing import Optional

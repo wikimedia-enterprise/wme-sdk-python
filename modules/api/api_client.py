@@ -1,3 +1,5 @@
+# pylint: disable=too-few-public-methods, too-many-instance-attributes, too-many-public-methods, too-many-arguments, too-many-positional-arguments
+
 """
 Provides a client for interacting with the Wikimedia Enterprise API.
 
@@ -55,8 +57,6 @@ class Request:
     since_per_partition: Dict[int, datetime.datetime]
     _filters_list: List[Dict[str, str]]
 
-    # pylint: disable=too-many-arguments, too-many-positional-arguments
-    # Disabling these warnings to maintain backward compatibility for users
     def __init__(self,
                  since: Optional[datetime.datetime] = None,
                  fields: Optional[List[str]] = None,
@@ -116,7 +116,6 @@ class Request:
 
         # Remove keys with None or empty values
         return {k: v for k, v in result.items() if v not in [None, [], {}, '']}
-
 
 class Client:
     """

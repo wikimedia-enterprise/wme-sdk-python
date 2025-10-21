@@ -1,3 +1,4 @@
+# pylint: disable=too-many-arguments, too-many-positional-arguments, too-many-locals, too-many-instance-attributes
 """Defines data models for representing the structured content of an article."""
 
 from typing import List, Optional, Dict
@@ -161,6 +162,7 @@ class ReferenceText:
 
 class Reference:
     """Represents a bibliographic reference or citation entry."""
+
     def __init__(self,
                  identifier: Optional[str] = "",
                  group: Optional[str] = "",

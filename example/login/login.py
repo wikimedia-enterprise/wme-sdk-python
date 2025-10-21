@@ -1,3 +1,5 @@
+# pylint: disable=R0801
+
 """
 Handles user authentication and token revocation.
 

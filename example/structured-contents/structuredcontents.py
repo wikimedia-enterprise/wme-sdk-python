@@ -1,3 +1,4 @@
+# pylint: disable=R0801
 """Fetches structured content for the article "Squirrel".
 
 This script authenticates with the Wikimedia Enterprise API, builds a request

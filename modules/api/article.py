@@ -1,3 +1,5 @@
+# pylint: disable=too-many-arguments, too-many-positional-arguments, too-many-instance-attributes, too-many-locals
+
 """Defines data models for representing a Wikimedia article and its components."""
 
 from typing import List, Optional
@@ -17,6 +19,7 @@ from .exceptions import DataModelError
 
 class Image:
     """Represents an image with its associated metadata"""
+
     def __init__(self,
                  content_url: Optional[str] = None,
                  width: Optional[int] = None,
@@ -126,11 +129,8 @@ class Template:
             'url': template.url
         }
 
-# pylint: disable=too-many-instance-attributes
 class Article:
     """Represents a comprehensive data model for an article."""
-    # pylint: disable=too-many-arguments, too-many-positional-arguments, too-many-locals
-    # Disabling these warnings to maintain backward compatibility for users
     def __init__(self,
                  name: Optional[str] = None,
                  abstract: Optional[str] = None,

@@ -1,3 +1,5 @@
+# pylint: disable=too-many-arguments, too-many-positional-arguments
+
 """Represents a collection of HTTP headers for a resource and it's parsing methods"""
 
 from typing import Optional

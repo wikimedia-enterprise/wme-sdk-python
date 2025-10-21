@@ -1,3 +1,5 @@
+# pylint: disable=too-many-arguments, too-many-positional-arguments, too-many-instance-attributes
+
 """Represents a project"""
 
 from typing import Optional
@@ -6,9 +8,9 @@ from .language import Language
 from .size import Size
 from .exceptions import DataModelError
 
-
 class Project:
     """Represents a project and all its metadata"""
+
     def __init__(self,
                  name: Optional[str] = None,
                  identifier: Optional[str] = None,

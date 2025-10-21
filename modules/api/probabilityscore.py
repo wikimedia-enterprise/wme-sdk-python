@@ -1,3 +1,4 @@
+# pylint: disable=R0801
 """Contains a probability score's boolean prediction along with the underlying probability scores that led to that prediction."""
 
 from typing import Optional

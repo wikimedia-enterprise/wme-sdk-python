@@ -6,3 +6,4 @@ Requests==2.32.3
 httpx[http2]==0.28.1
 fastapi[standard]==0.119.1
 wordcloud==1.9.4
+setuptools==80.9.0
