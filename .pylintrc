@@ -2,3 +2,4 @@
 
 [MAIN]
 max-line-length=200
+source-roots = .
