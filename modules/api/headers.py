@@ -10,7 +10,7 @@ HTTP_DATE_FORMAT = "%a, %d %b %Y %H:%M:%S GMT"
 
 
 class Headers:
-    """Represents a collection of HTTP headers for a resource."""
+    """Holds key HTTP metadata for a resource, like ETag and Content-Length."""
     def __init__(self,
                  content_length: Optional[int] = None,
                  etag: Optional[str] = None,
@@ -25,7 +25,22 @@ class Headers:
 
     @staticmethod
     def from_json(data: dict) -> 'Headers':
-        """Constructs a Headers object from a dictionary representation."""
+        """
+        Deserializes a dictionary into a Headers instance.
+
+        This method maps dictionary keys to Headers attributes, parsing the
+        'last_modified' string using the standard HTTP date format
+        (e.g., "Mon, 15 Jan 2001 07:28:00 GMT").
+
+        Args:
+            data: A dictionary containing the header data.
+
+        Returns:
+            A Headers instance.
+
+        Raises:
+            DataModelError: If the input is not a dict or if date parsing fails.
+        """
         if not isinstance(data, dict):
             raise DataModelError(f"Expected a dict for Headers data, but got {type(data).__name__}")
 
@@ -46,7 +61,18 @@ class Headers:
 
     @staticmethod
     def to_json(headers: 'Headers') -> dict:
-        """Converts a Headers instance into a dictionary for JSON serialization."""
+        """
+        Serializes the Headers instance into a JSON-compatible dictionary.
+
+        Formats the 'last_modified' datetime object as a standard
+        HTTP date string (e.g., "Mon, 15 Jan 2001 07:28:00 GMT").
+
+        Args:
+            headers: The Headers instance to serialize.
+
+        Returns:
+            A dictionary representation of the headers.
+        """
         return {
             'content_length': headers.content_length,
             'etag': headers.etag,

@@ -33,7 +33,22 @@ class Editor:
 
     @staticmethod
     def from_json(data: dict) -> 'Editor':
-        """Constructs an Editor object from a dictionary representation."""
+        """
+        Deserializes a dictionary into an Editor instance.
+
+        This method maps dictionary keys to Editor attributes, parsing the
+        ISO 8601 'date_started' string into a datetime object.
+
+        Args:
+            data: A dictionary containing the editor's data.
+
+        Returns:
+            An Editor instance.
+
+        Raises:
+            DataModelError: If the input is not a dict or if parsing fails
+                            (e.g., invalid date format).
+        """
         if not isinstance(data, dict):
             raise DataModelError(f"Expected a dict for Editor data, but got {type(data).__name__}")
 
@@ -58,7 +73,17 @@ class Editor:
 
     @staticmethod
     def to_json(editor: 'Editor') -> dict:
-        """Converts an Editor instance into a dictionary for JSON serialization."""
+        """
+        Serializes the Editor instance into a JSON-compatible dictionary.
+
+        Formats the 'date_started' datetime object as an ISO 8601 string.
+
+        Args:
+            editor: The Editor instance to serialize.
+
+        Returns:
+            A dictionary representation of the editor.
+        """
         return {
             'identifier': editor.identifier,
             'name': editor.name,

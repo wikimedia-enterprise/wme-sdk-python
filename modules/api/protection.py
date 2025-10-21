@@ -16,7 +16,18 @@ class Protection:
 
     @staticmethod
     def from_json(data: dict) -> 'Protection':
-        """Constructs a Protection object from a dictionary representation."""
+        """
+        Deserializes a dictionary into a Protection instance.
+
+        Args:
+            data: A dictionary containing the protection data (type, level, expiry).
+
+        Returns:
+            A Protection instance.
+
+        Raises:
+            DataModelError: If the input is not a dict or if parsing fails.
+        """
         if not isinstance(data, dict):
             raise DataModelError(f"Expected a dict for Protection data, but got {type(data).__name__}")
 
@@ -32,7 +43,15 @@ class Protection:
 
     @staticmethod
     def to_json(protection: 'Protection') -> dict:
-        """Converts a Protection instance into a dictionary for JSON serialization."""
+        """
+        Serializes the Protection instance into a JSON-compatible dictionary.
+
+        Args:
+            protection: The Protection instance to serialize.
+
+        Returns:
+            A dictionary representation of the protection level.
+        """
         return {
             'type': protection.protection_type,
             'level': protection.level,

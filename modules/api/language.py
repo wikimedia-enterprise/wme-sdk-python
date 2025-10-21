@@ -19,7 +19,22 @@ class Language:
 
     @staticmethod
     def from_json(data: dict) -> 'Language':
-        """Constructs a Language object from a dictionary representation."""
+        """
+        Deserializes a dictionary into a Language instance.
+
+        This method maps dictionary keys to Language attributes and validates
+        the 'direction' field against a known set ('ltr', 'rtl').
+
+        Args:
+            data: A dictionary containing the language's data.
+
+        Returns:
+            A Language instance.
+
+        Raises:
+            DataModelError: If the input is not a dict, 'direction' is invalid,
+                            or parsing fails.
+        """
         if not isinstance(data, dict):
             raise DataModelError(f"Expected a dict for Language data, but got {type(data).__name__}")
         try:
@@ -40,7 +55,15 @@ class Language:
 
     @staticmethod
     def to_json(language: 'Language') -> dict:
-        """Converts a Language instance into a dictionary for JSON serialization."""
+        """
+        Serializes the Language instance into a JSON-compatible dictionary.
+
+        Args:
+            language: The Language instance to serialize.
+
+        Returns:
+            A dictionary representation of the language.
+        """
         return {
             'identifier': language.identifier,
             'name': language.name,

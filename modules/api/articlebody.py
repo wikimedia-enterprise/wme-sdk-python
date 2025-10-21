@@ -1,10 +1,10 @@
-"""Defines an article's body"""
+"""Data model for the body content (HTML and wikitext) of an article."""
 
 from typing import Optional
 
 
 class ArticleBody:
-    """Represents an article's body"""
+    """Holds the HTML and wikitext representations of an article's content."""
     def __init__(self,
                  html: Optional[str] = None,
                  wikitext: Optional[str] = None):

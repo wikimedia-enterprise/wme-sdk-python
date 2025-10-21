@@ -13,7 +13,18 @@ class Size:
 
     @staticmethod
     def from_json(data: dict) -> 'Size':
-        """Constructs a Size object from a dictionary representation."""
+        """
+        Deserializes a dictionary into a Size instance.
+
+        Args:
+            data: A dictionary containing 'value' and 'unit_text'.
+
+        Returns:
+            A Size instance.
+
+        Raises:
+            DataModelError: If the input is not a dict or if parsing fails.
+        """
         if not isinstance(data, dict):
             raise DataModelError(f"Expected a dict for Size data, but got {type(data).__name__}")
 
@@ -27,7 +38,15 @@ class Size:
 
     @staticmethod
     def to_json(size: 'Size') -> dict:
-        """Converts a Size instance into a dictionary for JSON serialization."""
+        """
+        Serializes the Size instance into a JSON-compatible dictionary.
+
+        Args:
+            size: The Size instance to serialize.
+
+        Returns:
+            A dictionary representation of the size.
+        """
         return {
             'value': size.value,
             'unit_text': size.unit_text

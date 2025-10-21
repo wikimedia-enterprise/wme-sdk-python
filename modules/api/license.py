@@ -16,7 +16,18 @@ class License:
 
     @staticmethod
     def from_json(data: dict) -> 'License':
-        """Constructs a License object from a dictionary representation."""
+        """
+        Deserializes a dictionary into a License instance.
+
+        Args:
+            data: A dictionary containing the license's data.
+
+        Returns:
+            A License instance.
+
+        Raises:
+            DataModelError: If the input is not a dict or if parsing fails.
+        """
         if not isinstance(data, dict):
             raise DataModelError(f"Expected a dict for License data, but got {type(data).__name__}")
 
@@ -32,7 +43,15 @@ class License:
 
     @staticmethod
     def to_json(licenses: 'License') -> dict:
-        """Converts a License instance into a dictionary for JSON serialization."""
+        """
+        Serializes the License instance into a JSON-compatible dictionary.
+
+        Args:
+            licenses: The License instance to serialize.
+
+        Returns:
+            A dictionary representation of the license.
+        """
         return {
             'name': licenses.name,
             'identifier': licenses.identifier,

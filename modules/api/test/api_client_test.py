@@ -31,7 +31,7 @@ class TestClient(unittest.TestCase):
         self.client.http_client = MagicMock(spec=httpx.Client)
 
     def test_init(self):
-        """Tests that the Client initializes with correct values."""
+        """Tests that the Client initializes correctly with default values and with custom overrides."""
         client = Client()
         self.assertEqual(client.user_agent, "WME Python SDK")
         self.assertEqual(client.base_url, "https://api.enterprise.wikimedia.com/")
@@ -76,7 +76,7 @@ class TestClient(unittest.TestCase):
         self.assertEqual(result, mock_response)
 
     def test_request_raises_for_status_on_error(self):
-        """Tests that _request propagates HTTP errors from raise_for_status."""
+        """Tests that `_request` catches `httpx.HTTPStatusError` and re-raises it as `APIStatusError`."""
         mock_http_client = cast(MagicMock, self.client.http_client)
         mock_request = MagicMock()
         mock_request.url = "http://test.com/path"
@@ -98,8 +98,8 @@ class TestClient(unittest.TestCase):
 
     def test_get_entity(self):
         """
-        Tests the `_get_entity` method's logic for fetching and updating data.
-        It patches `_request` to isolate the method's own logic.
+        Tests that `_get_entity` correctly calls `_request` with the proper URL and
+        JSON payload, and updates the passed-in `val` dictionary with the response.
         """
         req = Request()
         path = "test_path"
@@ -147,7 +147,10 @@ class TestClient(unittest.TestCase):
         self.assertEqual(mock_cbk.call_count, 2)
 
     def test_read_entity(self):
-        """Tests that `_read_entity` correctly fetches content via `_request` and processes it."""
+        """
+        Tests `_read_entity` calls `_request` with the correct URL
+        and passes the decoded JSON response content to the callback.
+        """
         mock_cbk = MagicMock()
 
         with patch.object(self.client, '_request', autospec=True) as mock_request:
@@ -164,7 +167,10 @@ class TestClient(unittest.TestCase):
     @patch('modules.api.api_client.time.sleep')
     @patch('modules.api.api_client.time.monotonic')
     def test_rate_limit_waits_correctly(self, mock_monotonic, mock_sleep):
-        """Tests that rate_limit_wait enforces the delay between calls"""
+        """
+        Tests that the rate-limiting logic within `_request` correctly calculates
+        and applies `time.sleep` when calls are made within the `rate_limit_period`.
+        """
         self.client.rate_limit_period = 0.5
         self.client.last_request_time = 0
 
@@ -311,7 +317,10 @@ class TestClient(unittest.TestCase):
         mock_cbk.assert_any_call({"c": 3})
 
     def test_head_entity_returns_parsed_headers(self):
-        """Tests that _head_entity correctly parses headers from a successful response."""
+        """
+        Tests `_head_entity` correctly parses headers, converting 'Content-Length'
+        to an int and stripping quotes from 'ETag'.
+        """
         mock_response = MagicMock(spec=httpx.Response)
         mock_response.headers = {
             'Content-Length': '12345',
@@ -338,7 +347,10 @@ class TestClient(unittest.TestCase):
             self.assertDictEqual(result, expected_headers)
 
     def test_download_entity_returns_early_for_zero_content_length(self):
-        """Tests that _download_entity returns immediately for 0-length content."""
+        """
+        Tests `_download_entity` performs a HEAD request but makes no subsequent
+        GET requests if 'Content-Length' is 0.
+        """
         with patch.object(self.client, '_head_entity') as mock_head, \
              patch.object(self.client, '_request') as mock_request:
 
@@ -372,7 +384,10 @@ class TestClient(unittest.TestCase):
 
     @patch('modules.api.api_client.logger.critical')
     def test_download_entity_handles_api_error_during_chunk_download(self, mock_logger_critical):
-        """Tests that API errors during download are caught, logged, and re-raised."""
+        """
+        Tests `_download_entity` catches `APIStatusError` during a chunk download,
+        logs a critical error, and re-raises it as `APIRequestError`.
+        """
         self.client.download_chunk_size = 1000
 
         mock_request_obj = MagicMock(spec=httpx.Request)
@@ -390,7 +405,10 @@ class TestClient(unittest.TestCase):
 
     @patch('modules.api.api_client.logger.critical')
     def test_download_entity_handles_generic_exception_during_chunk_download(self, mock_logger_critical):
-        """Tests that generic exceptions during download are caught, logged, and re-raised."""
+        """
+        Tests `_download_entity` catches a generic `Exception` during a chunk download,
+        logs a critical error, and re-raises it as `APIDataError`.
+        """
         self.client.download_chunk_size = 1000
         generic_error = ValueError("Something went wrong")
 
@@ -677,7 +695,10 @@ class TestClient(unittest.TestCase):
 class TestRequest(unittest.TestCase):
     """Test suite for the Request class."""
     def test_init(self):
-        """Tests that the Request object initializes correctly, and that its `to_json` method works as expected."""
+        """
+        Tests Request initialization with default values and with all parameters specified,
+        verifying `to_json` output for both.
+        """
         req = Request()
         self.assertIsNone(req.since)
         self.assertEqual(req.fields, [])
@@ -711,7 +732,10 @@ class TestRequest(unittest.TestCase):
         self.assertEqual(req.since_per_partition, since_per_partition)
 
     def test_init_with_dict_filters(self):
-        """Tests that Request correctly converts a dictionary of filters."""
+        """
+        Tests that `Request` correctly converts a `dict` of filters into
+        the expected list format in its `to_json` output.
+        """
         filters_dict = {'project': 'enwiki', 'namespace': '0'}
         req = Request(filters=filters_dict)
 

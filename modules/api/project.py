@@ -9,7 +9,7 @@ from .size import Size
 from .exceptions import DataModelError
 
 class Project:
-    """Represents a project and all its metadata"""
+    """Holds metadata about a specific Wikimedia project."""
 
     def __init__(self,
                  name: Optional[str] = None,
@@ -31,7 +31,22 @@ class Project:
 
     @staticmethod
     def from_json(data: dict) -> 'Project':
-        """Constructs a Project object from a dictionary representation."""
+        """
+        Deserializes a dictionary into a Project instance.
+
+        This method maps dictionary keys to Project attributes, parsing nested
+        objects (Language, Size) and the ISO 8601 'date_modified' string.
+
+        Args:
+            data: A dictionary containing the project's data.
+
+        Returns:
+            A Project instance.
+
+        Raises:
+            DataModelError: If the input is not a dict or if parsing fails
+                            (e.g., invalid date format, nested object error).
+        """
         if not isinstance(data, dict):
             raise DataModelError(f"Expected a dict for Project data, but got {type(data).__name__}")
 
@@ -53,7 +68,18 @@ class Project:
 
     @staticmethod
     def to_json(project: 'Project') -> dict:
-        """Converts a Project instance into a dictionary for JSON serialization."""
+        """
+        Serializes the Project instance into a JSON-compatible dictionary.
+
+        Converts nested objects (Language, Size) to their dictionary
+        representations and formats 'date_modified' as an ISO 8601 string.
+
+        Args:
+            project: The Project instance to serialize.
+
+        Returns:
+            A dictionary representation of the project.
+        """
         return {
             'name': project.name,
             'identifier': project.identifier,

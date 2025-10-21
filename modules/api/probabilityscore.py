@@ -16,7 +16,21 @@ class ProbabilityScore:
 
     @staticmethod
     def from_json(data: dict) -> 'ProbabilityScore':
-        """Constructs a ProbabilityScore object from a dictionary representation."""
+        """
+        Deserializes a dictionary into a ProbabilityScore instance.
+
+        This method also deserializes the nested 'probability' object.
+
+        Args:
+            data: A dictionary containing the prediction and probability data.
+
+        Returns:
+            A ProbabilityScore instance.
+
+        Raises:
+            DataModelError: If the input is not a dict or if parsing fails
+                            (e.g., missing keys, nested object parsing error).
+        """
         if not isinstance(data, dict):
             raise DataModelError(f"Expected a dict for ProbabilityScore data, but got {type(data).__name__}")
         try:
@@ -29,7 +43,17 @@ class ProbabilityScore:
 
     @staticmethod
     def to_json(prob_score: 'ProbabilityScore') -> dict:
-        """Converts a ProbabilityScore instance into a dictionary for serialization."""
+        """
+        Serializes the ProbabilityScore instance into a JSON-compatible dictionary.
+
+        This method also serializes the nested 'probability' object.
+
+        Args:
+            prob_score: The ProbabilityScore instance to serialize.
+
+        Returns:
+            A dictionary representation of the probability score.
+        """
         return {
             'prediction': prob_score.prediction,
             'probability': Probability.to_json(prob_score.probability) if prob_score.probability else None

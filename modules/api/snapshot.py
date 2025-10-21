@@ -32,7 +32,22 @@ class Snapshot:
 
     @staticmethod
     def from_json(data: dict) -> 'Snapshot':
-        """Constructs a Snapshot object from a dictionary representation."""
+        """
+        Deserializes a dictionary into a Snapshot instance.
+
+        This method maps dictionary keys to Snapshot attributes, parsing nested
+        objects (Project, Language, etc.) and the ISO 8601 'date_modified' string.
+
+        Args:
+            data: A dictionary containing the snapshot metadata.
+
+        Returns:
+            A Snapshot instance.
+
+        Raises:
+            DataModelError: If the input is not a dict or if parsing fails
+                            (e.g., invalid date format, nested object error).
+        """
         if not isinstance(data, dict):
             raise DataModelError(f"Expected a dict for Snapshot data, but got {type(data).__name__}")
 
@@ -55,7 +70,18 @@ class Snapshot:
 
     @staticmethod
     def to_json(snapshot: 'Snapshot') -> dict:
-        """Converts a Snapshot instance into a dictionary for JSON serialization."""
+        """
+        Serializes the Snapshot instance into a JSON-compatible dictionary.
+
+        Converts nested objects (Project, Language, etc.) to their dictionary
+        representations and formats 'date_modified' as an ISO 8601 string.
+
+        Args:
+            snapshot: The Snapshot instance to serialize.
+
+        Returns:
+            A dictionary representation of the snapshot.
+        """
         return {
             'identifier': snapshot.identifier,
             'version': snapshot.version,

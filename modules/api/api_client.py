@@ -184,7 +184,8 @@ class Client:
         """
         Internal method to perform an HTTP request.
 
-        Handles rate limiting and raises an exception for non-2xx responses.
+        Handles rate limiting, catches httpx errors, and re-raises them as
+        API-specific exceptions.
 
         Args:
             method (str): The HTTP method (e.g., 'GET', 'POST').
@@ -195,7 +196,8 @@ class Client:
             The httpx.Response object.
 
         Raises:
-            httpx.HTTPStatusError: If the response status code is 4xx or 5xx.
+            APIStatusError: If the response status code is 4xx or 5xx.
+            APIRequestError: If an error occurs during the request (e.g., connection error).
         """
         self._rate_limit_wait()
 
@@ -215,7 +217,22 @@ class Client:
             raise APIRequestError(f"Request Error: {e} for url {e.request.url}", request=e.request) from e
 
     def _get_entity(self, req: Optional[Request], path: str, val: Any):
-        """Fetches a JSON entity and populates a list or dict."""
+        """
+        Internal helper to fetch a JSON entity via POST and populate a container.
+
+        Makes a POST request to the given `path` with the `req` payload.
+        The JSON response is then used to update (for dicts) or extend (for lists)
+        the `val` argument in-place.
+
+        Args:
+            req (Optional[Request]): The request payload object.
+            path (str): The API endpoint path (e.g., "projects").
+            val (Any): The list or dict object to populate with the response.
+
+        Raises:
+            APIDataError: If the JSON response is malformed or its type
+                          (list/dict) does not match `val`'s type.
+        """
         json_payload = req.to_json() if req else None
         response = self._request('POST', f"{self.base_url}v2/{path}", json=json_payload)
         try:
@@ -231,6 +248,17 @@ class Client:
             raise APIDataError("Mismatched types between expected container and JSON response.")
 
     def _read_loop(self, rdr: io.BytesIO, cbk: Callable[[dict], Any]):
+        """
+        Processes a byte stream of newline-delimited JSON (NDJSON).
+
+        Reads from the stream line by line, decodes each line as JSON,
+        and calls the callback function with the resulting object.
+        Skips empty lines and logs a warning for malformed JSON.
+
+        Args:
+            rdr (io.BytesIO): A byte stream containing NDJSON data.
+            cbk (Callable[[dict], Any]): A callback function to process each JSON object.
+        """
         scanner = io.TextIOWrapper(rdr)
         for line in scanner:
             if not line.strip():
@@ -242,10 +270,36 @@ class Client:
                 logger.warning("Skipping line due to JSON decode error", exc_info=True)
 
     def _read_entity(self, path: str, cbk: Callable[[dict], Any]):
+        """
+        Internal helper to fetch a resource and process it as NDJSON.
+
+        Makes a GET request to the given `path` and passes the response
+        content to `_read_loop` for processing.
+
+        Args:
+            path (str): The API endpoint path (e.g., "snapshots/123/download").
+            cbk (Callable[[dict], Any]): A callback function to process each JSON object.
+        """
         response = self._request('GET', f"{self.base_url}v2/{path}")
         self._read_loop(io.BytesIO(response.content), cbk)
 
     def _head_entity(self, path: str) -> dict:
+        """
+        Internal helper to perform a HEAD request and parse key headers.
+
+        Makes a HEAD request to the given `path` and returns a dictionary
+        of parsed headers, including a 'Content-Length' (as int) and
+        a cleaned 'ETag' (quotes removed).
+
+        Args:
+            path (str): The API endpoint path.
+
+        Returns:
+            dict: A dictionary of parsed response headers.
+
+        Raises:
+            APIDataError: If 'Content-Length' header is present but not a valid integer.
+        """
         response = self._request('HEAD', f"{self.base_url}v2/{path}")
         try:
             content_length = int(response.headers.get('Content-Length', 0))
@@ -262,7 +316,24 @@ class Client:
         return headers
 
     def _download_entity(self, path: str, writer: io.BytesIO):
-        """Downloads a large entity, potentially in parallel chunks."""
+        """
+        Downloads a large entity, in parallel chunks, into `writer`.
+
+        Performs a HEAD request to get content length, then calculates chunks
+        and downloads them in parallel using a ThreadPoolExecutor. If chunking
+        is disabled (download_chunk_size <= 0), it downloads the file in a
+        single request.
+
+        Args:
+            path (str): The API endpoint path (e.g., "snapshots/123/download").
+            writer (io.BytesIO): A writable, seekable byte stream to write
+                                 the downloaded content into.
+
+        Raises:
+            APIRequestError: If a download chunk fails due to a network or
+                             HTTP status error.
+            APIDataError: If a download chunk fails for an unexpected reason.
+        """
         full_path = f"{self.base_url}v2/{path}"
         headers = self._head_entity(path)
         content_length = headers['Content-Length']
@@ -304,6 +375,22 @@ class Client:
                     ) from e
 
     def _subscribe_to_entity(self, path: str, req: Request, cbk: Callable[[dict], Any]):
+        """
+        Internal helper to connect to a real-time stream endpoint.
+
+        Makes a streaming GET request to the given `path` on the `realtime_url`.
+        It processes the incoming NDJSON stream, calling the callback for
+        each valid JSON object received.
+
+        Args:
+            path (str): The API endpoint path (e.g., "articles").
+            req (Request): The request payload object, typically containing filters.
+            cbk (Callable[[dict], Any]): A callback function to process each JSON object.
+
+        Raises:
+            APIStatusError: If the stream connection returns a 4xx or 5xx status.
+            APIRequestError: If an error occurs during the stream connection.
+        """
         json_payload = req.to_json() if req else None
         headers = {
             'Cache-Control': 'no-cache',
@@ -332,7 +419,21 @@ class Client:
             raise APIRequestError(f"Stream Request Error: {e}", request=e.request) from e
 
     def read_all(self, rdr: io.BytesIO, cbk: Callable[[dict], Any]):
-        """Reads a tar archive"""
+        """
+        Reads a .tar.gz archive containing NDJSON files.
+
+        Extracts each file from the given byte stream (assumed to be a .tar.gz archive),
+        reads it as NDJSON, and processes each JSON object using the
+        provided callback.
+
+        Args:
+            rdr (io.BytesIO): A byte stream containing the .tar.gz archive data.
+            cbk (Callable[[dict], Any]): A callback function to process each JSON object
+                                         from each file in the archive.
+
+        Raises:
+            APIDataError: If the archive is corrupt or cannot be read as a tarfile.
+        """
         try:
             with tarfile.open(fileobj=rdr, mode='r:gz') as tar:
                 for member in tar.getmembers():
@@ -344,7 +445,15 @@ class Client:
             raise APIDataError(f"Failed to read tar archive: {e}") from e
 
     def set_access_token(self, token: str):
-        """Sets the access token"""
+        """
+        Updates the access token for the client instance.
+
+        This updates both the `access_token` attribute and the
+        'Authorization' header on the internal `httpx.Client`.
+
+        Args:
+            token (str): The new access token.
+        """
         self.access_token = token
         self.http_client.headers['Authorization'] = f'Bearer {token}'
 

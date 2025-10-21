@@ -16,7 +16,19 @@ class Visibility:
 
     @staticmethod
     def from_json(data: dict) -> 'Visibility':
-        """Constructs a Visibility object from a dictionary representation."""
+        """
+        Deserializes a dictionary into a Visibility instance.
+
+        Args:
+            data: A dictionary containing boolean visibility flags for
+                  'text', 'editor', and 'comment'.
+
+        Returns:
+            A Visibility instance.
+
+        Raises:
+            DataModelError: If the input is not a dict or if parsing fails.
+        """
         if not isinstance(data, dict):
             raise DataModelError(f"Expected a dict for Visibility data, but got {type(data).__name__}")
 
@@ -31,7 +43,15 @@ class Visibility:
 
     @staticmethod
     def to_json(visibility: 'Visibility') -> dict:
-        """Converts a Visibility instance into a dictionary for JSON serialization."""
+        """
+        Serializes the Visibility instance into a JSON-compatible dictionary.
+
+        Args:
+            visibility: The Visibility instance to serialize.
+
+        Returns:
+            A dictionary representation of the visibility settings.
+        """
         return {
             'text': visibility.text,
             'editor': visibility.editor,

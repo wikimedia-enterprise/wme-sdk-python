@@ -16,7 +16,18 @@ class Entity:
 
     @staticmethod
     def from_json(data: dict) -> 'Entity':
-        """Creates an Entity instance from a dictionary (JSON object)"""
+        """
+        Deserializes a dictionary into an Entity instance.
+
+        Args:
+            data: A dictionary containing the entity's data.
+
+        Returns:
+            An Entity instance.
+
+        Raises:
+            DataModelError: If the input is not a dict or if parsing fails.
+        """
         if not isinstance(data, dict):
             raise DataModelError(f"Expected a dict for Entity data, but got {type(data).__name__}")
         try:
@@ -31,7 +42,15 @@ class Entity:
 
     @staticmethod
     def to_json(entity: 'Entity') -> dict:
-        """Converts an Entity instance to a dictionary for JSON serialization"""
+        """
+        Serializes the Entity instance into a JSON-compatible dictionary.
+
+        Args:
+            entity: The Entity instance to serialize.
+
+        Returns:
+            A dictionary representation of the entity.
+        """
         return {
             'identifier': entity.identifier,
             'url': entity.url,

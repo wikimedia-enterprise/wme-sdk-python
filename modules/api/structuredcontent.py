@@ -23,7 +23,7 @@ class Link:
 
     @staticmethod
     def from_json(data: dict) -> 'Link':
-        """Constructs a Link object from a dictionary representation."""
+        """Deserializes a dictionary into a Link instance, parsing nested images."""
         if not isinstance(data, dict):
             raise DataModelError(f"Expected dict for Link, got {type(data).__name__}")
         try:
@@ -37,7 +37,7 @@ class Link:
 
     @staticmethod
     def to_json(link: 'Link') -> dict:
-        """Converts a Link instance into a dictionary for JSON serialization."""
+        """Serializes the Link instance into a JSON-compatible dictionary, including nested images."""
         return {
             'url': link.url,
             'text': link.text,
@@ -56,7 +56,7 @@ class Citation:
 
     @staticmethod
     def from_json(data: dict) -> 'Citation':
-        """Constructs a Citation object from a dictionary representation."""
+        """Deserializes a dictionary into a Citation instance."""
         if not isinstance(data, dict):
             raise DataModelError(f"Expected dict for Citation, got {type(data).__name__}")
         try:
@@ -70,7 +70,7 @@ class Citation:
 
     @staticmethod
     def to_json(citation: 'Citation') -> dict:
-        """Converts a Citation instance into a dictionary for JSON serialization."""
+        """Serializes the Citation instance into a JSON-compatible dictionary."""
         return {
             'identifier': citation.identifier,
             'group': citation.group,
@@ -99,7 +99,7 @@ class Part:
 
     @staticmethod
     def from_json(data: dict) -> 'Part':
-        """Constructs a Part object from a dictionary representation."""
+        """Deserializes a dictionary into a Part instance, recursively parsing nested parts, links, images, and citations."""
         if not isinstance(data, dict):
             raise DataModelError(f"Expected dict for Part, got {type(data).__name__}")
         try:
@@ -119,7 +119,7 @@ class Part:
 
     @staticmethod
     def to_json(part: 'Part') -> dict:
-        """Converts a Part instance into a dictionary for JSON serialization."""
+        """Serializes the Part instance into a JSON-compatible dictionary, recursively serializing nested structures."""
         return {
             'name': part.name,
             'type': part.part_type,
@@ -141,7 +141,7 @@ class ReferenceText:
 
     @staticmethod
     def from_json(data: dict) -> 'ReferenceText':
-        """Constructs a ReferenceText object from a dictionary representation."""
+        """Deserializes a dictionary into a ReferenceText instance, parsing nested links."""
         if not isinstance(data, dict):
             raise DataModelError(f"Expected dict for ReferenceText, got {type(data).__name__}")
         try:
@@ -154,7 +154,7 @@ class ReferenceText:
 
     @staticmethod
     def to_json(text: 'ReferenceText') -> dict:
-        """Converts a ReferenceText instance into a dictionary for JSON serialization."""
+        """Serializes the ReferenceText instance into a JSON-compatible dictionary, including nested links."""
         return {
             'value': text.value,
             'links': [Link.to_json(link) for link in text.links]
@@ -179,7 +179,7 @@ class Reference:
 
     @staticmethod
     def from_json(data: dict) -> 'Reference':
-        """Constructs a Reference object from a dictionary representation."""
+        """Deserializes a dictionary into a Reference instance, parsing nested text and source objects."""
         if not isinstance(data, dict):
             raise DataModelError(f"Expected dict for Reference, got {type(data).__name__}")
         try:
@@ -197,7 +197,7 @@ class Reference:
 
     @staticmethod
     def to_json(reference: 'Reference') -> dict:
-        """Converts a Reference instance into a dictionary for JSON serialization."""
+        """Serializes the Reference instance into a JSON-compatible dictionary, including nested text and source objects."""
         return {
             'identifier': reference.identifier,
             'group': reference.group,
@@ -217,7 +217,7 @@ class StructuredTableCell:
 
     @staticmethod
     def from_json(data: dict) -> 'StructuredTableCell':
-        """Constructs a StructuredTableCell object from a dictionary."""
+        """Deserializes a dictionary into a StructuredTableCell, recursively parsing a nested table if present."""
         if not isinstance(data, dict):
             raise DataModelError(f"Expected dict for StructuredTableCell, got {type(data).__name__}")
         try:
@@ -230,7 +230,7 @@ class StructuredTableCell:
 
     @staticmethod
     def to_json(cell: 'StructuredTableCell') -> dict:
-        """Converts a StructuredTableCell instance into a dictionary."""
+        """Serializes the StructuredTableCell into a JSON-compatible dictionary, recursively serializing a nested table."""
         return {
             "value": cell.value,
             "nested_table": StructuredTable.to_json(cell.nested_table) if cell.nested_table else None
@@ -253,7 +253,7 @@ class StructuredTable:
 
     @staticmethod
     def from_json(data: dict) -> 'StructuredTable':
-        """Constructs a StructuredTable object from a dictionary."""
+        """Deserializes a dictionary into a StructuredTable, recursively parsing cells in headers, rows, and footers."""
         if not isinstance(data, dict):
             raise DataModelError(f"Expected dict for StructuredTable, got {type(data).__name__}")
         try:
@@ -270,7 +270,7 @@ class StructuredTable:
 
     @staticmethod
     def to_json(table: 'StructuredTable') -> dict:
-        """Converts a StructuredTable instance into a dictionary."""
+        """Serializes the StructuredTable into a JSON-compatible dictionary, recursively serializing all cells."""
         return {
             "identifier": table.identifier,
             "headers": [[StructuredTableCell.to_json(c) for c in row] for row in table.headers],
@@ -320,7 +320,7 @@ class StructuredContent:
 
     @staticmethod
     def from_json(data: dict) -> 'StructuredContent':
-        """Constructs a StructuredContent object from a dictionary."""
+        """Deserializes a dictionary into a complete StructuredContent object, parsing all nested components."""
         if not isinstance(data, dict):
             raise DataModelError(f"Expected dict for StructuredContent, got {type(data).__name__}")
         try:
@@ -352,7 +352,7 @@ class StructuredContent:
 
     @staticmethod
     def to_json(sc: 'StructuredContent') -> dict:
-        """Converts a StructuredContent instance into a dictionary."""
+        """Serializes the StructuredContent object into a JSON-compatible dictionary, including all nested components."""
         return {
             'name': sc.name,
             'identifier': sc.identifier,

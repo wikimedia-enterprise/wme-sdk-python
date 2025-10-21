@@ -19,7 +19,18 @@ class PreviousVersion:
 
     @staticmethod
     def from_json(data: dict) -> 'PreviousVersion':
-        """Creates a PreviousVersion instance from a dictionary (JSON object)"""
+        """
+        Deserializes a dictionary into a PreviousVersion instance.
+
+        Args:
+            data: A dictionary containing the previous version's data.
+
+        Returns:
+            A PreviousVersion instance.
+
+        Raises:
+            DataModelError: If the input is not a dict or if parsing fails.
+        """
         if not isinstance(data, dict):
             raise DataModelError(f"Expected dict for PreviousVersion, got {type(data).__name__}")
         try:
@@ -32,7 +43,15 @@ class PreviousVersion:
             raise DataModelError(f"Failed to parse PreviousVersion '{prev_id}': {e}") from e
     @staticmethod
     def to_json(previous_version: 'PreviousVersion') -> dict:
-        """Converts a PreviousVersion instance to a dictionary for JSON serialization"""
+        """
+        Serializes the PreviousVersion instance into a JSON-compatible dictionary.
+
+        Args:
+            previous_version: The PreviousVersion instance to serialize.
+
+        Returns:
+            A dictionary representation of the previous version.
+        """
         return {
             'identifier': previous_version.identifier,
             'number_of_characters': previous_version.number_of_characters
@@ -68,7 +87,22 @@ class Version:
 
     @staticmethod
     def from_json(data: dict) -> 'Version':
-        """Constructs a Version object from a dictionary representation."""
+        """
+        Deserializes a dictionary into a Version instance.
+
+        This method maps dictionary keys to Version attributes, parsing nested
+        objects (Scores, Editor, Size).
+
+        Args:
+            data: A dictionary containing the version's data.
+
+        Returns:
+            A Version instance.
+
+        Raises:
+            DataModelError: If the input is not a dict or if parsing fails
+                            (e.g., nested object parsing error).
+        """
         if not isinstance(data, dict):
             raise DataModelError(f"Expected dict for Version, got {type(data).__name__}")
 
@@ -92,7 +126,18 @@ class Version:
 
     @staticmethod
     def to_json(version: 'Version') -> dict:
-        """Converts a Version instance into a dictionary for JSON serialization."""
+        """
+        Serializes the Version instance into a JSON-compatible dictionary.
+
+        Converts nested objects (Scores, Editor, Size) to their dictionary
+        representations.
+
+        Args:
+            version: The Version instance to serialize.
+
+        Returns:
+            A dictionary representation of the version.
+        """
         return {
             'identifier': version.identifier,
             'comment': version.comment,

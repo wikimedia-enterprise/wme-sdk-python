@@ -183,7 +183,21 @@ class Article:
 
     @staticmethod
     def from_json(data: dict) -> 'Article':
-        """Creates an Article instance from a dictionary"""
+        """
+        Helper method to parse an ISO 8601 date string into a datetime object.
+
+        Expects a format like 'YYYY-MM-DDTHH:MM:SSZ'.
+
+        Args:
+            date_str: The ISO 8601 formatted date string.
+
+        Returns:
+            A datetime object, or None if the input string is None or empty.
+
+        Raises:
+            DataModelError: If the date string is non-empty and does not
+                            match the expected format.
+        """
         try:
             return Article(
                 name=data.get('name'),
@@ -248,7 +262,21 @@ class Article:
 
     @staticmethod
     def parse_date(date_str: Optional[str]) -> Optional[datetime]:
-        """Parses an article's date"""
+        """
+        Helper method to parse an ISO 8601 date string into a datetime object.
+
+        Expects a format like 'YYYY-MM-DDTHH:MM:SSZ'.
+
+        Args:
+            date_str: The ISO 8601 formatted date string.
+
+        Returns:
+            A datetime object, or None if the input string is None or empty.
+
+        Raises:
+            DataModelError: If the date string is non-empty and does not
+                            match the expected format.
+        """
         if not date_str:
             return None
         try:
