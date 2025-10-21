@@ -65,24 +65,24 @@ if __name__ == '__main__':
 
     # Get the article title from the command line
     article_title = sys.argv[1]
-    json_path = f"data/{article_title}.json"
+    JSON_PATH = f"data/{article_title}.json"
 
     # Load the JSON data
-    with open(json_path, 'r', encoding='utf-8') as file:
+    with open(JSON_PATH, 'r', encoding='utf-8') as file:
         data = json.load(file)
 
     # Extract and output the text
 
-    plain_text = extract_sections(data)
+    PLAIN_TEXT = extract_sections(data)
     print("Extracted text:")
-    print(plain_text)
+    print(PLAIN_TEXT)
 
     # Clean and split the plain text into words
-    words = re.findall(r'\w+', plain_text.lower())
+    words = re.findall(r'\w+', PLAIN_TEXT.lower())
     word_freq = Counter(words)
 
     # Generate a word cloud image
-    wordcloud = WordCloud(width=800, height=400, background_color="white").generate(plain_text)
+    wordcloud = WordCloud(width=800, height=400, background_color="white").generate(PLAIN_TEXT)
 
     # Display the word cloud
     plt.figure(figsize=(10, 5))

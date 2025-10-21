@@ -44,145 +44,169 @@ def revoke_token_on_exit(auth_client, refresh_token):
         except (APIRequestError, APIStatusError, APIRequestError) as e:
             logger.error("Failed to revoke token: %s", e)
 
+def print_demo_banner(demo_number, title):
+    """Prints a consistent banner for each demo section."""
+    print(f"\n{'='*60}")
+    logger.info("--- %s. %s ---", demo_number, title)
 
-def main():
-    """Main function to run the showcase."""
+
+def setup_clients():
+    """Authenticates and returns initialized clients and tokens."""
     logger.info("--- Starting Logging Showcase with Full Authentication ---")
-
-    # --- Authentication Flow ---
     auth_client = AuthClient()
     try:
         login_response = auth_client.login()
-    except (APIRequestError, APIStatusError, APIRequestError) as e:
-        logger.fatal("Login failed: %s", e)
-        return
+        logger.info("Successfully logged in and obtained tokens.")
 
-    refresh_token = login_response["refresh_token"]
-    access_token = login_response["access_token"]
-    logger.info("Successfully logged in and obtained tokens.")
+        access_token = login_response["access_token"]
+        refresh_token = login_response["refresh_token"]
 
-    # The rest of the script runs inside this secure context
-    with revoke_token_on_exit(auth_client, refresh_token):
         api_client = ApiClient()
         api_client.set_access_token(access_token)
         logger.info("SDK Client initialized with access token.")
 
-        # ======================================================================
-        # DEMO 1: SUCCESSFUL REQUEST (triggers DEBUG logs)
-        # ======================================================================
-        print("\n" + "="*60)
-        logger.info("--- 1. Demonstrating DEBUG logs for a successful request ---")
+        return auth_client, refresh_token, access_token, api_client
+
+    except (APIRequestError, APIStatusError) as e:
+        logger.fatal("Login failed: %s", e)
+        return None, None, None, None
+
+
+def run_demo_1_success(api_client):
+    """Demonstrates DEBUG logs for a successful request."""
+    print_demo_banner(1, "Demonstrating DEBUG logs for a successful request")
+    try:
+        project = api_client.get_project("enwiki", Request())
+        logger.info("Successfully fetched project: %s", project.get('name'))
+    except (APIRequestError, APIStatusError) as e:
+        logger.error("This was not supposed to fail! Error: %s", e)
+    print("="*60)
+
+
+def run_demo_2_status_error(api_client):
+    """Demonstrates ERROR logs for a 404 Not Found."""
+    print_demo_banner(2, "Demonstrating ERROR logs for a 404 Not Found")
+    try:
+        api_client.get_project("nonexistent-project", Request())
+    except APIStatusError:
+        logger.info("Caught expected APIStatusError. Check above for the SDK's ERROR log.")
+    print("="*60)
+
+
+def run_demo_3_network_error(access_token):
+    """Demonstrates ERROR logs for a network timeout."""
+    print_demo_banner(3, "Demonstrating ERROR logs for a network timeout")
+    try:
+        # This demo needs a client with a custom timeout
+        timeout_client = ApiClient(access_token=access_token, timeout=0.01)
+        timeout_client.get_project("enwiki", Request())
+    except APIRequestError:
+        logger.info("Caught expected APIRequestError. Check above for the SDK's Request Error log.")
+    print("="*60)
+
+
+def explain_demo_4_rate_limit():
+    """Explains WARNING logs for 429 Too Many Requests."""
+    print_demo_banner(4, "Explaining WARNING logs (429 Too Many Requests)")
+    logger.info("If the SDK received a 429 status code, it would log a WARNING.")
+    logger.info("Example: 'WARNING - Received 429 Too Many Requests. Client may retry.'")
+    print("="*60)
+
+
+def run_demo_5_json_decode(api_client):
+    """Demonstrates WARNING for a JSON Decode Error in a batch read."""
+    print_demo_banner(5, "Demonstrating WARNING for a JSON Decode Error in a batch read")
+    mock_response = MagicMock()
+    mock_response.content = b'{"name": "valid"}\n{"name": "bad", "extra"}\n{"name": "also_valid"}'
+
+    with patch.object(api_client, '_request', return_value=mock_response):
         try:
-            project = api_client.get_project("enwiki", Request())
-            logger.info("Successfully fetched project: %s", project.get('name'))
-        except (APIRequestError, APIStatusError, APIRequestError) as e:
-            logger.error("This was not supposed to fail! Error: %s", e)
-        print("="*60)
+            def callback(article):
+                logger.info("Callback received valid article: %s", article.get('name'))
 
-        # ======================================================================
-        # DEMO 2: HTTP STATUS ERROR (triggers ERROR logs)
-        # ======================================================================
-        print("\n" + "="*60)
-        logger.info("--- 2. Demonstrating ERROR logs for a 404 Not Found ---")
-        try:
-            api_client.get_project("nonexistent-project", Request())
-        except APIStatusError:
-            logger.info("Caught expected APIStatusError. Check the line above this error for the SDK's ERROR log.")
-        print("="*60)
+            api_client.read_batch(datetime.now(), "fake-batch-id", callback)
+            logger.info("Caught expected JSON Decode Warning. SDK logged it but did not crash.")
+        except (APIRequestError, APIStatusError, APIDataError) as e:
+            logger.error("This was not supposed to crash! Error: %s", e)
+    print("="*60)
 
-        # ======================================================================
-        # DEMO 3: NETWORK REQUEST ERROR (triggers ERROR logs)
-        # ======================================================================
-        print("\n" + "="*60)
-        logger.info("--- 3. Demonstrating ERROR logs for a network timeout ---")
-        try:
-            timeout_client = ApiClient(access_token=access_token, timeout=0.01)
-            timeout_client.get_project("enwiki", Request())
-        except APIRequestError:
-            logger.info("Caught expected APIRequestError. Check the line above this error for the SDK's Request Error log.")
-        print("="*60)
 
-        # ==========================================================================
-        # EXPLANATION 4: RATE LIMITING (triggers WARNING logs)
-        # ==========================================================================
-        print("\n" + "="*60)
-        logger.info("--- 4. Explaining WARNING logs (429 Too Many Requests) ---")
-        logger.info("If the SDK received a 429 status code from the API, it would log a WARNING.")
-        logger.info("Example: 'WARNING - Received 429 Too Many Requests. Client may retry.'")
-        print("="*60)
+def run_demo_6_download_network_error(api_client):
+    """Demonstrates CRITICAL log for a failed download (Network Error)."""
+    print_demo_banner(6, "Demonstrating CRITICAL log for a failed download (Network Error)")
 
-        # ======================================================================
-        # DEMO 5: JSON DECODE WARNING in _read_loop
-        # ======================================================================
-        print("\n" + "="*60)
-        logger.info("--- 5. Demonstrating WARNING for a JSON Decode Error in a batch read ---")
-        mock_response = MagicMock()
-        mock_response.content = b'{"name": "valid"}\n{"name": "bad", "extra"}\n{"name": "also_valid"}'
-        with patch.object(api_client, '_request', return_value=mock_response):
+    mock_success_response = MagicMock()
+    mock_success_response.content = b'this is fake chunk data'
+    network_error_sequence = [
+        mock_success_response,
+        APIRequestError("Simulated network failure on the second chunk.", request=None)
+    ]
+
+    api_client.download_chunk_size = 1000
+    with patch.object(api_client, '_head_entity', return_value={'Content-Length': 2000}):
+        with patch.object(api_client, '_request', side_effect=network_error_sequence):
             try:
-                def callback(article):
-                    logger.info("Callback received valid article: %s", article.get('name'))
-                api_client.read_batch(datetime.now(), "fake-batch-id", callback)
-                logger.info("Caught expected JSON Decode Warning. Notice the SDK logged it but did not crash.")
-            except (APIRequestError, APIStatusError, APIDataError) as e:
-                logger.error("This was not supposed to crash! Error: %s", e)
-        print("="*60)
+                api_client.download_batch(datetime.now(), "fake-download-id", io.BytesIO())
+            except APIRequestError:
+                logger.info("Caught expected APIRequestError. Check above for the SDK's CRITICAL log.")
+    api_client.download_chunk_size = -1  # Reset to default
+    print("="*60)
 
-        # ======================================================================
-        # DEMO 6: DOWNLOAD FAILED (CRITICAL log for APIRequestError)
-        # ======================================================================
-        print("\n" + "="*60)
-        logger.info("--- 6. Demonstrating CRITICAL log for a failed download (Network Error) ---")
 
-        mock_success_response = MagicMock()
-        mock_success_response.content = b'this is fake chunk data'
+def run_demo_7_download_unexpected_error(api_client):
+    """Demonstrates CRITICAL log for a failed download (Unexpected Error)."""
+    print_demo_banner(7, "Demonstrating CRITICAL log for a failed download (Unexpected Error)")
 
-        network_error_sequence = [
-            mock_success_response,
-            APIRequestError("Simulated network failure on the second chunk.", request=None)
-        ]
+    mock_success_response = MagicMock()
+    mock_success_response.content = b'this is fake chunk data'
+    unexpected_error_sequence = [
+        mock_success_response,
+        TypeError("Simulated unexpected internal error!")
+    ]
 
-        api_client.download_chunk_size = 1000
-        with patch.object(api_client, '_head_entity', return_value={'Content-Length': 2000}):
-            with patch.object(api_client, '_request', side_effect=network_error_sequence):
-                try:
-                    api_client.download_batch(datetime.now(), "fake-download-id", io.BytesIO())
-                except APIRequestError:
-                    logger.info("Caught expected APIRequestError. Check the line above this error for the SDK's CRITICAL log.")
-        api_client.download_chunk_size = -1
-        print("="*60)
+    api_client.download_chunk_size = 1000
+    with patch.object(api_client, '_head_entity', return_value={'Content-Length': 2000}):
+        with patch.object(api_client, '_request', side_effect=unexpected_error_sequence):
+            try:
+                api_client.download_batch(datetime.now(), "fake-download-id", io.BytesIO())
+            except APIDataError:
+                logger.info("Caught expected APIDataError. Check above for the SDK's CRITICAL log.")
+    api_client.download_chunk_size = -1  # Reset to default
+    print("="*60)
 
-        # ======================================================================
-        # DEMO 7: DOWNLOAD FAILED (CRITICAL log for unexpected Exception)
-        # ======================================================================
-        print("\n" + "="*60)
-        logger.info("--- 7. Demonstrating CRITICAL log for a failed download (Unexpected Error) ---")
 
-        unexpected_error_sequence = [
-            mock_success_response,
-            TypeError("Simulated unexpected internal error!")
-        ]
+def explain_demo_8_stream_warning():
+    """Explains WARNING log for a bad line in a real-time stream."""
+    print_demo_banner(8, "Explaining WARNING log for a bad line in a real-time stream")
+    logger.info("The log 'Skipping malformed JSON line in stream' is for running connections.")
+    logger.info("It allows the stream to stay open even if the server sends a corrupted line.")
+    logger.info("For brevity, we don't showcase that here, but the principle is the same as Demo #5.")
+    print("="*60)
 
-        api_client.download_chunk_size = 1000
-        with patch.object(api_client, '_head_entity', return_value={'Content-Length': 2000}):
-            with patch.object(api_client, '_request', side_effect=unexpected_error_sequence):
-                try:
-                    api_client.download_batch(datetime.now(), "fake-download-id", io.BytesIO())
-                except APIDataError:
-                    logger.info("Caught expected APIDataError. Check the line above this error for the SDK's CRITICAL log.")
-        api_client.download_chunk_size = -1
-        print("="*60)
 
-        # ======================================================================
-        # DEMO 8: STREAMING WARNING
-        # ======================================================================
-        print("\n" + "="*60)
-        logger.info("--- 8. Explaining WARNING log for a bad line in a real-time stream ---")
-        logger.info("The log 'Skipping malformed JSON line in stream' is for running connections.")
-        logger.info("It allows the stream to stay open even if the server sends a corrupted line,")
-        logger.info("making the client more resilient. For the sake of example brevity,")
-        logger.info("we don't showcase that behavior here, but the principle is the same as Demo #5.")
-        print("="*60)
+def main():
+    """Main function to run the showcase."""
+    # Receive the access_token here
+    auth_client, refresh_token, access_token, api_client = setup_clients()
+
+    if not api_client:
+        return  # Login failed, exit the script
+
+    # The rest of the script runs inside this secure context
+    with revoke_token_on_exit(auth_client, refresh_token):
+
+        # Run all demos in order
+        run_demo_1_success(api_client)
+        run_demo_2_status_error(api_client)
+
+        # Pass the access_token to the demo that needs it
+        run_demo_3_network_error(access_token)
+
+        explain_demo_4_rate_limit()
+        run_demo_5_json_decode(api_client)
+        run_demo_6_download_network_error(api_client)
+        run_demo_7_download_unexpected_error(api_client)
+        explain_demo_8_stream_warning()
 
 
 if __name__ == "__main__":
