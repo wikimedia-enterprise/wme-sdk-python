@@ -1,3 +1,10 @@
+"""Setup script for the wme-sdk-python package.
+
+This file uses setuptools to define the project's metadata, find all
+necessary packages, and specify its dependencies. Running this script
+(e.g., `pip install .`) will install the SDK and its requirements.
+"""
+
 from setuptools import setup, find_packages
 
 setup(

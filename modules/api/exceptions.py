@@ -1,6 +1,7 @@
+"""Here we define custom exceptions for error clarity"""
+
 class WikimediaAPIError(Exception):
     """Base exception class for this client."""
-    pass
 
 class APIRequestError(WikimediaAPIError):
     """Raised for network-level errors (e.g., connection refused, timeout)."""
@@ -17,12 +18,10 @@ class APIStatusError(WikimediaAPIError):
 
 class APIDataError(WikimediaAPIError):
     """Raised for errors during data processing (e.g., invalid JSON, corrupt archive)."""
-    pass
+
 
 class DataModelError(ValueError):
     """Raised when incoming data cannot be parsed into a data model"""
-    pass
 
 class SDKHealthError(Exception):
     """Raised when the SDK's health check fails"""
-    pass

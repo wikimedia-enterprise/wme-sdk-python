@@ -1,13 +1,18 @@
+# pylint: disable=too-many-arguments, too-many-positional-arguments, R0801
+
+"""Data model for Wikimedia Enterprise batch metadata."""
+
 from typing import Optional
 from datetime import datetime
-from project import Project
-from language import Language
-from namespace import Namespace
-from size import Size
-from exceptions import DataModelError
+from .project import Project
+from .language import Language
+from .namespace import Namespace
+from .size import Size
+from .exceptions import DataModelError
 
 
 class Batch:
+    """Represents metadata for a batch."""
     def __init__(self,
                  identifier: Optional[str] = None,
                  version: Optional[str] = None,
@@ -26,13 +31,28 @@ class Batch:
 
     @staticmethod
     def from_json(data: dict) -> 'Batch':
-        """Safely creates a Batch instance from a dictionary, handling potential errors."""
+        """
+        Deserializes a dictionary into a Batch instance.
+
+        This method maps dictionary keys to Batch attributes, parsing nested
+        objects (Project, Language, etc.) and ISO 8601 date strings.
+
+        Args:
+            data: A dictionary containing the batch metadata.
+
+        Returns:
+            A Batch instance.
+
+        Raises:
+            DataModelError: If the input is not a dict or if parsing fails
+                            (e.g., invalid date format).
+        """
         if not isinstance(data, dict):
             raise DataModelError(f"Expected a dict for Batch data but got {type(data).__name__}")
         try:
             date_str = data.get('date_modified')
             date_obj = datetime.fromisoformat(date_str) if date_str else None
-            
+
             return Batch(
                 identifier=data.get('identifier'),
                 version=data.get('version'),
@@ -48,7 +68,18 @@ class Batch:
 
     @staticmethod
     def to_json(batch: 'Batch') -> dict:
-        """Safely converts a Batch instance to a dictionary, handling optional None values."""
+        """
+        Serializes the Batch instance into a JSON-compatible dictionary.
+
+        Converts nested objects (Project, Language, etc.) to their dictionary
+        representations and formats datetime objects as ISO 8601 strings.
+
+        Args:
+            batch: The Batch instance to serialize.
+
+        Returns:
+            A dictionary representation of the batch.
+        """
         return {
             'identifier': batch.identifier,
             'version': batch.version,

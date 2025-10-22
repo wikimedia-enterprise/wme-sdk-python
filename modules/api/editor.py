@@ -1,9 +1,14 @@
+# pylint: disable=too-many-instance-attributes, too-many-arguments, too-many-positional-arguments
+
+"""Represents an editor and their data"""
+
 from typing import List, Optional
 from datetime import datetime
-from exceptions import DataModelError
+from .exceptions import DataModelError
 
 
 class Editor:
+    """Represents a user or editor who contributes to content."""
     def __init__(self,
                  identifier: Optional[int] = None,
                  name: Optional[str] = None,
@@ -28,12 +33,28 @@ class Editor:
 
     @staticmethod
     def from_json(data: dict) -> 'Editor':
+        """
+        Deserializes a dictionary into an Editor instance.
+
+        This method maps dictionary keys to Editor attributes, parsing the
+        ISO 8601 'date_started' string into a datetime object.
+
+        Args:
+            data: A dictionary containing the editor's data.
+
+        Returns:
+            An Editor instance.
+
+        Raises:
+            DataModelError: If the input is not a dict or if parsing fails
+                            (e.g., invalid date format).
+        """
         if not isinstance(data, dict):
             raise DataModelError(f"Expected a dict for Editor data, but got {type(data).__name__}")
-        
+
         try:
             date_str = data.get('date_started')
-            
+
             return Editor(
                 identifier=data.get('identifier'),
                 name=data.get('name'),
@@ -52,6 +73,17 @@ class Editor:
 
     @staticmethod
     def to_json(editor: 'Editor') -> dict:
+        """
+        Serializes the Editor instance into a JSON-compatible dictionary.
+
+        Formats the 'date_started' datetime object as an ISO 8601 string.
+
+        Args:
+            editor: The Editor instance to serialize.
+
+        Returns:
+            A dictionary representation of the editor.
+        """
         return {
             'identifier': editor.identifier,
             'name': editor.name,

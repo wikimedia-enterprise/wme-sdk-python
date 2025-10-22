@@ -1,0 +1,5 @@
+# This is Pylint's configuration file.
+
+[MAIN]
+max-line-length=200
+source-roots = .

@@ -1,21 +1,19 @@
 # pylint: disable=R0801
+"""Fetches structured content for the article "Squirrel".
 
-"""Demonstrates streaming articles from the API using a callback.
+This script authenticates with the Wikimedia Enterprise API, builds a request
+for the "enwiki" version of the article "Squirrel", and specifies the
+'name', 'abstract', and 'description' fields.
 
-This script authenticates with the Wikimedia Enterprise API, sets up a
-request for specific article fields (including 'event.*'), and then
-uses the `stream_articles` method.
-
-Each article received from the stream is passed to the `article_callback`
-function, which logs its details. The script ensures the authentication
-token is revoked on exit.
+It logs these fields for each result found and ensures the authentication
+token is revoked upon exit.
 """
 
 import logging
 import contextlib
 
 from modules.auth.auth_client import AuthClient
-from modules.api.api_client import Client, Request
+from modules.api.api_client import Client, Request, Filter
 from modules.api.exceptions import APIRequestError, APIStatusError, APIDataError, DataModelError
 
 logging.basicConfig(level=logging.INFO)
@@ -43,32 +41,15 @@ def revoke_token_on_exit(auth_client, refresh_token):
             logger.error("Failed to revoke token: %s", e)
 
 
-def article_callback(article):
-    """A callback function to process each article received from the stream.
-
-    This function is invoked by `api_client.stream_articles` for each
-    article. It logs the article's name, abstract, and event identifier.
-
-    Args:
-        article (dict): The article data dictionary received from the stream.
-    """
-    logger.info("----------START-----------")
-    logger.info("name: %s", article.get('name'))
-    logger.info("abstract: %s", article.get('abstract'))
-    logger.info("event.identifiers: %s", article.get('event', {}).get('identifier'))
-    logger.info("-----------END------------\n\n\n")
-
-
 def main():
-    """Main execution function to initiate the article stream.
+    """Main execution function to fetch and display structured content.
 
     Orchestrates the entire process:
     1. Authenticates with the AuthClient; exits fatally if login fails.
     2. Sets up a context manager to revoke the token on exit.
     3. Initializes the API Client with the access token.
-    4. Defines a Request for specific fields.
-    5. Starts the article stream, passing the `article_callback` to process
-    each article as it arrives.
+    4. Defines and executes a request for the "Squirrel" article.
+    5. Logs the name, abstract, and description of each result.
     """
     auth_client = AuthClient()
     try:
@@ -85,13 +66,20 @@ def main():
         api_client.set_access_token(access_token)
 
         request = Request(
-            fields=["name", "abstract", "event.*"]
+            fields=["name", "abstract", "description"],
+            filters=[Filter(field="is_part_of.identifier", value="enwiki")]
         )
 
         try:
-            api_client.stream_articles(request, article_callback)
+            structured_contents = api_client.get_structured_contents("Squirrel", request)
         except (APIRequestError, APIStatusError, APIDataError, DataModelError) as e:
-            logger.fatal("Failed to get articles: %s", e)
+            logger.fatal("Failed to get structured contents: %s", e)
+            return
+
+        for content in structured_contents:
+            logger.info("Name: %s", content['name'])
+            logger.info("Abstract: %s", content['abstract'])
+            logger.info("Description: %s", content['description'])
 
 
 if __name__ == "__main__":

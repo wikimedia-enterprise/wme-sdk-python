@@ -1,3 +1,5 @@
+"""Represents the likelihood of a ReferenceNeeded"""
+
 from pydantic import BaseModel
 
 class ReferenceNeedData(BaseModel):

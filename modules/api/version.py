@@ -1,20 +1,36 @@
+# pylint: disable=too-many-arguments, too-many-positional-arguments, too-many-instance-attributes
+
+"""Defines data models for content revisions and their metadata."""
+
 from typing import List, Optional
-from scores import Scores
-from editor import Editor
-from size import Size
-from exceptions import DataModelError
+from .scores import Scores
+from .editor import Editor
+from .size import Size
+from .exceptions import DataModelError
 
 
 class PreviousVersion:
+    """A lightweight reference to the version preceding the current one."""
     def __init__(self,
                  identifier: Optional[int] = None,
                  number_of_characters: Optional[int] = None):
         self.identifier = identifier
         self.number_of_characters = number_of_characters
-        
+
     @staticmethod
     def from_json(data: dict) -> 'PreviousVersion':
-        """Creates a PreviousVersion instance from a dictionary (JSON object)"""
+        """
+        Deserializes a dictionary into a PreviousVersion instance.
+
+        Args:
+            data: A dictionary containing the previous version's data.
+
+        Returns:
+            A PreviousVersion instance.
+
+        Raises:
+            DataModelError: If the input is not a dict or if parsing fails.
+        """
         if not isinstance(data, dict):
             raise DataModelError(f"Expected dict for PreviousVersion, got {type(data).__name__}")
         try:
@@ -27,15 +43,24 @@ class PreviousVersion:
             raise DataModelError(f"Failed to parse PreviousVersion '{prev_id}': {e}") from e
     @staticmethod
     def to_json(previous_version: 'PreviousVersion') -> dict:
-        """Converts a PreviousVersion instance to a dictionary for JSON serialization"""
+        """
+        Serializes the PreviousVersion instance into a JSON-compatible dictionary.
+
+        Args:
+            previous_version: The PreviousVersion instance to serialize.
+
+        Returns:
+            A dictionary representation of the previous version.
+        """
         return {
             'identifier': previous_version.identifier,
             'number_of_characters': previous_version.number_of_characters
         }
-        
+
 
 
 class Version:
+    """Represents a specific revision of a piece of content."""
     def __init__(self,
                  identifier: Optional[int] = None,
                  comment: Optional[str] = None,
@@ -62,9 +87,25 @@ class Version:
 
     @staticmethod
     def from_json(data: dict) -> 'Version':
+        """
+        Deserializes a dictionary into a Version instance.
+
+        This method maps dictionary keys to Version attributes, parsing nested
+        objects (Scores, Editor, Size).
+
+        Args:
+            data: A dictionary containing the version's data.
+
+        Returns:
+            A Version instance.
+
+        Raises:
+            DataModelError: If the input is not a dict or if parsing fails
+                            (e.g., nested object parsing error).
+        """
         if not isinstance(data, dict):
             raise DataModelError(f"Expected dict for Version, got {type(data).__name__}")
-        
+
         try:
             return Version(
                 identifier=data.get('identifier'),
@@ -85,6 +126,18 @@ class Version:
 
     @staticmethod
     def to_json(version: 'Version') -> dict:
+        """
+        Serializes the Version instance into a JSON-compatible dictionary.
+
+        Converts nested objects (Scores, Editor, Size) to their dictionary
+        representations.
+
+        Args:
+            version: The Version instance to serialize.
+
+        Returns:
+            A dictionary representation of the version.
+        """
         return {
             'identifier': version.identifier,
             'comment': version.comment,

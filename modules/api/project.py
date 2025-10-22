@@ -1,11 +1,16 @@
+# pylint: disable=too-many-arguments, too-many-positional-arguments, too-many-instance-attributes
+
+"""Represents a project"""
+
 from typing import Optional
 from datetime import datetime
-from language import Language
-from size import Size
-from exceptions import DataModelError
-
+from .language import Language
+from .size import Size
+from .exceptions import DataModelError
 
 class Project:
+    """Holds metadata about a specific Wikimedia project."""
+
     def __init__(self,
                  name: Optional[str] = None,
                  identifier: Optional[str] = None,
@@ -26,9 +31,25 @@ class Project:
 
     @staticmethod
     def from_json(data: dict) -> 'Project':
+        """
+        Deserializes a dictionary into a Project instance.
+
+        This method maps dictionary keys to Project attributes, parsing nested
+        objects (Language, Size) and the ISO 8601 'date_modified' string.
+
+        Args:
+            data: A dictionary containing the project's data.
+
+        Returns:
+            A Project instance.
+
+        Raises:
+            DataModelError: If the input is not a dict or if parsing fails
+                            (e.g., invalid date format, nested object error).
+        """
         if not isinstance(data, dict):
             raise DataModelError(f"Expected a dict for Project data, but got {type(data).__name__}")
-        
+
         try:
             date_str = data.get('date_modified')
             return Project(
@@ -47,6 +68,18 @@ class Project:
 
     @staticmethod
     def to_json(project: 'Project') -> dict:
+        """
+        Serializes the Project instance into a JSON-compatible dictionary.
+
+        Converts nested objects (Language, Size) to their dictionary
+        representations and formats 'date_modified' as an ISO 8601 string.
+
+        Args:
+            project: The Project instance to serialize.
+
+        Returns:
+            A dictionary representation of the project.
+        """
         return {
             'name': project.name,
             'identifier': project.identifier,

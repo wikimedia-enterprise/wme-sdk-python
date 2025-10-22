@@ -1,14 +1,18 @@
+# pylint: disable=too-many-arguments, too-many-positional-arguments, too-many-locals, too-many-instance-attributes
+"""Defines data models for representing the structured content of an article."""
+
 from typing import List, Optional, Dict
 from datetime import datetime
 from modules.api.article import Image
-from version import Version
-from entity import Entity
-from project import Project
-from language import Language
-from exceptions import DataModelError
+from .version import Version
+from .entity import Entity
+from .project import Project
+from .language import Language
+from .exceptions import DataModelError
 
 
 class Link:
+    """Represents a hyperlink with associated text and optional images."""
     def __init__(self,
                  url: Optional[str] = None,
                  text: Optional[str] = None,
@@ -19,6 +23,7 @@ class Link:
 
     @staticmethod
     def from_json(data: dict) -> 'Link':
+        """Deserializes a dictionary into a Link instance, parsing nested images."""
         if not isinstance(data, dict):
             raise DataModelError(f"Expected dict for Link, got {type(data).__name__}")
         try:
@@ -32,6 +37,7 @@ class Link:
 
     @staticmethod
     def to_json(link: 'Link') -> dict:
+        """Serializes the Link instance into a JSON-compatible dictionary, including nested images."""
         return {
             'url': link.url,
             'text': link.text,
@@ -39,6 +45,7 @@ class Link:
         }
 
 class Citation:
+    """Represents a citation marker within the text content."""
     def __init__(self,
                  identifier: Optional[str] = None,
                  group: Optional[str] = None,
@@ -49,6 +56,7 @@ class Citation:
 
     @staticmethod
     def from_json(data: dict) -> 'Citation':
+        """Deserializes a dictionary into a Citation instance."""
         if not isinstance(data, dict):
             raise DataModelError(f"Expected dict for Citation, got {type(data).__name__}")
         try:
@@ -62,6 +70,7 @@ class Citation:
 
     @staticmethod
     def to_json(citation: 'Citation') -> dict:
+        """Serializes the Citation instance into a JSON-compatible dictionary."""
         return {
             'identifier': citation.identifier,
             'group': citation.group,
@@ -69,6 +78,7 @@ class Citation:
         }
 
 class Part:
+    """Represents a component of an article."""
     def __init__(self,
                  name: Optional[str] = None,
                  part_type: Optional[str] = None,
@@ -89,6 +99,7 @@ class Part:
 
     @staticmethod
     def from_json(data: dict) -> 'Part':
+        """Deserializes a dictionary into a Part instance, recursively parsing nested parts, links, images, and citations."""
         if not isinstance(data, dict):
             raise DataModelError(f"Expected dict for Part, got {type(data).__name__}")
         try:
@@ -108,6 +119,7 @@ class Part:
 
     @staticmethod
     def to_json(part: 'Part') -> dict:
+        """Serializes the Part instance into a JSON-compatible dictionary, recursively serializing nested structures."""
         return {
             'name': part.name,
             'type': part.part_type,
@@ -120,6 +132,7 @@ class Part:
         }
 
 class ReferenceText:
+    """Represents a piece of text that may contain hyperlinks."""
     def __init__(self,
                  value: Optional[str] = None,
                  links: Optional[List[Link]] = None):
@@ -128,6 +141,7 @@ class ReferenceText:
 
     @staticmethod
     def from_json(data: dict) -> 'ReferenceText':
+        """Deserializes a dictionary into a ReferenceText instance, parsing nested links."""
         if not isinstance(data, dict):
             raise DataModelError(f"Expected dict for ReferenceText, got {type(data).__name__}")
         try:
@@ -140,12 +154,15 @@ class ReferenceText:
 
     @staticmethod
     def to_json(text: 'ReferenceText') -> dict:
+        """Serializes the ReferenceText instance into a JSON-compatible dictionary, including nested links."""
         return {
             'value': text.value,
             'links': [Link.to_json(link) for link in text.links]
         }
 
 class Reference:
+    """Represents a bibliographic reference or citation entry."""
+
     def __init__(self,
                  identifier: Optional[str] = "",
                  group: Optional[str] = "",
@@ -162,6 +179,7 @@ class Reference:
 
     @staticmethod
     def from_json(data: dict) -> 'Reference':
+        """Deserializes a dictionary into a Reference instance, parsing nested text and source objects."""
         if not isinstance(data, dict):
             raise DataModelError(f"Expected dict for Reference, got {type(data).__name__}")
         try:
@@ -179,6 +197,7 @@ class Reference:
 
     @staticmethod
     def to_json(reference: 'Reference') -> dict:
+        """Serializes the Reference instance into a JSON-compatible dictionary, including nested text and source objects."""
         return {
             'identifier': reference.identifier,
             'group': reference.group,
@@ -189,6 +208,7 @@ class Reference:
         }
 
 class StructuredTableCell:
+    """Represents a cell within a StructuredTable."""
     def __init__(self,
                  value: Optional[str] = None,
                  nested_table: Optional['StructuredTable'] = None):
@@ -197,6 +217,7 @@ class StructuredTableCell:
 
     @staticmethod
     def from_json(data: dict) -> 'StructuredTableCell':
+        """Deserializes a dictionary into a StructuredTableCell, recursively parsing a nested table if present."""
         if not isinstance(data, dict):
             raise DataModelError(f"Expected dict for StructuredTableCell, got {type(data).__name__}")
         try:
@@ -209,6 +230,7 @@ class StructuredTableCell:
 
     @staticmethod
     def to_json(cell: 'StructuredTableCell') -> dict:
+        """Serializes the StructuredTableCell into a JSON-compatible dictionary, recursively serializing a nested table."""
         return {
             "value": cell.value,
             "nested_table": StructuredTable.to_json(cell.nested_table) if cell.nested_table else None
@@ -216,6 +238,7 @@ class StructuredTableCell:
 
 
 class StructuredTable:
+    """Represents a table with headers, rows, and optional footers."""
     def __init__(self,
                  identifier: Optional[str] = None,
                  headers: Optional[List[List['StructuredTableCell']]] = None,
@@ -230,6 +253,7 @@ class StructuredTable:
 
     @staticmethod
     def from_json(data: dict) -> 'StructuredTable':
+        """Deserializes a dictionary into a StructuredTable, recursively parsing cells in headers, rows, and footers."""
         if not isinstance(data, dict):
             raise DataModelError(f"Expected dict for StructuredTable, got {type(data).__name__}")
         try:
@@ -246,6 +270,7 @@ class StructuredTable:
 
     @staticmethod
     def to_json(table: 'StructuredTable') -> dict:
+        """Serializes the StructuredTable into a JSON-compatible dictionary, recursively serializing all cells."""
         return {
             "identifier": table.identifier,
             "headers": [[StructuredTableCell.to_json(c) for c in row] for row in table.headers],
@@ -256,6 +281,7 @@ class StructuredTable:
 
 
 class StructuredContent:
+    """Represents the entire structured content of an article."""
     def __init__(self,
                  name: Optional[str] = None,
                  identifier: Optional[int] = None,
@@ -294,6 +320,7 @@ class StructuredContent:
 
     @staticmethod
     def from_json(data: dict) -> 'StructuredContent':
+        """Deserializes a dictionary into a complete StructuredContent object, parsing all nested components."""
         if not isinstance(data, dict):
             raise DataModelError(f"Expected dict for StructuredContent, got {type(data).__name__}")
         try:
@@ -325,6 +352,7 @@ class StructuredContent:
 
     @staticmethod
     def to_json(sc: 'StructuredContent') -> dict:
+        """Serializes the StructuredContent object into a JSON-compatible dictionary, including all nested components."""
         return {
             'name': sc.name,
             'identifier': sc.identifier,

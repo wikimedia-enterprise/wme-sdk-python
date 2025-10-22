@@ -1,12 +1,14 @@
+"""Processes and plots US presidential electoral vote data from a CSV file."""
+
+import ast
 import pandas as pd
 import matplotlib.pyplot as plt
-import ast
 
 # File path to the CSV
-csv_file_path = './data/output.csv'
+CSV_FILE_PATH = './data/output.csv'
 
 # Read the CSV file
-df = pd.read_csv(csv_file_path)
+df = pd.read_csv(CSV_FILE_PATH)
 
 # Convert the 'Electoral Vote' from string representation of list to actual list using `ast.literal_eval`
 df['Electoral Vote'] = df['Electoral Vote'].apply(ast.literal_eval)
@@ -21,10 +23,11 @@ df['Third'] = df['Electoral Vote'].apply(lambda x: x[2] if len(x) > 2 else None)
 
 
 # Function to insert line breaks after every second word, except two-letter words
-def format_nominee_text(nominee):
+def format_nominee_text(nominee_str):
+    """Formats a nominee's name for better readability on a plot."""
     words = []
-    if isinstance(nominee, str):
-        words = nominee.split()
+    if isinstance(nominee_str, str):
+        words = nominee_str.split()
 
     formatted = []
     word_count = 0
@@ -49,10 +52,12 @@ plt.plot(df['Year'], df['Third'], marker='o', label='Third', linestyle='--')
 # Determine if there are more than 20 elections in the dataset
 if len(df['Year']) > 20:
     # Don't show nominees, rotate years vertically, and reduce font size
-    plt.xticks(df['Year'], labels=df['Year'], fontsize=6, rotation=90)
+    year_list = df['Year'].tolist()
+    plt.xticks(ticks=year_list, labels=year_list, fontsize=6, rotation=90)
 else:
     # Show nominees below the X-axis at a 60-degree angle
-    plt.xticks(df['Year'], labels=df['Year'], fontsize=10)
+    year_list = df['Year'].tolist()
+    plt.xticks(ticks=year_list, labels=year_list, fontsize=10)
 
     for i, nominee in enumerate(df['Formatted_Nominee']):
         plt.text(df['Year'].iloc[i], min(df['Winner'].dropna()) - 475, nominee, fontsize=8, ha='center', rotation=70)
