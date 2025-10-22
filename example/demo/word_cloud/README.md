@@ -22,14 +22,14 @@ This project is designed to download any Wikipedia article from an API, process 
 To download a single article, use the following command, replacing `"Josephine_Baker"` with the title of the article you want to download:
 
 ```bash
-python -m word-cloud.get "Josephine_Baker"
+python -m get "Josephine_Baker"
 ```
 
 ### 2. Parse and generate visualizations
 To extract the text from the article and generate the **Word Cloud** and **Column Chart**, run:
 
 ```bash
-python -m word-cloud.parse "Josephine_Baker"
+python -m parse "Josephine_Baker"
 ```
 
 

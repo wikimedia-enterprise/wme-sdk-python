@@ -7,3 +7,5 @@ wordcloud==1.9.4
 fastapi==0.100.0
 uvicorn==0.22.0
 requests==2.31.0
+httpx[http2]==0.28.1
+Jinja2==3.1.6
