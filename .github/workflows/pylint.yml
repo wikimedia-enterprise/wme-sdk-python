@@ -18,6 +18,17 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pylint
+        pip install pandas
+        pip install matplotlib
+        pip install dotenv
+        pip install requests
+        pip install fastapi
+        pip install uvicorn
+        pip install wordcloud
+        pip install httpx[http2]
+        pip install pydantic
+        pip install pytest
+        pip install setuptools
     - name: Analysing the code with pylint
       run: |
         pylint $(git ls-files '*.py')

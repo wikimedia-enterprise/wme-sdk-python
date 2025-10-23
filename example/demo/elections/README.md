@@ -13,9 +13,9 @@ Terminal commands, from the project root folder (`example/demo`):
 
 ```
 # Run the on-demand example
-$ python3 -m elections.get
-$ python3 -m elections.parse
-$ python3 -m elections.chart
+$ python -m get
+$ python -m parse
+$ python -m chart
 ```
 
 To close the chart click the close button on the Window, or on the keyboard press Ctrl-C to stop the command in the terminal.

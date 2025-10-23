@@ -97,7 +97,6 @@ def run_demo_3_network_error(access_token):
     """Demonstrates ERROR logs for a network timeout."""
     print_demo_banner(3, "Demonstrating ERROR logs for a network timeout")
     try:
-        # This demo needs a client with a custom timeout
         timeout_client = ApiClient(access_token=access_token, timeout=0.01)
         timeout_client.get_project("enwiki", Request())
     except APIRequestError:
@@ -149,7 +148,7 @@ def run_demo_6_download_network_error(api_client):
                 api_client.download_batch(datetime.now(), "fake-download-id", io.BytesIO())
             except APIRequestError:
                 logger.info("Caught expected APIRequestError. Check above for the SDK's CRITICAL log.")
-    api_client.download_chunk_size = -1  # Reset to default
+    api_client.download_chunk_size = -1
     print("="*60)
 
 
@@ -171,7 +170,7 @@ def run_demo_7_download_unexpected_error(api_client):
                 api_client.download_batch(datetime.now(), "fake-download-id", io.BytesIO())
             except APIDataError:
                 logger.info("Caught expected APIDataError. Check above for the SDK's CRITICAL log.")
-    api_client.download_chunk_size = -1  # Reset to default
+    api_client.download_chunk_size = -1
     print("="*60)
 
 
@@ -186,20 +185,16 @@ def explain_demo_8_stream_warning():
 
 def main():
     """Main function to run the showcase."""
-    # Receive the access_token here
     auth_client, refresh_token, access_token, api_client = setup_clients()
 
     if not api_client:
-        return  # Login failed, exit the script
+        return
 
-    # The rest of the script runs inside this secure context
     with revoke_token_on_exit(auth_client, refresh_token):
 
-        # Run all demos in order
         run_demo_1_success(api_client)
         run_demo_2_status_error(api_client)
 
-        # Pass the access_token to the demo that needs it
         run_demo_3_network_error(access_token)
 
         explain_demo_4_rate_limit()

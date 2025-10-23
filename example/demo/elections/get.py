@@ -1,4 +1,4 @@
-# pylint: disable=R0801
+# pylint: disable=R0801, C0413
 
 """Fetches structured content for US presidential election articles."""
 
@@ -7,12 +7,11 @@ import contextlib
 import sys
 import os
 import json
+# Add the parent directory to sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../..")))
 from modules.auth.auth_client import AuthClient
 from modules.api.api_client import Client, Request, Filter
 from modules.api.exceptions import APIRequestError, APIStatusError, APIDataError, DataModelError
-
-# Add the parent directory to sys.path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../..")))
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
