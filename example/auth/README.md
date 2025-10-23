@@ -42,11 +42,10 @@ pip install -r requirements.txt
 
 ## Running the Application
 
-To run the application, use the following command:
+To run the application, use the following command from the project's root:
 
 ```sh
-cd example/auth
-python3 auth.py
+python -m example.auth.auth
 ```
 
 This will start the application, log in, and display the access token. It will also start a background goroutine that refreshes the token every 23 hours and 59 seconds, or whenever an API call is made.

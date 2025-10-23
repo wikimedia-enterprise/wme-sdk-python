@@ -1,11 +1,17 @@
 # Structured-contents API examples
-Used to fetch pre-parsed articles in their latest revision/version from all supported projects and languages. 
+Used to fetch pre-parsed articles in their latest revision/version from all supported projects and languages.
 Allows filtering and field selection. Allows to limit articles when doing cross-project, cross-language lookup.
 Refer to the documentation [here](https://enterprise.wikimedia.com/docs/on-demand/#article-structured-contents-beta).
 
+## Running the Application
 
+To run the application, use the following command from the project's root:
 
-i) Get pre-parsed articles with name `Montreal` from all projects in English language. 
+```sh
+python -m example.structured_contents.structuredcontents
+```
+
+i) Get pre-parsed articles with name `Montreal` from all projects in English language.
 
 ```bash
 POST https://api.enterprise.wikimedia.com/v2/structured-contents/Montreal

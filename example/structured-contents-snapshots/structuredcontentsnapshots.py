@@ -94,10 +94,10 @@ def main():
             logger.fatal("Failed to get structured contents snpshot: %s", e)
             return
 
-        for content in structured_snapshot:
-            logger.info("Name: %s", content.get('date_modified'))
-            logger.info("Abstract: %s", content.get('identifier'))
-            logger.info("Description: %s", content.get('size'))
+        logger.info("--- Single Snapshot ---")
+        logger.info("Name: %s", structured_snapshot.get('date_modified'))
+        logger.info("Abstract: %s", structured_snapshot.get('identifier'))
+        logger.info("Description: %s", structured_snapshot.get('size'))
 
 
 if __name__ == "__main__":
