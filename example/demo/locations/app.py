@@ -38,6 +38,11 @@ async def lifespan(_app: FastAPI):
     _app.state.access_token = access_token
     _app.state.refresh_token = refresh_token
 
+    # yield separates the app's startup logic from it's shutdown logic.
+    # When we hit yield, the function "pauses" and hands control back to FastAPI.
+    # FastAPI then finishes starting the server and begins accepting web requests (like /geocode, /wikipedia, etc.).
+    # Then, the application runs normally for its entire life while the lifespan function stays paused at this yield
+    # When we stop the app, FastAPI gracefully shuts down telling the lifespan function to resume executing all the code after the yield
     yield
 
 
