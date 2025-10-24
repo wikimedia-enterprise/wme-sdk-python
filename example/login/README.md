@@ -1,6 +1,14 @@
 # Authentication API examples
 Used for managing access token and changing password. Refer to the documentation [here](https://enterprise.wikimedia.com/docs/authentication/).
 
+## Running the Application
+
+To run the application, use the following command from the project's root:
+
+```sh
+python -m example.login.login
+```
+
 ## Login example
 Get access token and refresh token by sending in username and password.
 
@@ -16,7 +24,7 @@ with request parameter:
 }
 ```
 
-Response: 
+Response:
 ```json
 {
     "id_token": "abc....",
@@ -46,7 +54,7 @@ with request parameter:
 }
 ```
 
-Response: 
+Response:
 ```json
 {
     "id_token": "xyz..",

@@ -1,16 +1,32 @@
-# Realtime Streaming API 
+# Realtime Streaming API
 This API is used to get a stream of server-sent events (SSE) related to new article create, article update, article visibility-change, article move and article delete, from all the supported projects and namespaces. The events follow [this](https://gitlab.wikimedia.org/repos/wme/wikimedia-enterprise/-/blob/main/general/schema/article.go) schema.
 Allows for filtering and field selection.
 Allows for parallel connection to the API.
 Allows to reconnect to the API and start consuming from a certain offset/timestamp.
 At the moment, the retention period (for the events) in the realtime streaming API is 48 hours.
-The connection is long-lived. One does not have to reconnect due to the fact that `access token` that was used for connection has expired after 24 hours.  
+The connection is long-lived. One does not have to reconnect due to the fact that `access token` that was used for connection has expired after 24 hours.
 
 Refer to the documentation [here](https://enterprise.wikimedia.com/docs/realtime/).
 
+## Running the Application
+
+To run the application, use the following command from the project's root:
+
+```sh
+python -m example.streaming.streaming
+```
+
+## Stopping the Application
+
+To stop the application, use the following on the terminal:
+
+```sh
+ctrl + c
+```
+
 ## Examples
 
-Connect to realtime streaming using filters and field selection. 
+Connect to realtime streaming using filters and field selection.
 
 ```bash
 POST https://realtime.enterprise.wikimedia.com/v2/articles
@@ -85,7 +101,7 @@ Connection  6 "parts": [5] -> this will connect to partitions 25 through 29
 Connection  7 "parts": [6] -> this will connect to partitions 30 through 34
 Connection  8 "parts": [7] -> this will connect to partitions 35 through 39
 Connection  9 "parts": [8] -> this will connect to partitions 40 through 44
-Connection 10 "parts": [9] -> this will connect to partitions 45 through 49        
+Connection 10 "parts": [9] -> this will connect to partitions 45 through 49
 ```
 
 Using parts, one can open parallel connections in several configurations and target the partitions in different ways. The example below has two parallel connections.
