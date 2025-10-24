@@ -1,4 +1,4 @@
-# pylint: disable=C0103, W0621, W0718, R0912, R0914, R0915
+# pylint: disable=W0718, R0912, R0914, R0915
 
 """
 Demonstrates fetching metadata for codes, languages, projects, and namespaces
@@ -33,7 +33,6 @@ except ImportError as e:
     sys.exit(1)
 
 # --- Setup Logging ---
-# You can set the level below to DEBUG for more detail.
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 

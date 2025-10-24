@@ -38,8 +38,6 @@ except ImportError as e:
     sys.exit(1)
 
 # --- Setup logging ---
-# Set logging level to INFO to see the output.
-# Set to DEBUG to see all underlying httpx requests.
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
