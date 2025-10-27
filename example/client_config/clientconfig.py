@@ -1,4 +1,4 @@
-# pylint: disable=C0103, W0621, W0718
+# pylint: disable=C0103, W0621, W0718, E1206, R0801
 """
 Demonstrates configuring the API Client with custom timeout, max_retries,
 and user_agent settings.
