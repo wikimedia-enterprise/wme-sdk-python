@@ -1,4 +1,4 @@
-# pylint: disable=W0718
+# pylint: disable=W0718, R0912, R0914, R0915, R0801
 
 """
 Demonstrates fetching metadata for Wikimedia snapshots using the Wikimedia API
