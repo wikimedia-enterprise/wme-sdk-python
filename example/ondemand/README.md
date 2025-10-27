@@ -1,12 +1,20 @@
 # On-demand API examples
-Used to fetch articles in their latest revision/version from all supported projects and languages. 
+Used to fetch articles in their latest revision/version from all supported projects and languages.
 Allows filtering and field selection. Allows to limit articles when doing cross-project, cross-language lookup.
 Refer to the documentation [here](https://enterprise.wikimedia.com/docs/on-demand/#article-lookup).
 The articles are based on [this](https://gitlab.wikimedia.org/repos/wme/wikimedia-enterprise/-/blob/main/general/schema/article.go) schema.
 
+## Running the Application
+
+To run the application, use the following command from the project's root:
+
+```sh
+python -m example.ondemand.ondemand
+```
 
 
-i) Get articles with name `Montreal` from all projects in all languages. 
+
+i) Get articles with name `Montreal` from all projects in all languages.
 
 ```bash
 POST https://api.enterprise.wikimedia.com/v2/articles/Montreal
@@ -21,7 +29,7 @@ with request parameter:
 Note: Max allowed limit is 10. Default limit is 3.
 
 <detail>
-<summary>Response:</summary> 
+<summary>Response:</summary>
 
 ```json
 [
@@ -1325,7 +1333,7 @@ Note: Max allowed limit is 10. Default limit is 3.
 
   .
   .
-  
+
 ]
 ```
 </detail>

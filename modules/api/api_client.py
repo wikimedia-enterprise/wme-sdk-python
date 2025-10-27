@@ -161,7 +161,8 @@ class Client:
             headers=headers,
             timeout=timeout,
             transport=retry_transport,
-            http2=True
+            http2=True,
+            follow_redirects=True
         )
 
         self.base_url = kwargs.get('base_url', "https://api.enterprise.wikimedia.com/")
@@ -259,7 +260,7 @@ class Client:
             rdr (io.BytesIO): A byte stream containing NDJSON data.
             cbk (Callable[[dict], Any]): A callback function to process each JSON object.
         """
-        scanner = io.TextIOWrapper(rdr)
+        scanner = io.TextIOWrapper(rdr, encoding="utf-8")
         for line in scanner:
             if not line.strip():
                 continue
