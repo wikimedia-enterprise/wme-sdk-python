@@ -11,36 +11,21 @@ This script uses the AuthClient and Helper for automatic,
 thread-safe token management and revocation.
 """
 
-import sys
-import os
 import logging
 import json
 import io
 import time
 from datetime import datetime, timedelta, timezone
 
-try:
-    PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    sys.path.insert(0, PROJECT_ROOT)
-except NameError:
-    PROJECT_ROOT = os.path.abspath('.')
-    sys.path.insert(0, PROJECT_ROOT)
-
 # --- Import our custom modules ---
-try:
-    from modules.auth.auth_client import AuthClient
-    from modules.auth.helper import Helper
-    from modules.api.api_client import Client, Request, Filter
-    from modules.api.exceptions import APIRequestError, APIStatusError, APIDataError
-except ImportError as e:
-    print("Error: Failed to import modules. Make sure you are running from the project root.")
-    print("Details: %s", e)
-    sys.exit(1)
+from modules.auth.auth_client import AuthClient
+from modules.auth.helper import Helper
+from modules.api.api_client import Client, Request, Filter
+from modules.api.exceptions import APIRequestError, APIStatusError, APIDataError
 
 # --- Setup logging ---
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-
 
 def main():
     """Runs the main demonstration of the Batches API."""

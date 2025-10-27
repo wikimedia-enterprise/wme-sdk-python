@@ -16,7 +16,28 @@ The articles included in the batches follow [this](https://gitlab.wikimedia.org/
 
 The batches metadata follow [this](https://gitlab.wikimedia.org/repos/wme/wikimedia-enterprise/-/blob/main/general/schema/snapshot.go) schema.
 
+## Prerequisites
 
+Before running this script, you must have your environment set up.
+
+1.  **Environment Variables:** The script requires user credentials to authenticate with the API. Ensure the following environment variables are set on the .env file:
+
+    ```bash
+    WME_USERNAME="your_username"
+    WME_PASSWORD="your_password"
+    ```
+
+2.  **Python Dependencies:** You must have the required packages, like `httpx` and the SDK's modules, available in your Python environment.
+
+## How to Run
+
+This script is designed to be run from the **virtual enviroment** of the SDK. Once within the virtual enviroment, execute the script:
+
+```bash
+python -m example.batches.batches
+```
+
+## Use Cases
 
 i) Get metadata of all the available batches for a day and hour.
 
@@ -169,4 +190,56 @@ with header:
 {
     "Range": "bytes=21-36"
 }
+```
+
+## Expected Output
+
+The script will log its progress for each of the five use cases. A successful run will look similar to this:
+
+```
+INFO:__main__:Successfully authenticated.
+INFO:__main__:--- Targeting batches for 2025-10-26 10:00 UTC ---
+
+INFO:__main__:--- i) Get metadata for all available batches ---
+INFO:__main__:Found 150 total batches.
+INFO:__main__:Metadata for the first batch:
+INFO:__main__:{
+  "identifier": "arwiki_namespace_0",
+  "version": "...",
+  ...
+}
+
+INFO:__main__:--- ii) Get metadata for 'en' (English) batches ---
+INFO:__main__:Found 12 'en' batches.
+INFO:__main__:Metadata for the first 'en' batch:
+INFO:__main__:{
+  "identifier": "enwiki_namespace_0",
+  ...
+}
+
+INFO:__main__:--- iii) Get metadata for a single batch (enwiki_namespace_0) ---
+INFO:__main__:Metadata for 'enwiki_namespace_0':
+INFO:__main__:{
+  "identifier": "enwiki_namespace_0",
+  "version": "...",
+  ...
+}
+
+INFO:__main__:--- iv) Get HEAD metadata for a single batch (enwiki_namespace_0) ---
+INFO:__main__:Headers for 'enwiki_namespace_0':
+INFO:__main__:{
+  "ETag": "...",
+  "Content-Type": "application/gzip",
+  "Content-Length": 123456789
+}
+INFO:__main__:Content-Length from HEAD: 123456789 bytes
+
+INFO:__main__:--- v) Download and read a batch (enwiki_namespace_0) ---
+INFO:__main__:Downloading 'enwiki_namespace_0' into an in-memory buffer...
+INFO:__main__:Downloaded 117.74 MB in 8.34 s
+INFO:__main__:Processing the downloaded archive...
+INFO:__main__:Successfully processed 25148 articles from the batch.
+INFO:__main__:First 5 article identifiers: ['Q1', 'Q2', 'Q3', 'Q4', 'Q5']
+INFO:__main__:Shutting down helper and revoking tokens...
+INFO:__main__:Exiting.
 ```

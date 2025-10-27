@@ -1,15 +1,35 @@
 # Snapshots API examples
 A snapshot is a bundles of all articles in their latest revision/version from a supported project-namespace. These APIs provide information on the available snapshots, their metadata, and allow to download them.
 Snapshots for each project-namespace are updated monthly (for free tier users) and daily for non-free tier.
-Allows filtering and field selection when fetching snapshots metadata. 
+Allows filtering and field selection when fetching snapshots metadata.
 Allows parallel downloading using [Range headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Range).
 Refer to the documentation [here](https://enterprise.wikimedia.com/docs/snapshot/).
 The articles included in the snapshots follow [this](https://gitlab.wikimedia.org/repos/wme/wikimedia-enterprise/-/blob/main/general/schema/article.go) schema.
 The snapshot metadata follow [this](https://gitlab.wikimedia.org/repos/wme/wikimedia-enterprise/-/blob/main/general/schema/snapshot.go) schema.
 
+## Prerequisites
 
+Before running this script, you must have your environment set up.
 
-i) Get metadata of all the available snapshots. There should be one snapshot for each supported project-namespace. 
+1.  **Environment Variables:** The script requires user credentials to authenticate with the API. Ensure the following environment variables are set on the .env file:
+
+    ```bash
+    WME_USERNAME="your_username"
+    WME_PASSWORD="your_password"
+    ```
+
+2.  **Python Dependencies:** You must have the required packages, like `httpx` and the SDK's modules, available in your Python environment.
+
+## How to Run
+
+This script is designed to be run from the **virtual enviroment** of the SDK. Once within the virtual enviroment, execute the script:
+
+```bash
+python -m example.metadata.metadata
+```
+
+## Use Cases
+i) Get metadata of all the available snapshots. There should be one snapshot for each supported project-namespace.
 
 ```bash
 POST https://api.enterprise.wikimedia.com/v2/snapshots
@@ -18,7 +38,7 @@ POST https://api.enterprise.wikimedia.com/v2/snapshots
 
 
 <detail>
-<summary>Response:</summary> 
+<summary>Response:</summary>
 
 ```json
 [
@@ -192,7 +212,7 @@ POST https://api.enterprise.wikimedia.com/v2/snapshots
 </detail>
 
 
-ii) Get metadata of all the available snapshots for English language. 
+ii) Get metadata of all the available snapshots for English language.
 
 ```bash
 POST https://api.enterprise.wikimedia.com/v2/snapshots
@@ -213,7 +233,7 @@ with request parameters:
 
 
 <detail>
-<summary>Response:</summary> 
+<summary>Response:</summary>
 
 ```json
 [
@@ -779,7 +799,7 @@ with request parameters:
 ```
 </detail>
 
-iii) Get metadata on a single snapshot. 
+iii) Get metadata on a single snapshot.
 
 ```bash
 POST https://api.enterprise.wikimedia.com/v2/snapshots/enwiki_namespace_0
@@ -807,7 +827,7 @@ Response:
 }
 ```
 
-iv) Get header information (last modified, content-length, etc.) on a single snapshot. 
+iv) Get header information (last modified, content-length, etc.) on a single snapshot.
 
 ```bash
 HEAD https://api.enterprise.wikimedia.com/v2/snapshots/afwikibooks_namespace_0/download
@@ -844,3 +864,76 @@ with header:
 }
 ```
 
+## Expected Output
+
+The script will log its progress for each of the five use cases. A successful run will look similar to this:
+
+```
+INFO:__main__:Setting up authentication...
+INFO:__main__:Succesfully authenticated!
+
+INFO:__main__:Starting Snapshot examples...
+
+INFO:__main__:--- Metadata of all available Snapshots ---
+INFO:__main__:1) Get metadata of all available Snapshots:
+INFO:__main__:Printing metadata for all available snapshots:
+INFO:__main__:[
+  {
+    "identifier": "aawiki_namespace_0",
+    "version": "...",
+    "in_language": {
+      "identifier": "aa"
+    },
+    ...
+  },
+  ...
+]
+
+INFO:__main__:--- Metadata of English Snapshots ---
+INFO:__main__:2) Get metadata of English Snapshots:
+INFO:__main__:Filtered English Snapshots:
+INFO:__main__:[
+  {
+    "identifier": "enwiki_namespace_0",
+    "version": "...",
+    "in_language": {
+      "identifier": "en"
+    },
+    ...
+  },
+  ...
+]
+
+INFO:__main__:--- Metadata of a single snapshot ---
+INFO:__main__:3) Get metadata of a single Snapshots:
+INFO:__main__:Filtered single snapshot (Spanish)
+INFO:__main__:{
+  "identifier": "eswiki_namespace_0",
+  "version": "...",
+  "in_language": {
+    "identifier": "es"
+  },
+  ...
+}
+
+INFO:__main__:4) Get HEAD metadata for snapshot 'eswikibooks_namespace_0':
+INFO:__main__:Headers for 'eswikibooks_namespace_0':
+INFO:__main__:{
+  "ETag": "...",
+  "Content-Type": "application/gzip",
+  "Content-Length": 1234567,
+  ...
+}
+INFO:__main__:Content-Length from HEAD: 1234567 bytes
+
+INFO:__main__:5) Download and read snapshot 'eswikibooks_namespace_0':
+INFO:__main__:Downloading 'eswikibooks_namespace_0' (1234567 bytes) into memory...
+INFO:__main__:Downloaded 1.18 MB in 1.23 s
+INFO:__main__:Processing the downloaded archive...
+INFO:__main__:Succesfully processed 150 articles from snapshot.
+INFO:__main__:First 5 article names/identifiers: ['Main Page', 'Chapter 1', 'Chapter 2', 'Chapter 3', 'Chapter 4']
+
+INFO:__main__:--- Snapshot API examples complete ---
+INFO:__main__:Shutting down helper and revoking tokens...
+INFO:__main__:Exiting!
+```
