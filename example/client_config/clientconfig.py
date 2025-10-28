@@ -4,32 +4,14 @@ Demonstrates configuring the API Client with custom timeout, max_retries,
 and user_agent settings.
 """
 
-import sys
-import os
 import logging
 import httpx
 
-# --- Add project root to sys.path ---
-try:
-    PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    if PROJECT_ROOT not in sys.path:
-        sys.path.insert(0, PROJECT_ROOT)
-except NameError:
-    PROJECT_ROOT = os.path.abspath('.')
-    if PROJECT_ROOT not in sys.path:
-        sys.path.insert(0, PROJECT_ROOT)
-
 # --- Import our custom modules ---
-try:
-    from modules.auth.auth_client import AuthClient
-    from modules.auth.helper import Helper
-    from modules.api.api_client import Client, Request
-    from modules.api.exceptions import APIRequestError, APIStatusError, APIDataError
-except ImportError as e:
-    print("Error: Failed to import modules. Make sure you are running from the project root")
-    print("       or that '{PROJECT_ROOT}' is correct.")
-    print("Details: {e}")
-    sys.exit(1)
+from modules.auth.auth_client import AuthClient
+from modules.auth.helper import Helper
+from modules.api.api_client import Client, Request
+from modules.api.exceptions import APIRequestError, APIStatusError, APIDataError
 
 # --- Setup logging ---
 logging.basicConfig(level=logging.INFO)

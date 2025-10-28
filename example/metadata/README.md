@@ -6,13 +6,36 @@ Refer to the documentation [here](https://enterprise.wikimedia.com/docs/metadata
 Get metadata on available project codes (types).
 Allows filtering and field selection.
 
-i) Without any parameters. Returns all the project codes. 
+## Prerequisites
+
+Before running this script, you must have your environment set up.
+
+1.  **Environment Variables:** The script requires user credentials to authenticate with the API. Ensure the following environment variables are set on the .env file:
+
+    ```bash
+    WME_USERNAME="your_username"
+    WME_PASSWORD="your_password"
+    ```
+
+2.  **Python Dependencies:** You must have the required packages, like `httpx` and the SDK's modules, available in your Python environment.
+
+## How to Run
+
+This script is designed to be run from the **virtual enviroment** of the SDK. Once within the virtual enviroment, execute the script:
+
+```bash
+python -m example.metadata.metadata
+```
+
+## Use Cases
+
+i) Without any parameters. Returns all the project codes.
 
 ```bash
 GET https://api.enterprise.wikimedia.com/v2/codes
 ```
 
-Response: 
+Response:
 ```json
 [
     {
@@ -10305,4 +10328,112 @@ Response:
         "description": "Categories are intended to group together pages on similar subjects. They are implemented by a MediaWiki feature that adds any page with a text like [[Category:XYZ]] in its wiki markup to the automated listing that is the category with name XYZ. Categories help readers to find, and navigate around, a subject area, to see pages sorted by title, and to thus find article relationships."
     }
 ]
+```
+## Expected Output
+
+The script will log its progress as it steps through each example. A successful run will look similar to this:
+
+```
+INFO:__main__:Setting up authentication...
+INFO:__main__:Succesfully authenticated!
+
+INFO:__main__:Starting Metadata API examples...
+
+INFO:__main__:--- Project Codes ---
+
+INFO:__main__: --- Use Case 1: Get all codes ---
+
+INFO:__main__:1) Get all project codes:
+INFO:__main__:Found 15 project codes
+INFO:__main__:First code details:
+INFO:__main__:{
+  "identifier": "commons",
+  "name": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org"
+}
+
+INFO:__main__:2) Get only the 'identifier' field for all codes:
+INFO:__main__:Identifiers found:
+INFO:__main__:[
+  {
+    "identifier": "commons"
+  },
+  {
+    "identifier": "mediawiki"
+  },
+...
+]
+
+INFO:__main__:3) Filter for code 'wiki' and select 'identifier':
+INFO:__main__:Filtered result:
+INFO:__main__:[
+  {
+    "identifier": "wiki"
+  }
+]
+
+INFO:__main__:4) Get details for specific code 'wiktionary':
+INFO:__main__:Wiktionary details:
+INFO:__main__:{
+  "identifier": "wiktionary",
+  "name": "Wiktionary",
+  "url": "https://www.wiktionary.org"
+}
+...
+INFO:__main__:--- Languages ---
+
+INFO:__main__:1) Get all supported languages:
+INFO:__main__:Found 321 languages.
+INFO:__main__:Details for English ('en'):
+INFO:__main__:{
+  "identifier": "en",
+  "name": "English",
+  "direction": "ltr"
+}
+INFO:__main__:Details for Arabic ('ar'):
+INFO:__main__:{
+  "identifier": "ar",
+  "name": "العربية",
+  "direction": "rtl"
+}
+...
+INFO:__main__:--- Projects ---
+
+INFO:__main__:1) Get metadata for all supported projects:
+INFO:__main__:Found 943 projects.
+INFO:__main__:Details for English Wikipedia ('enwiki'):
+INFO:__main__:{
+  "identifier": "enwiki",
+  "name": "Wikipedia",
+  "url": "https://en.wikipedia.org",
+...
+}
+...
+INFO:__main__:--- Namespaces ---
+
+INFO:__main__:1) Get metadata for all supported namespaces:
+INFO:__main__:Found 28 namespaces.
+INFO:__main__:Namespace details:
+INFO:__main__:[
+  {
+    "identifier": 0,
+    "name": "Article"
+  },
+  {
+    "identifier": 1,
+    "name": "Article talk"
+  },
+...
+]
+
+INFO:__main__:2) Get details for specific namespace ID 0 (Articles):
+INFO:__main__:Namespace 0 details:
+INFO:__main__:{
+  "identifier": 0,
+  "name": "Article"
+}
+
+INFO:__main__:--- Metadata API examples complete!
+INFO:__main__:Shutting down helper and revoking tokens...
+INFO:__main__:Exiting!
 ```
