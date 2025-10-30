@@ -17,7 +17,7 @@ environment variables on .env:
 import unittest
 import os
 import io
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 from modules.api.api_client import Client, Request, Filter
 from modules.auth.auth_client import AuthClient
 from modules.auth.helper import Helper
@@ -72,12 +72,18 @@ class TestClientIntegration(unittest.TestCase):
     def tearDownClass(cls):
         """Clean up resources after all tests are done"""
         print("\nTearing down integration test client...")
-        if hasattr(cls, 'client'):
-            cls.client.http_client.close()
+        try:
+            if hasattr(cls, 'client'):
+                cls.client.http_client.close()
+        except Exception as e:
+            print(f" - Warning: Failed to close api_client's http_client: {e}")
 
-        if hasattr(cls, 'helper') and hasattr(cls.helper, 'stop'):
-            print("Stopping auth helper thread...")
-            cls.helper.stop()
+        try:
+            if hasattr(cls, 'helper') and hasattr(cls.helper, 'stop'):
+                print("Stopping auth helper thread...")
+                cls.helper.stop()
+        except Exception as e:
+            print(f"  - Warning: Failed to stop auth helper (e.g., token revoke failed): {e}")
 
     def test_get_projects_smoke_test(self):
         """
@@ -165,10 +171,7 @@ class TestClientIntegration(unittest.TestCase):
         """
         print("Running test_head_and_download_batch...")
 
-        # This date gets a recent batch.
-        # Should you see a 404 due to age,
-        # you can update this date.
-        batch_time = datetime(2025, 10, 26, 12) # YYYY, M, D, H
+        batch_time = datetime.now(timezone.utc) - timedelta(hours=3)
         req = Request(limit=1)
 
         print(f"  ... Finding a batch from {batch_time}...")

@@ -7,6 +7,7 @@ token storage, automatic refresh, and revocation.
 
 import os
 import json
+import logging
 from threading import Lock
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
@@ -14,6 +15,9 @@ import httpx
 
 # Load environment variables from .env file
 load_dotenv()
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 
 class AuthClient:
@@ -77,7 +81,15 @@ class AuthClient:
     def revoke_token(self, refresh_token):
         """Revokes a refresh token, invalidating the current session."""
         data = {"refresh_token": refresh_token}
-        self._post("/token-revoke", data)
+
+        try:
+            self._post("/token-revoke", data)
+            logger.info("Token revoked succesfully!")
+        except (httpx.ReadTimeout, httpx.NetworkError, httpx.HTTPStatusError) as e:
+            logger.warning(
+                "Failed to revoke token: %s."
+                " If running examples back-to-back, this is expected.", e
+                )
 
     def get_access_token(self):
         """

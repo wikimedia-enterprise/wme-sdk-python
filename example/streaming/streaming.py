@@ -58,6 +58,8 @@ def article_callback(article):
     logger.info("event.identifiers: %s", article.get('event', {}).get('identifier'))
     logger.info("-----------END------------\n\n\n")
 
+    return True
+
 
 def main():
     """Main execution function to initiate the article stream.

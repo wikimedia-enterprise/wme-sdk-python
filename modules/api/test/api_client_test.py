@@ -564,7 +564,7 @@ class TestClient(unittest.TestCase):
 
         mock_cbk = MagicMock()
 
-        with self.assertRaisesRegex(APIDataError, "Failed to read tar archive"):
+        with self.assertRaisesRegex(APIDataError, "Failed to decompress Gzip archive"):
             self.client.read_all(corrupt_data, mock_cbk)
 
         mock_cbk.assert_not_called()
