@@ -108,12 +108,14 @@ def main():
                 buffer.seek(0)
 
                 articles_found_in_snapshot = []
-                def snapshot_article_callback(article_json):
+                def snapshot_article_callback(article_json) -> bool:
                     """Simple callback to collect article names"""
                     if 'name' in article_json:
                         articles_found_in_snapshot.append(article_json['name'])
                     elif 'identifier' in article_json:
                         articles_found_in_snapshot.append(article_json['identifier'])
+
+                    return True
 
                 try:
                     api_client.read_all(buffer, snapshot_article_callback)

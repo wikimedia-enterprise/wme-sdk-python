@@ -106,10 +106,12 @@ def main():
 
             articles_found = []
 
-            def article_callback(article_json):
+            def article_callback(article_json) -> bool:
                 """A simple callback to process one article from the batch."""
                 if 'identifier' in article_json:
                     articles_found.append(article_json['identifier'])
+
+                return True
 
             api_client.read_all(buffer, article_callback)
 
