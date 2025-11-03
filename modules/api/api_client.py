@@ -15,8 +15,13 @@ import tarfile
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Any, Callable, Dict, List, Optional, Union
+import typing
+import gzip
+from zlib_ng import gzip_ng_threaded
 import httpx
 from .exceptions import APIDataError, APIRequestError, APIStatusError
+
+ReadCallback = Callable[[dict], bool]
 
 logger = logging.getLogger(__name__)
 
@@ -25,12 +30,12 @@ HOUR_FORMAT = "%H"
 
 class Filter:
     """Represents a simple key-value filter for an API query."""
-    def __init__(self, field: str, value: str):
+    def __init__(self, field: str, value: Any):
         """Initializes a Filter object.
 
         Args:
             field (str): The name of the field to filter on.
-            value (str): The value to filter for.
+            value (Any): The value to filter for.
         """
         self.field = field
         self.value = value
@@ -116,6 +121,50 @@ class Request:
 
         # Remove keys with None or empty values
         return {k: v for k, v in result.items() if v not in [None, [], {}, '']}
+
+class _TarfileStreamWrapper:
+    """
+    Wraps the non-seekable file object from tarfile.extractfile()
+    to make it compatible with io.TextIOWrapper, which expects
+    a .seekable() method to exist.
+    """
+    def __init__(self, tarfile_stream: typing.IO[bytes]):
+        self._stream = tarfile_stream
+
+    @property
+    def closed(self) -> bool:
+        """Returns True if the underlying stream is closed, False otherwise."""
+        return self._stream.closed
+
+    def read(self, *args, **kwargs):
+        """Reads and returns data from the underlying stream, passing along any arguments."""
+        return self._stream.read(*args, **kwargs)
+
+    def readable(self):
+        """Returns True to indicate the stream is readable."""
+        return True
+
+    def seekable(self):
+        """
+        Returns False to indicate the stream is not seekable.
+        This is the primary purpose of this wrapper.
+        """
+        return False
+
+    def writable(self):
+        """Returns False to indicate the stream is not writable."""
+        return False
+
+    def close(self):
+        """Closes the underlying tarfile stream."""
+        self._stream.close()
+
+    def flush(self):
+        """
+        Flushes the write buffers of the underlying stream, if applicable.
+        This method was missing.
+        """
+        self._stream.flush()
 
 class Client:
     """
@@ -248,7 +297,7 @@ class Client:
         else:
             raise APIDataError("Mismatched types between expected container and JSON response.")
 
-    def _read_loop(self, rdr: io.BytesIO, cbk: Callable[[dict], Any]):
+    def _read_loop(self, rdr: typing.BinaryIO, cbk: Callable[[dict], Any]):
         """
         Processes a byte stream of newline-delimited JSON (NDJSON).
 
@@ -266,9 +315,12 @@ class Client:
                 continue
             try:
                 article = json.loads(line)
-                cbk(article)
+                if not cbk(article):
+                    return False
             except json.JSONDecodeError:
                 logger.warning("Skipping line due to JSON decode error", exc_info=True)
+
+        return True
 
     def _read_entity(self, path: str, cbk: Callable[[dict], Any]):
         """
@@ -411,7 +463,8 @@ class Client:
                     if line:
                         try:
                             article=json.loads(line)
-                            cbk(article)
+                            if not cbk(article):
+                                break
                         except json.JSONDecodeError:
                             logger.warning("Skipping malformed JSON line in stream: %s", line)
         except httpx.HTTPStatusError as e:
@@ -419,7 +472,7 @@ class Client:
         except httpx.RequestError as e:
             raise APIRequestError(f"Stream Request Error: {e}", request=e.request) from e
 
-    def read_all(self, rdr: io.BytesIO, cbk: Callable[[dict], Any]):
+    def read_all(self, rdr: io.BytesIO, cbk: ReadCallback):
         """
         Reads a .tar.gz archive containing NDJSON files.
 
@@ -436,14 +489,32 @@ class Client:
             APIDataError: If the archive is corrupt or cannot be read as a tarfile.
         """
         try:
-            with tarfile.open(fileobj=rdr, mode='r:gz') as tar:
-                for member in tar.getmembers():
-                    f = tar.extractfile(member)
-                    if f:
-                        with f:
-                            self._read_loop(io.BytesIO(f.read()), cbk)
+            with gzip_ng_threaded.open(rdr, mode="rb", threads=-1) as decompressed_stream:
+
+                typed_stream = typing.cast(typing.BinaryIO, decompressed_stream)
+
+                with tarfile.open(fileobj=typed_stream, mode='r|') as tar:
+                    while True:
+                        member = tar.next()
+                        if member is None:
+                            break
+
+                        if not member.isfile():
+                            continue
+
+                        f = tar.extractfile(member)
+
+                        if f:
+                            with f:
+                                wrapped_stream = _TarfileStreamWrapper(f)
+                                typed_stream = typing.cast(typing.BinaryIO, wrapped_stream)
+                                if not self._read_loop(typed_stream, cbk):
+                                    break
         except tarfile.TarError as e:
             raise APIDataError(f"Failed to read tar archive: {e}") from e
+        except gzip.BadGzipFile as e:
+            raise APIDataError(f"Failed to decompress Gzip archive: {e}") from e
+
 
     def set_access_token(self, token: str):
         """
@@ -525,7 +596,7 @@ class Client:
         """Retrieves metadata for a specific data batch."""
         return self._head_entity(f"{self._get_batches_prefix(timestamp)}/{idr}/download")
 
-    def read_batch(self, timestamp: datetime.datetime, idr: str, cbk: Callable[[dict], Any]):
+    def read_batch(self, timestamp: datetime.datetime, idr: str, cbk: ReadCallback):
         """Reads and processes the content of a specific data batch via a callback."""
         self._read_entity(f"b{self._get_batches_prefix(timestamp)}/{idr}/download", cbk)
 
@@ -549,7 +620,7 @@ class Client:
         """Retrieves metadata for a snapshot"""
         return self._head_entity(f"snapshots/{idr}/download")
 
-    def read_snapshot(self, idr: str, cbk: Callable[[dict], Any]):
+    def read_snapshot(self, idr: str, cbk: ReadCallback):
         """Reads a snapshot"""
         self._read_entity(f"snapshots/{idr}/download", cbk)
 
@@ -573,7 +644,7 @@ class Client:
         """Retrieves a chunk's metadata"""
         return self._head_entity(f"snapshots/{sid}/chunks/{idr}/download")
 
-    def read_chunk(self, sid: str, idr: str, cbk: Callable[[dict], Any]):
+    def read_chunk(self, sid: str, idr: str, cbk: ReadCallback):
         """Reads a chunk"""
         self._read_entity(f"snapshots/{sid}/chunks/{idr}/download", cbk)
 
@@ -609,7 +680,7 @@ class Client:
         """Retrieves a structured snapshot's metadata"""
         return self._head_entity(f"snapshots/structured-contents/{idr}/download")
 
-    def read_structured_snapshot(self, idr: str, cbk: Callable[[dict], Any]):
+    def read_structured_snapshot(self, idr: str, cbk: ReadCallback):
         """Reads a structured snapshot"""
         self._read_entity(f"snapshots/structured-contents/{idr}/download", cbk)
 
@@ -617,6 +688,6 @@ class Client:
         """Downloads a structured snapshot"""
         self._download_entity(f"snapshots/structured-contents/{idr}/download", writer)
 
-    def stream_articles(self, req: Request, cbk: Callable[[dict], Any]):
+    def stream_articles(self, req: Request, cbk: ReadCallback):
         """Streams rt articles"""
         self._subscribe_to_entity("articles", req, cbk)
