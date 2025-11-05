@@ -1,43 +1,79 @@
-# Wikimedia Enterprise SDK: Python
+# Wikimedia Enterprise Python SDK
 
-Draft Wikimedia Enterprise SDK for the Python programming language. This SDK is supposed to serve as an example Python SDK for Wikimedia Enterprise APIs. The SDK is not fully working yet.
+This document outlines the features and usage of the Python client for the Wikimedia Enterprise API. This client provides a convenient, high-performance interface for all API v2 endpoints, handling authentication, parallel downloads, data processing, and real-time streaming.
+
+It is built using httpx for a modern, high-performance HTTP experience, including support for HTTP/2.
 
 See our [api documentation](https://enterprise.wikimedia.com/docs/) and [website](https://enterprise.wikimedia.com/) for more information about the APIs.
 
+## Key Features
+
+  * **Comprehensive API Coverage**: Provides methods for all major API entities, including:
+      * Projects, Languages, Namespaces, and Codes
+      * Daily Batches
+      * Article Snapshots (full and structured)
+      * Snapshot Chunks
+      * Real-time Article Streams
+  * **High-Performance Downloads**:
+      * **Parallel Chunked Downloads**: Large files (like snapshots or batches) are downloaded in parallel chunks using a thread pool for maximum speed.
+      * **Configurable Concurrency**: You can set the chunk size (`download_chunk_size`) and number of concurrent workers (`download_concurrency`).
+  * **Efficient Archive Processing**:
+      * **Multi-threaded Decompression**: Uses the high-performance `zlib-ng` library to decompress `.tar.gz` archives using multiple threads.
+      * **Streaming Archive Reader**: Reads and processes NDJSON files directly from the archive stream without needing to extract them to disk first.
+  * **Real-time Event Streaming**:
+      * Includes a `stream_articles` method to connect to the real-time event stream endpoint (`realtime.enterprise.wikimedia.com`) and process articles as they are published.
+  * **Robust Request Handling**:
+      * **Automatic Retries**: Automatically retries failed requests (e.g., 5xx errors, 429 rate limits) up to a configurable `max_retries` count.
+      * **Client-Side Rate Limiting**: Can be configured with `rate_limit_per_second` to avoid hitting server-side rate limits.
+      * **Custom Exceptions**: Raises clear, specific exceptions (`APIStatusError`, `APIRequestError`, `APIDataError`) for easy error handling.
+  * **Flexible Query Building**:
+      * Includes `Request` and `Filter` helper classes to easily construct complex API request payloads for filtering, field selection, and pagination (`since`, `limit`, `offsets`, etc.).
+
 ## Getting started
+
+Before starting, ensure Python is installed in your system. We recommend using a stable Python version such as 3.13 as of the time of writing.
 
 - Install the SDK:
 
 ```bash
 $ git clone https://github.com/wikimedia-enterprise/wme-sdk-python.git
 $ cd wme-sdk-python
-
-# Edit the `sample.env` file with your credentials and save it as `.env`. Don't give your WME credentials to anyone!
-# By the end of this step, you'll have a .env file that looks like, with your username and password:
-#   WME_USERNAME=username
-#   WME_PASSWORD=password
-#   PYTHONPATH=.
-
-
-# Set up the virtual environment
-$ python3 -m venv sdk
-$ . sdk/bin/activate
-
-# Install the dependencies
-$ pip install -r requirements.txt
-
-# Run the on-demand example
-$ python3 -m example.ondemand.ondemand
-
-# Run the structured contents example
-$ python3 -m example.structured-contents.structuredcontents
-
-# Exit the virtual environment
-$ deactivate
 ```
 
-- Expose your credentials (if you don't have credentials yet, [sign up](https://dashboard.enterprise.wikimedia.com/signup/)) without a `.env` file:
+Edit the `sample.env` file with your credentials and save it as `.env`. Don't give your WME credentials to anyone! By the end of this step, you'll have a .env file that looks like, with your username and password:
 
+```bash
+WME_USERNAME=username
+WME_PASSWORD=password
+PYTHONPATH=.
+```
+
+- Set up the virtual environment
+```bash
+python3 -m venv sdk
+```
+
+- Activate the virtual enviroment
+```bash
+. sdk/bin/activate (On Mac or Linux systems)
+.\sdk\Scripts\Activate.ps1 (On Windows PowerShell)
+sdk\Scripts\activate (On Windows CMD)
+```
+
+- Install the dependencies
+  
+After activating the virtual enviroment, execute this command to install all dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+- To exit the virtual environment
+```
+deactivate
+```
+
+# Expose your credentials without a `.env` file:
+If you don't have credentials yet, [sign up](https://dashboard.enterprise.wikimedia.com/signup/)
 ```bash
 export WME_USERNAME="...your username...";
 export WME_PASSWORD="...your password...";
