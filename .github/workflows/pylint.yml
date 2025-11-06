@@ -29,6 +29,7 @@ jobs:
         pip install pydantic
         pip install pytest
         pip install setuptools
+        pip install zlib-ng
     - name: Analysing the code with pylint
       run: |
         pylint $(git ls-files '*.py')
