@@ -18,12 +18,16 @@ import json
 from collections import Counter
 import re
 import sys
+import logging
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
+# --- Setup logging ---
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
-# Function to extract sections and paragraphs
-def extract_sections(json_data):
+
+def extract_sections(data_node):
     """Recursively extracts and joins text from sections and paragraphs.
 
     This function traverses the nested dictionary/list structure of the
@@ -31,66 +35,105 @@ def extract_sections(json_data):
     "section". For these, it concatenates the section's "name" with the
     "value" of any child parts that have a "type" of "paragraph".
 
+    It only recurses into lists or into the "has_parts" key of a dict.
+
     Args:
-        json_data (dict | list): The JSON data (or sub-structure) to parse.
+        data_node (dict | list): The JSON data (or sub-structure) to parse.
 
     Returns:
         str: A single, space-joined string of all extracted text found
-            within the given data structure.
+             within the given data structure.
     """
     extracted_text = []
-    if isinstance(json_data, list):
-        for item in json_data:
+
+    if isinstance(data_node, list):
+        # If it's a list, recurse on every item
+        for item in data_node:
             extracted_text.append(extract_sections(item))
-    elif isinstance(json_data, dict):
-        if json_data.get("type") == "section":
-            section_name = json_data.get("name", "")
+
+    elif isinstance(data_node, dict):
+        # This is what we want:
+        if data_node.get("type") == "section":
+            section_name = data_node.get("name", "")
             paragraphs = []
-            for part in json_data.get("has_parts", []):
+
+            # Recurse *only* on the 'has_parts' key for this section
+            for part in data_node.get("has_parts", []):
                 if part.get("type") == "paragraph":
                     paragraphs.append(part.get("value", ""))
-            extracted_text.append(f"{section_name}: {' '.join(paragraphs)}")
-        for value in json_data.values():
-            extracted_text.append(extract_sections(value))
+                else:
+                    # This allows us to find nested sections
+                    paragraphs.append(extract_sections(part))
+
+            # We join all found paragraphs/sub-sections for this section
+            section_text = ' '.join(filter(None, paragraphs))
+            if section_text:
+                extracted_text.append(f"{section_name}: {section_text}")
+
     return ' '.join(filter(None, extracted_text))
 
 
-# Function to extract sections and paragraphs
 if __name__ == '__main__':
-    # Check if the title is provided in command-line arguments
-
     if len(sys.argv) < 2:
-        print("Usage: python get.py \"Article Title\"")
+        print("Usage: python parse.py \"Article Title\"")
         sys.exit(1)
 
-    # Get the article title from the command line
     article_title = sys.argv[1]
-    JSON_PATH = f"data/{article_title}.json"
+    # Sanitize title to match the filename saved by get.py
+    safe_title = article_title.replace(" ", "_").replace("/", "_")
+    JSON_PATH = f"data/{safe_title}.json"
 
-    # Load the JSON data
-    with open(JSON_PATH, 'r', encoding='utf-8') as file:
-        data = json.load(file)
+    try:
+        with open(JSON_PATH, 'r', encoding='utf-8') as file:
+            data = json.load(file)
+    except FileNotFoundError:
+        logger.error("Error: File not found at %s", JSON_PATH)
+        logger.error("Please run the 'get.py' script first to download the data.")
+        sys.exit(1)
+    except json.JSONDecodeError:
+        logger.error("Error: Could not parse JSON from %s.", JSON_PATH)
+        logger.error("The file might be empty or corrupt. Try running 'get.py' again.")
+        sys.exit(1)
 
     # Extract and output the text
+    logger.info("Extracting text from JSON...")
 
-    PLAIN_TEXT = extract_sections(data)
-    print("Extracted text:")
+    # --- THIS IS THE FIX ---
+    # Look for 'article_sections', which is what get.py saves
+    article_sections = data.get('article_sections', [])
+    PLAIN_TEXT = extract_sections(article_sections)
+
+    if not PLAIN_TEXT:
+        # Updated the error message to be correct
+        logger.error("Error: No text could be extracted from the 'article_sections' key.")
+        logger.error("Please ensure the 'get.py' script ran successfully and created a valid JSON file.")
+        sys.exit(1)
+
+    print("--- Extracted Text ---")
     print(PLAIN_TEXT)
+    print("----------------------")
 
     # Clean and split the plain text into words
+    logger.info("Analyzing word frequency...")
     words = re.findall(r'\w+', PLAIN_TEXT.lower())
     word_freq = Counter(words)
 
+    if not word_freq:
+        logger.error("Error: No words were found after cleaning the text.")
+        sys.exit(1)
+
     # Generate a word cloud image
-    wordcloud = WordCloud(width=800, height=400, background_color="white").generate(PLAIN_TEXT)
+    wordcloud = WordCloud(width=800, height=400, background_color="white").generate_from_frequencies(word_freq)
 
     # Display the word cloud
+    logger.info("Displaying Word Cloud (close window to see next chart)...")
     plt.figure(figsize=(10, 5))
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis("off")
     plt.show()
 
     # Plotting the top 10 words in a bar chart
+    logger.info("Displaying Top 10 Words (close window to exit)...")
     top_words = word_freq.most_common(10)
     words, frequencies = zip(*top_words)
 

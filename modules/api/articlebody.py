@@ -15,8 +15,8 @@ class ArticleBody:
     def from_json(data: dict) -> 'ArticleBody':
         """Creates an ArticleBody instance from a dictionary"""
         return ArticleBody(
-            html=data['html'],
-            wikitext=data['wikitext']
+            html=data.get('html'),
+            wikitext=data.get('wikitext')
         )
 
     @staticmethod

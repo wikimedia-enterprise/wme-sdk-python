@@ -9,3 +9,4 @@ uvicorn==0.22.0
 requests==2.31.0
 httpx[http2]==0.28.1
 Jinja2==3.1.6
+zlib-ng==1.0.0
