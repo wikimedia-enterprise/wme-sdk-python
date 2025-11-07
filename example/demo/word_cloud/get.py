@@ -16,7 +16,6 @@ import sys
 import os
 import contextlib
 import json
-# Add the parent directory to sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../..")))
 from modules.auth.auth_client import AuthClient
 from modules.api.api_client import Client, Request, Filter
@@ -27,7 +26,6 @@ from modules.api.structuredcontent import StructuredContent
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Ensure the 'data' folder exists
 if not os.path.exists('data'):
     os.makedirs('data')
 

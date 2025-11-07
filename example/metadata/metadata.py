@@ -49,7 +49,6 @@ def main():
         if all_codes:
             first_code = all_codes[0]
             logger.info("First code details:")
-            # Access attributes directly, not as a dict
             logger.info("  Identifier: %s", first_code.identifier)
             logger.info("  Name: %s", first_code.name)
             logger.info("  Description: %s", first_code.description)
@@ -59,8 +58,6 @@ def main():
         req_fields = Request(fields=["identifier"])
         codes_with_id = api_client.get_codes(req_fields)
         logger.info("Identifiers found (first 5):")
-        # The objects will still be Code objects, but fields not
-        # requested will be None.
         logger.info([c.identifier for c in codes_with_id[:5]])
 
         # --- Use case 3: Filter for 'wiki' and select 'identifier' ---

@@ -16,8 +16,6 @@ from httpx import RequestError, HTTPStatusError
 # --- Import custom modules ---
 from modules.auth.auth_client import AuthClient
 from modules.api.api_client import Client, Request
-# Import the model to know how to handle the object
-from modules.api.structuredcontent import StructuredContent
 from modules.api.exceptions import APIRequestError, APIStatusError, APIDataError, DataModelError
 
 logging.basicConfig(level=logging.INFO)
@@ -35,10 +33,8 @@ def main():
     5. Clears the authentication state (revokes token, deletes file) on exit.
     """
 
-    # FIX: Use AuthClient as a context manager *outside* the try/finally
     with AuthClient() as auth_client:
         try:
-            # FIX: Use the managed get_access_token() method
             logger.info("Authenticating...")
             access_token = auth_client.get_access_token()
 
@@ -46,7 +42,6 @@ def main():
             api_client.set_access_token(access_token)
             logger.info("Authentication successful. Fetching content...")
 
-            # FIX: Use modern dictionary-based filter
             filters = {
                 "is_part_of.identifier": "enwiki"
             }
@@ -59,7 +54,6 @@ def main():
             structured_contents = api_client.get_structured_contents("Squirrel", request)
             logger.info("Found %d content item(s).", len(structured_contents))
 
-            # FIX: Use attribute access (content.name) instead of dict keys
             for content in structured_contents:
                 logger.info("--- Content Item ---")
                 logger.info("Name: %s", content.name)
@@ -67,14 +61,12 @@ def main():
                 logger.info("Description: %s", content.description)
 
         except (RequestError, HTTPStatusError) as e:
-            # Handles auth-related HTTP errors
             logger.fatal("Authentication failed: %s", e)
         except (APIRequestError, APIStatusError, APIDataError, DataModelError) as e:
             logger.fatal("Failed to get structured contents: %s", e)
         except Exception as e:
             logger.fatal("An unexpected error occurred: %s", e, exc_info=True)
         finally:
-            # FIX: Use clear_state() to revoke token and delete file
             logger.info("Cleaning up authentication state...")
             auth_client.clear_state()
             logger.info("Cleanup complete.")

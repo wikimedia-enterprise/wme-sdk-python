@@ -1,11 +1,11 @@
 # pylint: disable=R0801,C0103,W0621, W0718, R0914, R0915
 """
 Demonstrates the five main use cases for the Batches API:
-    1)   Get metadata for all available batches for a given hour.
-    2)  Get metadata for filtered batches (e.g., by language).
+    1) Get metadata for all available batches for a given hour.
+    2) Get metadata for filtered batches (e.g., by language).
     3) Get metadata for a single, specific batch.
-    4)  Get HEAD metadata for a single batch.
-    5)   Download and read the contents of a batch.
+    4) Get HEAD metadata for a single batch.
+    5) Download and read the contents of a batch.
 
 This script uses the AuthClient and Helper for automatic,
 thread-safe token management and revocation.

@@ -16,14 +16,11 @@ from modules.api.structuredcontent import StructuredContent
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Start and end year for the election
 START_YEAR = 1980  # 1788
 END_YEAR = 2024
 
-# Generate the US election years dynamically (every 4 years)
 US_ELECTION_YEARS = list(range(START_YEAR, END_YEAR + 1, 4))
 
-# Ensure the 'data' folder exists
 if not os.path.exists('data'):
     os.makedirs('data')
 
@@ -56,26 +53,20 @@ def fetch_and_save_article(api_client, year):
     )
 
     try:
-        # This now returns a List[StructuredContent]
         structured_contents = api_client.get_structured_contents(article_title, request)
     except (APIRequestError, APIStatusError, APIDataError, DataModelError) as e:
         logger.error("Failed to get content for %s: %s", article_title, e)
         return
 
     if structured_contents:
-        # --- 2. Use the typed object ---
-        # article_data is now a StructuredContent object
         article_data = structured_contents[0]
 
-        # We can safely access its attributes
         logger.info(
             "Fetched: %s (Modified: %s)",
             article_data.name,
             article_data.date_modified
         )
 
-        # --- 3. Convert the object back to a dict for saving ---
-        # We use the model's .to_json() method to make it serializable
         article_dict = StructuredContent.to_json(article_data)
         save_json_to_file(article_title, article_dict)
     else:
@@ -98,7 +89,6 @@ def main():
         api_client = Client()
         api_client.set_access_token(access_token)
 
-        # Fetch and save articles for each year
         for year in US_ELECTION_YEARS:
             fetch_and_save_article(api_client, year)
 

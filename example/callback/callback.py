@@ -58,7 +58,7 @@ def main():
         article. It logs the article's name, abstract, and event identifier.
 
         Args:
-            article (Article): The strongly-typed Article object.
+            article (Article): The article received from the stream.
 
         Returns:
             bool: True to continue processing, False to stop the stream.

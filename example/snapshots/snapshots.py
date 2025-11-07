@@ -38,7 +38,6 @@ def main():
 
             logger.info("\nStarting Snapshot examples...")
 
-            # Define fields once to be reused
             snapshot_fields = [
                 "identifier", "version", "date_modified", "is_part_of",
                 "in_language", "namespace", "size"

@@ -47,25 +47,20 @@ def extract_sections(data_node):
     extracted_text = []
 
     if isinstance(data_node, list):
-        # If it's a list, recurse on every item
         for item in data_node:
             extracted_text.append(extract_sections(item))
 
     elif isinstance(data_node, dict):
-        # This is what we want:
         if data_node.get("type") == "section":
             section_name = data_node.get("name", "")
             paragraphs = []
 
-            # Recurse *only* on the 'has_parts' key for this section
             for part in data_node.get("has_parts", []):
                 if part.get("type") == "paragraph":
                     paragraphs.append(part.get("value", ""))
                 else:
-                    # This allows us to find nested sections
                     paragraphs.append(extract_sections(part))
 
-            # We join all found paragraphs/sub-sections for this section
             section_text = ' '.join(filter(None, paragraphs))
             if section_text:
                 extracted_text.append(f"{section_name}: {section_text}")
@@ -79,7 +74,6 @@ if __name__ == '__main__':
         sys.exit(1)
 
     article_title = sys.argv[1]
-    # Sanitize title to match the filename saved by get.py
     safe_title = article_title.replace(" ", "_").replace("/", "_")
     JSON_PATH = f"data/{safe_title}.json"
 
@@ -95,16 +89,12 @@ if __name__ == '__main__':
         logger.error("The file might be empty or corrupt. Try running 'get.py' again.")
         sys.exit(1)
 
-    # Extract and output the text
     logger.info("Extracting text from JSON...")
 
-    # --- THIS IS THE FIX ---
-    # Look for 'article_sections', which is what get.py saves
     article_sections = data.get('article_sections', [])
     PLAIN_TEXT = extract_sections(article_sections)
 
     if not PLAIN_TEXT:
-        # Updated the error message to be correct
         logger.error("Error: No text could be extracted from the 'article_sections' key.")
         logger.error("Please ensure the 'get.py' script ran successfully and created a valid JSON file.")
         sys.exit(1)
@@ -113,7 +103,6 @@ if __name__ == '__main__':
     print(PLAIN_TEXT)
     print("----------------------")
 
-    # Clean and split the plain text into words
     logger.info("Analyzing word frequency...")
     words = re.findall(r'\w+', PLAIN_TEXT.lower())
     word_freq = Counter(words)
@@ -122,17 +111,14 @@ if __name__ == '__main__':
         logger.error("Error: No words were found after cleaning the text.")
         sys.exit(1)
 
-    # Generate a word cloud image
     wordcloud = WordCloud(width=800, height=400, background_color="white").generate_from_frequencies(word_freq)
 
-    # Display the word cloud
     logger.info("Displaying Word Cloud (close window to see next chart)...")
     plt.figure(figsize=(10, 5))
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis("off")
     plt.show()
 
-    # Plotting the top 10 words in a bar chart
     logger.info("Displaying Top 10 Words (close window to exit)...")
     top_words = word_freq.most_common(10)
     words, frequencies = zip(*top_words)

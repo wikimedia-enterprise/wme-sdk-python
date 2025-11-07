@@ -17,7 +17,7 @@ from httpx import RequestError, HTTPStatusError
 # --- Import custom modules ---
 from modules.auth.auth_client import AuthClient
 from modules.api.api_client import Client, Request
-from modules.api.article import Article  # <-- Import the Article model
+from modules.api.article import Article
 from modules.api.exceptions import APIRequestError, APIStatusError, APIDataError, DataModelError
 
 logging.basicConfig(level=logging.INFO)
@@ -38,17 +38,14 @@ def article_callback(article: Article) -> bool:
     """
     logger.info("----------START-----------")
 
-    # FIX: Use attribute access (article.name) instead of dict keys
     logger.info("name: %s", article.name)
     logger.info("abstract: %s", article.abstract)
 
-    # FIX: Check if event object exists before accessing its attributes
     event_id = article.event.identifier if article.event else "N/A"
     logger.info("event.identifiers: %s", event_id)
 
     logger.info("-----------END------------\n\n\n")
 
-    # Return True to keep the stream open and receive the next article
     return True
 
 
@@ -64,11 +61,8 @@ def main():
     6. Clears the authentication state (revokes token, deletes file) on exit.
     """
 
-    # FIX: Use AuthClient as a context manager *outside* the try/finally
-    # to ensure it's closed only after cleanup.
     with AuthClient() as auth_client:
         try:
-            # FIX: Use the managed get_access_token() method
             logger.info("Authenticating...")
             access_token = auth_client.get_access_token()
 
@@ -80,20 +74,17 @@ def main():
                 fields=["name", "abstract", "event.*"]
             )
 
-            # The stream will run indefinitely until interrupted
             api_client.stream_articles(request, article_callback)
 
         except KeyboardInterrupt:
             logger.info("\nStream stopped by user.")
         except (RequestError, HTTPStatusError) as e:
-            # Handles auth-related HTTP errors
             logger.fatal("Authentication failed: %s", e)
         except (APIRequestError, APIStatusError, APIDataError, DataModelError) as e:
             logger.fatal("Error during stream: %s", e)
         except Exception as e:
             logger.fatal("An unexpected error occurred: %s", e, exc_info=True)
         finally:
-            # FIX: Use clear_state() to revoke token and delete file
             logger.info("Cleaning up authentication state...")
             auth_client.clear_state()
             logger.info("Cleanup complete.")
