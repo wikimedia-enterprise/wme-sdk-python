@@ -17,11 +17,29 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Any, Callable, Dict, List, Optional, Union
 import typing
 import gzip
+from abc import ABC, abstractmethod
 from zlib_ng import gzip_ng_threaded
 import httpx
-from .exceptions import APIDataError, APIRequestError, APIStatusError
+from .exceptions import APIDataError, APIRequestError, APIStatusError, DataModelError
+from .code import Code
+from .language import Language
+from .project import Project
+from .namespace import Namespace
+from .batch import Batch
+from .snapshot import Snapshot
+from .article import Article
+from .structuredcontent import StructuredContent
 
-ReadCallback = Callable[[dict], bool]
+InternalReadCallback = Callable[[dict], bool]
+
+CodeReadCallback = Callable[[Code], bool]
+LanguageReadCallback = Callable[[Language], bool]
+ProjectReadCallback = Callable[[Project], bool]
+NamespaceReadCallback = Callable[[Namespace], bool]
+BatchReadCallback = Callable[[Batch], bool]
+SnapshotReadCallback = Callable[[Snapshot], bool]
+ArticleReadCallback = Callable[[Article], bool]
+StructuredContentReadCallback = Callable[[StructuredContent], bool]
 
 logger = logging.getLogger(__name__)
 
@@ -166,7 +184,145 @@ class _TarfileStreamWrapper:
         """
         self._stream.flush()
 
-class Client:
+class API(ABC):
+    """
+    Abstract Base Class defining the contract for the Wikimedia Enterprise API client.
+    This ensures all client implementations have a consistent interface.
+    """
+    @abstractmethod
+    def set_access_token(self, token: str):
+        """Updates the access token for the client instance."""
+
+    @abstractmethod
+    def get_codes(self, req: Request) -> List[Code]:
+        """Retrieves codes"""
+
+    @abstractmethod
+    def get_code(self, idr: str, req: Request) -> Code:
+        """Retrieves a code"""
+
+    @abstractmethod
+    def get_languages(self, req: Request) -> List[Language]:
+        """Retrieves languages"""
+
+    @abstractmethod
+    def get_language(self, idr: str, req: Request) -> Language:
+        """Retrieves a language"""
+
+    @abstractmethod
+    def get_projects(self, req: Request) -> List[Project]:
+        """Retrieves projects"""
+
+    @abstractmethod
+    def get_project(self, idr: str, req: Request) -> Project:
+        """Retrieves a project."""
+
+    @abstractmethod
+    def get_namespaces(self, req: Request) -> List[Namespace]:
+        """Retrieves namespaces"""
+
+    @abstractmethod
+    def get_namespace(self, idr: int, req: Request) -> Namespace:
+        """Retrieves a namespace"""
+
+    @abstractmethod
+    def get_batches(self, timestamp: datetime.datetime, req: Request) -> List[Batch]:
+        """Retrieves data batches."""
+
+    @abstractmethod
+    def get_batch(self, timestamp: datetime.datetime, idr: str, req: Request) -> Batch:
+        """Retrieves a single batch."""
+
+    @abstractmethod
+    def head_batch(self, timestamp: datetime.datetime, idr: str) -> dict:
+        """Retrieves metadata for a specific data batch."""
+
+    @abstractmethod
+    def read_batch(self, timestamp: datetime.datetime, idr: str, cbk: BatchReadCallback):
+        """Reads and processes the content of a specific data batch via a callback."""
+
+    @abstractmethod
+    def download_batch(self, timestamp: datetime.datetime, idr: str, writer: io.BytesIO):
+        """Downloads a batch."""
+
+    @abstractmethod
+    def get_snapshots(self, req: Request) -> List[Snapshot]:
+        """Retrieves snapshots"""
+
+    @abstractmethod
+    def get_snapshot(self, idr: str, req: Request) -> Snapshot:
+        """Retrieves a single snapshot"""
+
+    @abstractmethod
+    def head_snapshot(self, idr: str) -> dict:
+        """Retrieves a single head snapshot"""
+
+    @abstractmethod
+    def read_snapshot(self, idr: str, cbk: SnapshotReadCallback):
+        """Reads a single snapshot"""
+
+    @abstractmethod
+    def download_snapshot(self, idr: str, writer: io.BytesIO):
+        """Downloads a single snapshot"""
+
+    @abstractmethod
+    def get_chunks(self, sid: str, req: Request) -> List[Snapshot]:
+        """Retrieves chunks"""
+
+    @abstractmethod
+    def get_chunk(self, sid: str, idr: str, req: Request) -> Snapshot:
+        """Retrieves a chunk"""
+
+    @abstractmethod
+    def head_chunk(self, sid: str, idr: str) -> dict:
+        """Retrieves a head chunk"""
+
+    @abstractmethod
+    def read_chunk(self, sid: str, idr: str, cbk: SnapshotReadCallback):
+        """Reads a chunk"""
+
+    @abstractmethod
+    def download_chunk(self, sid: str, idr: str, writer: io.BytesIO):
+        """Downloads a chunk"""
+
+    @abstractmethod
+    def get_articles(self, name: str, req: Request) -> List[Article]:
+        """Retrieves articles"""
+
+    @abstractmethod
+    def get_structured_contents(self, name: str, req: Request) -> List[StructuredContent]:
+        """Retrieves structured contents"""
+
+    @abstractmethod
+    def stream_articles(self, req: Request, cbk: ArticleReadCallback):
+        """Streams articles"""
+
+    @abstractmethod
+    def read_all(self, rdr: io.BytesIO, cbk: InternalReadCallback):
+        """Contains different types"""
+
+    @abstractmethod
+    def get_structured_snapshots(self, req: Request) -> List[StructuredContent]:
+        """Retrieves structured content snapshots."""
+
+    @abstractmethod
+    def get_structured_snapshot(self, idr: str, req: Request) -> StructuredContent:
+        """Retrieves a single structured content snapshot."""
+
+    @abstractmethod
+    def head_structured_snapshot(self, idr: str) -> dict:
+        """Retrieves metadata for a structured content snapshot."""
+
+    @abstractmethod
+    def read_structured_snapshot(self, idr: str, cbk: StructuredContentReadCallback):
+        """Reads a structured content snapshot."""
+
+    @abstractmethod
+    def download_structured_snapshot(self, idr: str, writer: io.BytesIO):
+        """Downloads a structured content snapshot."""
+
+
+class Client(API):
     """
     The main client for interacting with the Wikimedia Enterprise API.
 
@@ -297,7 +453,7 @@ class Client:
         else:
             raise APIDataError("Mismatched types between expected container and JSON response.")
 
-    def _read_loop(self, rdr: typing.BinaryIO, cbk: Callable[[dict], Any]):
+    def _read_loop(self, rdr: typing.BinaryIO, cbk: InternalReadCallback):
         """
         Processes a byte stream of newline-delimited JSON (NDJSON).
 
@@ -427,7 +583,7 @@ class Client:
                         f"A download chunk failed with an unexpected error: {e}"
                     ) from e
 
-    def _subscribe_to_entity(self, path: str, req: Request, cbk: Callable[[dict], Any]):
+    def _subscribe_to_entity(self, path: str, req: Request, cbk: InternalReadCallback):
         """
         Internal helper to connect to a real-time stream endpoint.
 
@@ -472,7 +628,7 @@ class Client:
         except httpx.RequestError as e:
             raise APIRequestError(f"Stream Request Error: {e}", request=e.request) from e
 
-    def read_all(self, rdr: io.BytesIO, cbk: ReadCallback):
+    def read_all(self, rdr: io.BytesIO, cbk: InternalReadCallback):
         """
         Reads a .tar.gz archive containing NDJSON files.
 
@@ -529,165 +685,259 @@ class Client:
         self.access_token = token
         self.http_client.headers['Authorization'] = f'Bearer {token}'
 
-    def get_codes(self, req: Request) -> List[dict]:
+    def get_codes(self, req: Request) -> List[Code]:
         """Retrieves codes"""
-        codes = []
-        self._get_entity(req, "codes", codes)
-        return codes
+        codes_list = []
+        self._get_entity(req, "codes", codes_list)
+        try:
+            return[Code.from_json(c) for c in codes_list]
+        except DataModelError as e:
+            raise APIDataError(f"Failed to parse project list data: {e}") from e
 
-    def get_code(self, idr: str, req: Request) -> dict:
+    def get_code(self, idr: str, req: Request) -> Code:
         """Retrieves a single code"""
-        code = {}
-        self._get_entity(req, f"codes/{idr}", code)
-        return code
+        code_dict = {}
+        self._get_entity(req, f"codes/{idr}", code_dict)
+        try:
+            return Code.from_json(code_dict)
+        except DataModelError as e:
+            raise APIDataError(f"Failed to parse code data: {e}") from e
 
-    def get_languages(self, req: Request) -> List[dict]:
+    def get_languages(self, req: Request) -> List[Language]:
         """Retrieves languages"""
-        languages = []
-        self._get_entity(req, "languages", languages)
-        return languages
+        languages_list = []
+        self._get_entity(req, "languages", languages_list)
+        try:
+            return[Language.from_json(l) for l in languages_list]
+        except DataModelError as e:
+            raise APIDataError(f"Failed to parse Language list data: {e}") from e
 
-    def get_language(self, idr: str, req: Request) -> dict:
+    def get_language(self, idr: str, req: Request) -> Language:
         """Retrieves a language"""
-        language = {}
-        self._get_entity(req, f"languages/{idr}", language)
-        return language
+        language_dict = {}
+        self._get_entity(req, f"languages/{idr}", language_dict)
+        try:
+            return Language.from_json(language_dict)
+        except DataModelError as e:
+            raise APIDataError(f"Failed to parse language data: {e}") from e
 
-    def get_projects(self, req: Request) -> List[dict]:
+    def get_projects(self, req: Request) -> List[Project]:
         """Retrieves projects"""
-        projects = []
-        self._get_entity(req, "projects", projects)
-        return projects
+        project_list = []
+        self._get_entity(req, "projects", project_list)
+        try:
+            return[Project.from_json(p) for p in project_list]
+        except DataModelError as e:
+            raise APIDataError(f"Failed to parse Project list data: {e}") from e
 
-    def get_project(self, idr: str, req: Request) -> dict:
+    def get_project(self, idr: str, req: Request) -> Project:
         """Retrieves a project"""
-        project = {}
-        self._get_entity(req, f"projects/{idr}", project)
-        return project
+        project_dict = {}
+        self._get_entity(req, f"projects/{idr}", project_dict)
+        try:
+            return Project.from_json(project_dict)
+        except DataModelError as e:
+            raise APIDataError(f"Failed to parse project data: {e}") from e
 
-    def get_namespaces(self, req: Request) -> List[dict]:
+    def get_namespaces(self, req: Request) -> List[Namespace]:
         """Retrieves namespaces"""
-        namespaces = []
-        self._get_entity(req, "namespaces", namespaces)
-        return namespaces
+        namespaces_list = []
+        self._get_entity(req, "namespaces", namespaces_list)
+        try:
+            return[Namespace.from_json(ns) for ns in namespaces_list]
+        except DataModelError as e:
+            raise APIDataError(f"Failed to parse Namespaces list data: {e}") from e
 
-    def get_namespace(self, idr: int, req: Request) -> dict:
+    def get_namespace(self, idr: int, req: Request) -> Namespace:
         """Retrieves a namespace"""
-        namespace = {}
-        self._get_entity(req, f"namespaces/{idr}", namespace)
-        return namespace
+        namespace_dict = {}
+        self._get_entity(req, f"namespaces/{idr}", namespace_dict)
+        try:
+            return Namespace.from_json(namespace_dict)
+        except DataModelError as e:
+            raise APIDataError(f"Failed to parse namespace data: {e}") from e
 
     def _get_batches_prefix(self, timestamp: datetime.datetime):
         return f"batches/{timestamp.strftime(DATE_FORMAT)}/{timestamp.strftime(HOUR_FORMAT)}"
 
-    def get_batches(self, timestamp: datetime.datetime, req: Request) -> List[dict]:
+    def get_batches(self, timestamp: datetime.datetime, req: Request) -> List[Batch]:
         """Retrieves data batches"""
-        batches = []
-        self._get_entity(req, self._get_batches_prefix(timestamp), batches)
-        return batches
+        batches_list = []
+        self._get_entity(req, self._get_batches_prefix(timestamp), batches_list)
+        try:
+            return[Batch.from_json(b) for b in batches_list]
+        except DataModelError as e:
+            raise APIDataError(f"Failed to parse Batches list data: {e}") from e
 
-    def get_batch(self, timestamp: datetime.datetime, idr: str, req: Request) -> dict:
+    def get_batch(self, timestamp: datetime.datetime, idr: str, req: Request) -> Batch:
         """Retrieves a single batch"""
-        batch = {}
-        self._get_entity(req, f"{self._get_batches_prefix(timestamp)}/{idr}", batch)
-        return batch
+        batch_dict = {}
+        self._get_entity(req, f"{self._get_batches_prefix(timestamp)}/{idr}", batch_dict)
+        try:
+            return Batch.from_json(batch_dict)
+        except DataModelError as e:
+            raise APIDataError(f"Failed to parse batch data: {e}") from e
 
     def head_batch(self, timestamp: datetime.datetime, idr: str) -> dict:
         """Retrieves metadata for a specific data batch."""
         return self._head_entity(f"{self._get_batches_prefix(timestamp)}/{idr}/download")
 
-    def read_batch(self, timestamp: datetime.datetime, idr: str, cbk: ReadCallback):
+    def read_batch(self, timestamp: datetime.datetime, idr: str, cbk: BatchReadCallback):
         """Reads and processes the content of a specific data batch via a callback."""
-        self._read_entity(f"b{self._get_batches_prefix(timestamp)}/{idr}/download", cbk)
+        def parsing_callback(data: dict) -> bool:
+            try:
+                batch_obj = Batch.from_json(data)
+                return cbk(batch_obj)
+            except DataModelError as e:
+                logger.warning("Skipping batch data due to model error: %s", e)
+                return True
+
+        self._read_entity(f"b{self._get_batches_prefix(timestamp)}/{idr}/download", parsing_callback)
 
     def download_batch(self, timestamp: datetime.datetime, idr: str, writer: io.BytesIO):
         """Downloads a batch"""
         self._download_entity(f"{self._get_batches_prefix(timestamp)}/{idr}/download", writer)
 
-    def get_snapshots(self, req: Request) -> List[dict]:
+    def get_snapshots(self, req: Request) -> List[Snapshot]:
         """Retrieves snapshots"""
-        snapshots = []
-        self._get_entity(req, "snapshots", snapshots)
-        return snapshots
+        snapshot_list = []
+        self._get_entity(req, "snapshots", snapshot_list)
+        try:
+            return[Snapshot.from_json(ss) for ss in snapshot_list]
+        except DataModelError as e:
+            raise APIDataError(f"Failed to parse Snapshots list data: {e}") from e
 
-    def get_snapshot(self, idr: str, req: Request) -> dict:
+    def get_snapshot(self, idr: str, req: Request) -> Snapshot:
         """Retrieves a snapshot"""
-        snapshot = {}
-        self._get_entity(req, f"snapshots/{idr}", snapshot)
-        return snapshot
+        snapshot_dict = {}
+        self._get_entity(req, f"snapshots/{idr}", snapshot_dict)
+        try:
+            return Snapshot.from_json(snapshot_dict)
+        except DataModelError as e:
+            raise APIDataError(f"Failed to parse snapshot data: {e}") from e
 
     def head_snapshot(self, idr: str) -> dict:
         """Retrieves metadata for a snapshot"""
         return self._head_entity(f"snapshots/{idr}/download")
 
-    def read_snapshot(self, idr: str, cbk: ReadCallback):
+    def read_snapshot(self, idr: str, cbk: SnapshotReadCallback):
         """Reads a snapshot"""
-        self._read_entity(f"snapshots/{idr}/download", cbk)
+        def parsing_callback(data: dict) -> bool:
+            try:
+                snapshot_obj = Snapshot.from_json(data)
+                return cbk(snapshot_obj)
+            except DataModelError as e:
+                logger.warning("Skipping snapshot data due to model error: %s", e)
+                return True
+
+        self._read_entity(f"snapshots/{idr}/download", parsing_callback)
 
     def download_snapshot(self, idr: str, writer: io.BytesIO):
         """Downloads a snapshot"""
         self._download_entity(f"snapshots/{idr}/download", writer)
 
-    def get_chunks(self, sid: str, req: Request) -> List[dict]:
+    def get_chunks(self, sid: str, req: Request) -> List[Snapshot]:
         """Retrieves chunks"""
-        chunks = []
-        self._get_entity(req, f"snapshots/{sid}/chunks", chunks)
-        return chunks
+        chunks_list = []
+        self._get_entity(req, f"snapshots/{sid}/chunks", chunks_list)
+        try:
+            return[Snapshot.from_json(cs) for cs in chunks_list]
+        except DataModelError as e:
+            raise APIDataError(f"Failed to parse Chunks list data: {e}") from e
 
-    def get_chunk(self, sid: str, idr: str, req: Request) -> dict:
+    def get_chunk(self, sid: str, idr: str, req: Request) -> Snapshot:
         """Retrieves a single chunk"""
-        chunk = {}
-        self._get_entity(req, f"snapshots/{sid}/chunks/{idr}", chunk)
-        return chunk
+        chunk_dict = {}
+        self._get_entity(req, f"snapshots/{sid}/chunks/{idr}", chunk_dict)
+        try:
+            return Snapshot.from_json(chunk_dict)
+        except DataModelError as e:
+            raise APIDataError(f"Failed to parse chunk data: {e}") from e
 
     def head_chunk(self, sid: str, idr: str) -> dict:
         """Retrieves a chunk's metadata"""
         return self._head_entity(f"snapshots/{sid}/chunks/{idr}/download")
 
-    def read_chunk(self, sid: str, idr: str, cbk: ReadCallback):
+    def read_chunk(self, sid: str, idr: str, cbk: SnapshotReadCallback):
         """Reads a chunk"""
-        self._read_entity(f"snapshots/{sid}/chunks/{idr}/download", cbk)
+        def parsing_callback(data: dict) -> bool:
+            try:
+                chunk_obj = Snapshot.from_json(data)
+                return cbk(chunk_obj)
+            except DataModelError as e:
+                logger.warning("Skipping chunk data due to model error: %s", e)
+                return True
+        self._read_entity(f"snapshots/{sid}/chunks/{idr}/download", parsing_callback)
 
     def download_chunk(self, sid: str, idr: str, writer: io.BytesIO):
         """Downloads a chunk"""
         self._download_entity(f"snapshots/{sid}/chunks/{idr}/download", writer)
 
-    def get_articles(self, name: str, req: Request) -> List[dict]:
+    def get_articles(self, name: str, req: Request) -> List[Article]:
         """Retrieves articles"""
-        articles = []
-        self._get_entity(req, f"articles/{name}", articles)
-        return articles
+        articles_list = []
+        self._get_entity(req, f"articles/{name}", articles_list)
+        try:
+            return[Article.from_json(a) for a in articles_list]
+        except DataModelError as e:
+            raise APIDataError(f"Failed to parse Articles list data: {e}") from e
 
-    def get_structured_contents(self, name: str, req: Request) -> List[dict]:
+    def get_structured_contents(self, name: str, req: Request) -> List[StructuredContent]:
         """Retrieves structured contents"""
-        contents = []
-        self._get_entity(req, f"structured-contents/{name}", contents)
-        return contents
+        contents_list = []
+        self._get_entity(req, f"structured-contents/{name}", contents_list)
+        try:
+            return[StructuredContent.from_json(sc) for sc in contents_list]
+        except DataModelError as e:
+            raise APIDataError(f"Failed to parse Structured Contents list data: {e}") from e
 
-    def get_structured_snapshots(self, req: Request) -> List[dict]:
+    def get_structured_snapshots(self, req: Request) -> List[StructuredContent]:
         """Retrieves structured snapshots"""
-        structured_snapshots = []
-        self._get_entity(req, "snapshots/structured-contents/", structured_snapshots)
-        return structured_snapshots
+        snapshots_list = []
+        self._get_entity(req, "snapshots/structured-contents/", snapshots_list)
+        try:
+            return [StructuredContent.from_json(s) for s in snapshots_list]
+        except DataModelError as e:
+            raise APIDataError(f"Failed to parse structured snapshot list data: {e}") from e
 
-    def get_structured_snapshot(self, idr: str, req: Request) -> dict:
+    def get_structured_snapshot(self, idr: str, req: Request) -> StructuredContent:
         """Retrieves a structured snapshot"""
-        structured_snapshot = {}
-        self._get_entity(req, f"snapshots/structured-contents/{idr}", structured_snapshot)
-        return structured_snapshot
+        snapshot_dict = {}
+        self._get_entity(req, f"snapshots/structured-contents/{idr}", snapshot_dict)
+        try:
+            return StructuredContent.from_json(snapshot_dict)
+        except DataModelError as e:
+            raise APIDataError(f"Failed to parse structured snapshot data: {e}") from e
 
     def head_structured_snapshot(self, idr: str) -> dict:
         """Retrieves a structured snapshot's metadata"""
         return self._head_entity(f"snapshots/structured-contents/{idr}/download")
 
-    def read_structured_snapshot(self, idr: str, cbk: ReadCallback):
+    def read_structured_snapshot(self, idr: str, cbk: StructuredContentReadCallback):
         """Reads a structured snapshot"""
-        self._read_entity(f"snapshots/structured-contents/{idr}/download", cbk)
+
+        def parsing_callback(data: dict) -> bool:
+            try:
+                snapshot_obj = StructuredContent.from_json(data)
+                return cbk(snapshot_obj)
+            except DataModelError as e:
+                logger.warning("Skipping structured snapshot data due to model error: %s", e)
+                return True
+
+        self._read_entity(f"snapshots/structured-contents/{idr}/download", parsing_callback)
 
     def download_structured_snapshot(self, idr: str, writer: io.BytesIO):
         """Downloads a structured snapshot"""
         self._download_entity(f"snapshots/structured-contents/{idr}/download", writer)
 
-    def stream_articles(self, req: Request, cbk: ReadCallback):
+    def stream_articles(self, req: Request, cbk: ArticleReadCallback):
         """Streams rt articles"""
-        self._subscribe_to_entity("articles", req, cbk)
+        def parsing_callback(data: dict) -> bool:
+            try:
+                article_obj = Article.from_json(data)
+                return cbk(article_obj)
+            except DataModelError as e:
+                logger.warning("Skipping article stream data due to model error: %s", e)
+                return True
+
+        self._subscribe_to_entity("articles", req, parsing_callback)

@@ -9,13 +9,13 @@ You must have Python installed.
 
 ## Run Get - Parse - Chart Scripts
 
-Terminal commands, from the project root folder (`example/demo`):
+Terminal commands, from the SDK's root folder:
 
 ```
 # Run the on-demand example
-$ python -m get
-$ python -m parse
-$ python -m chart
+$ python -m example.demo.elections.get
+$ python -m example.demo.elections.parse
+$ python -m example.demo.elections.chart
 ```
 
 To close the chart click the close button on the Window, or on the keyboard press Ctrl-C to stop the command in the terminal.

@@ -1,4 +1,4 @@
-# pylint: disable=R0801
+# pylint: disable=R0801, C0103, W0718
 
 """Demonstrates fetching metadata for structured content snapshots.
 
@@ -9,95 +9,89 @@ two actions:
    using a request filter.
 
 It logs the modification date, identifier, and size for the results of
-both calls. The script also ensures the authentication token is
-revoked upon exit.
+both calls. The script also ensures the authentication state is cleared
+upon exit.
 """
 
 import logging
-import contextlib
+from httpx import RequestError, HTTPStatusError
+
+# --- Import custom modules ---
 from modules.auth.auth_client import AuthClient
-from modules.api.api_client import Client, Request, Filter
+from modules.api.api_client import Client, Request
 from modules.api.exceptions import APIRequestError, APIStatusError, APIDataError, DataModelError
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-@contextlib.contextmanager
-def revoke_token_on_exit(auth_client, refresh_token):
-    """Manages the lifecycle of a refresh token, ensuring revocation on exit.
-
-    This context manager yields control to the inner block and guarantees
-    that a token revocation attempt is made upon exiting the block,
-    whether by successful completion or due to an exception.
-
-    Args:
-        auth_client (AuthClient): The authentication client instance.
-        refresh_token (str): The refresh token to be revoked.
-    """
-    try:
-        yield
-    finally:
-        try:
-            auth_client.revoke_token(refresh_token)
-        except (APIRequestError, APIStatusError) as e:
-            logger.error("Failed to revoke token: %s", e)
-
-
 def main():
     """Main execution function to fetch and display snapshot metadata.
 
     Orchestrates the entire process:
-    1. Authenticates with the AuthClient; exits fatally if login fails.
-    2. Sets up a context manager to revoke the token on exit.
-    3. Initializes the API Client with the access token.
-    4. Fetches and logs metadata for *all* available snapshots.
-    5. Defines a filter and fetches and logs metadata for a *single*
-    specific snapshot ("enwiki_namespace_0").
+    1. Authenticates with the AuthClient, which handles the full token lifecycle.
+    2. Initializes the API Client with the access token.
+    3. Fetches and logs metadata for *all* available snapshots.
+    4. Defines a filter and fetches and logs metadata for a *single*
+       specific snapshot ("enwiki_namespace_0").
+    5. Clears the authentication state (revokes token, deletes file) on exit.
     """
-    auth_client = AuthClient()
-    try:
-        login_response = auth_client.login()
-    except (APIRequestError, APIStatusError) as e:
-        logger.fatal("Login failed: %s", e)
-        return
-
-    refresh_token = login_response["refresh_token"]
-    access_token = login_response["access_token"]
-
-    with revoke_token_on_exit(auth_client, refresh_token):
-        api_client = Client()
-        api_client.set_access_token(access_token)
-
-       #to get metadata of all available structured contents snapshots
-
+    with AuthClient() as auth_client:
         try:
-            request = Request()
-            structured_snapshots = api_client.get_structured_snapshots(request)
+            logger.info("Authenticating...")
+            access_token = auth_client.get_access_token()
+
+            api_client = Client()
+            api_client.set_access_token(access_token)
+            logger.info("Authentication successful. Fetching content...")
+
+            logger.info("\n--- All Structured Snapshots ---")
+
+            request_all = Request(fields=["identifier", "name", "date_modified"])
+
+            structured_snapshots = api_client.get_structured_snapshots(request_all)
+
+            logger.info("Found %d total structured snapshots.", len(structured_snapshots))
+
+            for content in structured_snapshots[:3]:
+                logger.info("  Identifier: %s", content.identifier)
+                logger.info("  Name: %s", content.name)
+                logger.info("  Date Modified: %s", content.date_modified)
+                logger.info("  ---")
+            if len(structured_snapshots) > 3:
+                logger.info("  (and %d more...)", len(structured_snapshots) - 3)
+
+            logger.info("\n--- Single Structured Snapshot ---")
+
+            filters = {
+                "in_language.identifier": "en"
+            }
+
+            request_single = Request(
+                fields=["identifier", "name", "date_modified"],
+                filters=filters
+            )
+            snapshot_id = "enwiki_namespace_0"
+
+            structured_snapshot = api_client.get_structured_snapshot(snapshot_id, request_single)
+
+            if structured_snapshot:
+                logger.info("Identifier: %s", structured_snapshot.identifier)
+                logger.info("Name: %s", structured_snapshot.name)
+                logger.info("Date Modified: %s", structured_snapshot.date_modified)
+            else:
+                logger.info("Could not find snapshot with ID: %s", snapshot_id)
+
+        except (RequestError, HTTPStatusError) as e:
+            logger.fatal("Authentication failed: %s", e)
         except (APIRequestError, APIStatusError, APIDataError, DataModelError) as e:
-            logger.fatal("Failed to get structured contents snapshots: %s", e)
-            return
-
-        for content in structured_snapshots:
-            logger.info("Name: %s", content.get('date_modified'))
-            logger.info("Abstract: %s", content.get('identifier'))
-            logger.info("Description: %s", content.get('size'))
-
-        # To get metadata on an single SC snapshot using request parameters
-        request = Request(
-            filters=[Filter(field="in_language.identifier", value="en")]
-        )
-
-        try:
-            structured_snapshot = api_client.get_structured_snapshot("enwiki_namespace_0", request)
-        except (APIRequestError, APIStatusError, APIDataError, DataModelError) as e:
-            logger.fatal("Failed to get structured contents snpshot: %s", e)
-            return
-
-        logger.info("--- Single Snapshot ---")
-        logger.info("Name: %s", structured_snapshot.get('date_modified'))
-        logger.info("Abstract: %s", structured_snapshot.get('identifier'))
-        logger.info("Description: %s", structured_snapshot.get('size'))
+            logger.fatal("Failed to get structured content snapshots: %s", e)
+        except Exception as e:
+            logger.fatal("An unexpected error occurred: %s", e, exc_info=True)
+        finally:
+            logger.info("\nCleaning up authentication state...")
+            auth_client.clear_state()
+            logger.info("Cleanup complete.")
 
 
 if __name__ == "__main__":

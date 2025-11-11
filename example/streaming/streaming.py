@@ -1,61 +1,49 @@
-# pylint: disable=R0801
+# pylint: disable=R0801, C0103, W0718
 
 """Demonstrates streaming articles from the API using a callback.
 
-This script authenticates with the Wikimedia Enterprise API, sets up a
-request for specific article fields (including 'event.*'), and then
-uses the `stream_articles` method.
+This script demonstrates how to authenticate using the AuthClient's
+managed lifecycle, build a request for specific article fields,
+and then use the `stream_articles` method.
 
-Each article received from the stream is passed to the `article_callback`
-function, which logs its details. The script ensures the authentication
-token is revoked on exit.
+Each Article object received from the stream is passed to the
+`article_callback` function, which logs its details. The script
+handles graceful shutdown on (Ctrl+C) and cleans up the auth state.
 """
 
 import logging
-import contextlib
+from httpx import RequestError, HTTPStatusError
 
+# --- Import custom modules ---
 from modules.auth.auth_client import AuthClient
 from modules.api.api_client import Client, Request
+from modules.api.article import Article
 from modules.api.exceptions import APIRequestError, APIStatusError, APIDataError, DataModelError
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-@contextlib.contextmanager
-def revoke_token_on_exit(auth_client, refresh_token):
-    """Manages the lifecycle of a refresh token, ensuring revocation on exit.
-
-    This context manager yields control to the inner block and guarantees
-    that a token revocation attempt is made upon exiting the block,
-    whether by successful completion or due to an exception.
-
-    Args:
-        auth_client (AuthClient): The authentication client instance.
-        refresh_token (str): The refresh token to be revoked.
-    """
-    try:
-        yield
-    finally:
-        try:
-            auth_client.revoke_token(refresh_token)
-        except (APIRequestError, APIStatusError) as e:
-            logger.error("Failed to revoke token: %s", e)
-
-
-def article_callback(article):
+def article_callback(article: Article) -> bool:
     """A callback function to process each article received from the stream.
 
     This function is invoked by `api_client.stream_articles` for each
-    article. It logs the article's name, abstract, and event identifier.
+    Article object. It logs the article's name, abstract, and event identifier.
 
     Args:
-        article (dict): The article data dictionary received from the stream.
+        article (Article): The Article data object received from the stream.
+
+    Returns:
+        bool: True to continue streaming, False to stop.
     """
     logger.info("----------START-----------")
-    logger.info("name: %s", article.get('name'))
-    logger.info("abstract: %s", article.get('abstract'))
-    logger.info("event.identifiers: %s", article.get('event', {}).get('identifier'))
+
+    logger.info("name: %s", article.name)
+    logger.info("abstract: %s", article.abstract)
+
+    event_id = article.event.identifier if article.event else "N/A"
+    logger.info("event.identifiers: %s", event_id)
+
     logger.info("-----------END------------\n\n\n")
 
     return True
@@ -65,35 +53,41 @@ def main():
     """Main execution function to initiate the article stream.
 
     Orchestrates the entire process:
-    1. Authenticates with the AuthClient; exits fatally if login fails.
-    2. Sets up a context manager to revoke the token on exit.
-    3. Initializes the API Client with the access token.
-    4. Defines a Request for specific fields.
-    5. Starts the article stream, passing the `article_callback` to process
-    each article as it arrives.
+    1. Authenticates with the AuthClient, which handles the full token lifecycle.
+    2. Initializes the API Client with the access token.
+    3. Defines a Request for specific fields.
+    4. Starts the article stream, passing the `article_callback`.
+    5. Listens for KeyboardInterrupt (Ctrl+C) to stop.
+    6. Clears the authentication state (revokes token, deletes file) on exit.
     """
-    auth_client = AuthClient()
-    try:
-        login_response = auth_client.login()
-    except (APIRequestError, APIStatusError) as e:
-        logger.fatal("Login failed: %s", e)
-        return
 
-    refresh_token = login_response["refresh_token"]
-    access_token = login_response["access_token"]
-
-    with revoke_token_on_exit(auth_client, refresh_token):
-        api_client = Client()
-        api_client.set_access_token(access_token)
-
-        request = Request(
-            fields=["name", "abstract", "event.*"]
-        )
-
+    with AuthClient() as auth_client:
         try:
+            logger.info("Authenticating...")
+            access_token = auth_client.get_access_token()
+
+            api_client = Client()
+            api_client.set_access_token(access_token)
+            logger.info("Authentication successful. Starting stream... (Press Ctrl+C to stop)")
+
+            request = Request(
+                fields=["name", "abstract", "event.*"]
+            )
+
             api_client.stream_articles(request, article_callback)
+
+        except KeyboardInterrupt:
+            logger.info("\nStream stopped by user.")
+        except (RequestError, HTTPStatusError) as e:
+            logger.fatal("Authentication failed: %s", e)
         except (APIRequestError, APIStatusError, APIDataError, DataModelError) as e:
-            logger.fatal("Failed to get articles: %s", e)
+            logger.fatal("Error during stream: %s", e)
+        except Exception as e:
+            logger.fatal("An unexpected error occurred: %s", e, exc_info=True)
+        finally:
+            logger.info("Cleaning up authentication state...")
+            auth_client.clear_state()
+            logger.info("Cleanup complete.")
 
 
 if __name__ == "__main__":

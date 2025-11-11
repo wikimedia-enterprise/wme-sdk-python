@@ -1,10 +1,14 @@
-"""Serves a web application for finding and displaying Wikimedia infoboxes."""
+# pylint: disable=R0801,C0103,W0621, W0718, R0914, R0915, W0611
+
+"""
+Serves a web application for finding and displaying Wikimedia infoboxes,
+using the official WME API Client SDK.
+"""
 
 import os
 import json
-import asyncio
+from pathlib import Path
 from contextlib import asynccontextmanager
-from starlette.datastructures import State
 import httpx
 from dotenv import load_dotenv
 from fastapi import FastAPI, Query
@@ -12,6 +16,14 @@ from fastapi.responses import JSONResponse, HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.requests import Request
 from fastapi.staticfiles import StaticFiles
+from starlette.concurrency import run_in_threadpool
+
+# --- Import SDK Modules ---
+from modules.auth.auth_client import AuthClient
+from modules.auth.helper import Helper
+from modules.api.api_client import Client, Request as ApiRequest, API
+from modules.api.structuredcontent import StructuredContent
+from modules.api.exceptions import APIRequestError, APIStatusError, APIDataError, DataModelError
 
 load_dotenv()
 
@@ -20,120 +32,63 @@ USERNAME = os.getenv("WME_USERNAME")
 PASSWORD = os.getenv("WME_PASSWORD")
 OPENCAGE_API_KEY = os.getenv("OPENCAGE_API_KEY")
 
+APP_ROOT = Path(__file__).parent
+
 # --- Application Lifespan (Startup/Shutdown) ---
 
 @asynccontextmanager
 async def lifespan(_app: FastAPI):
     """
     Manages the application's lifecycle.
-    On startup: Creates a client, logs in, and stores them in app.state.
-    On shutdown: Closes the client.
+    On startup: Creates an HTTP client for non-SDK calls,
+                and initializes the SDK's Auth Helper and API Client.
+    On shutdown: Closes clients and stops the auth helper.
     """
+    # 1. Client for non-SDK calls (OpenCage, Wikipedia Geosearch)
     _app.state.http_client = httpx.AsyncClient()
 
-    _app.state.token_lock = asyncio.Lock()
+    # 2. SDK Auth and API Clients
+    def sync_sdk_startup():
+        """Initializes and returns SDK components."""
+        print("Initializing SDK AuthClient and Helper...")
+        auth_client = AuthClient()
+        helper = Helper(auth_client)
+        api_client = Client()
 
-    access_token, refresh_token = await login_to_wikimedia(_app.state.http_client)
+        token = helper.get_access_token()
+        api_client.set_access_token(token)
+        print("SDK Auth Helper and API Client are initialized and ready.")
+        return auth_client, helper, api_client
 
-    _app.state.access_token = access_token
-    _app.state.refresh_token = refresh_token
+    auth_client, helper, api_client = await run_in_threadpool(sync_sdk_startup)
 
-    # yield separates the app's startup logic from it's shutdown logic.
-    # When we hit yield, the function "pauses" and hands control back to FastAPI.
-    # FastAPI then finishes starting the server and begins accepting web requests (like /geocode, /wikipedia, etc.).
-    # Then, the application runs normally for its entire life while the lifespan function stays paused at this yield
-    # When we stop the app, FastAPI gracefully shuts down telling the lifespan function to resume executing all the code after the yield
+    _app.state.auth_client = auth_client
+    _app.state.helper = helper
+    _app.state.api_client = api_client
+
+    # App starts and runs here
     yield
 
-
+    # --- Shutdown Logic ---
+    print("Shutting down...")
     await _app.state.http_client.aclose()
-    print("HTTP client closed.")
+    print("External HTTP client closed.")
+
+    def sync_sdk_shutdown():
+        """Stops the auth helper thread."""
+        if _app.state.helper:
+            print("Stopping SDK Auth Helper thread...")
+            _app.state.helper.stop()
+            print("Auth Helper stopped.")
+
+    await run_in_threadpool(sync_sdk_shutdown)
 
 app = FastAPI(lifespan=lifespan)
 
 # --- Template and Static File Setup ---
-templates = Jinja2Templates(directory="templates")
-app.mount("/static", StaticFiles(directory="static"), name="static")
+templates = Jinja2Templates(directory=APP_ROOT / "templates")
+app.mount("/static", StaticFiles(directory=APP_ROOT / "static"), name="static")
 
-
-# --- Authentication Functions ---
-
-async def login_to_wikimedia(client: httpx.AsyncClient):
-    """Authenticates and returns the access and refresh tokens."""
-    login_url = "https://auth.enterprise.wikimedia.com/v1/login"
-
-    try:
-        response = await client.post(
-            login_url,
-            data={"username": USERNAME, "password": PASSWORD},
-            headers={"Content-Type": "application/x-www-form-urlencoded"},
-            timeout=10
-        )
-        response.raise_for_status()
-
-        data = response.json()
-        access_token = data.get("access_token")
-        refresh_token = data.get("refresh_token")
-
-        if access_token and refresh_token:
-            print("Successfully logged in and stored tokens!")
-        else:
-            print(f"Login successful, but tokens not found: {data}")
-
-        return access_token, refresh_token
-
-    except httpx.HTTPStatusError as http_err:
-        print(f"Failed to log in to Wikimedia API: {http_err.response.status_code}")
-        print(http_err.response.text)
-    except httpx.RequestError as e:
-        print(f"Failed to connect to Wikimedia login service: {e}")
-
-    return None, None
-
-async def refresh_wikimedia_token(state: State, old_access_token: str):
-    """Uses the refresh token to get new tokens (task-safe)."""
-
-
-    async with state.token_lock:
-        if state.access_token != old_access_token:
-            return True
-
-        if not state.http_client:
-            print("CRITICAL: HTTP_CLIENT is not initialized.")
-            return False
-
-        print("Token expired. Attempting to refresh...")
-        refresh_url = "https://auth.enterprise.wikimedia.com/v1/refresh"
-
-        try:
-            response = await state.http_client.post(
-                refresh_url,
-                data={"refresh_token": state.refresh_token},
-                headers={"Content-Type": "application/x-www-form-urlencoded"},
-                timeout=10
-            )
-            response.raise_for_status()
-
-            data = response.json()
-            state.access_token = data.get("access_token")
-            state.refresh_token = data.get("refresh_token")
-
-            if state.access_token and state.refresh_token:
-                print("Successfully refreshed tokens!")
-                return True
-            print(f"Refresh failed, no tokens in response: {data}")
-            return False
-
-        except (httpx.HTTPStatusError, httpx.RequestError) as e:
-            print(f"CRITICAL: Failed to refresh token: {e}")
-
-            if isinstance(e, httpx.HTTPStatusError):
-                print(f"Response body: {e.response.text}")
-
-
-            state.access_token = None
-            state.refresh_token = None
-            return False
 
 # --- API Endpoints ---
 
@@ -147,7 +102,6 @@ async def geocode(request: Request, location: str = Query(..., description="Loca
     """Geocodes a location string using the OpenCage Data API."""
 
     http_client = request.app.state.http_client
-
     url = f"https://api.opencagedata.com/geocode/v1/json?q={location}&key={OPENCAGE_API_KEY}"
 
     try:
@@ -186,7 +140,6 @@ async def wikipedia(request: Request, lat: float, lng: float):
     """Finds Wikipedia articles near a given latitude and longitude."""
 
     http_client = request.app.state.http_client
-
     url = f"https://en.wikipedia.org/w/api.php?action=query&list=geosearch&gscoord={lat}|{lng}&gsradius=10000&gslimit=1000&format=json"
 
     response = None
@@ -200,19 +153,20 @@ async def wikipedia(request: Request, lat: float, lng: float):
         return JSONResponse(content=response.json())
 
     except httpx.HTTPStatusError as http_err:
+        details = str(http_err)
+        status = 500
         if response:
-            print(f"Wikipedia HTTP error: {http_err} - {response.text}")
-            return JSONResponse(
-                content={"error": "Failed to fetch from Wikipedia", "details": response.text},
-                status_code=response.status_code
-            )
-        return JSONResponse(content={"error": "Failed to fetch from Wikipedia", "details": str(http_err)}, status_code=500)
-
+            details = response.text
+            status = response.status_code
+            print(f"Wikipedia HTTP error: {http_err} - {details}")
+        return JSONResponse(
+            content={"error": "Failed to fetch from Wikipedia", "details": details},
+            status_code=status
+        )
     except json.JSONDecodeError:
-        if response:
-            print(f"Invalid JSON from Wikipedia: {response.text}")
-            return JSONResponse(content={"error": "Invalid data from Wikipedia", "details": response.text}, status_code=500)
-        return JSONResponse(content={"error": "Invalid data from Wikipedia"}, status_code=500)
+        details = response.text if response else "No response"
+        print(f"Invalid JSON from Wikipedia: {details}")
+        return JSONResponse(content={"error": "Invalid data from Wikipedia", "details": details}, status_code=500)
 
     except httpx.RequestError as req_err:
         print(f"Wikipedia connection error: {req_err}")
@@ -220,59 +174,45 @@ async def wikipedia(request: Request, lat: float, lng: float):
 
 @app.get("/infobox")
 async def get_infobox(request: Request, title: str):
-    """Fetches structured infobox data, handling token refresh."""
+    """Fetches structured infobox data using the SDK, handling auth."""
 
-    state = request.app.state
-    http_client = state.http_client
+    api_client: API = request.app.state.api_client
+    helper: Helper = request.app.state.helper
 
-    if not state.refresh_token:
+    if not helper:
         return JSONResponse(content={"error": "Not authenticated"}, status_code=500)
 
-    current_access_token = state.access_token
-    url = f"https://api.enterprise.wikimedia.com/v2/structured-contents/{title}"
-    headers = {
-        "Authorization": f"Bearer {current_access_token}",
-        "Content-Type": "application/json",
-    }
-    json_payload = {
-        "fields": ["name", "url", "infoboxes"],
-        "filters": [{"field": "is_part_of.identifier", "value": "enwiki"}],
-    }
+    filters = {
+            "is_part_of.identifier": "enwiki"
+        }
 
-    response = await http_client.post(
-        url, json=json_payload, headers=headers, timeout=10
+    sdk_request = ApiRequest(
+        fields=["name", "url", "infoboxes"],
+        filters=filters
     )
 
-    # --- HANDLE EXPIRATION (401) ---
-    if response.status_code == 401:
+    try:
+        def sync_api_call():
+            token = helper.get_access_token()
+            api_client.set_access_token(token)
 
-        refresh_success = await refresh_wikimedia_token(state, current_access_token)
+            return api_client.get_structured_contents(title, sdk_request)
 
-        if refresh_success:
-            print("Retrying request with new token...")
-            headers["Authorization"] = f"Bearer {state.access_token}"
+        structured_contents = await run_in_threadpool(sync_api_call)
 
-            response = await http_client.post(
-                url, json=json_payload, headers=headers, timeout=10
-            )
-        else:
-            return JSONResponse(content={"error": "Token refresh failed"}, status_code=503)
+        if structured_contents:
+            response_data = [StructuredContent.to_json(sc) for sc in structured_contents]
+            return JSONResponse(content=response_data)
 
-    # --- FINAL RESPONSE HANDLING ---
-    if response.status_code == 200:
-        return JSONResponse(content=response.json())
+        return JSONResponse(content=[], status_code=404)
 
-    details = ""
-    status = 500
+    except (APIRequestError, APIStatusError, APIDataError, DataModelError) as e:
+        print(f"SDK Error: {e}")
+        return JSONResponse(content={"error": str(e)}, status_code=500)
+    except Exception as e:
+        print(f"Unexpected Error: {e}")
+        return JSONResponse(content={"error": "An unexpected error occurred"}, status_code=500)
 
-    if response:
-        details = response.text
-        status = response.status_code
-
-    return JSONResponse(
-        content={"error": "Failed to fetch infobox data", "details": details},
-        status_code=status
-    )
 
 if __name__ == "__main__":
     import uvicorn

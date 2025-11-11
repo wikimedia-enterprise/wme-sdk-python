@@ -14,11 +14,10 @@ This project is a web application that allows users to search for a location by 
 ![screenshot of 15 Central Park West](image-1.png)
 
 ### 1. Run the Web Server:
-After the dependencies are installed, you can start the web server by running:
+After the dependencies are installed, you can start the web server by running the following, from the SDK's root:
 
 ```bash
-cd locations
-python app.py
+python -m example.demo.locations.app
 ```
 
 ### 2. Open the Application in Your Browser:

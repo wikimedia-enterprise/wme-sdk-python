@@ -1,110 +1,93 @@
-# pylint: disable=R0801
+# pylint: disable=R0801, C0103, W0718
 
 """Fetches articles matching the query 'Montreal' from the API.
 
-This script demonstrates how to authenticate, build a request with dictionary-based
-filters (for 'en' language and 'enwiki' project), and request specific
-fields including 'article_body.html'.
+This script demonstrates how to authenticate using the AuthClient's
+managed lifecycle, build a request with dictionary-based filters,
+and request specific fields.
 
-It then iterates through the results, truncates the HTML body for concise
-display, and pretty-prints each article's JSON to the console.
-It also ensures proper login and token revocation.
+It then iterates through the resulting Article objects, truncates the
+HTML body for concise display, and pretty-prints each article's JSON
+to the console.
 """
 
 import json
 import logging
-import contextlib
+from httpx import RequestError, HTTPStatusError
 
 from modules.auth.auth_client import AuthClient
-from modules.api.api_client import Client, Request
+from modules.api.api_client import Client, Request, Article
 from modules.api.exceptions import APIRequestError, APIStatusError, APIDataError, DataModelError
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-@contextlib.contextmanager
-def revoke_token_on_exit(auth_client, refresh_token):
-    """Manages the lifecycle of a refresh token, ensuring revocation on exit.
-
-    This context manager yields control to the inner block and guarantees
-    that a token revocation attempt is made upon exiting the block,
-    whether by successful completion or due to an exception.
-
-    Args:
-        auth_client (AuthClient): The authentication client instance.
-        refresh_token (str): The refresh token to be revoked.
-    """
-    try:
-        yield
-    finally:
-        try:
-            auth_client.revoke_token(refresh_token)
-        except (APIRequestError, APIStatusError) as e:
-            logger.error("Failed to revoke token: %s", e)
-
-
 def main():
     """Main execution function to fetch and display articles.
 
     Orchestrates the entire process:
-    1. Authenticates with the AuthClient; exits fatally if login fails.
-    2. Sets up a context manager to revoke the token on exit.
-    3. Initializes the API Client with the access token.
-    4. Defines filters and builds a Request for 'Montreal' articles.
-    5. Fetches the articles; exits fatally on failure.
-    6. Iterates, truncates the HTML body, and pretty-prints each article
-    to the console, logging any serialization errors.
+    1. Authenticates with the AuthClient, which handles the full token lifecycle.
+    2. Initializes the API Client with the access token.
+    3. Defines filters and builds a Request for 'Montreal' articles.
+    4. Fetches the articles; exits fatally on failure.
+    5. Iterates, truncates the HTML body, and pretty-prints each article
+       to the console, logging any serialization errors.
+    6. Clears the authentication state (revokes token, deletes file) on exit.
     """
-    auth_client = AuthClient()
-    try:
-        login_response = auth_client.login()
-    except (APIRequestError, APIStatusError) as e:
-        logger.fatal("Login failed: %s", e)
-        return
 
-    refresh_token = login_response["refresh_token"]
-    access_token = login_response["access_token"]
-
-    with revoke_token_on_exit(auth_client, refresh_token):
-        api_client = Client()
-        api_client.set_access_token(access_token)
-
-        # pylint: disable= pointless-string-statement
-        # The old method of using filters is still valid
-        # filters = [
-        #    Filter(field="in_language.identifier", value="en"),
-        #    Filter(field="is_part_of.identifier", value="enwiki")]
-        # Below, is the new, more intuitive way to declare filters
-        filters = {
-            "in_language.identifier": "en",
-            "is_part_of.identifier": "enwiki"
-        }
-
-        request = Request(
-            fields=["name", "abstract", "url", "version", "article_body.html"],
-            filters=filters
-        )
-
-        articles = []
+    with AuthClient() as auth_client:
         try:
+            logger.info("Getting access token...")
+            access_token = auth_client.get_access_token()
+            logger.info("Access token retrieved.")
+
+            api_client = Client()
+            api_client.set_access_token(access_token)
+
+            # --- Main API Logic ---
+            filters = {
+                "in_language.identifier": "en",
+                "is_part_of.identifier": "enwiki"
+            }
+
+            request = Request(
+                fields=["name", "abstract", "url", "version", "article_body.html"],
+                filters=filters
+            )
+
+            logger.info("Fetching articles for 'Montreal'...")
             articles = api_client.get_articles("Montreal", request)
+            logger.info("Found %s articles.", len(articles))
+
+            for article in articles:
+                try:
+                    max_len = 200
+                    trunc_marker = "... (truncated)"
+
+                    if (article.article_body and
+                        article.article_body.html and
+                        len(article.article_body.html) > max_len):
+
+                        html = article.article_body.html
+                        article.article_body.html = html[:max_len - len(trunc_marker)] + trunc_marker
+
+                    art_json = json.dumps(Article.to_json(article), indent=2)
+                    print(art_json)
+
+                except (TypeError, AttributeError, DataModelError) as e:
+                    logger.error("Failed to process or serialize article: %s", e)
+
+        except (RequestError, HTTPStatusError) as e:
+            logger.fatal("Authentication failed: %s", e)
         except (APIRequestError, APIStatusError, APIDataError, DataModelError) as e:
             logger.fatal("Failed to get articles: %s", e)
-            return
-
-        for article in articles:
-            try:
-                if "article_body" in article and "html" in article["article_body"]:
-                    html = article["article_body"]["html"]
-                    trunc_marker = "... (truncated)"
-                    max_len = 200
-                    if len(html) > max_len:
-                        article["article_body"]["html"] = html[:max_len - len(trunc_marker)] + trunc_marker
-                art_json = json.dumps(article, indent=2)
-                print(art_json)
-            except (APIRequestError, APIStatusError, APIDataError, DataModelError) as e:
-                logger.error("Failed to serialize article: %s", e)
+        except Exception as e:
+            logger.fatal("An unexpected error occurred: %s", e, exc_info=True)
+        finally:
+            logger.info("Cleaning up authentication state...")
+            auth_client.clear_state()
+            logger.info("Cleanup complete.")
 
 
 if __name__ == "__main__":

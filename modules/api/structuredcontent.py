@@ -28,9 +28,9 @@ class Link:
             raise DataModelError(f"Expected dict for Link, got {type(data).__name__}")
         try:
             return Link(
-                url=data['url'],
-                text=data['text'],
-                images=[Image.from_json(image) for image in data['images']]
+                url=data.get('url'),
+                text=data.get('text'),
+                images=[Image.from_json(image) for image in data.get('images', [])]
             )
         except (TypeError, DataModelError) as e:
             raise DataModelError(f"Failed to parse Link data: {e}") from e
@@ -341,7 +341,7 @@ class StructuredContent:
                 is_part_of=Project.from_json(p_data) if (p_data := data.get('is_part_of')) else None,
                 in_language=Language.from_json(l_data) if (l_data := data.get('in_language')) else None,
                 infoboxes=[Part.from_json(p) for p in data.get('infoboxes', [])],
-                article_sections=[Part.from_json(s) for s in data.get('article_sections', [])],
+                article_sections=[Part.from_json(s) for s in data.get('sections', [])],
                 tables=[StructuredTable.from_json(t) for t in data.get('tables', [])],
                 image=Image.from_json(i_data) if (i_data := data.get('image')) else None,
                 references=[Reference.from_json(r) for r in data.get('references', [])]
@@ -362,10 +362,10 @@ class StructuredContent:
             'version': Version.to_json(sc.version) if sc.version else None,
             'date_created': sc.date_created.isoformat() if sc.date_created else None,
             'date_modified': sc.date_modified.isoformat() if sc.date_modified else None,
-            'mainEntity': Entity.to_json(sc.main_entity) if sc.main_entity else None,
+            'main_entity': Entity.to_json(sc.main_entity) if sc.main_entity else None,
             'additional_entities': [Entity.to_json(e) for e in sc.additional_entities],
             'is_part_of': Project.to_json(sc.is_part_of) if sc.is_part_of else None,
-            'inLanguage': Language.to_json(sc.in_language) if sc.in_language else None,
+            'in_language': Language.to_json(sc.in_language) if sc.in_language else None,
             'infoboxes': [Part.to_json(p) for p in sc.infoboxes],
             'article_sections': [Part.to_json(s) for s in sc.article_sections],
             'tables': [StructuredTable.to_json(t) for t in sc.tables],

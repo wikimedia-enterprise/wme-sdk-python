@@ -15,23 +15,9 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install pipreqs
-        run: pip install pipreqs
-
-      - name: Generate requirements.txt
-        run: pipreqs . --force
-
       - name: Install dependencies
         run: |
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          
-      - name: Install http2
-        run: pip install httpx[http2]
-
-      - name: Install testing tools
-        run: |
-          pip install pytest
-          pip install coverage
+          pip install -r requirements.txt
 
       - name: Run tests with coverage
         run: coverage run -m pytest

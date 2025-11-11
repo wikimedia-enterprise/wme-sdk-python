@@ -17,9 +17,9 @@ class Code:
     def from_json(data: dict) -> 'Code':
         """Creates a Code instance from a dictionary"""
         return Code(
-            identifier=data['identifier'],
-            name=data['name'],
-            description=data['description']
+            identifier=data.get('identifier'),
+            name=data.get('name'),
+            description=data.get('description')
         )
 
     @staticmethod

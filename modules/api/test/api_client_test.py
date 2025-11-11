@@ -1,7 +1,7 @@
-# pylint: disable=W0212, too-many-locals, too-many-public-methods
+# pylint: disable=W0212, too-many-locals, too-many-public-methods, C0302
 
 """
-Unit tests for the `api_client` module.
+Unit tests for the api_client module.
 
 This file contains test suites for the Client, Request, and Filter classes,
 ensuring their methods and initializers behave as expected. Mocks are used
@@ -11,13 +11,23 @@ to isolate the tests from actual network calls.
 import unittest
 import json
 import tarfile
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock, patch, call
 from datetime import datetime
 from io import BytesIO
 from typing import cast
 import httpx
-from modules.api.api_client import Client, Request, Filter
-from modules.api.exceptions import APIStatusError, APIDataError, APIRequestError
+
+# --- Import all SDK components under test ---
+from modules.api.api_client import Client, Request, Filter, _TarfileStreamWrapper
+from modules.api.exceptions import APIStatusError, APIDataError, APIRequestError, DataModelError
+from modules.api.code import Code
+from modules.api.language import Language
+from modules.api.project import Project
+from modules.api.namespace import Namespace
+from modules.api.batch import Batch
+from modules.api.snapshot import Snapshot
+from modules.api.article import Article
+from modules.api.structuredcontent import StructuredContent
 
 CLIENT_LOGGER_NAME = 'modules.api.api_client'
 
@@ -27,37 +37,72 @@ class TestClient(unittest.TestCase):
 
     def setUp(self):
         """Set up a test client and mock the HTTP client before each test."""
-        self.client = Client(access_token="test_access_token")
+        self.client = Client()
         self.client.http_client = MagicMock(spec=httpx.Client)
 
-    def test_init(self):
-        """Tests that the Client initializes correctly with default values and with custom overrides."""
-        client = Client()
-        self.assertEqual(client.user_agent, "WME Python SDK")
-        self.assertEqual(client.base_url, "https://api.enterprise.wikimedia.com/")
-        self.assertIsInstance(client.http_client, httpx.Client)
-        self.assertEqual(client.http_client.headers['User-Agent'], "WME Python SDK")
-        self.assertEqual(client.http_client.timeout.read, 30.0)
+    @patch('modules.api.api_client.httpx.Client')
+    @patch('modules.api.api_client.httpx.HTTPTransport')
+    def test_init_defaults_and_overrides(self, mock_transport, mock_client):
+        """Tests that the Client initializes correctly, passing correct args to httpx."""
 
-        client = Client(
-            user_agent="My User Agent",
+        mock_transport.reset_mock()
+        mock_client.reset_mock()
+
+        default_client = Client()
+
+        self.assertEqual(default_client.user_agent, "WME Python SDK")
+        self.assertEqual(default_client.base_url, "https://api.enterprise.wikimedia.com/")
+        self.assertEqual(default_client.access_token, "")
+
+        mock_transport.assert_called_once_with(retries=3)
+
+        mock_client.assert_called_once()
+        client_call_args = mock_client.call_args[1]
+
+        self.assertEqual(client_call_args['headers']['User-Agent'], "WME Python SDK")
+        self.assertEqual(client_call_args['headers']['Authorization'], "Bearer ")
+        self.assertEqual(client_call_args['timeout'], 30.0)
+        self.assertEqual(client_call_args['transport'], mock_transport.return_value)
+        self.assertTrue(client_call_args['http2'])
+        self.assertTrue(client_call_args['follow_redirects'])
+
+        mock_transport.reset_mock()
+        mock_client.reset_mock()
+
+        custom_client = Client(
+            user_agent="Integration Test",
             base_url="https://example.com",
             realtime_url="https://realtime.example.com",
+            max_retries=5,
+            timeout=10.0,
             access_token="my_access_token",
             download_chunk_size=2048,
             download_concurrency=5,
             scanner_buffer_size=10000,
         )
-        self.assertEqual(client.user_agent, "My User Agent")
-        self.assertEqual(client.base_url, "https://example.com")
-        self.assertEqual(client.http_client.headers['Authorization'], "Bearer my_access_token")
-        self.assertEqual(client.download_chunk_size, 2048)
-        self.assertEqual(client.download_concurrency, 5)
+
+        self.assertEqual(custom_client.user_agent, "Integration Test")
+        self.assertEqual(custom_client.base_url, "https://example.com")
+        self.assertEqual(custom_client.realtime_url, "https://realtime.example.com")
+        self.assertEqual(custom_client.access_token, "my_access_token")
+        self.assertEqual(custom_client.download_chunk_size, 2048)
+        self.assertEqual(custom_client.download_concurrency, 5)
+        self.assertEqual(custom_client.scanner_buffer_size, 10000)
+
+        mock_transport.assert_called_once_with(retries=5)
+
+        mock_client.assert_called_once()
+        custom_call_args = mock_client.call_args[1]
+
+        self.assertEqual(custom_call_args['headers']['User-Agent'], "Integration Test")
+        self.assertEqual(custom_call_args['headers']['Authorization'], "Bearer my_access_token")
+        self.assertEqual(custom_call_args['timeout'], 10.0)
+        self.assertEqual(custom_call_args['transport'], mock_transport.return_value)
 
     def test_request(self):
         """
-        Verifies the internal `_request` method correctly calls the httpx client,
-        invokes `raise_for_status`, and returns the response.
+        Verifies the internal _request method correctly calls the httpx client,
+        invokes raise_for_status, and returns the response.
         """
         mock_http_client = cast(MagicMock, self.client.http_client)
         mock_response = MagicMock(spec=httpx.Response)
@@ -76,7 +121,7 @@ class TestClient(unittest.TestCase):
         self.assertEqual(result, mock_response)
 
     def test_request_raises_for_status_on_error(self):
-        """Tests that `_request` catches `httpx.HTTPStatusError` and re-raises it as `APIStatusError`."""
+        """Tests that _request catches httpx.HTTPStatusError and re-raises it as APIStatusError."""
         mock_http_client = cast(MagicMock, self.client.http_client)
         mock_request = MagicMock()
         mock_request.url = "http://test.com/path"
@@ -98,8 +143,8 @@ class TestClient(unittest.TestCase):
 
     def test_get_entity(self):
         """
-        Tests that `_get_entity` correctly calls `_request` with the proper URL and
-        JSON payload, and updates the passed-in `val` dictionary with the response.
+        Tests that _get_entity correctly calls _request with the proper URL and
+        JSON payload, and updates the passed-in val dictionary with the response.
         """
         req = Request()
         path = "test_path"
@@ -119,24 +164,44 @@ class TestClient(unittest.TestCase):
 
     def test_read_loop(self):
         """
-        Tests the `_read_loop` helper for processing newline-delimited JSON
+        Tests the _read_loop helper for processing newline-delimited JSON
         from a byte stream and invoking a callback for each line.
         """
         data = b'{"article1": "content1"}\n{"article2": "content2"}'
         mock_rdr = BytesIO(data)
-        mock_cbk = MagicMock()
+        mock_cbk = MagicMock(return_value=True)
         self.client._read_loop(mock_rdr, mock_cbk)
-        mock_cbk.assert_any_call({"article1": "content1"})
-        mock_cbk.assert_any_call({"article2": "content2"})
+
+        self.assertEqual(mock_cbk.call_count, 2)
+        mock_cbk.assert_has_calls([
+            call({"article1": "content1"}),
+            call({"article2": "content2"})
+        ])
+
+    def test_read_loop_stops_when_callback_returns_false(self):
+        """Tests that _read_loop correctly stops processing when the callback returns False."""
+        data = b'{"a": 1}\n{"b": 2}\n{"c": 3}'
+        mock_rdr = BytesIO(data)
+
+        mock_cbk = MagicMock(side_effect=[True, False, True])
+
+        result = self.client._read_loop(mock_rdr, mock_cbk)
+
+        self.assertFalse(result)
+        self.assertEqual(mock_cbk.call_count, 2)
+        mock_cbk.assert_has_calls([
+            call({"a": 1}),
+            call({"b": 2})
+        ])
 
     def test_read_loop_logs_warning_on_malformed_json_and_continues(self):
         """
-        Tests that `_read_loop` logs a warning for malformed JSON but continues
+        Tests that _read_loop logs a warning for malformed JSON but continues
         to process subsequent valid lines.
         """
         data = b'{"article1": "content1"}\n{"invalid" json}\n{"article2": "content2"}'
         mock_rdr = BytesIO(data)
-        mock_cbk = MagicMock()
+        mock_cbk = MagicMock(return_value=True)
 
         with self.assertLogs(CLIENT_LOGGER_NAME, level='WARNING') as cm:
             self.client._read_loop(mock_rdr, mock_cbk)
@@ -148,7 +213,7 @@ class TestClient(unittest.TestCase):
 
     def test_read_entity(self):
         """
-        Tests `_read_entity` calls `_request` with the correct URL
+        Tests _read_entity calls _request with the correct URL
         and passes the decoded JSON response content to the callback.
         """
         mock_cbk = MagicMock()
@@ -162,14 +227,15 @@ class TestClient(unittest.TestCase):
 
             expected_url = f"{self.client.base_url}v2/test_path"
             mock_request.assert_called_once_with('GET', expected_url)
+
             mock_cbk.assert_called_once_with({"key": "value"})
 
     @patch('modules.api.api_client.time.sleep')
     @patch('modules.api.api_client.time.monotonic')
     def test_rate_limit_waits_correctly(self, mock_monotonic, mock_sleep):
         """
-        Tests that the rate-limiting logic within `_request` correctly calculates
-        and applies `time.sleep` when calls are made within the `rate_limit_period`.
+        Tests that the rate-limiting logic within _request correctly calculates
+        and applies time.sleep when calls are made within the rate_limit_period.
         """
         self.client.rate_limit_period = 0.5
         self.client.last_request_time = 0
@@ -193,7 +259,7 @@ class TestClient(unittest.TestCase):
         based on the Content-Length and chunk size.
         """
         with patch.object(self.client, '_head_entity') as mock_head, \
-            patch.object(self.client, '_request') as mock_request:
+             patch.object(self.client, '_request') as mock_request:
 
             self.client.download_chunk_size = 1000
             mock_head.return_value = {'Content-Length': 2500}
@@ -210,9 +276,9 @@ class TestClient(unittest.TestCase):
 
             self.assertEqual(mock_request.call_count, 3)
 
-        actual_ranges = {call.kwargs['headers']['Range'] for call in mock_request.call_args_list}
-        expected_ranges = {'bytes=0-999', 'bytes=1000-1999', 'bytes=2000-2499'}
-        self.assertSetEqual(actual_ranges, expected_ranges)
+            actual_ranges = {call.kwargs['headers']['Range'] for call in mock_request.call_args_list}
+            expected_ranges = {'bytes=0-999', 'bytes=1000-1999', 'bytes=2000-2499'}
+            self.assertSetEqual(actual_ranges, expected_ranges)
 
     def test_head_entity_raises_on_invalid_content_length(self):
         """Tests that _head_entity raises APIDataError for a non-integer Content-Length."""
@@ -293,7 +359,6 @@ class TestClient(unittest.TestCase):
         """Tests that _get_entity raises APIDataError if the response is not valid JSON."""
         with patch.object(self.client, '_request') as mock_request:
             mock_response = MagicMock()
-            # Configure the mock to raise JSONDecodeError
             mock_response.json.side_effect = json.JSONDecodeError(
                 "Expecting value", "doc text", 0
             )
@@ -304,10 +369,10 @@ class TestClient(unittest.TestCase):
                 self.client._get_entity(Request(), "path", val)
 
     def test_read_loop_skips_empty_lines(self):
-        """Tests that `_read_loop` correctly skips empty lines or lines with only whitespace."""
+        """Tests that _read_loop correctly skips empty lines or lines with only whitespace."""
         data = b'{"a": 1}\n\n{"b": 2}\n   \n\t\n{"c": 3}'
         mock_rdr = BytesIO(data)
-        mock_cbk = MagicMock()
+        mock_cbk = MagicMock(return_value=True)
 
         self.client._read_loop(mock_rdr, mock_cbk)
 
@@ -318,7 +383,7 @@ class TestClient(unittest.TestCase):
 
     def test_head_entity_returns_parsed_headers(self):
         """
-        Tests `_head_entity` correctly parses headers, converting 'Content-Length'
+        Tests _head_entity correctly parses headers, converting 'Content-Length'
         to an int and stripping quotes from 'ETag'.
         """
         mock_response = MagicMock(spec=httpx.Response)
@@ -348,7 +413,7 @@ class TestClient(unittest.TestCase):
 
     def test_download_entity_returns_early_for_zero_content_length(self):
         """
-        Tests `_download_entity` performs a HEAD request but makes no subsequent
+        Tests _download_entity performs a HEAD request but makes no subsequent
         GET requests if 'Content-Length' is 0.
         """
         with patch.object(self.client, '_head_entity') as mock_head, \
@@ -385,8 +450,8 @@ class TestClient(unittest.TestCase):
     @patch('modules.api.api_client.logger.critical')
     def test_download_entity_handles_api_error_during_chunk_download(self, mock_logger_critical):
         """
-        Tests `_download_entity` catches `APIStatusError` during a chunk download,
-        logs a critical error, and re-raises it as `APIRequestError`.
+        Tests _download_entity catches APIStatusError during a chunk download,
+        logs a critical error, and re-raises it as APIRequestError.
         """
         self.client.download_chunk_size = 1000
 
@@ -406,8 +471,8 @@ class TestClient(unittest.TestCase):
     @patch('modules.api.api_client.logger.critical')
     def test_download_entity_handles_generic_exception_during_chunk_download(self, mock_logger_critical):
         """
-        Tests `_download_entity` catches a generic `Exception` during a chunk download,
-        logs a critical error, and re-raises it as `APIDataError`.
+        Tests _download_entity catches a generic Exception during a chunk download,
+        logs a critical error, and re-raises it as APIDataError.
         """
         self.client.download_chunk_size = 1000
         generic_error = ValueError("Something went wrong")
@@ -443,7 +508,7 @@ class TestClient(unittest.TestCase):
         mock_stream_context.__enter__.return_value = mock_response
         mock_http_client.stream.return_value = mock_stream_context
 
-        mock_cbk = MagicMock()
+        mock_cbk = MagicMock(return_value=True)
         req = Request(filters={"project": "enwiki"})
 
         self.client._subscribe_to_entity("articles", req, mock_cbk)
@@ -479,7 +544,7 @@ class TestClient(unittest.TestCase):
         mock_stream_context.__enter__.return_value = mock_response
         mock_http_client.stream.return_value = mock_stream_context
 
-        mock_cbk = MagicMock()
+        mock_cbk = MagicMock(return_value=True)
         self.client._subscribe_to_entity("articles", Request(), mock_cbk)
 
         self.assertEqual(mock_cbk.call_count, 2)
@@ -547,7 +612,7 @@ class TestClient(unittest.TestCase):
 
         tar_buffer.seek(0)
 
-        mock_cbk = MagicMock()
+        mock_cbk = MagicMock(return_value=True)
         self.client.read_all(tar_buffer, mock_cbk)
 
         self.assertEqual(mock_cbk.call_count, 3)
@@ -575,12 +640,14 @@ class TestClient(unittest.TestCase):
         Tests that read_all correctly catches a tarfile.TarError and re-raises
         it as an APIDataError.
         """
-        mock_tarfile_open.side_effect = tarfile.TarError("Mocked tarfile error")
+        with patch('modules.api.api_client.gzip_ng_threaded.open') as mock_gzip:
+            mock_gzip.return_value.__enter__.return_value = BytesIO(b'dummy data')
+            mock_tarfile_open.side_effect = tarfile.TarError("Mocked tarfile error")
 
-        with self.assertRaisesRegex(APIDataError, "Failed to read tar archive: Mocked tarfile error"):
-            self.client.read_all(BytesIO(b'dummy data'), MagicMock())
+            with self.assertRaisesRegex(APIDataError, "Failed to read tar archive: Mocked tarfile error"):
+                self.client.read_all(BytesIO(b'dummy gzip data'), MagicMock())
 
-        mock_tarfile_open.assert_called_once()
+            mock_tarfile_open.assert_called_once()
 
     def test_set_access_token(self):
         """
@@ -609,7 +676,7 @@ class TestClient(unittest.TestCase):
         self.assertEqual(self.client._get_batches_prefix(test_time), expected_prefix)
 
     @patch.object(Client, '_get_entity', autospec=True)
-    def test_all_get_entity_wrappers(self, mock_get_entity):
+    def test_all_get_entity_wrappers_call_correct_paths(self, mock_get_entity):
         """
         Tests all simple wrappers around _get_entity to ensure they call it
         with the correct path format.
@@ -640,22 +707,30 @@ class TestClient(unittest.TestCase):
             'get_structured_snapshot': ([test_id_str], f"snapshots/structured-contents/{test_id_str}")
         }
 
-        for method_name, (args, expected_path) in test_cases.items():
-            with self.subTest(method=method_name):
-                method_to_call = getattr(self.client, method_name)
-                full_args = args + [req]
-                method_to_call(*full_args)
+        with patch.object(Code, 'from_json'), \
+             patch.object(Language, 'from_json'), \
+             patch.object(Project, 'from_json'), \
+             patch.object(Namespace, 'from_json'), \
+             patch.object(Batch, 'from_json'), \
+             patch.object(Snapshot, 'from_json'), \
+             patch.object(Article, 'from_json'), \
+             patch.object(StructuredContent, 'from_json'):
 
-                call_args = mock_get_entity.call_args[0]
-                self.assertEqual(call_args[2], expected_path)
-                mock_get_entity.reset_mock()
+            for method_name, (args, expected_path) in test_cases.items():
+                with self.subTest(method=method_name):
+                    method_to_call = getattr(self.client, method_name)
+                    full_args = args + [req]
+                    method_to_call(*full_args)
 
+                    call_args = mock_get_entity.call_args[0]
+                    self.assertEqual(call_args[2], expected_path)
+                    mock_get_entity.reset_mock()
 
     @patch.object(Client, '_head_entity', autospec=True)
     @patch.object(Client, '_read_entity', autospec=True)
     @patch.object(Client, '_download_entity', autospec=True)
     @patch.object(Client, '_subscribe_to_entity', autospec=True)
-    def test_all_action_wrappers(self, mock_subscribe, mock_download, mock_read, mock_head):
+    def test_all_action_wrappers_call_correct_paths(self, mock_subscribe, mock_download, mock_read, mock_head):
         """
         Tests wrappers for head, read, download, and subscribe methods to ensure
         they call the correct internal method with the correct path.
@@ -682,22 +757,194 @@ class TestClient(unittest.TestCase):
             'stream_articles': (mock_subscribe, [req, mock_cbk], "articles"),
         }
 
-        for method_name, (mock_to_check, args, expected_path) in test_cases.items():
-            with self.subTest(method=method_name):
-                method_to_call = getattr(self.client, method_name)
-                method_to_call(*args)
+        with patch.object(Batch, 'from_json'), \
+             patch.object(Snapshot, 'from_json'), \
+             patch.object(Article, 'from_json'), \
+             patch.object(StructuredContent, 'from_json'):
 
-                mock_to_check.assert_called_once()
-                call_args = mock_to_check.call_args[0]
-                self.assertEqual(call_args[1], expected_path)
-                mock_to_check.reset_mock()
+            for method_name, (mock_to_check, args, expected_path) in test_cases.items():
+                with self.subTest(method=method_name):
+                    method_to_call = getattr(self.client, method_name)
+                    method_to_call(*args)
+
+                    mock_to_check.assert_called_once()
+                    call_args = mock_to_check.call_args[0]
+                    self.assertEqual(call_args[1], expected_path)
+                    mock_to_check.reset_mock()
+
+    @patch.object(Client, '_get_entity', autospec=True)
+    def test_get_entity_methods_parse_data_correctly(self, mock_get_entity):
+        """
+        Tests that public get_* methods correctly parse the JSON response
+        from _get_entity into the expected model objects.
+        """
+
+        def create_side_effect(json_to_use):
+            """Creates a side-effect function that populates 'val'."""
+
+            def mock_side_effect(*args):
+                val = args[3]
+                if isinstance(val, list):
+                    val.extend(json_to_use)
+                elif isinstance(val, dict):
+                    val.update(json_to_use)
+            return mock_side_effect
+
+        test_cases = {
+            'get_codes': ([], Code, [{"identifier": "c1"}], list, "c1", "identifier"),
+            'get_languages': ([], Language, [{"identifier": "l1"}], list, "l1", "identifier"),
+            'get_projects': ([], Project, [{"identifier": "p1"}], list, "p1", "identifier"),
+            'get_namespaces': ([], Namespace, [{"identifier": 1}], list, 1, "identifier"),
+            'get_batches': ([datetime(2024,1,1)], Batch, [{"identifier": "b1"}], list, "b1", "identifier"),
+            'get_snapshots': ([], Snapshot, [{"identifier": "s1"}], list, "s1", "identifier"),
+            'get_chunks': (["s1"], Snapshot, [{"identifier": "c1"}], list, "c1", "identifier"),
+            'get_articles': (["Test"], Article, [{"name": "a1"}], list, "a1", "name"),
+            'get_structured_contents': (["Test"], StructuredContent, [{"name": "sc1"}], list, "sc1", "name"),
+            'get_structured_snapshots': ([], StructuredContent, [{"identifier": "scs1"}], list, "scs1", "identifier"),
+            'get_code': (["c1"], Code, {"identifier": "c1"}, Code, "c1", "identifier"),
+            'get_language': (["l1"], Language, {"identifier": "l1"}, Language, "l1", "identifier"),
+            'get_project': (["p1"], Project, {"identifier": "p1"}, Project, "p1", "identifier"),
+            'get_namespace': ([1], Namespace, {"identifier": 1}, Namespace, 1, "identifier"),
+            'get_batch': ([datetime(2024,1,1), "b1"], Batch, {"identifier": "b1"}, Batch, "b1", "identifier"),
+            'get_snapshot': (["s1"], Snapshot, {"identifier": "s1"}, Snapshot, "s1", "identifier"),
+            'get_chunk': (["s1", "c1"], Snapshot, {"identifier": "c1"}, Snapshot, "c1", "identifier"),
+            'get_structured_snapshot': (["scs1"], StructuredContent, {"identifier": "scs1"}, StructuredContent, "scs1", "identifier"),
+        }
+
+        for method_name, (args, model, mock_json, expected_type, expected_id, id_attr) in test_cases.items():
+
+            with self.subTest(method=method_name):
+                mock_get_entity.side_effect = create_side_effect(mock_json)
+
+                method_to_call = getattr(self.client, method_name)
+                full_args = args + [Request()]
+
+                with patch.object(model, 'from_json', wraps=model.from_json) as mock_from_json:
+                    result = method_to_call(*full_args)
+
+                    self.assertIsInstance(result, expected_type)
+                    self.assertGreater(mock_from_json.call_count, 0)
+
+                    if expected_type is list:
+                        self.assertEqual(getattr(result[0], id_attr), expected_id)
+                    else:
+                        self.assertEqual(getattr(result, id_attr), expected_id)
+
+                mock_get_entity.reset_mock()
+
+    @patch.object(Client, '_read_entity', autospec=True)
+    @patch.object(Client, '_subscribe_to_entity', autospec=True)
+    def test_read_action_methods_parse_data_correctly(self, mock_subscribe, mock_read):
+        """
+        Tests that public read_* and stream_* methods correctly parse JSON
+        and pass the model object to the user's callback.
+        """
+
+        def create_side_effect(json_to_use):
+            """Creates a side-effect function that calls the internal callback."""
+
+            def mock_internal_method(*args):
+                internal_cbk_arg = args[-1]
+                internal_cbk_arg(json_to_use)
+            return mock_internal_method
+
+        test_cases = {
+            'read_batch': (mock_read, [datetime(2024,1,1), "b1"], Batch, {"identifier": "b1"}, "identifier", "b1"),
+            'read_snapshot': (mock_read, ["s1"], Snapshot, {"identifier": "s1"}, "identifier", "s1"),
+            'read_chunk': (mock_read, ["s1", "c1"], Snapshot, {"identifier": "c1"}, "identifier", "c1"),
+            'read_structured_snapshot': (mock_read, ["scs1"], StructuredContent, {"identifier": "scs1"}, "identifier", "scs1"),
+            'stream_articles': (mock_subscribe, [Request()], Article, {"name": "a1"}, "name", "a1"),
+        }
+
+        for method_name, (mock_to_patch, args, model, mock_json, id_attr, expected_id) in test_cases.items():
+
+            with self.subTest(method=method_name):
+
+                mock_to_patch.side_effect = create_side_effect(mock_json)
+
+                user_callback = MagicMock(return_value=True)
+                method_to_call = getattr(self.client, method_name)
+                full_args = args + [user_callback]
+
+                with patch.object(model, 'from_json', wraps=model.from_json) as mock_from_json:
+                    method_to_call(*full_args)
+
+                    mock_from_json.assert_called_once_with(mock_json)
+                    user_callback.assert_called_once()
+
+                    result_obj = user_callback.call_args[0][0]
+                    self.assertIsInstance(result_obj, model)
+                    self.assertEqual(getattr(result_obj, id_attr), expected_id)
+
+                mock_to_patch.reset_mock()
+
+    def test_get_entity_methods_raise_apidataerror_on_model_error(self):
+        """
+        Tests that if a model's from_json raises DataModelError, the
+        client's get_* method correctly raises APIDataError.
+        """
+        test_cases = {
+            'get_codes': ([], Code),
+            'get_code': (["c1"], Code),
+            'get_articles': (["Test"], Article),
+        }
+
+        with patch.object(Client, '_get_entity', autospec=True) as mock_get_entity:
+            for method_name, (args, model) in test_cases.items():
+                with self.subTest(method=method_name):
+
+                    def mock_get_entity_side_effect(_self, _req, _path, val):
+                        if isinstance(val, list):
+                            val.extend([{"id": 1}])
+                        elif isinstance(val, dict):
+                            val.update({"id": 1})
+
+                    mock_get_entity.side_effect = mock_get_entity_side_effect
+                    mock_get_entity.reset_mock()
+
+                    with patch.object(model, 'from_json', side_effect=DataModelError("Test Model Error")):
+                        method_to_call = getattr(self.client, method_name)
+                        full_args = args + [Request()]
+
+                        with self.assertRaisesRegex(APIDataError, "Test Model Error"):
+                            method_to_call(*full_args)
+
+                        mock_get_entity.assert_called_once()
+
+class TestTarfileStreamWrapper(unittest.TestCase):
+    """Test suite for the _TarfileStreamWrapper class."""
+
+    def setUp(self):
+        self.mock_stream = MagicMock(spec=BytesIO)
+        self.wrapper = _TarfileStreamWrapper(self.mock_stream)
+
+    def test_passthrough_methods(self):
+        """Tests that methods are passed through to the underlying stream."""
+        self.wrapper.read(10)
+        self.mock_stream.read.assert_called_once_with(10)
+
+        self.wrapper.close()
+        self.mock_stream.close.assert_called_once()
+
+        self.wrapper.flush()
+        self.mock_stream.flush.assert_called_once()
+
+        self.mock_stream.closed = True
+        self.assertTrue(self.wrapper.closed)
+
+    def test_wrapper_methods(self):
+        """Tests the methods implemented by the wrapper itself."""
+        self.assertTrue(self.wrapper.readable())
+        self.assertFalse(self.wrapper.writable())
+        self.assertFalse(self.wrapper.seekable())
+
 
 class TestRequest(unittest.TestCase):
     """Test suite for the Request class."""
     def test_init(self):
         """
         Tests Request initialization with default values and with all parameters specified,
-        verifying `to_json` output for both.
+        verifying to_json output for both.
         """
         req = Request()
         self.assertIsNone(req.since)
@@ -707,6 +954,7 @@ class TestRequest(unittest.TestCase):
         self.assertEqual(req.parts, [])
         self.assertEqual(req.offsets, {})
         self.assertEqual(req.since_per_partition, {})
+        self.assertEqual(req.to_json(), {})
 
         since = datetime(2024, 1, 1)
         fields = ["field1", "field2"]
@@ -715,47 +963,73 @@ class TestRequest(unittest.TestCase):
         parts = [1, 2, 3]
         offsets = {1: 10, 2: 20}
         since_per_partition = {1: datetime(2024, 1, 1), 2: datetime(2024, 1, 2)}
-        req = Request(since,
-                      fields,
+        req = Request(since=since,
+                      fields=fields,
                       filters=filters,
                       limit=limit,
                       parts=parts,
                       offsets=offsets,
                       since_per_partition=since_per_partition)
+
         self.assertEqual(req.since, since)
         self.assertEqual(req.fields, fields)
-        expected_filters_json = [{"field": "field", "value": "value"}]
-        self.assertEqual(req.to_json().get('filters'), expected_filters_json)
         self.assertEqual(req.limit, limit)
         self.assertEqual(req.parts, parts)
         self.assertEqual(req.offsets, offsets)
         self.assertEqual(req.since_per_partition, since_per_partition)
 
+        expected_json = {
+            'since': '2024-01-01T00:00:00',
+            'fields': ['field1', 'field2'],
+            'filters': [{'field': 'field', 'value': 'value'}],
+            'limit': 10,
+            'parts': [1, 2, 3],
+            'offsets': {1: 10, 2: 20},
+            'since_per_partition': {1: '2024-01-01T00:00:00', 2: '2024-01-02T00:00:00'}
+        }
+        self.assertDictEqual(req.to_json(), expected_json)
+
     def test_init_with_dict_filters(self):
         """
-        Tests that `Request` correctly converts a `dict` of filters into
-        the expected list format in its `to_json` output.
+        Tests that Request correctly converts a dict of filters into
+        the expected list format in its to_json output.
         """
         filters_dict = {'project': 'enwiki', 'namespace': '0'}
         req = Request(filters=filters_dict)
 
-        expected_json = [
+        expected_json_filters = [
             {'field': 'project', 'value': 'enwiki'},
             {'field': 'namespace', 'value': '0'}
         ]
 
-        self.assertCountEqual(req.to_json()['filters'], expected_json)
+        self.assertCountEqual(req.to_json()['filters'], expected_json_filters)
+
+    def test_to_json_omits_empty_and_none_values(self):
+        """Tests that to_json correctly omits keys with None or empty values."""
+        req = Request(
+            since=None,
+            fields=[],
+            filters=None,
+            limit=10,
+            parts=[],
+            offsets={},
+        )
+        expected_json = {'limit': 10}
+        self.assertDictEqual(req.to_json(), expected_json)
 
 
 class TestFilter(unittest.TestCase):
     """Test suite for the Filter class."""
-    def test_init(self):
-        """Tests basic instantiation and attribute assignment of the Filter class."""
+    def test_init_and_to_dict(self):
+        """Tests basic instantiation and to_dict conversion of the Filter class."""
         field = "test_field"
         value = "test_value"
         filter_obj = Filter(field, value)
         self.assertEqual(filter_obj.field, field)
         self.assertEqual(filter_obj.value, value)
+
+        expected_dict = {'field': 'test_field', 'value': 'test_value'}
+        self.assertDictEqual(filter_obj.to_dict(), expected_dict)
 
 
 if __name__ == '__main__':
