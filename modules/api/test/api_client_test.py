@@ -11,6 +11,8 @@ to isolate the tests from actual network calls.
 import unittest
 import json
 import tarfile
+import gzip
+import time
 from unittest.mock import MagicMock, patch, call
 from datetime import datetime
 from io import BytesIO
@@ -18,7 +20,7 @@ from typing import cast
 import httpx
 
 # --- Import all SDK components under test ---
-from modules.api.api_client import Client, Request, Filter, _TarfileStreamWrapper
+from modules.api.api_client import Client, Request, Filter
 from modules.api.exceptions import APIStatusError, APIDataError, APIRequestError, DataModelError
 from modules.api.code import Code
 from modules.api.language import Language
@@ -165,12 +167,13 @@ class TestClient(unittest.TestCase):
     def test_read_loop(self):
         """
         Tests the _read_loop helper for processing newline-delimited JSON
-        from a byte stream and invoking a callback for each line.
+        from a response stream and invoking a callback for each line.
         """
-        data = b'{"article1": "content1"}\n{"article2": "content2"}'
-        mock_rdr = BytesIO(data)
+        mock_response = MagicMock(spec=httpx.Response)
+        mock_response.iter_lines.return_value = [b'{"article1": "content1"}', b'{"article2": "content2"}']
+
         mock_cbk = MagicMock(return_value=True)
-        self.client._read_loop(mock_rdr, mock_cbk)
+        self.client._read_loop(mock_response, mock_cbk)
 
         self.assertEqual(mock_cbk.call_count, 2)
         mock_cbk.assert_has_calls([
@@ -180,12 +183,12 @@ class TestClient(unittest.TestCase):
 
     def test_read_loop_stops_when_callback_returns_false(self):
         """Tests that _read_loop correctly stops processing when the callback returns False."""
-        data = b'{"a": 1}\n{"b": 2}\n{"c": 3}'
-        mock_rdr = BytesIO(data)
+        mock_response = MagicMock(spec=httpx.Response)
+        mock_response.iter_lines.return_value = [b'{"a": 1}', b'{"b": 2}', b'{"c": 3}']
 
         mock_cbk = MagicMock(side_effect=[True, False, True])
 
-        result = self.client._read_loop(mock_rdr, mock_cbk)
+        result = self.client._read_loop(mock_response, mock_cbk)
 
         self.assertFalse(result)
         self.assertEqual(mock_cbk.call_count, 2)
@@ -199,12 +202,16 @@ class TestClient(unittest.TestCase):
         Tests that _read_loop logs a warning for malformed JSON but continues
         to process subsequent valid lines.
         """
-        data = b'{"article1": "content1"}\n{"invalid" json}\n{"article2": "content2"}'
-        mock_rdr = BytesIO(data)
+        mock_response = MagicMock(spec=httpx.Response)
+        mock_response.iter_lines.return_value = [
+            b'{"article1": "content1"}',
+            b'{"invalid" json}',
+            b'{"article2": "content2"}'
+        ]
         mock_cbk = MagicMock(return_value=True)
 
         with self.assertLogs(CLIENT_LOGGER_NAME, level='WARNING') as cm:
-            self.client._read_loop(mock_rdr, mock_cbk)
+            self.client._read_loop(mock_response, mock_cbk)
             self.assertIn("Skipping line due to JSON decode error", cm.output[0])
 
         mock_cbk.assert_any_call({"article1": "content1"})
@@ -212,23 +219,22 @@ class TestClient(unittest.TestCase):
         self.assertEqual(mock_cbk.call_count, 2)
 
     def test_read_entity(self):
-        """
-        Tests _read_entity calls _request with the correct URL
-        and passes the decoded JSON response content to the callback.
-        """
+        """Tests _read_entity calls stream() correctly and processes data."""
         mock_cbk = MagicMock()
+        mock_http_client = cast(MagicMock, self.client.http_client)
 
-        with patch.object(self.client, '_request', autospec=True) as mock_request:
-            mock_response = MagicMock()
-            mock_response.content = b'{"key": "value"}'
-            mock_request.return_value = mock_response
+        mock_response = MagicMock(spec=httpx.Response)
+        mock_response.iter_lines.return_value = [b'{"key": "value"}']
 
-            self.client._read_entity("test_path", mock_cbk)
+        mock_stream_context = MagicMock()
+        mock_stream_context.__enter__.return_value = mock_response
+        mock_http_client.stream.return_value = mock_stream_context
 
-            expected_url = f"{self.client.base_url}v2/test_path"
-            mock_request.assert_called_once_with('GET', expected_url)
+        self.client._read_entity("test_path", mock_cbk)
 
-            mock_cbk.assert_called_once_with({"key": "value"})
+        mock_http_client.stream.assert_called_once()
+        self.assertEqual(mock_http_client.stream.call_args.args[0], 'GET')
+        mock_cbk.assert_called_once_with({"key": "value"})
 
     @patch('modules.api.api_client.time.sleep')
     @patch('modules.api.api_client.time.monotonic')
@@ -256,29 +262,42 @@ class TestClient(unittest.TestCase):
     def test_download_entity_calculates_chunks_correctly(self):
         """
         Tests that _download_entity creates the correct Range requests
-        based on the Content-Length and chunk size.
+        based on the Content-Length, uses the stream client, and writes safely.
         """
-        with patch.object(self.client, '_head_entity') as mock_head, \
-             patch.object(self.client, '_request') as mock_request:
+        mock_http_client = cast(MagicMock, self.client.http_client)
 
+        with patch.object(self.client, '_head_entity') as mock_head:
             self.client.download_chunk_size = 1000
             mock_head.return_value = {'Content-Length': 2500}
 
-            mock_response = MagicMock(spec=httpx.Response)
-            mock_response.content = b''
-            mock_request.return_value = mock_response
+            def mock_stream_side_effect(*_, **kwargs):
+                headers = kwargs.get('headers', {})
+                range_str = headers.get('Range', 'bytes=0-0')
+
+                start, end = map(int, range_str.replace('bytes=', '').split('-'))
+                chunk_length = end - start + 1
+
+                mock_response = MagicMock(spec=httpx.Response)
+                mock_response.iter_bytes.return_value = [b'x' * chunk_length]
+
+                mock_stream_context = MagicMock()
+                mock_stream_context.__enter__.return_value = mock_response
+                return mock_stream_context
+
+            mock_http_client.stream.side_effect = mock_stream_side_effect
 
             mock_writer = BytesIO()
-
             self.client._download_entity("some/path", mock_writer)
 
             mock_head.assert_called_once_with("some/path")
 
-            self.assertEqual(mock_request.call_count, 3)
+            self.assertEqual(mock_http_client.stream.call_count, 3)
 
-            actual_ranges = {call.kwargs['headers']['Range'] for call in mock_request.call_args_list}
+            actual_ranges = {call.kwargs['headers']['Range'] for call in mock_http_client.stream.call_args_list}
             expected_ranges = {'bytes=0-999', 'bytes=1000-1999', 'bytes=2000-2499'}
             self.assertSetEqual(actual_ranges, expected_ranges)
+
+            self.assertEqual(len(mock_writer.getvalue()), 2500)
 
     def test_head_entity_raises_on_invalid_content_length(self):
         """Tests that _head_entity raises APIDataError for a non-integer Content-Length."""
@@ -370,11 +389,13 @@ class TestClient(unittest.TestCase):
 
     def test_read_loop_skips_empty_lines(self):
         """Tests that _read_loop correctly skips empty lines or lines with only whitespace."""
-        data = b'{"a": 1}\n\n{"b": 2}\n   \n\t\n{"c": 3}'
-        mock_rdr = BytesIO(data)
+        mock_response = MagicMock(spec=httpx.Response)
+        mock_response.iter_lines.return_value = [
+            b'{"a": 1}', b'', b'{"b": 2}', b'   ', b'\t', b'{"c": 3}'
+        ]
         mock_cbk = MagicMock(return_value=True)
 
-        self.client._read_loop(mock_rdr, mock_cbk)
+        self.client._read_loop(mock_response, mock_cbk)
 
         self.assertEqual(mock_cbk.call_count, 3)
         mock_cbk.assert_any_call({"a": 1})
@@ -429,38 +450,43 @@ class TestClient(unittest.TestCase):
     def test_download_entity_without_chunking(self):
         """Tests that _download_entity downloads in a single chunk when chunk size is not positive."""
         self.client.download_chunk_size = -1
+        mock_http_client = cast(MagicMock, self.client.http_client)
 
-        with patch.object(self.client, '_head_entity') as mock_head, \
-             patch.object(self.client, '_request') as mock_request:
-
+        with patch.object(self.client, '_head_entity') as mock_head:
             mock_head.return_value = {'Content-Length': 2500}
+
             mock_response = MagicMock(spec=httpx.Response)
-            mock_response.content = b'a' * 2500
-            mock_request.return_value = mock_response
+            mock_response.iter_bytes.return_value = [b'a' * 2500]
+
+            mock_stream_context = MagicMock()
+            mock_stream_context.__enter__.return_value = mock_response
+            mock_http_client.stream.return_value = mock_stream_context
 
             mock_writer = BytesIO()
             self.client._download_entity("some/path", mock_writer)
 
             mock_head.assert_called_once_with("some/path")
-            mock_request.assert_called_once()
+            mock_http_client.stream.assert_called_once()
 
-            called_range = mock_request.call_args.kwargs['headers']['Range']
+            called_range = mock_http_client.stream.call_args.kwargs['headers']['Range']
             self.assertEqual(called_range, 'bytes=0-2499')
+            self.assertEqual(len(mock_writer.getvalue()), 2500)
 
     @patch('modules.api.api_client.logger.critical')
     def test_download_entity_handles_api_error_during_chunk_download(self, mock_logger_critical):
         """
-        Tests _download_entity catches APIStatusError during a chunk download,
-        logs a critical error, and re-raises it as APIRequestError.
+        Tests _download_entity catches APIStatusError (or APIRequestError) during a
+        chunk download, logs a critical error, and re-raises it as APIRequestError.
         """
         self.client.download_chunk_size = 1000
 
         mock_request_obj = MagicMock(spec=httpx.Request)
         api_error = APIStatusError("Server Error", request=mock_request_obj, response=MagicMock())
 
-        with patch.object(self.client, '_head_entity', return_value={'Content-Length': 3000}), \
-             patch.object(self.client, '_request', side_effect=api_error):
+        mock_http_client = cast(MagicMock, self.client.http_client)
+        mock_http_client.stream.side_effect = api_error
 
+        with patch.object(self.client, '_head_entity', return_value={'Content-Length': 3000}):
             with self.assertRaises(APIRequestError):
                 self.client._download_entity("some/path", BytesIO())
 
@@ -477,9 +503,10 @@ class TestClient(unittest.TestCase):
         self.client.download_chunk_size = 1000
         generic_error = ValueError("Something went wrong")
 
-        with patch.object(self.client, '_head_entity', return_value={'Content-Length': 3000}), \
-             patch.object(self.client, '_request', side_effect=generic_error):
+        mock_http_client = cast(MagicMock, self.client.http_client)
+        mock_http_client.stream.side_effect = generic_error
 
+        with patch.object(self.client, '_head_entity', return_value={'Content-Length': 3000}):
             with self.assertRaises(APIDataError):
                 self.client._download_entity("some/path", BytesIO())
 
@@ -516,9 +543,10 @@ class TestClient(unittest.TestCase):
         expected_url = f"{self.client.realtime_url}v2/articles"
         mock_http_client.stream.assert_called_once()
         call_args = mock_http_client.stream.call_args
-        self.assertEqual(call_args.args[0], 'GET')
+        self.assertEqual(call_args.args[0], 'POST')
         self.assertEqual(call_args.args[1], expected_url)
         self.assertIn('json', call_args.kwargs)
+        self.assertNotIn('params', call_args.kwargs)
         self.assertIn('headers', call_args.kwargs)
 
         mock_response.raise_for_status.assert_called_once()
@@ -549,8 +577,7 @@ class TestClient(unittest.TestCase):
 
         self.assertEqual(mock_cbk.call_count, 2)
         mock_logger_warning.assert_called_once_with(
-            "Skipping malformed JSON line in stream: %s",
-            stream_content[1]
+            "Skipping line due to JSON decode error"
         )
 
     def test_subscribe_to_entity_raises_on_http_status_error(self):
@@ -703,7 +730,7 @@ class TestClient(unittest.TestCase):
             'get_chunk': ([test_id_str, test_id_str], f"snapshots/{test_id_str}/chunks/{test_id_str}"),
             'get_articles': ([test_id_str], f"articles/{test_id_str}"),
             'get_structured_contents': ([test_id_str], f"structured-contents/{test_id_str}"),
-            'get_structured_snapshots': ([], "snapshots/structured-contents/"),
+            'get_structured_snapshots': ([], "snapshots/structured-contents"),
             'get_structured_snapshot': ([test_id_str], f"snapshots/structured-contents/{test_id_str}")
         }
 
@@ -727,10 +754,10 @@ class TestClient(unittest.TestCase):
                     mock_get_entity.reset_mock()
 
     @patch.object(Client, '_head_entity', autospec=True)
-    @patch.object(Client, '_read_entity', autospec=True)
+    @patch.object(Client, '_read_archive_entity', autospec=True)
     @patch.object(Client, '_download_entity', autospec=True)
     @patch.object(Client, '_subscribe_to_entity', autospec=True)
-    def test_all_action_wrappers_call_correct_paths(self, mock_subscribe, mock_download, mock_read, mock_head):
+    def test_all_action_wrappers_call_correct_paths(self, mock_subscribe, mock_download, mock_read_archive, mock_head):
         """
         Tests wrappers for head, read, download, and subscribe methods to ensure
         they call the correct internal method with the correct path.
@@ -743,16 +770,16 @@ class TestClient(unittest.TestCase):
 
         test_cases = {
             'head_batch': (mock_head, [test_time, test_id], "batches/2001-01-15/12/test-id/download"),
-            'read_batch': (mock_read, [test_time, test_id, mock_cbk], "bbatches/2001-01-15/12/test-id/download"),
+            'read_batch': (mock_read_archive, [test_time, test_id, mock_cbk], "batches/2001-01-15/12/test-id/download"),
             'download_batch': (mock_download, [test_time, test_id, mock_writer], "batches/2001-01-15/12/test-id/download"),
             'head_snapshot': (mock_head, [test_id], "snapshots/test-id/download"),
-            'read_snapshot': (mock_read, [test_id, mock_cbk], "snapshots/test-id/download"),
+            'read_snapshot': (mock_read_archive, [test_id, mock_cbk], "snapshots/test-id/download"),
             'download_snapshot': (mock_download, [test_id, mock_writer], "snapshots/test-id/download"),
             'head_chunk': (mock_head, [test_id, test_id], "snapshots/test-id/chunks/test-id/download"),
-            'read_chunk': (mock_read, [test_id, test_id, mock_cbk], "snapshots/test-id/chunks/test-id/download"),
+            'read_chunk': (mock_read_archive, [test_id, test_id, mock_cbk], "snapshots/test-id/chunks/test-id/download"),
             'download_chunk': (mock_download, [test_id, test_id, mock_writer], "snapshots/test-id/chunks/test-id/download"),
             'head_structured_snapshot': (mock_head, [test_id], "snapshots/structured-contents/test-id/download"),
-            'read_structured_snapshot': (mock_read, [test_id, mock_cbk], "snapshots/structured-contents/test-id/download"),
+            'read_structured_snapshot': (mock_read_archive, [test_id, mock_cbk], "snapshots/structured-contents/test-id/download"),
             'download_structured_snapshot': (mock_download, [test_id, mock_writer], "snapshots/structured-contents/test-id/download"),
             'stream_articles': (mock_subscribe, [req, mock_cbk], "articles"),
         }
@@ -832,9 +859,9 @@ class TestClient(unittest.TestCase):
 
                 mock_get_entity.reset_mock()
 
-    @patch.object(Client, '_read_entity', autospec=True)
+    @patch.object(Client, '_read_archive_entity', autospec=True)
     @patch.object(Client, '_subscribe_to_entity', autospec=True)
-    def test_read_action_methods_parse_data_correctly(self, mock_subscribe, mock_read):
+    def test_read_action_methods_parse_data_correctly(self, mock_subscribe, mock_read_archive):
         """
         Tests that public read_* and stream_* methods correctly parse JSON
         and pass the model object to the user's callback.
@@ -842,17 +869,16 @@ class TestClient(unittest.TestCase):
 
         def create_side_effect(json_to_use):
             """Creates a side-effect function that calls the internal callback."""
-
             def mock_internal_method(*args):
                 internal_cbk_arg = args[-1]
                 internal_cbk_arg(json_to_use)
             return mock_internal_method
 
         test_cases = {
-            'read_batch': (mock_read, [datetime(2024,1,1), "b1"], Batch, {"identifier": "b1"}, "identifier", "b1"),
-            'read_snapshot': (mock_read, ["s1"], Snapshot, {"identifier": "s1"}, "identifier", "s1"),
-            'read_chunk': (mock_read, ["s1", "c1"], Snapshot, {"identifier": "c1"}, "identifier", "c1"),
-            'read_structured_snapshot': (mock_read, ["scs1"], StructuredContent, {"identifier": "scs1"}, "identifier", "scs1"),
+            'read_batch': (mock_read_archive, [datetime(2024,1,1), "b1"], Batch, {"identifier": "b1"}, "identifier", "b1"),
+            'read_snapshot': (mock_read_archive, ["s1"], Snapshot, {"identifier": "s1"}, "identifier", "s1"),
+            'read_chunk': (mock_read_archive, ["s1", "c1"], Snapshot, {"identifier": "c1"}, "identifier", "c1"),
+            'read_structured_snapshot': (mock_read_archive, ["scs1"], StructuredContent, {"identifier": "scs1"}, "identifier", "scs1"),
             'stream_articles': (mock_subscribe, [Request()], Article, {"name": "a1"}, "name", "a1"),
         }
 
@@ -878,66 +904,294 @@ class TestClient(unittest.TestCase):
 
                 mock_to_patch.reset_mock()
 
-    def test_get_entity_methods_raise_apidataerror_on_model_error(self):
-        """
-        Tests that if a model's from_json raises DataModelError, the
-        client's get_* method correctly raises APIDataError.
-        """
-        test_cases = {
-            'get_codes': ([], Code),
-            'get_code': (["c1"], Code),
-            'get_articles': (["Test"], Article),
-        }
+    def test_get_methods_raise_apidataerror_on_model_error(self):
+        """Tests that bad JSON structure raises APIDataError in get_* wrappers."""
+        req = Request()
+        now = datetime(2026, 1, 1)
 
-        with patch.object(Client, '_get_entity', autospec=True) as mock_get_entity:
-            for method_name, (args, model) in test_cases.items():
+        def mock_get_entity(_request, _path, container):
+            if isinstance(container, list):
+                container.append({"dummy": "data"})
+            elif isinstance(container, dict):
+                container.update({"dummy": "data"})
+
+        with patch.object(self.client, '_get_entity', side_effect=mock_get_entity), \
+             patch.object(Code, 'from_json', side_effect=DataModelError("mock")), \
+             patch.object(Language, 'from_json', side_effect=DataModelError("mock")), \
+             patch.object(Project, 'from_json', side_effect=DataModelError("mock")), \
+             patch.object(Namespace, 'from_json', side_effect=DataModelError("mock")), \
+             patch.object(Batch, 'from_json', side_effect=DataModelError("mock")), \
+             patch.object(Snapshot, 'from_json', side_effect=DataModelError("mock")), \
+             patch.object(Article, 'from_json', side_effect=DataModelError("mock")), \
+             patch.object(StructuredContent, 'from_json', side_effect=DataModelError("mock")):
+
+            test_cases = [
+                ('get_codes', [req]),
+                ('get_code', ['id', req]),
+                ('get_languages', [req]),
+                ('get_language', ['id', req]),
+                ('get_projects', [req]),
+                ('get_project', ['id', req]),
+                ('get_namespaces', [req]),
+                ('get_namespace', [1, req]),
+                ('get_batches', [now, req]),
+                ('get_batch', [now, 'id', req]),
+                ('get_snapshots', [req]),
+                ('get_snapshot', ['id', req]),
+                ('get_chunks', ['sid', req]),
+                ('get_chunk', ['sid', 'id', req]),
+                ('get_articles', ['name', req]),
+                ('get_structured_contents', ['name', req]),
+                ('get_structured_snapshots', [req]),
+                ('get_structured_snapshot', ['id', req])
+            ]
+
+            for method_name, args in test_cases:
                 with self.subTest(method=method_name):
+                    method_to_call = getattr(self.client, method_name)
+                    with self.assertRaises(APIDataError):
+                        method_to_call(*args)
 
-                    def mock_get_entity_side_effect(_self, _req, _path, val):
-                        if isinstance(val, list):
-                            val.extend([{"id": 1}])
-                        elif isinstance(val, dict):
-                            val.update({"id": 1})
+    def test_read_archive_entity_manages_temp_file(self):
+        """Tests that temporary files are created, used, and cleaned up in the finally block."""
+        mock_cbk = MagicMock()
 
-                    mock_get_entity.side_effect = mock_get_entity_side_effect
-                    mock_get_entity.reset_mock()
+        with patch.object(self.client, '_download_entity') as mock_dl, \
+             patch.object(self.client, 'read_all') as mock_read:
 
-                    with patch.object(model, 'from_json', side_effect=DataModelError("Test Model Error")):
-                        method_to_call = getattr(self.client, method_name)
-                        full_args = args + [Request()]
+            self.client._read_archive_entity("some/path", mock_cbk)
 
-                        with self.assertRaisesRegex(APIDataError, "Test Model Error"):
-                            method_to_call(*full_args)
+            mock_dl.assert_called_once()
+            mock_read.assert_called_once()
 
-                        mock_get_entity.assert_called_once()
+    def test_read_all_catches_bad_gzip(self):
+        """Tests that passing corrupt gzip bytes raises APIDataError."""
+        bad_rdr = BytesIO(b"this is just plain text, not a gzip archive")
+        with self.assertRaises(APIDataError) as ctx:
+            self.client.read_all(bad_rdr, MagicMock())
+        self.assertIn("Failed to decompress Gzip archive", str(ctx.exception))
 
-class TestTarfileStreamWrapper(unittest.TestCase):
-    """Test suite for the _TarfileStreamWrapper class."""
+    @patch.object(Client, '_head_entity', return_value={'Content-Length': 0})
+    def test_download_entity_skips_zero_length(self, _mock_head):
+        """Tests that a 0-byte content length exits the download cleanly."""
+        mock_writer = MagicMock()
+        self.client._download_entity("fake/path", mock_writer)
+        mock_writer.write.assert_not_called()
 
-    def setUp(self):
-        self.mock_stream = MagicMock(spec=BytesIO)
-        self.wrapper = _TarfileStreamWrapper(self.mock_stream)
+    def test_download_entity_aborts_on_generic_wikimedia_error(self):
+        """Tests that thread pool cancels remaining chunks if a base API error occurs."""
+        self.client.download_chunk_size = 100
+        mock_writer = MagicMock()
 
-    def test_passthrough_methods(self):
-        """Tests that methods are passed through to the underlying stream."""
-        self.wrapper.read(10)
-        self.mock_stream.read.assert_called_once_with(10)
+        with patch.object(self.client, '_head_entity', return_value={'Content-Length': 200}):
+            mock_stream = MagicMock()
+            mock_stream.__enter__.side_effect = APIDataError("Corrupt Chunk Data")
 
-        self.wrapper.close()
-        self.mock_stream.close.assert_called_once()
+            with patch.object(self.client.http_client, 'stream', return_value=mock_stream):
+                with self.assertRaises(APIDataError):
+                    self.client._download_entity("path", mock_writer)
 
-        self.wrapper.flush()
-        self.mock_stream.flush.assert_called_once()
+    def test_read_all_catches_tar_error(self):
+        """Tests that passing a valid gzip file containing garbage tar data raises APIDataError."""
+        valid_gzip_garbage_tar = gzip.compress(b"this is not a tar archive")
+        bad_rdr = BytesIO(valid_gzip_garbage_tar)
 
-        self.mock_stream.closed = True
-        self.assertTrue(self.wrapper.closed)
+        with self.assertRaises(APIDataError) as ctx:
+            self.client.read_all(bad_rdr, MagicMock())
 
-    def test_wrapper_methods(self):
-        """Tests the methods implemented by the wrapper itself."""
-        self.assertTrue(self.wrapper.readable())
-        self.assertFalse(self.wrapper.writable())
-        self.assertFalse(self.wrapper.seekable())
+        self.assertIn("Failed to read tar archive", str(ctx.exception))
 
+    def test_inner_callbacks_catch_datamodelerror_and_continue(self):
+        """Tests that inner parsing callbacks catch model errors but keep the stream alive."""
+        def mock_read_archive(_path, cbk):
+            result = cbk({"invalid_key": "bad_data"})
+            self.assertTrue(result)
+
+        def mock_subscribe(_path, _req, cbk):
+            result = cbk({"invalid_key": "bad_data"})
+            self.assertTrue(result)
+
+        with patch.object(self.client, '_read_archive_entity', side_effect=mock_read_archive), \
+             patch.object(self.client, '_subscribe_to_entity', side_effect=mock_subscribe):
+
+            with patch.object(Batch, 'from_json', side_effect=DataModelError("mock")), \
+                 patch.object(Snapshot, 'from_json', side_effect=DataModelError("mock")), \
+                 patch.object(StructuredContent, 'from_json', side_effect=DataModelError("mock")), \
+                 patch.object(Article, 'from_json', side_effect=DataModelError("mock")):
+
+                mock_user_cbk = MagicMock()
+                now = datetime(2026, 1, 1)
+
+                self.client.read_batch(now, "id", mock_user_cbk)
+                self.client.read_snapshot("id", mock_user_cbk)
+                self.client.read_chunk("sid", "id", mock_user_cbk)
+                self.client.read_structured_snapshot("id", mock_user_cbk)
+                self.client.stream_articles(Request(), mock_user_cbk)
+
+        mock_user_cbk.assert_not_called()
+
+    def test_download_entity_generic_exception_aborts_threads(self):
+        """Tests that a standard ValueError in a thread aborts the pool."""
+        self.client.download_chunk_size = 1000
+        mock_writer = MagicMock()
+
+        with patch.object(self.client, '_head_entity', return_value={'Content-Length': 2000}):
+            with patch.object(self.client.http_client, 'stream', side_effect=ValueError("Thread Boom")):
+                with self.assertRaises(APIDataError) as ctx:
+                    self.client._download_entity("path", mock_writer)
+                self.assertIn("unexpected error", str(ctx.exception))
+
+    def test_read_all_comprehensive_archive_paths(self):
+        """Covers malformed JSON skipping, early breaks, and TarErrors in read_all."""
+
+        tar_stream = BytesIO()
+        with tarfile.open(fileobj=tar_stream, mode='w') as tar:
+            file_data = b'{"a": 1}\n{"invalid" json}\n{"b": 2}'
+            info = tarfile.TarInfo(name="test.ndjson")
+            info.size = len(file_data)
+            tar.addfile(info, BytesIO(file_data))
+
+        gz_stream = BytesIO()
+        with gzip.GzipFile(fileobj=gz_stream, mode='w') as gz:
+            gz.write(tar_stream.getvalue())
+        gz_stream.seek(0)
+
+        mock_cbk = MagicMock(side_effect=[True, False])
+
+        self.client.read_all(gz_stream, mock_cbk)
+
+        self.assertEqual(mock_cbk.call_count, 2)
+
+        gz_garbage_stream = BytesIO()
+        with gzip.GzipFile(fileobj=gz_garbage_stream, mode='w') as gz:
+            gz.write(b"this is not a tar archive")
+        gz_garbage_stream.seek(0)
+
+        with self.assertRaises(APIDataError) as ctx:
+            self.client.read_all(gz_garbage_stream, MagicMock())
+        self.assertIn("Failed to read tar archive", str(ctx.exception))
+
+    def test_inner_callbacks_handle_datamodelerror(self):
+        """Extracts the inner parsing_callbacks and forces them to handle DataModelErrors."""
+        now = datetime(2026, 1, 1)
+        mock_user_cbk = MagicMock()
+
+        def fake_read_archive(_path, inner_cbk):
+            result = inner_cbk({"invalid": "data"})
+            self.assertTrue(result)
+
+        def fake_subscribe(_path, _req, inner_cbk):
+            result = inner_cbk({"invalid": "data"})
+            self.assertTrue(result)
+
+        with patch.object(self.client, '_read_archive_entity', side_effect=fake_read_archive), \
+             patch.object(self.client, '_subscribe_to_entity', side_effect=fake_subscribe):
+
+            with patch.object(Batch, 'from_json', side_effect=DataModelError("mock")), \
+                 patch.object(Snapshot, 'from_json', side_effect=DataModelError("mock")), \
+                 patch.object(StructuredContent, 'from_json', side_effect=DataModelError("mock")), \
+                 patch.object(Article, 'from_json', side_effect=DataModelError("mock")):
+
+                self.client.read_batch(now, "id", mock_user_cbk)
+                self.client.read_snapshot("id", mock_user_cbk)
+                self.client.read_chunk("sid", "id", mock_user_cbk)
+                self.client.read_structured_snapshot("id", mock_user_cbk)
+                self.client.stream_articles(Request(), mock_user_cbk)
+
+        mock_user_cbk.assert_not_called()
+
+    def test_read_all_archive_exceptions_and_breaks(self):
+        """Covers JSON decoding errors, manual loop breaks, and TarErrors."""
+
+        tar_buf = BytesIO()
+        with tarfile.open(fileobj=tar_buf, mode='w') as tar:
+            data = b"bad json\n{\"good\": \"json\"}\n"
+            tinfo = tarfile.TarInfo(name="test.ndjson")
+            tinfo.size = len(data)
+            tar.addfile(tinfo, BytesIO(data))
+
+        gz_buf = BytesIO()
+        with gzip.GzipFile(fileobj=gz_buf, mode='w') as gz:
+            gz.write(tar_buf.getvalue())
+        gz_buf.seek(0)
+
+        mock_cbk = MagicMock(return_value=False)
+        self.client.read_all(gz_buf, mock_cbk)
+        mock_cbk.assert_called_once_with({"good": "json"})
+
+        gz_bad_tar = BytesIO()
+        with gzip.GzipFile(fileobj=gz_bad_tar, mode='w') as gz:
+            gz.write(b"this is garbage tar data")
+        gz_bad_tar.seek(0)
+
+        with self.assertRaises(APIDataError):
+            self.client.read_all(gz_bad_tar, MagicMock())
+
+    def test_inner_callbacks_handle_datamodelerror_correctly(self):
+        """Captures the inner parsing callbacks and forces them to hit the except block."""
+        callbacks = []
+
+        def capture_archive_cbk(_path, cbk):
+            callbacks.append(cbk)
+
+        def capture_subscribe_cbk(_path, _req, cbk):
+            callbacks.append(cbk)
+
+        with patch.object(self.client, '_read_archive_entity', side_effect=capture_archive_cbk), \
+             patch.object(self.client, '_subscribe_to_entity', side_effect=capture_subscribe_cbk), \
+             patch.object(Batch, 'from_json', side_effect=DataModelError("err")), \
+             patch.object(Snapshot, 'from_json', side_effect=DataModelError("err")), \
+             patch.object(Article, 'from_json', side_effect=DataModelError("err")), \
+             patch.object(StructuredContent, 'from_json', side_effect=DataModelError("err")):
+
+            user_cbk = MagicMock()
+            now = datetime(2026, 1, 1)
+
+            self.client.read_batch(now, "id", user_cbk)
+            self.client.read_snapshot("id", user_cbk)
+            self.client.read_chunk("sid", "id", user_cbk)
+            self.client.read_structured_snapshot("id", user_cbk)
+            self.client.stream_articles(Request(), user_cbk)
+
+            for inner_cbk in callbacks:
+                result = inner_cbk({"dummy": "data"})
+                self.assertTrue(result)
+
+            user_cbk.assert_not_called()
+
+    def test_download_chunk_aborts_gracefully(self):
+        """Hits the thread abort block naturally by simulating a concurrent chunk failure."""
+
+        self.client.download_chunk_size = 100
+        self.client.download_concurrency = 2
+
+        def mock_stream_behavior(_method, _url, headers=None, **_kwargs):
+            cm = MagicMock()
+            mock_req = MagicMock()
+            if headers and 'bytes=100-199' in headers.get('Range', ''):
+                cm.__enter__.side_effect = APIRequestError(
+                    "Network dropped!",
+                    request=mock_req)
+            else:
+                def slow_iter(**_kw):
+                    while True:
+                        time.sleep(0.05)
+                        yield b"fake_data"
+                cm.__enter__.return_value.iter_bytes = slow_iter
+            return cm
+
+        with patch.object(self.client, '_head_entity', return_value={'Content-Length': 200}), \
+             patch.object(self.client.http_client, 'stream', side_effect=mock_stream_behavior):
+
+            with self.assertRaises(APIRequestError):
+                self.client._download_entity("path", MagicMock())
+
+    @patch.object(Client, '_head_entity', return_value={'Content-Length': 0})
+    def test_download_entity_zero_length(self, _mock_head):
+        """Tests that a 0-byte content length exits the download cleanly."""
+        writer = BytesIO()
+        self.client._download_entity("fake/path", writer)
+        self.assertEqual(writer.tell(), 0)
 
 class TestRequest(unittest.TestCase):
     """Test suite for the Request class."""
@@ -985,7 +1239,7 @@ class TestRequest(unittest.TestCase):
             'limit': 10,
             'parts': [1, 2, 3],
             'offsets': {1: 10, 2: 20},
-            'since_per_partition': {1: '2024-01-01T00:00:00', 2: '2024-01-02T00:00:00'}
+            'since_per_partition': {'1': '2024-01-01T00:00:00', '2': '2024-01-02T00:00:00'}
         }
         self.assertDictEqual(req.to_json(), expected_json)
 
@@ -1017,6 +1271,15 @@ class TestRequest(unittest.TestCase):
         expected_json = {'limit': 10}
         self.assertDictEqual(req.to_json(), expected_json)
 
+    def test_request_to_json_with_dates(self):
+        """Tests that Request formats datetime objects to ISO-8601 strings correctly."""
+        now = datetime(2026, 1, 1, 12, 0, 0)
+        req = Request(since=now, since_per_partition={0: now}, fields=["a"])
+        json_data = req.to_json()
+
+        self.assertEqual(json_data['since'], "2026-01-01T12:00:00")
+        self.assertEqual(json_data['since_per_partition']['0'], "2026-01-01T12:00:00")
+        self.assertEqual(json_data['fields'], ["a"])
 
 class TestFilter(unittest.TestCase):
     """Test suite for the Filter class."""

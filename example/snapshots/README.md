@@ -25,7 +25,7 @@ Before running this script, you must have your environment set up.
 This script is designed to be run from the **virtual enviroment** of the SDK. Once within the virtual enviroment, execute the script:
 
 ```bash
-python -m example.metadata.metadata
+python -m example.snapshots.snapshots
 ```
 
 ## Use Cases

@@ -24,7 +24,7 @@ python -m example.demo.locations.app
 Open your browser and go to the following URL:
 
 ```bash
-http://127.0.0.1::8000/
+http://127.0.0.1:8000/
 ```
 
 ## How the Application Works:

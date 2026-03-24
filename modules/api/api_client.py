@@ -1,4 +1,4 @@
-# pylint: disable=too-few-public-methods, too-many-instance-attributes, too-many-public-methods, too-many-arguments, too-many-positional-arguments
+# pylint: disable=too-few-public-methods, too-many-instance-attributes, too-many-public-methods, too-many-arguments, too-many-positional-arguments, R0914
 
 """
 Provides a client for interacting with the Wikimedia Enterprise API.
@@ -8,11 +8,13 @@ as well as helper classes `Request` and `Filter` for building queries.
 """
 
 import datetime
-import io
 import json
 import logging
 import tarfile
 import time
+import threading
+import tempfile
+import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Any, Callable, Dict, List, Optional, Union
 import typing
@@ -20,7 +22,7 @@ import gzip
 from abc import ABC, abstractmethod
 from zlib_ng import gzip_ng_threaded
 import httpx
-from .exceptions import APIDataError, APIRequestError, APIStatusError, DataModelError
+from .exceptions import APIDataError, APIRequestError, APIStatusError, DataModelError, WikimediaAPIError
 from .code import Code
 from .language import Language
 from .project import Project
@@ -87,18 +89,8 @@ class Request:
                  parts: Optional[List[int]] = None,
                  offsets: Optional[Dict[int, int]] = None,
                  since_per_partition: Optional[Dict[int, datetime.datetime]] = None,
-                 filters: Optional[Union[Dict[str, str], List[Any]]] = None):
-        """Initializes a request object with query parameters.
+                 filters: Optional[Union[Dict[str, Any], List[Any]]] = None):
 
-        Args:
-            since: Retrieve items created since this timestamp.
-            fields: A list of specific fields to return in the response.
-            limit: The maximum number of items to return.
-            parts: A list of partitions to query from.
-            offsets: A dictionary mapping partition numbers to offsets.
-            since_per_partition: A dictionary mapping partition numbers to "since" timestamps.
-            filters: Filters to apply to the query. Can be a simple dictionary or a list of Filter objects.
-        """
         self.since = since
         self.fields = fields if fields is not None else []
         self.limit = limit
@@ -106,14 +98,22 @@ class Request:
         self.offsets = offsets if offsets is not None else {}
         self.since_per_partition = since_per_partition if since_per_partition is not None else {}
 
+        self._filters_list = []
         if isinstance(filters, dict):
             self._filters_list = self._convert_dict_to_filters(filters)
         elif isinstance(filters, list):
-            self._filters_list = [f.to_dict() for f in filters]
-        else:
-            self._filters_list = []
+            for f in filters:
+                if isinstance(f, dict):
+                    if 'field' in f and 'value' in f:
+                        self._filters_list.append(f)
+                    else:
+                        self._filters_list.extend(self._convert_dict_to_filters(f))
+                elif hasattr(f, 'to_dict'):
+                    self._filters_list.append(f.to_dict())
+                else:
+                    logger.warning("Ignoring invalid filter type in list: %s", type(f))
 
-    def _convert_dict_to_filters(self, filters_dict: Dict[str, str]) -> List[Dict[str, str]]:
+    def _convert_dict_to_filters(self, filters_dict: Dict[str, Any]) -> List[Dict[str, Any]]:
         """Converts a {'field': 'value'} dict to [{'field':..., 'value':...}]"""
         return [{"field": key, "value": value} for key, value in filters_dict.items()]
 
@@ -134,55 +134,11 @@ class Request:
             'limit': self.limit,
             'parts': self.parts if self.parts else None,
             'offsets': self.offsets if self.offsets else None,
-            'since_per_partition': {k: v.isoformat() for k, v in self.since_per_partition.items()} if self.since_per_partition else None
+            'since_per_partition': {str(k): v.isoformat() for k, v in self.since_per_partition.items()}
         }
 
         # Remove keys with None or empty values
         return {k: v for k, v in result.items() if v not in [None, [], {}, '']}
-
-class _TarfileStreamWrapper:
-    """
-    Wraps the non-seekable file object from tarfile.extractfile()
-    to make it compatible with io.TextIOWrapper, which expects
-    a .seekable() method to exist.
-    """
-    def __init__(self, tarfile_stream: typing.IO[bytes]):
-        self._stream = tarfile_stream
-
-    @property
-    def closed(self) -> bool:
-        """Returns True if the underlying stream is closed, False otherwise."""
-        return self._stream.closed
-
-    def read(self, *args, **kwargs):
-        """Reads and returns data from the underlying stream, passing along any arguments."""
-        return self._stream.read(*args, **kwargs)
-
-    def readable(self):
-        """Returns True to indicate the stream is readable."""
-        return True
-
-    def seekable(self):
-        """
-        Returns False to indicate the stream is not seekable.
-        This is the primary purpose of this wrapper.
-        """
-        return False
-
-    def writable(self):
-        """Returns False to indicate the stream is not writable."""
-        return False
-
-    def close(self):
-        """Closes the underlying tarfile stream."""
-        self._stream.close()
-
-    def flush(self):
-        """
-        Flushes the write buffers of the underlying stream, if applicable.
-        This method was missing.
-        """
-        self._stream.flush()
 
 class API(ABC):
     """
@@ -194,44 +150,54 @@ class API(ABC):
         """Updates the access token for the client instance."""
 
     @abstractmethod
-    def get_codes(self, req: Request) -> List[Code]:
+    def get_codes(self, req: Optional[Request] = None) -> List[Code]:
         """Retrieves codes"""
+        req = req or Request()
 
     @abstractmethod
-    def get_code(self, idr: str, req: Request) -> Code:
+    def get_code(self, idr: str, req: Optional[Request] = None) -> Code:
         """Retrieves a code"""
+        req = req or Request()
 
     @abstractmethod
-    def get_languages(self, req: Request) -> List[Language]:
+    def get_languages(self, req: Optional[Request] = None) -> List[Language]:
         """Retrieves languages"""
+        req = req or Request()
 
     @abstractmethod
-    def get_language(self, idr: str, req: Request) -> Language:
+    def get_language(self, idr: str, req: Optional[Request] = None) -> Language:
         """Retrieves a language"""
+        req = req or Request()
 
     @abstractmethod
-    def get_projects(self, req: Request) -> List[Project]:
+    def get_projects(self, req: Optional[Request] = None) -> List[Project]:
         """Retrieves projects"""
+        req = req or Request()
 
     @abstractmethod
-    def get_project(self, idr: str, req: Request) -> Project:
+    def get_project(self, idr: str, req: Optional[Request] = None) -> Project:
         """Retrieves a project."""
+        req = req or Request()
 
     @abstractmethod
-    def get_namespaces(self, req: Request) -> List[Namespace]:
+    def get_namespaces(self, req: Optional[Request] = None) -> List[Namespace]:
         """Retrieves namespaces"""
+        req = req or Request()
 
     @abstractmethod
-    def get_namespace(self, idr: int, req: Request) -> Namespace:
+    def get_namespace(self, idr: int, req: Optional[Request] = None) -> Namespace:
         """Retrieves a namespace"""
+        req = req or Request()
 
     @abstractmethod
-    def get_batches(self, timestamp: datetime.datetime, req: Request) -> List[Batch]:
+    def get_batches(self, timestamp: datetime.datetime, req: Optional[Request] = None) -> List[Batch]:
         """Retrieves data batches."""
+        req = req or Request()
 
     @abstractmethod
-    def get_batch(self, timestamp: datetime.datetime, idr: str, req: Request) -> Batch:
+    def get_batch(self, timestamp: datetime.datetime, idr: str, req: Optional[Request] = None) -> Batch:
         """Retrieves a single batch."""
+        req = req or Request()
 
     @abstractmethod
     def head_batch(self, timestamp: datetime.datetime, idr: str) -> dict:
@@ -242,16 +208,18 @@ class API(ABC):
         """Reads and processes the content of a specific data batch via a callback."""
 
     @abstractmethod
-    def download_batch(self, timestamp: datetime.datetime, idr: str, writer: io.BytesIO):
+    def download_batch(self, timestamp: datetime.datetime, idr: str, writer: typing.BinaryIO):
         """Downloads a batch."""
 
     @abstractmethod
-    def get_snapshots(self, req: Request) -> List[Snapshot]:
+    def get_snapshots(self, req: Optional[Request] = None) -> List[Snapshot]:
         """Retrieves snapshots"""
+        req = req or Request()
 
     @abstractmethod
-    def get_snapshot(self, idr: str, req: Request) -> Snapshot:
+    def get_snapshot(self, idr: str, req: Optional[Request] = None) -> Snapshot:
         """Retrieves a single snapshot"""
+        req = req or Request()
 
     @abstractmethod
     def head_snapshot(self, idr: str) -> dict:
@@ -262,16 +230,18 @@ class API(ABC):
         """Reads a single snapshot"""
 
     @abstractmethod
-    def download_snapshot(self, idr: str, writer: io.BytesIO):
+    def download_snapshot(self, idr: str, writer: typing.BinaryIO):
         """Downloads a single snapshot"""
 
     @abstractmethod
-    def get_chunks(self, sid: str, req: Request) -> List[Snapshot]:
+    def get_chunks(self, sid: str, req: Optional[Request] = None) -> List[Snapshot]:
         """Retrieves chunks"""
+        req = req or Request()
 
     @abstractmethod
-    def get_chunk(self, sid: str, idr: str, req: Request) -> Snapshot:
+    def get_chunk(self, sid: str, idr: str, req: Optional[Request] = None) -> Snapshot:
         """Retrieves a chunk"""
+        req = req or Request()
 
     @abstractmethod
     def head_chunk(self, sid: str, idr: str) -> dict:
@@ -282,32 +252,36 @@ class API(ABC):
         """Reads a chunk"""
 
     @abstractmethod
-    def download_chunk(self, sid: str, idr: str, writer: io.BytesIO):
+    def download_chunk(self, sid: str, idr: str, writer: typing.BinaryIO):
         """Downloads a chunk"""
 
     @abstractmethod
-    def get_articles(self, name: str, req: Request) -> List[Article]:
+    def get_articles(self, name: str, req: Optional[Request] = None) -> List[Article]:
         """Retrieves articles"""
+        req = req or Request()
 
     @abstractmethod
-    def get_structured_contents(self, name: str, req: Request) -> List[StructuredContent]:
+    def get_structured_contents(self, name: str, req: Optional[Request] = None) -> List[StructuredContent]:
         """Retrieves structured contents"""
+        req = req or Request()
 
     @abstractmethod
     def stream_articles(self, req: Request, cbk: ArticleReadCallback):
         """Streams articles"""
 
     @abstractmethod
-    def read_all(self, rdr: io.BytesIO, cbk: InternalReadCallback):
+    def read_all(self, rdr: typing.BinaryIO, cbk: InternalReadCallback):
         """Contains different types"""
 
     @abstractmethod
-    def get_structured_snapshots(self, req: Request) -> List[StructuredContent]:
+    def get_structured_snapshots(self, req: Optional[Request] = None) -> List[StructuredContent]:
         """Retrieves structured content snapshots."""
+        req = req or Request()
 
     @abstractmethod
-    def get_structured_snapshot(self, idr: str, req: Request) -> StructuredContent:
+    def get_structured_snapshot(self, idr: str, req: Optional[Request] = None) -> StructuredContent:
         """Retrieves a single structured content snapshot."""
+        req = req or Request()
 
     @abstractmethod
     def head_structured_snapshot(self, idr: str) -> dict:
@@ -318,7 +292,7 @@ class API(ABC):
         """Reads a structured content snapshot."""
 
     @abstractmethod
-    def download_structured_snapshot(self, idr: str, writer: io.BytesIO):
+    def download_structured_snapshot(self, idr: str, writer: typing.BinaryIO):
         """Downloads a structured content snapshot."""
 
 
@@ -372,12 +346,12 @@ class Client(API):
 
         self.base_url = kwargs.get('base_url', "https://api.enterprise.wikimedia.com/")
         self.realtime_url = kwargs.get('realtime_url', "https://realtime.enterprise.wikimedia.com/")
-        self.download_chunk_size = kwargs.get('download_chunk_size', -1)
+        self.download_chunk_size = kwargs.get('download_chunk_size', 20971520)
         self.download_concurrency = kwargs.get('download_concurrency', 10)
         self.scanner_buffer_size = kwargs.get('scanner_buffer_size', 20971520)
 
     def _rate_limit_wait(self):
-        if self.rate_limit_period == 0:
+        if self.rate_limit_period <= 0:
             return
 
         elapsed = time.monotonic() - self.last_request_time
@@ -453,44 +427,47 @@ class Client(API):
         else:
             raise APIDataError("Mismatched types between expected container and JSON response.")
 
-    def _read_loop(self, rdr: typing.BinaryIO, cbk: InternalReadCallback):
-        """
-        Processes a byte stream of newline-delimited JSON (NDJSON).
-
-        Reads from the stream line by line, decodes each line as JSON,
-        and calls the callback function with the resulting object.
-        Skips empty lines and logs a warning for malformed JSON.
-
-        Args:
-            rdr (io.BytesIO): A byte stream containing NDJSON data.
-            cbk (Callable[[dict], Any]): A callback function to process each JSON object.
-        """
-        scanner = io.TextIOWrapper(rdr, encoding="utf-8")
-        for line in scanner:
-            if not line.strip():
+    def _read_loop(self, response: httpx.Response, cbk: InternalReadCallback):
+        """Processes a streaming network response as NDJSON."""
+        for line in response.iter_lines():
+            clean_line = line.strip()
+            if not clean_line:
                 continue
             try:
-                article = json.loads(line)
-                if not cbk(article):
+                if not cbk(json.loads(clean_line)):
                     return False
             except json.JSONDecodeError:
-                logger.warning("Skipping line due to JSON decode error", exc_info=True)
-
+                logger.warning("Skipping line due to JSON decode error")
         return True
 
     def _read_entity(self, path: str, cbk: Callable[[dict], Any]):
         """
-        Internal helper to fetch a resource and process it as NDJSON.
-
-        Makes a GET request to the given `path` and passes the response
-        content to `_read_loop` for processing.
-
-        Args:
-            path (str): The API endpoint path (e.g., "snapshots/123/download").
-            cbk (Callable[[dict], Any]): A callback function to process each JSON object.
+        Fetches a resource and processes it as NDJSON via a stream.
+        This prevents loading the entire file into memory.
         """
-        response = self._request('GET', f"{self.base_url}v2/{path}")
-        self._read_loop(io.BytesIO(response.content), cbk)
+        url = f"{self.base_url}v2/{path}"
+
+        with self.http_client.stream('GET', url) as response:
+            response.raise_for_status()
+            self._read_loop(response, cbk)
+
+    def _read_archive_entity(self, path: str, cbk: InternalReadCallback):
+        """
+        Safely downloads a .tar.gz archive to a temporary file on disk,
+        processes it using read_all, and deletes the file.
+        """
+        fd, temp_path = tempfile.mkstemp(suffix=".tar.gz")
+        os.close(fd)
+
+        try:
+            with open(temp_path, 'wb') as writer:
+                self._download_entity(path, writer)
+
+            with open(temp_path, 'rb') as rdr:
+                self.read_all(rdr, cbk)
+        finally:
+            if os.path.exists(temp_path):
+                os.remove(temp_path)
 
     def _head_entity(self, path: str) -> dict:
         """
@@ -524,7 +501,7 @@ class Client(API):
         }
         return headers
 
-    def _download_entity(self, path: str, writer: io.BytesIO):
+    def _download_entity(self, path: str, writer: typing.BinaryIO):
         """
         Downloads a large entity, in parallel chunks, into `writer`.
 
@@ -545,7 +522,7 @@ class Client(API):
         """
         full_path = f"{self.base_url}v2/{path}"
         headers = self._head_entity(path)
-        content_length = headers['Content-Length']
+        content_length = headers.get('Content-Length', 0)
 
         if content_length == 0:
             return
@@ -556,51 +533,64 @@ class Client(API):
         else:
             chunks = [(0, content_length - 1)]
 
+        write_lock = threading.Lock()
+        abort_event = threading.Event()
+
         def download_chunk(start, end):
+            if abort_event.is_set():
+                return
+
             range_header = {'Range': f"bytes={start}-{end}"}
-            res = self._request('GET', full_path, headers=range_header)
-            writer.seek(start)
-            writer.write(res.content)
+
+            with self.http_client.stream('GET', full_path, headers=range_header) as res:
+                res.raise_for_status()
+
+                current_pos = start
+                for chunk in res.iter_bytes(chunk_size=8192):
+                    if abort_event.is_set():
+                        return
+
+                    with write_lock:
+                        writer.seek(current_pos)
+                        writer.write(chunk)
+
+                    current_pos += len(chunk)
 
         with ThreadPoolExecutor(max_workers=self.download_concurrency) as executor:
             futures = {executor.submit(download_chunk, start, end): (start, end) for start, end in chunks}
+
             for future in as_completed(futures):
                 try:
                     future.result()
-                except (APIRequestError, APIStatusError) as e:
-                    logger.critical("A download chunk failed, cancelling remaining downloads.")
-                    for f in futures:
-                        f.cancel()
-                    raise APIRequestError(
-                        f"A download chunk failed: {e}",
-                        request=e.request
-                ) from e
-                except Exception as e:
-                    logger.critical("A download chunk failed with an unexpected error, cancelling remaining downloads.")
-                    for f in futures:
-                        f.cancel()
-                    raise APIDataError(
-                        f"A download chunk failed with an unexpected error: {e}"
-                    ) from e
+                except WikimediaAPIError as e:
+                    abort_event.set()
 
-    def _subscribe_to_entity(self, path: str, req: Request, cbk: InternalReadCallback):
+                    for f in futures:
+                        f.cancel()
+
+                    if isinstance(e, (APIRequestError, APIStatusError)):
+                        logger.critical("A download chunk failed, cancelling remaining downloads.")
+                        raise APIRequestError(
+                            f"A download chunk failed: {e}",
+                            request=getattr(e, 'request', None)
+                        ) from e
+
+                    logger.critical("A data processing error occurred during download.")
+                    raise
+                except Exception as e:
+                    abort_event.set()
+                    for f in futures:
+                        f.cancel()
+                    logger.critical("A download chunk failed with an unexpected error, cancelling remaining downloads.")
+                    raise APIDataError(f"A download chunk failed with an unexpected error: {e}") from e
+
+    def _subscribe_to_entity(self, path: str, req: Optional[Request], cbk: InternalReadCallback):
         """
         Internal helper to connect to a real-time stream endpoint.
-
-        Makes a streaming GET request to the given `path` on the `realtime_url`.
-        It processes the incoming NDJSON stream, calling the callback for
-        each valid JSON object received.
-
-        Args:
-            path (str): The API endpoint path (e.g., "articles").
-            req (Request): The request payload object, typically containing filters.
-            cbk (Callable[[dict], Any]): A callback function to process each JSON object.
-
-        Raises:
-            APIStatusError: If the stream connection returns a 4xx or 5xx status.
-            APIRequestError: If an error occurs during the stream connection.
+        Uses POST to safely transmit complex JSON filters without URL encoding issues.
         """
         json_payload = req.to_json() if req else None
+
         headers = {
             'Cache-Control': 'no-cache',
             'Accept': 'application/x-ndjson',
@@ -609,26 +599,21 @@ class Client(API):
 
         try:
             with self.http_client.stream(
-                'GET',
+                'POST',
                 f"{self.realtime_url}v2/{path}",
                 json=json_payload,
-                headers=headers
+                headers=headers,
+                timeout=None
             ) as response:
                 response.raise_for_status()
-                for line in response.iter_lines():
-                    if line:
-                        try:
-                            article=json.loads(line)
-                            if not cbk(article):
-                                break
-                        except json.JSONDecodeError:
-                            logger.warning("Skipping malformed JSON line in stream: %s", line)
+                self._read_loop(response, cbk)
+
         except httpx.HTTPStatusError as e:
             raise APIStatusError(f"HTTP Error: {e.response.status_code} on stream", request=e.request, response=e.response) from e
         except httpx.RequestError as e:
             raise APIRequestError(f"Stream Request Error: {e}", request=e.request) from e
 
-    def read_all(self, rdr: io.BytesIO, cbk: InternalReadCallback):
+    def read_all(self, rdr: typing.BinaryIO, cbk: InternalReadCallback):
         """
         Reads a .tar.gz archive containing NDJSON files.
 
@@ -646,7 +631,6 @@ class Client(API):
         """
         try:
             with gzip_ng_threaded.open(rdr, mode="rb", threads=-1) as decompressed_stream:
-
                 typed_stream = typing.cast(typing.BinaryIO, decompressed_stream)
 
                 with tarfile.open(fileobj=typed_stream, mode='r|') as tar:
@@ -659,12 +643,21 @@ class Client(API):
                             continue
 
                         f = tar.extractfile(member)
-
                         if f:
                             with f:
-                                wrapped_stream = _TarfileStreamWrapper(f)
-                                typed_stream = typing.cast(typing.BinaryIO, wrapped_stream)
-                                if not self._read_loop(typed_stream, cbk):
+
+                                should_continue = True
+                                for line in f:
+                                    if not line.strip():
+                                        continue
+                                    try:
+                                        if not cbk(json.loads(line)):
+                                            should_continue = False
+                                            break
+                                    except json.JSONDecodeError:
+                                        logger.warning("Skipping malformed JSON in tar member")
+
+                                if not should_continue:
                                     break
         except tarfile.TarError as e:
             raise APIDataError(f"Failed to read tar archive: {e}") from e
@@ -685,8 +678,9 @@ class Client(API):
         self.access_token = token
         self.http_client.headers['Authorization'] = f'Bearer {token}'
 
-    def get_codes(self, req: Request) -> List[Code]:
+    def get_codes(self, req: Optional[Request] = None) -> List[Code]:
         """Retrieves codes"""
+        req = req or Request()
         codes_list = []
         self._get_entity(req, "codes", codes_list)
         try:
@@ -694,8 +688,9 @@ class Client(API):
         except DataModelError as e:
             raise APIDataError(f"Failed to parse project list data: {e}") from e
 
-    def get_code(self, idr: str, req: Request) -> Code:
+    def get_code(self, idr: str, req: Optional[Request] = None) -> Code:
         """Retrieves a single code"""
+        req = req or Request()
         code_dict = {}
         self._get_entity(req, f"codes/{idr}", code_dict)
         try:
@@ -703,8 +698,9 @@ class Client(API):
         except DataModelError as e:
             raise APIDataError(f"Failed to parse code data: {e}") from e
 
-    def get_languages(self, req: Request) -> List[Language]:
+    def get_languages(self, req: Optional[Request] = None) -> List[Language]:
         """Retrieves languages"""
+        req = req or Request()
         languages_list = []
         self._get_entity(req, "languages", languages_list)
         try:
@@ -712,8 +708,9 @@ class Client(API):
         except DataModelError as e:
             raise APIDataError(f"Failed to parse Language list data: {e}") from e
 
-    def get_language(self, idr: str, req: Request) -> Language:
+    def get_language(self, idr: str, req: Optional[Request] = None) -> Language:
         """Retrieves a language"""
+        req = req or Request()
         language_dict = {}
         self._get_entity(req, f"languages/{idr}", language_dict)
         try:
@@ -721,8 +718,9 @@ class Client(API):
         except DataModelError as e:
             raise APIDataError(f"Failed to parse language data: {e}") from e
 
-    def get_projects(self, req: Request) -> List[Project]:
+    def get_projects(self, req: Optional[Request] = None) -> List[Project]:
         """Retrieves projects"""
+        req = req or Request()
         project_list = []
         self._get_entity(req, "projects", project_list)
         try:
@@ -730,8 +728,9 @@ class Client(API):
         except DataModelError as e:
             raise APIDataError(f"Failed to parse Project list data: {e}") from e
 
-    def get_project(self, idr: str, req: Request) -> Project:
+    def get_project(self, idr: str, req: Optional[Request] = None) -> Project:
         """Retrieves a project"""
+        req = req or Request()
         project_dict = {}
         self._get_entity(req, f"projects/{idr}", project_dict)
         try:
@@ -739,8 +738,9 @@ class Client(API):
         except DataModelError as e:
             raise APIDataError(f"Failed to parse project data: {e}") from e
 
-    def get_namespaces(self, req: Request) -> List[Namespace]:
+    def get_namespaces(self, req: Optional[Request] = None) -> List[Namespace]:
         """Retrieves namespaces"""
+        req = req or Request()
         namespaces_list = []
         self._get_entity(req, "namespaces", namespaces_list)
         try:
@@ -748,8 +748,9 @@ class Client(API):
         except DataModelError as e:
             raise APIDataError(f"Failed to parse Namespaces list data: {e}") from e
 
-    def get_namespace(self, idr: int, req: Request) -> Namespace:
+    def get_namespace(self, idr: int, req: Optional[Request] = None) -> Namespace:
         """Retrieves a namespace"""
+        req = req or Request()
         namespace_dict = {}
         self._get_entity(req, f"namespaces/{idr}", namespace_dict)
         try:
@@ -760,8 +761,9 @@ class Client(API):
     def _get_batches_prefix(self, timestamp: datetime.datetime):
         return f"batches/{timestamp.strftime(DATE_FORMAT)}/{timestamp.strftime(HOUR_FORMAT)}"
 
-    def get_batches(self, timestamp: datetime.datetime, req: Request) -> List[Batch]:
+    def get_batches(self, timestamp: datetime.datetime, req: Optional[Request] = None) -> List[Batch]:
         """Retrieves data batches"""
+        req = req or Request()
         batches_list = []
         self._get_entity(req, self._get_batches_prefix(timestamp), batches_list)
         try:
@@ -769,8 +771,9 @@ class Client(API):
         except DataModelError as e:
             raise APIDataError(f"Failed to parse Batches list data: {e}") from e
 
-    def get_batch(self, timestamp: datetime.datetime, idr: str, req: Request) -> Batch:
+    def get_batch(self, timestamp: datetime.datetime, idr: str, req: Optional[Request] = None) -> Batch:
         """Retrieves a single batch"""
+        req = req or Request()
         batch_dict = {}
         self._get_entity(req, f"{self._get_batches_prefix(timestamp)}/{idr}", batch_dict)
         try:
@@ -792,14 +795,15 @@ class Client(API):
                 logger.warning("Skipping batch data due to model error: %s", e)
                 return True
 
-        self._read_entity(f"b{self._get_batches_prefix(timestamp)}/{idr}/download", parsing_callback)
+        self._read_archive_entity(f"{self._get_batches_prefix(timestamp)}/{idr}/download", parsing_callback)
 
-    def download_batch(self, timestamp: datetime.datetime, idr: str, writer: io.BytesIO):
+    def download_batch(self, timestamp: datetime.datetime, idr: str, writer: typing.BinaryIO):
         """Downloads a batch"""
         self._download_entity(f"{self._get_batches_prefix(timestamp)}/{idr}/download", writer)
 
-    def get_snapshots(self, req: Request) -> List[Snapshot]:
+    def get_snapshots(self, req: Optional[Request] = None) -> List[Snapshot]:
         """Retrieves snapshots"""
+        req = req or Request()
         snapshot_list = []
         self._get_entity(req, "snapshots", snapshot_list)
         try:
@@ -807,8 +811,9 @@ class Client(API):
         except DataModelError as e:
             raise APIDataError(f"Failed to parse Snapshots list data: {e}") from e
 
-    def get_snapshot(self, idr: str, req: Request) -> Snapshot:
+    def get_snapshot(self, idr: str, req: Optional[Request] = None) -> Snapshot:
         """Retrieves a snapshot"""
+        req = req or Request()
         snapshot_dict = {}
         self._get_entity(req, f"snapshots/{idr}", snapshot_dict)
         try:
@@ -830,14 +835,15 @@ class Client(API):
                 logger.warning("Skipping snapshot data due to model error: %s", e)
                 return True
 
-        self._read_entity(f"snapshots/{idr}/download", parsing_callback)
+        self._read_archive_entity(f"snapshots/{idr}/download", parsing_callback)
 
-    def download_snapshot(self, idr: str, writer: io.BytesIO):
+    def download_snapshot(self, idr: str, writer: typing.BinaryIO):
         """Downloads a snapshot"""
         self._download_entity(f"snapshots/{idr}/download", writer)
 
-    def get_chunks(self, sid: str, req: Request) -> List[Snapshot]:
+    def get_chunks(self, sid: str, req: Optional[Request] = None) -> List[Snapshot]:
         """Retrieves chunks"""
+        req = req or Request()
         chunks_list = []
         self._get_entity(req, f"snapshots/{sid}/chunks", chunks_list)
         try:
@@ -845,8 +851,9 @@ class Client(API):
         except DataModelError as e:
             raise APIDataError(f"Failed to parse Chunks list data: {e}") from e
 
-    def get_chunk(self, sid: str, idr: str, req: Request) -> Snapshot:
+    def get_chunk(self, sid: str, idr: str, req: Optional[Request] = None) -> Snapshot:
         """Retrieves a single chunk"""
+        req = req or Request()
         chunk_dict = {}
         self._get_entity(req, f"snapshots/{sid}/chunks/{idr}", chunk_dict)
         try:
@@ -867,14 +874,15 @@ class Client(API):
             except DataModelError as e:
                 logger.warning("Skipping chunk data due to model error: %s", e)
                 return True
-        self._read_entity(f"snapshots/{sid}/chunks/{idr}/download", parsing_callback)
+        self._read_archive_entity(f"snapshots/{sid}/chunks/{idr}/download", parsing_callback)
 
-    def download_chunk(self, sid: str, idr: str, writer: io.BytesIO):
+    def download_chunk(self, sid: str, idr: str, writer: typing.BinaryIO):
         """Downloads a chunk"""
         self._download_entity(f"snapshots/{sid}/chunks/{idr}/download", writer)
 
-    def get_articles(self, name: str, req: Request) -> List[Article]:
+    def get_articles(self, name: str, req: Optional[Request] = None) -> List[Article]:
         """Retrieves articles"""
+        req = req or Request()
         articles_list = []
         self._get_entity(req, f"articles/{name}", articles_list)
         try:
@@ -882,8 +890,9 @@ class Client(API):
         except DataModelError as e:
             raise APIDataError(f"Failed to parse Articles list data: {e}") from e
 
-    def get_structured_contents(self, name: str, req: Request) -> List[StructuredContent]:
+    def get_structured_contents(self, name: str, req: Optional[Request] = None) -> List[StructuredContent]:
         """Retrieves structured contents"""
+        req = req or Request()
         contents_list = []
         self._get_entity(req, f"structured-contents/{name}", contents_list)
         try:
@@ -891,17 +900,19 @@ class Client(API):
         except DataModelError as e:
             raise APIDataError(f"Failed to parse Structured Contents list data: {e}") from e
 
-    def get_structured_snapshots(self, req: Request) -> List[StructuredContent]:
+    def get_structured_snapshots(self, req: Optional[Request] = None) -> List[StructuredContent]:
         """Retrieves structured snapshots"""
+        req = req or Request()
         snapshots_list = []
-        self._get_entity(req, "snapshots/structured-contents/", snapshots_list)
+        self._get_entity(req, "snapshots/structured-contents", snapshots_list)
         try:
             return [StructuredContent.from_json(s) for s in snapshots_list]
         except DataModelError as e:
             raise APIDataError(f"Failed to parse structured snapshot list data: {e}") from e
 
-    def get_structured_snapshot(self, idr: str, req: Request) -> StructuredContent:
+    def get_structured_snapshot(self, idr: str, req: Optional[Request] = None) -> StructuredContent:
         """Retrieves a structured snapshot"""
+        req = req or Request()
         snapshot_dict = {}
         self._get_entity(req, f"snapshots/structured-contents/{idr}", snapshot_dict)
         try:
@@ -924,9 +935,9 @@ class Client(API):
                 logger.warning("Skipping structured snapshot data due to model error: %s", e)
                 return True
 
-        self._read_entity(f"snapshots/structured-contents/{idr}/download", parsing_callback)
+        self._read_archive_entity(f"snapshots/structured-contents/{idr}/download", parsing_callback)
 
-    def download_structured_snapshot(self, idr: str, writer: io.BytesIO):
+    def download_structured_snapshot(self, idr: str, writer: typing.BinaryIO):
         """Downloads a structured snapshot"""
         self._download_entity(f"snapshots/structured-contents/{idr}/download", writer)
 
