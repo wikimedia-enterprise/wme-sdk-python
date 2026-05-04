@@ -193,7 +193,6 @@ class TestClientIntegration(unittest.TestCase):
 
         if not batch_id:
             self.fail("Found a batch, but its identifier was None.")
-            return
 
         print(f"   ... Found batch to test: {batch_id}")
 
