@@ -1,4 +1,4 @@
-# pylint: disable=too-few-public-methods, too-many-instance-attributes, too-many-public-methods, too-many-arguments, too-many-positional-arguments, R0914
+# pylint: disable=too-few-public-methods, too-many-instance-attributes, too-many-public-methods, too-many-arguments, too-many-positional-arguments, R0914, C0302
 
 """
 Provides a client for interacting with the Wikimedia Enterprise API.
@@ -294,6 +294,66 @@ class API(ABC):
     @abstractmethod
     def download_structured_snapshot(self, idr: str, writer: typing.BinaryIO):
         """Downloads a structured content snapshot."""
+
+    @abstractmethod
+    def get_wikidata_snapshots(self, req: Optional[Request] = None) -> List[Snapshot]:
+        """Retrieves metadata for all Wikidata snapshots."""
+
+    @abstractmethod
+    def get_wikidata_snapshot(self, idr: str, req: Optional[Request] = None) -> Snapshot:
+        """Retrieves metadata for a specific Wikidata snapshot ('items' or 'properties')."""
+
+    @abstractmethod
+    def head_wikidata_snapshot(self, idr: str) -> dict:
+        """Retrieves response headers for a Wikidata snapshot download."""
+
+    @abstractmethod
+    def read_wikidata_snapshot(self, idr: str, cbk: Callable[[Article], bool]):
+        """Reads a Wikidata snapshot via callback."""
+
+    @abstractmethod
+    def download_wikidata_snapshot(self, idr: str, writer: typing.BinaryIO):
+        """Downloads a Wikidata snapshot tarball into a writer stream."""
+
+    @abstractmethod
+    def get_wikidata_chunks(self, idr: str, req: Optional[Request] = None) -> List[Snapshot]:
+        """Retrieves metadata for all chunks of a Wikidata snapshot."""
+
+    @abstractmethod
+    def get_wikidata_chunk(self, idr: str, cidr: str, req: Optional[Request] = None) -> Snapshot:
+        """Retrieves metadata for a specific Wikidata chunk."""
+
+    @abstractmethod
+    def head_wikidata_chunk(self, idr: str, cidr: str) -> dict:
+        """Retrieves response headers for a Wikidata chunk download."""
+
+    @abstractmethod
+    def read_wikidata_chunk(self, idr: str, cidr: str, cbk: Callable[[Article], bool]):
+        """Reads a Wikidata chunk via callback."""
+
+    @abstractmethod
+    def download_wikidata_chunk(self, idr: str, cidr: str, writer: typing.BinaryIO):
+        """Downloads a Wikidata chunk tarball into a writer stream."""
+
+    @abstractmethod
+    def get_wikidata_batches(self, timestamp: datetime.datetime, req: Optional[Request] = None) -> List[Batch]:
+        """Retrieves metadata for Wikidata batches at a specific timestamp."""
+
+    @abstractmethod
+    def get_wikidata_batch(self, timestamp: datetime.datetime, idr: str, req: Optional[Request] = None) -> Batch:
+        """Retrieves metadata for a specific Wikidata batch ('items' or 'properties')."""
+
+    @abstractmethod
+    def head_wikidata_batch(self, timestamp: datetime.datetime, idr: str) -> dict:
+        """Retrieves response headers for a Wikidata batch download."""
+
+    @abstractmethod
+    def read_wikidata_batch(self, timestamp: datetime.datetime, idr: str, cbk: Callable[[Article], bool]):
+        """Reads and processes the content of a specific Wikidata batch via a callback."""
+
+    @abstractmethod
+    def download_wikidata_batch(self, timestamp: datetime.datetime, idr: str, writer: typing.BinaryIO):
+        """Downloads a Wikidata batch tarball into a writer stream."""
 
 
 class Client(API):
@@ -952,3 +1012,108 @@ class Client(API):
                 return True
 
         self._subscribe_to_entity("articles", req, parsing_callback)
+
+    def get_wikidata_snapshots(self, req: Optional[Request] = None) -> List[Snapshot]:
+        req = req or Request()
+        snapshot_list = []
+        self._get_entity(req, "snapshots/wikidata", snapshot_list)
+        try:
+            return [Snapshot.from_json(ss) for ss in snapshot_list]
+        except DataModelError as e:
+            raise APIDataError(f"Failed to parse Wikidata snapshots list: {e}") from e
+
+    def get_wikidata_snapshot(self, idr: str, req: Optional[Request] = None) -> Snapshot:
+        req = req or Request()
+        snapshot_dict = {}
+        self._get_entity(req, f"snapshots/wikidata/{idr}", snapshot_dict)
+        try:
+            return Snapshot.from_json(snapshot_dict)
+        except DataModelError as e:
+            raise APIDataError(f"Failed to parse Wikidata snapshot data: {e}") from e
+
+    def head_wikidata_snapshot(self, idr: str) -> dict:
+        return self._head_entity(f"snapshots/wikidata/{idr}/download")
+
+    def read_wikidata_snapshot(self, idr: str, cbk: Callable[[Article], bool]):
+        """Streams and reads a Wikidata snapshot via callback."""
+        def parsing_callback(data: dict) -> bool:
+            try:
+                return cbk(Article.from_json(data))
+            except DataModelError as e:
+                logger.warning("Skipping invalid Wikidata article record: %s", e)
+                return True
+        self._read_archive_entity(f"snapshots/wikidata/{idr}/download", parsing_callback)
+
+    def download_wikidata_snapshot(self, idr: str, writer: typing.BinaryIO):
+        self._download_entity(f"snapshots/wikidata/{idr}/download", writer)
+
+    def get_wikidata_chunks(self, idr: str, req: Optional[Request] = None) -> List[Snapshot]:
+        req = req or Request()
+        chunks_list = []
+        self._get_entity(req, f"snapshots/wikidata/{idr}/chunks", chunks_list)
+        try:
+            return [Snapshot.from_json(cs) for cs in chunks_list]
+        except DataModelError as e:
+            raise APIDataError(f"Failed to parse Wikidata chunks list: {e}") from e
+
+    def get_wikidata_chunk(self, idr: str, cidr: str, req: Optional[Request] = None) -> Snapshot:
+        req = req or Request()
+        chunk_dict = {}
+        self._get_entity(req, f"snapshots/wikidata/{idr}/chunks/{cidr}", chunk_dict)
+        try:
+            return Snapshot.from_json(chunk_dict)
+        except DataModelError as e:
+            raise APIDataError(f"Failed to parse Wikidata chunk data: {e}") from e
+
+    def head_wikidata_chunk(self, idr: str, cidr: str) -> dict:
+        return self._head_entity(f"snapshots/wikidata/{idr}/chunks/{cidr}/download")
+
+    def read_wikidata_chunk(self, idr: str, cidr: str, cbk: Callable[[Article], bool]):
+        """Streams and reads a Wikidata chunk via callback."""
+        def parsing_callback(data: dict) -> bool:
+            try:
+                return cbk(Article.from_json(data))
+            except DataModelError as e:
+                logger.warning("Skipping invalid Wikidata article record: %s", e)
+                return True
+        self._read_archive_entity(f"snapshots/wikidata/{idr}/chunks/{cidr}/download", parsing_callback)
+
+    def download_wikidata_chunk(self, idr: str, cidr: str, writer: typing.BinaryIO):
+        self._download_entity(f"snapshots/wikidata/{idr}/chunks/{cidr}/download", writer)
+
+    def _get_wikidata_batches_prefix(self, timestamp: datetime.datetime) -> str:
+        return f"batches/{timestamp.strftime(DATE_FORMAT)}/{timestamp.strftime(HOUR_FORMAT)}/wikidata"
+
+    def get_wikidata_batches(self, timestamp: datetime.datetime, req: Optional[Request] = None) -> List[Batch]:
+        req = req or Request()
+        batches_list = []
+        self._get_entity(req, self._get_wikidata_batches_prefix(timestamp), batches_list)
+        try:
+            return [Batch.from_json(b) for b in batches_list]
+        except DataModelError as e:
+            raise APIDataError(f"Failed to parse Wikidata batches list: {e}") from e
+
+    def get_wikidata_batch(self, timestamp: datetime.datetime, idr: str, req: Optional[Request] = None) -> Batch:
+        req = req or Request()
+        batch_dict = {}
+        self._get_entity(req, f"{self._get_wikidata_batches_prefix(timestamp)}/{idr}", batch_dict)
+        try:
+            return Batch.from_json(batch_dict)
+        except DataModelError as e:
+            raise APIDataError(f"Failed to parse Wikidata batch data: {e}") from e
+
+    def head_wikidata_batch(self, timestamp: datetime.datetime, idr: str) -> dict:
+        return self._head_entity(f"{self._get_wikidata_batches_prefix(timestamp)}/{idr}/download")
+
+    def read_wikidata_batch(self, timestamp: datetime.datetime, idr: str, cbk: Callable[[Article], bool]):
+        """Streams and reads a Wikidata batch via callback."""
+        def parsing_callback(data: dict) -> bool:
+            try:
+                return cbk(Article.from_json(data))
+            except DataModelError as e:
+                logger.warning("Skipping invalid Wikidata article record: %s", e)
+                return True
+        self._read_archive_entity(f"{self._get_wikidata_batches_prefix(timestamp)}/{idr}/download", parsing_callback)
+
+    def download_wikidata_batch(self, timestamp: datetime.datetime, idr: str, writer: typing.BinaryIO):
+        self._download_entity(f"{self._get_wikidata_batches_prefix(timestamp)}/{idr}/download", writer)
